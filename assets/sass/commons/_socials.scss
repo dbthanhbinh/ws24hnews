@@ -1,0 +1,15 @@
+.socials-link {
+    margin: 10px 0;
+    padding: 0;
+    li {
+        margin: 0 3px;
+        list-style: none;
+        display: inline-block;
+        a {
+            
+            &:hover {
+
+            }
+        }
+    }
+}

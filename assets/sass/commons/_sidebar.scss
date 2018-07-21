@@ -1,0 +1,82 @@
+.sidebar {
+    figure,
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 5px;
+            a {
+                color: $entry_title_color;
+            }
+        }
+    }    
+}
+
+.widget{
+    margin-bottom: $margin_bottom;
+
+    .widget-title{
+        text-transform: uppercase;
+        font-size: $widget_title_size - 2;
+        padding: 7px 10px;
+        border-top: 2px solid #ccc;
+        font-weight: bold;
+    }
+
+    .calendar_wrap {
+        table {
+            width: 100%;
+
+            td#today{
+                background-color: #dddddd;
+            }
+        }
+    }
+
+    .gallery {
+        .gallery-item {
+            .wp-caption-text {}
+        }
+    }
+    
+    .tagcloud {
+        a {}
+    }
+
+    &.widget_nav_menu {
+        .menu-item-has-children{
+            margin-top: 10px;
+            &> a{
+                font-weight: bold;
+            }
+        }            
+    }
+
+    ul,ol {
+        margin: 0 0 10px 0;
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.second-sidebar {
+    ul,ol {
+        font-size: 12px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    .widget-title {
+        background: $sidebar_second_bg;
+    }
+}

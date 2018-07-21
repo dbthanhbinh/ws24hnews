@@ -1,0 +1,32 @@
+.article-list,
+.archive {
+    .page-header {
+        margin-bottom: $margin_bottom;
+        text-transform: uppercase;
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    article {
+        margin-bottom: $margin_bottom;
+
+        .entry-title {
+            a {
+                color: $entry_title_color;
+                font-weight: bold;
+            }
+        }
+
+        .post-thumbnail{            
+            float: left;
+            margin-right: $margin_right;
+        }
+
+        .entry-content {
+            header {
+                
+            }
+        }
+    }
+}

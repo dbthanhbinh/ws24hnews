@@ -1,0 +1,18 @@
+.related-box {
+    margin-top: $margin_top;
+    h3 {
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: bold;
+        border-top: 1px solid $boder_top_color;
+        padding: 7px 0px;
+        margin-bottom: 10px;
+    }
+
+    &.article-list {
+        .post-thumbnail {
+            max-width: 30%;
+        }
+    }
+    
+}
