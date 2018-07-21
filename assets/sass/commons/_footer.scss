@@ -4,7 +4,7 @@
     
     .box-footer {
         border-top: 2px solid $boder_top_color;
-        padding: 10px 0 0 0;
+        padding: 10px 0 10px 0;
 
         .footer-logo {
             max-width: 150px;
@@ -13,6 +13,16 @@
         }
         p {
             margin-bottom: 5px;      
+        }
+
+        h4 {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 15px;
+
+            i {
+                margin-right: 5px;
+            }
         }
     }
 }

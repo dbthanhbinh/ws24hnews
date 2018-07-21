@@ -7,6 +7,8 @@
     require_once ('modules/ads/widget_ads.php');
 ?>
 <div class="<?= get_main_sidebar() ?>">
-    <?php dynamic_sidebar( 'sidebar-1' ); ?>
+    <div class="" id="sidebar">
+        <?php dynamic_sidebar( 'sidebar-1' ); ?>
+    </div>
 </div>
 <?php endif; ?>
