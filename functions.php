@@ -86,10 +86,10 @@ function get_excerpt($limit, $source = null){
 }
 
 function ws24h_custom_the_excerpt () {
-	$limit = 100;
+	$limit = 150;
 	$excerpt = get_the_excerpt();
 	$excerpt = excerpt_content ($excerpt, $limit);
-	$excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
+	$excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Đọc thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
 	return $excerpt;
 }
 add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
