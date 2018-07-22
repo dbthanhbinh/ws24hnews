@@ -13,15 +13,20 @@
               <?php
                 if ( have_posts() ) :
                   /* Start the Loop */
-                  $pos = 1;
                   while ( have_posts() ) : the_post();
-                    if ($pos === 1)
-                      get_template_part( 'template-parts/post/content', 'big');
-                    else  
-                      get_template_part( 'template-parts/post/content', get_post_format() );
-                      
-                  $pos++;
-                  endwhile;                      
+                    get_template_part( 'template-parts/post/content', get_post_format() );
+                  endwhile;
+                  
+                  the_posts_pagination( array(
+                    'before'      => '<div class="page-links">' . __( 'Pages:', THEME_NAME ),
+                    'after'       => '</div>',
+                    'link_before' => '<span class="page-number">',
+                    'link_after'  => '</span>',
+                    'prev_text'          => __('Trước'),
+                    'next_text'          => __( 'Sau' ),
+                  ) );
+
+
                 else :
                   get_template_part( 'template-parts/post/content', 'none' );
                 endif;

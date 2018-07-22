@@ -31,8 +31,7 @@ function ws24h_widget_color()
 }
 
 
-function ws24h_widget_color_style()
-{
+function ws24h_widget_color_style() {
     $color_list = ws24h_widget_color();
     foreach($color_list as $color)
     {

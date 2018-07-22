@@ -23,7 +23,7 @@ class ws24h_popular_widget extends WP_Widget
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-	   wp_reset_query();
+	    wp_reset_query();
 		extract( $args );
         global $post,$exclude_post, $wpdb;        
         $color_full = '';            
@@ -112,7 +112,6 @@ class ws24h_popular_widget extends WP_Widget
 	 */
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
-        
         $categories_obj = get_categories();
 		$categories = array();
         foreach ($categories_obj as $pn_cat) {

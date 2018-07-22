@@ -11,8 +11,12 @@
   <body <?php body_class(); ?>>
     <div class="top-header">
       <div class="container">
-        <?= render_logo() ?>
-        <div class="top-banner-img col-lg-9">
+        <div class="col-md-3 col-lg-3 render-logo">
+          <div class="row">
+            <?= render_logo() ?>
+          </div>
+        </div>
+        <div class="top-banner-img col-md-9 col-lg-9">
             <div class="row top-banner-right">
               <a href="#"> <?php echo render_mode_attachment_image('top_banner'); ?> </a>
             </div>

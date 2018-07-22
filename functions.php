@@ -1,6 +1,13 @@
 <?php
 define ('THEME_NAME', 'ws24hnews');
 require_once ('lib/admin/setting.php');
+require_once ('lib/modifys/index.php');
+if (is_admin()) {
+
+} else {
+
+}
+
 require_once ('lib/_functions.php');
 require_once ('lib/widgets/widgets.php');
 

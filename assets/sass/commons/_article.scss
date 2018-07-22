@@ -1,4 +1,29 @@
 .article-list {
+    nav.pagination {
+        h2.screen-reader-text {
+            display: none;
+        }
+
+        .nav-links {
+            a, span 
+            {
+                padding: 3px 7px;
+            }
+            .page-numbers {}
+
+            a {
+                &:hover {
+                    background: $pagi_current_bg;
+                    color: #ffffff;    
+                }
+            }
+            .current {
+                background: $pagi_current_bg;
+                color: #ffffff;
+            }
+        }
+    }
+
     article {
         width: 100%;
         display: inline-block;

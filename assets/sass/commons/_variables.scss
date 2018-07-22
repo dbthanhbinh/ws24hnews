@@ -43,6 +43,7 @@ $sidebar_second_bg: #eeeeee;
 $menu_bg: #f4f4f4;
 $menu_border_color: $boder_color;
 $menu_margin_bottom: ($margin + 5);
+$menu_mobile_hover: $aHover;
 
 $margin_right: 15px;
 $margin_top: $margin_right;
@@ -59,3 +60,7 @@ $widget_item_thumb_mg_bt: 5px;
 
 /*Comments*/
 $comment_page_current_color: $colors-red;
+
+/*Paging*/
+$pagi_current_bg: $colors-gray;
+$pagi_current_color: $colors-gray;
