@@ -14,15 +14,13 @@
                     endwhile; // End of the loop.
                     ?>
                 </div>
-
                 <?php get_sidebar('second');?>
             </div>
-            
-
             <?php 
             if (has_tag()):
                 ?>
                 <div class="tags-box">
+                    <i class="fa fa-tags" aria-hidden="true"></i>    
                     <?php
                     the_tags();
                     ?>

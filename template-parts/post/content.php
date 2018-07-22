@@ -24,7 +24,7 @@
 		</header><!-- .entry-header -->
 
 		<?php
-		if ( is_category() || is_archive() || is_home() || is_front_page() || (isset($content_type) && $content_type == 'related')) {
+		if ( is_category() || is_archive() || is_search() || is_home() || is_front_page() || (isset($content_type) && $content_type == 'related')) {
 			the_excerpt ( sprintf(
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', THEME_NAME ),
 				get_the_title()

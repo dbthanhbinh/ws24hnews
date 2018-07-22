@@ -29,11 +29,10 @@
         float: left; 
 
         a {
-            color: white;
             text-decoration: none; 
             padding: 5px 0 5px 25px;
-            background: brown; /* fallback color */
-            background: hsla(34,85%,35%,1); 
+            background: #cccccc; /* fallback color */
+            background: #cccccc; //hsla(34,85%,35%,1); 
             position: relative; 
             display: block;
             float: left;
@@ -45,7 +44,7 @@
                 height: 0;
                 border-top: 16px solid transparent; /* Go big on the size, and let overflow hide */
                 border-bottom: 16px solid transparent;
-                border-left: 18px solid hsla(34,85%,35%,1);
+                border-left: 18px solid #cccccc; //hsla(34,85%,35%,1);
                 position: absolute;
                 top: 0%;
                 margin-top: 0px; 
@@ -60,7 +59,7 @@
                 height: 0;
                 border-top: 16px solid transparent;       
                 border-bottom: 16px solid transparent;
-                border-left: 19px solid hsla(34,85%,55%,1);
+                border-left: 19px solid #eeeeee; // hsla(34,85%,55%,1);
                 position: absolute;
                 top: 0;
                 margin-top: 0px; 
@@ -88,7 +87,7 @@
   .breadcrumb li:nth-child(5) a       { background:        hsla(34,85%,75%,1); }
   .breadcrumb li:nth-child(5) a:after { border-left-color: hsla(34,85%,75%,1); }
   .breadcrumb li:last-child a {
-    background:        hsla(34,85%,55%,1);
+    background: #eeeeee;       //hsla(34,85%,55%,1);
     color: black;
     pointer-events: none;
     cursor: default;
@@ -98,8 +97,8 @@
   }
 
   .breadcrumb li a:hover { 
-    background: hsla(34, 85%, 25%, 1); 
+    background: #eeeeee; //hsla(34, 85%, 25%, 1); 
   }
   .breadcrumb li a:hover:after { 
-    border-left-color: hsla(34, 85%, 25%, 1) !important; 
+    border-left-color: #eeeeee; // hsla(34, 85%, 25%, 1) !important; 
   }

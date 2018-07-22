@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 			<?php
 			$comments_number = get_comments_number();			
 			?>
-			Danh sách comment cho bài viết :  <span><i class="fa fa-comments" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
+			Danh sách comment cho bài viết :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
 		</h2>
 
 		<ul class="comment-list">
@@ -27,15 +27,14 @@ if ( post_password_required() ) {
 		</ul>
 
 		<?php the_comments_pagination( array(
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'ws24h' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'ws24h' ) . '</span>',
+			'prev_text' => '<span class="screen-reader-text">' . __( 'Trước:', 'ws24h' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'ws24h' ) . '</span>',
 		) );
 
 	endif; // Check for have_comments().
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'ws24h' ); ?></p>
 	<?php
 	endif;
@@ -57,7 +56,7 @@ if ( post_password_required() ) {
 	);
 	$comments_args = array(
 		'fields' =>  $fields,
-		'title_reply'=> 'Bình luận của bạn',
+		'title_reply'=> '<i class="fa fa-comments" aria-hidden="true"></i> Bình luận của bạn',
 		'label_submit' => 'Gửi bình luận'
 	);
 	comment_form($comments_args);

@@ -10,7 +10,7 @@
 
         li {
             list-style: none;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             a {
                 color: $entry_title_color;
             }
@@ -19,7 +19,10 @@
 }
 
 .widget{
-    margin-bottom: $margin_bottom;
+    clear: both;
+    margin-bottom: $margin_bottom - 5;
+    display: inline-block;
+    width: 100%;
 
     .widget-title{
         text-transform: uppercase;
@@ -27,6 +30,7 @@
         padding: 7px 10px;
         border-top: 2px solid #ccc;
         font-weight: bold;
+        background: $sidebar_second_bg;
     }
 
     .calendar_wrap {
@@ -63,6 +67,34 @@
         padding: 0;
         li {
             list-style: none;
+            display: inline-block;
+        }
+    }
+
+    .widget-box-list {
+        .box-list-item {
+            h5.item-title {
+                font-size: $widget_item_title_size;
+                font-weight: $widget_item_title_weight;
+
+                label {
+                    font-weight: normal;
+                }
+            }
+
+            .item-thumb {
+                float: left;
+                margin-right: 10px;
+                max-width: 35%;
+            }
+
+            .item-thumb-full {                
+                margin-bottom: $widget_item_thumb_mg_bt;
+            }
+
+            .item-lead {
+                text-align: justify;
+            }
         }
     }
 }
@@ -74,9 +106,5 @@
         li {
             margin-bottom: 10px;
         }
-    }
-
-    .widget-title {
-        background: $sidebar_second_bg;
     }
 }
