@@ -16,3 +16,25 @@
         }
     }
 }
+
+.social-button-show {
+    clear: both;
+    margin: 10px 0;
+    display: inline-block;
+    width: 100%;
+
+    .my-share-box {
+        clear: both;
+        float: left;
+        margin-right: 10px;
+
+        .fa {
+            font-size: 20px;
+        }
+    }
+
+    .my-g-plus {
+        float: left;
+        margin-right: 10px;
+    }
+}

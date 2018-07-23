@@ -64,6 +64,27 @@ function ws24h_footer_scripts () {
 }
 add_action( 'wp_footer', 'ws24h_footer_scripts' );
 
+function ws24h_facebook_lib_scripts () {
+	if (is_single()) {
+		?>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		<script src="https://apis.google.com/js/platform.js" async defer>
+		{lang: 'en-GB'}
+		</script>		
+
+		<?php
+	}
+}
+add_action( 'wp_footer', 'ws24h_facebook_lib_scripts' );
+
 // =============================================
 /**
  * Filter the except length to 20 words.

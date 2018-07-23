@@ -1,0 +1,31 @@
+.vc_row {
+    margin: 0 auto;
+
+    .vc_grid-item {
+        .vc_gitem-post-data-source-post_title {
+            h4 {
+                font-size: 14px;                
+                font-weight: 600;
+            }
+        }
+
+        .vc_gitem-post-data-source-post_excerpt {
+            font-size: 14px;
+            margin-bottom: 0;
+
+            p {
+                margin-bottom: 0;
+
+                .read-more {
+                    display: block;
+                    margin-top: 10px;
+                    font-style: italic;
+
+                    &:hover {
+                        color: $aHover;
+                    }
+                }
+            }
+        }
+    }
+}

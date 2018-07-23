@@ -21,7 +21,7 @@
             </div>
             <?php //if (is_active_sidebar( 'footer-1' )) dynamic_sidebar( 'footer-1' );?>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 box-fix-max">
             <h4><i class="fa fa-tags" aria-hidden="true"></i>Thẻ tìm kiếm</h4>
             <div class="scrollbar scrollbar-black bordered-black square thin">
                 <div class="force-overflow"> <?= wp_tag_cloud('smallest=10&largest=18') ?> </div>

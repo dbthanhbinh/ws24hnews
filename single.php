@@ -29,6 +29,24 @@
             endif;    
             ?>
             <!-- Socials -->
+            <div class="social-button-show">
+                <div class="my-share-box">
+                    <i class="fa fa-share-alt-square" aria-hidden="true"></i>
+                </div>
+                <div class="my-g-plus">
+                    <div class="g-plus" 
+                        data-action="share" 
+                        data-href="<?= the_permalink(); ?>">
+                    </div>
+                </div>
+                <div class="fb-like" 
+                    data-href="<?= the_permalink(); ?>" 
+                    data-layout="button_count" 
+                    data-action="like" 
+                    data-size="small" 
+                    data-show-faces="true" data-share="true">
+                </div>
+            </div>
 
             <!-- Related -->
             <div class="related-box article-list">

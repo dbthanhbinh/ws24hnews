@@ -73,4 +73,26 @@
         -moz-border-radius: 0;
         -o-border-radius: 0;
     }
+
+    .second-sidebar {
+        padding: 0 30px;
+        margin-top: 30px;
+    }
+
+    .box-fix-max { 
+        clear: both;
+        margin-top: 15px; 
+    }
+}
+
+@media (max-width: 767px) {
+    .social-search {
+        margin-top: 10px;
+    }
+
+    .item-thumb-full {
+        float: left;
+        margin-right: 10px;
+        max-width: 35%;
+    }
 }

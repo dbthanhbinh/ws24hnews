@@ -1,14 +1,54 @@
 .box-breadcrumb {
-    margin-bottom: 15px;
-    .socials-link {
+    margin-bottom: 15px;    
+    .social-search {
         text-align: right;
-        margin: 0;
-        padding: 0;
 
-        li {
-            a {
-                font-size: 25px;
+        .socials-link, .box-search-form { display: inline-block; }
+        .socials-link {
+            text-align: right;
+            margin: 0;
+            padding: 0;
+    
+            li {
+                a {
+                    font-size: 25px;
+                }
             }
+        }
+
+        .box-search-form {
+            clear: both;
+            float: right;
+            margin-left: 10px;
+            form { position: relative; 
+                border: 1px solid #dddddd;
+            }
+            input { height: 27px; }
+            input[type='submit'] {
+                border: none;
+                background: transparent;
+                text-indent: -99999px;
+                width: 36px;
+                height: 27px;
+            }
+
+            input[type='text'] { border: none; }
+
+            span { 
+                display: inline-block;
+                width: 36px;
+                height: 27px;
+                text-align: center;
+                line-height: 27px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+
+                .fa {
+                    font-size: 17px;
+                }
+             }
         }
     }
 }
