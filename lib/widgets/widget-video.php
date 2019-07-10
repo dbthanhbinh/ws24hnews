@@ -7,12 +7,20 @@ class ws24h_video_widget extends WP_Widget
 	 * Register widget with
 	 */
 	function __construct() {
+		// This is where we add the style and script
+		add_action( 'load-widgets.php', array(&$this, 'my_custom_load') );
+		
 		parent::__construct(
 			'ws24h_video', // Base ID
 			__( 'Widget Ws24h video', THEME_NAME ), // Name
 			array( 'description' => __( 'A Ws24h youtobe video Widget', THEME_NAME ), ) // Args
 		);
 	}
+
+	function my_custom_load() {    
+        wp_enqueue_style( 'wp-color-picker' );        
+        wp_enqueue_script( 'wp-color-picker' );    
+    }
 
 	/**
 	 * Front-end display of widget.
@@ -24,8 +32,10 @@ class ws24h_video_widget extends WP_Widget
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-        global $post;
-        
+		global $post;
+
+		$background_color = (isset($instance['background_color']) && $instance['background_color']) ? 'style="backgrount: '.$instance['background_color'].'"' : '';
+		$args['before_title'] = str_replace( '<h2', '<h2 style="'.$background_color.'"', $args['before_title'] );
         echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
@@ -73,9 +83,23 @@ class ws24h_video_widget extends WP_Widget
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Widget video title', THEME_NAME );        
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Widget video title', THEME_NAME );
+		$defaults = array(
+            'background_color' => ''
+        );
+        // Merge the user-selected arguments with the defaults
+        $instance = wp_parse_args( (array) $instance, $defaults );
 		?>
-        
+        <script type='text/javascript'>
+            jQuery(document).ready(function($) {
+                $('.my-color-picker').wpColorPicker();
+            });
+		</script> 
+		<p>
+            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Border Color', "" ); ?></label>
+            <span><?php _e( 'The image border color', '' ); ?></span>
+            <input class="my-color-picker" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />                            
+        </p>
 		<p>
     		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEME_NAME ); ?></label> 
     		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
@@ -91,8 +115,8 @@ class ws24h_video_widget extends WP_Widget
         <p>
 			<label for="<?php echo $this->get_field_id( 'video_height' ); ?>"> <?php echo __('Video Height:',THEME_NAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'video_height' ); ?>" name="<?php echo $this->get_field_name( 'video_height' ); ?>" value="<?php echo $instance['video_height']; ?>" type="text" size="3" />
-		</p>        
-		<?php 
+		</p>
+		<?php
 	}
 
 	/**
@@ -109,7 +133,7 @@ class ws24h_video_widget extends WP_Widget
     {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-        	
+		$instance['background_color'] = strip_tags( $new_instance['background_color'] );
         $instance['source'] = strip_tags( $new_instance['source'] );
         $instance['video_height'] = strip_tags( $new_instance['video_height'] );
         $instance['video_width'] = strip_tags( $new_instance['video_width'] );

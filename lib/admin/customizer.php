@@ -91,16 +91,6 @@ function your_theme_new_customizer_settings( $wp_customize ) {
          'type' => 'text'
      ) ) );
 
-     // Contact address
-     $wp_customize->add_setting('contact_name');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_name',
-     array(
-         'label' => 'Responsible for content',
-         'section' => 'section_contact',
-         'settings' => 'contact_name',
-         'type' => 'text'
-     ) ) );
-
      // Contact copyright
      $wp_customize->add_setting('setting_copyright');
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_copyright',
@@ -192,10 +182,10 @@ function your_theme_new_customizer_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_layout',
     array(
-        'label' => 'Set footer layout',
+        'label' => 'Footer Layout',
         'section' => 'section_layout',
         'settings' => 'footer_layout',
-        'type' => 'radio',
+        'type' => 'select',
         'choices' => array(
             '1c' => __('1 Col'),
             '2c' => __('2 cols'),
@@ -207,6 +197,24 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         ),
     ) ) );
 
+    // Facebook fanpage
+    $wp_customize->add_setting('home_layout',
+        array(
+            'default' => '1c',
+        )
+    );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
+    array(
+        'label' => 'Home Layout',
+        'section' => 'section_layout',
+        'settings' => 'home_layout',
+        'type' => 'select',
+        'choices' => array(
+            '1c' => __('1 Col'),
+            '2c' => __('2 cols'),
+            '3c' => __('3 cols')
+        ),
+    ) ) );
 
 }
 add_action( 'customize_register', 'your_theme_new_customizer_settings' );

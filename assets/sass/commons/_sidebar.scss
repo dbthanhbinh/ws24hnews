@@ -24,13 +24,32 @@
     display: inline-block;
     width: 100%;
 
-    .widget-title{
+    .widget-title {
         text-transform: uppercase;
         font-size: $widget_title_size - 2;
-        padding: 7px 10px;
         border-top: 2px solid #ccc;
         font-weight: bold;
         background: $sidebar_second_bg;
+        label{
+            padding: 7px 10px 7px 0px;
+            margin: 0;
+            display: inline-block;
+            border-top: 2px solid #ddd;
+            border-bottom: none;
+            border-color: #046b5b;
+            margin-top: -2px;
+            margin-left: 10px;
+            &::before{
+                content: "\f0c9";
+                display: inline-block;
+                font: normal normal normal 12px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                margin-right: 5px;
+            }
+        }
     }
 
     .calendar_wrap {
@@ -75,9 +94,9 @@
     .widget-box-list {
         .box-list-item {
             h5.item-title {
-                font-size: $widget_item_title_size;
+                font-size: $title_font_size;
                 font-weight: $widget_item_title_weight;
-
+                line-height: $title_line_height;
                 label {
                     font-weight: normal;
                 }

@@ -17,8 +17,8 @@
 
         h4 {
             text-transform: uppercase;
-            font-weight: 700;
-            font-size: 15px;
+            font-weight: bold;
+            font-size: 14px;
 
             i {
                 margin-right: 5px;
@@ -28,7 +28,9 @@
 }
 
 .copy-right-box {
-    text-align: center;
+    text-align: left;
+    background: $color-black;
+    color: $colors-white;
     p {
         padding: 10px 0;
         margin: 0;
@@ -47,10 +49,46 @@
                 list-style: none;
                 display: inline-block;
                 a {
-                    border-left: 1px solid #ffffff;
+                    border-left: 1px solid $colors-white;
                     padding:  0 5px;
+                    color: $colors-white;
                 }
             }
         }
     }    
+}
+
+.support-online { position: fixed; z-index: 999; left: 0; bottom: 0px; }
+.support-online a { position: relative; margin: 20px 10px; text-align: left; width: 40px; height: 40px; }
+.support-online i { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+.support-online a span { border-radius: 2px; text-align: center; background: rgb(103, 182, 52); padding: 9px; display: none; width: 180px; margin-left: 10px; position: absolute; color: #ffffff; z-index: 999; top: 0px; left: 40px; transition: all 0.2s ease-in-out 0s; -moz-animation: headerAnimation 0.7s 1; -webkit-animation: headerAnimation 0.7s 1; -o-animation: headerAnimation 0.7s 1; animation: headerAnimation 0.7s 1; }
+.support-online a:hover span { display: block; }
+.support-online a { display: block; }
+.support-online a span:before { content: “”; width: 0; height: 0; border-style: solid; border-width: 10px 10px 10px 0; border-color: transparent rgb(103, 182, 52) transparent transparent; position: absolute; left: -10px; top: 10px; }
+.kenit-alo-circle-fill { width: 60px; height: 60px; top: -10px; position: absolute; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid transparent; -webkit-transition: all .5s; -moz-transition: all .5s; -o-transition: all .5s; transition: all .5s; background-color: rgba(0, 175, 242, 0.5); opacity: .75; right: -10px; }
+.kenit-alo-circle { width: 50px; height: 50px; top: -5px; right: -5px; position: absolute; background-color: transparent; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid rgba(30, 30, 30, 0.4); opacity: .1; border-color: #0089B9; opacity: .5; }
+.support-online .btn-support { cursor: pointer; }
+.support-online img { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+
+@media (max-width : 640px) {
+    .support-online a, .support-online a:hover span {
+        display: inline-block;
+    }
+    
+    .support-online a span {
+        border-radius: 2px;
+        text-align: center;
+        background: #67b634;
+        padding: 5px;
+        display: none;
+        width: 159px;
+        margin-left: 0;
+        position: absolute;
+        color: #fff;
+        z-index: 999;
+        top: -40px;
+        left: 0;
+        transition: all .2s ease-in-out 0s;
+        animation: headerAnimation .7s 1;
+    }
 }

@@ -60,7 +60,10 @@
     
         .entry-content {
             h2, h3, h4, h5 
-            {font-size: 14px}
+            {
+                font-size: $title_font_size + 1;
+                line-height: $title_line_height;
+            }
         }
     }
 }

@@ -1,0 +1,58 @@
+.group-price-list{
+    clear: both;
+    position: relative;
+    .price-list{
+        margin: 0;
+        padding: 0;
+        .item-price{
+            display: inline;
+            position: relative;
+            .old-price{
+
+            }
+            .new-price{
+                border-left: 1px solid #dddddd;
+                margin-left: 5px;
+                padding-left: 5px;
+            }
+            .sub-item{
+                font-size: 80%;
+                position: absolute;
+                top: -5px;
+            }
+        }
+    }
+}
+
+.items-properties-list{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.district-list{
+    clear: both;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.properties-list{
+    clear: both;
+    margin: 0;
+    padding: 10px 0 5px 0;
+    list-style: none;
+    li{
+        display: inline-flex;
+        float: left;
+        i{
+            font-size: 18px;
+        }
+        span{
+            padding-left: 5px;
+        }
+    }
+}

@@ -11,6 +11,16 @@
     article {
         margin-bottom: $margin_bottom;
 
+        &.no-thumb {
+            margin-bottom: 0;
+
+            .entry-title {
+                .fa { margin-right: 5px; }
+                a {
+                    font-size: 13px;
+                }
+            }
+        }
         .entry-title {
             a {
                 color: $entry_title_color;

@@ -1,6 +1,9 @@
 <?php
-if (is_admin()) {
+/*********** Remove default ***********/
+require_once('remove-category-slug.php');
 
+if (is_admin()) {
+    
 } else {
     /**
      * Disable the emoji's

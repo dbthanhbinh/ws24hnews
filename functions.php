@@ -1,15 +1,150 @@
 <?php
 define ('THEME_NAME', 'ws24hnews');
+$districts = [
+    [
+        "name" => "Q.12",
+        "type" => "quan",
+        "slug" => "quan-12",
+    ],
+    [
+        "name" => "Q.1",
+        "type" => "quan",
+        "slug" => "quan-1",
+    ],
+    [
+        "name" => "Q.2",
+        "type" => "quan",
+        "slug" => "quan-2",
+    ],
+    [
+        "name" => "Q.3",
+        "type" => "quan",
+        "slug" => "quan-3",
+    ],
+    [
+        "name" => "Q.4",
+        "type" => "quan",
+        "slug" => "quan-4",
+    ],
+    [
+        "name" => "Q.5",
+        "type" => "quan",
+        "slug" => "quan-5",
+    ],
+    [
+        "name" => "Q.6",
+        "type" => "quan",
+        "slug" => "quan-6",
+    ],
+    [
+        "name" => "Q.7",
+        "type" => "quan",
+        "slug" => "quan-7",
+    ],
+    [
+        "name" => "Q.8",
+        "type" => "quan",
+        "slug" => "quan-8",
+    ],
+    [
+        "name" => "Q.9",
+        "type" => "quan",
+        "slug" => "quan-9",
+    ],
+    [
+        "name" => "Q.10",
+        "type" => "quan",
+        "slug" => "quan-10",
+    ],
+    [
+        "name" => "Q.11",
+        "type" => "quan",
+        "slug" => "quan-11",
+    ],
+    [
+        "name" => "Thủ Đức",
+        "type" => "quan",
+        "slug" => "thu-duc",
+    ],
+    [
+        "name" => "Gò Vấp",
+        "type" => "quan",
+        "slug" => "go-vap",
+    ],
+    [
+        "name" => "Bình Thạnh",
+        "type" => "quan",
+        "slug" => "binh-thanh",
+    ],
+    [
+        "name" => "Tân Bình",
+        "type" => "quan",
+        "slug" => "tan-binh",
+    ],
+    [
+        "name" => "Tân Phú",
+        "type" => "quan",
+        "slug" => "tan-phu",
+    ],
+    [
+        "name" => "Phú Nhuận",
+        "type" => "quan",
+        "slug" => "phu-nhuan",
+    ],
+    [
+        "name" => "Bình Tân",
+        "type" => "quan",
+        "slug" => "binh-tan",
+    ],
+    [
+        "name" => "Củ Chi",
+        "type" => "huyen",
+        "slug" => "cu-chi",
+    ],
+    [
+        "name" => "Hóc Môn",
+        "type" => "huyen",
+        "slug" => "hoc-mon",
+    ],
+    [
+        "name" => "Bình Chánh",
+        "type" => "huyen",
+        "slug" => "binh-chanh",
+    ],
+    [
+        "name" => "Nhà Bè",
+        "type" => "huyen",
+        "slug" => "nha-be",
+    ],
+    [
+        "name" => "Cần Giờ",
+        "type" => "huyen",
+        "slug" => "can-gio",
+    ]
+];
+
+function getDistrictName($key){
+	if(!$key) return null;
+	global $districts;
+	foreach ($districts as $key=>$item) {
+		if($item['slug'] == $key)
+			return $item['name'];
+	}
+	return null;
+}
+
 require_once ('lib/admin/setting.php');
 require_once ('lib/modifys/index.php');
+require_once ('lib/_functions.php');
+require_once ('lib/widgets/widgets.php');
+require_once ('panel/setting.php');
 if (is_admin()) {
 
 } else {
-
+	if( tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
+		require_once ('modules/homepage/tpl-home.php');
+	}
 }
-
-require_once ('lib/_functions.php');
-require_once ('lib/widgets/widgets.php');
 
 function ws24h_scripts () {
     // Theme stylesheet.
@@ -31,12 +166,8 @@ function ws24h_setup () {
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array(
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-    ) );
+	add_theme_support( 'html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption') );
+	
     
     /*
 	 * Enable support for Post Formats.
@@ -52,6 +183,8 @@ function ws24h_setup () {
 		'gallery',
 		'audio',
 	) );
+
+	add_theme_support( 'post-thumbnails', array('post') );  
 }
 add_action( 'after_setup_theme', 'ws24h_setup' );
 
@@ -110,8 +243,8 @@ function excerpt_content ($excerpt, $limit) {
 function get_excerpt($limit, $readMore=false, $source = null){
 	if($source == "content" ? ($excerpt = get_the_content()) : ($excerpt = get_the_excerpt()));	
 	$excerpt = excerpt_content ($excerpt, $limit);
-	if ($readMore)
-		return $excerpt = $excerpt . '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
+	// if ($readMore)
+	// 	return $excerpt = $excerpt . '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
     return $excerpt . '...';
 }
 
@@ -119,10 +252,10 @@ function ws24h_custom_the_excerpt () {
 	$limit = 150;
 	$excerpt = get_the_excerpt();
 	$excerpt = excerpt_content ($excerpt, $limit);
-	$excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Đọc thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
-	return $excerpt;
+	// $excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Đọc thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
+	return $excerpt.'...';
 }
-add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
+// add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
 
 /**
  * Filter the excerpt "read more" string.
@@ -244,8 +377,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><label>',
+		'after_title'   => '</label></h2>',
 	) );
 
 	register_sidebar( array(
@@ -254,8 +387,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><label>',
+		'after_title'   => '</label></h2>',
 	) );
 
 	register_sidebar( array(
@@ -264,8 +397,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><label>',
+		'after_title'   => '</label></h2>',
 	) );
 
 	register_sidebar( array(
@@ -274,8 +407,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><label>',
+		'after_title'   => '</label></h2>',
 	) );
 
 	register_sidebar( array(
@@ -284,8 +417,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><label>',
+		'after_title'   => '</label></h2>',
 	) );
 
 	register_sidebar( array(
@@ -294,8 +427,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h2 class="widget-title"><label>',
+		'after_title'   => '</label></h2>',
 	) );
 }
 add_action( 'widgets_init', 'ws24h_widgets_init' );

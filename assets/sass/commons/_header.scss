@@ -1,6 +1,23 @@
 .top-header {
     clear: both;
-    padding: 5px 0;
-
+    padding: 0;
     .render-logo { float: left; }
+
+    ul {
+        padding: 0;
+        margin: 5px 0;
+        li {
+            display     : inline;
+            border-left : 1px solid #dddddd;
+            padding     : 0 5px;
+
+            &:first-child {
+                border-left  : none;
+                padding-left : 0;
+            }
+
+            a {
+            }
+        }
+    }
 }

@@ -6,7 +6,7 @@
       <div class="row <?= get_main_layout_key () ?>">        
         <div class="col-lg-8">
             <div class="row">
-                <div class="col-lg-9 article-content">
+                <div class="col-lg-12 article-content">
                     <?php
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
@@ -14,7 +14,7 @@
                     endwhile; // End of the loop.
                     ?>
                 </div>
-                <?php get_sidebar('second');?>
+                <?php //get_sidebar('second');?>
             </div>
             <?php 
             if (has_tag()):
@@ -50,7 +50,7 @@
 
             <!-- Related -->
             <div class="related-box article-list">
-                <?php get_template_part( 'template-parts/post/content', 'related' );?>
+                <?php get_template_part( 'template-parts/pin-layout/tpl-related', 'post' );?>
             </div>
 
             <?php

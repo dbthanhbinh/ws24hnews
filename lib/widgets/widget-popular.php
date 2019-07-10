@@ -73,9 +73,6 @@ class ws24h_popular_widget extends WP_Widget
 				<li class="box-list-item <?php echo $firsts;?>">									
 					<h5 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
 						<?php the_title();?> </a>
-						<?php if($comment=='true'):?>
-						<label><i class="fa fa-commenting-o" aria-hidden="true"></i>(<?php comments_number('0','1','%');?>)</label>
-						<?php endif;?>
 					</h5>
 					<?php 
 					if($thumb=='true' && has_post_thumbnail()):
