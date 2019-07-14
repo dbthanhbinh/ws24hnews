@@ -11,12 +11,19 @@
         $beds = isset($customMeta['number-of-bed'][0]) ? $customMeta['number-of-bed'][0] : null;
         $baths = isset($customMeta['number-of-bath'][0]) ? $customMeta['number-of-bath'][0] : null;
     }
+
+    $tagHeader = 'h5';
+    if(isset($p) && $p){
+        if($p == 1) $tagHeader = 'h2';
+        else if($p <= 5) $tagHeader = 'h3';
+        else if($p <= 10) $tagHeader = 'h4';
+    }
 ?>
 <article class="pin" id="post-<?= the_ID() ?>">
     <?php if(has_post_thumbnail()):?>
         <div class="entry-thumb items-thumb">
             <a href="<?php the_permalink();?>" title="<?php the_title();?>">
-                <?php the_post_thumbnail("medium");?>
+                <?php the_post_thumbnail("medium", ['alt' => get_the_title()]);?>
             </a>
         </div>
     <?php endif;?>
@@ -39,7 +46,7 @@
             ?>
         </div>
         <header class="entry-header">
-            <h5 class="entry-title items-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></h5>
+            <<?= $tagHeader ?> class="entry-title items-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></<?= $tagHeader ?>>
         </header>
         <div class="entry-excerpt items-excerpt">
             <p class="last-time">Ngày đăng: <?= get_the_date(); ?></p>

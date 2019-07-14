@@ -1,6 +1,5 @@
 <?php get_header();?>
   <div class="container">
-    <?php  require_once('helpers/layout-configs.php'); ?>
     <!-- Breadcrumb -->
     <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
     <!-- End breadcrumb -->
@@ -8,6 +7,7 @@
     <?php require_once ('helpers/layout-configs.php'); ?>
     <div class="row <?= mainLayoutKey() ?>">       
       <div class="<?= mainLayoutClass() ?>">
+          <h1 class="entry-title"><?php echo 'Tìm: ' . get_query_var('s'); ?></h1>
           <div class="row">
             <?php
               if ( have_posts() ) :

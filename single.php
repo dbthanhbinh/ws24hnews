@@ -1,6 +1,5 @@
 <?php get_header();?>
     <div class="container">
-        <?php  require_once('helpers/layout-configs.php'); ?>
         <!-- Breadcrumb -->
         <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>        
         <!-- End breadcrumb -->
