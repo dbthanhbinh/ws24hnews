@@ -90,7 +90,6 @@ function tie_admin_register() {
 	wp_register_script( 'tie-admin-colorpicker', get_template_directory_uri() . '/panel/js/colorpicker.js', array( 'jquery' ) , false , false );  
 	
 	wp_register_style( 'tie-style', get_template_directory_uri().'/panel/style.css', array(), '20120208', 'all' ); 
-	wp_register_style( 'tie-fonts', get_template_directory_uri().'/panel/fonts.css', array(), '20120208', 'all' ); 
 
 	if ( (isset( $_GET['page'] ) && $_GET['page'] == 'panel') || (  $pagenow == 'post-new.php' ) || (  $pagenow == 'post.php' )|| (  $pagenow == 'edit-tags.php' ) ) {
 		wp_enqueue_script( 'tie-admin-colorpicker');  
@@ -227,8 +226,8 @@ function tie_add_admin() {
 	$icon = get_template_directory_uri().'/panel/images/general.png';
 	add_menu_page(THEME_NAME.' Settings', THEME_NAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
 	$theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
-	add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
-	add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
+	// add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
+	// add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
 	//add_submenu_page('panel','Support', 'Support','switch_themes', 'support' , 'tie_get_support');
 
 

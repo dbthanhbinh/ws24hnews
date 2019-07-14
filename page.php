@@ -1,16 +1,21 @@
 <?php get_header();?>
     <div class="container">
-      <div class="row <?= get_main_layout_key () ?>">        
-        <div class="col-lg-8">
+      <!-- Breadcrumb -->
+      <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
+      <!-- End breadcrumb -->
+
+      <?php require_once ('helpers/layout-configs.php'); ?>
+      <div class="row <?= mainLayoutKey() ?>">        
+        <div class="<?= mainLayoutClass() ?> article-content">
             <?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+              /* Start the Loop */
+              while ( have_posts() ) : the_post();
                 get_template_part( 'template-parts/page/content', 'page' );
-			endwhile; // End of the loop.
+              endwhile;
+              // End of the loop.
             ?>
-            
-            <a href="http://localhost/saigonbautyonline/?export=xls&post_type=post&from=111&to=222"> Export </a>
         </div>
+        <?php get_sidebar('second');?>
         <?php get_sidebar();?>
       </div>
     </div>

@@ -9,19 +9,21 @@ if ($categories) {
     $args=array(
         'category__in' => $category_ids,
         'post__not_in' => array($post->ID),
-        'posts_per_page'=> 5, // Number of related posts that will be shown.
+        'posts_per_page'=> 6, // Number of related posts that will be shown.
         'ignore_sticky_posts '=>1
     );
     $my_query = new wp_query( $args );
     
     if( $my_query->have_posts() ) {
         echo '<h3 class="header-title">Xem BĐS khác</h3>';
-        echo '<div class="pinterest-template-related">';
+        echo '<div class="row">';
+        echo '<div class="pinterest-template pinterest-template-related">';
         while( $my_query->have_posts() ) {
             $my_query->the_post();
             $content_type = 'related';
             include TEMPLATEPATH . '/template-parts/pin-layout/content.php';
         }
+        echo '</div>';
         echo '</div>';
     }
 }

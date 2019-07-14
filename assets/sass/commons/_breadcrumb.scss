@@ -23,13 +23,13 @@
             form { position: relative; 
                 border: 1px solid #dddddd;
             }
-            input { height: 27px; }
+            input { height: 25px; }
             input[type='submit'] {
                 border: none;
                 background: transparent;
                 text-indent: -99999px;
                 width: 36px;
-                height: 27px;
+                height: 25px;
             }
 
             input[type='text'] { border: none; }
@@ -37,9 +37,9 @@
             span { 
                 display: inline-block;
                 width: 36px;
-                height: 27px;
+                height: 25px;
                 text-align: center;
-                line-height: 27px;
+                line-height: 25px;
                 position: absolute;
                 top: 0;
                 right: 0;

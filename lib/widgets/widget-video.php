@@ -9,10 +9,9 @@ class ws24h_video_widget extends WP_Widget
 	function __construct() {
 		// This is where we add the style and script
 		add_action( 'load-widgets.php', array(&$this, 'my_custom_load') );
-		
 		parent::__construct(
 			'ws24h_video', // Base ID
-			__( 'Widget Ws24h video', THEME_NAME ), // Name
+			__( 'Ws24h video', THEME_NAME ), // Name
 			array( 'description' => __( 'A Ws24h youtobe video Widget', THEME_NAME ), ) // Args
 		);
 	}
@@ -34,8 +33,12 @@ class ws24h_video_widget extends WP_Widget
 		extract( $args );
 		global $post;
 
-		$background_color = (isset($instance['background_color']) && $instance['background_color']) ? 'style="backgrount: '.$instance['background_color'].'"' : '';
-		$args['before_title'] = str_replace( '<h2', '<h2 style="'.$background_color.'"', $args['before_title'] );
+		$background_color = (isset($instance['background_color']) && $instance['background_color']) ? $instance['background_color'] : null;
+		$title_color = (isset($instance['title_color']) && $instance['title_color']) ? $instance['title_color'] : null;
+
+		if($background_color) $args['before_title'] = str_replace( '<h2', '<h2 style="background:'.$background_color.'"', $args['before_title'] );
+		if($title_color) $args['before_title'] = str_replace( '<label>', '<label style="color:'.$title_color.'; border-color:'.$title_color.'">', $args['before_title'] );
+
         echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
@@ -85,20 +88,25 @@ class ws24h_video_widget extends WP_Widget
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Widget video title', THEME_NAME );
 		$defaults = array(
-            'background_color' => ''
+			'background_color' => '#f1f1f1',
+			'title_color' => '#000000'
         );
         // Merge the user-selected arguments with the defaults
         $instance = wp_parse_args( (array) $instance, $defaults );
 		?>
         <script type='text/javascript'>
             jQuery(document).ready(function($) {
-                $('.my-color-picker').wpColorPicker();
+                $('.set_background_color').wpColorPicker();
+				$('.set_title_color').wpColorPicker();
             });
 		</script> 
 		<p>
-            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Border Color', "" ); ?></label>
-            <span><?php _e( 'The image border color', '' ); ?></span>
-            <input class="my-color-picker" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />                            
+            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Header background color', THEME_NAME ); ?></label>
+            <input class="set_background_color" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />
+		</p>
+		<p>
+            <label for="<?php echo $this->get_field_id( 'title_color' ); ?>"><?php _e( 'Title color', THEME_NAME ); ?></label>
+            <input class="set_title_color" type="text" id="<?php echo $this->get_field_id( 'title_color' ); ?>" name="<?php echo $this->get_field_name( 'title_color' ); ?>" value="<?php echo esc_attr( $instance['title_color'] ); ?>" />
         </p>
 		<p>
     		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEME_NAME ); ?></label> 
@@ -129,15 +137,15 @@ class ws24h_video_widget extends WP_Widget
 	 *
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $new_instance, $old_instance ) 
+	public function update( $new_instance, $old_instance )
     {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['background_color'] = strip_tags( $new_instance['background_color'] );
+		$instance['title_color'] = strip_tags( $new_instance['title_color'] );
         $instance['source'] = strip_tags( $new_instance['source'] );
         $instance['video_height'] = strip_tags( $new_instance['video_height'] );
         $instance['video_width'] = strip_tags( $new_instance['video_width'] );
-        
 		return $instance;
 	}	
 

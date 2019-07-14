@@ -1,149 +1,18 @@
 <?php
-define ('THEME_NAME', 'ws24hnews');
-$districts = [
-    [
-        "name" => "Q.12",
-        "type" => "quan",
-        "slug" => "quan-12",
-    ],
-    [
-        "name" => "Q.1",
-        "type" => "quan",
-        "slug" => "quan-1",
-    ],
-    [
-        "name" => "Q.2",
-        "type" => "quan",
-        "slug" => "quan-2",
-    ],
-    [
-        "name" => "Q.3",
-        "type" => "quan",
-        "slug" => "quan-3",
-    ],
-    [
-        "name" => "Q.4",
-        "type" => "quan",
-        "slug" => "quan-4",
-    ],
-    [
-        "name" => "Q.5",
-        "type" => "quan",
-        "slug" => "quan-5",
-    ],
-    [
-        "name" => "Q.6",
-        "type" => "quan",
-        "slug" => "quan-6",
-    ],
-    [
-        "name" => "Q.7",
-        "type" => "quan",
-        "slug" => "quan-7",
-    ],
-    [
-        "name" => "Q.8",
-        "type" => "quan",
-        "slug" => "quan-8",
-    ],
-    [
-        "name" => "Q.9",
-        "type" => "quan",
-        "slug" => "quan-9",
-    ],
-    [
-        "name" => "Q.10",
-        "type" => "quan",
-        "slug" => "quan-10",
-    ],
-    [
-        "name" => "Q.11",
-        "type" => "quan",
-        "slug" => "quan-11",
-    ],
-    [
-        "name" => "Thủ Đức",
-        "type" => "quan",
-        "slug" => "thu-duc",
-    ],
-    [
-        "name" => "Gò Vấp",
-        "type" => "quan",
-        "slug" => "go-vap",
-    ],
-    [
-        "name" => "Bình Thạnh",
-        "type" => "quan",
-        "slug" => "binh-thanh",
-    ],
-    [
-        "name" => "Tân Bình",
-        "type" => "quan",
-        "slug" => "tan-binh",
-    ],
-    [
-        "name" => "Tân Phú",
-        "type" => "quan",
-        "slug" => "tan-phu",
-    ],
-    [
-        "name" => "Phú Nhuận",
-        "type" => "quan",
-        "slug" => "phu-nhuan",
-    ],
-    [
-        "name" => "Bình Tân",
-        "type" => "quan",
-        "slug" => "binh-tan",
-    ],
-    [
-        "name" => "Củ Chi",
-        "type" => "huyen",
-        "slug" => "cu-chi",
-    ],
-    [
-        "name" => "Hóc Môn",
-        "type" => "huyen",
-        "slug" => "hoc-mon",
-    ],
-    [
-        "name" => "Bình Chánh",
-        "type" => "huyen",
-        "slug" => "binh-chanh",
-    ],
-    [
-        "name" => "Nhà Bè",
-        "type" => "huyen",
-        "slug" => "nha-be",
-    ],
-    [
-        "name" => "Cần Giờ",
-        "type" => "huyen",
-        "slug" => "can-gio",
-    ]
-];
-
-function getDistrictName($key){
-	if(!$key) return null;
-	global $districts;
-	foreach ($districts as $key=>$item) {
-		if($item['slug'] == $key)
-			return $item['name'];
-	}
-	return null;
-}
-
+define ('THEME_NAME', 'Ws24h-Admin');
+require_once ('helpers/districts.php');
 require_once ('lib/admin/setting.php');
 require_once ('lib/modifys/index.php');
-require_once ('lib/_functions.php');
 require_once ('lib/widgets/widgets.php');
-require_once ('panel/setting.php');
+require_once ('lib/front-end/template-tags.php');
+// require_once ('panel/setting.php');
 if (is_admin()) {
 
 } else {
-	if( tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
+	if( function_exists('tie_get_option') && tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
 		require_once ('modules/homepage/tpl-home.php');
 	}
+
 }
 
 function ws24h_scripts () {
@@ -218,6 +87,7 @@ function ws24h_facebook_lib_scripts () {
 }
 add_action( 'wp_footer', 'ws24h_facebook_lib_scripts' );
 
+require_once ('modules/callsupport/callsupport.php');
 // =============================================
 /**
  * Filter the except length to 20 words.
@@ -307,7 +177,6 @@ function change_tag_cloud_font_sizes( array $args ) {
     $args['largest'] = '16';
     return $args;
 }
-
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {

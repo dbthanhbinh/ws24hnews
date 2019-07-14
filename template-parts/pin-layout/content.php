@@ -12,16 +12,15 @@
         $baths = isset($customMeta['number-of-bath'][0]) ? $customMeta['number-of-bath'][0] : null;
     }
 ?>
-<div class="pin">
+<article class="pin" id="post-<?= the_ID() ?>">
     <?php if(has_post_thumbnail()):?>
-        <div class="items-thumb">
+        <div class="entry-thumb items-thumb">
             <a href="<?php the_permalink();?>" title="<?php the_title();?>">
                 <?php the_post_thumbnail("medium");?>
             </a>
         </div>
     <?php endif;?>
-
-    <div class="items-body">
+    <div class="entry-content items-body">
         <div class="items-properties-list">
             <?php
             if($price || $acreage){
@@ -39,16 +38,14 @@
             }
             ?>
         </div>
-        <h5 class="items-title">
-            <a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
-        </h5>
-        <div class="items-excerpt">
-            <p class="last-time">Ngày đăng: <?=
-                get_the_date();
-            ?></p>
+        <header class="entry-header">
+            <h5 class="entry-title items-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></h5>
+        </header>
+        <div class="entry-excerpt items-excerpt">
+            <p class="last-time">Ngày đăng: <?= get_the_date(); ?></p>
             <?php the_excerpt();?>
         </div>
-        <div class="items-readmore">
+        <div class="entry-readmore items-readmore">
             <div class="row">
                 <ul class='properties-list col-md-12'>
                     <?php if($beds) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $beds ?> Phòng"><i class="fa fa-bed" aria-hidden="true"></i><span><?= $beds ?></span></li> <?php }?>
@@ -58,4 +55,4 @@
             </div>
         </div>
     </div>
-</div>
+</article>

@@ -19,11 +19,11 @@
         /*padding-bottom: 4px;*/
         /*background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);*/
         opacity            : 1;
-
         -webkit-transition : all .2s ease;
         -moz-transition    : all .2s ease;
         -o-transition      : all .2s ease;
         transition         : all .2s ease;
+        border: 1px solid $boder_color;
 
         img {
             width : 100%;
@@ -43,6 +43,7 @@
         .items-body{
             clear: both;
             display: block;
+            padding: 0 10px 5px 10px;
         }
 
         .items-title {
@@ -133,6 +134,16 @@
         column-count         : 2;
     }
 
+    .left-sidebar,
+    .right-sidebar
+    {
+        .pinterest-template {
+            -webkit-column-count : 2;
+            -moz-column-count    : 2;
+            column-count         : 2;
+        }
+    }
+
     .pinterest-template-related {
         -webkit-column-count : 2;
         -moz-column-count    : 2;
@@ -146,6 +157,16 @@
         -webkit-column-count : 1;
         -moz-column-count    : 1;
         column-count         : 1;
+    }
+
+    .left-sidebar,
+    .right-sidebar
+    {
+        .pinterest-template {
+            -webkit-column-count : 1;
+            -moz-column-count    : 1;
+            column-count         : 1;
+        }
     }
 
     .pinterest-template-related {
@@ -168,7 +189,19 @@
 
 @media (min-width : 960px) {
     .pinterest-template {
+        -webkit-column-count : 2;
+        -moz-column-count    : 2;
+        column-count         : 2;
+    }
 
+    .left-sidebar,
+    .right-sidebar
+    {
+        .pinterest-template {
+            -webkit-column-count : 2;
+            -moz-column-count    : 2;
+            column-count         : 2;
+        }
     }
 }
 
@@ -177,6 +210,16 @@
         -webkit-column-count : 3;
         -moz-column-count    : 3;
         column-count         : 3;
+    }
+
+    .left-sidebar,
+    .right-sidebar
+    {
+        .pinterest-template {
+            -webkit-column-count : 2;
+            -moz-column-count    : 2;
+            column-count         : 2;
+        }
     }
 
     .pinterest-template-related {
@@ -188,8 +231,4 @@
 
 .pinterest-template .pin:hover {
     opacity : 0.4;
-}
-
-.pinterest-template .pin p {
-
 }

@@ -2,10 +2,10 @@
     clear: both;
     padding: 0;
     .render-logo { float: left; }
-
     ul {
         padding: 0;
         margin: 5px 0;
+        line-height: 25px;
         li {
             display     : inline;
             border-left : 1px solid #dddddd;
@@ -16,8 +16,7 @@
                 padding-left : 0;
             }
 
-            a {
-            }
+            a {}
         }
     }
 }

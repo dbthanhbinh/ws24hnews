@@ -4,15 +4,6 @@
     }
 }
 
-@media (max-width: 991px) and (min-width: 767px) {
-    .top-header {
-        clear: both;    
-        .render-logo {
-            float: left;
-        }
-    }
-}
-
 @media (max-width: 991px) {
     .navbar-expand-lg>.container, .navbar-expand-lg>.container-fluid {
         padding-left: 15px;
@@ -82,6 +73,16 @@
     .box-fix-max { 
         clear: both;
         margin-top: 15px; 
+    }
+}
+
+
+@media (max-width: 991px) and (min-width: 767px) {
+    .top-header {
+        clear: both;    
+        .render-logo {
+            float: left;
+        }
     }
 }
 

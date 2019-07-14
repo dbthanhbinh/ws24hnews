@@ -1,8 +1,14 @@
 <?php
 /**
- * Create new section Customizer */
- 
-function your_theme_new_customizer_settings( $wp_customize ) {   
+ * Create new section Customizer
+ **/
+function your_theme_new_customizer_settings( $wp_customize ) {
+
+    $choicesLayout =  [
+        'full' => __('Full width'),
+        'left-sidebar' => __('Left sidebar'),
+        'right-sidebar' => __('Right sidebar')
+    ];
 
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
@@ -30,7 +36,6 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'flex_height ' => false,
     ) ) );
 
-    // =============================================================================================
     // Theme options
     $wp_customize->add_section(
         "section_contact", 
@@ -174,12 +179,78 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         )
     );
 
-    // Facebook fanpage
-    $wp_customize->add_setting('footer_layout',
-        array(
-            'default' => '3c',
-        )
-    );
+    $wp_customize->add_setting('show_top_header', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_top_header',
+    array(
+        'label' => 'Show top header',
+        'section' => 'section_layout',
+        'settings' => 'show_top_header',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    $wp_customize->add_setting('show_header', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_header',
+    array(
+        'label' => 'Show header',
+        'section' => 'section_layout',
+        'settings' => 'show_header',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    // Home layout
+    $wp_customize->add_setting('home_layout', ['default' => 'full']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
+    array(
+        'label' => 'Home Layout',
+        'section' => 'section_layout',
+        'settings' => 'home_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Pages layout
+    $wp_customize->add_setting('page_layout', ['default' => 'right-sidebar']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'page_layout',
+    array(
+        'label' => 'Pages Layout',
+        'section' => 'section_layout',
+        'settings' => 'page_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Single layout
+    $wp_customize->add_setting('single_layout', ['default' => 'right-sidebar']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'single_layout',
+    array(
+        'label' => 'Single Layout',
+        'section' => 'section_layout',
+        'settings' => 'single_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Single layout
+    $wp_customize->add_setting('archive_layout', ['default' => 'right-sidebar']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archive_layout',
+    array(
+        'label' => 'Archives Layout',
+        'section' => 'section_layout',
+        'settings' => 'archive_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Footer_layout
+    $wp_customize->add_setting('footer_layout', ['default' => '3c']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_layout',
     array(
         'label' => 'Footer Layout',
@@ -196,36 +267,16 @@ function your_theme_new_customizer_settings( $wp_customize ) {
             'col-wide-col' => __('col - Wide - col')
         ),
     ) ) );
-
-    // Facebook fanpage
-    $wp_customize->add_setting('home_layout',
-        array(
-            'default' => '1c',
-        )
-    );
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
-    array(
-        'label' => 'Home Layout',
-        'section' => 'section_layout',
-        'settings' => 'home_layout',
-        'type' => 'select',
-        'choices' => array(
-            '1c' => __('1 Col'),
-            '2c' => __('2 cols'),
-            '3c' => __('3 cols')
-        ),
-    ) ) );
-
 }
 add_action( 'customize_register', 'your_theme_new_customizer_settings' );
 
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function ws24hnews_customize_preview_js() {
-	wp_enqueue_script( 'ws24hnews-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+function ws24h_customize_preview_js() {
+	wp_enqueue_script( 'ws24h-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'ws24hnews_customize_preview_js' );
+add_action( 'customize_preview_init', 'ws24h_customize_preview_js' );
   
 
 // class ThemeMods {

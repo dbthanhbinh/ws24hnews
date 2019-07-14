@@ -1,41 +1,50 @@
 <?php get_header();?>
-    <div class="container">
-    
+  <div class="container">
+    <?php  require_once('helpers/layout-configs.php'); ?>
     <!-- Breadcrumb -->
     <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
     <!-- End breadcrumb -->
 
-      <div class="row <?= get_main_layout_key () ?>">        
-        <div class="<?= get_main_layout () ?> article-list">
+    <?php require_once ('helpers/layout-configs.php'); ?>
+    <div class="row <?= mainLayoutKey() ?>">       
+      <div class="<?= mainLayoutClass() ?>">
           <div class="row">
-            <div class="col-lg-12">
-            
-              <?php
-                if ( have_posts() ) :
-                  /* Start the Loop */
+            <?php
+              if ( have_posts() ) :
+                echo '<div class="'. mainLayoutTemplate() .'">';
+                /* Start the Loop */
+                $pos = 1;
+                if(isPinLayout()){
                   while ( have_posts() ) : the_post();
-                    get_template_part( 'template-parts/post/content', get_post_format() );
-                  endwhile;
+                    get_template_part( 'template-parts/pin-layout/content', get_post_format()); 
                   
-                  the_posts_pagination( array(
-                    'before'      => '<div class="page-links">' . __( 'Pages:', THEME_NAME ),
-                    'after'       => '</div>',
-                    'link_before' => '<span class="page-number">',
-                    'link_after'  => '</span>',
-                    'prev_text'          => __('Trước'),
-                    'next_text'          => __( 'Sau' ),
-                  ) );
-
-
-                else :
-                  get_template_part( 'template-parts/post/content', 'none' );
-                endif;
-              ?>
-            </div>  
+                    $pos++;
+                  endwhile;
+                } else {
+                  while ( have_posts() ) : the_post();
+                    if ($pos === 1)
+                      get_template_part( 'template-parts/post/content', 'big');
+                    else  
+                      get_template_part( 'template-parts/post/content', get_post_format() );                      
+                  
+                    $pos++;
+                  endwhile;
+                }
+                echo '</div>';
+              else :
+                echo '<div class="col-lg-12">';
+                get_template_part( 'template-parts/post/content', 'none' );
+                echo '</div>';
+              endif;
+            ?>
           </div>
+
+          <!-- For Page Nav -->
+          <?php require_once('helpers/pagination.php'); ?>
         </div>        
         <?php get_sidebar('second');?>
         <?php get_sidebar();?>
       </div>
     </div>
+  </div>
 <?php get_footer();?>

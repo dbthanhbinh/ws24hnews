@@ -7,11 +7,17 @@ class ws24h_popular_widget extends WP_Widget
 	 * Register widget with
 	 */
 	function __construct() {
+		add_action( 'load-widgets.php', array( &$this ,'my_custom_load') );
 		parent::__construct(
 			'ws24h_popular', // Base ID
 			__( 'Ws24h Post popular', THEME_NAME ), // Name
-			array( 'description' => __( 'Ws24h Post popular Widget', THEME_NAME ), ) // Args
+			array( 'description' => __( 'Ws24h Post popular', THEME_NAME ), ) // Args
 		);
+	}
+
+	function my_custom_load() {    
+		wp_enqueue_style( 'wp-color-picker' );        
+		wp_enqueue_script( 'wp-color-picker' );    
 	}
 
 	/**
@@ -25,7 +31,14 @@ class ws24h_popular_widget extends WP_Widget
 	public function widget( $args, $instance ) {
 	    wp_reset_query();
 		extract( $args );
-        global $post,$exclude_post, $wpdb;        
+		global $post,$exclude_post, $wpdb;
+		
+		$background_color = (isset($instance['background_color']) && $instance['background_color']) ? $instance['background_color'] : null;
+		$title_color = (isset($instance['title_color']) && $instance['title_color']) ? $instance['title_color'] : null;
+
+		if($background_color) $args['before_title'] = str_replace( '<h2', '<h2 style="background:'.$background_color.'"', $args['before_title'] );
+		if($title_color) $args['before_title'] = str_replace( '<label>', '<label style="color:'.$title_color.'; border-color:'.$title_color.'">', $args['before_title'] );
+
         $color_full = '';            
 		$before_widget = $args['before_widget'];
 		
@@ -114,9 +127,29 @@ class ws24h_popular_widget extends WP_Widget
         foreach ($categories_obj as $pn_cat) {
 			$categories[$pn_cat->cat_ID] = $pn_cat->cat_name;
 		}
-        
+		
+		$defaults = array(
+			'background_color' => '#f1f1f1',
+			'title_color' => '#000000'
+        );
+        // Merge the user-selected arguments with the defaults
+        $instance = wp_parse_args( (array) $instance, $defaults );
 		?>
-        
+        <script type='text/javascript'>
+            jQuery(document).ready(function($) {
+                $('.set_background_color').wpColorPicker();
+				$('.set_title_color').wpColorPicker();
+            });
+		</script>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Header background color', THEME_NAME ); ?></label>
+            <input class="set_background_color" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />
+		</p>
+		<p>
+            <label for="<?php echo $this->get_field_id( 'title_color' ); ?>"><?php _e( 'Title color', THEME_NAME ); ?></label>
+            <input class="set_title_color" type="text" id="<?php echo $this->get_field_id( 'title_color' ); ?>" name="<?php echo $this->get_field_name( 'title_color' ); ?>" value="<?php echo esc_attr( $instance['title_color'] ); ?>" />
+		</p>
+		
 		<p>
     		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEME_NAME ); ?></label> 
     		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
@@ -173,6 +206,8 @@ class ws24h_popular_widget extends WP_Widget
 	public function update( $new_instance, $old_instance ) 
     {
 		$instance = array();
+		$instance['background_color'] = strip_tags( $new_instance['background_color'] );
+		$instance['title_color'] = strip_tags( $new_instance['title_color'] );
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
         $instance['cats_id'] = implode(',' , $new_instance['cats_id']  );
         $instance['latest'] = strip_tags( $new_instance['latest'] );			
