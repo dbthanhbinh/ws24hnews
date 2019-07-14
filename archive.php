@@ -1,6 +1,5 @@
 <?php get_header();?>
   <div class="container">
-    <?php  require_once('helpers/layout-configs.php'); ?>
     <!-- Breadcrumb -->
     <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
     <!-- End breadcrumb -->
@@ -8,6 +7,10 @@
     <?php require_once ('helpers/layout-configs.php'); ?>
     <div class="row <?= mainLayoutKey() ?>">       
       <div class="<?= mainLayoutClass() ?>">
+        <header class="entry-header">
+          <h1  class="entry-title"><?php single_cat_title(); ?></h1>
+        </header>
+        
         <div class="row">
         <?php
           if ( have_posts() ) :

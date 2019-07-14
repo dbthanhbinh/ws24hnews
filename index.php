@@ -5,6 +5,7 @@
     <?php require_once ('helpers/layout-configs.php'); ?>
     <div class="row <?= mainLayoutKey() ?>">
         <div class="<?= mainLayoutClass() ?> <?= mainLayoutTemplate() ?>">
+            <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
             <?php
                 if(function_exists('tie_get_option')
                     && tie_get_option('on_home')
@@ -19,8 +20,12 @@
                         _e( 'You can use Homepage builder to build your homepage' , THEME_NAME );
 
                 } else {
-                    while ( have_posts() ) : the_post();
-                        get_template_part( 'template-parts/pin-layout/content', get_post_format() );
+                    $p = 1;
+                    while ( have_posts() ) :
+                        the_post();
+                        
+                        include TEMPLATEPATH  . '/template-parts/pin-layout/content.php';
+                        $p++;
                     endwhile;
                 }
             ?> 

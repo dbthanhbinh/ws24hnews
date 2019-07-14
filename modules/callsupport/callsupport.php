@@ -12,11 +12,11 @@ function ws24h_call_support_online(){
                 <span>Hotline: <?= get_theme_mod('contact_hotline')?></span>
             </a>
         <a class="mes" href="https://m.me/__">
-            <img src="<?= get_template_directory_uri() ?>/assets/images/messenger.png">
-            <span>Nhắn tin facebook</span>
+            <img alt="Facebook" src="<?= get_template_directory_uri() ?>/assets/images/messenger.png">
+            <span>Facebook</span>
         </a>
         <a class="zalo" href="http://zalo.me/<?= get_theme_mod('contact_hotline')?>">
-            <img src="<?= get_template_directory_uri()?>/assets/images/zalo.png">
+            <img alt="Zalo" src="<?= get_template_directory_uri()?>/assets/images/zalo.png">
             <span>Zalo: <?= get_theme_mod('contact_hotline')?></span>
         </a>
         <a class="sms" href="sms:<?= get_theme_mod('contact_hotline')?>?body=<?= get_the_title()?>">
