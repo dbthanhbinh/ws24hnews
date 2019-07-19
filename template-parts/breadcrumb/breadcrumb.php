@@ -1,5 +1,5 @@
 <div class="row box-breadcrumb">
-    <div class="col-lg-7 col-md-7">
+    <div class="col-lg-7 col-md-7 box-breadcrumb-part">
         <ul class="breadcrumb">
             <li><a href="<?= site_url() ?>">Home</a></li>
             <li><a href="#">

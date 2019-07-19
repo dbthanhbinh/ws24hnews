@@ -1,7 +1,13 @@
 .top-header {
     clear: both;
     padding: 0;
-    .render-logo { float: left; }
+
+    .container {
+        .row{
+            display: block;
+        }
+    }
+    .render-logo { float: left; }    
     ul {
         padding: 0;
         margin: 5px 0;
@@ -18,5 +24,29 @@
 
             a {}
         }
+    }
+}
+
+.small-render-logo {
+    display: none;
+
+    .them-logo{
+        img{
+            max-height: 35px;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .top-header {
+        .render-logo{display: none}
+        .top-header-banner{
+            padding: 0;
+        }
+    }
+
+    .small-render-logo{
+        display: block;        
     }
 }

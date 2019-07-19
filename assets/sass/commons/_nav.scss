@@ -2,18 +2,21 @@
     clear: both;
     padding: 0 5px;
 }
-@media (min-width: 992px) {
-    .navbar{
-        background: $menu_bg;
-        border: 1px solid $menu_border_color;
-        border-left: none;
-        border-right: none;
-        margin-bottom: 5px;
 
-        .fa-home {
-            font-size: 30px;
-        }
+.navbar{
+    background: $menu_bg;
+    border: 1px solid $menu_border_color;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5px;
+
+    .fa-home {
+        font-size: 30px;
+        color: $menu_link_color;
     }
+}
+
+@media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav {
         .nav-item {
             padding: 10px 0;
@@ -21,6 +24,7 @@
                 border-left: 1px solid $menu_border_color;
                 padding: 0 10px;
                 text-transform: uppercase;
+                color: $menu_link_color;
             }
         }
         .dropdown-menu {

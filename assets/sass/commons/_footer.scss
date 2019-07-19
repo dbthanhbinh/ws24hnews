@@ -29,8 +29,8 @@
 
 .copy-right-box {
     text-align: left;
-    background: $color-black;
-    color: $colors-white;
+    background: $footer_bg;
+    color: $footer_link_color;
     p {
         padding: 10px 0;
         margin: 0;
@@ -49,9 +49,9 @@
                 list-style: none;
                 display: inline-block;
                 a {
-                    border-left: 1px solid $colors-white;
+                    border-left: 1px solid $footer_link_color;
                     padding:  0 5px;
-                    color: $colors-white;
+                    color: $footer_link_color;
                 }
             }
         }
