@@ -8,7 +8,7 @@
   </head>
   <body <?php body_class(); ?>>
     <?php if(get_theme_mod('show_top_header') || get_theme_mod('show_header')):?>
-    <div class="top-header">
+    <div id="top-header" class="top-header">
       <?php if(get_theme_mod('show_top_header')):?>
       <div class="container top-header-menu">
           <ul class="navigation top-bar-menu right">

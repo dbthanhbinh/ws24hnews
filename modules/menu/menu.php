@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav id="main-navbar" class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="<?= site_url() ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
         <div class="small-render-logo render-logo">
