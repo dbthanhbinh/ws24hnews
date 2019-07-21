@@ -25,11 +25,16 @@
             a {}
         }
     }
+
+    .top-header-menu{
+        .top-bar-menu-hotline{
+            font-weight: bold;
+        }
+    }
 }
 
 .small-render-logo {
     display: none;
-
     .them-logo{
         img{
             max-height: 35px;

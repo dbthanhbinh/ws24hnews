@@ -48,7 +48,6 @@
 
         p {
             margin : 0;
-
             &.last-time{
                 font-size: 12px;
                 font-style: italic;
@@ -121,8 +120,7 @@
     }
 }
 
-@media (max-width : 970px) {
-    .full-width,
+@media (max-width : 991px) {
     .left-sidebar,
     .right-sidebar
     {
