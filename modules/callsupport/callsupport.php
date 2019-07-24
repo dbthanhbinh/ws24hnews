@@ -1,5 +1,5 @@
 <?php
-add_action( 'wp_footer', 'ws24h_call_support_online' );
+// add_action( 'wp_footer', 'ws24h_call_support_online' );
 function ws24h_call_support_online(){
 ?>
     <!--Call Support-->
