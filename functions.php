@@ -5,6 +5,7 @@ require_once ('lib/admin/setting.php');
 require_once ('lib/modifys/index.php');
 require_once ('lib/widgets/widgets.php');
 require_once ('lib/front-end/template-tags.php');
+require_once ('helpers/commons.php');
 // require_once ('panel/setting.php');
 if (is_admin()) {
 

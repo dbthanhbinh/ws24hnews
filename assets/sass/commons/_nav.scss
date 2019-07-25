@@ -1,11 +1,8 @@
-.navbar {
+.navbar{
     clear: both;
     padding: 0 5px;
-}
-
-.navbar{
-    background: $menu_bg;
-    border: 1px solid $menu_border_color;
+    background: #ffffff;
+    // border: 1px solid $menu_border_color;
     border-left: none;
     border-right: none;
     margin-bottom: 5px;
@@ -24,16 +21,18 @@
         display: block;
         transition: all 0.3s;
         top: 0;
+        z-index: 999;
+        opacity: 0.95;
     }
 
     .navbar-expand-lg .navbar-nav {
         .nav-item {
             padding: 10px 0;
             >.nav-link {
-                border-left: 1px solid $menu_border_color;
+                // border-left: 1px solid $menu_border_color;
                 padding: 0 10px;
                 text-transform: uppercase;
-                color: $menu_link_color;
+                // color: $menu_link_color;
             }
         }
         .dropdown-menu {

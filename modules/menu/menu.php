@@ -1,7 +1,19 @@
-<nav id="main-navbar" class="navbar navbar-expand-lg">
+<nav id="main-navbar" data-ref="<?= getHeaderClassConfigVersion() ?>" class="navbar navbar-expand-lg <?= getHeaderClassConfigVersion() ?>">
     <div class="container">
-        <a class="navbar-brand" href="<?= site_url() ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
-        <div class="small-render-logo render-logo">
+        <?php
+        if(getConfigVersion() != '' || getConfigVersion() != 'v1'){
+            ?>
+            <div class="render-logo">
+                <?= render_logo() ?>
+            </div>
+            <?php
+        } else {
+            ?>
+            <a class="navbar-brand" href="<?= site_url() ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <?php
+        }
+        ?>
+        <div class="small-render-logo">
               <?= render_logo() ?>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
