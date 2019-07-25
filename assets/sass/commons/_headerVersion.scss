@@ -1,0 +1,17 @@
+@media (min-width: 1200px) {}
+@media (min-width: 992px) {
+    .header-version-v2{
+        &.navbar{
+            min-height: 80px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .header-version-v2{
+        .render-logo{display: none;}
+    }
+}
+
+@media (min-width: 768px) {}
+@media (max-width: 767px) {}
+
