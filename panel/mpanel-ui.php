@@ -48,7 +48,6 @@ function panel_options() {
 			<div class="logo"></div>
 
 			<ul>
-				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
 				<li class="tie-tabs general"><a href="#tab1"><span></span>General Settings</a></li>
 				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
 				<li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li>

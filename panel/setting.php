@@ -2,15 +2,41 @@
 // include (TEMPLATEPATH . '/panel/register-posttype.php');
 // tie-Panel
 ######include (TEMPLATEPATH . '/panel/shortcodes/shortcode.php');
+$customSlider = true;
+$customClient = true;
+
 if (is_admin()) {
 	include (TEMPLATEPATH . '/panel/mpanel-ui.php');
 	include (TEMPLATEPATH . '/panel/mpanel-functions.php');
-    // include (TEMPLATEPATH . '/panel/custom-slider.php');
+	if($customSlider)
+		include (TEMPLATEPATH . '/panel/custom-slider.php');
+	if($customClient)
+		include (TEMPLATEPATH . '/panel/custom-client.php');
+
     ######include (TEMPLATEPATH . '/panel/custom-static.php');
 	######include (TEMPLATEPATH . '/panel/category-options.php');
 	include (TEMPLATEPATH . '/panel/post-options.php');	
 	######include (TEMPLATEPATH . '/panel/notifier/update-notifier.php');
 	######include (TEMPLATEPATH . '/panel/importer/tie-importer.php');    
+} else {
+	// header
+	if($customSlider || $customClient){
+		add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
+		add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
+	}
+}
+
+function ws24h_slideshow_style () {
+	// Theme stylesheet.
+	wp_enqueue_style( 'ws24h_slideshow_owl-carousel', get_theme_file_uri( '/modules/owl-carousel/owl.carousel.css' ));
+	wp_enqueue_style( 'ws24h_slideshow_owl-carousel-theme', get_theme_file_uri( '/modules/owl-carousel/owl.theme.css' ));
+}
+function ws24h_slideshow_owl_carousel_script(){
+	?>
+	<!-- Owl Carousel Assets -->
+	<script src="<?php echo get_template_directory_uri();?>/modules/owl-carousel/jquery-1.9.1.min.js"></script>
+	<script src="<?php echo get_template_directory_uri();?>/modules/owl-carousel/owl.carousel.js"></script>
+	<?php
 }
 
 /*-----------------------------------------------------------------------------------*/

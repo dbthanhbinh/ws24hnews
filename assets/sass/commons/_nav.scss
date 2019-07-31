@@ -1,11 +1,11 @@
 .navbar{
     clear: both;
-    padding: 0 5px;
+    padding: 0;
     background: #ffffff;
-    // border: 1px solid $menu_border_color;
+    border: transparent;
     border-left: none;
     border-right: none;
-    margin-bottom: 5px;
+    margin: 0;
 
     .fa-home {
         font-size: 30px;

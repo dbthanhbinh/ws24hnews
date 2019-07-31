@@ -1,11 +1,10 @@
 <?php
 function showBoxTitle ($boxTitle) {
 	?>
-	<div class="home-box-title">
-		<ul class="breadcrumb">
-			<li><a href="#"><?= $boxTitle ?></a></li>
-			<li></li>
-		</ul>
+	<div class="col-lg-12">
+		<div class="home-box-title">
+			<h2 class="home-box-header"><a href="#"><?= $boxTitle ?></a></h2>
+		</div>
 	</div>
 	<?php
 }

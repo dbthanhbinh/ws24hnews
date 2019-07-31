@@ -63,3 +63,17 @@
         }
     }
 }
+
+.call-hotline-bar{
+    background: $properties-bg;
+    color: $colors-white;
+    padding: 3px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    a {
+        color: $colors-white;
+    }
+    i{
+        margin-right: 5px;
+    }
+}

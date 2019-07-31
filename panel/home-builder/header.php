@@ -14,8 +14,8 @@
     <label for="tie_home_cats[<?php echo $i ?>][show_title]">
         <span><?= __('Show Title') ?> :</span>
         <select name="tie_home_cats[<?php echo $i ?>][show_title]" id="tie_home_cats[<?php echo $i ?>][show_title]">
-            <option value="y" <?php if( !isset($cat['show_title']) || ( isset($cat['show_title']) && $cat['show_title'] == 'y') ) echo 'selected="selected"'; ?>>Yes</option>
-            <option  <?php if((isset($cat['show_title']) && $cat['show_title'])  == 'n' ) echo 'selected="selected"'; ?> value="n">No</option>
+            <option <?php if( isset($cat['show_title']) && $cat['show_title'] == 'y' ) echo 'selected="selected"'; ?> value="y">Yes</option>
+            <option <?php if(!isset($cat['show_title']) || (isset($cat['show_title']) && $cat['show_title'] == 'n')) echo 'selected="selected"'; ?> value="n">No</option>
         </select>
     </label>
 

@@ -6,24 +6,25 @@ require_once ('lib/modifys/index.php');
 require_once ('lib/widgets/widgets.php');
 require_once ('lib/front-end/template-tags.php');
 require_once ('helpers/commons.php');
-// require_once ('panel/setting.php');
+require_once ('panel/setting.php');
 if (is_admin()) {
 
 } else {
 	if( function_exists('tie_get_option') && tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
 		require_once ('modules/homepage/tpl-home.php');
 	}
-
+	add_action( 'wp_enqueue_scripts', 'ws24h_scripts' );
 }
 
 function ws24h_scripts () {
-    // Theme stylesheet.
+	// Theme stylesheet.
+	wp_enqueue_script( 'main-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js');
+	wp_enqueue_script( 'jquery-bootstrap-bundle', get_theme_file_uri( '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ), array( 'jquery' ), '4.1', true );
 	wp_enqueue_style( 'ws24h-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'ws24h-bootstrap', get_theme_file_uri( '/assets/vendor/bootstrap/css/bootstrap.min.css' ), array( 'ws24h-style' ), '4.1' );
 	wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array( 'ws24h-style' ), '1.0' );
 	wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
 }
-add_action( 'wp_enqueue_scripts', 'ws24h_scripts' );
 
 function ws24h_setup () {
     // This theme uses wp_nav_menu() in two locations.
@@ -60,8 +61,6 @@ add_action( 'after_setup_theme', 'ws24h_setup' );
 
 // Footer
 function ws24h_footer_scripts () {
-    wp_enqueue_script( 'jquery-bootstrap', get_theme_file_uri( '/assets/vendor/jquery/jquery.min.js' ), array( 'jquery' ), '4.1', true );
-	wp_enqueue_script( 'jquery-bootstrap-bundle', get_theme_file_uri( '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ), array( 'jquery' ), '4.1', true );
 	wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'jquery-bootstrap-customjs', get_theme_file_uri( '/assets/js/customjs.js' ), array( 'jquery' ), '1.0', true );
 }
@@ -88,7 +87,6 @@ function ws24h_facebook_lib_scripts () {
 }
 add_action( 'wp_footer', 'ws24h_facebook_lib_scripts' );
 
-require_once ('modules/callsupport/callsupport.php');
 // =============================================
 /**
  * Filter the except length to 20 words.
@@ -118,7 +116,6 @@ function get_excerpt($limit, $readMore=false, $source = null){
 	// 	return $excerpt = $excerpt . '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
     return $excerpt . '...';
 }
-
 function ws24h_custom_the_excerpt () {
 	$limit = 150;
 	$excerpt = get_the_excerpt();

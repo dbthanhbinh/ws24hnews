@@ -1,9 +1,9 @@
 <?php get_header();?>
-    <div class="container">
-        <!-- Breadcrumb -->
-        <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>        
-        <!-- End breadcrumb -->
+    <!-- Breadcrumb -->
+    <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
+    <!-- End breadcrumb -->
 
+    <div class="container">
         <?php require_once ('helpers/layout-configs.php'); ?>
         <div class="row <?= mainLayoutKey() ?> ">       
             <div class="<?= mainLayoutClass() ?>">
@@ -12,7 +12,7 @@
                         <?php
                         /* Start the Loop */
                         while ( have_posts() ) : the_post();
-                            get_template_part( 'template-parts/post/content', get_post_format() );
+                            get_template_part( 'template-parts/post/content', 'single' );
                         endwhile;
                         // End of the loop.
                         ?>

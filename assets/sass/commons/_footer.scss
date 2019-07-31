@@ -1,7 +1,14 @@
 .footer-section {    
-    padding: 0;
-    margin-top: 15px;
-    
+    padding: 15px 0 5px 0;
+    margin-top: 0px;
+    background: #f1f1f1;
+
+    h5{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
     .box-footer {
         border-top: 2px solid $boder_top_color;
         padding: 10px 0 10px 0;
@@ -22,6 +29,31 @@
 
             i {
                 margin-right: 5px;
+            }
+        }
+    }
+
+    .socials-link-list{
+        li{
+            display: inline;
+            margin-right: 5px;
+            a{
+                padding: 0px;
+                font-size: 25px;
+                padding: 3px;
+            }
+        }
+    }
+
+    .contact-list{
+        li{
+            margin-bottom: 5px;
+            line-height: 18px;
+
+            i{
+                font-size: 18px;
+                min-width: 24px;
+                float: left;
             }
         }
     }

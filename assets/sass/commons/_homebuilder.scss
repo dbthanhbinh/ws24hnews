@@ -14,10 +14,15 @@
 
 .home-box-title {
     clear: both;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    font-size: 14px;
-    border-top: 2px solid #ccc;
-    font-weight: 700;
-    background: #eee;
+    display: block;
+    width: 100%;
+
+    .home-box-header {
+        a{
+            text-transform: uppercase;
+            font-size: 17px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
 }

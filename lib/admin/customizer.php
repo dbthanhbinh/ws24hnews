@@ -267,6 +267,42 @@ function your_theme_new_customizer_settings( $wp_customize ) {
             'col-wide-col' => __('col - Wide - col')
         ),
     ) ) );
+
+    // Enable footer copyright
+    $wp_customize->add_setting('show_footer_copyright', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_copyright',
+    array(
+        'label' => 'Show footer copyright',
+        'section' => 'section_layout',
+        'settings' => 'show_footer_copyright',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    // Enable Client
+
+    $customClientArgs = array( 'post_type' => 'tie_clients', 'no_found_rows' => 1  );
+    $customClientSql = new WP_Query( $customClientArgs );
+    $customClients = [];
+
+    while ( $customClientSql->have_posts() ) {
+        $customClientSql->the_post();
+        $customClients[get_the_ID()] = get_the_title();
+    }
+
+    $wp_customize->add_setting('show_client', ['default' => -1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_client',
+    array(
+        'label' => 'Show client group',
+        'section' => 'section_layout',
+        'settings' => 'show_client',
+        'type' => 'select',
+        'choices' => $customClients
+    ) ) );
+
 }
 add_action( 'customize_register', 'your_theme_new_customizer_settings' );
 

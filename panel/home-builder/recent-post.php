@@ -7,7 +7,7 @@
             </option>
         <?php } ?>
     </select>
-</label>    
+</label>
 <label class="build-home-item" for="tie_home_cats[<?php echo $i ?>][number]">
     <span><?= __('Number of posts to show') ?> :</span>
     <input style="width:50px;" id="tie_home_cats[<?php echo $i ?>][number]" 
