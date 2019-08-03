@@ -205,6 +205,21 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         ),
     ) ) );
 
+    // Enable Slideshow
+    $wp_customize->add_setting('show_main_slideshow', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_main_slideshow',
+    array(
+        'label' => 'Show Slide show',
+        'section' => 'section_layout',
+        'settings' => 'show_main_slideshow',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+
     // Home layout
     $wp_customize->add_setting('home_layout', ['default' => 'full']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
@@ -251,7 +266,7 @@ function your_theme_new_customizer_settings( $wp_customize ) {
 
     // Footer_layout
 
-    // Enable footer copyright
+    // Enable footer Layout
     $wp_customize->add_setting('show_footer_layout', ['default' => 0]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_layout',
     array(
