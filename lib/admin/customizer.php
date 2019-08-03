@@ -250,6 +250,21 @@ function your_theme_new_customizer_settings( $wp_customize ) {
     ) ) );
 
     // Footer_layout
+
+    // Enable footer copyright
+    $wp_customize->add_setting('show_footer_layout', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_layout',
+    array(
+        'label' => 'Show footer layout',
+        'section' => 'section_layout',
+        'settings' => 'show_footer_layout',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
     $wp_customize->add_setting('footer_layout', ['default' => '3c']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_layout',
     array(

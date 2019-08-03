@@ -5,7 +5,11 @@
       require_once ('modules/owl-carousel/slide-client.php');
     }
     ?>
-    <?php require_once ('modules/footer/footer.php')?>
+    <?php
+      if(get_theme_mod('show_footer_layout')){
+        require_once ('modules/footer/footer.php');
+      }
+    ?>
     <?php if(get_theme_mod('show_footer_copyright')) {?>
       <div class="copy-right-box">
         <div class="container">  
