@@ -2,15 +2,16 @@
 
 
 <?php 
-$tie_slider_enable = tie_get_option('slider');
-$tie_slider_pos = tie_get_option('slider_pos');
-if($tie_slider_enable && ($tie_slider_pos=='big' || !$tie_slider_pos)):
+if(get_theme_mod('show_main_slideshow')){
+    $tie_slider_enable = tie_get_option('slider');
+    $tie_slider_pos = tie_get_option('slider_pos');
+    if($tie_slider_enable && ($tie_slider_pos=='big' || !$tie_slider_pos)):
 ?>            
-<!-- slide show here-->
-<div class="clear-line-5"></div>
-<?php include TEMPLATEPATH . ('/modules/owl-carousel/slide-show.php')?>
-
-<?php endif;?>
+    <!-- slide show here-->
+    <div class="clear-line-5"></div>
+    <?php include TEMPLATEPATH . ('/modules/owl-carousel/slide-show.php')?>
+    <?php endif;?>
+<?php } ?>
 
 
 
