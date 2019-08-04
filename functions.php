@@ -135,7 +135,7 @@ function ws24h_excerpt_more( $more ) {
 	// return ' ...';
 	return sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
         get_permalink( get_the_ID() ),
-        __( 'Read More', THEME_NAME )
+        __( '...', THEME_NAME )
     );
 }
 add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
