@@ -56,9 +56,9 @@
             <div class="entry-readmore items-readmore">
                 <div class="row">
                     <ul class='properties-list col-md-12'>
-                        <?php if($beds) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $beds ?> Phòng"><i class="fa fa-bed" aria-hidden="true"></i><span><?= $beds ?></span></li> <?php }?>
-                        <?php if($baths) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $baths ?> Phòng"><i class="fa fa-bath" aria-hidden="true"></i><span><?= $baths ?></span></li><?php }?>
-                        <?php if($builds) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $builds ?>"><i class="fa fa-building" aria-hidden="true"></i><span></span></li><?php }?>
+                        <?php if($beds) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $beds ?> Phòng"><i class="fa fa-bed" aria-hidden="true"></i><span><?= $beds ?> Phòng</span></li> <?php }?>
+                        <?php if($baths) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $baths ?> Phòng"><i class="fa fa-bath" aria-hidden="true"></i><span><?= $baths ?> Phòng</span></li><?php }?>
+                        <?php if($builds) {?><li class="col-md-4 col-sm-4 col-4" title="<?= $builds ?>"><i class="fa fa-building" aria-hidden="true"></i><span><?= $builds ?></span></li><?php }?>
                     </ul>
                 </div>
             </div>
