@@ -8,5 +8,5 @@
   </head>
   <body <?php body_class(); ?>>
   <?php
-    require_once ('modules/header/header-' . getConfigVersion() . '.php');
+    require_once ('modules/header/header' . getConfigVersion() . '.php');
   ?>

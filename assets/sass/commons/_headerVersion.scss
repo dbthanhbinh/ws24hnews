@@ -1,8 +1,29 @@
 @media (min-width: 1200px) {}
 @media (min-width: 992px) {
+
+    .header-version-default{
+        .render-logo{
+            .them-logo {
+                img{
+                    max-height: $menu_bar_height;
+                }
+            }
+        }
+    }
+
+    .header-version-v2{
+        .render-logo{
+            .them-logo {
+                img{
+                    max-height: $menu_bar_height;
+                }
+            }
+        }
+    }
+    
     .header-version-v2{
         &.navbar{
-            min-height: 80px;
+            min-height: $menu_bar_height;
         }
     }
 }

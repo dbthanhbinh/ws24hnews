@@ -36,145 +36,13 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'flex_height ' => false,
     ) ) );
 
-    // Theme options
-    $wp_customize->add_section(
-        "section_contact", 
-        array(
-            'title' => __("Contact Options", "ws24h"),
-            'priority' => 130,
-            'description' => __( 'Description Custom Theme Options here' ),
-        )
-    );
-
-    // Contact name
-    $wp_customize->add_setting('company_name');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_name',
-    array(
-        'label' => 'Company name',
-        'section' => 'section_contact',
-        'settings' => 'company_name',
-        'type' => 'text'
-    ) ) );
-
-     // Contact address
-     $wp_customize->add_setting('contact_address');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_address',
-     array(
-         'label' => 'Contact address',
-         'section' => 'section_contact',
-         'settings' => 'contact_address',
-         'type' => 'text'
-     ) ) );
-
-     // Contact email
-     $wp_customize->add_setting('contact_email');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_email',
-     array(
-         'label' => 'Contact email',
-         'section' => 'section_contact',
-         'settings' => 'contact_email',
-         'type' => 'text'
-     ) ) );
-
-     // Contact Phone
-     $wp_customize->add_setting('contact_phone');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_phone',
-     array(
-         'label' => 'Contact phone',
-         'section' => 'section_contact',
-         'settings' => 'contact_phone',
-         'type' => 'text'
-     ) ) );
-
-     // Contact Hotline
-     $wp_customize->add_setting('contact_hotline');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_hotline',
-     array(
-         'label' => 'Contact hotline',
-         'section' => 'section_contact',
-         'settings' => 'contact_hotline',
-         'type' => 'text'
-     ) ) );
-
-     // Contact copyright
-     $wp_customize->add_setting('setting_copyright');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_copyright',
-     array(
-         'label' => 'Setting copyright',
-         'section' => 'section_contact',
-         'settings' => 'setting_copyright',
-         'type' => 'text'
-     ) ) );
-
-
-     // ================================== SOCIALS =================================
-     // Theme Socials link
-    $wp_customize->add_section(
-        "section_socials", 
-        array(
-            'title' => __("Socials Options", "ws24h"),
-            'priority' => 131,
-            'description' => __( 'Description Custom Socials Options here' ),
-        )
-    );
-
-    // Facebook fanpage
-    $wp_customize->add_setting('facebook_link');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_link',
-    array(
-        'label' => 'Facebook link Fanpage',
-        'section' => 'section_socials',
-        'settings' => 'facebook_link',
-        'type' => 'text'
-    ) ) );
-
-    // Youtube link channel
-    $wp_customize->add_setting('youtube_link');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'youtube_link',
-    array(
-        'label' => 'Youtube link channel',
-        'section' => 'section_socials',
-        'settings' => 'youtube_link',
-        'type' => 'text'
-    ) ) );
-
-    // Zalo link channel
-    $wp_customize->add_setting('zalo_link');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'zalo_link',
-    array(
-        'label' => 'Zalo link page',
-        'section' => 'section_socials',
-        'settings' => 'zalo_link',
-        'type' => 'text'
-    ) ) );
-
-    // Google plus channel
-    $wp_customize->add_setting('google_plus_link');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_plus_link',
-    array(
-        'label' => 'Google plus link page',
-        'section' => 'section_socials',
-        'settings' => 'google_plus_link',
-        'type' => 'text'
-    ) ) );
-
-    // Twitter link channel
-    $wp_customize->add_setting('twitter_link');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'twitter_link',
-    array(
-        'label' => 'Twitter link page',
-        'section' => 'section_socials',
-        'settings' => 'twitter_link',
-        'type' => 'text'
-    ) ) );
-
     // ================================== Layout =================================
      // Theme Socials link
      $wp_customize->add_section(
         "section_layout", 
         array(
             'title' => __("Layout Options", "ws24h"),
-            'priority' => 133,
+            'priority' => 120,
             'description' => __( 'Description Custom layout Options here' ),
         )
     );
@@ -264,8 +132,6 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'choices' => $choicesLayout
     ) ) );
 
-    // Footer_layout
-
     // Enable footer Layout
     $wp_customize->add_setting('show_footer_layout', ['default' => 0]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_layout',
@@ -331,7 +197,207 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'settings' => 'show_client',
         'type' => 'select',
         'choices' => $customClients
+    ) ) );    
+
+    // ===============================================================================
+    // Theme options
+    $wp_customize->add_section(
+        "section_contact", 
+        array(
+            'title' => __("Contact Options", "ws24h"),
+            'priority' => 135,
+            'description' => __( 'Description Custom Theme Options here' ),
+        )
+    );
+
+    // Contact name
+    $wp_customize->add_setting('company_name');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_name',
+    array(
+        'label' => 'Company name',
+        'section' => 'section_contact',
+        'settings' => 'company_name',
+        'type' => 'text'
     ) ) );
+
+     // Contact address
+     $wp_customize->add_setting('contact_address');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_address',
+     array(
+         'label' => 'Contact address',
+         'section' => 'section_contact',
+         'settings' => 'contact_address',
+         'type' => 'text'
+     ) ) );
+
+     // Contact email
+     $wp_customize->add_setting('contact_email');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_email',
+     array(
+         'label' => 'Contact email',
+         'section' => 'section_contact',
+         'settings' => 'contact_email',
+         'type' => 'text'
+     ) ) );
+
+     // Contact Phone
+     $wp_customize->add_setting('contact_phone');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_phone',
+     array(
+         'label' => 'Contact phone',
+         'section' => 'section_contact',
+         'settings' => 'contact_phone',
+         'type' => 'text'
+     ) ) );
+
+     // Contact Hotline
+     $wp_customize->add_setting('contact_hotline');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_hotline',
+     array(
+         'label' => 'Contact hotline',
+         'section' => 'section_contact',
+         'settings' => 'contact_hotline',
+         'type' => 'text'
+     ) ) );
+
+     // Contact copyright
+     $wp_customize->add_setting('setting_copyright');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_copyright',
+     array(
+         'label' => 'Setting copyright',
+         'section' => 'section_contact',
+         'settings' => 'setting_copyright',
+         'type' => 'text'
+     ) ) );
+
+
+    // ================================== SOCIALS =================================
+    // Theme Socials link
+    $wp_customize->add_section(
+        "section_socials", 
+        array(
+            'title' => __("Socials Options", "ws24h"),
+            'priority' => 131,
+            'description' => __( 'Description Custom Socials Options here' ),
+        )
+    );
+
+    // Facebook fanpage
+    $wp_customize->add_setting('facebook_link');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_link',
+    array(
+        'label' => 'Facebook link Fanpage',
+        'section' => 'section_socials',
+        'settings' => 'facebook_link',
+        'type' => 'text'
+    ) ) );
+
+    // Youtube link channel
+    $wp_customize->add_setting('youtube_link');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'youtube_link',
+    array(
+        'label' => 'Youtube link channel',
+        'section' => 'section_socials',
+        'settings' => 'youtube_link',
+        'type' => 'text'
+    ) ) );
+
+    // Zalo link channel
+    $wp_customize->add_setting('zalo_link');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'zalo_link',
+    array(
+        'label' => 'Zalo link page',
+        'section' => 'section_socials',
+        'settings' => 'zalo_link',
+        'type' => 'text'
+    ) ) );
+
+    // Google plus channel
+    $wp_customize->add_setting('google_plus_link');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_plus_link',
+    array(
+        'label' => 'Google plus link page',
+        'section' => 'section_socials',
+        'settings' => 'google_plus_link',
+        'type' => 'text'
+    ) ) );
+
+    // Twitter link channel
+    $wp_customize->add_setting('twitter_link');
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'twitter_link',
+        array(
+            'label' => 'Twitter link page',
+            'section' => 'section_socials',
+            'settings' => 'twitter_link',
+            'type' => 'text'
+        ) 
+    ) );
+
+    // ================================== HEADER SETTINGS =================================
+    $listColors[] = array(
+        'slug'=>'header_background_color', 
+        'default' => '#fff',
+        'label' => 'Background'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_link_color', 
+        'default' => '#333',
+        'label' => 'Link color'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_background_submenu', 
+        'default' => '#fff',
+        'label' => 'Background sub menu'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_link_color_sub', 
+        'default' => '#333',
+        'label' => 'Link color sub menu'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_hover_link_color', 
+        'default' => '#333',
+        'label' => 'Link Color (on hover)'
+    );
+
+    $wp_customize->add_section(
+        "section_header_settings", 
+        array(
+            'title' => __("Header settings", "ws24h"),
+            'priority' => 122,
+            'description' => __( 'Description Custom header setting' ),
+        )
+    );
+
+    // add the settings and controls for each color
+    foreach( $listColors as $itemColor ) {
+        // SETTINGS
+        $wp_customize->add_setting(
+            $itemColor['slug'], array(
+                'default' => $itemColor['default']
+            )
+        );
+
+        // CONTROLS
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                $wp_customize,
+                $itemColor['slug'], 
+                array(
+                    'label' => $itemColor['label'], 
+                    'section' => 'section_header_settings',
+                    'settings' => $itemColor['slug']
+                )
+            )
+        );
+    }
+
 
 }
 add_action( 'customize_register', 'your_theme_new_customizer_settings' );
@@ -343,20 +409,3 @@ function ws24h_customize_preview_js() {
 	wp_enqueue_script( 'ws24h-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'ws24h_customize_preview_js' );
-  
-
-// class ThemeMods {
-//     private $themeMods; 
-//     public function __construct() {
-//         $this->themeMods = get_theme_mods();
-//     }
-
-//     public function getMods($modName = '') {
-//         if (!$modName)
-//             return null;
-//         return $this->themeMods[$modName];
-//     }
-// }
-// $themeMods = new ThemeMods();
-
-// print_r($themeMods);
