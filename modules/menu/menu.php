@@ -1,4 +1,37 @@
-<nav id="main-navbar" data-ref="<?= getHeaderClassConfigVersion() ?>" class="navbar navbar-expand-lg <?= getHeaderClassConfigVersion() ?>">
+<?php
+    $customBg = get_theme_mod('header_background_color');
+    $customLinkColor = get_theme_mod('header_link_color');
+    $customBgSub = get_theme_mod('header_background_submenu');
+    $customLinkColorSub = get_theme_mod('header_link_color_sub');
+    
+    echo '<style>';
+    if(isset($customBg) && $customBg){
+        echo '
+            .navbar-expand-lg .navbar-nav .nav-item >.nav-link {
+                color: '.$customLinkColor.';
+            }
+        ';
+    }
+
+    if(isset($customBgSub) && $customBgSub){
+        echo '
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                background: '.$customBgSub.';
+            }
+        ';
+    }
+
+    if(isset($customLinkColorSub) && $customLinkColorSub){
+        echo '
+            .navbar-expand-lg .navbar-nav .dropdown-menu .nav-item .nav-link {
+                color: '.$customLinkColorSub.';
+            }
+        ';
+    }
+
+    echo '</style>';
+?>
+<nav id="main-navbar" data-ref="<?= getHeaderClassConfigVersion() ?>" <?php echo (isset($customBg) && $customBg) ? 'style="background: ' . $customBg . '"' : ''; ?> class="navbar navbar-expand-lg <?= getHeaderClassConfigVersion() ?>">
     <div class="container">
         <?php
         if(getConfigVersion() != '' || getConfigVersion() != 'v1'){

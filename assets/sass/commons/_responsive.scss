@@ -20,6 +20,34 @@
         }
     }
 
+    #main-navbar{
+        .container{
+            position: relative;
+        }
+        #navbarResponsive{
+            position: absolute;
+            top: 38px;
+            width: 100%;
+            z-index: 100;
+            left: 15px;
+            padding-bottom: 15px;
+
+            #menu-primary {
+                clear: both;
+                > .nav-item a{
+                    color: $color;
+                }
+
+                .dropdown-menu{
+                    .nav-item .nav-link{
+                        padding: 3px 0!important;
+                    }
+                }
+            }
+        }
+    }
+
+
     .navbar {
         margin: 0;
         padding: 0;        
