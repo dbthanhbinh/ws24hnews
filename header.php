@@ -3,7 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="p:domain_verify" content="029e1ed9c51b3e20c33659c253b080d9"/>
     <title><?= wp_title() ?></title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145066138-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145066138-1');
+    </script>
+
     <?php wp_head()?>
   </head>
   <body <?php body_class(); ?>>
