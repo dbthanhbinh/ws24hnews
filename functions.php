@@ -1,5 +1,7 @@
 <?php
-define ('THEME_NAME', 'Ws24h-Admin');
+require_once ('lib/defined.php');
+
+define ('THEME_NAME', THEMENAME);
 require_once ('helpers/districts.php');
 require_once ('lib/admin/setting.php');
 require_once ('lib/modifys/index.php');
@@ -77,11 +79,6 @@ function ws24h_facebook_lib_scripts () {
 		js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
 		fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-
-		<script src="https://apis.google.com/js/platform.js" async defer>
-		{lang: 'en-GB'}
-		</script>		
-
 		<?php
 	}
 }
@@ -141,40 +138,25 @@ function ws24h_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
 
 add_filter( 'get_the_archive_title', function ($title) {
-
     if ( is_category() ) {
-
             $title = single_cat_title( '', false );
-
         } elseif ( is_tag() ) {
-
             $title = single_tag_title( '', false );
-
         } elseif ( is_author() ) {
-
             $title = '<span class="vcard">' . get_the_author() . '</span>' ;
-
         }
-
     return $title;
-
 });
 
-add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
 /**
  * Change the Tag Cloud's Font Sizes.
- *
- * @since 1.0.0
- *
- * @param array $args
- *
- * @return array
  */
 function change_tag_cloud_font_sizes( array $args ) {
     $args['smallest'] = '11';
     $args['largest'] = '16';
     return $args;
 }
+add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
@@ -231,71 +213,3 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
     return $title;
 });
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function ws24h_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Main Sidebar', 'ws24h' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'ws24h' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Second Sidebar', 'ws24h' ),
-		'id'            => 'sidebar-second',
-		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'ws24h' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'ws24h' ),
-		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'ws24h' ),
-		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'ws24h' ),
-		'id'            => 'footer-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'ws24h' ),
-		'id'            => 'footer-4',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
-	) );
-}
-add_action( 'widgets_init', 'ws24h_widgets_init' );

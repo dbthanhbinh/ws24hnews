@@ -544,12 +544,12 @@ function save_post($post_id)
     if (isset($_POST['tie_hidden_flag'])) {
 
         $custom_meta_fields = [
-            'price',
-            'acreage',
-            'district',
-            'number-of-build',
-            'number-of-bed',
-            'number-of-bath',
+            PRICE,
+            ACREAGE,
+            DISTRICT,
+            NUMBER_OF_BUILD,
+            NUMBER_OF_BED,
+            NUMBER_OF_BATH,
             $wpdb->prefix . 'color1',
             $wpdb->prefix . 'color2',
             $wpdb->prefix . 'color3',

@@ -5,9 +5,9 @@ if(isset($customMeta)){
     $acreage = isset($customMeta['acreage'][0]) ? $customMeta['acreage'][0] : null;
     $district = isset($customMeta['district'][0]) ? $customMeta['district'][0] : null;
 
-    $builds = isset($customMeta['number-of-build'][0]) ? $customMeta['number-of-build'][0] : null;
-    $beds = isset($customMeta['number-of-bed'][0]) ? $customMeta['number-of-bed'][0] : null;
-    $baths = isset($customMeta['number-of-bath'][0]) ? $customMeta['number-of-bath'][0] : null;
+    $builds = isset($customMeta[NUMBER_OF_BUILD][0]) ? $customMeta[NUMBER_OF_BUILD][0] : null;
+    $beds = isset($customMeta[NUMBER_OF_BED][0]) ? $customMeta[NUMBER_OF_BED][0] : null;
+    $baths = isset($customMeta[NUMBER_OF_BATH][0]) ? $customMeta[NUMBER_OF_BATH][0] : null;
 
     if($district)
         $district  = getDistrictName($district);

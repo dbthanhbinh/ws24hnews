@@ -43,5 +43,15 @@
       </div>
     <?php }?>
     <?php wp_footer()?>
+
+    <!-- For sticky sidebar -->
+    <script type="text/javascript">
+      if( $('#sidebar').length ) {
+        var sidebar = new StickySidebar('#sidebar', {
+            topSpacing: 50,
+            bottomSpacing: 50
+        });
+      }
+    </script>
   </body>
 </html>

@@ -15,7 +15,7 @@ if ($categories) {
     $my_query = new wp_query( $args );
     
     if( $my_query->have_posts() ) {
-        echo '<h3 class="header-title">Xem BĐS khác</h3>';
+        echo '<h3 class="header-title"><span>Xem bài khác</span></h3>';
         echo '<div class="row">';
         echo '<div class="pinterest-template pinterest-template-related">';
         while( $my_query->have_posts() ) {

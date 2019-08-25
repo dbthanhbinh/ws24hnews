@@ -5,8 +5,8 @@
 
   <div class="container">
     <?php require_once ('helpers/layout-configs.php'); ?>
-    <div class="row <?= mainLayoutKey() ?>">       
-      <div class="<?= mainLayoutClass() ?>">
+    <div class="row <?= mainLayoutKey() ?>">
+        <div class="<?= mainLayoutClass() ?>">
           <h1 class="entry-title"><?php echo 'Tìm: ' . get_query_var('s'); ?></h1>
           <div class="row">
             <?php

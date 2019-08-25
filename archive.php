@@ -5,12 +5,15 @@
   
   <div class="container">
     <?php require_once ('helpers/layout-configs.php'); ?>
-    <div class="row <?= mainLayoutKey() ?>">       
+    <div class="row <?= mainLayoutKey() ?>">
+      <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
+            <?php get_sidebar();?>
+      <?php } ?>
+
       <div class="<?= mainLayoutClass() ?>">
         <header class="entry-header">
           <h1  class="entry-title"><?php single_cat_title(); ?></h1>
         </header>
-        
         <div class="row">
         <?php
           if ( have_posts() ) :
@@ -40,14 +43,17 @@
           endif;
         ?>
         </div>
-
         <!-- For Nav -->
         <?php require_once('helpers/pagination.php'); ?>
       </div>
 
-      <!-- Begin sidebar area -->
+      <!-- Sidebar area: we defined sidebar's 2 area -->
       <?php get_sidebar('second');?>
-      <?php get_sidebar();?>
+
+      <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
+          <?php get_sidebar();?>
+      <?php } ?>
+      
     </div>
   </div>
 <?php get_footer();?>

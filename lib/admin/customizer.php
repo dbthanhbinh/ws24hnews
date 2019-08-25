@@ -343,6 +343,12 @@ function your_theme_new_customizer_settings( $wp_customize ) {
     );
 
     $listColors[] = array(
+        'slug'=>'header_background_color_fixed', 
+        'default' => '#fff',
+        'label' => 'Background fixed'
+    );
+
+    $listColors[] = array(
         'slug'=>'header_link_color', 
         'default' => '#333',
         'label' => 'Link color'

@@ -5,7 +5,11 @@
 
     <div class="container">
         <?php require_once ('helpers/layout-configs.php'); ?>
-        <div class="row <?= mainLayoutKey() ?> ">       
+        <div class="row <?= mainLayoutKey() ?> ">
+            <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
+                <?php get_sidebar();?>
+            <?php } ?>
+
             <div class="<?= mainLayoutClass() ?>">
                 <div class="row">
                     <div class="col-lg-12 article-content">
@@ -60,8 +64,14 @@
                     <?php get_template_part( 'template-parts/pin-layout/tpl-related', 'post' );?>
                 </div>
             </div>      
+            
+            <!-- Sidebar area: we defined sidebar's 2 area -->
             <?php get_sidebar('second');?>
-            <?php get_sidebar();?>
+
+            <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
+                <?php get_sidebar();?>
+            <?php } ?>
+
         </div>
     </div>
 <?php get_footer();?>

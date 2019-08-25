@@ -62,6 +62,9 @@ table {
 }
 
 .pagination {
+    clear: both;
+    margin-bottom: 20px;
+
     h2.screen-reader-text {
         display: none;
     }

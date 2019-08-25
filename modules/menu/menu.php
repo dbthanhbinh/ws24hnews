@@ -1,5 +1,6 @@
 <?php
     $customBg = get_theme_mod('header_background_color');
+    $customBgFixed = get_theme_mod('header_background_color_fixed');
     $customLinkColor = get_theme_mod('header_link_color');
     $customBgSub = get_theme_mod('header_background_submenu');
     $customLinkColorSub = get_theme_mod('header_link_color_sub');

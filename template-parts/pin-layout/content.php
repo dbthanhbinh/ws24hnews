@@ -1,15 +1,15 @@
 <?php
     $customMeta = get_post_custom(get_the_ID());
     if(isset($customMeta)){
-        $price = isset($customMeta['price'][0]) ? $customMeta['price'][0] : null;
-        $acreage = isset($customMeta['acreage'][0]) ? $customMeta['acreage'][0] : null;
-        $district = isset($customMeta['district'][0]) ? $customMeta['district'][0] : null;
+        $price = isset($customMeta[PRICE][0]) ? $customMeta[PRICE][0] : null;
+        $acreage = isset($customMeta[ACREAGE][0]) ? $customMeta[ACREAGE][0] : null;
+        $district = isset($customMeta[DISTRICT][0]) ? $customMeta[DISTRICT][0] : null;
         if($district)
             $district  = getDistrictName($district);
 
-        $builds = isset($customMeta['number-of-build'][0]) ? $customMeta['number-of-build'][0] : null;
-        $beds = isset($customMeta['number-of-bed'][0]) ? $customMeta['number-of-bed'][0] : null;
-        $baths = isset($customMeta['number-of-bath'][0]) ? $customMeta['number-of-bath'][0] : null;
+        $builds = isset($customMeta[NUMBER_OF_BUILD][0]) ? $customMeta[NUMBER_OF_BUILD][0] : null;
+        $beds = isset($customMeta[NUMBER_OF_BED][0]) ? $customMeta[NUMBER_OF_BED][0] : null;
+        $baths = isset($customMeta[NUMBER_OF_BATH][0]) ? $customMeta[NUMBER_OF_BATH][0] : null;
     }
 
     $tagHeader = 'h5';

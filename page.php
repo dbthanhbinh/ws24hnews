@@ -5,7 +5,11 @@
 
   <div class="container">
     <?php require_once ('helpers/layout-configs.php'); ?>
-    <div class="row <?= mainLayoutKey() ?>">        
+    <div class="row <?= mainLayoutKey() ?>">
+      <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
+            <?php get_sidebar();?>
+      <?php } ?>
+
       <div class="<?= mainLayoutClass() ?> article-content">
           <?php
             /* Start the Loop */
@@ -15,8 +19,14 @@
             // End of the loop.
           ?>
       </div>
+
+      <!-- Sidebar area: we defined sidebar's 2 area -->
       <?php get_sidebar('second');?>
-      <?php get_sidebar();?>
+
+      <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
+          <?php get_sidebar();?>
+      <?php } ?>
+
     </div>
   </div>
 <?php get_footer();?>
