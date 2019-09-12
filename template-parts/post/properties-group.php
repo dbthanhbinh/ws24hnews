@@ -12,6 +12,7 @@ if(is_single()){
         $beds = isset($customMeta[NUMBER_OF_BED][0]) ? $customMeta[NUMBER_OF_BED][0] : null;
         $baths = isset($customMeta[NUMBER_OF_BATH][0]) ? $customMeta[NUMBER_OF_BATH][0] : null;
     }
+    if($price || $acreage || $district || $builds || $beds || $baths){
     ?>
     <div class="single-properties-group">
         <div class="summarys-group" title="Thông tin cơ bản">
@@ -35,4 +36,5 @@ if(is_single()){
         </div>
     </div>
     <?php
+    }
 }
