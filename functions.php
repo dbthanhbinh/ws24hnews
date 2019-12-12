@@ -84,6 +84,26 @@ function ws24h_facebook_lib_scripts () {
 }
 add_action( 'wp_footer', 'ws24h_facebook_lib_scripts' );
 
+function ws24h_custom_body_background() {
+    $html = '';
+    if(get_theme_mod("custom_background")){
+        $html .= '
+        <style>
+            body{
+                background-color: unset;
+                background-image: linear-gradient(to right,rgba(237,189,189,0.28),rgba(237,189,189,0.28)),url(' . get_theme_mod("custom_background") . ');
+                background-repeat: repeat;
+                background-position: center center;
+                background-size: contain;
+                background-attachment: fixed;
+            }
+        </style>
+        ';
+    }
+    print_r($html);
+}
+add_action( 'wp_footer', 'ws24h_custom_body_background' );
+
 // =============================================
 /**
  * Filter the except length to 20 words.

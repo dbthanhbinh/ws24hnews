@@ -1,3 +1,4 @@
+<?php  if(get_theme_mod('show_breadcrumb')){ ?>
 <div class="box-breadcrumb">
     <div class="container">
         <div class="row">
@@ -24,3 +25,4 @@
         </div>
     </div>
 </div>
+<?php }?>

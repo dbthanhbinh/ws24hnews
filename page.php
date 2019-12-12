@@ -10,7 +10,8 @@
             <?php get_sidebar();?>
       <?php } ?>
 
-      <div class="<?= mainLayoutClass() ?> article-content">
+      <div class="<?= mainLayoutClass() ?>">
+        <div class="article-content">
           <?php
             /* Start the Loop */
             while ( have_posts() ) : the_post();
@@ -18,6 +19,7 @@
             endwhile;
             // End of the loop.
           ?>
+        </div>
       </div>
 
       <!-- Sidebar area: we defined sidebar's 2 area -->
