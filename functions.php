@@ -57,7 +57,8 @@ function ws24h_setup () {
 		'audio',
 	) );
 
-	add_theme_support( 'post-thumbnails', array('post') );  
+    add_theme_support( 'post-thumbnails', array('post', 'khach-hang') );
+    add_theme_support('category-thumbnails', array('category'));
 }
 add_action( 'after_setup_theme', 'ws24h_setup' );
 
