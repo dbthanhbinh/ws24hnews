@@ -1,5 +1,5 @@
 <?php
-// include (TEMPLATEPATH . '/panel/register-posttype.php');
+include (TEMPLATEPATH . '/panel/register-posttype.php');
 // tie-Panel
 ######include (TEMPLATEPATH . '/panel/shortcodes/shortcode.php');
 $customSlider = true;

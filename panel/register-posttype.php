@@ -1,6 +1,6 @@
 <?php
 $rg_posttypes = array(
-		array('posttype' => 'binh-chon','taxonomy' => array(),'postname'=> "Bình Chọn",'support' => array('title','excerpt','editor','thumbnail')),
+		array('posttype' => 'khach-hang','taxonomy' => array(),'postname'=> "Khách hàng",'support' => array('title','excerpt', 'thumbnail')),
 		//array('posttype' => 'slide-show','taxonomy' => array(),'postname'=> "Slider show2",'support' => array('title','excerpt','thumbnail')),
 		/*array('posttype' => 'website-wordpress','taxonomy' => array(),'postname'=> "Website wordpress",'support' => array('title','excerpt','editor','thumbnail')),		
 		array('posttype' => 'dich-vu','taxonomy' => array(),'postname'=> "Dịch vụ SEO",'support' => array('title','excerpt','editor','thumbnail')),		
