@@ -1,6 +1,6 @@
 <?php get_header();?>
   <!-- Breadcrumb -->
-  <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
+  <?php get_template_part('template-parts/breadcrumb/breadcrumb', '') ?>
   <!-- End breadcrumb -->
   
   <div class="container">

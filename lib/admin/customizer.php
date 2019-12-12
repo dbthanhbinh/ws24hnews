@@ -36,6 +36,18 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'flex_height ' => false,
     ) ) );
 
+
+    $wp_customize->add_setting('custom_background');
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_background',
+    array(
+        'label' => 'Upload Custom Background',
+        'section' => 'title_tagline',
+        'settings' => 'custom_background',
+        'flex_width ' => false,
+        'flex_height ' => false,
+    ) ) );
+
+
     // ================================== Layout =================================
      // Theme Socials link
      $wp_customize->add_section(
@@ -66,6 +78,19 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'label' => 'Show header',
         'section' => 'section_layout',
         'settings' => 'show_header',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    $wp_customize->add_setting('show_breadcrumb', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_breadcrumb',
+    array(
+        'label' => 'Show breadcrumb',
+        'section' => 'section_layout',
+        'settings' => 'show_breadcrumb',
         'type' => 'select',
         'choices' => array(
             '1' => __('Enable'),

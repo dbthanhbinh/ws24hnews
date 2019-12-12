@@ -9,6 +9,7 @@ $column-width: 100/$column-count * 1%;
     padding-right        : 15px;
     display: contents;
     direction: ltr;
+    max-width: 100%;
 
     .pin {
         margin-bottom      : 20px;
@@ -19,6 +20,8 @@ $column-width: 100/$column-count * 1%;
         transition         : all .2s ease;
         width: $column-width;
         padding: 0 15px;
+        display: inline-flex;
+        vertical-align: top;
 
         &:hover {
             opacity : 0.4;
@@ -183,8 +186,9 @@ $column-width: 100/$column-count * 1%;
             -webkit-column-count : 2;
             -moz-column-count    : 2;
             column-count         : 2;
+            flex: 0 0 50%;
             .pin{
-                width: 50%;
+                width: auto;
             }
         }
     }

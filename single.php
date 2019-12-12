@@ -60,8 +60,10 @@
                 ?>
 
                 <!-- Related -->
-                <div class="related-box article-list">
-                    <?php get_template_part( 'template-parts/pin-layout/tpl-related', 'post' );?>
+                <div class="row">
+                    <div class="related-box article-list col-lg-12">
+                        <?php get_template_part( 'template-parts/pin-layout/tpl-related', 'post' );?>
+                    </div>
                 </div>
             </div>      
             

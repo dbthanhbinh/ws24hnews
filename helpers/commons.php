@@ -1,7 +1,7 @@
 <?php
 function getConfigVersion(){ 
-    // return '-v2';
-    return '';
+    return '-v2';
+    // return '';
 }
 function getHeaderClassConfigVersion(){
     $version = getConfigVersion();
