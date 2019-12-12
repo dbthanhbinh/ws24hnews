@@ -1,0 +1,21 @@
+.tag-clouds{
+    a.tag-cloud-link{
+        background-color: #eee;
+        display: inline-block;
+        height: 27px;
+        line-height: 26px;
+        padding: 0px 7px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        margin-bottom: 2px;
+        &:hover{
+            background-color: #ddd;
+            transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+        }
+    }
+}

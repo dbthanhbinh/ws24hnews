@@ -1,6 +1,7 @@
 <?php get_header();?>
-    <div class="container">
-      <div class="row <?= get_main_layout_key () ?>">        
+  <?php require_once ('helpers/layout-configs.php'); ?>
+    <div class="row <?= mainLayoutKey() ?>">       
+      <div class="container main-content">
         <div class="col-lg-8">
             404 page
         </div>

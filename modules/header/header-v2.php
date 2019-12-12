@@ -1,0 +1,1 @@
+<?php include_once TEMPLATEPATH . '/modules/menu/menu.php' ?>

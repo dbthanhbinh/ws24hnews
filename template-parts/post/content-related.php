@@ -19,6 +19,7 @@ if ($categories) {
         while( $my_query->have_posts() ) {
             $my_query->the_post();
             $content_type = 'related';
+            // include TEMPLATEPATH . '/template-parts/post/content.php';
             include TEMPLATEPATH . '/template-parts/post/content.php';
         }
     }

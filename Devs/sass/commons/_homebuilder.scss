@@ -1,0 +1,30 @@
+.builder-title {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-top: 2px solid #ccc;
+    font-weight: 700;
+    background: #eee;
+
+    span {
+        border-top: 3px solid #bbbbbb;
+        padding-top: 5px;
+    }
+}
+
+.home-box-title {
+    clear: both;
+    display: block;
+    width: 100%;
+
+    .home-box-header {
+        a{
+            text-transform: uppercase;
+            font-size: 17px;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid;
+            padding-bottom: 1px;
+        }
+    }
+}

@@ -1,17 +1,32 @@
 <?php get_header();?>
-    <div class="container">
-      <div class="row <?= get_main_layout_key () ?>">        
-        <div class="col-lg-8">
-            <?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-                get_template_part( 'template-parts/page/content', 'page' );
-			endwhile; // End of the loop.
-            ?>
-            
-            <a href="http://localhost/saigonbautyonline/?export=xls&post_type=post&from=111&to=222"> Export </a>
-        </div>
-        <?php get_sidebar();?>
+  <!-- Breadcrumb -->
+  <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
+  <!-- End breadcrumb -->
+
+  <div class="container">
+    <?php require_once ('helpers/layout-configs.php'); ?>
+    <div class="row <?= mainLayoutKey() ?>">
+      <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
+            <?php get_sidebar();?>
+      <?php } ?>
+
+      <div class="<?= mainLayoutClass() ?> article-content">
+          <?php
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+              get_template_part( 'template-parts/page/content', 'page' );
+            endwhile;
+            // End of the loop.
+          ?>
       </div>
+
+      <!-- Sidebar area: we defined sidebar's 2 area -->
+      <?php get_sidebar('second');?>
+
+      <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
+          <?php get_sidebar();?>
+      <?php } ?>
+
     </div>
+  </div>
 <?php get_footer();?>

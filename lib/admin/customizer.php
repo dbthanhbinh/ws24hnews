@@ -1,8 +1,14 @@
 <?php
 /**
- * Create new section Customizer */
- 
-function your_theme_new_customizer_settings( $wp_customize ) {   
+ * Create new section Customizer
+ **/
+function your_theme_new_customizer_settings( $wp_customize ) {
+
+    $choicesLayout =  [
+        'full' => __('Full width'),
+        'left-sidebar' => __('Left sidebar'),
+        'right-sidebar' => __('Right sidebar')
+    ];
 
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
@@ -30,13 +36,176 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'flex_height ' => false,
     ) ) );
 
-    // =============================================================================================
+    // ================================== Layout =================================
+     // Theme Socials link
+     $wp_customize->add_section(
+        "section_layout", 
+        array(
+            'title' => __("Layout Options", "ws24h"),
+            'priority' => 120,
+            'description' => __( 'Description Custom layout Options here' ),
+        )
+    );
+
+    $wp_customize->add_setting('show_top_header', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_top_header',
+    array(
+        'label' => 'Show top header',
+        'section' => 'section_layout',
+        'settings' => 'show_top_header',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    $wp_customize->add_setting('show_header', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_header',
+    array(
+        'label' => 'Show header',
+        'section' => 'section_layout',
+        'settings' => 'show_header',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    // Enable Slideshow
+    $wp_customize->add_setting('show_main_slideshow', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_main_slideshow',
+    array(
+        'label' => 'Show Slide show',
+        'section' => 'section_layout',
+        'settings' => 'show_main_slideshow',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+
+    // Home layout
+    $wp_customize->add_setting('home_layout', ['default' => 'full']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
+    array(
+        'label' => 'Home Layout',
+        'section' => 'section_layout',
+        'settings' => 'home_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Pages layout
+    $wp_customize->add_setting('page_layout', ['default' => 'right-sidebar']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'page_layout',
+    array(
+        'label' => 'Pages Layout',
+        'section' => 'section_layout',
+        'settings' => 'page_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Single layout
+    $wp_customize->add_setting('single_layout', ['default' => 'right-sidebar']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'single_layout',
+    array(
+        'label' => 'Single Layout',
+        'section' => 'section_layout',
+        'settings' => 'single_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Single layout
+    $wp_customize->add_setting('archive_layout', ['default' => 'right-sidebar']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archive_layout',
+    array(
+        'label' => 'Archives Layout',
+        'section' => 'section_layout',
+        'settings' => 'archive_layout',
+        'type' => 'select',
+        'choices' => $choicesLayout
+    ) ) );
+
+    // Enable footer Layout
+    $wp_customize->add_setting('show_footer_layout', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_layout',
+    array(
+        'label' => 'Show footer layout',
+        'section' => 'section_layout',
+        'settings' => 'show_footer_layout',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    $wp_customize->add_setting('footer_layout', ['default' => '3c']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_layout',
+    array(
+        'label' => 'Footer Layout',
+        'section' => 'section_layout',
+        'settings' => 'footer_layout',
+        'type' => 'select',
+        'choices' => array(
+            '1c' => __('1 Col'),
+            '2c' => __('2 cols'),
+            '3c' => __('3 cols'),
+            '4c' => __('4 cols'),
+            'wide-2' => __('Wide - 2 cols'),
+            '2-wide' => __('2 cols - Wide'),
+            'col-wide-col' => __('col - Wide - col')
+        ),
+    ) ) );
+
+    // Enable footer copyright
+    $wp_customize->add_setting('show_footer_copyright', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_copyright',
+    array(
+        'label' => 'Show footer copyright',
+        'section' => 'section_layout',
+        'settings' => 'show_footer_copyright',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
+
+    // Enable Client
+
+    $customClientArgs = array( 'post_type' => 'tie_clients', 'no_found_rows' => 1  );
+    $customClientSql = new WP_Query( $customClientArgs );
+    $customClients = [];
+
+    while ( $customClientSql->have_posts() ) {
+        $customClientSql->the_post();
+        $customClients[get_the_ID()] = get_the_title();
+    }
+
+    $wp_customize->add_setting('show_client', ['default' => -1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_client',
+    array(
+        'label' => 'Show client group',
+        'section' => 'section_layout',
+        'settings' => 'show_client',
+        'type' => 'select',
+        'choices' => $customClients
+    ) ) );    
+
+    // ===============================================================================
     // Theme options
     $wp_customize->add_section(
         "section_contact", 
         array(
             'title' => __("Contact Options", "ws24h"),
-            'priority' => 130,
+            'priority' => 135,
             'description' => __( 'Description Custom Theme Options here' ),
         )
     );
@@ -91,16 +260,6 @@ function your_theme_new_customizer_settings( $wp_customize ) {
          'type' => 'text'
      ) ) );
 
-     // Contact address
-     $wp_customize->add_setting('contact_name');
-     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_name',
-     array(
-         'label' => 'Responsible for content',
-         'section' => 'section_contact',
-         'settings' => 'contact_name',
-         'type' => 'text'
-     ) ) );
-
      // Contact copyright
      $wp_customize->add_setting('setting_copyright');
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_copyright',
@@ -112,8 +271,8 @@ function your_theme_new_customizer_settings( $wp_customize ) {
      ) ) );
 
 
-     // ================================== SOCIALS =================================
-     // Theme Socials link
+    // ================================== SOCIALS =================================
+    // Theme Socials link
     $wp_customize->add_section(
         "section_socials", 
         array(
@@ -165,47 +324,85 @@ function your_theme_new_customizer_settings( $wp_customize ) {
 
     // Twitter link channel
     $wp_customize->add_setting('twitter_link');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'twitter_link',
-    array(
-        'label' => 'Twitter link page',
-        'section' => 'section_socials',
-        'settings' => 'twitter_link',
-        'type' => 'text'
-    ) ) );
-
-    // ================================== Layout =================================
-     // Theme Socials link
-     $wp_customize->add_section(
-        "section_layout", 
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'twitter_link',
         array(
-            'title' => __("Layout Options", "ws24h"),
-            'priority' => 133,
-            'description' => __( 'Description Custom layout Options here' ),
+            'label' => 'Twitter link page',
+            'section' => 'section_socials',
+            'settings' => 'twitter_link',
+            'type' => 'text'
+        ) 
+    ) );
+
+    // ================================== HEADER SETTINGS =================================
+    $listColors[] = array(
+        'slug'=>'header_background_color', 
+        'default' => '#fff',
+        'label' => 'Background'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_background_color_fixed', 
+        'default' => '#fff',
+        'label' => 'Background fixed'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_link_color', 
+        'default' => '#333',
+        'label' => 'Link color'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_background_submenu', 
+        'default' => '#fff',
+        'label' => 'Background sub menu'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_link_color_sub', 
+        'default' => '#333',
+        'label' => 'Link color sub menu'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_hover_link_color', 
+        'default' => '#333',
+        'label' => 'Link Color (on hover)'
+    );
+
+    $wp_customize->add_section(
+        "section_header_settings", 
+        array(
+            'title' => __("Header settings", "ws24h"),
+            'priority' => 122,
+            'description' => __( 'Description Custom header setting' ),
         )
     );
 
-    // Facebook fanpage
-    $wp_customize->add_setting('footer_layout',
-        array(
-            'default' => '3c',
-        )
-    );
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_layout',
-    array(
-        'label' => 'Set footer layout',
-        'section' => 'section_layout',
-        'settings' => 'footer_layout',
-        'type' => 'radio',
-        'choices' => array(
-            '1c' => __('1 Col'),
-            '2c' => __('2 cols'),
-            '3c' => __('3 cols'),
-            '4c' => __('4 cols'),
-            'wide-2' => __('Wide - 2 cols'),
-            '2-wide' => __('2 cols - Wide'),
-            'col-wide-col' => __('col - Wide - col')
-        ),
-    ) ) );
+    // add the settings and controls for each color
+    foreach( $listColors as $itemColor ) {
+        // SETTINGS
+        $wp_customize->add_setting(
+            $itemColor['slug'], array(
+                'default' => $itemColor['default']
+            )
+        );
+
+        // CONTROLS
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                $wp_customize,
+                $itemColor['slug'], 
+                array(
+                    'label' => $itemColor['label'], 
+                    'section' => 'section_header_settings',
+                    'settings' => $itemColor['slug']
+                )
+            )
+        );
+    }
 
 
 }
@@ -214,24 +411,7 @@ add_action( 'customize_register', 'your_theme_new_customizer_settings' );
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function ws24hnews_customize_preview_js() {
-	wp_enqueue_script( 'ws24hnews-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+function ws24h_customize_preview_js() {
+	wp_enqueue_script( 'ws24h-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'ws24hnews_customize_preview_js' );
-  
-
-// class ThemeMods {
-//     private $themeMods; 
-//     public function __construct() {
-//         $this->themeMods = get_theme_mods();
-//     }
-
-//     public function getMods($modName = '') {
-//         if (!$modName)
-//             return null;
-//         return $this->themeMods[$modName];
-//     }
-// }
-// $themeMods = new ThemeMods();
-
-// print_r($themeMods);
+add_action( 'customize_preview_init', 'ws24h_customize_preview_js' );

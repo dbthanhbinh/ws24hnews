@@ -1,2 +1,2 @@
-# ws24hnews
-This WP theme ws24hnews
+# ws24h
+This WP theme Webseo24h

@@ -1,6 +1,6 @@
 <div class="box-footer">
     <div class="row">
-        <div class="col-lg-6">
+        <!-- <div class="col-lg-6">
             <div class="footer-logo">
                 <?= render_logo() ?>
             </div>
@@ -19,12 +19,11 @@
                     <p><i class="fa fa-user" aria-hidden="true"></i><?php echo get_theme_mod('contact_name')?></p>
                 <?php endif; ?>
             </div>
-            <?php //if (is_active_sidebar( 'footer-1' )) dynamic_sidebar( 'footer-1' );?>
-        </div>
-        <div class="col-lg-6 box-fix-max">
-            <h4><i class="fa fa-tags" aria-hidden="true"></i>Thẻ tìm kiếm</h4>
-            <div class="scrollbar scrollbar-black bordered-black square thin">
-                <div class="force-overflow"> <?= wp_tag_cloud('smallest=10&largest=18') ?> </div>
+        </div> -->
+        <div class="col-lg-12 box-fix-max">
+            <h4><i class="fa fa-tags" aria-hidden="true"></i>Từ khóa tìm kiếm</h4>
+            <div class="scrollbar scrollbar-black bordered-black square thin tag-clouds">
+                <div class="force-overflow"> <?= wp_tag_cloud('smallest=10&largest=13') ?> </div>
             </div>
         </div>
     </div>

@@ -3,25 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title><?= wp_title() ?></title>    
+    <meta name="p:domain_verify" content="029e1ed9c51b3e20c33659c253b080d9"/>
+    <title><?= wp_title() ?></title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145066138-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145066138-1');
+    </script>
+
     <?php wp_head()?>
   </head>
   <body <?php body_class(); ?>>
-    <div class="top-header">
-      <div class="container">
-        <div class="col-md-3 col-lg-3 render-logo">
-          <div class="row">
-            <?= render_logo() ?>
-          </div>
-        </div>
-        <div class="top-banner-img col-md-9 col-lg-9">
-            <div class="row top-banner-right">
-              <a href="#"> <?php echo render_mode_attachment_image('top_banner'); ?> </a>
-            </div>
-        </div>
-      </div>
-    </div>
-    <!-- Navigation -->
-    <?php require_once ('modules/menu/menu.php')?>
+  <?php
+    require_once ('modules/header/header' . getConfigVersion() . '.php');
+  ?>

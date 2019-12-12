@@ -1,0 +1,38 @@
+@media (min-width: 1200px) {}
+@media (min-width: 992px) {
+
+    .header-version-default{
+        .render-logo{
+            .them-logo {
+                img{
+                    max-height: $menu_bar_height;
+                }
+            }
+        }
+    }
+
+    .header-version-v2{
+        .render-logo{
+            .them-logo {
+                img{
+                    max-height: $menu_bar_height;
+                }
+            }
+        }
+    }
+    
+    .header-version-v2{
+        &.navbar{
+            min-height: $menu_bar_height;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .header-version-v2{
+        .render-logo{display: none;}
+    }
+}
+
+@media (min-width: 768px) {}
+@media (max-width: 767px) {}
+

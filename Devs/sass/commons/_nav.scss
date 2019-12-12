@@ -1,0 +1,51 @@
+.navbar{
+    clear: both;
+    padding: 0;
+    background: #ffffff;
+    border: transparent;
+    border-left: none;
+    border-right: none;
+    margin: 0;
+
+    .fa-home {
+        font-size: 30px;
+        color: $menu_link_color;
+    }
+}
+
+@media (min-width: 992px) {
+    // Fix main-nabbar
+    .main-navbar-fixed{
+        position: fixed;
+        width: 100%;
+        display: block;
+        transition: all 0.3s;
+        top: 0;
+        z-index: 999;
+        opacity: 0.95;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        .nav-item {
+            padding: 10px 0;
+            >.nav-link {
+                // border-left: 1px solid $menu_border_color;
+                padding: 0 10px;
+                text-transform: uppercase;
+                // color: $menu_link_color;
+            }
+        }
+        .dropdown-menu {
+            min-width: 180px;
+            border-radius: 0;
+            padding: 0;
+            .nav-item {
+                padding: 5px 0;
+                .nav-link {
+                    border: none;
+                    text-transform: none;
+                }                
+            }
+        }
+    }
+}
