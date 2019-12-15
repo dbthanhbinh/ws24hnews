@@ -429,6 +429,58 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         );
     }
 
+    // Theme options
+    $wp_customize->add_section(
+        "section_home_banner", 
+        array(
+            'title' => __("Home banners", "ws24h"),
+            'priority' => 135,
+            'description' => __( 'Description Custom Theme Options here' ),
+        )
+    );
+
+    // ads banners
+    $wp_customize->add_setting('ads_url_banner1');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ads_url_banner1',
+    array(
+        'label' => 'Link url banner 1',
+        'section' => 'section_home_banner',
+        'settings' => 'ads_url_banner1',
+        'type' => 'text'
+    ) ) );
+
+    $wp_customize->add_setting('ads_banner1');
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'ads_banner1',
+    array(
+        'label' => 'Upload banner (500 x 280)',
+        'section' => 'section_home_banner',
+        'settings' => 'ads_banner1',
+        'height' => 280,
+        'width' => 500,
+        'flex_width ' => false,
+        'flex_height ' => false,
+    ) ) );
+
+    $wp_customize->add_setting('ads_url_banner2');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ads_url_banner2',
+    array(
+        'label' => 'Link url banner 2',
+        'section' => 'section_home_banner',
+        'settings' => 'ads_url_banner2',
+        'type' => 'text'
+    ) ) );
+
+    $wp_customize->add_setting('ads_banner2');
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'ads_banner2',
+    array(
+        'label' => 'Upload banner (1020 x 280)',
+        'section' => 'section_home_banner',
+        'settings' => 'ads_banner2',
+        'height' => 280,
+        'width' => 1020,
+        'flex_width ' => false,
+        'flex_height ' => false,
+    ) ) );
 
 }
 add_action( 'customize_register', 'your_theme_new_customizer_settings' );

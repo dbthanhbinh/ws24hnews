@@ -18,7 +18,7 @@ function buildSass(cb) {
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(minifyCss())
-            .pipe(rename('style.min.css'))
+            .pipe(rename('styles.css'))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('./assets/css'))
             .pipe(livereload())

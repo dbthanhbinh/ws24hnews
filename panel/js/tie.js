@@ -151,6 +151,8 @@ jQuery(document).ready(function() {
 	}
 	
 	/** Defined image */
+	tie_set_uploader("cat_img_feature");
+	
 	tie_set_uploader("logo");
 	tie_set_uploader("logo_retina");
 	tie_set_uploader("favicon");

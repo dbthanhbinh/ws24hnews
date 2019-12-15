@@ -47,111 +47,29 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 			});
 		 });
 		</script>
-		<div class="tiepanel-item">
-			<h3><?php echo theme_name ?> - Category Settings</h3>
-			<?php
-				tie_cat_options(
-					array(	"name" => "Mega Menu",
-							"id" => "cat_mega_menu",
-							"cat" => $t_id ,
-							"extra_text" => 'To show latest posts in the Main Nav .' ,
-							"type" => "checkbox"));
-							
-				tie_cat_options(				
-					array(	"name" => 'Custom Sidebar',
-							"id" => "cat_sidebar",
-							"type" => "select",
-							"cat" => $t_id ,
-							"options" => $new_sidebars ));
-							
-				tie_cat_options(				
-					array(	"name" => 'Custom Slider',
-							"id" => "cat_slider",
-							"type" => "select",
-							"cat" => $t_id ,
-							"options" => $cat_slider )); 	
-			?>
-		</div>	
 		
 		<div class="tiepanel-item">
-			<h3><?php echo theme_name ?> - Category Logo</h3>
+			<h3>Category images</h3>
 			<?php
 				tie_cat_options(
-					array(	"name" => "Custom Logo",
-							"id" => "cat_custom_logo",
+					array(	"name" => "Show as home feature",
+							"id" => "show_as_home_feature",
 							"cat" => $t_id ,
 							"type" => "checkbox"));
-							
-				tie_cat_options(
-					array( 	"name" => "Logo Setting",
-							"id" => "logo_setting",
-							"type" => "radio",
-							"cat" => $t_id ,
-							"options" => array( "logo"=>"Custom Image Logo" ,
-												"title"=>"Display The Category Title" )));
-				?>
-				<input type="hidden" name="logo_setting_save" value="<?php if( !empty($cat_option[ 'logo_setting' ]) )  echo $cat_option['logo_setting'];?>" />
-				<?php
-				tie_cat_options(
-					array(	"name" => "Custom Logo Image",
-							"id" => "logo",
-							"cat" => $t_id ,
-							"type" => "upload"));
-					
-				tie_cat_options(
-					array(	"name" => "Logo Image (Retina Version @2x)",
-							"id" => "logo_retina",
-							"type" => "upload",
-							"cat" => $t_id ,
-							"extra_text" => 'Please choose an image file for the retina version of the logo. It should be 2x the size of main logo.')); 			
-					
-				tie_cat_options(
-					array(	"name" => "Standard Logo Width for Retina Logo",
-							"id" => "logo_retina_width",
-							"type" => "short-text",
-							"cat" => $t_id ,
-							"extra_text" => 'If retina logo is uploaded, please enter the standard logo (1x) version width, do not enter the retina logo width.')); 			
 
 				tie_cat_options(
-					array(	"name" => "Standard Logo Height for Retina Logo",
-							"id" => "logo_retina_height",
+					array(	"name" => "Sort order",
+							"id" => "sort_order",
 							"type" => "short-text",
 							"cat" => $t_id ,
-							"extra_text" => 'If retina logo is uploaded, please enter the standard logo (1x) version height, do not enter the retina logo height.')); 			
-								
-								
+							"extra_text" => ''));
+
 				tie_cat_options(
-					array(	"name" => "Logo Margin Top",
-							"id" => "logo_margin",
-							"type" => "slider",
+					array(	"name" => "Category img feature",
+							"id" => "cat_img_feature",
 							"cat" => $t_id ,
-							"unit" => "px",
-							"max" => 100,
-							"min" => 0 ));
+							"type" => "upload"));
 			?>
-		</div>
-		
-		<div class="tiepanel-item">
-			<h3><?php echo theme_name ?> - Category Style </h3>
-			<?php
-				tie_cat_options(				
-					array(	"name" => "Main color",
-							"id" => "cat_color",
-							"cat" => $t_id ,
-							"type" => "color" ));
-								
-				tie_cat_options(
-					array(	"name" => "Background",
-							"id" => "cat_background",
-							"cat" => $t_id ,
-							"type" => "background"));
-								
-				tie_cat_options(
-					array(	"name" => "Full Screen Background",
-							"id" => "cat_background_full",
-							"cat" => $t_id ,
-							"type" => "checkbox"));
-				?>
 		</div>
 				
 	</td>
@@ -178,7 +96,6 @@ function tie_cat_options($value){
 		<span class="label"><?php  echo $value['name']; ?></span>
 	<?php
 	$cat_option = get_option('tie_cat_'.$value['cat']);
-	
 	switch ( $value['type'] ) {
 
 		case 'checkbox':

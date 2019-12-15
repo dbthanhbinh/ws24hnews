@@ -45,8 +45,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 
 	register_sidebar( array(
@@ -55,8 +55,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 
 	register_sidebar( array(
@@ -65,8 +65,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 
 	register_sidebar( array(
@@ -75,8 +75,8 @@ function ws24h_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title"><label>',
-		'after_title'   => '</label></h2>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 }
 add_action( 'widgets_init', 'ws24h_widgets_init' );

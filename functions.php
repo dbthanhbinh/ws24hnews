@@ -19,13 +19,20 @@ if (is_admin()) {
 }
 
 function ws24h_scripts () {
-	// Theme stylesheet.
-	wp_enqueue_script( 'main-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js');
-	wp_enqueue_script( 'jquery-bootstrap-bundle', get_theme_file_uri( '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ), array( 'jquery' ), '4.1', true );
-	wp_enqueue_style( 'ws24h-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'ws24h-bootstrap', get_theme_file_uri( '/assets/vendor/bootstrap/css/bootstrap.min.css' ), array( 'ws24h-style' ), '4.1' );
-	wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array( 'ws24h-style' ), '1.0' );
-	wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
+    // Theme stylesheet.
+    wp_enqueue_style( 'ws24h-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ws24h-bootstrap', get_theme_file_uri( '/assets/css/bootstrap.min.css' ), array( 'ws24h-style' ), '4.1' );
+    wp_enqueue_style( 'ws24h-font-awesome', get_theme_file_uri( '/assets/css/font-awesome.min.css' ), array( 'ws24h-style' ), '4.70' );
+    wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/styles.css' ), array( 'ws24h-style' ), '1.0' );
+
+    wp_enqueue_style( 'ws24h-main-style1', get_theme_file_uri( '/assets/css/magnific-popup.css' ), array( 'ws24h-style' ), '1.0' );
+    wp_enqueue_style( 'ws24h-main-style2', get_theme_file_uri( '/assets/css/slicknav.min.css' ), array( 'ws24h-style' ), '1.0' );
+    wp_enqueue_style( 'ws24h-main-style3', get_theme_file_uri( '/assets/css/swiper.min.css' ), array( 'ws24h-style' ), '1.0' );
+    wp_enqueue_style( 'ws24h-main-style4', get_theme_file_uri( '/assets/css/responsive.css' ), array( 'ws24h-style' ), '1.0' );
+    
+    wp_enqueue_script( 'main-script-name', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.8.3.min.js');
+    wp_enqueue_script( 'main-script-name1', get_template_directory_uri() . '/assets/js/vendor/jquery-2.2.4.min.js');
+    wp_enqueue_script( 'main-script-name2', get_template_directory_uri() . '/assets/js/bootstrap.min.js');
 }
 
 function ws24h_setup () {
@@ -64,6 +71,21 @@ add_action( 'after_setup_theme', 'ws24h_setup' );
 
 // Footer
 function ws24h_footer_scripts () {
+    wp_enqueue_script( 'main-script1-name', get_template_directory_uri() . '/assets/js/jquery.slicknav.min.js');
+    wp_enqueue_script( 'main-script2-name', get_template_directory_uri() . '/assets/js/counterup.min.js');
+    wp_enqueue_script( 'main-script3-name', get_template_directory_uri() . '/assets/js/waypoints.js');
+    wp_enqueue_script( 'main-script4-name', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.min.js');
+    wp_enqueue_script( 'main-script5-name', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js');
+    wp_enqueue_script( 'main-script6-name', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js');
+    wp_enqueue_script( 'main-script7-name', get_template_directory_uri() . '/assets/js/countdown.js');
+    wp_enqueue_script( 'main-script8-name', get_template_directory_uri() . '/assets/js/swiper.min.js');
+    wp_enqueue_script( 'main-script9-name', get_template_directory_uri() . '/assets/js/plugins.js');
+    wp_enqueue_script( 'main-script10-name', get_template_directory_uri() . '/assets/js/jquery.zoomslider.min.js');
+    wp_enqueue_script( 'main-script11-name', get_template_directory_uri() . '/assets/js/jquery.firefly.js');
+    wp_enqueue_script( 'main-script12-name', get_template_directory_uri() . '/assets/js/scripts.js');
+
+
+
 	wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'jquery-bootstrap-customjs', get_theme_file_uri( '/assets/js/customjs.js' ), array( 'jquery' ), '1.0', true );
 }
@@ -156,7 +178,7 @@ function ws24h_excerpt_more( $more ) {
         __( '...', THEME_NAME )
     );
 }
-add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
+// add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
 
 add_filter( 'get_the_archive_title', function ($title) {
     if ( is_category() ) {

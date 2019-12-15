@@ -1,0 +1,152 @@
+.header-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 5px 0px;
+    background: transparent;
+    -webkit-transition: background-color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s;
+}
+
+.sticky-menu {
+    background-color: #0b0b0b;
+}
+
+.logo a {
+    display: inline-block;
+}
+
+.logo a img {
+    max-width: 80px;
+}
+.main-menu {
+    nav {
+        ul {
+            text-align: right;
+            li {
+                display: inline-block;
+
+                a {
+                    text-transform: uppercase;
+                    font-size: $main-menu-font-size;
+                    font-weight: 400;
+                    letter-spacing: 0;
+                    position: relative;
+                    padding: 0 15px;
+
+                    border-left: 1px solid $border-color;
+                }
+
+                &:first-child{
+                    a {
+                        border-left: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-menu nav ul li:hover>a,
+.main-menu nav ul li a:hover,
+.main-menu nav ul li.active a {
+    color: #FFCC2F;
+}
+
+.main-menu nav ul li a:after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    top: calc(100% + 3px);
+    height: 2px;
+    width: 80%;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    background: $a-after-bg;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.main-menu nav ul li:hover a:after,
+.main-menu nav ul li a:hover:after,
+.main-menu nav ul li.active a:after {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+/* mobile menu */
+
+.slicknav_menu {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.slicknav_menu .slicknav_menutxt {
+    display: none;
+}
+
+.slicknav_menu {
+    background: transparent;
+    margin-top: 21px;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    background-color: #ffcc2f;
+    height: 2px;
+    width: 19px;
+    margin: 3px 0px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.slicknav_btn {
+    background-color: transparent;
+    position: relative;
+    margin-top: -57px;
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar:nth-child(2) {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(1px, 7px);
+    transform: rotate(45deg) translate(1px, 7px);
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translateY(-6px);
+    transform: rotate(-45deg) translateY(-6px);
+}
+
+.slicknav_nav {
+    background: #FFCC2F;
+    margin: 0;
+    padding: 6px 0px;
+}
+
+.slicknav_nav a:hover {
+    background: #fefefe none repeat scroll 0 0;
+    border-radius: 0;
+}
+
+.slicknav_nav a {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+}
+
+.slicknav_nav .slicknav_arrow {
+    float: right;
+}
+
+.slicknav_nav .slicknav_row:hover, .slicknav_nav .slicknav_row:hover .slicknav_arrow {
+    border-radius: 0;
+    background-color: #3c3333;
+}
+
+/*============================================
+    END Header Area
+*=============================================*/
