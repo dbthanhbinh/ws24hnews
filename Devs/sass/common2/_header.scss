@@ -21,28 +21,23 @@
 .logo a img {
     max-width: 80px;
 }
-.main-menu {
-    nav {
-        ul {
-            text-align: right;
-            li {
-                display: inline-block;
+.menu-primary-container {
+    ul {
+        li {
+            a {
+                text-transform: uppercase;
+                font-size: $main-menu-font-size;
+                font-weight: 400;
+                letter-spacing: 0;
+                position: relative;
+                padding: 0 15px;
 
+                border-left: 1px solid $border-color;
+            }
+
+            &:first-child{
                 a {
-                    text-transform: uppercase;
-                    font-size: $main-menu-font-size;
-                    font-weight: 400;
-                    letter-spacing: 0;
-                    position: relative;
-                    padding: 0 15px;
-
-                    border-left: 1px solid $border-color;
-                }
-
-                &:first-child{
-                    a {
-                        border-left: none;
-                    }
+                    border-left: none;
                 }
             }
         }

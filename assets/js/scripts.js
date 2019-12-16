@@ -156,6 +156,9 @@
             loop: true,
             spaceBetween: 30,
             slidesPerView: 4,
+            autoplay: {
+                delay: 5000,
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true

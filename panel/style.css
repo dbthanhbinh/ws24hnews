@@ -518,7 +518,7 @@ a.toggle-close {
 }
 #tie-slider-items .widget-content textarea{
 	width:482px;
-	height:50px;
+	min-height:50px;
 }
 #tie-slider-items li{
 	-webkit-box-shadow: 0 1px rgba(0, 0, 0, .05);

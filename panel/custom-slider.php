@@ -106,7 +106,9 @@ function tie_slider_slides(){
 				<div class="slider-img"><?php echo wp_get_attachment_image( $slide['id'] , 'thumbnail' );  ?></div>
 				<label for="custom_slider[<?php echo $i ?>][title]"><span>Slide Title :</span><input id="custom_slider[<?php echo $i ?>][title]" name="custom_slider[<?php echo $i ?>][title]" value="<?php  echo stripslashes( $slide['title'] )  ?>" type="text" /></label>
 				<label for="custom_slider[<?php echo $i ?>][link]"><span>Slide Link :</span><input id="custom_slider[<?php echo $i ?>][link]" name="custom_slider[<?php echo $i ?>][link]" value="<?php  echo stripslashes( $slide['link'] )  ?>" type="text" /></label>
-				<label for="custom_slider[<?php echo $i ?>][caption]"><span style="float:left" >Slide Caption :</span><textarea name="custom_slider[<?php echo $i ?>][caption]" id="custom_slider[<?php echo $i ?>][caption]"><?php echo stripslashes($slide['caption']) ; ?></textarea></label>
+				<label for="custom_slider[<?php echo $i ?>][caption]"><span style="float:left" >Slide Caption :</span>
+					<textarea name="custom_slider[<?php echo $i ?>][caption]" id="custom_slider[<?php echo $i ?>][caption]" rows="10"><?php echo stripslashes($slide['caption']); ?></textarea>
+				</label>
 				<input id="custom_slider[<?php echo $i ?>][id]" name="custom_slider[<?php echo $i ?>][id]" value="<?php  echo $slide['id']  ?>" type="hidden" />
 				<a class="del-cat"></a>
 			</div>

@@ -60,105 +60,33 @@ if(count($catFeatures) >= 6){
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-md-12 list-item-group">
-                <div class="row mb--30">
-                    <div class="col-md-12">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <a href="#">
-                                    <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                                </a>
-                            </div>
-                            <div class="item-body">
-                                <h2 class="item-title-big text-items-center"><a href="#">TƯ VẤN GIẢI PHÁP</a></h2>
-                                <p>The Win hỗ trợ khách hàng doanh nghiệp mục tiêu và phương hướng kinh doanh trong trung hạn (2 năm, 3 năm) và dài hạn (5 năm) và được quán triệt một cách đầy đủ trong tất cả các hoạt động sản xuất kinh doanh của doanh nghiệp nhằm đảm bảo cho doanh nghiệp phát triển bền vững.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 mb--30">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <a href="#">
-                                    <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                                </a>
-                                <a class="read-more-small" href="#">Xem thêm</a>
-                            </div>
-                            <div class="item-body">
-                                <h2 class="item-title">DỊCH VỤ QUẢNG CÁO</h2>
-                                <p>The Win hỗ trợ khách hàng doanh nghiệp mục tiêu và phương hướng kinh doanh trong trung hạn (2 năm, 3 năm) và dài hạn (5 năm) và được quán triệt một cách đầy đủ trong tất cả các hoạt động sản xuất kinh doanh của doanh nghiệp nhằm đảm bảo cho doanh nghiệp phát triển bền vững.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb--30">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <a href="#">
-                                    <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                                </a>
-                                <a  class="read-more-small" href="#">Xem thêm</a>
-                            </div>
-                            <div class="item-body">
-                                <h2 class="item-title">XÂY DỰNG VÀ ĐỊNH HƯỚNG</h2>
-                                <p>The Win hỗ trợ khách hàng doanh nghiệp mục tiêu và phương hướng kinh doanh trong trung hạn (2 năm, 3 năm) và dài hạn (5 năm) và được quán triệt một cách đầy đủ trong tất cả các hoạt động sản xuất kinh doanh của doanh nghiệp nhằm đảm bảo cho doanh nghiệp phát triển bền vững.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 mb--30">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <a href="#">
-                                    <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                                </a>
-                                <a  class="read-more-small" href="#">Xem thêm</a>
-                            </div>
-                            <div class="item-body">
-                                <h2 class="item-title">THIẾT KẾ WEBSITE CHUẨN SEO</h2>
-                                <p>The Win hỗ trợ khách hàng doanh nghiệp mục tiêu và phương hướng kinh doanh trong trung hạn (2 năm, 3 năm) và dài hạn (5 năm) và được quán triệt một cách đầy đủ trong tất cả các hoạt động sản xuất kinh doanh của doanh nghiệp nhằm đảm bảo cho doanh nghiệp phát triển bền vững.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb--30">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <a href="#">
-                                    <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                                </a>
-                                <a class="read-more-small" href="#">Xem thêm</a>
-                            </div>
-                            <div class="item-body">
-                                <h2 class="item-title">RÀ SOÁT CHIẾN LƯỢC MARKETING</h2>
-                                <p>The Win hỗ trợ khách hàng doanh nghiệp mục tiêu và phương hướng kinh doanh trong trung hạn (2 năm, 3 năm) và dài hạn (5 năm) và được quán triệt một cách đầy đủ trong tất cả các hoạt động sản xuất kinh doanh của doanh nghiệp nhằm đảm bảo cho doanh nghiệp phát triển bền vững.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+                <?php
+                    $page = get_page_by_path( 'home-page' );
+                    $content = apply_filters('the_content', $page->post_content); 
+                    print_r($content);
+                ?>
             </div>
             <div class="col-lg-3 col-md-12 list-item-group">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 mb--30">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                            </div>
-                            <div class="item-body">
-                                <a href="#">The Win hỗ trợ khách hàng doanh nghiệp mục tiêu</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 mb--30">
-                        <div class="item-content">
-                            <div class="item-thumb">
-                                <img src="https://vinamas.vn/wp-content/uploads/2017/11/web_design_chandigarh.png" />
-                            </div>
-                            <div class="item-body">									
-                                <a href="#">The Win hỗ trợ khách hàng doanh nghiệp mục tiêu</a>
+                <?php
+                $newsQuery = new WP_Query(['posts_per_page' => 4, 'post_type' => 'tin-tuc']);
+                if($newsQuery->have_posts()){
+                    while ($newsQuery->have_posts()): $newsQuery->the_post();
+                        ?>
+                        <div class="col-lg-12 col-md-12 mb--30">
+                            <div class="item-content">
+                                <div class="item-thumb">
+                                    <?= the_post_thumbnail( 'large' ); ?>
+                                </div>
+                                <div class="item-body">
+                                    <a href="<?= the_permalink() ?>"><?= the_title() ?></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <?php
+                    endwhile;
+                }
+                ?>
                 </div>
             </div>
         </div>
@@ -207,7 +135,7 @@ if($serviceQuery->have_posts()){
                         <div class="swiper-slide">
                             <div class="item-content">
                                 <div class="item-thumb">
-                                    <?= the_post_thumbnail( 'large' ); ?>
+                                    <?= the_post_thumbnail( 'medium' ); ?>
                                 </div>
                                 <div class="item-body">
                                     <h2  class="item-title">

@@ -29,6 +29,7 @@ function ws24h_scripts () {
     wp_enqueue_style( 'ws24h-main-style2', get_theme_file_uri( '/assets/css/slicknav.min.css' ), array( 'ws24h-style' ), '1.0' );
     wp_enqueue_style( 'ws24h-main-style3', get_theme_file_uri( '/assets/css/swiper.min.css' ), array( 'ws24h-style' ), '1.0' );
     wp_enqueue_style( 'ws24h-main-style4', get_theme_file_uri( '/assets/css/responsive.css' ), array( 'ws24h-style' ), '1.0' );
+    wp_enqueue_style( 'ws24h-main-style5', get_theme_file_uri( '/assets/css/animate.css' ), array( 'ws24h-style' ), '1.0' );
     
     wp_enqueue_script( 'main-script-name', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.8.3.min.js');
     wp_enqueue_script( 'main-script-name1', get_template_directory_uri() . '/assets/js/vendor/jquery-2.2.4.min.js');
@@ -39,7 +40,9 @@ function ws24h_setup () {
     // This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'    => __( 'Primary Menu', THEME_NAME ),
-		'footer' => __( 'Footer Menu', THEME_NAME ),
+        'footer' => __( 'Footer Menu', THEME_NAME ),
+        'footer-info-1' => __( 'Info Menu 1', THEME_NAME ),
+        'footer-info-2' => __( 'Info Menu 2', THEME_NAME ),
     ) );
     
     /*
@@ -64,7 +67,7 @@ function ws24h_setup () {
 		'audio',
 	) );
 
-    add_theme_support( 'post-thumbnails', array('post', 'khach-hang') );
+    add_theme_support( 'post-thumbnails', array('post', 'khach-hang', 'tin-tuc') );
     add_theme_support('category-thumbnails', array('category'));
 }
 add_action( 'after_setup_theme', 'ws24h_setup' );

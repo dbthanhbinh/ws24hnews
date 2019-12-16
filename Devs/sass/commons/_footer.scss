@@ -108,7 +108,7 @@
 }
 .support-online i { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
 .support-online a span {
-    border-radius: 2px; text-align: center; background: rgb(103, 182, 52); 
+    border-radius: 2px; text-align: center; background: $green-color; 
     padding: 5px; display: none; width: 140px; 
     margin: 0px; position: absolute; color: #ffffff; z-index: 999; top: 5px; left: 38px; transition: all 0.2s ease-in-out 0s; -moz-animation: headerAnimation 0.7s 1; -webkit-animation: headerAnimation 0.7s 1; -o-animation: headerAnimation 0.7s 1; animation: headerAnimation 0.7s 1; 
 }

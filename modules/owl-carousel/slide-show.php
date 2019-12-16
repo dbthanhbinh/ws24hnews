@@ -22,8 +22,20 @@ if($custom_slider->have_posts()):
 					//$thumb = wp_get_attachment_image_src($slide['id'],'slider-thumb');  
 					$thumb2 = wp_get_attachment_image_src($slide['id'],'');
 					?>	
-					<div class="item"><a href="<?php echo $slide['link']; ?>"> 
-						<img alt="<?php echo $slide['title']?$slide['title']:get_bloginfo('name');?>" src="<?php echo $thumb2[0];?>" /> </a>						
+					<div class="item">
+						<img alt="<?php echo $slide['title'] ? $slide['title']:get_bloginfo('name');?>" src="<?php echo $thumb2[0];?>" />
+						<?php
+						if($slide['caption']){
+							?>
+							<div class="slide-show-capital animated slideInLeft">
+								<?php if($slide['title']){?>
+								<h2 class="uppercase"><?= $slide['title'] ?></h2>
+								<?php }?>
+								<?php print_r($slide['caption']); ?>
+							</div>
+							<?php
+						}
+						?>
 					</div>
 					<?php 
 				
@@ -39,7 +51,7 @@ if($custom_slider->have_posts()):
 		<script type="text/javascript">
 			$(document).ready(function() {
 				  $("#owl-demo").owlCarousel({
-				 	  autoplay:true,
+				 	  autoplay: false,
 				 	  loop:true,		
 					  navigation : true, // Show next and prev buttons
 					  slideSpeed : 300,
