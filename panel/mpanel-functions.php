@@ -224,8 +224,8 @@ function tie_add_admin() {
 
 	$current_page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
 	$icon = get_template_directory_uri().'/panel/images/general.png';
-	add_menu_page(THEME_NAME.' Settings', THEME_NAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
-	$theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
+	// add_menu_page(THEME_NAME.' Settings', THEME_NAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
+	// $theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
 	// add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
 	// add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
 	//add_submenu_page('panel','Support', 'Support','switch_themes', 'support' , 'tie_get_support');

@@ -2,15 +2,9 @@
 
 <!-- slide show here-->
 <?php if(get_theme_mod('show_main_slideshow')) { ?>
-    <?php
-    $tie_slider_enable = tie_get_option('slider');
-    $tie_slider_pos = tie_get_option('slider_pos');
-    if($tie_slider_enable && ($tie_slider_pos=='big' || !$tie_slider_pos)):
-    ?>
     <div class="clear-line-5"></div>
     <?php include TEMPLATEPATH . ('/modules/owl-carousel/slide-show.php')?>
-    <?php endif;?>
-<?php } ?>
+    <?php } ?>
 
 <?php
 $args = array( 'taxonomy' => 'category' );
