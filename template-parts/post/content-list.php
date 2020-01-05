@@ -1,10 +1,4 @@
-<?php
-$customItemClassDefault = 'col-lg-12 col-md-12 col-sm-12';
-if($customItemClass) {
-	$customItemClassDefault = $customItemClass;
-}
-?>
-<article class = '<?= $customItemClassDefault ?>'>
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-lg-4 col-md-4 col-sm-4'); ?>>
 	<?php if ( (isset($content_type) && $content_type == 'related') || ('' !== get_the_post_thumbnail() && ! is_single()) ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">

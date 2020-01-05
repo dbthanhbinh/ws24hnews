@@ -5,14 +5,12 @@
         font-size: 15px;
         font-weight: bold;
         border-top: 1px solid $boder_top_color;
-        padding: 7px 0px;
+        padding: 5px 0px;
         margin-bottom: 10px;
     }
 
     &.article-list {
-        .post-thumbnail {
-            max-width: 30%;
-        }
+        .post-thumbnail {}
     }
     
 }

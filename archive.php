@@ -3,7 +3,7 @@
   <?php get_template_part('template-parts/breadcrumb/breadcrumb', '') ?>
   <!-- End breadcrumb -->
   
-  <div class="container">
+  <div class="container-fluid">
     <?php require_once ('helpers/layout-configs.php'); ?>
     <div class="row <?= mainLayoutKey() ?>">
       <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
@@ -12,29 +12,20 @@
 
       <div class="<?= mainLayoutClass() ?>">
         <header class="entry-header">
-          <h1  class="entry-title"><?php single_cat_title(); ?></h1>
+          <h1  class="entry-title"><?php the_archive_title(); ?></h1>
         </header>
         <div class="row">
         <?php
+          $customClass = 'article-list';
           if ( have_posts() ) :
-            echo '<div class="'.mainLayoutTemplate().'">';
+            echo '<div class="'.mainLayoutTemplate($customClass).'">';
               /* Start the Loop */
               $pos = 1;
-              if(isPinLayout()){
-                while ( have_posts() ) : the_post();
-                  get_template_part('template-parts/pin-layout/content', get_post_format());
+              while ( have_posts() ) : the_post();
+                //get_template_part('template-parts/post/content', get_post_format() );
+                include TEMPLATEPATH . '/template-parts/post/content.php';
                 $pos++;
-                endwhile;
-              } else {
-                while ( have_posts() ) : the_post();
-                  if ($pos === 1)
-                    get_template_part('template-parts/post/content', 'big');
-                  else  
-                    get_template_part('template-parts/post/content', get_post_format() );                      
-                
-                  $pos++;
-                endwhile;
-              }
+              endwhile;
             echo '</div>';
           else :
             echo '<div class="col-lg-12">';

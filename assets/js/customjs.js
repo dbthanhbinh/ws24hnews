@@ -31,3 +31,53 @@ $(document).ready(function() {
         $("#sidebar").stick_in_parent();
     }
 });
+
+
+// ajax process function
+
+function db_ajax_process_items(mydata, lprocess, lresult)
+{
+	 $.ajax({
+		type: "POST",
+		url:  mytheme_urls.ajaxurl,
+		dataType: "json",
+		data: mydata,
+		beforeSend: function() {
+           $("#" + lprocess).html("Processing...");
+        },
+		success: function(msg) {
+			console.log("=====111", msg);
+        },
+        error: function() {
+			console.log("error");
+		}
+	});
+}
+
+(function ($) {
+    "use strict";
+
+    $("#js-btn-contact-form-act").on('click', function(){
+        // var formParams = $('#contact-form-act').serializeArray();
+        // formParams.forEach((element, i) => {
+        //     formParams[i].isValid = false
+        // });
+
+        var mname 	= jQuery('#inputFullName').val();
+        var memail 	= jQuery('#inputEmail').val();
+        var mphone 	= jQuery('#inputPhone').val();
+        var mcontent = jQuery('#inputContent').val();
+        var mcode = jQuery('#security_code').val();
+        
+        var myData = {
+            "action": "btn-contact-form-send-ajax",
+            "inputFullName": mname ,
+            "inputEmail": memail,
+            "inputPhone": mphone,
+            "inputContent": mcontent,
+            "security_code": mcode
+        };
+        db_ajax_process_items(myData, "lprocess", "lprocess");
+    })
+
+})(jQuery);

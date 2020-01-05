@@ -33,7 +33,7 @@
     echo '</style>';
 ?>
 <nav id="main-navbar" data-ref="<?= getHeaderClassConfigVersion() ?>" <?php echo (isset($customBg) && $customBg) ? 'style="background: ' . $customBg . '"' : ''; ?> class="navbar navbar-expand-lg <?= getHeaderClassConfigVersion() ?>">
-    <div class="container">
+    <div class="container-fluid">
         <?php
         if(getConfigVersion() != '' || getConfigVersion() != 'v1'){
             ?>

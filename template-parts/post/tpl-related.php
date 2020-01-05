@@ -21,7 +21,7 @@ if ($categories) {
         while( $my_query->have_posts() ) {
             $my_query->the_post();
             $content_type = 'related';
-            include TEMPLATEPATH . '/template-parts/pin-layout/content.php';
+            //include TEMPLATEPATH . '/template-parts/pin-layout/content.php';
         }
         echo '</div>';
         echo '</div>';

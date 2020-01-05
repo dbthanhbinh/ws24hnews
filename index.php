@@ -50,7 +50,7 @@ if(count($catFeatures) >= 6){
 }
 ?>    
 <!-- app-cta area start -->
-<div class="ptb--30">
+<div class="pt--30 pb--0">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-md-12 list-item-group">
@@ -62,12 +62,17 @@ if(count($catFeatures) >= 6){
             </div>
             <div class="col-lg-3 col-md-12 list-item-group">
                 <div class="row">
+                    <div class="col-lg-12 col-md-12 contact-form">
+                        <?php include TEMPLATEPATH . '/modules/contact/contactForm.php'?>
+                    </div>
+                </div>
+                <div class="row pt--20">
                 <?php
-                $newsQuery = new WP_Query(['posts_per_page' => 4, 'post_type' => 'tin-tuc']);
+                $newsQuery = new WP_Query(['posts_per_page' => 2, 'post_type' => 'tin-tuc']);
                 if($newsQuery->have_posts()){
                     while ($newsQuery->have_posts()): $newsQuery->the_post();
                         ?>
-                        <div class="col-lg-12 col-md-12 mb--30">
+                        <div class="col-lg-12 col-md-12 mb--20">
                             <div class="item-content">
                                 <div class="item-thumb">
                                     <?= the_post_thumbnail( 'large' ); ?>
@@ -95,7 +100,7 @@ $urlBanner2 = get_theme_mod('ads_url_banner2');
 
 if($banner1 && $banner2){
 ?>
-<div class="ptb--30">
+<div class="ptb--20">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -116,7 +121,7 @@ if($banner1 && $banner2){
 $serviceQuery = new WP_Query(['posts_per_page' => 12]);
 if($serviceQuery->have_posts()){
 ?>
-<section class="classes-area ptb--30" id="classes">
+<section class="classes-area ptb--20" id="classes">
     <div class="container-fluid">
         <div class="section-title">
             <h2>Giải pháp Tất Cả Trong Một </h2>
@@ -159,7 +164,7 @@ if($serviceQuery->have_posts()){
 $postQuery = new WP_Query(['posts_per_page' => 10, 'post_type' => 'khach-hang']);
 if($postQuery->have_posts()){
 ?>
-<section class="testimonial-area pos-rel ptb--30" id="testimonial">
+<section class="testimonial-area pos-rel ptb--10" id="testimonial">
     <div class="container-fluid">
         <div class="section-title">
             <h2>Khách Hàng Nói Về Chúng Tôi</h2>

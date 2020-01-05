@@ -1,44 +1,45 @@
-.article-list {
-    article {
-        width: 100%;
-        display: inline-block;
+article {
+    width: 100%;
+    display: flex;
 
-        .read-more {
-            font-style: italic;
-            display: block;
-            margin-top: 5px;
-        }
-        
-        header {
-            h1 {
-                font-size: $h1;
-            }
-            h2 {
-                font-size: $h2;
-            }
-            h3 {
-                font-size: $h3;
-            }
-        }
+    .read-more {
+        font-style: italic;
+        display: block;
+        margin-top: 5px;
+    }
     
-        .post-thumbnail {
-    
+    header {
+        h1 {
+            font-size: $h1;
+        }
+        h2 {
+            font-size: $h2;
+        }
+        h3 {
+            font-size: $h3;
+        }
+    }
+
+    .post-thumbnail {}
+
+    .post-big-thumbnail {
+        margin-bottom: 10px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .entry-content {
+        .entry-header {
+            margin-top: 0;
+            padding-top: 0;
         }
 
-        .post-big-thumbnail {
-            margin-bottom: 10px;
-
-            img {
-                width: 100%;
-            }
-        }
-    
-        .entry-content {
-            h2, h3, h4, h5 
-            {
-                font-size: $title_font_size + 1;
-                line-height: $title_line_height;
-            }
+        h2, h3, h4, h5 
+        {
+            font-size: $title_font_size + 1;
+            line-height: $title_line_height;
         }
     }
 }

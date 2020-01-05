@@ -2,7 +2,7 @@
 <div class="top-side-header">
     <div id="top-header" class="top-header">
         <?php if(get_theme_mod('show_top_header')):?>
-        <div class="container top-header-menu">
+        <div class="container-fluid top-header-menu">
             <ul class="navigation top-bar-menu right">
                 <li class="menu-item "><a href="tel:<?= get_theme_mod('contact_hotline')?>"><i class="fa fa-phone"></i> Hotline: <?= get_theme_mod('contact_hotline')?></a></li>
             </ul>
@@ -11,7 +11,7 @@
         endif;
         if(get_theme_mod('show_header')):
         ?>
-        <div class="container top-header-banner">
+        <div class="container-fluid top-header-banner">
         <div class="row">
             <div class="top-banner-img col-md-9 col-lg-9 col-sm-9">
                 <div class="top-banner-right">

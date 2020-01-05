@@ -12,10 +12,10 @@
     ?>
     <?php if(get_theme_mod('show_footer_copyright')) {?>
       <div class="copy-right-box">
-        <div class="container">  
+        <div class="container-fluid">  
           <div class="row">      
             <div class="col-lg-12">
-              <div class="footer-copyright">
+              <div class="footer-copyright" >
                 <span>
                   <?= get_theme_mod('setting_copyright') ?>
                 </span>

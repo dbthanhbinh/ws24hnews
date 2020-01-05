@@ -166,7 +166,7 @@ function ws24h_custom_the_excerpt () {
 	// $excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Đọc thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
 	return $excerpt.'...';
 }
-// add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
+add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
 
 /**
  * Filter the excerpt "read more" string.
@@ -259,3 +259,51 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
     return $title;
 });
+
+function webseo24h_scripts_ajax() {   
+    echo "\n <script type='text/javascript'>\n\t";
+    echo "var mytheme_urls = {";
+    echo "\n \t\tajaxurl:'".admin_url('admin-ajax.php' )."'";
+    echo "\n \t\t,url:'".get_site_url()."'";
+    echo "\n \t\t,sourceurl:'".  get_template_directory_uri()."/images/'";
+    echo "\n\t};\n";
+    echo " </script>\n";
+}
+add_action( 'wp_head', 'webseo24h_scripts_ajax' );
+
+function ajax_load_fc_btn_contact_form_send_ajax()
+{
+	$name 		= strip_tags($_REQUEST['inputFullName']);
+	$email 		= strip_tags($_REQUEST['inputEmail']);
+	$phone 		= strip_tags($_REQUEST['inputPhone']);
+	$content 	= strip_tags($_REQUEST['inputContent']);
+	$code 		= strip_tags($_REQUEST['security_code']);
+	
+	$to =  get_option('admin_email');
+	$subject = 'Khách hàng liên hệ: - '.get_bloginfo('name');
+
+	$headers = "From: " . get_option('admin_email') . "\r\n";
+	$headers .= "Reply-To: ". get_option('admin_email') . "\r\n";
+
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+	$message = '<html><body>';
+
+	$message .= '<h1 style="font-size:15px;">Thông tin khách hàng</h1>';
+	$message .= '<div><strong>Họ tên:</strong> '.$name.'</div>';
+	$message .= '<div><strong>Email:</strong> '.$email.'</div>';
+	$message .= '<div><strong>Điện thoại:</strong> '.$phone.'</div>';
+	$message .= '<div><strong>Nội dung:</strong></div>';
+	$message .= '<div>'.$content.'</div>';
+
+	$message .= '</body></html>';
+
+	wp_mail($to, $subject, $message,$headers);
+	print_r(json_encode(__("Gửi yêu cầu thành công.", THEMENAME)));
+	
+	die();	
+}
+
+add_action('wp_ajax_btn-contact-form-send-ajax','ajax_load_fc_btn_contact_form_send_ajax'); // ajax for logged in users
+add_action('wp_ajax_nopriv_btn-contact-form-send-ajax','ajax_load_fc_btn_contact_form_send_ajax'); // ajax for not logged in users

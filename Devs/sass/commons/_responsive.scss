@@ -143,3 +143,16 @@
         max-width: 35%;
     }
 }
+
+@media (max-width: 640px) and (min-width: 376px) {
+    .swiper-wrapper {
+        .item-content {
+            display: flex;
+
+            .item-thumb {
+                max-width: 30%;
+                margin-right: 15px;
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@
     <?php get_template_part('template-parts/breadcrumb/breadcrumb', '')?>
     <!-- End breadcrumb -->
 
-    <div class="container">
+    <div class="container-fluid">
         <?php require_once ('helpers/layout-configs.php'); ?>
         <div class="row <?= mainLayoutKey() ?> ">
             <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
@@ -60,9 +60,9 @@
                 ?>
 
                 <!-- Related -->
-                <div class="row">
+                <div class="row pt--20">
                     <div class="related-box article-list col-lg-12">
-                        <?php get_template_part( 'template-parts/pin-layout/tpl-related', 'post' );?>
+                        <?php get_template_part( 'template-parts/post/content', 'related' );?>
                     </div>
                 </div>
             </div>      

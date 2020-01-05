@@ -1,6 +1,7 @@
-<?php  if(get_theme_mod('show_breadcrumb')){ ?>
+<?php
+if(get_theme_mod('show_breadcrumb')){ ?>
 <div class="box-breadcrumb">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 col-md-7 box-breadcrumb-part">
                 <ul class="breadcrumb">

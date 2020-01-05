@@ -29,12 +29,8 @@ input,
 input[type='text'],
 input[type='email'],
 input[type='url'] {
-    // border: 1px solid $boder_color;
+    border: 1px solid $boder_color;
     padding: 5px;
-}
-
-input[type='email']{
-    float: left;
 }
 
 input[type='submit'] {
