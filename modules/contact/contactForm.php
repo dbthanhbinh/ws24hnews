@@ -1,15 +1,15 @@
-<form id="contact-form-act">
+<form id="contact-form-act" name="contact-form-act" class="needs-validation" novalidate>
     <div class="form-group">
-        <input type="text" class="form-control" name="inputFullName" id="inputFullName" placeholder="Họ và tên" />
+        <input type="text" class="form-control error" name="inputFullName" id="inputFullName" required placeholder="Họ và tên" />
     </div>
     <div class="form-group">
-        <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email" />
+        <input type="email" class="form-control error" name="inputEmail" id="inputEmail" required placeholder="Email" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="inputPhone" id="inputPhone" placeholder="Điện thoại" />
+        <input type="text" class="form-control" name="inputPhone" id="inputPhone" required placeholder="Điện thoại" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="inputFuinputNganhnghellName" id="inputNganhnghe" placeholder="Ngành nghề kinh doanh" />
+        <input type="text" class="form-control" name="inputNganhnghe" id="inputNganhnghe" required placeholder="Ngành nghề kinh doanh" />
     </div>
     <div class="form-group">
         <select class="form-control" id="selectService" name="selectService">
@@ -21,7 +21,7 @@
         </select>
     </div>
     <div class="form-group">
-        <textarea class="form-control" id="inputContent" name="inputContent" rows="3" placeholder="Nội dung"></textarea>
+        <textarea class="form-control" id="inputContent" name="inputContent" required rows="3" placeholder="Nội dung"></textarea>
     </div>
     <button type="button" id="js-btn-contact-form-act" class="btn">Gửi liên hệ</button>
 </form>

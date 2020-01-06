@@ -276,10 +276,12 @@ function ajax_load_fc_btn_contact_form_send_ajax()
 	$name 		= strip_tags($_REQUEST['inputFullName']);
 	$email 		= strip_tags($_REQUEST['inputEmail']);
 	$phone 		= strip_tags($_REQUEST['inputPhone']);
-	$content 	= strip_tags($_REQUEST['inputContent']);
+    $content 	= strip_tags($_REQUEST['inputContent']);
+    $nganhnghe 	= strip_tags($_REQUEST['inputNganhnghe']);
+    $service 	= strip_tags($_REQUEST['selectService']);
 	$code 		= strip_tags($_REQUEST['security_code']);
 	
-	$to =  get_option('admin_email');
+	$to =  $email; //get_option('admin_email');
 	$subject = 'Khách hàng liên hệ: - '.get_bloginfo('name');
 
 	$headers = "From: " . get_option('admin_email') . "\r\n";
@@ -293,13 +295,15 @@ function ajax_load_fc_btn_contact_form_send_ajax()
 	$message .= '<h1 style="font-size:15px;">Thông tin khách hàng</h1>';
 	$message .= '<div><strong>Họ tên:</strong> '.$name.'</div>';
 	$message .= '<div><strong>Email:</strong> '.$email.'</div>';
-	$message .= '<div><strong>Điện thoại:</strong> '.$phone.'</div>';
+    $message .= '<div><strong>Điện thoại:</strong> '.$phone.'</div>';
+    $message .= '<div><strong>Ngành nghề:</strong> '.$nganhnghe.'</div>';
+    $message .= '<div><strong>Dịch vụ:</strong> '.$service.'</div>';
 	$message .= '<div><strong>Nội dung:</strong></div>';
 	$message .= '<div>'.$content.'</div>';
-
-	$message .= '</body></html>';
-
-	wp_mail($to, $subject, $message,$headers);
+    $message .= '</body></html>';
+    
+    wp_mail($to, $subject, $message, $headers);
+    //wp_mail($to, $subject, $message);
 	print_r(json_encode(__("Gửi yêu cầu thành công.", THEMENAME)));
 	
 	die();	
