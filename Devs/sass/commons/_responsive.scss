@@ -19,9 +19,7 @@
     }
     
     .box-breadcrumb {
-        .box-breadcrumb-part{
-            padding: 0;
-        }
+        .box-breadcrumb-part {}
     }
 
     #main-navbar{
@@ -141,5 +139,17 @@
         float: left;
         margin-right: 10px;
         max-width: 35%;
+    }
+
+    .home-video-section {
+        .home-video-item {
+            margin-bottom: 20px;
+        }
+    }
+
+    .custom-home-tabs-section {
+        .service-item-parent {
+            margin-bottom: 20px;
+        }
     }
 }

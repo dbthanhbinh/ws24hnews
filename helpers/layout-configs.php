@@ -16,7 +16,7 @@ if(is_front_page() || is_home()){
 
 $layoutOptions = (isset($enum_layout) && isset($enum_layout[$layout])) ? $enum_layout[$layout] : $enum_layout['full'];
 
-function isPinLayout() { return true; }
+function isPinLayout() { return false; }
 function isMainSidebar() { global $layoutOptions; return $layoutOptions['sidebar'] ? $layoutOptions['sidebar'] : false; }
 function isSecondSidebar() { global $layoutOptions; return $layoutOptions['second'] ? $layoutOptions['second'] : false; }
 function mainLayoutClass() { global $layoutOptions; return $layoutOptions['main']; }

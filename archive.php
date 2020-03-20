@@ -18,23 +18,25 @@
         <?php
           if ( have_posts() ) :
             echo '<div class="'.mainLayoutTemplate().'">';
+            echo '<div class="col-lg-12">';
               /* Start the Loop */
               $pos = 1;
               if(isPinLayout()){
                 while ( have_posts() ) : the_post();
-                  get_template_part('template-parts/pin-layout/content', get_post_format());
+                  get_template_part('template-parts/post/content', get_post_format());
                 $pos++;
                 endwhile;
               } else {
                 while ( have_posts() ) : the_post();
                   if ($pos === 1)
-                    get_template_part('template-parts/post/content', 'big');
+                    get_template_part('template-parts/post/content', get_post_format());
                   else  
                     get_template_part('template-parts/post/content', get_post_format() );                      
                 
                   $pos++;
                 endwhile;
               }
+            echo '</div>';
             echo '</div>';
           else :
             echo '<div class="col-lg-12">';

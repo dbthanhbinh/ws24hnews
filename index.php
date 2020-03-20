@@ -94,7 +94,7 @@ function get_youtube_id_from_url($url)
                             $youtube_video_id = get_youtube_id_from_url($youtube_video_link);
                         }
                         ?>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-4 col-md-4 home-video-item">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $youtube_video_id ?>?feature=oembed&amp;start&amp;end&amp;wmode=opaque&amp;loop=0&amp;controls=1&amp;mute=0&amp;rel=0&amp;modestbranding=0" allowfullscreen></iframe>
                             </div>
