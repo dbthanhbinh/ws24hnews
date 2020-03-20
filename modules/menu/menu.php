@@ -32,6 +32,22 @@
 
     echo '</style>';
 ?>
+
+<div id="top-header" class="top-header">
+    <?php
+    if(get_theme_mod('show_top_header')):?>
+        <div class="container">
+            <ul>
+                <li><span><b><?= get_theme_mod('company_name') ?></b></span></li>
+                <li><span><b><?= get_theme_mod('contact_hotline') ?></b></span></li>
+                <li><span><b>Mở cửa:</b> <?= get_theme_mod('setting_open_time') ?></span></li>
+            </ul>
+        </div>
+    <?php
+    endif;
+    ?>
+</div>
+
 <nav id="main-navbar" data-ref="<?= getHeaderClassConfigVersion() ?>" <?php echo (isset($customBg) && $customBg) ? 'style="background: ' . $customBg . '"' : ''; ?> class="navbar navbar-expand-lg <?= getHeaderClassConfigVersion() ?>">
     <div class="container">
         <?php

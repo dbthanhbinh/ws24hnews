@@ -6,6 +6,8 @@
 .top-header {
     clear: both;
     padding: 0;
+    border-bottom: 1px solid $boder_color;
+    font-size: 12px;
 
     .container {
         .row{

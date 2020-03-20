@@ -19,7 +19,7 @@
                 <span>
                   <?= get_theme_mod('setting_copyright') ?>
                 </span>
-                <?php if ( has_nav_menu ( 'primary' ) ) : ?>
+                <?php if ( has_nav_menu ( 'footer-menu' ) ) : ?>
                 <?php 
                     $defaults = array(
                         'theme_location'  => 'footer',
@@ -53,5 +53,15 @@
         });
       }
     </script>
+
+      <?php
+      $showFacebookFanpage = get_theme_mod('show_face_fanpage_plugin');
+      if($showFacebookFanpage &&  $showFacebookFanpage == 1){
+        ?>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
+        <?php
+      }
+      ?>
   </body>
 </html>

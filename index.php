@@ -1,5 +1,13 @@
 <?php get_header();?>
-
+<?php
+function get_youtube_id_from_url($url)
+{
+    if (stristr($url,'youtu.be/'))
+        {preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
+    else 
+        {@preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $url, $IDD); return $IDD[5]; }
+}
+?>
 <!-- slide show here-->
 <?php if(get_theme_mod('show_main_slideshow')) { ?>
     <?php
@@ -30,6 +38,7 @@
                             && tie_get_option('on_home') == 'boxes' )
                         {
                             $cats = get_option( 'tie_home_cats' );
+                            
                             // Dispay home with home builder
                             if($cats) {
                                 ?>
@@ -39,9 +48,6 @@
                                 ?>
                                 <?php
                             }
-                            else
-                                _e( 'You can use Homepage builder to build your homepage' , THEME_NAME );
-
                         } else {
                             $p = 1;
                             while ( have_posts() ) :
@@ -52,6 +58,96 @@
                         }
                     ?>            
                 </div>
+            </div>
+
+            <div class="home-intro-section">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="service-name-section"><span>Giới thiệu</span><img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hoa-trai.png"/></h2>
+                        <h4>HẢI THÁI GIA - THƯƠNG HIỆU UY TÍN CỦA MÔ HÌNH ĐÀO TẠO, SETUP VÀ CUNG ỨNG MỸ PHẨM, THIẾT BỊ SPA</h4>
+                        <p>
+                            Sau nhiều năm hoạt động, Hải Thái Gia đã vươn lên trở thành thương hiệu có tiếng trong ngành làm đẹp tại Việt Nam. Bằng kiến thức cùng kinh nghiệm tích lũy được, Hải Thái Gia đầu tư vào lĩnh vực Đào tạo, Setup và Cung ứng thiết bị mỹ phẩm home spa, mang đến cơ hội khởi nghiệp vững chắc cho nhiều người muốn tham gia thị trường này.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hinh-ceo.png"/>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+            $postQuery = new WP_Query(['post_type' => 'custom-video', 'posts_per_page' => 3]);
+            if($postQuery->have_posts()):
+            ?>
+            <div class="home-video-section">
+                <div class="row">
+                    <?php
+                    while ($postQuery->have_posts()):
+                        $postQuery->the_post();
+                        $postId = get_the_ID();
+                        $customMeta = get_post_custom($postId);
+                        $youtube_video_link = null;
+                        $youtube_video_id = null;
+                        if($customMeta && $customMeta['youtube_video_link'] && $customMeta['youtube_video_link'][0])
+                            $youtube_video_link = $customMeta['youtube_video_link'][0];
+                        if ($youtube_video_link) {
+                            $youtube_video_id = get_youtube_id_from_url($youtube_video_link);
+                        }
+                        ?>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $youtube_video_id ?>?feature=oembed&amp;start&amp;end&amp;wmode=opaque&amp;loop=0&amp;controls=1&amp;mute=0&amp;rel=0&amp;modestbranding=0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <?php
+                    endwhile;
+                    ?>
+                </div>
+            </div>
+            <?php endif; ?>
+
+            <?php
+            $tie_home_tabs = tie_get_option('home_tabs') ;
+            if($tie_home_tabs){
+                echo '<div class="custom-home-tabs-section">';
+                echo '<div class="row">';
+                echo '<div class="col-md-12">';
+                echo '<h2 class="service-name-section"><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-phai.png"/><span>Dịch Vụ</span><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-trai.png"/></h2>';
+                echo '</div>';
+
+                foreach ($tie_home_tabs as $key => $option) {
+                    $cat_data = get_category($option);
+                    $cat_option = get_option('tie_cat_'.$option);
+                    $cat_logo = '';
+                    if($cat_option && $cat_option['logo']){
+                        $cat_logo = $cat_option['logo'];
+                    }
+                    $category_link = get_category_link( $option );
+                    ?>
+                    <div class="col-md-4 service-item-parent">
+                        <div class="service-item">
+                            <?php
+                            if($cat_logo){
+                                ?>
+                                <div class="item-thumb">
+                                    <a href="<?= $category_link ?>">
+                                        <img alt="" src="<?= $cat_logo ?>"/>
+                                    </a>                                            
+                                </div>
+                                <?php
+                            }
+                            ?>
+                            <div class="item-content">
+                                <h3 class="service-name"><a href="<?= $category_link ?>"><?= $cat_data->name ?></a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+
+                echo '</div>';
+            }
+            ?>
             </div>
         </div>
 

@@ -3,7 +3,7 @@ include (TEMPLATEPATH . '/panel/register-posttype.php');
 // tie-Panel
 ######include (TEMPLATEPATH . '/panel/shortcodes/shortcode.php');
 $customSlider = true;
-$customClient = true;
+$customClient = false;
 
 if (is_admin()) {
 	include (TEMPLATEPATH . '/panel/mpanel-ui.php');
@@ -14,7 +14,7 @@ if (is_admin()) {
 		include (TEMPLATEPATH . '/panel/custom-client.php');
 
     ######include (TEMPLATEPATH . '/panel/custom-static.php');
-	######include (TEMPLATEPATH . '/panel/category-options.php');
+	include (TEMPLATEPATH . '/panel/category-options-feature.php');
 	include (TEMPLATEPATH . '/panel/post-options.php');	
 	######include (TEMPLATEPATH . '/panel/notifier/update-notifier.php');
 	######include (TEMPLATEPATH . '/panel/importer/tie-importer.php');  

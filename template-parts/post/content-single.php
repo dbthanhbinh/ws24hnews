@@ -27,7 +27,7 @@
 		the_content();
 		// =============			
 		// ws24h_posted_on ();
-		require ('properties-group.php');
+		// require ('properties-group.php');
 		?>
 	</div><!-- .entry-content -->
 </article>

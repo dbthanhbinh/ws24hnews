@@ -14,15 +14,6 @@
 
         <div class="items-excerpt">
             <?php the_excerpt();?>
-            <?php require ('loop-price.php');?>
-        </div>
-
-        <div class="items-readmore">
-            <?php
-            if(function_exists('ws24h_tie_arc_meta_datetime'))
-                ws24h_tie_arc_meta_datetime();
-            ?>
-            <?php //echo '<a href="'.get_permalink().'">Chi tiết.</a>'; ?>
         </div>
     </div>
 </div>

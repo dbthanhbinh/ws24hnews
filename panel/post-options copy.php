@@ -33,11 +33,56 @@ function tie_post_options_module()
         <?php
         tie_post_options(
             [
-                "name" => "Youtube video link",
-                "id"   => "youtube_video_link",
+                "name" => "Giá",
+                "id"   => "price",
                 "type" => "text",
-                "extra" => 'VD nhập: https://www.youtube.com/watch?v=JNNzxZ3qrLI'
+                "extra" => 'VD nhập: 1,2 Tỷ, 350 Triệu'
             ]);
+        tie_post_options(
+            [
+                "name" => "Diện tích",
+                "id"   => "acreage",
+                "type" => "text",
+                "extra" => 'VD nhập 35 ~ 35 M2'
+            ]);
+        // Alias Quan huyen
+        $_districts = [];
+        foreach ($districts as $key=>$item) {
+            $_districts[$item['slug']] = $item['name'];
+        }
+
+        tie_post_options(
+            [
+                "name"    => "BĐS tại quận",
+                "id"      => "district",
+                "std"     => "quan-12",  
+                "type"    => "select",
+                "options" => $_districts
+            ]);
+        tie_post_options(
+            [
+                "name" => "Số Lầu",
+                "id"   => "number-of-build",
+                "std"  => "Nhà cấp 4",
+                "type" => "text",
+                "extra" => 'VD nhập 1 ~ 1 Lầu'
+            ]);
+        tie_post_options(
+            [
+                "name" => "Số phòng ngủ",
+                "id"   => "number-of-bed",
+                "type" => "text",
+                "extra" => 'VD nhập 1 ~ 1 Phòng'
+            ]);
+        tie_post_options(
+            [
+                "name" => "Số phòng vệ sinh",
+                "id"   => "number-of-bath",
+                "type" => "text",
+                "extra" => 'VD nhập 1 ~ 1 Phòng'
+            ]);
+            
+
         ?>
     </div>
 
@@ -541,8 +586,7 @@ function save_post($post_id)
             'tie_review_position',
             'tie_review_style',
             'tie_review_summary',
-            'tie_review_total',
-            'youtube_video_link'
+            'tie_review_total'
         ];
 
         foreach ($custom_meta_fields as $custom_meta_field) {
@@ -615,12 +659,10 @@ function tie_post_options($value)
         $id            = $value['id'];
         $get_meta      = get_post_custom($post->ID);
 
-        
-
         if (isset($get_meta[$id][0])) {
             $current_value = $get_meta[$id][0];
         }
-        //print_r($get_meta);
+
         switch ($value['type']) {
 
         case 'text':

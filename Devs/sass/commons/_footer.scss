@@ -1,8 +1,8 @@
 .footer-section {    
     padding: 15px 0 5px 0;
     margin-top: 0px;
-    background: #f1f1f1;
-
+    // background: #f1f1f1;
+    border-top: 1px solid $boder_color;
     h5{
         text-transform: uppercase;
         font-weight: bold;
@@ -57,11 +57,41 @@
             }
         }
     }
+
+    .widget {
+        &.widget_tag_cloud {
+            .widget-title {
+                border: none;
+                background: none;
+                label{
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+
+                    &:before{
+                        content: "";
+                        display: none;
+                    }
+                }
+            }
+
+            .tagcloud{
+                max-height: 100px;
+                overflow: auto;
+                a {
+                    background: #f1f1f1;
+                    padding: 3px 5px;
+                    margin: 1px 0px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
 }
 
 .copy-right-box {
     text-align: left;
-    background: $footer_bg;
+    background: #000000;
     color: $footer_link_color;
     p {
         padding: 10px 0;
@@ -70,7 +100,7 @@
 
     .footer-copyright {
         padding: 10px 0;
-
+        text-align: left;
         .footer-navbar {
             margin: 0;
             padding: 0;

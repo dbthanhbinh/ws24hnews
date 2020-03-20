@@ -5,11 +5,14 @@ body {
     color: $color;
 }
 
-img,
-iframe
+img
 {
     max-width: 100%;
     height: auto;
+}
+
+iframe {
+    width: 100%;
 }
 
 a {

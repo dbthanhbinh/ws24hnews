@@ -15,10 +15,10 @@ function your_theme_new_customizer_settings( $wp_customize ) {
     // Add a control to upload the logo
     $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'your_theme_logo',
     array(
-        'label' => 'Upload Logo (200 x 80)',
+        'label' => 'Upload Logo (200 x 200)',
         'section' => 'title_tagline',
         'settings' => 'your_theme_logo',
-        'height' => 80,
+        'height' => 200,
         'width' => 200,
         'flex_width ' => false,
         'flex_height ' => false,
@@ -184,6 +184,7 @@ function your_theme_new_customizer_settings( $wp_customize ) {
             '3c' => __('3 cols'),
             '4c' => __('4 cols'),
             'wide-2' => __('Wide - 2 cols'),
+            'wide1' => __('Wide - 1 col'),
             '2-wide' => __('2 cols - Wide'),
             'col-wide-col' => __('col - Wide - col')
         ),
@@ -245,6 +246,16 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'type' => 'text'
     ) ) );
 
+    // Contact name
+    $wp_customize->add_setting('company_footer_name');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_footer_name',
+    array(
+        'label' => 'Company footer name',
+        'section' => 'section_contact',
+        'settings' => 'company_footer_name',
+        'type' => 'text'
+    ) ) );
+
      // Contact address
      $wp_customize->add_setting('contact_address');
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_address',
@@ -292,6 +303,16 @@ function your_theme_new_customizer_settings( $wp_customize ) {
          'label' => 'Setting copyright',
          'section' => 'section_contact',
          'settings' => 'setting_copyright',
+         'type' => 'text'
+     ) ) );
+
+     // Contact copyright
+     $wp_customize->add_setting('setting_open_time');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_open_time',
+     array(
+         'label' => 'Open time',
+         'section' => 'section_contact',
+         'settings' => 'setting_open_time',
          'type' => 'text'
      ) ) );
 
@@ -359,6 +380,19 @@ function your_theme_new_customizer_settings( $wp_customize ) {
             'type' => 'text'
         ) 
     ) );
+
+    $wp_customize->add_setting('show_face_fanpage_plugin', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_face_fanpage_plugin',
+    array(
+        'label' => 'Show Facebook Fanpage',
+        'section' => 'section_socials',
+        'settings' => 'show_face_fanpage_plugin',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
 
     // ================================== HEADER SETTINGS =================================
     $listColors[] = array(
