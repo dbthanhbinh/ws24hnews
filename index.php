@@ -59,21 +59,25 @@ function get_youtube_id_from_url($url)
                     ?>            
                 </div>
             </div>
-
+            <?php
+            $home_page_intro = get_theme_mod('home_page_intro');
+            if($home_page_intro){
+                $p = get_page($home_page_intro);
+            ?>
             <div class="home-intro-section">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h2 class="service-name-section"><span>Giới thiệu</span><img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hoa-trai.png"/></h2>
-                        <h4>HẢI THÁI GIA - THƯƠNG HIỆU UY TÍN CỦA MÔ HÌNH ĐÀO TẠO, SETUP VÀ CUNG ỨNG MỸ PHẨM, THIẾT BỊ SPA</h4>
-                        <p>
-                            Sau nhiều năm hoạt động, Hải Thái Gia đã vươn lên trở thành thương hiệu có tiếng trong ngành làm đẹp tại Việt Nam. Bằng kiến thức cùng kinh nghiệm tích lũy được, Hải Thái Gia đầu tư vào lĩnh vực Đào tạo, Setup và Cung ứng thiết bị mỹ phẩm home spa, mang đến cơ hội khởi nghiệp vững chắc cho nhiều người muốn tham gia thị trường này.
-                        </p>
+                        <h2 class="service-name-section"><span><?= $p->post_title ?></span><img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hoa-trai.png"/></h2>
+                        <?= $p->post_content ?>
                     </div>
                     <div class="col-lg-4">
-                        <img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hinh-ceo.png"/>
+                        <?php echo get_the_post_thumbnail( $home_page_intro, 'large', array( 'class' => 'alignright' ) ); ?>
                     </div>
                 </div>
             </div>
+            <?php
+            }
+            ?>
 
             <?php
             $postQuery = new WP_Query(['post_type' => 'custom-video', 'posts_per_page' => 3]);

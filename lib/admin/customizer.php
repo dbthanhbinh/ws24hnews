@@ -10,6 +10,15 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'right-sidebar' => __('Right sidebar')
     ];
 
+    $pages = get_all_page_ids();
+    $allPage = [];
+    if(count($pages) > 0) {
+        foreach($pages as $pageId)
+        {
+            $allPage[$pageId] = get_the_title($pageId);
+        }
+    }
+
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
     // Add a control to upload the logo
@@ -122,6 +131,17 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'settings' => 'home_layout',
         'type' => 'select',
         'choices' => $choicesLayout
+    ) ) );
+
+    // Home page intro select
+    $wp_customize->add_setting('home_page_intro', ['default' => '']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_page_intro',
+    array(
+        'label' => 'Home page intro',
+        'section' => 'section_layout',
+        'settings' => 'home_page_intro',
+        'type' => 'select',
+        'choices' => $allPage
     ) ) );
 
     // Pages layout
