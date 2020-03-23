@@ -1,5 +1,9 @@
 <?php get_header();?>
 <?php
+function get_link_by_slug($slug, $type = 'page'){
+    $post = get_page_by_path($slug, OBJECT, $type);
+    return get_permalink($post->ID);
+}
 function get_youtube_id_from_url($url)
 {
     if (stristr($url,'youtu.be/'))
@@ -69,6 +73,9 @@ function get_youtube_id_from_url($url)
                     <div class="col-lg-8">
                         <h2 class="service-name-section"><span><?= $p->post_title ?></span><img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hoa-trai.png"/></h2>
                         <?= $p->post_content ?>
+                        <p class="home-intro-readmore">
+                            <a href="<?php echo get_link_by_slug('gioi-thieu', $type = 'page'); ?>">Xem thêm </a>
+                        </p>
                     </div>
                     <div class="col-lg-4">
                         <?php echo get_the_post_thumbnail( $home_page_intro, 'large', array( 'class' => 'alignright' ) ); ?>
