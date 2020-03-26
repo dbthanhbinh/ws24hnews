@@ -6,13 +6,13 @@
     <meta name="p:domain_verify" content="029e1ed9c51b3e20c33659c253b080d9"/>
     <title><?= wp_title() ?></title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145066138-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= get_theme_mod('google_analytics_code') ?>"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-145066138-1');
+      gtag('config', '<?= get_theme_mod('google_analytics_code') ?>');
     </script>
 
     <?php wp_head()?>

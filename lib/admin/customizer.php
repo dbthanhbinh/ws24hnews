@@ -336,6 +336,16 @@ function your_theme_new_customizer_settings( $wp_customize ) {
          'type' => 'text'
      ) ) );
 
+     
+     $wp_customize->add_setting('google_analytics_code');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_analytics_code',
+     array(
+         'label' => 'Google Analytics Code',
+         'section' => 'section_contact',
+         'settings' => 'google_analytics_code',
+         'type' => 'text'
+     ) ) );
+
 
     // ================================== SOCIALS =================================
     // Theme Socials link
