@@ -118,7 +118,7 @@ function get_youtube_id_from_url($url)
             <?php endif; ?>
 
             <?php
-            $tie_home_tabs = tie_get_option('home_tabs') ;
+            $tie_home_tabs = tie_get_option('home_tabs');
             if($tie_home_tabs){
                 echo '<div class="custom-home-tabs-section">';
                 echo '<div class="row">';

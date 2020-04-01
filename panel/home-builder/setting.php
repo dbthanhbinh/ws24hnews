@@ -10,70 +10,7 @@
                                             "boxes"=>" News Boxes - use Home Builder" )));
         ?>
     </div>					
-    <div id="Home_Builder" style="width:100%;">												
-        <div class="tiepanel-item"  style=" overflow: visible; ">
-            <h3>Home Builder 					<a id="collapse-all">[-] Collapse All</a>
-                <a id="expand-all">[+] Expand All</a></h3>
-            <div class="option-item">
-
-                <select style="display:none" id="cats_defult">
-                    <?php foreach ($categories as $key => $option) {
-                        if($key && $option){
-                        ?>
-                    <option value="<?php echo $key ?>"><?php echo $option; ?></option>
-                    <?php }} ?>
-                </select>
-            
-                
-                <div style="clear:both"></div>
-                <div class="home-builder-buttons">
-                    <!-- <a id="add-cat" >News Box</a>
-                    <a id="add-slider" >Scrolling Box</a>
-                    <a id="add-ads" >Ads / Custom Content</a>
-                    <a id="add-news-picture" >News in picture</a>
-                    <a id="add-news-videos" ><?= __('Videos') ?></a> -->
-                    <a id="add-recent" ><?= __('Recent Posts')?></a>
-                    <!-- <a id="add-divider" >Divider</a> -->
-                </div>
-                                    
-                <ul id="cat_sortable">
-                    <?php 
-                    $cats = get_option( 'tie_home_cats' ) ;
-                    $i=0;
-                    if($cats){
-                        foreach ($cats as $cat) {
-                            $i++; 
-                            $layout = (isset($cat['style']) && $cat['style']) ? $cat['style'] : 11;
-                            
-                            ?>
-                                <li id="listItem_<?php echo $i ?>" class="ui-state-default">
-                                <?php                 
-                                    $boxid = empty($cat['boxid']) ? $cat['type'].'_'.rand(200, 3500) : $cat['boxid'];               
-                                    switch ($cat['type']) {
-                                        case 'recent':                                        
-                                            $boxTitle = (isset($cat['title']) && $cat['title']) ? $cat['title'] : __('Recent post');
-                                            require ('header.php');
-                                            require ('recent-post.php');
-                                        break;
-                                        default:
-
-                                        break;
-                                    }
-                                    require ('footer.php');                                
-                                ?>
-                                </li>
-                            <?php
-                        }
-                    }
-                    ?>
-                </ul>
-
-                <script>
-                    var nextCell = <?php echo $i+1 ?> ;
-                    var templatePath =' <?php echo get_template_directory_uri(); ?>';
-                </script>
-            </div>	
-        </div>
+    <div id="Home_Builder" style="width:100%;">	
         <div class="tiepanel-item">
             <h3>Categories Tabs Box</h3>            
             <?php

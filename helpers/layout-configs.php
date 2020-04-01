@@ -8,7 +8,7 @@ if(is_front_page() || is_home()){
    $layout = get_theme_mod('page_layout');
 } else if(is_single()){
    $layout = get_theme_mod('single_layout');
-} else if(is_archive()){
+} else if(is_archive() || is_search()){
    $layout = get_theme_mod('archive_layout');
 } else {
     $layout = 'full';

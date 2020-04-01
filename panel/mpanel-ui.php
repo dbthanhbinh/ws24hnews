@@ -50,17 +50,17 @@ function panel_options() {
 			<ul>
 				<li class="tie-tabs general"><a href="#tab1"><span></span>General Settings</a></li>
 				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
-				<li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li>
-				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
-				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
-				<li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li>
-				<li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li>
+				<!-- <li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li> -->
+				<!-- <li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li> -->
+				<!-- <li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li> -->
+				<!-- <li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li> -->
+				<!-- <li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li> -->
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
-				<li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li>
-				<li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li>
-				<li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li>
-				<li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li>
-				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
+				<!-- <li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li> -->
+				<!-- <li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li> -->
+				<!-- <li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li> -->
+				<!-- <li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li> -->
+				<!-- <li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li> -->
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -68,81 +68,7 @@ function panel_options() {
 		<div class="mo-panel-content">
 			<form action="/" name="tie_form" id="tie_form">
 				<div id="tab1" class="tabs-wrap">
-					
 					<h2>General Settings</h2> <?php echo $save ?>
-					<div class="tiepanel-item">
-						<h3>Custom Favicon</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Custom Favicon",
-										"id" => "favicon",
-										"type" => "upload"));
-						?>
-					</div>	
-					<div class="tiepanel-item">
-						<h3>Custom Gravatar</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Custom Gravatar",
-										"id" => "gravatar",
-										"type" => "upload"));
-						?>
-					</div>	
-					<div class="tiepanel-item">
-						<h3>Apple Icons</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Apple iPhone Icon",
-										"id" => "apple_iphone",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPhone (57px x 57px)')); 			
-
-							tie_options(
-								array(	"name" => "Apple iPhone Retina Icon",
-										"id" => "apple_iphone_retina",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPhone Retina Version (120px x 120px)')); 			
-
-							tie_options(
-								array(	"name" => "Apple iPad Icon",
-										"id" => "apple_iPad",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPhone (72px x 72px)')); 			
-
-							tie_options(
-								array(	"name" => "Apple iPad Retina Icon",
-										"id" => "apple_iPad_retina",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPad Retina Version (144px x 144px)')); 			
-
-						?>
-					</div>	
-					<div class="tiepanel-item">
-						<h3>Time format</h3>
-						<?php
-							tie_options(
-								array( 	"name" => "Time format for blog posts",
-										"id" => "time_format",
-										"type" => "radio",
-										"options" => array( "traditional"=>"Traditional" ,
-															"modern"=>"Time Ago Format",
-															"none"=>"Disable all " )));
-						?>									
-					</div>					
-					<div class="tiepanel-item">
-						<h3>Breadcrumbs Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Breadcrumbs ",
-										"id" => "breadcrumbs",
-										"type" => "checkbox")); 
-							
-							tie_options(
-								array(	"name" => "Breadcrumbs Delimiter",
-										"id" => "breadcrumbs_delimiter",
-										"type" => "short-text"));
-						?>
-					</div>								
 					<div class="tiepanel-item">
 						<h3>Header Code</h3>
 						<div class="option-item">
