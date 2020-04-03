@@ -77,7 +77,7 @@ function get_youtube_id_from_url($url)
                             <a href="<?php echo get_link_by_slug('gioi-thieu', $type = 'page'); ?>">Xem thêm </a>
                         </p>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 home-intro-thumb">
                         <?php echo get_the_post_thumbnail( $home_page_intro, 'large', array( 'class' => 'alignright' ) ); ?>
                     </div>
                 </div>
