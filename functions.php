@@ -9,14 +9,6 @@ require_once ('lib/widgets/widgets.php');
 require_once ('lib/front-end/template-tags.php');
 require_once ('helpers/commons.php');
 require_once ('panel/setting.php');
-if (is_admin()) {
-
-} else {
-	if( function_exists('tie_get_option') && tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
-		require_once ('modules/homepage/tpl-home.php');
-	}
-	add_action( 'wp_enqueue_scripts', 'ws24h_scripts' );
-}
 
 function ws24h_scripts () {
 	// Theme stylesheet.
@@ -26,6 +18,12 @@ function ws24h_scripts () {
 	wp_enqueue_style( 'ws24h-bootstrap', get_theme_file_uri( '/assets/vendor/bootstrap/css/bootstrap.min.css' ), array( 'ws24h-style' ), '4.1' );
 	wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array( 'ws24h-style' ), '1.0' );
 	wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
+}
+if (!is_admin()) {
+    if( function_exists('tie_get_option') && tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
+		require_once ('modules/homepage/tpl-home.php');
+	}
+	add_action( 'wp_enqueue_scripts', 'ws24h_scripts' );
 }
 
 function ws24h_setup () {
@@ -62,6 +60,26 @@ function ws24h_setup () {
 }
 add_action( 'after_setup_theme', 'ws24h_setup' );
 
+// Header
+function ws24h_header_analytics() {
+    if(get_theme_mod('google_analytics_code')){
+
+        $html = '
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id='.get_theme_mod('google_analytics_code').'"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '.get_theme_mod('google_analytics_code').');
+            </script>
+        ';
+        print_r($html);
+    }
+}
+add_action( 'wp_head', 'ws24h_header_analytics' );
+
+
 // Footer
 function ws24h_footer_scripts () {
 	wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
@@ -71,16 +89,13 @@ add_action( 'wp_footer', 'ws24h_footer_scripts' );
 
 function ws24h_facebook_lib_scripts () {
 	if (is_single()) {
-		?>
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		<?php
+        $showFacebookFanpage = get_theme_mod('show_face_fanpage_plugin');
+        if($showFacebookFanpage &&  $showFacebookFanpage == 1){
+            ?>
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
+            <?php
+        }
 	}
 }
 add_action( 'wp_footer', 'ws24h_facebook_lib_scripts' );
@@ -105,6 +120,27 @@ function ws24h_custom_body_background() {
 }
 add_action( 'wp_footer', 'ws24h_custom_body_background' );
 
+
+function ws24h_StickySidebar_scripts () {
+	if (is_single()) {
+        $show_sticky_sidebar = get_theme_mod('show_sticky_sidebar');
+        if($show_sticky_sidebar &&  $show_sticky_sidebar == 1){
+            ?>
+             <!-- For sticky sidebar -->
+            <script type="text/javascript">
+            if( $('#sidebar').length ) {
+                var sidebar = new StickySidebar('#sidebar', {
+                    topSpacing: 50,
+                    bottomSpacing: 50
+                });
+            }
+            </script>
+            <?php
+        }
+	}
+}
+add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
+
 // =============================================
 /**
  * Filter the except length to 20 words.
@@ -127,6 +163,7 @@ function excerpt_content ($excerpt, $limit) {
 	$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
 	return $excerpt;
 }
+
 function get_excerpt($limit, $readMore=false, $source = null){
 	if($source == "content" ? ($excerpt = get_the_content()) : ($excerpt = get_the_excerpt()));	
 	$excerpt = excerpt_content ($excerpt, $limit);
@@ -134,6 +171,7 @@ function get_excerpt($limit, $readMore=false, $source = null){
 	// 	return $excerpt = $excerpt . '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
     return $excerpt . '...';
 }
+
 function ws24h_custom_the_excerpt () {
 	$limit = 150;
 	$excerpt = get_the_excerpt();

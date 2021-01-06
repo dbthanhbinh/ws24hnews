@@ -1,4 +1,3 @@
-    <!-- Footer -->
     <?php
     $customClient = false;
     if($customClient){
@@ -43,25 +42,5 @@
       </div>
     <?php }?>
     <?php wp_footer()?>
-
-    <!-- For sticky sidebar -->
-    <script type="text/javascript">
-      if( $('#sidebar').length ) {
-        var sidebar = new StickySidebar('#sidebar', {
-            topSpacing: 50,
-            bottomSpacing: 50
-        });
-      }
-    </script>
-
-      <?php
-      $showFacebookFanpage = get_theme_mod('show_face_fanpage_plugin');
-      if($showFacebookFanpage &&  $showFacebookFanpage == 1){
-        ?>
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
-        <?php
-      }
-      ?>
   </body>
 </html>
