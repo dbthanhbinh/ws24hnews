@@ -359,6 +359,15 @@ function your_theme_new_customizer_settings( $wp_customize ) {
     );
 
     // Facebook fanpage
+    $wp_customize->add_setting('facebook_name');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_name',
+    array(
+        'label' => 'Facebook name Fanpage',
+        'section' => 'section_socials',
+        'settings' => 'facebook_name',
+        'type' => 'text'
+    ) ) );
+
     $wp_customize->add_setting('facebook_link');
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_link',
     array(

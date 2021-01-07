@@ -9,6 +9,7 @@ require_once ('lib/widgets/widgets.php');
 require_once ('lib/front-end/template-tags.php');
 require_once ('helpers/commons.php');
 require_once ('panel/setting.php');
+require_once ('lib/front-end/translates.php');
 
 function ws24h_scripts () {
 	// Theme stylesheet.

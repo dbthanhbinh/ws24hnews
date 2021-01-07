@@ -24,7 +24,7 @@
                 </div>
                 <?php  if (has_tag()): ?>
                     <div class="tags-box"> <i class="fa fa-tags" aria-hidden="true"></i>    
-                        <?php the_tags(); ?>
+                        <?php the_tags(''); ?>
                     </div>
                 <?php endif; ?>
 

@@ -22,6 +22,29 @@
         <?php } ?>
 
         <div class="<?= mainLayoutClass() ?>">
+
+            <?php
+            // if( tie_get_option('on_home') != 'boxes' )
+            // {
+            //     $args = array(
+            //         'post_type'         => 'post',
+            //         'orderby'           => 'modified',
+            //         'posts_per_page'    => 10,    
+            //     );
+            //     query_posts($args);
+            //     get_template_part('content','loop');
+            // }
+            // else
+            // {
+            //     $cats = get_option('tie_home_cats');
+            //     // print_r($cats);
+            //     if($cats){
+            //         foreach ($cats as $cat){ tie_get_home_cats($cat); }
+            //     } else 
+            //         _e( 'You can use Homepage builder to build your homepage' , THEME_NAME );
+            // }
+            ?>
+
             <div class="row">
                 <div class="<?= mainLayoutTemplate() ?>">
                     <?php
@@ -30,13 +53,11 @@
                             && tie_get_option('on_home') == 'boxes' )
                         {
                             $cats = get_option( 'tie_home_cats' );
-                            
-                            // Dispay home with home builder
-                            if($cats) {
+                            if($cats){
                                 ?>
                                 <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
                                 <?php
-                                foreach ($cats as $cat) { tie_get_home_cats($cat); }
+                                    foreach ($cats as $cat) { tie_get_home_cats($cat); }
                                 ?>
                                 <?php
                             }
@@ -51,6 +72,8 @@
                     ?>            
                 </div>
             </div>
+
+
             <?php
             $home_page_intro = get_theme_mod('home_page_intro');
             if($home_page_intro){
@@ -112,7 +135,7 @@
                 echo '<div class="custom-home-tabs-section">';
                 echo '<div class="row">';
                 echo '<div class="col-md-12">';
-                echo '<h2 class="service-name-section"><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-phai.png"/><span>Dịch Vụ</span><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-trai.png"/></h2>';
+                echo '<h2 class="service-name-section"><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-phai.png"/><span>'.getTranslateByKey("services").'</span><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-trai.png"/></h2>';
                 echo '</div>';
 
                 foreach ($tie_home_tabs as $key => $option) {

@@ -60,7 +60,7 @@ function panel_options() {
 				<!-- <li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li> -->
 				<!-- <li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li> -->
 				<!-- <li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li> -->
-				<!-- <li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li> -->
+				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
 			</ul>
 			<div class="clear"></div>
 		</div>

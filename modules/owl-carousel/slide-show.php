@@ -13,7 +13,7 @@ if($custom_slider->have_posts()):
 	        while($custom_slider->have_posts()): $custom_slider->the_post();
 	        $custom = get_post_custom($post->ID);
 	 		$slider = unserialize( $custom["custom_slider"][0] );			                        	   	 		
-			$number = count($slider);
+			$number = $slider ? count($slider) : 0;
 			if( $slider && $number > 0 )
 			{
 				$tamp=1;
@@ -46,14 +46,12 @@ if($custom_slider->have_posts()):
 					  paginationSpeed : 400,
 					  items : 1,
 					  singleItem:true
-				 
 					  // "singleItem:true" is a shortcut for:
 					  // items : 1, 
 					  // itemsDesktop : false,
 					  // itemsDesktopSmall : false,
 					  // itemsTablet: false,
 					  // itemsMobile : false
-				 
 				  });
 				 
 			});

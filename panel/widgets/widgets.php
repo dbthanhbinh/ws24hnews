@@ -95,14 +95,10 @@ function ws24h_widgets_init() {
 }
 add_action( 'widgets_init', 'ws24h_widgets_init' );
 
-
-
-
 function tcr_tag_cloud_filter($args = array()) {
     $args['smallest'] = 10;
     $args['largest'] = 12;
     $args['unit'] = 'pt';
     return $args;
 }
-
 add_filter('widget_tag_cloud_args', 'tcr_tag_cloud_filter', 90);

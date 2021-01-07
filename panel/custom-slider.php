@@ -164,7 +164,7 @@ function tie_slider_custom_columns($column){
 				$custom = get_post_custom($post->ID);
 				if( !empty($custom["custom_slider"][0])){
 					$slider = unserialize( $custom["custom_slider"][0] );
-					echo $number = count($slider);
+					echo $number = $slider ? count($slider) : 0;
 				}
 				else echo 0;
 			}
