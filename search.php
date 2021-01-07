@@ -9,6 +9,7 @@
         <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
             <?php get_sidebar();?>
         <?php } ?>
+
         <div class="<?= mainLayoutClass() ?>">
           <h1 class="entry-title"><?php echo 'Tìm: ' . get_query_var('s'); ?></h1>
           <div class="row">
@@ -45,7 +46,8 @@
 
           <!-- For Page Nav -->
           <?php require_once('helpers/pagination.php'); ?>
-        </div>        
+        </div>
+        
         <?php get_sidebar('second');?>
         <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
           <?php get_sidebar();?>
