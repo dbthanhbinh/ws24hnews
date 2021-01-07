@@ -59,7 +59,7 @@ add_action( 'wp_before_admin_bar_render', 'tie_admin_bar' );
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	if( !get_option('tie_active') ){
 		tie_save_settings( $default_data );
-		update_option( 'tie_active' , theme_ver );
+		update_option( 'tie_active' , THEME_NAME );
 	}
    //header("Location: admin.php?page=panel");
 }

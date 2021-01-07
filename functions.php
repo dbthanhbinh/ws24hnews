@@ -62,20 +62,20 @@ add_action( 'after_setup_theme', 'ws24h_setup' );
 
 // Header
 function ws24h_header_analytics() {
-    if(get_theme_mod('google_analytics_code')){
+    // if(get_theme_mod('google_analytics_code')){
 
-        $html = '
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id='.get_theme_mod('google_analytics_code').'"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '.get_theme_mod('google_analytics_code').');
-            </script>
-        ';
-        print_r($html);
-    }
+    //     $html = '
+    //         <!-- Global site tag (gtag.js) - Google Analytics -->
+    //         <script async src="https://www.googletagmanager.com/gtag/js?id='.get_theme_mod('google_analytics_code').'"></script>
+    //         <script>
+    //         window.dataLayer = window.dataLayer || [];
+    //         function gtag(){dataLayer.push(arguments);}
+    //         gtag('js', new Date());
+    //         gtag('config', '.get_theme_mod('google_analytics_code').');
+    //         </script>
+    //     ';
+    //     print_r($html);
+    // }
 }
 add_action( 'wp_head', 'ws24h_header_analytics' );
 

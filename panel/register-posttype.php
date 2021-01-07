@@ -31,19 +31,19 @@ function register_custom_posttype()
 		foreach ($rg_posttypes as $key => $value)
 		{
 			$labels = array(
-					'name' 					=> __($value['postname'], WS24H_THEME_NAME),
-					'singular_name' 		=> __($value['postname'], WS24H_THEME_NAME),
-					'add_new' 				=> __("Add new", WS24H_THEME_NAME),
-					'add_new_item' 			=> __("Add new ".$value['postname'],WS24H_THEME_NAME),
-					'edit_item' 			=> __('Edit'.$value['postname'],WS24H_THEME_NAME),
-					'new_item' 				=> __($value['postname'].' new',WS24H_THEME_NAME),
-					'all_items' 			=> __('All '.$value['postname'],WS24H_THEME_NAME),
-					'view_item'				=> __('View '.$value['postname'],WS24H_THEME_NAME),
-					'search_items'			=> __('Search '.$value['postname'],WS24H_THEME_NAME),
-					'not_found' 			=> __('Not found '.$value['postname'],WS24H_THEME_NAME),
-					'not_found_in_trash' 	=> __('Not found '.$value['postname'],WS24H_THEME_NAME),
+					'name' 					=> __($value['postname'], THEME_NAME),
+					'singular_name' 		=> __($value['postname'], THEME_NAME),
+					'add_new' 				=> __("Add new", THEME_NAME),
+					'add_new_item' 			=> __("Add new ".$value['postname'],THEME_NAME),
+					'edit_item' 			=> __('Edit'.$value['postname'],THEME_NAME),
+					'new_item' 				=> __($value['postname'].' new',THEME_NAME),
+					'all_items' 			=> __('All '.$value['postname'],THEME_NAME),
+					'view_item'				=> __('View '.$value['postname'],THEME_NAME),
+					'search_items'			=> __('Search '.$value['postname'],THEME_NAME),
+					'not_found' 			=> __('Not found '.$value['postname'],THEME_NAME),
+					'not_found_in_trash' 	=> __('Not found '.$value['postname'],THEME_NAME),
 					'parent_item_colon' 	=> '',
-					'menu_name' 			=> __($value['postname'],WS24H_THEME_NAME)
+					'menu_name' 			=> __($value['postname'],THEME_NAME)
 		
 			);
 			$args = array(

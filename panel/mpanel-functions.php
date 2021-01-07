@@ -49,8 +49,8 @@ if ( isset( $_GET['page'] ) && $_GET['page'] == 'panel' ) {
 	 
 	function tie_pointer_print_scripts() {
 		//<img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><br />
-		$pointer_content  = "<h3>Did you like ".THEME_NAME." ?</h3>";
-		$pointer_content .= "<p> If you like ".THEME_NAME." theme, please don\'t forget to <a href=\'http://themeforest.net/downloads?ref=tielabs\' target=\'_blank\'><strong>rate it</strong></a> :)</p>";
+		// $pointer_content  = "<h3>Did you like ".THEME_NAME." ?</h3>";
+		// $pointer_content .= "<p> If you like ".THEME_NAME." theme, please don\'t forget to <a href=\'http://themeforest.net/downloads?ref=tielabs\' target=\'_blank\'><strong>rate it</strong></a> :)</p>";
 	?>
 	 
 		<script type="text/javascript">
