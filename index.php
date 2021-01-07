@@ -1,17 +1,5 @@
 <?php get_header();?>
-<?php
-function get_link_by_slug($slug, $type = 'page'){
-    $post = get_page_by_path($slug, OBJECT, $type);
-    return get_permalink($post->ID);
-}
-function get_youtube_id_from_url($url)
-{
-    if (stristr($url,'youtu.be/'))
-        {preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
-    else 
-        {@preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $url, $IDD); return $IDD[5]; }
-}
-?>
+
 <!-- slide show here-->
 <?php if(get_theme_mod('show_main_slideshow')) { ?>
     <?php
@@ -118,6 +106,7 @@ function get_youtube_id_from_url($url)
             <?php endif; ?>
 
             <?php
+            // This for home tabs process
             $tie_home_tabs = tie_get_option('home_tabs');
             if($tie_home_tabs){
                 echo '<div class="custom-home-tabs-section">';
@@ -166,10 +155,11 @@ function get_youtube_id_from_url($url)
         <?php get_sidebar('second');?>
 
         <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-            <?php get_sidebar();?>
+            <?php get_sidebar('second');?>
         <?php } ?>
     </div>
 </div>
+<!-- End Main content show here-->
 
 <!-- Footer show here-->
 <?php get_footer();?>
