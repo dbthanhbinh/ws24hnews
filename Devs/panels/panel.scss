@@ -1,0 +1,11 @@
+#cat_sortable .widget-content {
+    .display_mode_choosing_show {
+        &.active {
+            display: block;
+        }
+    
+        &.inactive {
+            display: none;
+        }
+    }
+}

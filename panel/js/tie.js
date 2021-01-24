@@ -12,25 +12,96 @@ function builderHeader (boxTitle, nextCell) {
 		html += 'value="' + boxTitle + '"';
 		html += 'type="text" /></label>';
 		html += '<label for="tie_home_cats['+ nextCell +'][show_title]">';
-		html += '<span>' + boxTitle + ' :</span>';
-		html += '<select name="tie_home_cats['+ nextCell +'][show_title]" id="tie_home_cats['+ nextCell +'][show_title]">';
-		html += '<option value="y" selected="selected" >Yes</option>';
-		html += '<option value="n">No</option>';
+		html += '<span>Show Box Title :</span>';
+		html += '<select id="tie_home_cats['+ nextCell +'][show_title]" name="tie_home_cats['+ nextCell +'][show_title]">';
+		html += '<option value="y" selected="selected">Show</option>';
+		html += '<option value="n">Hidden</option>';
+		html += '</select>';
+		html += '</label>';
+		html += '<label for="tie_home_cats['+ nextCell +'][description]">';
+		html += '<span>Box description :</span>';
+		html += '<textarea style="direction:ltr; text-align:left"';
+		html += 'id="tie_home_cats['+ nextCell +'][description]"';
+		html += 'name="tie_home_cats['+ nextCell +'][description]"';
+		html += 'type="textarea" cols="100%" rows="3" tabindex="4"></textarea>';
+		html += '</label>';
+		html += '<label for="tie_home_cats['+ nextCell +'][show_description]">';
+		html += '<span>Show Box description :</span>';
+		html += '<select id="tie_home_cats['+ nextCell +'][show_description]" name="tie_home_cats['+ nextCell +'][show_description]">';
+		html += '<option value="y" selected="selected">Show</option>';
+		html += '<option value="n">Hidden</option>';
 		html += '</select>';
 		html += '</label>';
 
 	return html;
 }
 
-function builderFooter (nextCell) {
+function builderHeaderGroupTemplate(boxTitle, nextCell) {
+	var html = '';
+		html += '<li id="listItem_'+ nextCell +'" class="ui-state-default">';
+		html += '<div class="widget-head">' + boxTitle;
+		html += '<a class="toggle-open">+</a>';
+		html += '<a class="toggle-close">-</a>';
+		html += '</div>';
+		html += '<div class="widget-content">';
+		html += '<label for="tie_home_cats['+ nextCell +'][show_box]">';
+		html += '<span>Show/Hiden Box :</span>';
+		html += '<select id="tie_home_cats['+ nextCell +'][show_box]" name="tie_home_cats['+ nextCell +'][show_box]">';
+		html += '<option value="y" selected="selected">Show</option>';
+		html += '<option value="n">Hidden</option>';
+		html += '</select>';
+		html += '</label>';
+	
+		html += '<label for="tie_home_cats['+ nextCell +'][title]">';
+		html += '<span>Box Title :</span>';
+		html += '<input id="tie_home_cats['+ nextCell +'][title]"';
+		html += 'name="tie_home_cats['+ nextCell +'][title]"';
+		html += 'value="'+boxTitle+'"';
+		html += 'type="text"';
+		html += '/>';
+		html += '</label>';
+		html += '<label for="tie_home_cats['+ nextCell +'][subtitle]">';
+		html += '<span>Box subtitle :</span>';
+		html += '<input id="tie_home_cats['+ nextCell +'][subtitle]"';
+		html += 'name="tie_home_cats['+ nextCell +'][subtitle]"';
+		html += 'value="'+boxTitle+'"';
+		html += 'type="text"';
+		html += '/>';
+		html += '</label>';
+		html += '<label for="tie_home_cats['+ nextCell +'][show_title]">';
+		html += '<span>Show Box Title :</span>';
+		html += '<select id="tie_home_cats['+ nextCell +'][show_title]" name="tie_home_cats['+ nextCell +'][show_title]">';
+		html += '<option value="y" selected="selected">Show</option>';
+		html += '<option value="n">Hidden</option>';
+		html += '</select>';
+		html += '</label>';
+		html += '<label for="tie_home_cats['+ nextCell +'][description]">';
+		html += '<span>Box description :</span>';
+		html += '<textarea style="direction:ltr; text-align:left"';
+		html += 'id="tie_home_cats['+ nextCell +'][description]"';
+		html += 'name="tie_home_cats['+ nextCell +'][description]"';
+		html += 'type="textarea" cols="100%" rows="3" tabindex="4"></textarea>';
+		html += '</label>';
+		html += '<label for="tie_home_cats['+ nextCell +'][show_description]">';
+		html += '<span>Show Box description :</span>';
+		html += '<select id="tie_home_cats['+ nextCell +'][show_description]" name="tie_home_cats['+ nextCell +'][show_description]">';
+		html += '<option value="y" selected="selected">Show</option>';
+		html += '<option value="n">Hidden</option>';
+		html += '</select>';
+		html += '</label>';
+
+	return html;
+}
+
+function builderFooter (nextCell, type = 'recent') {
 	var boxid = 1 + Math.floor(Math.random() * 1500);
 	var html = '';
 		html += '<input id="tie_home_cats['+ nextCell +'][boxid]"';
 		html += 'name="tie_home_cats['+ nextCell +'][boxid]"';
-		html += 'value="recent_'+ boxid +'" type="hidden" />';
+		html += 'value="'+ type + '_'+ boxid +'" type="hidden" />';
 		html += '<input id="tie_home_cats['+ nextCell +'][type]"';
 		html += 'name="tie_home_cats['+ nextCell +'][type]"';
-		html += 'value="recent" type="hidden" />';
+		html += 'value="'+type+'" type="hidden" />';
 		html += '<a class="del-cat"></a>';
 		html += '</div>';
 	html += '</li>';
@@ -38,23 +109,116 @@ function builderFooter (nextCell) {
 	return html;
 }
 
+function builderFooterGroupTemplate (nextCell) {
+	var boxid = 1 + Math.floor(Math.random() * 1500);
+	var html = '';
+	html += '<label for="tie_home_cats['+ nextCell +'][order]">';
+	html += '<span>Position order :</span>';
+	html += '<input style="width:50px;" id="tie_home_cats['+ nextCell +'][order]" name="tie_home_cats['+ nextCell +'][order]" value="1" type="text" />';
+	html += '</label>';
+
+	html += '<input id="tie_home_cats['+ nextCell +'][boxid]" name="tie_home_cats['+ nextCell +'][boxid]" value="group_'+ boxid +'" type="hidden" />';
+	html += '<input id="tie_home_cats['+ nextCell +'][type]" name="tie_home_cats['+ nextCell +'][type]" value="group-template" type="hidden" />';
+	html += '<a class="del-cat"></a>';
+    html += '</div>';
+	html += '</li>';
+	return html;
+}
+
 function builderRecentPost (boxTitle, nextCell, content) {	
 	var html = '';
 	html += builderHeader (boxTitle, nextCell);
 
-	html += '<label><span style="float:left;">Select Categories : </span>';
-	html += '<select ';
-	html += 'name="tie_home_cats['+ nextCell +'][include][]"';
-	html += 'id="tie_home_cats['+ nextCell +'][include][]">'+ content +'</select>';
-	html += '</label>';
-	html += '<label for="tie_home_cats['+ nextCell +'][number]">';
-	html += '<span>Number of posts to show :</span>';
-	html += '<input style="width:50px;"';
-	html += 'id="tie_home_cats['+ nextCell +'][number]"';
-	html += 'name="tie_home_cats['+ nextCell +'][number]" value="5" type="text" />';
+	html += '<label>';
+	html += '<span style="float:left;">Exclude This Categories : </span>';
+	html += '<select multiple="multiple" name="tie_home_cats['+ nextCell +'][exclude][]" id="tie_home_cats['+ nextCell +'][exclude][]">';
+	html += content;
+	html += '</select>';
 	html += '</label>';
 	
+	html += '<label for="tie_home_cats['+ nextCell +'][display]"><span>Display Mode:</span>';
+	html += '<select class="display_mode_choosing_js" data-id="'+nextCell+'" id="tie_home_cats['+ nextCell +'][display]" name="tie_home_cats['+ nextCell +'][display]">';
+	html += '<option value="grid" selected="selected">As Grid</option>';
+	html += '<option value="list">As list</option>';
+	html += '</select>';
+	html += '</label>';
+
+	html += '<label id="display_mode_choosing_show_cols_'+nextCell+'" class="display_mode_choosing_show active" for="tie_home_cats['+ nextCell +'][grid_cols]"><span>Show cols:</span>';
+	html += '<select id="tie_home_cats['+ nextCell +'][grid_cols]" name="tie_home_cats['+ nextCell +'][grid_cols]">';
+	html += '<option value="4" selected="selected">4 cols</option>';
+	html += '<option value="3">3 cols</option>';
+	html += '<option value="6">6 cols</option>';
+	html += '</select>';
+	html += '</label>';
+
+	html += '<label for="tie_home_cats['+ nextCell +'][number]">';
+	html += '<span>Number of posts to show :</span>';
+	html += '<input style="width:50px;" id="tie_home_cats['+ nextCell +'][number]" name="tie_home_cats['+ nextCell +'][number]" value="8" type="text" />';
+	html += '</label>';
+	
+	html += '<p id="display_mode_choosing_show_message_'+nextCell+'" class="tie_message_hint display_mode_choosing_show active">If you are choosing <i>Display Mode</i> as <strong>Grid</strong>, Please input <strong>Number of posts to show</strong> divisible by [3,4,6] </p>';
+	
 	html += builderFooter (nextCell);
+	return html;
+}
+
+// For categories tab box
+function builderCategoriesTabBox (boxTitle, nextCell) {	
+	var html = '';
+	html += builderHeader (boxTitle, nextCell);
+
+	html += builderFooter (nextCell, 'categories');
+	return html;
+}
+
+// For video list
+function builderVideoList (boxTitle, nextCell) {	
+	var html = '';
+	html += builderHeader (boxTitle, nextCell);
+	
+	html += '<label for="tie_home_cats['+ nextCell +'][display]"><span>Display Mode:</span>';
+	html += '<select class="display_mode_choosing_js" data-id="'+nextCell+'" id="tie_home_cats['+ nextCell +'][display]" name="tie_home_cats['+ nextCell +'][display]">';
+	html += '<option value="grid" selected="selected">As Grid</option>';
+	html += '<option value="list">As list</option>';
+	html += '</select>';
+	html += '</label>';
+
+	html += '<label id="display_mode_choosing_show_cols_'+nextCell+'" class="display_mode_choosing_show active" for="tie_home_cats['+ nextCell +'][grid_cols]"><span>Show cols:</span>';
+	html += '<select id="tie_home_cats['+ nextCell +'][grid_cols]" name="tie_home_cats['+ nextCell +'][grid_cols]">';
+	html += '<option value="4">4 cols</option>';
+	html += '<option value="3" selected="selected">3 cols</option>';
+	html += '<option value="6">6 cols</option>';
+	html += '</select>';
+	html += '</label>';
+
+	html += '<label for="tie_home_cats['+ nextCell +'][number]">';
+	html += '<span>Number of posts to show :</span>';
+	html += '<input style="width:50px;" id="tie_home_cats['+ nextCell +'][number]" name="tie_home_cats['+ nextCell +'][number]" value="8" type="text" />';
+	html += '</label>';
+	
+	html += '<p id="display_mode_choosing_show_message_'+nextCell+'" class="tie_message_hint display_mode_choosing_show active">If you are choosing <i>Display Mode</i> as <strong>Grid</strong>, Please input <strong>Number of posts to show</strong> divisible by [3,4,6] </p>';
+	
+	html += builderFooter(nextCell, 'videos');
+	return html;
+}
+
+// For Group template
+function builderGroupTemplate(boxTitle, nextCell, content) {	
+	var html = '';
+	html += builderHeaderGroupTemplate(boxTitle, nextCell);
+	html += '<label for="tie_home_cats['+nextCell+'][home_group]"><span>Display Group template:</span>';
+	html += '<select id="tie_home_cats['+nextCell+'][home_group]" name="tie_home_cats['+nextCell+'][home_group]">';
+		for(var g=1 ; g<=2; g++){
+			var selected = '';
+			if(g ==1)
+				selected = 'selected="selected"';
+			html += '<option value="home_group_'+g+'" '+selected+'>Group template '+g+'</option>';
+		}
+	html += '</select>';
+	html += '</label>';
+
+
+	html += builderFooterGroupTemplate(nextCell);
 	return html;
 }
 
@@ -155,15 +319,24 @@ jQuery(document).ready(function() {
 	tie_set_uploader("logo_retina");
 	tie_set_uploader("favicon");
 	tie_set_uploader("gravatar");
-	tie_set_uploader("apple_iphone");
-	tie_set_uploader("apple_iphone_retina");
-	tie_set_uploader("apple_iPad");
-	tie_set_uploader("apple_iPad_retina");
+	
+	// tie_set_uploader("apple_iphone_retina");
+	// tie_set_uploader("apple_iPad");
+	tie_set_uploader("breadcrumb_banner");
 	tie_set_uploader("banner_top_img");
 	tie_set_uploader("banner_bottom_img");
 	tie_set_uploader("banner_above_img");
 	tie_set_uploader("banner_below_img");
+	tie_set_uploader("home_tabs_big_image");
 	tie_set_uploader("dashboard_logo");
+
+	// Custom home Group-1
+	for(var g=1; g <= 2; g++){
+		tie_set_uploader("home_group_"+g+"_upload_big");
+		for(var i=1; i <= 6; i++){
+			tie_set_uploader("home_group_"+g+"_upload_item_"+i);
+		}
+	}
 
 	// Del Preview Image
 	jQuery(document).on("click", ".del-img" , function(){
@@ -205,12 +378,33 @@ jQuery(document).ready(function() {
 	// HomeBuilder
 	var categoryDf = jQuery('#cats_defult').html();
 	
+	// For recent post
 	jQuery("#add-recent").click(function() {
 		jQuery('#cat_sortable').append(builderRecentPost(boxTitle='Recent post', nextCell, content=categoryDf));
 		jQuery('#listItem_'+ nextCell).hide().fadeIn();
 		nextCell ++ ;
 	});
-	
+
+	// For group template
+	jQuery("#add-group").click(function() {
+		jQuery('#cat_sortable').append(builderGroupTemplate(boxTitle='Group template', nextCell, content=categoryDf));
+		jQuery('#listItem_'+ nextCell).hide().fadeIn();
+		nextCell ++ ;
+	});
+
+	// For video list
+	jQuery("#add-videos").click(function() {
+		jQuery('#cat_sortable').append(builderVideoList(boxTitle='Video list', nextCell));
+		jQuery('#listItem_'+ nextCell).hide().fadeIn();
+		nextCell ++ ;
+	});
+
+	// For categories tab box
+	jQuery("#add-categories").click(function() {
+		jQuery('#cat_sortable').append(builderCategoriesTabBox(boxTitle='Categories tab box', nextCell));
+		jQuery('#listItem_'+ nextCell).hide().fadeIn();
+		nextCell ++ ;
+	});
 
 
 	// Toggle open/Close
@@ -405,6 +599,25 @@ function toggleVisibility(id) {
        else
           e.style.display = 'block';
 }
+
+// for custom
+// display_mode_choosing_js
+jQuery(document).on('change', '.display_mode_choosing_js',function(event) {
+		event.preventDefault();
+		var myval = jQuery(this).val();
+		var myid = jQuery(this).data('id');
+		if(myval == 'grid'){
+			jQuery('#display_mode_choosing_show_cols_' + myid).removeClass('inactive');
+			jQuery('#display_mode_choosing_show_message_' + myid).removeClass('inactive');
+			jQuery('#display_mode_choosing_show_cols_' + myid).addClass('active');
+			jQuery('#display_mode_choosing_show_message_' + myid).addClass('active');
+		} else {
+			jQuery('#display_mode_choosing_show_cols_' + myid).removeClass('active');
+			jQuery('#display_mode_choosing_show_cols_' + myid).addClass('inactive');
+			jQuery('#display_mode_choosing_show_message_' + myid).removeClass('active');
+			jQuery('#display_mode_choosing_show_message_' + myid).addClass('inactive');
+		}
+});	
 
 (function($){var i=function(e){if(!e)var e=window.event;e.cancelBubble=true;if(e.stopPropagation)e.stopPropagation()};$.fn.checkbox=function(f){try{document.execCommand('BackgroundImageCache',false,true)}catch(e){}var g={cls:'jquery-checkbox',empty:'empty.png'};g=$.extend(g,f||{});var h=function(a){var b=a.checked;var c=a.disabled;var d=$(a);if(a.stateInterval)clearInterval(a.stateInterval);a.stateInterval=setInterval(function(){if(a.disabled!=c)d.trigger((c=!!a.disabled)?'disable':'enable');if(a.checked!=b)d.trigger((b=!!a.checked)?'check':'uncheck')},10);return d};return this.each(function(){var a=this;var b=h(a);if(a.wrapper)a.wrapper.remove();a.wrapper=$('<span class="'+g.cls+'"><span class="mark"><img src="'+g.empty+'" /></span></span>');a.wrapperInner=a.wrapper.children('span:eq(0)');a.wrapper.hover(function(e){a.wrapperInner.addClass(g.cls+'-hover');i(e)},function(e){a.wrapperInner.removeClass(g.cls+'-hover');i(e)});b.css({position:'absolute',zIndex:-1,visibility:'hidden'}).after(a.wrapper);var c=false;if(b.attr('id')){c=$('label[for='+b.attr('id')+']');if(!c.length)c=false}if(!c){c=b.closest?b.closest('label'):b.parents('label:eq(0)');if(!c.length)c=false}if(c){c.hover(function(e){a.wrapper.trigger('mouseover',[e])},function(e){a.wrapper.trigger('mouseout',[e])});c.click(function(e){b.trigger('click',[e]);i(e);return false})}a.wrapper.click(function(e){b.trigger('click',[e]);i(e);return false});b.click(function(e){i(e)});b.bind('disable',function(){a.wrapperInner.addClass(g.cls+'-disabled')}).bind('enable',function(){a.wrapperInner.removeClass(g.cls+'-disabled')});b.bind('check',function(){a.wrapper.addClass(g.cls+'-checked')}).bind('uncheck',function(){a.wrapper.removeClass(g.cls+'-checked')});$('img',a.wrapper).bind('dragstart',function(){return false}).bind('mousedown',function(){return false});if(window.getSelection)a.wrapper.css('MozUserSelect','none');if(a.checked)a.wrapper.addClass(g.cls+'-checked');if(a.disabled)a.wrapperInner.addClass(g.cls+'-disabled')})}})(jQuery);
 // tipsy, version 1.0.0a

@@ -1,50 +1,42 @@
 <?php get_header();?>
+  <?php require_once ('helpers/layout-configs.php'); ?>
   <!-- Breadcrumb -->
   <?php get_template_part('template-parts/breadcrumb/breadcrumb', '') ?>
   <!-- End breadcrumb -->
   
   <div class="container">
-    <?php require_once ('helpers/layout-configs.php'); ?>
     <div class="row <?= mainLayoutKey() ?>">
       <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
             <?php get_sidebar();?>
       <?php } ?>
 
       <div class="<?= mainLayoutClass() ?>">
-        <header class="entry-header">
+        <header class="entry-page-header entry-header">
           <h1  class="entry-title"><?php single_cat_title(); ?></h1>
         </header>
-        <div class="row">
+        
         <?php
           if ( have_posts() ) :
-            echo '<div class="'.mainLayoutTemplate().'">';
-            echo '<div class="col-lg-12">';
-              /* Start the Loop */
               $pos = 1;
-              if(isPinLayout()){
+              $archive_display = tie_get_option('archive_display');
+              $archive_cols = tie_get_option('archive_cols');
+              $args = [
+                'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,
+                'cols' => $archive_cols ? $archive_cols : 3
+              ];
+              echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
                 while ( have_posts() ) : the_post();
-                  get_template_part('template-parts/post/content', get_post_format());
-                $pos++;
-                endwhile;
-              } else {
-                while ( have_posts() ) : the_post();
-                  if ($pos === 1)
-                    get_template_part('template-parts/post/content', get_post_format());
-                  else  
-                    get_template_part('template-parts/post/content', get_post_format() );                      
-                
+                    get_template_part('template-parts/post/content', get_post_format(), $args);
                   $pos++;
                 endwhile;
-              }
-            echo '</div>';
-            echo '</div>';
+              echo '</div>';
           else :
-            echo '<div class="col-lg-12">';
+            echo '<div class="'.getDefaultFullLayout().'">';
               get_template_part( 'template-parts/post/content', 'none' );
             echo '</div>';
           endif;
         ?>
-        </div>
+
         <!-- For Nav -->
         <?php require_once('helpers/pagination.php'); ?>
       </div>

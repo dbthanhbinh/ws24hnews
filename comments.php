@@ -56,7 +56,7 @@ if ( post_password_required() ) {
 	);
 	$comments_args = array(
 		'fields' =>  $fields,
-		'title_reply'=> '<i class="fa fa-comments" aria-hidden="true"></i> '.getTranslateByKey('your_comments'),
+		'title_reply'=> '<i class="fa fa-comments fa-custom-size" aria-hidden="true"></i> '.getTranslateByKey('your_comments'),
 		'label_submit' => getTranslateByKey('send_comment')
 	);
 	comment_form($comments_args);

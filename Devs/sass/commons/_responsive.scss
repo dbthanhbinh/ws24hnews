@@ -37,7 +37,7 @@
             #menu-primary {
                 clear: both;
                 > .nav-item a{
-                    color: $color;
+                    color: $main_text_color;
                 }
 
                 .dropdown-menu{
@@ -67,7 +67,7 @@
             .navbar-toggler-icon {
                 .fa {
                     font-size: 25px;
-                    // color: $colors-white;
+                    color: $main_color;
                 }
     
             }
@@ -96,8 +96,8 @@
         margin-left: -15px;
         margin-right: -15px;
         padding: 0px 15px;
-        background: rgb(207, 229, 247);
-        border-top: 1px solid #fff;
+        background: $main_color;
+        border-top: 1px solid $main_text_color;
         margin-top: 5px;
     }
     .navbar-nav .dropdown-menu {        
@@ -108,6 +108,7 @@
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
         -o-border-radius: 0;
+        background-color: transparent;
     }
 
     .second-sidebar {

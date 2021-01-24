@@ -20,7 +20,7 @@
                 <?php endif; ?>
             </div>
         </div> -->
-        <div class="col-lg-12 box-fix-max">
+        <div class="<?= getDefaultFullLayout() ?> box-fix-max">
             <h4><i class="fa fa-tags" aria-hidden="true"></i>Từ khóa tìm kiếm</h4>
             <div class="scrollbar scrollbar-black bordered-black square thin tag-clouds">
                 <div class="force-overflow"> <?= wp_tag_cloud('smallest=10&largest=13') ?> </div>

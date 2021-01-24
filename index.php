@@ -16,170 +16,54 @@
 <div class="container">
     <div class="clear-15"></div>
     <?php require_once ('helpers/layout-configs.php'); ?>
+
     <div class="row <?= mainLayoutKey() ?>">
+
         <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
             <?php get_sidebar();?>
         <?php } ?>
 
         <div class="<?= mainLayoutClass() ?>">
-
             <?php
-            // if( tie_get_option('on_home') != 'boxes' )
-            // {
-            //     $args = array(
-            //         'post_type'         => 'post',
-            //         'orderby'           => 'modified',
-            //         'posts_per_page'    => 10,    
-            //     );
-            //     query_posts($args);
-            //     get_template_part('content','loop');
-            // }
-            // else
-            // {
-            //     $cats = get_option('tie_home_cats');
-            //     // print_r($cats);
-            //     if($cats){
-            //         foreach ($cats as $cat){ tie_get_home_cats($cat); }
-            //     } else 
-            //         _e( 'You can use Homepage builder to build your homepage' , THEME_NAME );
-            // }
-            ?>
-
-            <div class="row">
-                <div class="<?= mainLayoutTemplate() ?>">
-                    <?php
-                        if(function_exists('tie_get_option')
-                            && tie_get_option('on_home')
-                            && tie_get_option('on_home') == 'boxes' )
-                        {
-                            $cats = get_option( 'tie_home_cats' );
-                            if($cats){
-                                ?>
-                                <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
-                                <?php
-                                    foreach ($cats as $cat) { tie_get_home_cats($cat); }
-                                ?>
-                                <?php
-                            }
-                        } else {
-                            $p = 1;
-                            while ( have_posts() ) :
-                                the_post();
-                                include TEMPLATEPATH  . '/template-parts/pin-layout/content.php';
-                                $p++;
-                            endwhile;
-                        }
-                    ?>            
-                </div>
-            </div>
-
-
-            <?php
-            $home_page_intro = get_theme_mod('home_page_intro');
-            if($home_page_intro){
-                $p = get_page($home_page_intro);
-            ?>
-            <div class="home-intro-section">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h2 class="service-name-section"><span><?= $p->post_title ?></span><img class="img-ticker img-ticker-left" alt="" src="<?= get_template_directory_uri() ?>/assets/images/hoa-trai.png"/></h2>
-                        <?= $p->post_content ?>
-                        <p class="home-intro-readmore">
-                            <a href="<?php echo get_link_by_slug('gioi-thieu', $type = 'page'); ?>">Xem thêm </a>
-                        </p>
-                    </div>
-                    <div class="col-lg-4 home-intro-thumb">
-                        <?php echo get_the_post_thumbnail( $home_page_intro, 'large', array( 'class' => 'alignright' ) ); ?>
-                    </div>
-                </div>
-            </div>
-            <?php
-            }
-            ?>
-
-            <?php
-            $postQuery = new WP_Query(['post_type' => 'custom-video', 'posts_per_page' => 3]);
-            if($postQuery->have_posts()):
-            ?>
-            <div class="home-video-section">
-                <div class="row">
-                    <?php
-                    while ($postQuery->have_posts()):
-                        $postQuery->the_post();
-                        $postId = get_the_ID();
-                        $customMeta = get_post_custom($postId);
-                        $youtube_video_link = null;
-                        $youtube_video_id = null;
-                        if($customMeta && $customMeta['youtube_video_link'] && $customMeta['youtube_video_link'][0])
-                            $youtube_video_link = $customMeta['youtube_video_link'][0];
-                        if ($youtube_video_link) {
-                            $youtube_video_id = get_youtube_id_from_url($youtube_video_link);
-                        }
+                if(function_exists('tie_get_option')
+                    && tie_get_option('on_home')
+                    && tie_get_option('on_home') == 'boxes' )
+                {
+                    $cats = get_option( 'tie_home_cats' );
+                    if($cats){
                         ?>
-                        <div class="col-lg-4 col-md-4 home-video-item">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $youtube_video_id ?>?feature=oembed&amp;start&amp;end&amp;wmode=opaque&amp;loop=0&amp;controls=1&amp;mute=0&amp;rel=0&amp;modestbranding=0" allowfullscreen></iframe>
-                            </div>
-                        </div>
+                        <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
                         <?php
-                    endwhile;
-                    ?>
-                </div>
-            </div>
-            <?php endif; ?>
-
-            <?php
-            // This for home tabs process
-            $tie_home_tabs = tie_get_option('home_tabs');
-            if($tie_home_tabs){
-                echo '<div class="custom-home-tabs-section">';
-                echo '<div class="row">';
-                echo '<div class="col-md-12">';
-                echo '<h2 class="service-name-section"><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-phai.png"/><span>'.getTranslateByKey("services").'</span><img class="img-ticker img-ticker-left" alt="" src="'.get_template_directory_uri().'/assets/images/hoa-trai.png"/></h2>';
-                echo '</div>';
-
-                foreach ($tie_home_tabs as $key => $option) {
-                    $cat_data = get_category($option);
-                    $cat_option = get_option('tie_cat_'.$option);
-                    $cat_logo = '';
-                    if($cat_option && $cat_option['logo']){
-                        $cat_logo = $cat_option['logo'];
+                            foreach ($cats as $cat) { tie_get_home_cats($cat); }
+                        ?>
+                        <?php
                     }
-                    $category_link = get_category_link( $option );
-                    ?>
-                    <div class="col-md-4 service-item-parent">
-                        <div class="service-item">
-                            <?php
-                            if($cat_logo){
-                                ?>
-                                <div class="item-thumb">
-                                    <a href="<?= $category_link ?>">
-                                        <img alt="" src="<?= $cat_logo ?>"/>
-                                    </a>                                            
-                                </div>
-                                <?php
-                            }
-                            ?>
-                            <div class="item-content">
-                                <h3 class="service-name"><a href="<?= $category_link ?>"><?= $cat_data->name ?></a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
+                } else {
+                    $p = 1;
+                    $args = [
+                        'isGrid' => true,
+                        'cols' => 4
+                    ];
+                    echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
+                    while ( have_posts() ) :
+                        the_post();
+                        get_template_part('template-parts/post/content', '', $args);
+                        $p++;
+                    endwhile;
+                    echo '</div>';
                 }
-
-                echo '</div>';
-            }
             ?>
-            </div>
+            <?php
+            // Home tabs
+            // require('modules/homepage/home_tab.php');
+            ?>
         </div>
-
         <!-- Sidebar area: we defined sidebar's 2 area -->
         <?php get_sidebar('second');?>
-
         <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
             <?php get_sidebar('second');?>
         <?php } ?>
+
     </div>
 </div>
 <!-- End Main content show here-->

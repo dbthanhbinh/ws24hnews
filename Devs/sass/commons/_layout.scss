@@ -9,3 +9,34 @@
 
     .second {}
 }
+.fw-content-align-center {
+    text-align: center;
+}
+
+.fw-special-title {
+    font-family: 'Poppins';
+    font-size: 45px;
+    line-height: 55px;
+    letter-spacing: 0px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    max-width: 700px;
+    display: inline-block;
+    padding-top: 50px;
+    position: relative;
+
+    &:after {
+        content: "\f06c";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        position: absolute;
+        font-size: 80%;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

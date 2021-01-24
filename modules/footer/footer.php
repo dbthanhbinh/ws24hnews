@@ -5,8 +5,6 @@
             $keyReplace = '3c';
             if($footer_col)
                 $keyReplace = $footer_col;
-            // $keyReplace = preg_replace('/[-]/', '', '3c');
-            // print_r($footer_col);
             get_template_part( 'modules/footer/content', $keyReplace);
         ?>  
     </div>

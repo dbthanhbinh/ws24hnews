@@ -3,7 +3,7 @@ add_action("admin_init", "posts_init");
 function posts_init()
 {
     add_meta_box("tie_post_options", "Post Options", "tie_post_options_module", "custom-video", "normal", "high");
-    ////add_meta_box("tie_page_options", theme_name ." - Page Options", "tie_page_options_module", "page", "normal", "high");
+    ////add_meta_box("tie_page_options", THEME_NAME ." - Page Options", "tie_page_options_module", "page", "normal", "high");
 }
 
 function tie_post_options_module()
@@ -334,7 +334,7 @@ function tie_page_options_module()
             ]);
         ?>
         <p id="taq_custom_position_hint" class="tie_message_hint">
-            Use <strong>[review]</strong> shortcode to place the review box in any place within post content or use <strong><?php echo theme_name ?> - Review Box </strong> Widget .
+            Use <strong>[review]</strong> shortcode to place the review box in any place within post content or use <strong><?php echo THEME_NAME ?> - Review Box </strong> Widget .
         </p>
         <div id="reviews-options">
             <?php

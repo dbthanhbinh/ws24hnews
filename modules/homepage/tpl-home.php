@@ -9,6 +9,15 @@ function tie_get_home_cats($cat_data) {
 		case 'recent':
 			get_home_recent( $cat_data );
 			break;
+		case 'group-template':
+			get_home_group_template( $cat_data );
+			break;
+		case 'videos':
+			get_home_videos( $cat_data );
+			break;
+		case 'categories':
+			require('home_tab.php');
+			break;
 		case 's':
 			get_home_scroll( $cat_data );
 			break;
@@ -16,10 +25,6 @@ function tie_get_home_cats($cat_data) {
 		case 'news-pic':
 			get_home_news_pic( $cat_data );
 			break;
-			
-		case 'videos':
-			get_home_news_videos( $cat_data );
-			break;		
 		case 'homebox':
 			get_home_box_top($cat_data);
 			break;

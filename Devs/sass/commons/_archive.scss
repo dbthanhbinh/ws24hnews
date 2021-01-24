@@ -1,71 +1,44 @@
-.article-list,
+$archive_entry_title_size: 14px;
+$archive_entry_title_weight: 600;
+$archive_entry_title_pt: 10px;
+
+$entry_page_header_title_transform: uppercase;
+$entry_page_header_title_size: 25px;
+$entry_page_header_title_weight: 500;
+
 .archive {
-    .page-header {
-        margin-bottom: $margin_bottom;
-        text-transform: uppercase;
-        h1 {
-            font-size: 20px;
-        }
-    }
-
-    article {
-        margin-bottom: $margin_bottom;
-
-        &.no-thumb {
-            margin-bottom: 0;
-
-            .entry-title {
-                .fa { margin-right: 5px; }
-                a {
-                    font-size: 13px;
+    .main-content{
+        header {
+            &.entry-page-header {
+                &.entry-header {
+                    .entry-title {
+                        font-size: $entry_page_header_title_size;
+                        font-weight: $entry_page_header_title_weight;
+                        text-transform: $entry_page_header_title_transform;
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }
-        .entry-title {
-            a {
-                color: $entry_title_color;
-                font-weight: bold;
+    }
+}
+
+.article-grid {
+    .post-thumbnail {}
+    .entry-content {
+        header {
+            &.entry-header {
+                .entry-title {
+                    font-size: $archive_entry_title_size;
+                    font-weight: $archive_entry_title_weight;
+                    padding-top: $archive_entry_title_pt;
+                }
             }
         }
-
-        .post-thumbnail{            
-            float: left;
-            margin-right: $margin_right;
-        }
-
-        .entry-content {
-            header {
-                
-            }
+        
+        p{
+            a.read-more {}
         }
     }
 }
-
-.archive{
-    .entry-header {
-        h1.entry-title {
-            text-transform: uppercase;
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 15px;
-            border-left: 3px solid #ddd;
-            padding-left: 10px;
-        }
-    }
-}
-
-.contact-page-content {
-    ul, ol {
-        margin: 10px 0;
-        padding: 0;
-
-        list-style: none;
-    }
-
-    figure {
-        iframe {
-            border: none;
-            width: 100%;
-        }
-    }
-}
+.article-list {}

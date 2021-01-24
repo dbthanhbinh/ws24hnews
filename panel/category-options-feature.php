@@ -1,5 +1,5 @@
 <?php
-
+// add_action('category_add_form_fields','tie_category_fields');
 add_action ( 'edit_category_form_fields', 'tie_category_fields');
 function tie_category_fields( $tag ) {    //check for existing featured ID
     $t_id = $tag->term_id;
@@ -31,40 +31,41 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 		$custom_slider->the_post();
 		$cat_slider[get_the_ID()] = get_the_title();
 	}
-?>
-<tr class="form-field">
-	<td colspan="2">
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				jQuery('.on-of').checkbox({empty:'<?php echo get_template_directory_uri(); ?>/panel/images/empty.png'});
-			});
-			
-			//To Fix WPML Bug
-			jQuery( window ).load(function($) {
-				var logo_settings = jQuery('input[name=logo_setting_save]').val();
-					jQuery("#logo_setting-item input").each(function(){	
-					if( jQuery(this).val() == logo_settings ) jQuery(this).attr('checked','checked');
-			});
-		 });
-		</script>
-		<div class="tiepanel-item">
-			<h3><?php echo theme_name ?> - Category Logo</h3>
-				<?php
-				tie_cat_options(
-					array(	"name" => "Custom Logo Image",
-							"id" => "logo",
-							"cat" => $t_id ,
-							"type" => "upload"));
-				?>
-		</div>
-		
-		
+	?>
+	<tr class="form-field">
+		<td colspan="2">
+			<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					jQuery('.on-of').checkbox({empty:'<?php echo get_template_directory_uri(); ?>/panel/images/empty.png'});
+				});
 				
-	</td>
-</tr>
-<?php
+				//To Fix WPML Bug
+				jQuery( window ).load(function($) {
+					var logo_settings = jQuery('input[name=logo_setting_save]').val();
+						jQuery("#logo_setting-item input").each(function(){	
+						if( jQuery(this).val() == logo_settings ) jQuery(this).attr('checked','checked');
+				});
+			});
+			</script>
+			<div class="tiepanel-item">
+				<h3>Category images</h3>
+					<?php
+					tie_cat_options(
+						array(	"name" => "Category thumbnail",
+								"id" => "logo",
+								"cat" => $t_id ,
+								"type" => "upload"));
+					tie_cat_options(
+						array(	"name" => "Breadcrumb banner",
+								"id" => "breadcrumb_banner",
+								"cat" => $t_id ,
+								"type" => "upload"));
+					?>
+			</div>	
+		</td>
+	</tr>
+	<?php
 }
-
 
 // save extra category extra fields hook
 add_action ( 'edited_category', 'tie_save_extra_category_fileds');
@@ -75,6 +76,21 @@ function tie_save_extra_category_fileds( $term_id ) {
 }
 
 
+
+// add_action ( 'create_category', 'tie_save_extra_category_add_form');
+// save extra category extra fields callback function
+function tie_save_extra_category_add_form($term_id) {
+	$t_id = $term_id;
+	update_option( "tie_cat_$t_id", $_POST["tie_cat"] );
+	?>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			console.log('aaaaa');
+			jQuery('#logo-item').reset();
+		});
+    </script>
+	<?php
+}
 
 
 function tie_cat_options($value){
@@ -241,7 +257,7 @@ function tie_cat_options($value){
 		<?php 
 		break;		
 }
-		if( !empty( $value['extra_text'] ) ) { ?><span class="extra-text"><?php echo $value['extra_text'] ?></span><?php }
+	if( !empty( $value['extra_text'] ) ) { ?><span class="extra-text"><?php echo $value['extra_text'] ?></span><?php }
 ?>
 </div>
 			

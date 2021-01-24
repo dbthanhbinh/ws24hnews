@@ -93,8 +93,8 @@ function update_notifier() {
 // Uses the cached version if available and inside the time interval defined
 function get_latest_theme_version($interval) {
 	$notifier_file_url = MTHEME_NOTIFIER_XML_FILE;	
-	$db_cache_field = 'notifier-cache-'.theme_name;
-	$db_cache_field_last_updated = 'notifier-cache-last-updated-'.theme_name;
+	$db_cache_field = 'notifier-cache-'.THEME_NAME;
+	$db_cache_field_last_updated = 'notifier-cache-last-updated-'.THEME_NAME;
 	$last = get_option( $db_cache_field_last_updated );
 	$now = time();
 	// check the cache

@@ -11,6 +11,34 @@ require_once ('helpers/commons.php');
 require_once ('panel/setting.php');
 require_once ('lib/front-end/translates.php');
 
+/**
+ * WP admin show thumbnail in post list
+ */
+if(is_admin()){
+    add_filter('manage_posts_columns', 'add_img_column');
+    add_filter('manage_posts_custom_column', 'manage_img_column', 10, 2);
+
+    function add_img_column($columns) {
+        $columns = array_slice($columns, 0, 1, true) + array("img" => "Featured Image") + array_slice($columns, 1, count($columns) - 1, true);
+        return $columns;
+    }
+
+    function manage_img_column($column_name, $post_id) {
+        if( $column_name == 'img' ) {
+            echo get_the_post_thumbnail($post_id, 'thumbnail');
+        }
+        return $column_name;
+    }
+
+    // Custom wpAdmin css
+    function wp_admin_custom_style() {
+        wp_register_style( 'wp-custom-style-admins', get_template_directory_uri().'/admin/assets/admin.min.css', array(), '', 'all' );
+        wp_enqueue_style( 'wp-custom-style-admins' );
+    }
+    add_action( 'admin_enqueue_scripts', 'wp_admin_custom_style' );
+}
+
+
 function ws24h_scripts () {
 	// Theme stylesheet.
 	wp_enqueue_script( 'main-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js');
@@ -20,6 +48,7 @@ function ws24h_scripts () {
 	wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array( 'ws24h-style' ), '1.0' );
 	wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
 }
+
 if (!is_admin()) {
     if( function_exists('tie_get_option') && tie_get_option('on_home') && tie_get_option('on_home') == 'boxes' ) {
 		require_once ('modules/homepage/tpl-home.php');
@@ -84,7 +113,8 @@ add_action( 'wp_head', 'ws24h_header_analytics' );
 // Footer
 function ws24h_footer_scripts () {
 	wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
-	wp_enqueue_script( 'jquery-bootstrap-customjs', get_theme_file_uri( '/assets/js/customjs.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'mixitup-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.mixitup.js');
+    wp_enqueue_script( 'jquery-bootstrap-customjs', get_theme_file_uri( '/assets/js/customjs.js' ), array( 'jquery' ), '1.0', true );
 }
 add_action( 'wp_footer', 'ws24h_footer_scripts' );
 
@@ -170,7 +200,7 @@ function get_excerpt($limit, $readMore=false, $source = null){
 	$excerpt = excerpt_content ($excerpt, $limit);
 	// if ($readMore)
 	// 	return $excerpt = $excerpt . '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
-    return $excerpt . '...';
+    return $excerpt;
 }
 
 function ws24h_custom_the_excerpt () {
@@ -178,7 +208,7 @@ function ws24h_custom_the_excerpt () {
 	$excerpt = get_the_excerpt();
 	$excerpt = excerpt_content ($excerpt, $limit);
 	// $excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Đọc thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
-	return $excerpt.'...';
+	return $excerpt;
 }
 // add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
 
@@ -190,9 +220,9 @@ function ws24h_custom_the_excerpt () {
  */
 function ws24h_excerpt_more( $more ) {
 	// return ' ...';
-	return sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+	return sprintf('<br/><br/><a class="read-more" href="%1$s">%2$s</a>',
         get_permalink( get_the_ID() ),
-        __( '...', THEME_NAME )
+        __( ' <i class="fa fa-long-arrow-right"></i> Xem thêm', THEME_NAME )
     );
 }
 add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
@@ -208,6 +238,15 @@ add_filter( 'get_the_archive_title', function ($title) {
     return $title;
 });
 
+// Remove width, height from the_post_thumb
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'the_content', 'remove_thumbnail_dimensions', 10 );
+function remove_thumbnail_dimensions( $html ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+
 /**
  * Change the Tag Cloud's Font Sizes.
  */
@@ -221,7 +260,7 @@ add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
         /* translators: Category archive title. 1: Category name */
-        $title = sprintf( __( 'Danh mục: %s' ), single_cat_title( '', false ) );
+        $title = sprintf( __( '%s' ), single_cat_title( '', false ) );
 	} elseif ( is_search() ) {
         /* translators: Tag archive title. 1: Tag name */
         $title = sprintf( __( 'Tìm kiếm: %s' ), get_query_var('s') );

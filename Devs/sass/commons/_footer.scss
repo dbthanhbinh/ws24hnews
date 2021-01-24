@@ -91,7 +91,7 @@
 
 .copy-right-box {
     text-align: left;
-    background: #000000;
+    background: $main_color;
     color: $footer_link_color;
     p {
         padding: 10px 0;
@@ -131,10 +131,11 @@
             font-size: 16px;
             top: 4px;
             left: 4px;
+            color: $colors-white;
         }
     }
 }
-.support-online i { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+.support-online i.fa { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
 .support-online a span {
     border-radius: 2px; text-align: center; background: rgb(103, 182, 52); 
     padding: 5px; display: none; width: 140px; 

@@ -108,7 +108,11 @@
 
             }
             .form-submit {
-
+                #submit{
+                    background-color: $main_color;
+                    color: $colors-white;
+                    border: 1px solid $main_color;
+                }
             }
 
             #wp-comment-cookies-consent {

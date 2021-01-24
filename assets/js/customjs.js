@@ -30,4 +30,15 @@ $(document).ready(function() {
         $("#second-sidebar").stick_in_parent();
         $("#sidebar").stick_in_parent();
     }
+
+    $(function(){
+        // Tab Pane continue moving
+        var tabCarousel = setInterval(function() {
+            var tabs = $('.nav-tabs > a'),
+                active = tabs.filter('.active'),
+                next = active.next('a');
+                toClick = next.length ? next : tabs.eq(0);
+                toClick.trigger('click');
+        }, 10000);
+    });
 });

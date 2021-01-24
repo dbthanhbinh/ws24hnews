@@ -126,37 +126,37 @@ $enum_layout = [
     'full'  => [
         'sidebar'   => false,
         'second'    => false,
-        'main'      => 'main-content col-lg-12',
+        'main'      => 'main-content col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12',
         'key'       => 'full-width'
     ],
     'left-sidebar'  => [
-        'sidebar'   => 'sidebar col-lg-4',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4',
         'second'    => false,
-        'main'      => 'main-content col-lg-8',
+        'main'      => 'main-content col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8',
         'key'       => 'left-sidebar'
     ],
     'right-sidebar' => [
-        'sidebar'   => 'sidebar col-lg-4',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4',
         'second'    => false,
-        'main'      => 'main-content col-lg-8',
+        'main'      => 'main-content col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8',
         'key'       => 'right-sidebar'
     ],
     'wide-2cols'    => [
-        'sidebar'   => 'sidebar col-lg-4',
-        'second'    => 'second-sidebar col-lg-3',
-        'main'      => 'main-content col-lg-5',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4',
+        'second'    => 'second-sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
+        'main'      => 'main-content col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5',
         'key'       => 'wide-2cols'
     ],
     '2cols-wide'     => [
-        'sidebar'   => 'sidebar col-lg-3',
-        'second'    => 'second-sidebar col-lg-3',
-        'main'      => 'main-content col-lg-6',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
+        'second'    => 'second-sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
+        'main'      => 'main-content col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6',
         'key'       => '2cols-wide'
     ],
     'col-wide-col'  => [
-        'sidebar'   => 'sidebar col-lg-3',
-        'second'    => 'second-sidebar col-lg-3',
-        'main'      => 'main-content col-lg-6',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
+        'second'    => 'second-sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
+        'main'      => 'main-content col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6',
         'key'       => 'col-wide-col'
     ]
 ];

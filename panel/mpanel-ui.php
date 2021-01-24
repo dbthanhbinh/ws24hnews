@@ -50,16 +50,17 @@ function panel_options() {
 			<ul>
 				<li class="tie-tabs general"><a href="#tab1"><span></span>General Settings</a></li>
 				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
-				<!-- <li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li> -->
-				<!-- <li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li> -->
-				<!-- <li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li> -->
-				<!-- <li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li> -->
-				<!-- <li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li> -->
+				<li class="tie-tabs homepage2"><a href="#tab22"><span></span>Custom Homepage</a></li>
+				<li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li>
+				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
+				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
+				<li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li>
+				<li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li>
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
-				<!-- <li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li> -->
-				<!-- <li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li> -->
-				<!-- <li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li> -->
-				<!-- <li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li> -->
+				<li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li>
+				<li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li>
+				<li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li>
+				<li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li>
 				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
 			</ul>
 			<div class="clear"></div>
@@ -306,6 +307,11 @@ function panel_options() {
 				<div id="tab2" class="tabs-wrap">
 					<?php require_once ('home-builder/setting.php'); ?>
 				</div> <!-- Homepage Settings -->
+
+				<div id="tab22" class="tabs-wrap">
+					<?php require_once ('home-builder/customhome.php'); ?>
+				</div> <!-- Custom Homepage Settings -->
+
 
 				<div id="tab4" class="tabs-wrap">
 					<h2>Social Networking</h2> <?php echo $save ?>
@@ -888,22 +894,39 @@ function panel_options() {
 						<?php
 							tie_options(
 								array(	"name" => "Related Posts",
-										"id" => "related",
+										"id" => "related_post",
+										"std" => true,
 										"type" => "checkbox"));
-
 							tie_options(
 								array(	"name" => "Related Posts Box Title",
 										"id" => "related_title",
+										"std" => "Related Posts",
 										"type" => "text")); 
+							tie_options(
+								array(	"name" => "Display",
+										"id" => "related_display",
+										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
+										"type" => "select",
+										"std" => "grid",
+										"options" => array( "grid"=>"As Grid",
+															"list"=>"As List"
+														)));
+							tie_options(
+								array( 	"name" => "Show cols",
+										"id" => "related_cols",
+										"std" => 3,
+										"type" => "short-text"));
 										
 							tie_options(
 								array(	"name" => "Number of posts to show",
 										"id" => "related_number",
+										"std" => 3,
 										"type" => "short-text"));
 										
 							tie_options(
 								array(	"name" => "Query Type",
 										"id" => "related_query",
+										"std" => "category",
 										"options" => array( "category"=>"Category" ,
 															"tag"=>"Tag",
 															"author"=>"Author" ),
@@ -1471,22 +1494,17 @@ function panel_options() {
 						<?php
 							tie_options(
 								array(	"name" => "Display",
-										"id" => "blog_display",
+										"id" => "archive_display",
 										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
-										"type" => "radio",
-										"options" => array( "excerpt"=>"Excerpt + Featured image" ,
-															"full_thumb"=>"Excerpt + Full width Featured image" ,
-															"content"=>"Content" )));
-										
+										"type" => "select",
+										"std" => "grid",
+										"options" => array( "grid"=>"As Grid",
+															"list"=>"As List"
+														)));
 							tie_options(
-								array(	"name" => "Show Social Buttons",
-										"id" => "archives_socail",
-										"type" => "checkbox",
-										"help" => "if checked Facebook , Twitter , Google plus and Pinterest social buttons will appear in all archives pages like categories / tags / search and in homepage blog style ." ));
-							
-							tie_options(
-								array( 	"name" => "Excerpt Length",
-										"id" => "exc_length",
+								array( 	"name" => "Show cols",
+										"id" => "archive_cols",
+										"std" => 3,
 										"type" => "short-text"));
 						?>
 					</div>

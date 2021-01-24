@@ -25,10 +25,36 @@ function buildSass(cb) {
     );
 }
 
-function watchTask(){
-    gulp.watch(
-        ['./Devs/sass/**/*'],
-        gulp.parallel(buildSass)
+function buildAdminSass(cb) {
+    return (
+        gulp.src('./Devs/admins/**/*.scss')
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .pipe(minifyCss())
+            .pipe(rename('admin.min.css'))
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('./admin/assets'))
+            .pipe(livereload())
     );
 }
-gulp.task('default', gulp.series(buildSass, watchTask));
+
+function buildPanelSass(cb) {
+    return (
+        gulp.src('./Devs/panels/**/*.scss')
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .pipe(minifyCss())
+            .pipe(rename('panel.min.css'))
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('./panel'))
+            .pipe(livereload())
+    );
+}
+
+function watchTask(){
+    gulp.watch(
+        ['./Devs/sass/**/*', './Devs/admins/**/*'],
+        gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
+    );
+}
+gulp.task('default', gulp.series(buildSass, buildAdminSass, buildPanelSass, watchTask));

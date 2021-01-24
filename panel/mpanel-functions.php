@@ -89,13 +89,15 @@ function tie_admin_register() {
     
 	wp_register_script( 'tie-admin-colorpicker', get_template_directory_uri() . '/panel/js/colorpicker.js', array( 'jquery' ) , false , false );  
 	
-	wp_register_style( 'tie-style', get_template_directory_uri().'/panel/style.css', array(), '20120208', 'all' ); 
+	wp_register_style( 'tie-style-admins', get_template_directory_uri().'/panel/panel.min.css', array(), '20120208', 'all' );
+	wp_register_style( 'tie-style', get_template_directory_uri().'/panel/style.css', array(), '20120208', 'all' );
 
 	if ( (isset( $_GET['page'] ) && $_GET['page'] == 'panel') || (  $pagenow == 'post-new.php' ) || (  $pagenow == 'post.php' )|| (  $pagenow == 'edit-tags.php' ) ) {
 		wp_enqueue_script( 'tie-admin-colorpicker');  
 		wp_enqueue_script( 'tie-admin-slider' );  
 	}
 	wp_enqueue_script( 'tie-admin-main' );
+	wp_enqueue_style( 'tie-style-admins' );
 	wp_enqueue_style( 'tie-style' );
 	wp_enqueue_style( 'tie-fonts' );
 
@@ -322,7 +324,7 @@ function tie_options($value){
 	switch ( $value['type'] ) {
 	
 		case 'text': ?>
-			<input  name="tie_options[<?php echo $value['id']; ?>]" id="<?php  echo $value['id']; ?>" type="text" value="<?php echo tie_get_option( $value['id'] ); ?>" />
+			<input  name="tie_options[<?php echo $value['id']; ?>]" id="<?php  echo $value['id']; ?>" type="text" value="<?php echo tie_get_option($value['id']) ? tie_get_option($value['id']) : (isset($value['std']) ? $value['std'] : ''); ?>" />
 			<?php
 				if( $value['id']=="slider_tag" || $value['id']=="breaking_tag"){
 				$tags = get_tags('orderby=count&order=desc&number=50'); ?>
@@ -342,12 +344,12 @@ function tie_options($value){
 		break;
 
 		case 'short-text': ?>
-			<input style="width:50px" name="tie_options[<?php echo $value['id']; ?>]" id="<?php  echo $value['id']; ?>" type="text" value="<?php echo tie_get_option( $value['id'] ); ?>" />
+			<input style="width:50px" name="tie_options[<?php echo $value['id']; ?>]" id="<?php  echo $value['id']; ?>" type="text" value="<?php echo tie_get_option( $value['id']) ? tie_get_option( $value['id']) : (isset($value['std']) ? $value['std'] : ''); ?>" />
 		<?php 
 		break;
 		
 		case 'checkbox':
-			if(tie_get_option($value['id'])){$checked = "checked=\"checked\"";  } else{$checked = "";} ?>
+			if((isset($value['std']) && $value['std']) || tie_get_option($value['id'])){$checked = "checked=\"checked\"";  } else{$checked = "";} ?>
 				<input class="on-of" type="checkbox" name="tie_options[<?php echo $value['id'] ?>]" id="<?php echo $value['id'] ?>" value="true" <?php echo $checked; ?> />			
 		<?php	
 		break;
@@ -357,7 +359,9 @@ function tie_options($value){
 		?>
 			<div style="float:left; width: 295px;">
 				<?php foreach ($value['options'] as $key => $option) { ?>
-				<label style="display:block; margin-bottom:8px;"><input name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="radio" value="<?php echo $key ?>" <?php if ( tie_get_option( $value['id'] ) == $key) { echo ' checked="checked"' ; } ?>> <?php echo $option; ?></label>
+				<label style="display:block; margin-bottom:8px;">
+					<input name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="radio" value="<?php echo $key ?>" 
+						<?php if ((tie_get_option($value['id']) && tie_get_option($value['id']) == $key) || (isset($value['std']) && $value['std'] == $key)) { echo ' checked="checked"' ; } ?>> <?php echo $option; ?></label>
 				<?php } ?>
 			</div>
 		<?php

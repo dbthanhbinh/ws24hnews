@@ -1,39 +1,31 @@
 <?php
-$cardClass = 'col-sm-6 col-md-4 col-lg-3';
+	// process args
+	if(isset($args)){
+		$isGrid = (isset($args['isGrid']) && $args['isGrid']) ? $args['isGrid'] : false;
+		$cols = (isset($args['cols']) && $args['cols']) ? $args['cols'] : 4;
+	}
+	
+	$tagHeader = 'h2';
+	$cardColClass = getColsLayout($isGrid, $cols);
 ?>
-<article class="post-<?php the_ID(); ?> <?= $cardClass ?>">
-	<?php if ( (isset($content_type) && $content_type == 'related') || ('' !== get_the_post_thumbnail() && ! is_single()) ) : ?>
+<article class="<?= $cardColClass ?>">
+	<?php if(has_post_thumbnail()){ ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'thumbnail' ); ?>
+				<?php the_post_thumbnail('medium'); ?>
 			</a>
 		</div>
-	<?php endif; ?>
+	<?php } ?>
 
 	<div class="entry-content">
 		<header class="entry-header">
 			<?php
-				$tagHeader = 'h2';
 				if ((isset($content_type) && $content_type == 'related')) $tagHeader = 'h4';
 				elseif(is_single()) $tagHeader = 'h1';
-				elseif (is_front_page() && is_home()) $tagHeader = 'h3';
+				elseif (is_front_page() && is_home()) $tagHeader = 'h4';
 				the_title('<'.$tagHeader.' class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></'.$tagHeader.'>');
 			?>
 		</header>
-
-		<?php
-		if ( is_category() || is_archive() || is_search() || is_home() || is_front_page() || (isset($content_type) && $content_type == 'related')) {
-			the_excerpt ( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', THEME_NAME ),
-				get_the_title()
-			) );
-		} else {
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', THEME_NAME ),
-				get_the_title()
-			) );
-			ws24h_posted_on ();
-		}
-		?>
+		<?php the_excerpt(); ?>
 	</div>
 </article>

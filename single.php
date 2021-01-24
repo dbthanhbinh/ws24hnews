@@ -60,11 +60,56 @@
                 ?>
 
                 <!-- Related -->
-                <div class="row">
-                    <div class="related-box article-list col-lg-12">
-                        <?php get_template_part( 'template-parts/post/content-related', 'post' );?>
+                <?php
+                $related_post = tie_get_option('related_post');
+                if($related_post) {
+                    $archive_display = tie_get_option('related_display');
+                    $archive_cols = tie_get_option('related_cols');
+                    $argGrid = [
+                        'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,
+                        'cols' => $archive_cols ? $archive_cols : 3
+                    ];
+                    ?>
+
+                    <div class="related-box">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <header class="entry-header">
+                                    <h3 class="header-title"><?= getTranslateByKey('other_posts') ?></h3>
+                                </header>
+                            </div>
+                        </div>
+                        <div class="<?= mainLayoutTemplate($argGrid['isGrid']) ?>">
+                        <?php
+                            $orig_post = $post;
+                            global $post;
+                            $categories = get_the_category($post->ID);
+                            if ($categories) {
+                                $category_ids = array();
+                                foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+
+                                $args=array(
+                                    'category__in' => $category_ids,
+                                    'post__not_in' => array($post->ID),
+                                    'posts_per_page'=> 5, // Number of related posts that will be shown.
+                                    'ignore_sticky_posts '=>1
+                                );
+                                $my_query = new wp_query( $args );
+
+                                if( $my_query->have_posts() ) {
+                                    while( $my_query->have_posts() ) {
+                                        $my_query->the_post();
+                                        $content_type = 'related';
+                                        get_template_part('template-parts/post/content', get_post_format(), $argGrid);
+                                    }
+                                }
+                            }
+                            $post = $orig_post;
+                            wp_reset_query(); 
+                        ?>
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>      
             
             <!-- Sidebar area: we defined sidebar's 2 area -->
