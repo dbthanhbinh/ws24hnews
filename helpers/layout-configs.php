@@ -18,7 +18,7 @@ $layoutOptions = (isset($enum_layout) && isset($enum_layout[$layout])) ? $enum_l
 function isGridLayout() { return false; }
 function isMainSidebar() { global $layoutOptions; return $layoutOptions['sidebar'] ? $layoutOptions['sidebar'] : false; }
 function isSecondSidebar() { global $layoutOptions; return $layoutOptions['second'] ? $layoutOptions['second'] : false; }
-function mainLayoutClass() { global $layoutOptions; return $layoutOptions['main']; }
+function mainLayoutClass($mdFull = false) { global $layoutOptions; if($mdFull) return $layoutOptions['mainfull']; else return $layoutOptions['main']; }
 function mainLayoutKey() { global $layoutOptions; return $layoutOptions['key']; }
 function mainLayoutTemplate($isGrid = false) { return  $isGrid ? 'row article-grid' : 'row article-list'; }
 

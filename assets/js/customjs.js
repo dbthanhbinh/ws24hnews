@@ -26,6 +26,8 @@ function onScrollHandle() {
 
 
 $(document).ready(function() {
+    "use strict";
+
     if ( width > 992 ) {
         $("#second-sidebar").stick_in_parent();
         $("#sidebar").stick_in_parent();
@@ -34,11 +36,23 @@ $(document).ready(function() {
     $(function(){
         // Tab Pane continue moving
         var tabCarousel = setInterval(function() {
-            var tabs = $('.nav-tabs > a'),
-                active = tabs.filter('.active'),
-                next = active.next('a');
-                toClick = next.length ? next : tabs.eq(0);
+            var tabs = $('.nav-tabs > a');
+            if(tabs && tabs.length > 0) {
+                var active = tabs.filter('.active');
+                var next = active.next('a');
+                var toClick = next?.length ? next : tabs.eq(0);
                 toClick.trigger('click');
+            }
         }, 10000);
+    });
+});
+
+/*** Sidebar hidden **/
+$(document).ready(function() {
+    "use strict";
+    $('#sidebar-mobile-open,#sidebar-mobile-close').click(function(){            
+       $('#sidebar').toggleClass('sidebar-mobile-active');   
+       $('#sidebar-mobile-close').toggleClass('sidebar-mobile-close-active');
+       $('#site-over').toggleClass('site-over-bg');      
     });
 });

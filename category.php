@@ -1,7 +1,7 @@
 <?php get_header();?>
   <?php require_once ('helpers/layout-configs.php'); ?>
   <!-- Breadcrumb -->
-  <?php  if(get_theme_mod('show_breadcrumb')){ 
+  <?php  if(get_theme_mod('show_breadcrumb')){
     $category = get_queried_object();
     $cat_option = get_option('tie_cat_'.$category->term_id);
     $breadcrumb_banner = get_template_directory_uri().'/assets/images/breadcrumb_bg.jpg';
@@ -10,7 +10,7 @@
     ?>
     <section class="box-breadcrumb-v2"
       style="background: url('<?= $breadcrumb_banner ?>') 50% -70.2188px / cover no-repeat, 0% rgb(235, 235, 235);">
-        <div class="container" style="padding-top: 130px;padding-bottom: 130px;">
+        <div class="container" style="padding-top: 50px;padding-bottom: 50px;">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="fw-heading fw-content-align-center">

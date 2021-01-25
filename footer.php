@@ -42,5 +42,6 @@
       </div>
     <?php }?>
     <?php wp_footer()?>
+    <div id="site-over" class=""></div>
   </body>
 </html>

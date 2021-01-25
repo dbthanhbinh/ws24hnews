@@ -10,7 +10,7 @@
                 <?php get_sidebar();?>
             <?php } ?>
 
-            <div class="<?= mainLayoutClass() ?>">
+            <div class="<?= mainLayoutClass(true) ?>">
                 <div class="row">
                     <div class="col-lg-12 article-content">
                         <?php
