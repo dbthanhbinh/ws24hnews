@@ -369,6 +369,16 @@ jQuery(document).ready(function() {
 	// Slider Position
 
 	// Slider Query Type
+	var selected_type = jQuery("input[name='tie_options[slider_query]']:checked").val();
+	if (selected_type == 'custom') {jQuery('#slider_custom-item').show();}
+	
+	jQuery("input[name='tie_options[slider_query]']").change(function(){
+		var selected_type = jQuery("input[name='tie_options[slider_query]']:checked").val();
+		if (selected_type == 'custom') {
+			jQuery('#slider_cat-item ,#slider_posts-item ,#slider_tag-item,#slider_pages-item').hide();
+			jQuery('#slider_custom-item').fadeIn();
+		}
+	 });
 
 	// Save Settings Alert
 	jQuery(".mpanel-save").click( function() {

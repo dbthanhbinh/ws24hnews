@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 			<?php
 			$comments_number = get_comments_number();			
 			?>
-			Danh sách comment cho bài viết :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
+			Danh sách bình luận :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
 		</h2>
 
 		<ul class="comment-list">
@@ -31,8 +31,8 @@ if ( post_password_required() ) {
 			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'ws24h' ) . '</span>',
 		) );
 
-	endif; // Check for have_comments().
-
+	endif;
+	// Check for have_comments().
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'ws24h' ); ?></p>
@@ -61,5 +61,5 @@ if ( post_password_required() ) {
 	);
 	comment_form($comments_args);
 	?>
+</div>
 
-</div><!-- #comments -->

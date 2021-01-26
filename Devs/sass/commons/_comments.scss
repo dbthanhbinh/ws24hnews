@@ -4,12 +4,16 @@
         font-size: 15px;
         text-transform: uppercase;
         font-weight: bold;
-        border-top: 2px solid #cccccc;
+        border-top: 2px solid $main_color;
         padding: 10px;
-        background: #eeeeee;
+        background: $main_color;
+        color: $main_text_color;
 
         span {
             font-weight: normal;
+            i.fa {
+                color: $main_text_color;
+            }
         }
     }
 
@@ -44,10 +48,6 @@
                     position: absolute;
                     top: 0;
                     right: 0;
-
-                    a {
-                        color: #007bff;
-                    }
                 }
             }
         }

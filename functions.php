@@ -36,6 +36,8 @@ if(is_admin()){
         wp_enqueue_style( 'wp-custom-style-admins' );
     }
     add_action( 'admin_enqueue_scripts', 'wp_admin_custom_style' );
+} elseif(!is_admin()){
+    
 }
 
 
@@ -68,7 +70,6 @@ function ws24h_setup () {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption') );
-	
     
     /*
 	 * Enable support for Post Formats.
@@ -323,4 +324,15 @@ function get_youtube_id_from_url($url){
         {preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
     else 
         {@preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $url, $IDD); return $IDD[5]; }
+}
+
+// This configs for comment form
+add_action( 'comment_form', 'my_add_comment_nonce_to_form' );
+function my_add_comment_nonce_to_form() {
+    wp_nonce_field( 'comment_nonce_ws24h' );
+}
+
+add_action( 'pre_comment_on_post', 'my_verify_comment_nonce' );
+function my_verify_comment_nonce() {
+    check_admin_referer( 'comment_nonce_ws24h' );
 }

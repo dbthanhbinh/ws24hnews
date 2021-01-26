@@ -54,14 +54,14 @@ function panel_options() {
 				<li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li>
 				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
 				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
-				<li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li>
+				<!-- <li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li> -->
 				<li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li>
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
-				<li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li>
-				<li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li>
-				<li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li>
-				<li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li>
-				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
+				<!-- <li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li> -->
+				<!-- <li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li> -->
+				<!-- <li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li> -->
+				<!-- <li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li> -->
+				<!-- <li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li> -->
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -691,49 +691,14 @@ function panel_options() {
 							tie_options(
 								array(	"name" => "Number Of Posts To Show",
 										"id" => "slider_number",
+										"std" => 5,
 										"type" => "short-text"));
 										
 							tie_options(
 								array(	"name" => "Query Type",
 										"id" => "slider_query",
-										"options" => array( "category"=>"Category" ,
-															"tag"=>"Tag",
-															"post"=>"Selctive Posts",
-															"page"=>"Selctive pages" ,
-															"custom"=>"Custom Slider" ),
-										"type" => "radio")); 
-										
-							tie_options(
-								array(	"name" => "Tags",
-										"help" => "Enter a tag name, or names seprated by comma. ",
-										"id" => "slider_tag",
-										"type" => "text"));
-					?>
-						<?php $slider_cat = tie_get_option('slider_cat') ; ?>
-							<div class="option-item" id="slider_cat-item">
-								<span class="label">Category</span>
-									<select multiple="multiple" name="tie_options[slider_cat][]" id="tie_slider_cat">
-									<?php foreach ($categories as $key => $option) { ?>
-										<option value="<?php echo $key ?>" <?php if ( @in_array( $key , $slider_cat ) ) { echo ' selected="selected"' ; } ?>><?php echo $option; ?></option>
-									<?php } ?>
-								</select>
-								<a class="mo-help tooltip" title="Enter a category ID, or IDs seprated by comma. "></a>
-							</div>
-							
-					<?php
-																		
-							tie_options(
-								array(	"name" => "Selctive Posts IDs",
-										"help" => "Enter a post ID, or IDs seprated by comma. ",
-										"id" => "slider_posts",
-										"type" => "text"));
-										
-							tie_options(
-								array(	"name" => "Selctive Pages IDs",
-										"help" => "Enter a page ID, or IDs seprated by comma. ",
-										"id" => "slider_pages",
-										"type" => "text"));	
-										
+										"options" => array("custom"=>"Custom Slider"),
+										"type" => "radio"));
 							tie_options(
 								array(	"name" => "Custom Slider",
 										"help" => "Choose your custom slider",
