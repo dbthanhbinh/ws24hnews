@@ -12,6 +12,9 @@ var cleanCss = require('gulp-clean-css');
 var rev = require('gulp-rev');
 var sourcemaps = require('gulp-sourcemaps');
 
+var fs = require('fs');
+var del = require('del') ;
+
 function buildSass(cb) {
     return (
         gulp.src('./Devs/sass/**/*.scss')
@@ -33,7 +36,7 @@ function buildAdminSass(cb) {
             .pipe(minifyCss())
             .pipe(rename('admin.min.css'))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('./admin/assets'))
+            .pipe(gulp.dest('./assets/admin'))
             .pipe(livereload())
     );
 }
@@ -57,4 +60,50 @@ function watchTask(){
         gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
     );
 }
-gulp.task('default', gulp.series(buildSass, buildAdminSass, buildPanelSass, watchTask));
+gulp.task('dev', gulp.series(buildSass, buildAdminSass, buildPanelSass, watchTask));
+
+// -------------------------------------------
+function getCurrentDirFolderName(){
+    var directory = __dirname.substring(__dirname.lastIndexOf('\\') + 1);
+    return directory;
+}
+
+function makeTargetFolder() {
+    return (
+        gulp.src('*.*', {read: false})
+            .pipe(gulp.dest('./' + targetDir))
+    );
+}
+
+function makeCleanTarget() {
+    return del(targetDir+'/**/*', {force:true});
+}
+
+function makeCleanDevelop() {
+    del(targetDir+'/Devs', {force:true});
+    del(targetDir+'/node_modules', {force:true});
+    del(targetDir+'/.gitignore', {force:true});
+    del(targetDir+'/README.md', {force:true});
+    del(targetDir+'/package.json', {force:true});
+    del(targetDir+'/package-lock.json', {force:true});
+    del(targetDir+'/gulpfile.js', {force:true});
+}
+
+// Test build
+var sourceDir = getCurrentDirFolderName(); //'../product';
+var targetDir = '../'+getCurrentDirFolderName()+'_product'; //'../product';
+
+function makeCopyAllFromSource() {
+    return (
+        gulp.src(['./**/*'])
+            .pipe(gulp.dest('./'+targetDir))
+    );
+}
+
+
+gulp.task('build', gulp.series(
+    makeTargetFolder,
+    makeCleanTarget,
+    makeCopyAllFromSource,
+    makeCleanDevelop
+));

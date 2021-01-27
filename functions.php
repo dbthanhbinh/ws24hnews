@@ -6,9 +6,9 @@ require_once ('helpers/districts.php');
 require_once ('lib/admin/setting.php');
 require_once ('lib/modifys/index.php');
 require_once ('lib/widgets/widgets.php');
-require_once ('lib/front-end/template-tags.php');
 require_once ('helpers/commons.php');
 require_once ('panel/setting.php');
+require_once ('lib/front-end/template-tags.php');
 require_once ('lib/front-end/translates.php');
 
 function ws24h_scripts () {
@@ -78,7 +78,7 @@ if(is_admin()){
 
     // Custom wpAdmin css
     function wp_admin_custom_style() {
-        wp_register_style( 'wp-custom-style-admins', get_template_directory_uri().'/admin/assets/admin.min.css', array(), '', 'all' );
+        wp_register_style( 'wp-custom-style-admins', get_template_directory_uri().'/admin/admin.min.css', array(), '', 'all' );
         wp_enqueue_style( 'wp-custom-style-admins' );
     }
     add_action( 'admin_enqueue_scripts', 'wp_admin_custom_style' );
@@ -160,7 +160,6 @@ function ws24h_StickySidebar_scripts () {
 	}
 }
 // add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
-
 
 if(!is_admin()){
     // =============================================

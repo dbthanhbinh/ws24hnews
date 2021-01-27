@@ -1,14 +1,10 @@
 <?php
-/*********** Remove default ***********/
-require_once('remove-category-slug.php');
+if (!is_admin()) {
+    /*********** Remove default ***********/
+    require_once('remove-category-slug.php');
 
-if (is_admin()) {
-    
-} else {
     require_once('remove-defaults.php');
-    /**
-     * Disable the emoji's
-     */
+    
     function disable_emojis() {
         remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
         remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );

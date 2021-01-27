@@ -1,5 +1,6 @@
 <?php
 include (TEMPLATEPATH . '/panel/register-posttype.php');
+
 // tie-Panel
 ######include (TEMPLATEPATH . '/panel/shortcodes/shortcode.php');
 $customSlider = true;
@@ -66,7 +67,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 // add_action( 'import_done', 'wordpress_importer_init' );
 
 /*-----------------------------------------------------------------------------------*/
-# Get Theme Options
+// Get Theme Options
 /*-----------------------------------------------------------------------------------*/
 function tie_get_option( $name ) {
 	$get_options = get_option( 'tie_options' );
