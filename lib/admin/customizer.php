@@ -2,8 +2,7 @@
 /**
  * Create new section Customizer
  **/
-function your_theme_new_customizer_settings( $wp_customize ) {
-
+function your_theme_new_customizer_settings($wp_customize) {
     $choicesLayout =  [
         'full' => __('Full width'),
         'left-sidebar' => __('Left sidebar'),
