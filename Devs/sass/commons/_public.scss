@@ -3,13 +3,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: $font_size;
     color: $color;
+    // scroll-behavior: smooth;
 }
 
-img,
-iframe
+img
 {
     max-width: 100%;
     height: auto;
+}
+
+iframe {
+    width: 100%;
 }
 
 a {
@@ -19,9 +23,34 @@ a {
     }
 }
 
-.them-logo {
+a.read-more {
+    i {
+        background: $btn_lemon_bg_color;
+        color: $btn_lemon_text_color;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+
+i.fa {
+    color: $main_color;
+}
+
+i.fa-custom-size {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.theme-logo {
     max-width: 200px;
     height: auto;
+    &.navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 textarea,
@@ -52,14 +81,6 @@ table {
 
 .clear { clear: both; }
 .clear-15 { clear: both; min-height: 15px; }
-
-.header-title{
-    text-transform: uppercase;
-    font-size: $widget_title_size - 2;
-    padding: 7px 10px;
-    border-top: 2px solid #ccc;
-    font-weight: bold;
-}
 
 .pagination {
     clear: both;

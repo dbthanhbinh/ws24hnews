@@ -21,6 +21,20 @@ function panel_options() {
 	</script>
 	<?php
 
+	// Default all register posttypes
+	global $rg_posttypes;
+	$excludePosttypes = ['custom-video'];
+	$posttypes = [
+		'posts' => 'Default post'
+	];
+	if($rg_posttypes && count($rg_posttypes) > 0){
+		foreach($rg_posttypes as $k=>$posttype) {
+			if(!@in_array( $posttype['posttype'] , $excludePosttypes))
+				$posttypes[$posttype['posttype']] = $posttype['postname'];
+		}
+	}
+	// End Default all register posttypes
+
 	$categories_obj = get_categories('hide_empty=0');
 	$categories = array();
 	foreach ($categories_obj as $pn_cat) {
@@ -50,17 +64,18 @@ function panel_options() {
 			<ul>
 				<li class="tie-tabs general"><a href="#tab1"><span></span>General Settings</a></li>
 				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
+				<li class="tie-tabs homepage2"><a href="#tab22"><span></span>Custom Homepage</a></li>
 				<li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li>
 				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
 				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
-				<li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li>
+				<!-- <li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li> -->
 				<li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li>
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
-				<li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li>
-				<li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li>
-				<li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li>
-				<li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li>
-				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
+				<!-- <li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li> -->
+				<!-- <li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li> -->
+				<!-- <li class="tie-tabs typography"><a href="#tab14"><span></span>Typography</a></li> -->
+				<!-- <li class="tie-tabs Social"><a href="#tab4"><span></span>Social Networking</a></li> -->
+				<!-- <li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li> -->
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -68,81 +83,7 @@ function panel_options() {
 		<div class="mo-panel-content">
 			<form action="/" name="tie_form" id="tie_form">
 				<div id="tab1" class="tabs-wrap">
-					
 					<h2>General Settings</h2> <?php echo $save ?>
-					<div class="tiepanel-item">
-						<h3>Custom Favicon</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Custom Favicon",
-										"id" => "favicon",
-										"type" => "upload"));
-						?>
-					</div>	
-					<div class="tiepanel-item">
-						<h3>Custom Gravatar</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Custom Gravatar",
-										"id" => "gravatar",
-										"type" => "upload"));
-						?>
-					</div>	
-					<div class="tiepanel-item">
-						<h3>Apple Icons</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Apple iPhone Icon",
-										"id" => "apple_iphone",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPhone (57px x 57px)')); 			
-
-							tie_options(
-								array(	"name" => "Apple iPhone Retina Icon",
-										"id" => "apple_iphone_retina",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPhone Retina Version (120px x 120px)')); 			
-
-							tie_options(
-								array(	"name" => "Apple iPad Icon",
-										"id" => "apple_iPad",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPhone (72px x 72px)')); 			
-
-							tie_options(
-								array(	"name" => "Apple iPad Retina Icon",
-										"id" => "apple_iPad_retina",
-										"type" => "upload",
-										"extra_text" => 'Icon for Apple iPad Retina Version (144px x 144px)')); 			
-
-						?>
-					</div>	
-					<div class="tiepanel-item">
-						<h3>Time format</h3>
-						<?php
-							tie_options(
-								array( 	"name" => "Time format for blog posts",
-										"id" => "time_format",
-										"type" => "radio",
-										"options" => array( "traditional"=>"Traditional" ,
-															"modern"=>"Time Ago Format",
-															"none"=>"Disable all " )));
-						?>									
-					</div>					
-					<div class="tiepanel-item">
-						<h3>Breadcrumbs Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Breadcrumbs ",
-										"id" => "breadcrumbs",
-										"type" => "checkbox")); 
-							
-							tie_options(
-								array(	"name" => "Breadcrumbs Delimiter",
-										"id" => "breadcrumbs_delimiter",
-										"type" => "short-text"));
-						?>
-					</div>								
 					<div class="tiepanel-item">
 						<h3>Header Code</h3>
 						<div class="option-item">
@@ -380,6 +321,11 @@ function panel_options() {
 				<div id="tab2" class="tabs-wrap">
 					<?php require_once ('home-builder/setting.php'); ?>
 				</div> <!-- Homepage Settings -->
+
+				<div id="tab22" class="tabs-wrap">
+					<?php require_once ('home-builder/customhome.php'); ?>
+				</div> <!-- Custom Homepage Settings -->
+
 
 				<div id="tab4" class="tabs-wrap">
 					<h2>Social Networking</h2> <?php echo $save ?>
@@ -759,49 +705,14 @@ function panel_options() {
 							tie_options(
 								array(	"name" => "Number Of Posts To Show",
 										"id" => "slider_number",
+										"std" => 5,
 										"type" => "short-text"));
 										
 							tie_options(
 								array(	"name" => "Query Type",
 										"id" => "slider_query",
-										"options" => array( "category"=>"Category" ,
-															"tag"=>"Tag",
-															"post"=>"Selctive Posts",
-															"page"=>"Selctive pages" ,
-															"custom"=>"Custom Slider" ),
-										"type" => "radio")); 
-										
-							tie_options(
-								array(	"name" => "Tags",
-										"help" => "Enter a tag name, or names seprated by comma. ",
-										"id" => "slider_tag",
-										"type" => "text"));
-					?>
-						<?php $slider_cat = tie_get_option('slider_cat') ; ?>
-							<div class="option-item" id="slider_cat-item">
-								<span class="label">Category</span>
-									<select multiple="multiple" name="tie_options[slider_cat][]" id="tie_slider_cat">
-									<?php foreach ($categories as $key => $option) { ?>
-										<option value="<?php echo $key ?>" <?php if ( @in_array( $key , $slider_cat ) ) { echo ' selected="selected"' ; } ?>><?php echo $option; ?></option>
-									<?php } ?>
-								</select>
-								<a class="mo-help tooltip" title="Enter a category ID, or IDs seprated by comma. "></a>
-							</div>
-							
-					<?php
-																		
-							tie_options(
-								array(	"name" => "Selctive Posts IDs",
-										"help" => "Enter a post ID, or IDs seprated by comma. ",
-										"id" => "slider_posts",
-										"type" => "text"));
-										
-							tie_options(
-								array(	"name" => "Selctive Pages IDs",
-										"help" => "Enter a page ID, or IDs seprated by comma. ",
-										"id" => "slider_pages",
-										"type" => "text"));	
-										
+										"options" => array("custom"=>"Custom Slider"),
+										"type" => "radio"));
 							tie_options(
 								array(	"name" => "Custom Slider",
 										"help" => "Choose your custom slider",
@@ -962,22 +873,39 @@ function panel_options() {
 						<?php
 							tie_options(
 								array(	"name" => "Related Posts",
-										"id" => "related",
+										"id" => "related_post",
+										"std" => true,
 										"type" => "checkbox"));
-
 							tie_options(
 								array(	"name" => "Related Posts Box Title",
 										"id" => "related_title",
+										"std" => "Related Posts",
 										"type" => "text")); 
+							tie_options(
+								array(	"name" => "Display",
+										"id" => "related_display",
+										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
+										"type" => "select",
+										"std" => "grid",
+										"options" => array( "grid"=>"As Grid",
+															"list"=>"As List"
+														)));
+							tie_options(
+								array( 	"name" => "Show cols",
+										"id" => "related_cols",
+										"std" => 3,
+										"type" => "short-text"));
 										
 							tie_options(
 								array(	"name" => "Number of posts to show",
 										"id" => "related_number",
+										"std" => 3,
 										"type" => "short-text"));
 										
 							tie_options(
 								array(	"name" => "Query Type",
 										"id" => "related_query",
+										"std" => "category",
 										"options" => array( "category"=>"Category" ,
 															"tag"=>"Tag",
 															"author"=>"Author" ),
@@ -1545,22 +1473,17 @@ function panel_options() {
 						<?php
 							tie_options(
 								array(	"name" => "Display",
-										"id" => "blog_display",
+										"id" => "archive_display",
 										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
-										"type" => "radio",
-										"options" => array( "excerpt"=>"Excerpt + Featured image" ,
-															"full_thumb"=>"Excerpt + Full width Featured image" ,
-															"content"=>"Content" )));
-										
+										"type" => "select",
+										"std" => "grid",
+										"options" => array( "grid"=>"As Grid",
+															"list"=>"As List"
+														)));
 							tie_options(
-								array(	"name" => "Show Social Buttons",
-										"id" => "archives_socail",
-										"type" => "checkbox",
-										"help" => "if checked Facebook , Twitter , Google plus and Pinterest social buttons will appear in all archives pages like categories / tags / search and in homepage blog style ." ));
-							
-							tie_options(
-								array( 	"name" => "Excerpt Length",
-										"id" => "exc_length",
+								array( 	"name" => "Show cols",
+										"id" => "archive_cols",
+										"std" => 3,
 										"type" => "short-text"));
 						?>
 					</div>

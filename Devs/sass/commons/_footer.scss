@@ -1,8 +1,8 @@
 .footer-section {    
     padding: 15px 0 5px 0;
     margin-top: 0px;
-    background: #f1f1f1;
-
+    // background: #f1f1f1;
+    border-top: 1px solid $boder_color;
     h5{
         text-transform: uppercase;
         font-weight: bold;
@@ -32,19 +32,7 @@
             }
         }
     }
-
-    .socials-link-list{
-        li{
-            display: inline;
-            margin-right: 5px;
-            a{
-                padding: 0px;
-                font-size: 25px;
-                padding: 3px;
-            }
-        }
-    }
-
+    
     .contact-list{
         li{
             margin-bottom: 5px;
@@ -57,11 +45,41 @@
             }
         }
     }
+
+    .widget {
+        &.widget_tag_cloud {
+            .widget-title {
+                border: none;
+                background: none;
+                label{
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+
+                    &:before{
+                        content: "";
+                        display: none;
+                    }
+                }
+            }
+
+            .tagcloud{
+                max-height: 100px;
+                overflow: auto;
+                a {
+                    background: #f1f1f1;
+                    padding: 3px 5px;
+                    margin: 1px 0px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
 }
 
 .copy-right-box {
     text-align: left;
-    background: $footer_bg;
+    background: $main_color;
     color: $footer_link_color;
     p {
         padding: 10px 0;
@@ -70,7 +88,7 @@
 
     .footer-copyright {
         padding: 10px 0;
-
+        text-align: left;
         .footer-navbar {
             margin: 0;
             padding: 0;
@@ -101,12 +119,13 @@
             font-size: 16px;
             top: 4px;
             left: 4px;
+            color: $colors-white;
         }
     }
 }
-.support-online i { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+.support-online i.fa { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
 .support-online a span {
-    border-radius: 2px; text-align: center; background: rgb(103, 182, 52); 
+    border-radius: 2px; text-align: center; background: $main_color; 
     padding: 5px; display: none; width: 140px; 
     margin: 0px; position: absolute; color: #ffffff; z-index: 999; top: 5px; left: 38px; transition: all 0.2s ease-in-out 0s; -moz-animation: headerAnimation 0.7s 1; -webkit-animation: headerAnimation 0.7s 1; -o-animation: headerAnimation 0.7s 1; animation: headerAnimation 0.7s 1; 
 }

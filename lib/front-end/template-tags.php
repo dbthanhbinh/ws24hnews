@@ -94,7 +94,7 @@ if ( ! function_exists( 'render_logo' ) ) :
         // check to see if the logo exists and add it to the page
         if ( get_theme_mod( 'your_theme_logo' ) ) : 
         ?>
-            <a class="navbar-brand them-logo" href="<?= site_url() ?>">
+            <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
                 <?php 
                 $yourTheme = wp_get_attachment_image(get_theme_mod( 'your_theme_logo' ));
                 $yourTheme = preg_replace(array('/width="[^"]*"/', '/height="[^"]*"/'), '', $yourTheme);
@@ -103,7 +103,7 @@ if ( ! function_exists( 'render_logo' ) ) :
             </a>
         <?php // add a fallback if the logo doesn't exist
         else : ?>
-            <a class="navbar-brand them-logo" href="<?= site_url() ?>">
+            <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
                 <img src="<?php echo get_template_directory_uri()?>/assets/images/logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
             </a>
         <?php endif;

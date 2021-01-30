@@ -1,6 +1,6 @@
 .navbar{
     clear: both;
-    padding: 0;
+    padding: 5px 0;
     background: #ffffff;
     border: transparent;
     border-left: none;
@@ -16,7 +16,7 @@
 @media (min-width: 992px) {
     // Fix main-nabbar
     .main-navbar-fixed{
-        position: fixed;
+        position: sticky;
         width: 100%;
         display: block;
         transition: all 0.3s;

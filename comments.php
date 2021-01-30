@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 			<?php
 			$comments_number = get_comments_number();			
 			?>
-			Danh sách comment cho bài viết :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
+			Danh sách bình luận :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
 		</h2>
 
 		<ul class="comment-list">
@@ -31,8 +31,8 @@ if ( post_password_required() ) {
 			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'ws24h' ) . '</span>',
 		) );
 
-	endif; // Check for have_comments().
-
+	endif;
+	// Check for have_comments().
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'ws24h' ); ?></p>
@@ -41,7 +41,7 @@ if ( post_password_required() ) {
 
 	add_filter( 'comment_form_defaults', 'so16856397_comment_form_defaults', 10, 1 );
 	function so16856397_comment_form_defaults( $defaults ) {
-		$defaults['comment_field'] = '<p class="comment-form-comment"> <textarea id="comment" name="comment" placeholder="' . __( 'Viết bình luận (*)' ) . '" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea></p>';
+		$defaults['comment_field'] = '<p class="comment-form-comment"> <textarea id="comment" name="comment" placeholder="' . getTranslateByKey('write_your_comments') . '" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea></p>';
 		return $defaults;
 	}
 	$commenter = wp_get_current_commenter();
@@ -50,16 +50,16 @@ if ( post_password_required() ) {
 	$fields =  array(
 		//'comment_field' => '<p class="comment-form-comment"> <textarea id="comment" name="comment" placeholder="' . __( 'Comment' ) . ( $req ? ' (*)' : '' ) .'" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea></p>',
 		'author' => '<p class="comment-form-author">' .
-			'<input id="author" name="author" type="text" placeholder="' . __( 'Tên' ) . ( $req ? ' (*)' : '' ) .'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
+			'<input id="author" name="author" type="text" placeholder="' . getTranslateByKey('comment_author') . ( $req ? ' (*)' : '' ) .'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
 		'email'  => '<p class="comment-form-email">' .
-			'<input id="email" name="email" type="text" placeholder="' . __( 'Email' ) . ( $req ? ' (*)' : '' ) .'" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
+			'<input id="email" name="email" type="text" placeholder="' . getTranslateByKey('comment_author_email') . ( $req ? ' (*)' : '' ) .'" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
 	);
 	$comments_args = array(
 		'fields' =>  $fields,
-		'title_reply'=> '<i class="fa fa-comments" aria-hidden="true"></i> Bình luận của bạn',
-		'label_submit' => 'Gửi bình luận'
+		'title_reply'=> '<i class="fa fa-comments fa-custom-size" aria-hidden="true"></i> '.getTranslateByKey('your_comments'),
+		'label_submit' => getTranslateByKey('send_comment')
 	);
 	comment_form($comments_args);
 	?>
+</div>
 
-</div><!-- #comments -->

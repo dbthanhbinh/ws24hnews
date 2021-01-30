@@ -1,4 +1,6 @@
 @import 'commons/variables';
+@import 'commons/animate';
+@import 'commons/customfont';
 @import 'commons/header';
 @import 'commons/headerVersion';
 @import 'commons/breadcrumb';
@@ -6,7 +8,8 @@
 @import 'commons/nav';
 @import 'commons/public';
 @import 'commons/layout';
-@import 'commons/pinterest';
+@import 'commons/button';
+// @import 'commons/pinterest';
 @import 'commons/archive';
 @import 'commons/article';
 @import 'commons/single';
@@ -20,7 +23,7 @@
 @import 'commons/scrollbar';
 @import 'commons/tagcloud';
 @import 'commons/overwrite';
-@import 'commons/bdsprice';
+// @import 'commons/bdsprice';
 @import 'commons/responsive';
 
 // For custom

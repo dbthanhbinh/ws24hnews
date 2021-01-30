@@ -24,7 +24,6 @@
 
       <!-- Sidebar area: we defined sidebar's 2 area -->
       <?php get_sidebar('second');?>
-
       <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
           <?php get_sidebar();?>
       <?php } ?>
