@@ -17,9 +17,9 @@ function ws24h_widgets_init() {
     */
     
 	register_sidebar( array(
-		'name'          => __( 'Primary Widget Area', WS24H_THEME_NAME),
+		'name'          => __( 'Primary Widget Area', THEME_NAME),
 		'id'            => 'primary-sidebar',
-		'description'   => __( 'Drag widgets here to appear in your sidebar.',WS24H_THEME_NAME),
+		'description'   => __( 'Drag widgets here to appear in your sidebar.',THEME_NAME),
 		'before_widget' => '<div id="%1$s" class="widget sidebar-widgets">',
 		'after_widget'  => '</div></div></div>',
 		'before_title'  => '<div class="widgets-title"> <h3>',
@@ -39,35 +39,35 @@ function ws24h_widgets_init() {
     {
 	
 		register_sidebar( array(
-			'name' =>  __( 'First Footer Widget Area', WS24H_THEME_NAME ),
+			'name' =>  __( 'First Footer Widget Area', THEME_NAME ),
 			'id' => 'first-footer-widget-area',
-			'description' => __( 'The first footer widget area', WS24H_THEME_NAME ),
+			'description' => __( 'The first footer widget area', THEME_NAME ),
 			'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 		) );
 
 		if( $footer_widgets == 'footer-2c' || $footer_widgets == 'narrow-wide-2c' || $footer_widgets == 'wide-narrow-2c' || $footer_widgets == 'footer-3c' || $footer_widgets == 'wide-left-3c' || $footer_widgets == 'wide-right-3c' || $footer_widgets == 'footer-4c' ){
 			register_sidebar( array(
-				'name' =>  __( 'Second Footer Widget Area', WS24H_THEME_NAME ),
+				'name' =>  __( 'Second Footer Widget Area', THEME_NAME ),
 				'id' => 'second-footer-widget-area',
-				'description' => __( 'The Second footer widget area', WS24H_THEME_NAME ),
+				'description' => __( 'The Second footer widget area', THEME_NAME ),
 				'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 			) );
 		}
 	
 		if( $footer_widgets == 'footer-3c' || $footer_widgets == 'wide-left-3c' || $footer_widgets == 'wide-right-3c' || $footer_widgets == 'footer-4c' ){
 			register_sidebar( array(
-				'name' =>  __( 'Third Footer Widget Area', WS24H_THEME_NAME ),
+				'name' =>  __( 'Third Footer Widget Area', THEME_NAME ),
 				'id' => 'third-footer-widget-area',
-				'description' => __( 'The Third footer widget area', WS24H_THEME_NAME ),
+				'description' => __( 'The Third footer widget area', THEME_NAME ),
 				'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 			) );
 		}
 		
 		if( $footer_widgets == 'footer-4c' ){
 			register_sidebar( array(
-				'name' => __( 'Fourth Footer Widget Area', WS24H_THEME_NAME ),
+				'name' => __( 'Fourth Footer Widget Area', THEME_NAME ),
 				'id' => 'fourth-footer-widget-area',
-				'description' => __( 'The Fourth footer widget area', WS24H_THEME_NAME ),
+				'description' => __( 'The Fourth footer widget area', THEME_NAME ),
 				'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 			) );
 		}
@@ -95,14 +95,10 @@ function ws24h_widgets_init() {
 }
 add_action( 'widgets_init', 'ws24h_widgets_init' );
 
-
-
-
 function tcr_tag_cloud_filter($args = array()) {
     $args['smallest'] = 10;
     $args['largest'] = 12;
     $args['unit'] = 'pt';
     return $args;
 }
-
 add_filter('widget_tag_cloud_args', 'tcr_tag_cloud_filter', 90);

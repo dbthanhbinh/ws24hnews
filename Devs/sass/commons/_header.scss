@@ -6,6 +6,10 @@
 .top-header {
     clear: both;
     padding: 0;
+    border-bottom: 1px solid $main_color;
+    font-size: 13px;
+    background-color: $main_color;
+    color: $main_text_color;
 
     .container {
         .row{
@@ -15,8 +19,8 @@
     .render-logo { float: left; }    
     ul {
         padding: 0;
-        margin: 5px 0;
-        line-height: 25px;
+        margin: 0;
+        line-height: 35px;
         li {
             display     : inline;
             border-left : 1px solid #dddddd;
@@ -27,7 +31,9 @@
                 padding-left : 0;
             }
 
-            a {}
+            a {
+                color: $main_text_color;
+            }
         }
     }
 
@@ -40,7 +46,7 @@
 
 .small-render-logo {
     display: none;
-    .them-logo{
+    .theme-logo{
         img{
             max-height: 35px;
             width: auto;

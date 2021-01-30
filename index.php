@@ -16,53 +16,57 @@
 <div class="container">
     <div class="clear-15"></div>
     <?php require_once ('helpers/layout-configs.php'); ?>
+
     <div class="row <?= mainLayoutKey() ?>">
+
         <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
             <?php get_sidebar();?>
         <?php } ?>
 
         <div class="<?= mainLayoutClass() ?>">
-            <div class="row">
-                <div class="<?= mainLayoutTemplate() ?>">
-                    <?php
-                        if(function_exists('tie_get_option')
-                            && tie_get_option('on_home')
-                            && tie_get_option('on_home') == 'boxes' )
-                        {
-                            $cats = get_option( 'tie_home_cats' );
-                            // Dispay home with home builder
-                            if($cats) {
-                                ?>
-                                <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
-                                <?php
-                                foreach ($cats as $cat) { tie_get_home_cats($cat); }
-                                ?>
-                                <?php
-                            }
-                            else
-                                _e( 'You can use Homepage builder to build your homepage' , THEME_NAME );
-
-                        } else {
-                            $p = 1;
-                            while ( have_posts() ) :
-                                the_post();
-                                include TEMPLATEPATH  . '/template-parts/pin-layout/content.php';
-                                $p++;
-                            endwhile;
-                        }
-                    ?>            
-                </div>
-            </div>
+            <?php
+                if(function_exists('tie_get_option')
+                    && tie_get_option('on_home')
+                    && tie_get_option('on_home') == 'boxes' )
+                {
+                    $cats = get_option( 'tie_home_cats' );
+                    if($cats){
+                        ?>
+                        <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
+                        <?php
+                            foreach ($cats as $cat) { tie_get_home_cats($cat); }
+                        ?>
+                        <?php
+                    }
+                } else {
+                    $p = 1;
+                    $args = [
+                        'isGrid' => true,
+                        'cols' => 4
+                    ];
+                    echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
+                    while ( have_posts() ) :
+                        the_post();
+                        get_template_part('template-parts/post/content', '', $args);
+                        $p++;
+                    endwhile;
+                    echo '</div>';
+                }
+            ?>
+            <?php
+            // Home tabs
+            // require('modules/homepage/home_tab.php');
+            ?>
         </div>
-
         <!-- Sidebar area: we defined sidebar's 2 area -->
         <?php get_sidebar('second');?>
-
         <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-            <?php get_sidebar();?>
+            <?php get_sidebar('second');?>
         <?php } ?>
+
     </div>
 </div>
+<!-- End Main content show here-->
 
 <!-- Footer show here-->
 <?php get_footer();?>

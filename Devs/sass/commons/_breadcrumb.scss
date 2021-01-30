@@ -1,6 +1,11 @@
+.box-breadcrumb-v2 {
+    margin-bottom: 30px;
+}
+
+
 .box-breadcrumb {
     margin-bottom: 15px;
-    background: url("../images/bg_feature.jpg") center no-repeat;
+    background: url("../images/bg_feature.jpg") center repeat-x;
     border-bottom: 1px solid #eee;
     padding: 4px 0;
     width: 100%;
@@ -77,11 +82,11 @@
     li { 
         float: left; 
 
+        span,
         a {
             text-decoration: none; 
             padding: 5px 0 5px 25px;
             background: #cccccc; /* fallback color */
-            background: #cccccc; //hsla(34,85%,35%,1); 
             position: relative; 
             display: block;
             float: left;
@@ -121,27 +126,38 @@
 }
 
 .breadcrumb li:first-child {
-    border-left: 3px solid #ff0000;
+    border-left: 5px solid $main_color;
 
     a {
         padding-left: 10px;
     }
 } 
-  .breadcrumb li:nth-child(2) a       { background:        hsla(34,85%,45%,1); }
-  .breadcrumb li:nth-child(2) a:after { border-left-color: hsla(34,85%,45%,1); }
+  .breadcrumb li:nth-child(2) a       {
+      background: $main_color;
+      color: #fff;
+      &:hover {
+        background: $main_color;
+        text-decoration: underline;
+        &:after {
+            border-left-color: $main_color;
+        }
+      }
+    }
+  .breadcrumb li:nth-child(2) a:after { border-left-color: $main_color; }
   .breadcrumb li:nth-child(3) a       { background:        hsla(34,85%,55%,1); }
   .breadcrumb li:nth-child(3) a:after { border-left-color: hsla(34,85%,55%,1); }
   .breadcrumb li:nth-child(4) a       { background:        hsla(34,85%,65%,1); }
   .breadcrumb li:nth-child(4) a:after { border-left-color: hsla(34,85%,65%,1); }
   .breadcrumb li:nth-child(5) a       { background:        hsla(34,85%,75%,1); }
   .breadcrumb li:nth-child(5) a:after { border-left-color: hsla(34,85%,75%,1); }
-  .breadcrumb li:last-child a {
+
+  .breadcrumb li:last-child span {
     background: #eeeeee;       //hsla(34,85%,55%,1);
     color: black;
     pointer-events: none;
     cursor: default;
   }
-  .breadcrumb li:last-child a::after { 
+  .breadcrumb li:last-child span::after { 
     border: 0; 
   }
 

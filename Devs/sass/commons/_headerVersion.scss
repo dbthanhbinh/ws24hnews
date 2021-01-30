@@ -3,7 +3,7 @@
 
     .header-version-default{
         .render-logo{
-            .them-logo {
+            .theme-logo {
                 img{
                     max-height: $menu_bar_height;
                 }
@@ -13,9 +13,9 @@
 
     .header-version-v2{
         .render-logo{
-            .them-logo {
+            .theme-logo {
                 img{
-                    max-height: $menu_bar_height;
+                    max-height: 60px;
                 }
             }
         }

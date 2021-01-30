@@ -2,23 +2,31 @@
 /**
  * Create new section Customizer
  **/
-function your_theme_new_customizer_settings( $wp_customize ) {
-
+function your_theme_new_customizer_settings($wp_customize) {
     $choicesLayout =  [
         'full' => __('Full width'),
         'left-sidebar' => __('Left sidebar'),
         'right-sidebar' => __('Right sidebar')
     ];
 
+    $pages = get_all_page_ids();
+    $allPage = [];
+    if(count($pages) > 0) {
+        foreach($pages as $pageId)
+        {
+            $allPage[$pageId] = get_the_title($pageId);
+        }
+    }
+
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
     // Add a control to upload the logo
     $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'your_theme_logo',
     array(
-        'label' => 'Upload Logo (200 x 80)',
+        'label' => 'Upload Logo (200 x 200)',
         'section' => 'title_tagline',
         'settings' => 'your_theme_logo',
-        'height' => 80,
+        'height' => 200,
         'width' => 200,
         'flex_width ' => false,
         'flex_height ' => false,
@@ -124,6 +132,17 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'choices' => $choicesLayout
     ) ) );
 
+    // Home page intro select
+    $wp_customize->add_setting('home_page_intro', ['default' => '']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_page_intro',
+    array(
+        'label' => 'Home page intro',
+        'section' => 'section_layout',
+        'settings' => 'home_page_intro',
+        'type' => 'select',
+        'choices' => $allPage
+    ) ) );
+
     // Pages layout
     $wp_customize->add_setting('page_layout', ['default' => 'right-sidebar']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'page_layout',
@@ -184,6 +203,7 @@ function your_theme_new_customizer_settings( $wp_customize ) {
             '3c' => __('3 cols'),
             '4c' => __('4 cols'),
             'wide-2' => __('Wide - 2 cols'),
+            'wide1' => __('Wide - 1 col'),
             '2-wide' => __('2 cols - Wide'),
             'col-wide-col' => __('col - Wide - col')
         ),
@@ -245,6 +265,16 @@ function your_theme_new_customizer_settings( $wp_customize ) {
         'type' => 'text'
     ) ) );
 
+    // Contact name
+    $wp_customize->add_setting('company_footer_name');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_footer_name',
+    array(
+        'label' => 'Company footer name',
+        'section' => 'section_contact',
+        'settings' => 'company_footer_name',
+        'type' => 'text'
+    ) ) );
+
      // Contact address
      $wp_customize->add_setting('contact_address');
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_address',
@@ -295,6 +325,26 @@ function your_theme_new_customizer_settings( $wp_customize ) {
          'type' => 'text'
      ) ) );
 
+     // Contact copyright
+     $wp_customize->add_setting('setting_open_time');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_open_time',
+     array(
+         'label' => 'Open time',
+         'section' => 'section_contact',
+         'settings' => 'setting_open_time',
+         'type' => 'text'
+     ) ) );
+
+     
+     $wp_customize->add_setting('google_analytics_code');
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_analytics_code',
+     array(
+         'label' => 'Google Analytics Code',
+         'section' => 'section_contact',
+         'settings' => 'google_analytics_code',
+         'type' => 'text'
+     ) ) );
+
 
     // ================================== SOCIALS =================================
     // Theme Socials link
@@ -308,6 +358,15 @@ function your_theme_new_customizer_settings( $wp_customize ) {
     );
 
     // Facebook fanpage
+    $wp_customize->add_setting('facebook_name');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_name',
+    array(
+        'label' => 'Facebook name Fanpage',
+        'section' => 'section_socials',
+        'settings' => 'facebook_name',
+        'type' => 'text'
+    ) ) );
+
     $wp_customize->add_setting('facebook_link');
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_link',
     array(
@@ -359,6 +418,19 @@ function your_theme_new_customizer_settings( $wp_customize ) {
             'type' => 'text'
         ) 
     ) );
+
+    $wp_customize->add_setting('show_face_fanpage_plugin', ['default' => 0]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_face_fanpage_plugin',
+    array(
+        'label' => 'Show Facebook Fanpage',
+        'section' => 'section_socials',
+        'settings' => 'show_face_fanpage_plugin',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
 
     // ================================== HEADER SETTINGS =================================
     $listColors[] = array(

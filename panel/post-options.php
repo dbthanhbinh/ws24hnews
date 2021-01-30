@@ -2,8 +2,8 @@
 add_action("admin_init", "posts_init");
 function posts_init()
 {
-    add_meta_box("tie_post_options", "Post Options", "tie_post_options_module", "post", "normal", "high");
-    ////add_meta_box("tie_page_options", theme_name ." - Page Options", "tie_page_options_module", "page", "normal", "high");
+    add_meta_box("tie_post_options", "Post Options", "tie_post_options_module", "custom-video", "normal", "high");
+    ////add_meta_box("tie_page_options", THEME_NAME ." - Page Options", "tie_page_options_module", "page", "normal", "high");
 }
 
 function tie_post_options_module()
@@ -33,56 +33,11 @@ function tie_post_options_module()
         <?php
         tie_post_options(
             [
-                "name" => "Giá",
-                "id"   => "price",
+                "name" => "Youtube video link",
+                "id"   => "youtube_video_link",
                 "type" => "text",
-                "extra" => 'VD nhập: 1,2 Tỷ, 350 Triệu'
+                "extra" => 'VD nhập: https://www.youtube.com/watch?v=JNNzxZ3qrLI'
             ]);
-        tie_post_options(
-            [
-                "name" => "Diện tích",
-                "id"   => "acreage",
-                "type" => "text",
-                "extra" => 'VD nhập 35 ~ 35 M2'
-            ]);
-        // Alias Quan huyen
-        $_districts = [];
-        foreach ($districts as $key=>$item) {
-            $_districts[$item['slug']] = $item['name'];
-        }
-
-        tie_post_options(
-            [
-                "name"    => "BĐS tại quận",
-                "id"      => "district",
-                "std"     => "quan-12",  
-                "type"    => "select",
-                "options" => $_districts
-            ]);
-        tie_post_options(
-            [
-                "name" => "Số Lầu",
-                "id"   => "number-of-build",
-                "std"  => "Nhà cấp 4",
-                "type" => "text",
-                "extra" => 'VD nhập 1 ~ 1 Lầu'
-            ]);
-        tie_post_options(
-            [
-                "name" => "Số phòng ngủ",
-                "id"   => "number-of-bed",
-                "type" => "text",
-                "extra" => 'VD nhập 1 ~ 1 Phòng'
-            ]);
-        tie_post_options(
-            [
-                "name" => "Số phòng vệ sinh",
-                "id"   => "number-of-bath",
-                "type" => "text",
-                "extra" => 'VD nhập 1 ~ 1 Phòng'
-            ]);
-            
-
         ?>
     </div>
 
@@ -334,7 +289,7 @@ function tie_page_options_module()
             ]);
         ?>
         <p id="taq_custom_position_hint" class="tie_message_hint">
-            Use <strong>[review]</strong> shortcode to place the review box in any place within post content or use <strong><?php echo theme_name ?> - Review Box </strong> Widget .
+            Use <strong>[review]</strong> shortcode to place the review box in any place within post content or use <strong><?php echo THEME_NAME ?> - Review Box </strong> Widget .
         </p>
         <div id="reviews-options">
             <?php
@@ -586,7 +541,8 @@ function save_post($post_id)
             'tie_review_position',
             'tie_review_style',
             'tie_review_summary',
-            'tie_review_total'
+            'tie_review_total',
+            'youtube_video_link'
         ];
 
         foreach ($custom_meta_fields as $custom_meta_field) {
@@ -659,10 +615,12 @@ function tie_post_options($value)
         $id            = $value['id'];
         $get_meta      = get_post_custom($post->ID);
 
+        
+
         if (isset($get_meta[$id][0])) {
             $current_value = $get_meta[$id][0];
         }
-
+        //print_r($get_meta);
         switch ($value['type']) {
 
         case 'text':

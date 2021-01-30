@@ -93,7 +93,7 @@ function tie_slider_slides(){
 
   </script>
   
- <input id="upload_add_slide" type="button" class="mpanel-save" value="Add New Slide">
+ <input id="upload_add_slide" type="button" class="mpanel-save" value="Add New Slider (1920x600)">
 
 	<ul id="tie-slider-items">
 	<?php
@@ -103,7 +103,11 @@ function tie_slider_slides(){
 		$i++; ?>
 		<li id="listItem_<?php echo $i ?>"  class="ui-state-default">
 			<div class="widget-content option-item">
-				<div class="slider-img"><?php echo wp_get_attachment_image( $slide['id'] , 'thumbnail' );  ?></div>
+				<?php
+				$raw_image = wp_get_attachment_image($slide['id'], true, 'full' );
+				$final_image = preg_replace('/(height|width)="\d*"\s/', "", $raw_image);
+				?>
+				<div class="slider-img"><?php echo $final_image;  ?></div>
 				<label for="custom_slider[<?php echo $i ?>][title]"><span>Slide Title :</span><input id="custom_slider[<?php echo $i ?>][title]" name="custom_slider[<?php echo $i ?>][title]" value="<?php  echo stripslashes( $slide['title'] )  ?>" type="text" /></label>
 				<label for="custom_slider[<?php echo $i ?>][link]"><span>Slide Link :</span><input id="custom_slider[<?php echo $i ?>][link]" name="custom_slider[<?php echo $i ?>][link]" value="<?php  echo stripslashes( $slide['link'] )  ?>" type="text" /></label>
 				<label for="custom_slider[<?php echo $i ?>][caption]"><span style="float:left" >Slide Caption :</span><textarea name="custom_slider[<?php echo $i ?>][caption]" id="custom_slider[<?php echo $i ?>][caption]"><?php echo stripslashes($slide['caption']) ; ?></textarea></label>
@@ -164,7 +168,7 @@ function tie_slider_custom_columns($column){
 				$custom = get_post_custom($post->ID);
 				if( !empty($custom["custom_slider"][0])){
 					$slider = unserialize( $custom["custom_slider"][0] );
-					echo $number = count($slider);
+					echo $number = $slider ? count($slider) : 0;
 				}
 				else echo 0;
 			}

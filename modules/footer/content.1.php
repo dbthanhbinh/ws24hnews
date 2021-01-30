@@ -1,6 +1,6 @@
 <div class="box-footer">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="<?= getColsLayout(true, 126) ?>">
             <div class="footer-logo">
                 <?= render_logo() ?>
             </div>
@@ -21,7 +21,7 @@
             </div>
             <?php //if (is_active_sidebar( 'footer-1' )) dynamic_sidebar( 'footer-1' );?>
         </div>
-        <div class="col-lg-6 box-fix-max">
+        <div class="<?= getColsLayout(true, 126) ?> box-fix-max">
             <h4><i class="fa fa-tags" aria-hidden="true"></i>Từ khóa tìm kiếm</h4>
             <div class="scrollbar scrollbar-black bordered-black square thin tag-clouds">
                 <div class="force-overflow"> <?= wp_tag_cloud('smallest=10&largest=13') ?> </div>

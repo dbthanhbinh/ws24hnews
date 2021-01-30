@@ -1,0 +1,26 @@
+// Cusstom css for show thumbnail in postlist
+.widefat {
+    &.table-view-list {
+        .manage-column {
+            &.column-img {
+                width: 110px;
+            }
+        }
+        #the-list {
+            .column-img {
+                img {
+                    max-width: 100px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+// panel
+.option-item {
+    .img-preview {
+        width: 150px;
+        height: auto;
+    }
+}

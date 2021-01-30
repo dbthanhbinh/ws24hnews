@@ -83,10 +83,7 @@ class ws24h_popular_widget extends WP_Widget
 					$firsts = '';
 				
 				?>
-				<li class="box-list-item <?php echo $firsts;?>">									
-					<h5 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
-						<?php the_title();?> </a>
-					</h5>
+				<li class="box-list-item <?php echo $firsts;?>">
 					<?php 
 					if($thumb=='true' && has_post_thumbnail()):
 					?>
@@ -97,7 +94,10 @@ class ws24h_popular_widget extends WP_Widget
 					</div>
 					<?php endif;?>
 					<?php if($excerpt_hidden=='true'){}else{?>
-					<div class="item-lead">																
+					<div class="item-lead">
+					    <h5 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
+    						<?php the_title();?> </a>
+    					</h5>
 						<?php echo get_excerpt($excerpt_len);?>
 					</div>
 					<?php }?>

@@ -1,4 +1,3 @@
-    <!-- Footer -->
     <?php
     $customClient = false;
     if($customClient){
@@ -14,12 +13,12 @@
       <div class="copy-right-box">
         <div class="container">  
           <div class="row">      
-            <div class="col-lg-12">
+            <div class="<?= getDefaultFullLayout() ?>">
               <div class="footer-copyright">
                 <span>
                   <?= get_theme_mod('setting_copyright') ?>
                 </span>
-                <?php if ( has_nav_menu ( 'primary' ) ) : ?>
+                <?php if ( has_nav_menu ( 'footer-menu' ) ) : ?>
                 <?php 
                     $defaults = array(
                         'theme_location'  => 'footer',
@@ -43,15 +42,6 @@
       </div>
     <?php }?>
     <?php wp_footer()?>
-
-    <!-- For sticky sidebar -->
-    <script type="text/javascript">
-      if( $('#sidebar').length ) {
-        var sidebar = new StickySidebar('#sidebar', {
-            topSpacing: 50,
-            bottomSpacing: 50
-        });
-      }
-    </script>
+    <div id="site-over" class=""></div>
   </body>
 </html>
