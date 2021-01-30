@@ -20,7 +20,7 @@
 
 .widget{
     clear: both;
-    margin-bottom: $margin_bottom - 5;
+    margin-bottom: 20px;
     display: inline-block;
     width: 100%;
 
@@ -114,6 +114,18 @@
 
             .item-lead {
                 text-align: justify;
+            }
+        }
+    }
+
+    .socials-link-list{
+        li{
+            display: inline;
+            margin-right: 5px;
+            a{
+                padding: 0px;
+                font-size: 25px;
+                padding: 3px;
             }
         }
     }

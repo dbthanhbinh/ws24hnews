@@ -83,27 +83,36 @@
                         <?php
                             $orig_post = $post;
                             global $post;
-                            $categories = get_the_category($post->ID);
-                            if ($categories) {
-                                $category_ids = array();
-                                foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
-
+                            $contentFormat = '';
+                            if($post->post_type == 'post'){
+                                $categories = get_the_category($post->ID);
+                                if ($categories) {
+                                    $category_ids = array();
+                                    foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+                                    $args=array(
+                                        'category__in' => $category_ids,
+                                        'post_type' => $post->post_type,
+                                        'post__not_in' => array($post->ID),
+                                        'posts_per_page'=> 5 // Number of related posts that will be shown.
+                                    );
+                                }
+                            } else {
+                                $contentFormat = '-news';
                                 $args=array(
-                                    'category__in' => $category_ids,
                                     'post__not_in' => array($post->ID),
-                                    'posts_per_page'=> 5, // Number of related posts that will be shown.
-                                    'ignore_sticky_posts '=>1
+                                    'post_type' => $post->post_type,
+                                    'posts_per_page'=> 5 // Number of related posts that will be shown.
                                 );
-                                $my_query = new wp_query( $args );
-
-                                if( $my_query->have_posts() ) {
-                                    while( $my_query->have_posts() ) {
-                                        $my_query->the_post();
-                                        $content_type = 'related';
-                                        get_template_part('template-parts/post/content', get_post_format(), $argGrid);
-                                    }
+                            }
+                            $my_query = new wp_query( $args );
+                            if( $my_query->have_posts() ) {
+                                while( $my_query->have_posts() ) {
+                                    $my_query->the_post();
+                                    $content_type = 'related';
+                                    get_template_part('template-parts/post/content'.$contentFormat, get_post_format(), $argGrid);
                                 }
                             }
+
                             $post = $orig_post;
                             wp_reset_query(); 
                         ?>

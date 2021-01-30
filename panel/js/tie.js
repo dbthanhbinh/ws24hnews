@@ -125,11 +125,18 @@ function builderFooterGroupTemplate (nextCell) {
 	return html;
 }
 
-function builderRecentPost (boxTitle, nextCell, content) {	
+function builderRecentPost (boxTitle, nextCell, posttypesDf, content) {	
 	var html = '';
 	html += builderHeader (boxTitle, nextCell);
 
 	html += '<label>';
+	html += '<span style="float:left;">Select Posttype : </span>';
+	html += '<select class="display_category_choosing_js" data-id="'+ nextCell +'" name="tie_home_cats['+ nextCell +'][posttype][]" id="tie_home_cats['+ nextCell +'][posttype][]">';
+	html += posttypesDf;
+	html += '</select>';
+	html += '</label>';
+
+	html += '<label id="display_category_choosing_posttype_'+ nextCell +'" class="display_category_choosing_posttype active">';
 	html += '<span style="float:left;">Exclude This Categories : </span>';
 	html += '<select multiple="multiple" name="tie_home_cats['+ nextCell +'][exclude][]" id="tie_home_cats['+ nextCell +'][exclude][]">';
 	html += content;
@@ -387,10 +394,11 @@ jQuery(document).ready(function() {
 
 	// HomeBuilder
 	var categoryDf = jQuery('#cats_defult').html();
+	var posttypesDf = jQuery('#posttype_defult').html();
 	
 	// For recent post
 	jQuery("#add-recent").click(function() {
-		jQuery('#cat_sortable').append(builderRecentPost(boxTitle='Recent post', nextCell, content=categoryDf));
+		jQuery('#cat_sortable').append(builderRecentPost(boxTitle='Recent post', nextCell, posttypesDf, content=categoryDf));
 		jQuery('#listItem_'+ nextCell).hide().fadeIn();
 		nextCell ++ ;
 	});
@@ -611,6 +619,20 @@ function toggleVisibility(id) {
 }
 
 // for custom
+// display_category_choosing_js
+jQuery(document).on('change', '.display_category_choosing_js',function(event) {
+	event.preventDefault();
+	var myval = jQuery(this).val();
+	var myid = jQuery(this).data('id');
+	if(myval == 'posts'){
+		jQuery('#display_category_choosing_posttype_' + myid).removeClass('inactive');
+		jQuery('#display_category_choosing_posttype_' + myid).addClass('active');
+	} else {
+		jQuery('#display_category_choosing_posttype_' + myid).removeClass('active');
+		jQuery('#display_category_choosing_posttype_' + myid).addClass('inactive');
+	}
+});
+
 // display_mode_choosing_js
 jQuery(document).on('change', '.display_mode_choosing_js',function(event) {
 		event.preventDefault();
@@ -627,7 +649,7 @@ jQuery(document).on('change', '.display_mode_choosing_js',function(event) {
 			jQuery('#display_mode_choosing_show_message_' + myid).removeClass('active');
 			jQuery('#display_mode_choosing_show_message_' + myid).addClass('inactive');
 		}
-});	
+});
 
 (function($){var i=function(e){if(!e)var e=window.event;e.cancelBubble=true;if(e.stopPropagation)e.stopPropagation()};$.fn.checkbox=function(f){try{document.execCommand('BackgroundImageCache',false,true)}catch(e){}var g={cls:'jquery-checkbox',empty:'empty.png'};g=$.extend(g,f||{});var h=function(a){var b=a.checked;var c=a.disabled;var d=$(a);if(a.stateInterval)clearInterval(a.stateInterval);a.stateInterval=setInterval(function(){if(a.disabled!=c)d.trigger((c=!!a.disabled)?'disable':'enable');if(a.checked!=b)d.trigger((b=!!a.checked)?'check':'uncheck')},10);return d};return this.each(function(){var a=this;var b=h(a);if(a.wrapper)a.wrapper.remove();a.wrapper=$('<span class="'+g.cls+'"><span class="mark"><img src="'+g.empty+'" /></span></span>');a.wrapperInner=a.wrapper.children('span:eq(0)');a.wrapper.hover(function(e){a.wrapperInner.addClass(g.cls+'-hover');i(e)},function(e){a.wrapperInner.removeClass(g.cls+'-hover');i(e)});b.css({position:'absolute',zIndex:-1,visibility:'hidden'}).after(a.wrapper);var c=false;if(b.attr('id')){c=$('label[for='+b.attr('id')+']');if(!c.length)c=false}if(!c){c=b.closest?b.closest('label'):b.parents('label:eq(0)');if(!c.length)c=false}if(c){c.hover(function(e){a.wrapper.trigger('mouseover',[e])},function(e){a.wrapper.trigger('mouseout',[e])});c.click(function(e){b.trigger('click',[e]);i(e);return false})}a.wrapper.click(function(e){b.trigger('click',[e]);i(e);return false});b.click(function(e){i(e)});b.bind('disable',function(){a.wrapperInner.addClass(g.cls+'-disabled')}).bind('enable',function(){a.wrapperInner.removeClass(g.cls+'-disabled')});b.bind('check',function(){a.wrapper.addClass(g.cls+'-checked')}).bind('uncheck',function(){a.wrapper.removeClass(g.cls+'-checked')});$('img',a.wrapper).bind('dragstart',function(){return false}).bind('mousedown',function(){return false});if(window.getSelection)a.wrapper.css('MozUserSelect','none');if(a.checked)a.wrapper.addClass(g.cls+'-checked');if(a.disabled)a.wrapperInner.addClass(g.cls+'-disabled')})}})(jQuery);
 // tipsy, version 1.0.0a

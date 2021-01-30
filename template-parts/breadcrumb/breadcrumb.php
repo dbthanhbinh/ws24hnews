@@ -1,3 +1,15 @@
+<?php
+    function getPosttypeName($posttype){
+        global $rg_posttypes;
+        $posttypeName = '';
+        if($rg_posttypes){
+            foreach($rg_posttypes as $k=>$v){
+                if($v['posttype'] == $posttype) return $v['postname'];
+            }
+        }
+        return $posttypeName;
+    }
+?>
 <?php  if(get_theme_mod('show_breadcrumb')){ ?>
 <div class="box-breadcrumb">
     <div class="container">
@@ -5,9 +17,24 @@
             <div class="col-lg-7 col-md-7 box-breadcrumb-part">
                 <ul class="breadcrumb">
                     <li><a href="<?= site_url() ?>">Home</a></li>
-                    <li><a href="#">
+                    <?php
+                    global $post;
+                    if(is_single()){
+                        if($post->post_type != 'post'){
+                            ?>
+                            <li><a href="<?= site_url() ?>/<?=$post->post_type?>"><?= getPosttypeName($post->post_type) ?></a></li>
+                            <li><span><?= the_title() ?></span></li>
+                            <?php        
+                        } else {
+                            ?>
+                            <li><span><?= the_title() ?></span></li>
+                            <?php 
+                        }
+                    } else {
+                    ?>
+                    <li><span>
                         <?php 
-                        if(is_page() || is_single()){
+                        if(is_page()){
                             the_title();
                         } else if(is_archive()){
                             the_archive_title();
@@ -15,7 +42,8 @@
                             echo 'Tìm: ' . get_query_var('s');
                         }
                         ?>
-                    </a></li>
+                    </span></li>
+                    <?php }?>
                 </ul>        
             </div>
             <div class="col-lg-5 col-md-5 social-search">

@@ -21,6 +21,20 @@ function panel_options() {
 	</script>
 	<?php
 
+	// Default all register posttypes
+	global $rg_posttypes;
+	$excludePosttypes = ['custom-video'];
+	$posttypes = [
+		'posts' => 'Default post'
+	];
+	if($rg_posttypes && count($rg_posttypes) > 0){
+		foreach($rg_posttypes as $k=>$posttype) {
+			if(!@in_array( $posttype['posttype'] , $excludePosttypes))
+				$posttypes[$posttype['posttype']] = $posttype['postname'];
+		}
+	}
+	// End Default all register posttypes
+
 	$categories_obj = get_categories('hide_empty=0');
 	$categories = array();
 	foreach ($categories_obj as $pn_cat) {

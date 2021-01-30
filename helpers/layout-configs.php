@@ -22,6 +22,20 @@ function mainLayoutClass($mdFull = false) { global $layoutOptions; if($mdFull) r
 function mainLayoutKey() { global $layoutOptions; return $layoutOptions['key']; }
 function mainLayoutTemplate($isGrid = false) { return  $isGrid ? 'row article-grid' : 'row article-list'; }
 
+function getThumbSize($cols){
+   $thumb = 'thumbnail';
+   if(!$cols)
+      return 'thumbnail';
+   elseif($cols == 4)
+      return 'medium';
+   elseif($cols == 3)
+      return 'large';
+   elseif($cols == 2)
+      return 'large';
+   else
+      return 'medium';
+}
+
 function getDefaultFullLayout(){
    return 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
 }

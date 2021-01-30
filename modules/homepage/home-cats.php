@@ -19,7 +19,12 @@ function get_home_recent( $cat_data ) {
 	$showDescription 	= (isset($cat_data['show_description']) && $cat_data['show_description']) ? $cat_data['show_description'] : null;
 
 	echo '<div class="section home-section animated recent-posts">';
-	$postQuery = new WP_Query(['category__in' => $cat_include, 'posts_per_page' => $numberPost]);
+	
+	if($cat_data['posttype'] == 'posts')
+		$postQuery = new WP_Query(['category__in' => $cat_include, 'posts_per_page' => $numberPost]);
+	else
+		$postQuery = new WP_Query(['category__in' => $cat_include, 'post_type' => $cat_data['posttype'], 'posts_per_page' => $numberPost]);
+
 	if($postQuery->have_posts()):
 		$pos = 1;
 		$args = [

@@ -1,8 +1,8 @@
-<div class="section home-section animated section-group-top">
+<div class="section home-section section-group-top">
     <div class="container">
         <div class="first-section">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-8 offset-md-2 group-1">
+                <div class="col-12 col-sm-12 col-md-8 offset-md-2 animated fadeInUp group-1">
                     <div class="row">
                         <?php
                         $groupSlogan = tie_get_option($homeGroupTemplate.'_groupslogan');
@@ -37,7 +37,7 @@
                     </div>
                 </div> <!-- col-md-8 offset-md-2 -->
 
-                <div class="col-12 col-sm-12 col-md-10 offset-md-1 group-2">
+                <div class="col-12 col-sm-12 col-md-10 offset-md-1 animated fadeInUp group-2">
                     <div class="row">
                         <div class="<?= getColsLayout(true, 84) ?> group-left">
                             <h4 > <strong><?= $boxTitle ?></strong> <?php if($subTitle){?><i class="raleway-font"><?= $subTitle ?></i><?php }?></h4>

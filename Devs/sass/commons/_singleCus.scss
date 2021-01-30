@@ -4,5 +4,14 @@
 
     .entry-content {
         text-align: justify;
+
+        blockquote {
+            padding: 10px 20px;
+            margin: 0 0 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 2px solid $main_color;
+        }
     }
 }

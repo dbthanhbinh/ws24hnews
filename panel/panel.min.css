@@ -1,2 +1,2 @@
-#cat_sortable .widget-content .display_mode_choosing_show.active{display:block}#cat_sortable .widget-content .display_mode_choosing_show.inactive{display:none}
+#cat_sortable .widget-content .display_category_choosing_posttype.active,#cat_sortable .widget-content .display_mode_choosing_show.active{display:block}#cat_sortable .widget-content .display_category_choosing_posttype.inactive,#cat_sortable .widget-content .display_mode_choosing_show.inactive{display:none}
 /*# sourceMappingURL=panel.min.css.map */

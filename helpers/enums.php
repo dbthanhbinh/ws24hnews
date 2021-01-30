@@ -130,16 +130,16 @@ $enum_layout = [
         'key'       => 'full-width'
     ],
     'left-sidebar'  => [
-        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
         'second'    => false,
-        'main'      => 'main-content col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8',
+        'main'      => 'main-content col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9',
         'key'       => 'left-sidebar'
     ],
     'right-sidebar' => [
-        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4',
+        'sidebar'   => 'sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
         'second'    => false,
-        'main'      => 'main-content col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8',
-        'mainfull'      => 'main-content col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8',
+        'main'      => 'main-content col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9',
+        'mainfull'  => 'main-content col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9',
         'key'       => 'right-sidebar'
     ],
     'wide-2cols'    => [

@@ -18,7 +18,8 @@ function ws24h_scripts () {
 	wp_enqueue_style( 'ws24h-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'ws24h-bootstrap', get_theme_file_uri( '/assets/vendor/bootstrap/css/bootstrap.min.css' ), array( 'ws24h-style' ), '4.1' );
 	wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array( 'ws24h-style' ), '1.0' );
-	wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
+    wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
+    wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
 }
 
 // Header
@@ -39,9 +40,27 @@ function ws24h_header_analytics() {
 
 // Footer
 function ws24h_footer_scripts () {
-	wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
     wp_enqueue_script( 'mixitup-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.mixitup.js');
     wp_enqueue_script( 'jquery-bootstrap-customjs', get_theme_file_uri( '/assets/js/customjs.js' ), array( 'jquery' ), '1.0', true );
+}
+
+function ws24h_StickySidebar_scripts () {
+	if (is_single()) {
+        $show_sticky_sidebar = 1; // get_theme_mod('show_sticky_sidebar');
+        if($show_sticky_sidebar &&  $show_sticky_sidebar == 1){
+            ?>
+             <!-- For sticky sidebar -->
+            <script type="text/javascript">
+            if( $('#sidebar').length ) {
+                var sidebar = new StickySidebar('#sidebar', {
+                    topSpacing: 50,
+                    bottomSpacing: 50
+                });
+            }
+            </script>
+            <?php
+        }
+	}
 }
 
 // facebook_lib_scripts
@@ -78,7 +97,7 @@ if(is_admin()){
 
     // Custom wpAdmin css
     function wp_admin_custom_style() {
-        wp_register_style( 'wp-custom-style-admins', get_template_directory_uri().'/admin/admin.min.css', array(), '', 'all' );
+        wp_register_style( 'wp-custom-style-admins', get_template_directory_uri().'/assets/admin/admin.min.css', array(), '', 'all' );
         wp_enqueue_style( 'wp-custom-style-admins' );
     }
     add_action( 'admin_enqueue_scripts', 'wp_admin_custom_style' );
@@ -91,7 +110,12 @@ if(is_admin()){
     // Google Analytics
     add_action( 'wp_head', 'ws24h_header_analytics' );
 
+
     // Footer
+
+    // StickySidebar_scripts
+    // add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
+
     add_action( 'wp_footer', 'ws24h_footer_scripts' );
 
     // facebook_lib_scripts
@@ -115,7 +139,7 @@ function ws24h_setup () {
 		'gallery',
 		'audio',
 	));
-    add_theme_support( 'post-thumbnails', array('post', 'page') );
+    add_theme_support( 'post-thumbnails', array('post', 'page', 'tin-tuc') );
     add_theme_support('category-thumbnails', array('category'));
 }
 add_action( 'after_setup_theme', 'ws24h_setup' );
@@ -138,28 +162,7 @@ function ws24h_custom_body_background() {
     }
     print_r($html);
 }
-add_action( 'wp_footer', 'ws24h_custom_body_background' );
-
-
-function ws24h_StickySidebar_scripts () {
-	if (is_single()) {
-        $show_sticky_sidebar = get_theme_mod('show_sticky_sidebar');
-        if($show_sticky_sidebar &&  $show_sticky_sidebar == 1){
-            ?>
-             <!-- For sticky sidebar -->
-            <script type="text/javascript">
-            if( $('#sidebar').length ) {
-                var sidebar = new StickySidebar('#sidebar', {
-                    topSpacing: 50,
-                    bottomSpacing: 50
-                });
-            }
-            </script>
-            <?php
-        }
-	}
-}
-// add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
+// add_action( 'wp_footer', 'ws24h_custom_body_background' );
 
 if(!is_admin()){
     // =============================================

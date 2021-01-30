@@ -1,15 +1,7 @@
 <?php
 $rg_posttypes = array(
 		array('posttype' => 'custom-video','taxonomy' => array(),'postname'=> "Video",'support' => array('title')),
-		// array('posttype' => 'khach-hang','taxonomy' => array(),'postname'=> "Khách hàng",'support' => array('title','excerpt', 'thumbnail')),
-		//array('posttype' => 'slide-show','taxonomy' => array(),'postname'=> "Slider show2",'support' => array('title','excerpt','thumbnail')),
-		/*array('posttype' => 'website-wordpress','taxonomy' => array(),'postname'=> "Website wordpress",'support' => array('title','excerpt','editor','thumbnail')),		
-		array('posttype' => 'dich-vu','taxonomy' => array(),'postname'=> "Dịch vụ SEO",'support' => array('title','excerpt','editor','thumbnail')),		
-		array('posttype' => 'tu-van-seo','taxonomy' => array('dich-vu'),'postname'=> "Tư vấn SEO",'support' => array('title','excerpt','editor','thumbnail')),
-		
-		array('posttype' => 'du-an','taxonomy' => array(),'postname'=> "Dự án mới",'support' => array('title','excerpt','editor','thumbnail')),
-		array('posttype' => 'thiet-ke-in-an','taxonomy' => array(),'postname'=> "Thiết kế in ấn",'support' => array('title','excerpt','editor','thumbnail'))
-		*/
+		array('posttype' => 'tin-tuc','taxonomy' => array(),'postname'=> "Tin tức",'support' => array('title','excerpt','editor','thumbnail'))
 );
 
 $db_list_posttypes_rg = array();
