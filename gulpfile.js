@@ -11,6 +11,8 @@ var minifyCss = require('gulp-cssnano');
 var cleanCSS = require('gulp-clean-css');
 var rev = require('gulp-rev');
 var sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 
 var fs = require('fs');
 var del = require('del') ;
@@ -91,7 +93,7 @@ function buildPanelSassDf(env) {
     if(env === 'build'){
         makeCleanPanelFile();
         return (
-            gulp.src('./Devs/panels/**/*.scss')
+            gulp.src('./Devs/panels/scss/**/*.scss')
                 .pipe(sass())
                 .pipe(cleanCSS())
                 .pipe(minifyCss())
@@ -100,7 +102,7 @@ function buildPanelSassDf(env) {
         );
     } else {
         return (
-            gulp.src('./Devs/panels/**/*.scss')
+            gulp.src('./Devs/panels/scss/**/*.scss')
                 .pipe(sourcemaps.init())
                 .pipe(sass())
                 .pipe(cleanCSS())
@@ -151,10 +153,29 @@ function buildBootstrapSassBuild() { return buildBootstrapSassDf('build') }
 // ===================================================================
 function watchTask(){
     gulp.watch(
-        ['./Devs/sass/**/*', './Devs/admins/**/*', './Devs/panels/**/*'],
+        [
+            './Devs/sass/**/*',
+            './Devs/admins/**/*',
+            './Devs/panels/**/*',
+            './Devs/panels/js/**/*'
+        ],
         gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
     );
 }
+
+// ============ Build for javascript =============================
+function compressPanelJs(cb) {
+    return (
+        gulp.src('./Devs/panels/js/**/*.js')
+            .pipe(babel())
+            .pipe(concat('panel.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./panel/js'))
+
+    );
+}
+
+
 
 // ------------ For dev features -----------------------
 gulp.task('dev', gulp.series(buildSass, buildAdminSass, buildPanelSass, buildBootstrapSass, watchTask));
@@ -201,8 +222,6 @@ function makeCopyAllFromSource() {
             .pipe(gulp.dest('./'+targetDir))
     );
 }
-
-
 gulp.task('product', gulp.series(
     makeTargetFolder,
     makeCleanTarget,

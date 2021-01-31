@@ -11,15 +11,15 @@ require_once ('panel/setting.php');
 require_once ('lib/front-end/template-tags.php');
 require_once ('lib/front-end/translates.php');
 
+// Theme stylesheet
 function ws24h_scripts () {
-	// Theme stylesheet.
-	wp_enqueue_script( 'main-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js');
-	wp_enqueue_script( 'jquery-bootstrap-bundle', get_theme_file_uri( '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ), array( 'jquery' ), '4.1', true );
-	wp_enqueue_style( 'ws24h-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'ws24h-bootstrap', get_theme_file_uri( '/assets/vendor/bootstrap/css/bootstrap.min.css' ), array( 'ws24h-style' ), '4.1' );
-	wp_enqueue_style( 'ws24h-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array( 'ws24h-style' ), '1.0' );
-    wp_enqueue_style( 'ws24h-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array( 'ws24h-style' ), '4.70' );
-    wp_enqueue_script( 'jquery-sticky-sidebar', get_theme_file_uri( '/modules/sticksidebar/jquery.sticky-sidebar-scroll.js' ), array( 'jquery' ), '1.1', true );
+	wp_enqueue_script('jquery-main-script', get_theme_file_uri('/assets/vendor/jquery/jquery.min.js'));
+    wp_enqueue_script('jquery-bootstrap-bundle', get_theme_file_uri('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'), array('jquery'), '4.1', true);
+    wp_enqueue_script('jquery-sticky-sidebar', get_theme_file_uri('/modules/sticksidebar/jquery.sticky-sidebar-scroll.js'), array('jquery'), '1.1', true);
+	wp_enqueue_style('ws24h-style', get_stylesheet_uri());
+	wp_enqueue_style('ws24h-main-bootstrap', get_theme_file_uri('/assets/vendor/bootstrap/css/bootstrap.min.css'), array('ws24h-style'), '4.1');
+	wp_enqueue_style('ws24h-main-style', get_theme_file_uri('/assets/css/style.min.css' ), array( 'ws24h-style'), '1.0' );
+    wp_enqueue_style('ws24h-main-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array('ws24h-style'), '4.70');
 }
 
 // Header
@@ -40,8 +40,12 @@ function ws24h_header_analytics() {
 
 // Footer
 function ws24h_footer_scripts () {
-    wp_enqueue_script( 'mixitup-script-name', get_template_directory_uri() . '/assets/vendor/jquery/jquery.mixitup.js');
-    wp_enqueue_script( 'jquery-bootstrap-customjs', get_theme_file_uri( '/assets/js/customjs.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script(
+        'jquery-mixitup-script-name',
+        get_theme_file_uri('/assets/vendor/jquery/jquery.mixitup.js'), array('jquery'), '1.0', true);
+    wp_enqueue_script(
+        'jquery-bootstrap-customjs',
+        get_theme_file_uri('/assets/js/customjs.js'), array('jquery'), '1.0', true);
 }
 
 function ws24h_StickySidebar_scripts () {
@@ -110,12 +114,10 @@ if(is_admin()){
     // Google Analytics
     add_action( 'wp_head', 'ws24h_header_analytics' );
 
-
-    // Footer
-
-    // StickySidebar_scripts
+    // Footer StickySidebar_scripts
     // add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
 
+    // Footer script
     add_action( 'wp_footer', 'ws24h_footer_scripts' );
 
     // facebook_lib_scripts
@@ -124,7 +126,7 @@ if(is_admin()){
 
 function ws24h_setup () {
 	register_nav_menus( array(
-		'primary'    => __( 'Primary Menu', THEME_NAME ),
+		'primary' => __( 'Primary Menu', THEME_NAME ),
 		'footer' => __( 'Footer Menu', THEME_NAME ),
     ) );
 
@@ -165,13 +167,6 @@ function ws24h_custom_body_background() {
 // add_action( 'wp_footer', 'ws24h_custom_body_background' );
 
 if(!is_admin()){
-    // =============================================
-    /**
-     * Filter the except length to 20 words.
-     *
-     * @param int $length Excerpt length.
-     * @return int (Maybe) modified excerpt length.
-     */
     function ws24h_custom_excerpt_length( $length ) {
         return 20;
     }
@@ -205,12 +200,6 @@ if(!is_admin()){
     }
     // add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
 
-    /**
-     * Filter the excerpt "read more" string.
-     *
-     * @param string $more "Read more" excerpt string.
-     * @return string (Maybe) modified "read more" excerpt string.
-     */
     function ws24h_excerpt_more( $more ) {
         // return ' ...';
         return sprintf('<br/><br/><a class="read-more" href="%1$s">%2$s</a>',

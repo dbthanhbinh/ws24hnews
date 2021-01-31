@@ -85,13 +85,12 @@ function tie_admin_register() {
     global $pagenow;
 
     wp_register_script( 'tie-admin-slider', get_template_directory_uri() . '/panel/js/jquery.ui.slider.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse', 'jquery-ui-sortable' ) , false , false );  
-    wp_register_script( 'tie-admin-main', get_template_directory_uri() . '/panel/js/tie.js', array( 'jquery' ) , false , false );  
-    
+    wp_register_script( 'tie-admin-main', get_template_directory_uri() . '/panel/js/tie.js', array( 'jquery' ) , false , false );
 	wp_register_script( 'tie-admin-colorpicker', get_template_directory_uri() . '/panel/js/colorpicker.js', array( 'jquery' ) , false , false );  
 	
 	wp_register_style( 'tie-style-admins', get_template_directory_uri().'/panel/panel.min.css', array(), 'v1', 'all' );
 
-	if ( (isset( $_GET['page'] ) && $_GET['page'] == 'panel') || (  $pagenow == 'post-new.php' ) || (  $pagenow == 'post.php' )|| (  $pagenow == 'edit-tags.php' ) ) {
+	if ((isset( $_GET['page']) && $_GET['page'] == 'panel') || ($pagenow == 'post-new.php') || ($pagenow == 'post.php')|| ($pagenow == 'edit-tags.php')){
 		wp_enqueue_script( 'tie-admin-colorpicker');  
 		wp_enqueue_script( 'tie-admin-slider' );  
 	}
