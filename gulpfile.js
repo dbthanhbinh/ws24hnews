@@ -157,32 +157,32 @@ function watchTask(){
             './Devs/sass/**/*',
             './Devs/admins/**/*',
             './Devs/panels/**/*',
-            './Devs/panels/js/**/*'
         ],
         gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
     );
 }
 
 // ============ Build for javascript =============================
-function compressPanelJs(cb) {
+function makeCleanJsFile() {
+    del('./assets/js/themejs.min.js', {force:true});
+}
+function compressCustomThemeJs(cb) {
+    makeCleanJsFile();
     return (
-        gulp.src('./Devs/panels/js/**/*.js')
+        gulp.src('./Devs/js/*.js')
             .pipe(babel())
-            .pipe(concat('panel.min.js'))
+            .pipe(concat('themejs.min.js'))
             .pipe(uglify())
-            .pipe(gulp.dest('./panel/js'))
-
+            .pipe(gulp.dest('./assets/js'))
     );
 }
 
-
-
 // ------------ For dev features -----------------------
-gulp.task('dev', gulp.series(buildSass, buildAdminSass, buildPanelSass, buildBootstrapSass, watchTask));
+gulp.task('dev', gulp.series(buildSass, buildAdminSass, buildPanelSass, buildBootstrapSass, compressCustomThemeJs, watchTask));
 // End Dev
 
 // ------------ For build product -----------------------
-gulp.task('build', gulp.series(buildSassBuild, buildAdminSassBuild, buildPanelSassBuild, buildBootstrapSassBuild));
+gulp.task('build', gulp.series(buildSassBuild, buildAdminSassBuild, buildPanelSassBuild, buildBootstrapSassBuild, compressCustomThemeJs));
 
 
 // -------------------------------------------
@@ -210,6 +210,7 @@ function makeCleanDevelop() {
     del(targetDir+'/package.json', {force:true});
     del(targetDir+'/package-lock.json', {force:true});
     del(targetDir+'/gulpfile.js', {force:true});
+    return;
 }
 
 // Test product

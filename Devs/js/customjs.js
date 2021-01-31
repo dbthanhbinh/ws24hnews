@@ -1,8 +1,10 @@
+"use strict";
+
 // Scroll and fixed main-navbar
-var width = window.width
+var width = window.width;
 var mainNavbarId = 'main-navbar';
 var mainNavbarStickyClass = 'main-navbar-fixed';
-var mainNavbar = document.getElementById(mainNavbarId)
+var mainNavbar = document.getElementById(mainNavbarId);
 var mainNavbarSticky = mainNavbar.offsetTop;
 var dataRef = mainNavbar.getAttribute('data-ref');
 // if default header (header has banner in top) will be render fixed header 
@@ -24,35 +26,35 @@ function onScrollHandle() {
 }
 // End Scroll and fixed main-navbar
 
-
 $(document).ready(function() {
-    "use strict";
-
     if ( width > 992 ) {
         $("#second-sidebar").stick_in_parent();
         $("#sidebar").stick_in_parent();
     }
 
-    $(function(){
-        // Tab Pane continue moving
-        var tabCarousel = setInterval(function() {
+    // Sidebar hidden
+    $('#sidebar-mobile-open, #sidebar-mobile-close').click(function(){            
+        $('#sidebar').toggleClass('sidebar-mobile-active');   
+        $('#sidebar-mobile-close').toggleClass('sidebar-mobile-close-active');
+        $('#site-over').toggleClass('site-over-bg');      
+    });
+
+    function tabCarousel() {
+        setInterval(function(){
             var tabs = $('.nav-tabs > a');
             if(tabs && tabs.length > 0) {
                 var active = tabs.filter('.active');
                 var next = active.next('a');
-                var toClick = next?.length ? next : tabs.eq(0);
+                var toClick;
+                if(next && next.length > 0){
+                    toClick = next;
+                }
+                else
+                    toClick = tabs.eq(0);
+    
                 toClick.trigger('click');
             }
         }, 10000);
-    });
-});
-
-/*** Sidebar hidden **/
-$(document).ready(function() {
-    "use strict";
-    $('#sidebar-mobile-open,#sidebar-mobile-close').click(function(){            
-       $('#sidebar').toggleClass('sidebar-mobile-active');   
-       $('#sidebar-mobile-close').toggleClass('sidebar-mobile-close-active');
-       $('#site-over').toggleClass('site-over-bg');      
-    });
+    }
+    tabCarousel();
 });

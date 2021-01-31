@@ -41,11 +41,8 @@ function ws24h_header_analytics() {
 // Footer
 function ws24h_footer_scripts () {
     wp_enqueue_script(
-        'jquery-mixitup-script-name',
-        get_theme_file_uri('/assets/vendor/jquery/jquery.mixitup.js'), array('jquery'), '1.0', true);
-    wp_enqueue_script(
         'jquery-bootstrap-customjs',
-        get_theme_file_uri('/assets/js/customjs.js'), array('jquery'), '1.0', true);
+        get_theme_file_uri('/assets/js/themejs.min.js'), array('jquery'), '1.0', true);
 }
 
 function ws24h_StickySidebar_scripts () {
