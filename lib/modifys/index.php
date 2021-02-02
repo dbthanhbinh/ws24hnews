@@ -13,6 +13,16 @@ if (!is_admin()) {
         remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
         remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
         remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+        wp_deregister_script('wp-mediaelement');
+        wp_deregister_style('wp-mediaelement');
+        
+        wp_deregister_script('wp-embed');
+        wp_deregister_style( 'wp-block-library' );
+        wp_deregister_script('jquery');
+        remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+        remove_action ('wp_head', 'wp_site_icon', 99);
+        add_filter( 'show_recent_comments_widget_style', '__return_false', 99 );
     }
     add_action( 'init', 'disable_emojis' );
 }
