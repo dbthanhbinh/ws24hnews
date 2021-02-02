@@ -11,6 +11,33 @@ require_once ('panel/setting.php');
 require_once ('lib/front-end/template-tags.php');
 require_once ('lib/front-end/translates.php');
 
+if(is_admin()){
+    if(file_exists(dirname( __FILE__ ).'\TGM\tgm_configs.php'))
+        require_once('TGM/tgm_configs.php');
+}
+
+require_once (TEMPLATEPATH . '/panel/theme-updates/theme-update-checker.php');
+$demo_update_checker = new ThemeUpdateChecker(
+    'Webseo24h',
+    'https://w-shadow.com/files/example-theme-updates/info.json'
+);
+
+// print_r($demo_update_checker);
+// die();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Theme stylesheet
 function ws24h_scripts () {
 	wp_enqueue_script('jquery-main-script', get_theme_file_uri('/assets/vendor/jquery/jquery.min.js'));
