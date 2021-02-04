@@ -51,11 +51,11 @@ class ThemeUpdateChecker {
 	 */
 	public function installHooks(){
 		//Check for updates when WordPress does. We can detect when that happens by tracking
-        //updates to the "update_themes" transient, which only happen in wp_update_themes().
-		if ($this->enableAutomaticChecking){
-            add_filter('pre_set_site_transient_update_themes', [$this, 'onTransientUpdate']);
+		//updates to the "update_themes" transient, which only happen in wp_update_themes().
+		if ( $this->enableAutomaticChecking ){
+			add_filter('pre_set_site_transient_update_themes', array($this, 'onTransientUpdate'));
 		}
-        
+		
 		//Insert our update info into the update list maintained by WP.
 		add_filter('site_transient_update_themes', array($this,'injectUpdate')); 
 		
@@ -136,8 +136,7 @@ class ThemeUpdateChecker {
 	 * @return void
 	 */
 	public function checkForUpdates(){
-        $state = get_option($this->optionName);
-        
+		$state = get_option($this->optionName);
 		if ( empty($state) ){
 			$state = new StdClass;
 			$state->lastCheck = 0;
@@ -147,9 +146,10 @@ class ThemeUpdateChecker {
 		
 		$state->lastCheck = time();
 		$state->checkedVersion = $this->getInstalledVersion();
-        update_option($this->optionName, $state); //Save before checking in case something goes wrong 		
+		update_option($this->optionName, $state); //Save before checking in case something goes wrong 
+		
 		$state->update = $this->requestUpdate();
-        update_option($this->optionName, $state);
+		update_option($this->optionName, $state);
 	}
 	
 	/**
@@ -163,7 +163,7 @@ class ThemeUpdateChecker {
 		if ( !$this->automaticCheckDone ){
 			$this->checkForUpdates();
 			$this->automaticCheckDone = true;
-        }
+		}
 		return $value;
 	}
 	
@@ -174,13 +174,13 @@ class ThemeUpdateChecker {
 	 * @return array Modified update list.
 	 */
 	public function injectUpdate($updates){
-        
 		$state = get_option($this->optionName);
 		
 		//Is there an update to insert?
 		if ( !empty($state) && isset($state->update) && !empty($state->update) ){
 			$updates->response[$this->theme] = $state->update->toWpFormat();
 		}
+		
 		return $updates;
 	}
 	
