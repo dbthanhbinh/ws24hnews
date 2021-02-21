@@ -8,6 +8,7 @@ require_once ('helpers/districts.php');
 require_once ('admin/register-posttype.php');
 require_once ('lib/siteCommons.php');
 require_once ('widgets/widgets.php');
+require_once ('admin/modifys/modify-adminlogo.php');
 
 # Is Admin Scope (only admin)
 if(is_admin()){
@@ -27,6 +28,7 @@ if(is_admin()){
     require_once ('admin/defined.php');
     require_once ('admin/panel/setting.php');
     require_once ('admin/customizer.php');
+    require_once ('admin/modifys/index.php');
     
     add_filter('manage_posts_columns', 'add_img_column');
     function add_img_column($columns) {
