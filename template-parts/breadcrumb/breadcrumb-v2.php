@@ -1,5 +1,11 @@
 <!-- Breadcrumb -->
-<?php  if(get_theme_mod('show_breadcrumb')){
+<?php
+$isShowBreadcrumb = IS_SHOW_BREADCRUMB;
+$showBreadcrumb = get_theme_mod('show_breadcrumb');
+if(isset($showBreadcrumb))
+    $isShowBreadcrumb = $showBreadcrumb;
+
+if($isShowBreadcrumb){ ?>
     $category = get_queried_object();
     $cat_option = get_option('tie_cat_'.$category->term_id);
     $breadcrumb_banner = get_template_directory_uri().'/assets/images/breadcrumb_bg.jpg';

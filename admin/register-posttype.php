@@ -50,15 +50,13 @@ function register_custom_posttype()
 					'has_archive' 			=> true,
 					'hierarchical' 			=> false,
 					'taxonomies'			 => $value['taxonomy'],
-					'menu_icon'				=> get_stylesheet_directory_uri().'/panel/images/add.png',
+					'menu_icon'				=> get_stylesheet_directory_uri().'/admin/panel/images/add.png',
 					'supports' 				=> $value['support']
 			);
 			register_post_type($value['posttype'],$args);
 		}
 	}
 }
-
-
 
 function my_feed_request($qv) {	
 	    if (isset($qv['feed']) && !isset($qv['post_type']))

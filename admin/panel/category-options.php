@@ -1,5 +1,5 @@
 <?php
-// add_action('category_add_form_fields','tie_category_fields');
+
 add_action ( 'edit_category_form_fields', 'tie_category_fields');
 function tie_category_fields( $tag ) {    //check for existing featured ID
     $t_id = $tag->term_id;
@@ -31,41 +31,134 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 		$custom_slider->the_post();
 		$cat_slider[get_the_ID()] = get_the_title();
 	}
-	?>
-	<tr class="form-field">
-		<td colspan="2">
-			<script type="text/javascript">
-				jQuery(document).ready(function($) {
-					jQuery('.on-of').checkbox({empty:'<?php echo get_template_directory_uri(); ?>/panel/images/empty.png'});
-				});
-				
-				//To Fix WPML Bug
-				jQuery( window ).load(function($) {
-					var logo_settings = jQuery('input[name=logo_setting_save]').val();
-						jQuery("#logo_setting-item input").each(function(){	
-						if( jQuery(this).val() == logo_settings ) jQuery(this).attr('checked','checked');
-				});
+?>
+<tr class="form-field">
+	<td colspan="2">
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				jQuery('.on-of').checkbox({empty:'<?php echo get_template_directory_uri(); ?>/admin/panel/images/empty.png'});
 			});
-			</script>
-			<div class="tiepanel-item">
-				<h3>Category images</h3>
-					<?php
-					tie_cat_options(
-						array(	"name" => "Category thumbnail",
-								"id" => "logo",
-								"cat" => $t_id ,
-								"type" => "upload"));
-					tie_cat_options(
-						array(	"name" => "Breadcrumb banner",
-								"id" => "breadcrumb_banner",
-								"cat" => $t_id ,
-								"type" => "upload"));
-					?>
-			</div>	
-		</td>
-	</tr>
-	<?php
+			
+			//To Fix WPML Bug
+			jQuery( window ).load(function($) {
+				var logo_settings = jQuery('input[name=logo_setting_save]').val();
+					jQuery("#logo_setting-item input").each(function(){	
+					if( jQuery(this).val() == logo_settings ) jQuery(this).attr('checked','checked');
+			});
+		 });
+		</script>
+		<div class="tiepanel-item">
+			<h3><?php echo THEME_NAME ?> - Category Settings</h3>
+			<?php
+				tie_cat_options(
+					array(	"name" => "Mega Menu",
+							"id" => "cat_mega_menu",
+							"cat" => $t_id ,
+							"extra_text" => 'To show latest posts in the Main Nav .' ,
+							"type" => "checkbox"));
+							
+				tie_cat_options(				
+					array(	"name" => 'Custom Sidebar',
+							"id" => "cat_sidebar",
+							"type" => "select",
+							"cat" => $t_id ,
+							"options" => $new_sidebars ));
+							
+				tie_cat_options(				
+					array(	"name" => 'Custom Slider',
+							"id" => "cat_slider",
+							"type" => "select",
+							"cat" => $t_id ,
+							"options" => $cat_slider )); 	
+			?>
+		</div>	
+		
+		<div class="tiepanel-item">
+			<h3><?php echo THEME_NAME ?> - Category Logo</h3>
+			<?php
+				tie_cat_options(
+					array(	"name" => "Custom Logo",
+							"id" => "cat_custom_logo",
+							"cat" => $t_id ,
+							"type" => "checkbox"));
+							
+				tie_cat_options(
+					array( 	"name" => "Logo Setting",
+							"id" => "logo_setting",
+							"type" => "radio",
+							"cat" => $t_id ,
+							"options" => array( "logo"=>"Custom Image Logo" ,
+												"title"=>"Display The Category Title" )));
+				?>
+				<input type="hidden" name="logo_setting_save" value="<?php if( !empty($cat_option[ 'logo_setting' ]) )  echo $cat_option['logo_setting'];?>" />
+				<?php
+				tie_cat_options(
+					array(	"name" => "Custom Logo Image",
+							"id" => "logo",
+							"cat" => $t_id ,
+							"type" => "upload"));
+					
+				tie_cat_options(
+					array(	"name" => "Logo Image (Retina Version @2x)",
+							"id" => "logo_retina",
+							"type" => "upload",
+							"cat" => $t_id ,
+							"extra_text" => 'Please choose an image file for the retina version of the logo. It should be 2x the size of main logo.')); 			
+					
+				tie_cat_options(
+					array(	"name" => "Standard Logo Width for Retina Logo",
+							"id" => "logo_retina_width",
+							"type" => "short-text",
+							"cat" => $t_id ,
+							"extra_text" => 'If retina logo is uploaded, please enter the standard logo (1x) version width, do not enter the retina logo width.')); 			
+
+				tie_cat_options(
+					array(	"name" => "Standard Logo Height for Retina Logo",
+							"id" => "logo_retina_height",
+							"type" => "short-text",
+							"cat" => $t_id ,
+							"extra_text" => 'If retina logo is uploaded, please enter the standard logo (1x) version height, do not enter the retina logo height.')); 			
+								
+								
+				tie_cat_options(
+					array(	"name" => "Logo Margin Top",
+							"id" => "logo_margin",
+							"type" => "slider",
+							"cat" => $t_id ,
+							"unit" => "px",
+							"max" => 100,
+							"min" => 0 ));
+			?>
+		</div>
+		
+		<div class="tiepanel-item">
+			<h3><?php echo THEME_NAME ?> - Category Style </h3>
+			<?php
+				tie_cat_options(				
+					array(	"name" => "Main color",
+							"id" => "cat_color",
+							"cat" => $t_id ,
+							"type" => "color" ));
+								
+				tie_cat_options(
+					array(	"name" => "Background",
+							"id" => "cat_background",
+							"cat" => $t_id ,
+							"type" => "background"));
+								
+				tie_cat_options(
+					array(	"name" => "Full Screen Background",
+							"id" => "cat_background_full",
+							"cat" => $t_id ,
+							"type" => "checkbox"));
+				?>
+		</div>
+				
+	</td>
+</tr>
+<?php
 }
+
 
 // save extra category extra fields hook
 add_action ( 'edited_category', 'tie_save_extra_category_fileds');
@@ -76,21 +169,6 @@ function tie_save_extra_category_fileds( $term_id ) {
 }
 
 
-
-// add_action ( 'create_category', 'tie_save_extra_category_add_form');
-// save extra category extra fields callback function
-function tie_save_extra_category_add_form($term_id) {
-	$t_id = $term_id;
-	update_option( "tie_cat_$t_id", $_POST["tie_cat"] );
-	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function(){
-			console.log('aaaaa');
-			jQuery('#logo-item').reset();
-		});
-    </script>
-	<?php
-}
 
 
 function tie_cat_options($value){
@@ -135,7 +213,7 @@ function tie_cat_options($value){
 				<input id="upload_<?php echo $value['id']; ?>_button" type="button" class="small_button" value="Upload" />
 					
 				<div id="<?php echo $value['id']; ?>-preview" class="img-preview" <?php if( empty( $cat_option[$value['id']] ) ) echo 'style="display:none;"' ?>>
-					<img src="<?php if( !empty( $cat_option[$value['id']] ) ) echo $cat_option[$value['id']] ; else echo get_template_directory_uri().'/panel/images/spacer.png'; ?>" alt="" />
+					<img src="<?php if( !empty( $cat_option[$value['id']] ) ) echo $cat_option[$value['id']] ; else echo get_template_directory_uri().'/admin/panel/images/spacer.png'; ?>" alt="" />
 					<a class="del-img" title="Delete"></a>
 				</div>
 		<?php
@@ -202,7 +280,7 @@ function tie_cat_options($value){
 					</select>
 				</div>
 				<div id="<?php echo $value['id']; ?>-preview" class="img-preview" <?php if( empty($cat_option[$value['id']]['img'])  ) echo 'style="display:none;"' ?>>
-					<img src="<?php if( !empty( $cat_option[$value['id']]['img']) ) echo $cat_option[$value['id']]['img'] ; else echo get_template_directory_uri().'/panel/images/spacer.png'; ?>" alt="" />
+					<img src="<?php if( !empty( $cat_option[$value['id']]['img']) ) echo $cat_option[$value['id']]['img'] ; else echo get_template_directory_uri().'/admin/panel/images/spacer.png'; ?>" alt="" />
 					<a class="del-img" title="Delete"></a>
 				</div>
 					
@@ -257,7 +335,7 @@ function tie_cat_options($value){
 		<?php 
 		break;		
 }
-	if( !empty( $value['extra_text'] ) ) { ?><span class="extra-text"><?php echo $value['extra_text'] ?></span><?php }
+		if( !empty( $value['extra_text'] ) ) { ?><span class="extra-text"><?php echo $value['extra_text'] ?></span><?php }
 ?>
 </div>
 			

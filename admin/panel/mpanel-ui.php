@@ -65,11 +65,11 @@ function panel_options() {
 				<li class="tie-tabs general"><a href="#tab1"><span></span>General Settings</a></li>
 				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
 				<li class="tie-tabs homepage2"><a href="#tab22"><span></span>Custom Homepage</a></li>
-				<li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li>
+				<!-- <li class="tie-tabs header"><a href="#tab9"><span></span>Header Settings</a></li> -->
 				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
 				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
 				<!-- <li class="tie-tabs sidebars"><a href="#tab11"><span></span>Sidebars</a></li> -->
-				<li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li>
+				<!-- <li class="tie-tabs footer"><a href="#tab7"><span></span>Footer Settings</a></li> -->
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
 				<!-- <li class="tie-tabs banners"><a href="#tab8"><span></span>Ads Settings</a></li> -->
 				<!-- <li class="tie-tabs styling"><a href="#tab13"><span></span>Styling</a></li> -->
@@ -581,127 +581,13 @@ function panel_options() {
 							tie_options(
 								array(	"name" => "Enable",
 										"id" => "slider",
-										"type" => "checkbox")); 
-							/*---------  
-							tie_options(
-								array(	"name" => "Slider Type",
-										"id" => "slider_type",
-										"options" => array( "flexi"=>"Flexi Slider" ,
-															"elastic"=>"Elastic Slideshow " ),
-										"type" => "radio")); 
-
-							tie_options(
-								array(	"name" => "Show Slides Caption",
-										"id" => "slider_caption",
-										"type" => "checkbox")); 
-
-							tie_options(
-								array(	"name" => "Slides Caption Length",
-										"id" => "slider_caption_length",
-										"type" => "short-text"));
-							----------*/	
-						?>
-						<div class="option-item">
-							<span class="label">Slider Position</span>
-							<div style="float:left; width: 338px;">
-								<?php
-									$checked = 'checked="checked"';
-									$tie_slider_pos = tie_get_option('slider_pos');
-								?>
-								<ul id="sidebar-position-options" class="tie-options">
-									<li style="margin:5px 20px 5px 0 ">
-										<input id="tie_slider_pos"  name="tie_options[slider_pos]" type="radio" value="small" <?php if($tie_slider_pos == 'small') echo $checked; ?> />
-										<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/small-slider.png" /></a>
-									</li>
-									<li>
-										<input id="tie_slider_pos"  name="tie_options[slider_pos]" type="radio" value="big" <?php if($tie_slider_pos == 'big' || !$tie_slider_pos) echo $checked; ?> />
-										<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/big-slider.png" /></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div id="elastic" class="tiepanel-item">
-					<h3>Elastic Slideshow Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Animation Effect",
-										"id" => "elastic_slider_effect",
-										"type" => "select",
-										"options" => array(
-											'center' => 'Center',
-											'sides' => 'Sides'
-										)));
-
-							tie_options(
-								array(	"name" => "Autoplay",
-										"id" => "elastic_slider_autoplay",
 										"type" => "checkbox"));
-							
-							
-							tie_options(
-								array(	"name" => "Slideshow Speed",
-										"id" => "elastic_slider_interval",
-										"type" => "slider",
-										"unit" => "ms",
-										"max" => 40000,
-										"min" => 100 ));
-
-							tie_options(
-								array(	"name" => "Animation Speed",
-										"id" => "elastic_slider_speed",
-										"type" => "slider",
-										"unit" => "ms",
-										"max" => 40000,
-										"min" => 100 ));
 						?>
 					</div>
-
-					<div id="flexi" class="tiepanel-item">
-					<h3>Flexi Slider Settings</h3>
-						<?php
-							if( is_rtl() ){
-								tie_options(
-									array(	"name" => "Animation Effect",
-											"id" => "flexi_slider_effect",
-											"type" => "select",
-											"options" => array(
-												'fade' => 'Fade',
-												'slideV' => 'Slide Vertical',
-											)));
-							}else{
-								tie_options(
-									array(	"name" => "Animation Effect",
-											"id" => "flexi_slider_effect",
-											"type" => "select",
-											"options" => array(
-												'fade' => 'Fade',
-												'slideV' => 'Slide Vertical',
-												'slideH' => 'Slide Horizontal',
-											)));
-							}
 										
-							tie_options(
-								array(	"name" => "Slideshow Speed",
-										"id" => "flexi_slider_speed",
-										"type" => "slider",
-										"unit" => "ms",
-										"max" => 40000,
-										"min" => 100 ));
-
-							tie_options(
-								array(	"name" => "Animation Speed",
-										"id" => "flexi_slider_time",
-										"type" => "slider",
-										"unit" => "ms",
-										"max" => 40000,
-										"min" => 100 ));
-						?>
-					</div>
-					
 					<div class="tiepanel-item">
 						<h3>Query Settings</h3>
-					<?php
+						<?php
 							tie_options(
 								array(	"name" => "Number Of Posts To Show",
 										"id" => "slider_number",
@@ -719,154 +605,15 @@ function panel_options() {
 										"id" => "slider_custom",
 										"type" => "select",
 										"options" => $sliders));
-					?>
+						?>
 					
 					</div>
-				</div> <!-- Slideshow -->					
+				</div>
+				<!-- Slideshow -->					
+				
 				<div id="tab6" class="tab_content tabs-wrap">
 					<h2>Article Settings</h2> <?php echo $save ?>
-					
-					<div class="tiepanel-item">
-						<h3>Rating System Settings</h3>
-						<?php
-							tie_options(
-								array( 	"name" => 'Who Is Allowed To Rate ?',
-										"id" => "allowtorate",
-										"type" => "radio",
-										"options" => array( "none"=> 'Disable' ,
-															"both"=> 'Registered Users And Guests',
-															"guests"=>'Guests Only',
-															"users"=>'Registered Users Only') ));
-						?>									
-					</div>
-					
-					<div class="tiepanel-item">
-						<h3>Article Elements</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Show Featured Image",
-										"desc" => "",
-										"id" => "post_featured",
-										"type" => "checkbox"));
 
-							tie_options(
-								array(	"name" => "Post Author Box",
-										"desc" => "",
-										"id" => "post_authorbio",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "Next/Prev Article",
-										"desc" => "",
-										"id" => "post_nav",
-										"type" => "checkbox")); 
-
-							tie_options(
-								array(	"name" => "OG Meta",
-										"desc" => "",
-										"id" => "post_og_cards",
-										"type" => "checkbox")); 
-
-						?>
-					</div>
-					
-					<div class="tiepanel-item">
-
-						<h3>Post Meta Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Post Meta :",
-										"id" => "post_meta",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "Author Meta",
-										"id" => "post_author",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "Date Meta",
-										"id" => "post_date",
-										"type" => "checkbox"));
-
-
-							tie_options(
-								array(	"name" => "Categories Meta",
-										"id" => "post_cats",
-										"type" => "checkbox"));
-
-
-							tie_options(
-								array(	"name" => "Comments Meta",
-										"id" => "post_comments",
-										"type" => "checkbox"));
-
-
-							tie_options(
-								array(	"name" => "Tags Meta",
-										"id" => "post_tags",
-										"type" => "checkbox"));
-
-										
-						?>	
-					</div>
-
-						
-					<div class="tiepanel-item">
-
-						<h3>Share Post Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Bottom Share Post Buttons :",
-										"id" => "share_post",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "Top Share Post Buttons :",
-										"id" => "share_post_top",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "Tweet Button",
-										"id" => "share_tweet",
-										"type" => "checkbox"));
-										
-							tie_options(
-								array(	"name" => "Twitter Username <small>(optional)</small>",
-										"id" => "share_twitter_username",
-										"type" => "text"));
-								
-							tie_options(
-								array(	"name" => "Facebook Like Button",
-										"id" => "share_facebook",
-										"type" => "checkbox"));
-										
-							tie_options(
-								array(	"name" => "Google+ Button",
-										"id" => "share_google",
-										"type" => "checkbox"));
-										
-																		
-							tie_options(
-								array(	"name" => "Linkedin Button",
-										"id" => "share_linkdin",
-										"type" => "checkbox"));
-																							
-							tie_options(
-								array(	"name" => "StumbleUpon Button",
-										"id" => "share_stumble",
-										"type" => "checkbox"));
-										
-																					
-							tie_options(
-								array(	"name" => "Pinterest Button",
-										"id" => "share_pinterest",
-										"type" => "checkbox"));
-										
-						?>	
-					</div>
-
-						
 					<div class="tiepanel-item">
 
 						<h3>Related Posts Settings</h3>
@@ -913,118 +660,9 @@ function panel_options() {
 						?>
 					</div>
 
-					
-					<div class="tiepanel-item">
-
-						<h3>jQuery Comments Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Adding Comment Validation ",
-										"id" => "comment_validation",
-										"type" => "checkbox"));
-						?>
-					</div>
-				</div> <!-- Article Settings -->			
-				<div id="tab7" class="tabs-wrap">
-					<h2>Footer Settings</h2> <?php echo $save ?>
-
-					<div class="tiepanel-item">
-
-						<h3>Footer Elements</h3>
-						<?php
-							tie_options(
-								array(	"name" => "'Go To Top' Icon",
-										"id" => "footer_top",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "Social Icons",
-										"desc" => "",
-										"id" => "footer_social",
-										"type" => "checkbox")); 
-
-						?>
-					</div>
-					
-					<div class="tiepanel-item">
-						<h3>Footer Column layout</h3>
-							<div class="option-item">
-
-							<?php
-								$checked = 'checked="checked"';
-								$tie_footer_widgets = tie_get_option('footer_widgets');
-							?>
-							<ul id="footer-widgets-options" class="tie-options">
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="footer-1c" <?php if($tie_footer_widgets == 'footer-1c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-1c.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="footer-2c" <?php if($tie_footer_widgets == 'footer-2c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-2c.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="narrow-wide-2c" <?php if($tie_footer_widgets == 'narrow-wide-2c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-2c-narrow-wide.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="wide-narrow-2c" <?php if($tie_footer_widgets == 'wide-narrow-2c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-2c-wide-narrow.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="footer-3c" <?php if($tie_footer_widgets == 'footer-3c' || !$tie_footer_widgets ) echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-3c.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="wide-left-3c" <?php if($tie_footer_widgets == 'wide-left-3c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-3c-wide-left.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="wide-right-3c" <?php if($tie_footer_widgets == 'wide-right-3c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-3c-wide-right.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="footer-4c" <?php if($tie_footer_widgets == 'footer-4c') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-4c.png" /></a>
-								</li>
-								<li>
-									<input id="tie_footer_widgets"  name="tie_options[footer_widgets]" type="radio" value="disable" <?php if($tie_footer_widgets == 'disable') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/footer-no.png" /></a>
-								</li>
-
-							</ul>
-						</div>
-					</div>
-					
-					<div class="tiepanel-item">
-						<h3>Footer Text One</h3>
-						<div class="option-item">
-							<textarea id="tie_footer_one" name="tie_options[footer_one]" style="width:100%" rows="4"><?php echo htmlspecialchars_decode(tie_get_option('footer_one'));  ?></textarea>				
-							<span style="padding-left:0" class="extra-text"><strong style="font-size: 12px;">Variables</strong>
-								These tags can be included in the textarea above and will be replaced when a page is displayed.
-								<br />
-								<strong>%year%</strong> : <em>Replaced with the current year .</em><br />
-								<strong>%site%</strong> : <em>Replaced with The site's name .</em><br />
-								<strong>%url%</strong>  : <em>Replaced with The site's URI .</em>
-							</span>
-						</div>
-					</div>
-					
-					<div class="tiepanel-item">
-						<h3>Footer Text Two</h3>
-						<div class="option-item">
-							<textarea id="tie_footer_two" name="tie_options[footer_two]" style="width:100%" rows="4"><?php echo htmlspecialchars_decode(tie_get_option('footer_two'));  ?></textarea>				
-							<span style="padding-left:0" class="extra-text"><strong style="font-size: 12px;">Variables</strong>
-								These tags can be included in the textarea above and will be replaced when a page is displayed.
-								<br />
-								<strong>%year%</strong> : <em>Replaced with the current year .</em><br />
-								<strong>%site%</strong> : <em>Replaced with The site's name .</em><br />
-								<strong>%url%</strong>  : <em>Replaced with The site's URI .</em>
-							</span>
-						</div>
-					</div>
-
-				</div><!-- Footer Settings -->			
+				</div>
+				<!-- Article Settings -->	
+				
 				<div id="tab8" class="tab_content tabs-wrap">
 					<h2>Banners Settings</h2> <?php echo $save ?>
 					<div class="tiepanel-item">
@@ -1380,11 +1018,11 @@ function panel_options() {
 							<ul id="sidebar-position-options" class="tie-options">
 								<li>
 									<input id="tie_sidebar_pos" name="tie_options[sidebar_pos]" type="radio" value="right" <?php if($tie_sidebar_pos == 'right' || !$tie_sidebar_pos ) echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/sidebar-right.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/sidebar-right.png" /></a>
 								</li>
 								<li>
 									<input id="tie_sidebar_pos" name="tie_options[sidebar_pos]" type="radio" value="left" <?php if($tie_sidebar_pos == 'left') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/sidebar-left.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/sidebar-left.png" /></a>
 								</li>
 							</ul>
 						</div>
@@ -1469,33 +1107,29 @@ function panel_options() {
 					
 					<div class="tiepanel-item">
 						<h3>General Settings</h3>
-						<p class="tie_message_hint">Following settings will applies on the homepage blog layout and all pages with blog List template .</p>
+						<p class="tie_message_hint">Following settings will applies on the blog List template .</p>
 						<?php
 							tie_options(
 								array(	"name" => "Display",
 										"id" => "archive_display",
 										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
 										"type" => "select",
-										"std" => "grid",
+										"std" => ARCHIVE_DISPLAY_AS,
 										"options" => array( "grid"=>"As Grid",
 															"list"=>"As List"
 														)));
 							tie_options(
 								array( 	"name" => "Show cols",
 										"id" => "archive_cols",
-										"std" => 3,
+										"std" => ARCHIVE_DISPLAY_COLS,
 										"type" => "short-text"));
 						?>
 					</div>
 
 					<div class="tiepanel-item">
 						<h3>Archives Posts Meta</h3>
-						<p class="tie_message_hint">Following settings will applies on the homepage blog layout and all pages with blog List template .</p>
-						<?php
-							tie_options(
-								array(	"name" => "Review Score",
-										"id" => "arc_meta_score",
-										"type" => "checkbox" )); 			
+						<p class="tie_message_hint">Following settings will applies on blog List template .</p>
+						<?php	
 							tie_options(
 								array(	"name" => "Author Meta",
 										"id" => "arc_meta_author",
@@ -1505,74 +1139,15 @@ function panel_options() {
 										"id" => "arc_meta_date",
 										"type" => "checkbox"));
 							tie_options(
-								array(	"name" => "Categories Meta",
-										"id" => "arc_meta_cats",
-										"type" => "checkbox")); 
-							tie_options(
-								array(	"name" => "Comments Meta",
-										"id" => "arc_meta_comments",
-										"type" => "checkbox")); 
-						?>
-					</div>	
-					
-					<div class="tiepanel-item">
-						<h3>Category Page Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Category Description",
-										"id" => "category_desc",
-										"type" => "checkbox"));
-
-							tie_options(
-								array(	"name" => "RSS Icon",
-										"id" => "category_rss",
+								array(	"name" => "Readmore Meta",
+										"id" => "arc_meta_readmore",
 										"type" => "checkbox"));
 						?>
 					</div>
 
-					<div class="tiepanel-item">
-						<h3>Tag Page Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "RSS Icon",
-										"id" => "tag_rss",
-										"type" => "checkbox"));
-						?>
-					</div>
-					
-					<div class="tiepanel-item">
-						<h3>Author Page Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Author Bio",
-										"id" => "author_bio",
-										"type" => "checkbox"));
-						?>
-						<?php
-							tie_options(
-								array(	"name" => "RSS Icon",
-										"id" => "author_rss",
-										"type" => "checkbox"));
-						?>
-					</div>
-					
-					<div class="tiepanel-item">
-						<h3>Search Page Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Search in Category IDs",
-										"id" => "search_cats",
-										"help" => "Use minus sign (-) to exclude categories. Example: (1,4,-7) = search only in Category 1 & 4, and exclude Category 7.",
-										"type" => "text"));
-						?>
-						<?php
-							tie_options(
-								array(	"name" => "Exclude Pages in results",
-										"id" => "search_exclude_pages",
-										"type" => "checkbox"));
-						?>
-					</div>
-				</div> <!-- Archives -->
+				</div>
+				<!-- Archives -->
+				
 				<div id="tab13" class="tab_content tabs-wrap">
 					<h2>Styling</h2>	<?php echo $save ?>	
 					<div class="tiepanel-item">
@@ -1588,35 +1163,35 @@ function panel_options() {
 							<ul style="clear:both" id="theme-skins" class="tie-options">
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="0" <?php if(!$theme_color) echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-none.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-none.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#ef3636" <?php if($theme_color == '#ef3636' ) echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-red.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-red.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#37b8eb" <?php if($theme_color == '#37b8eb') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-blue.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-blue.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#81bd00" <?php if($theme_color == '#81bd00') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-green.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-green.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#e95ca2" <?php if($theme_color == '#e95ca2') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-pink.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-pink.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#000" <?php if($theme_color == '#000') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-black.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-black.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#ffbb01" <?php if($theme_color == '#ffbb01' ) echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-yellow.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-yellow.png" /></a>
 								</li>
 								<li>
 									<input id="tie_theme_skin"  name="tie_options[theme_skin]" type="radio" value="#7b77ff" <?php if($theme_color == '#7b77ff') echo $checked; ?> />
-									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/skin-purple.png" /></a>
+									<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/skin-purple.png" /></a>
 								</li>
 							</ul>
 						</div>
@@ -1671,7 +1246,7 @@ function panel_options() {
 							$pattern = 'body-bg'.$i; ?>
 							<li>
 								<input id="tie_background_pattern"  name="tie_options[background_pattern]" type="radio" value="<?php echo $pattern ?>" <?php if($theme_pattern == $pattern ) echo $checked; ?> />
-								<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/pattern<?php echo $i ?>.png" /></a>
+								<a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/pattern<?php echo $i ?>.png" /></a>
 							</li>
 							<?php } ?>
 						</ul>

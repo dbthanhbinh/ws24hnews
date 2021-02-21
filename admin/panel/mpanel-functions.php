@@ -84,11 +84,11 @@ if ( isset( $_GET['page'] ) && $_GET['page'] == 'panel' ) {
 function tie_admin_register() {
     global $pagenow;
 
-    wp_register_script( 'tie-admin-slider', get_template_directory_uri() . '/panel/js/jquery.ui.slider.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse', 'jquery-ui-sortable' ) , false , false );  
-    wp_register_script( 'tie-admin-main', get_template_directory_uri() . '/panel/js/tie.js', array( 'jquery' ) , false , false );
-	wp_register_script( 'tie-admin-colorpicker', get_template_directory_uri() . '/panel/js/colorpicker.js', array( 'jquery' ) , false , false );  
+    wp_register_script( 'tie-admin-slider', get_template_directory_uri() . '/admin/panel/js/jquery.ui.slider.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse', 'jquery-ui-sortable' ) , false , false );  
+    wp_register_script( 'tie-admin-main', get_template_directory_uri() . '/admin/panel/js/tie.js', array( 'jquery' ) , false , false );
+	wp_register_script( 'tie-admin-colorpicker', get_template_directory_uri() . '/admin/panel/js/colorpicker.js', array( 'jquery' ) , false , false );  
 	
-	wp_register_style( 'tie-style-admins', get_template_directory_uri().'/panel/panel.min.css', array(), 'v1', 'all' );
+	wp_register_style( 'tie-style-admins', get_template_directory_uri().'/admin/panel/panel.min.css', array(), 'v1', 'all' );
 
 	if ((isset( $_GET['page']) && $_GET['page'] == 'panel') || ($pagenow == 'post-new.php') || ($pagenow == 'post.php')|| ($pagenow == 'edit-tags.php')){
 		wp_enqueue_script( 'tie-admin-colorpicker');  
@@ -223,7 +223,7 @@ function tie_save_ajax() {
 function tie_add_admin() {
 
 	$current_page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
-	$icon = get_template_directory_uri().'/panel/images/general.png';
+	$icon = get_template_directory_uri().'/admin/panel/images/general.png';
 	add_menu_page(THEME_NAME.' Settings', THEME_NAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
 	$theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
 	// add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
@@ -247,7 +247,7 @@ function tie_add_admin() {
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 
-		  jQuery('.on-of').checkbox({empty:'<?php echo get_template_directory_uri(); ?>/panel/images/empty.png'});
+		  jQuery('.on-of').checkbox({empty:'<?php echo get_template_directory_uri(); ?>/admin/panel/images/empty.png'});
 
 		  jQuery('form#tie_form').submit(function() {
 		  
@@ -326,7 +326,7 @@ function tie_options($value){
 			<?php
 				if( $value['id']=="slider_tag" || $value['id']=="breaking_tag"){
 				$tags = get_tags('orderby=count&order=desc&number=50'); ?>
-				<a style="cursor:pointer" title="Choose from the most used tags" onclick="toggleVisibility('<?php echo $value['id']; ?>_tags');"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/expand.png" alt="" /></a>
+				<a style="cursor:pointer" title="Choose from the most used tags" onclick="toggleVisibility('<?php echo $value['id']; ?>_tags');"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/expand.png" alt="" /></a>
 				<span class="tags-list" id="<?php echo $value['id']; ?>_tags">
 					<?php foreach ($tags as $tag){?>
 						<a style="cursor:pointer" onclick="if(<?php echo $value['id'] ?>.value != ''){ var sep = ' , '}else{var sep = ''} <?php echo $value['id'] ?>.value=<?php echo $value['id'] ?>.value+sep+(this.rel);" rel="<?php echo $tag->name ?>"><?php echo $tag->name ?></a>
@@ -388,7 +388,7 @@ function tie_options($value){
 				<?php if( isset( $value['extra_text'] ) ) : ?><span class="extra-text"><?php echo $value['extra_text'] ?></span><?php endif; ?>
 
 				<div id="<?php echo $value['id']; ?>-preview" class="img-preview" <?php if(!tie_get_option( $value['id'] )) echo 'style="display:none;"' ?>>
-					<img src="<?php if(tie_get_option( $value['id'] )) echo tie_get_option( $value['id'] ); else echo get_template_directory_uri().'/panel/images/spacer.png'; ?>" alt="" />
+					<img src="<?php if(tie_get_option( $value['id'] )) echo tie_get_option( $value['id'] ); else echo get_template_directory_uri().'/admin/panel/images/spacer.png'; ?>" alt="" />
 					<a class="del-img" title="Delete"></a>
 				</div>
 		<?php
@@ -456,7 +456,7 @@ function tie_options($value){
 					</select>
 				</div>
 				<div id="<?php echo $value['id']; ?>-preview" class="img-preview" <?php if( !$current_value['img']  ) echo 'style="display:none;"' ?>>
-					<img src="<?php if( $current_value['img'] ) echo $current_value['img'] ; else echo get_template_directory_uri().'/panel/images/spacer.png'; ?>" alt="" />
+					<img src="<?php if( $current_value['img'] ) echo $current_value['img'] ; else echo get_template_directory_uri().'/admin/panel/images/spacer.png'; ?>" alt="" />
 					<a class="del-img" title="Delete"></a>
 				</div>
 					

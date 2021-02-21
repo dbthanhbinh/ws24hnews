@@ -1,8 +1,8 @@
 <?php
 require_once ('enums.php');
-$layout = 'full';
+$layout = LAYOUT_ARCHIVE_DEFAULT;
 if(is_front_page() || is_home()){
-   $layout = get_theme_mod('home_layout');
+   $layout = get_theme_mod('home_layout', LAYOUT_HOME_DEFAULT);
    $mainLayoutClass = $enum_layout[$layout]['main'];
 } else if(is_page()){
    $layout = get_theme_mod('page_layout');
@@ -11,29 +11,45 @@ if(is_front_page() || is_home()){
 } else if(is_archive() || is_search()){
    $layout = get_theme_mod('archive_layout');
 } else {
-    $layout = 'full';
+    $layout = LAYOUT_ARCHIVE_DEFAULT;
 }
 
-$layoutOptions = (isset($enum_layout) && isset($enum_layout[$layout])) ? $enum_layout[$layout] : $enum_layout['full'];
+$layoutOptions = (isset($enum_layout) && isset($enum_layout[$layout])) ? $enum_layout[$layout] : $enum_layout[LAYOUT_ARCHIVE_DEFAULT];
 function isGridLayout() { return false; }
 function isMainSidebar() { global $layoutOptions; return $layoutOptions['sidebar'] ? $layoutOptions['sidebar'] : false; }
 function isSecondSidebar() { global $layoutOptions; return $layoutOptions['second'] ? $layoutOptions['second'] : false; }
 function mainLayoutClass($mdFull = false) { global $layoutOptions; if($mdFull) return $layoutOptions['mainfull']; else return $layoutOptions['main']; }
-function mainLayoutKey() { global $layoutOptions; return $layoutOptions['key']; }
+function mainLayoutKey() { 
+   global $layoutOptions;
+   return $layoutOptions['key'];
+}
 function mainLayoutTemplate($isGrid = false) { return  $isGrid ? 'row article-grid' : 'row article-list'; }
 
-function getThumbSize($cols){
+function getThumbSize($layout, $cols){
    $thumb = 'thumbnail';
-   if(!$cols)
-      return 'thumbnail';
-   elseif($cols == 4)
-      return 'medium';
-   elseif($cols == 3)
-      return 'large';
-   elseif($cols == 2)
-      return 'large';
-   else
-      return 'medium';
+   if(!$layout || !$cols)
+      return $thumb;
+   
+   if($layout == LAYOUT_FULL){
+      if($cols == 4)
+         return 'medium';
+      elseif($cols == 3)
+         return 'medium';
+      elseif($cols == 2)
+         return 'large';
+      else
+         return $thumb;
+   }
+   else {
+      if($cols == 4)
+         return 'thumbnail';
+      elseif($cols == 3)
+         return 'medium';
+      elseif($cols == 2)
+         return 'large';
+      else
+         return $thumb;
+   }
 }
 
 function getDefaultFullLayout(){
@@ -78,3 +94,5 @@ function getColsLayout($isGrid, $cols) {
 
    return $cardColClass;
 }
+
+$mainLayout = mainLayoutKey();

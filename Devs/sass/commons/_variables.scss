@@ -50,6 +50,7 @@ $main_color: $colors-pink;
 $main_text_color: $colors-white;
 $btn_lemon_bg_color: $colors-pink;
 $btn_lemon_text_color: $colors-white;
+$support_online_ping_color: #f43e8c;
 
 /*MENU navbar*/
 $menu_bar_height: 35px;
@@ -83,3 +84,8 @@ $pagi_current_color: $colors-gray;
 /* footer */
 $footer_bg: $menu_bg;
 $footer_link_color: $menu_link_color;
+
+// scrollup
+$scrollup-bg: $main_color;
+$scrollup-color: $colors-white;
+$scrollup-hover: $main_color;

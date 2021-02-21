@@ -1,5 +1,5 @@
 {
-  "name": "ws24hnews",
+  "name": "ws24h",
   "version": "1.0.0",
   "description": "This WP theme Webseo24h",
   "main": "gulpfile.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dbthanhbinh/ws24hnews.git"
+    "url": "git+https://github.com/dbthanhbinh/ws24h.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dbthanhbinh/ws24hnews/issues"
+    "url": "https://github.com/dbthanhbinh/ws24h/issues"
   },
-  "homepage": "https://github.com/dbthanhbinh/ws24hnews#readme",
+  "homepage": "https://github.com/dbthanhbinh/ws24h#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "del": "^6.0.0",

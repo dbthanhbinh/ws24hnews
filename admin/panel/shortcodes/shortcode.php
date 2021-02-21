@@ -1,5 +1,5 @@
 <?php
-define ( 'JS_PATH' , get_template_directory_uri().'/panel/shortcodes/customcodes.js');
+define ( 'JS_PATH' , get_template_directory_uri().'/admin/panel/shortcodes/customcodes.js');
 
 
 add_action('admin_head','html_quicktags');

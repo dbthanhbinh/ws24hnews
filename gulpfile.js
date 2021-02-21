@@ -52,8 +52,8 @@ function buildSassBuild() { return buildSassDf('build'); }
 
 
 function makeCleanAdminFile() {
-    del('./assets/admin/admin.min.css', {force:true});
-    del('./assets/admin/admin.min.css.map', {force:true});
+    del('./admin/assets/admin.min.css', {force:true});
+    del('./admin/assets/admin.min.css.map', {force:true});
 }
 function buildAdminSassDf(env) {
     if(env === 'build'){
@@ -64,7 +64,7 @@ function buildAdminSassDf(env) {
                 .pipe(cleanCSS())
                 .pipe(minifyCss())
                 .pipe(rename('admin.min.css'))
-                .pipe(gulp.dest('./assets/admin'))
+                .pipe(gulp.dest('./admin/assets'))
         );
     } else {
         return (
@@ -75,7 +75,7 @@ function buildAdminSassDf(env) {
                 .pipe(minifyCss())
                 .pipe(rename('admin.min.css'))
                 .pipe(sourcemaps.write('.'))
-                .pipe(gulp.dest('./assets/admin'))
+                .pipe(gulp.dest('./admin/assets'))
                 .pipe(livereload())
         );
     }
@@ -86,8 +86,8 @@ function buildAdminSassBuild() { return buildAdminSassDf('build') }
 
 
 function makeCleanPanelFile() {
-    del('./panel/panel.min.css', {force:true});
-    del('./panel/panel.min.css.map', {force:true});
+    del('./admin/panel/panel.min.css', {force:true});
+    del('./admin/panel/panel.min.css.map', {force:true});
 }
 function buildPanelSassDf(env) {
     if(env === 'build'){
@@ -98,7 +98,7 @@ function buildPanelSassDf(env) {
                 .pipe(cleanCSS())
                 .pipe(minifyCss())
                 .pipe(rename('panel.min.css'))
-                .pipe(gulp.dest('./panel'))
+                .pipe(gulp.dest('./admin/panel'))
         );
     } else {
         return (
@@ -109,7 +109,7 @@ function buildPanelSassDf(env) {
                 .pipe(minifyCss())
                 .pipe(rename('panel.min.css'))
                 .pipe(sourcemaps.write('.'))
-                .pipe(gulp.dest('./panel'))
+                .pipe(gulp.dest('./admin/panel'))
                 .pipe(livereload())
         );
     }

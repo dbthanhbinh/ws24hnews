@@ -29,7 +29,8 @@ function get_home_recent( $cat_data ) {
 		$pos = 1;
 		$args = [
 			'isGrid' => isset($cat_data['display']) && $cat_data['display'] == 'grid' ? true : false,
-			'cols' => $cat_data['grid_cols']
+			'cols' => $cat_data['grid_cols'],
+			'layout' => 'full'
 		];
 		echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
 		while ($postQuery->have_posts()): $postQuery->the_post();
@@ -57,7 +58,8 @@ function get_home_videos($cat_data){
 	$cols = (isset($cat_data['grid_cols']) && $cat_data['grid_cols']) ? $cat_data['grid_cols'] : 3;
 	$args = [
 		'isGrid' => $isGrid,
-		'cols' => $cols
+		'cols' => $cols,
+		'layout' => 'full'
 	];
 
 	echo '<div class="section home-section animated video-list '.mainLayoutTemplate($args['isGrid']).'">';

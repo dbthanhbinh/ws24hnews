@@ -11,7 +11,7 @@
 			'labels' => $labels,
 			'public' => false,
 			'show_ui' => true,
-			'menu_icon' => get_template_directory_uri().'/panel/images/slideshow.png',
+			'menu_icon' => get_template_directory_uri().'/admin/panel/images/slideshow.png',
 			'can_export' => true,
 			'exclude_from_search' => true,
 			'capability_type' => 'post',

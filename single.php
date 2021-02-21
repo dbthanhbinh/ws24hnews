@@ -5,10 +5,10 @@
 
     <div class="container">
         <?php require_once ('helpers/layout-configs.php'); ?>
-        <div class="row <?= mainLayoutKey() ?> ">
-            <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
-                <?php get_sidebar();?>
-            <?php } ?>
+
+        <div class="row <?= $mainLayout ?> ">
+            <!-- Sidebar left -->
+            <?php if($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
 
             <div class="<?= mainLayoutClass(true) ?>">
                 <div class="row">
@@ -33,12 +33,6 @@
                     <div class="my-share-box">
                         <i class="fa fa-share-alt-square" aria-hidden="true"></i>
                     </div>
-                    <div class="my-g-plus">
-                        <div class="g-plus" 
-                            data-action="share" 
-                            data-href="<?= the_permalink(); ?>">
-                        </div>
-                    </div>
                     <div class="fb-like" 
                         data-href="<?= the_permalink(); ?>" 
                         data-layout="button_count" 
@@ -49,26 +43,50 @@
                 </div>
 
                 <?php
-                // If comments are open or we have at least one comment, load up the comment template.
-                if ( comments_open() || get_comments_number() ) :
+                // If comments are open
+                // And we have at least one comment, load up the comment template.
+                if (ALLOW_POST_COMMENT && comments_open()) :
                     ?>
-                    <div class="comments-box">
-                        <?php comments_template(); ?>
-                    </div>
+                        <div class="comments-box">
+                            <?php comments_template(); ?>
+                        </div>
                     <?php
                 endif;
                 ?>
 
-                <!-- Related -->
+                <!-- Related post-->
                 <?php
+                // set defaults
+                $isRelatedPost = IS_RELATED_POST;
+                $archiveDisplay = RELATED_DISPLAY_AS;
+                $archiveCols = RELATED_DISPLAY_COLS;
+                $relatedPostsPerPage = RELATED_POSTS_PER_PAGE;
+
                 $related_post = tie_get_option('related_post');
-                if($related_post) {
-                    $archive_display = tie_get_option('related_display');
-                    $archive_cols = tie_get_option('related_cols');
+                if(isset($related_post)) {
+                    $isRelatedPost = $related_post;
+                }
+                
+                if($isRelatedPost) {
+                    $relatedDisplay = tie_get_option('related_display');
+                    if(isset($relatedDisplay)){
+                        $archiveDisplay = $relatedDisplay;
+                    }
+
+                    $relatedCols = tie_get_option('related_cols');
+                    if(isset($relatedCols)){
+                        $archiveCols = $relatedCols;
+                    }
+                    
                     $argGrid = [
-                        'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,
-                        'cols' => $archive_cols ? $archive_cols : 3
+                        'isGrid' => $archiveDisplay,
+                        'cols' => $archiveCols
                     ];
+
+                    $relatedNumber = tie_get_option('related_number');
+                    if(isset($relatedNumber)){
+                        $relatedPostsPerPage = $relatedNumber;
+                    }
                     ?>
 
                     <div class="related-box">
@@ -93,7 +111,7 @@
                                         'category__in' => $category_ids,
                                         'post_type' => $post->post_type,
                                         'post__not_in' => array($post->ID),
-                                        'posts_per_page'=> 5 // Number of related posts that will be shown.
+                                        'posts_per_page'=> $relatedPostsPerPage // Number of related posts that will be shown.
                                     );
                                 }
                             } else {
@@ -101,7 +119,7 @@
                                 $args=array(
                                     'post__not_in' => array($post->ID),
                                     'post_type' => $post->post_type,
-                                    'posts_per_page'=> 5 // Number of related posts that will be shown.
+                                    'posts_per_page'=> $relatedPostsPerPage // Number of related posts that will be shown.
                                 );
                             }
                             $my_query = new wp_query( $args );
@@ -124,9 +142,8 @@
             <!-- Sidebar area: we defined sidebar's 2 area -->
             <?php get_sidebar('second');?>
 
-            <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-                <?php get_sidebar();?>
-            <?php } ?>
+            <!-- Sidebar right -->
+            <?php if($mainLayout == LAYOUT_RIGHT_SIDEBAR) { get_sidebar(); } ?>
 
         </div>
     </div>

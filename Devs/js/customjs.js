@@ -58,3 +58,26 @@ $(document).ready(function() {
     }
     tabCarousel();
 });
+
+jQuery(document).ready(function ($) {
+    /*
+    Function for scroliing to top
+    ************************************/
+   $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+    // Bind to scroll
+    $(window).scroll(function () {
+        //Display or hide scroll to top button 
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+});

@@ -1,7 +1,8 @@
 <?php get_header();?>
 
-<!-- slide show here-->
-<?php if(get_theme_mod('show_main_slideshow')) { ?>
+<!-- Slide show here-->
+<?php
+if(get_theme_mod('show_main_slideshow')) { ?>
     <?php
     $tie_slider_enable = tie_get_option('slider');
     $tie_slider_pos = tie_get_option('slider_pos');
@@ -34,7 +35,7 @@
                         ?>
                         <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
                         <?php
-                            foreach ($cats as $cat) { tie_get_home_cats($cat); }
+                            // foreach ($cats as $cat) { tie_get_home_cats($cat); }
                         ?>
                         <?php
                     }
@@ -42,7 +43,8 @@
                     $p = 1;
                     $args = [
                         'isGrid' => true,
-                        'cols' => 4
+                        'cols' => 4,
+                        'layout' => 'full'
                     ];
                     echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
                     while ( have_posts() ) :

@@ -1,4 +1,14 @@
 <?php
+/*-----------------------------------------------------------------------------------*/
+// Get Theme Options
+/*-----------------------------------------------------------------------------------*/
+function tie_get_option($name, $default = null) {
+	$get_options = get_option( 'tie_options' );
+	if( !empty( $get_options[$name] ))
+		return $get_options[$name];
+	return $default ? $default : NULL;
+}
+
 class menu_walker extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = []) {
         $indent = str_repeat("\t", $depth);
@@ -109,6 +119,22 @@ if ( ! function_exists( 'render_logo' ) ) :
         <?php endif;
     }
 endif;
+
+if(!function_exists('render_favicon')){
+    function render_favicon(){
+        if(get_site_icon_url()){
+            ?>
+            <link rel="shortcut icon" href="<?= get_site_icon_url() ?>" type="image/x-icon">
+		    <link rel="icon" href="<?= get_site_icon_url() ?>" type="image/x-icon">
+            <?php
+        } else {
+            ?>
+            <link rel="shortcut icon" href="<?php echo get_template_directory_uri()?>/assets/images/favicon.ico" type="image/x-icon">
+		    <link rel="icon" href="<?php echo get_template_directory_uri()?>/assets/images/favicon.ico" type="image/x-icon">
+            <?php
+        }
+    }
+}
 
 if ( ! function_exists( 'render_mode_attachment_image' ) ) :
     function render_mode_attachment_image ($key, $size = 'large') {

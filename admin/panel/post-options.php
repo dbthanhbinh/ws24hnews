@@ -21,7 +21,7 @@ function tie_post_options_module()
     ?>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
-            jQuery('.on-of').checkbox({empty : '<?php echo get_template_directory_uri(); ?>/panel/images/empty.png'});
+            jQuery('.on-of').checkbox({empty : '<?php echo get_template_directory_uri(); ?>/admin/panel/images/empty.png'});
         });
         jQuery(function () {
             jQuery("#tie-reviews-list").sortable({placeholder : "tie-review-state-highlight"});
@@ -33,56 +33,11 @@ function tie_post_options_module()
         <?php
         tie_post_options(
             [
-                "name" => "Giá",
-                "id"   => "price",
+                "name" => "Youtube video link",
+                "id"   => "youtube_video_link",
                 "type" => "text",
-                "extra" => 'VD nhập: 1,2 Tỷ, 350 Triệu'
+                "extra" => 'VD nhập: https://www.youtube.com/watch?v=JNNzxZ3qrLI'
             ]);
-        tie_post_options(
-            [
-                "name" => "Diện tích",
-                "id"   => "acreage",
-                "type" => "text",
-                "extra" => 'VD nhập 35 ~ 35 M2'
-            ]);
-        // Alias Quan huyen
-        $_districts = [];
-        foreach ($districts as $key=>$item) {
-            $_districts[$item['slug']] = $item['name'];
-        }
-
-        tie_post_options(
-            [
-                "name"    => "BĐS tại quận",
-                "id"      => "district",
-                "std"     => "quan-12",  
-                "type"    => "select",
-                "options" => $_districts
-            ]);
-        tie_post_options(
-            [
-                "name" => "Số Lầu",
-                "id"   => "number-of-build",
-                "std"  => "Nhà cấp 4",
-                "type" => "text",
-                "extra" => 'VD nhập 1 ~ 1 Lầu'
-            ]);
-        tie_post_options(
-            [
-                "name" => "Số phòng ngủ",
-                "id"   => "number-of-bed",
-                "type" => "text",
-                "extra" => 'VD nhập 1 ~ 1 Phòng'
-            ]);
-        tie_post_options(
-            [
-                "name" => "Số phòng vệ sinh",
-                "id"   => "number-of-bath",
-                "type" => "text",
-                "extra" => 'VD nhập 1 ~ 1 Phòng'
-            ]);
-            
-
         ?>
     </div>
 
@@ -146,7 +101,7 @@ function tie_page_options_module()
     ?>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
-            jQuery('.on-of').checkbox({empty : '<?php echo get_template_directory_uri(); ?>/panel/images/empty.png'});
+            jQuery('.on-of').checkbox({empty : '<?php echo get_template_directory_uri(); ?>/admin/panel/images/empty.png'});
         });
         jQuery(function () {
             jQuery("#tie-reviews-list").sortable({placeholder : "tie-review-state-highlight"});
@@ -425,25 +380,25 @@ function tie_page_options_module()
                     <input id="tie_sidebar_pos" name="tie_sidebar_pos" type="radio" value="default" <?php if ($tie_sidebar_pos == 'default' || !$tie_sidebar_pos) {
                         echo $checked;
                     } ?> />
-                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/sidebar-default.png"/></a>
+                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/sidebar-default.png"/></a>
                 </li>
                 <li>
                     <input id="tie_sidebar_pos" name="tie_sidebar_pos" type="radio" value="right" <?php if ($tie_sidebar_pos == 'right') {
                         echo $checked;
                     } ?> />
-                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/sidebar-right.png"/></a>
+                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/sidebar-right.png"/></a>
                 </li>
                 <li>
                     <input id="tie_sidebar_pos" name="tie_sidebar_pos" type="radio" value="left" <?php if ($tie_sidebar_pos == 'left') {
                         echo $checked;
                     } ?> />
-                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/sidebar-left.png"/></a>
+                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/sidebar-left.png"/></a>
                 </li>
                 <li>
                     <input id="tie_sidebar_pos" name="tie_sidebar_pos" type="radio" value="full" <?php if ($tie_sidebar_pos == 'full') {
                         echo $checked;
                     } ?> />
-                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/panel/images/sidebar-no.png"/></a>
+                    <a class="checkbox-select" href="#"><img src="<?php echo get_template_directory_uri(); ?>/admin/panel/images/sidebar-no.png"/></a>
                 </li>
             </ul>
         </div>
@@ -586,7 +541,8 @@ function save_post($post_id)
             'tie_review_position',
             'tie_review_style',
             'tie_review_summary',
-            'tie_review_total'
+            'tie_review_total',
+            'youtube_video_link'
         ];
 
         foreach ($custom_meta_fields as $custom_meta_field) {
@@ -659,10 +615,12 @@ function tie_post_options($value)
         $id            = $value['id'];
         $get_meta      = get_post_custom($post->ID);
 
+        
+
         if (isset($get_meta[$id][0])) {
             $current_value = $get_meta[$id][0];
         }
-
+        //print_r($get_meta);
         switch ($value['type']) {
 
         case 'text':
@@ -809,7 +767,7 @@ function tie_post_options($value)
                 <img src="<?php if (!empty($current_value['img'])) {
                     echo $current_value['img'];
                 } else {
-                    echo get_template_directory_uri() . '/panel/images/spacer.png';
+                    echo get_template_directory_uri() . '/admin/panel/images/spacer.png';
                 } ?>" alt=""/>
                 <a class="del-img" title="Delete"></a>
             </div>

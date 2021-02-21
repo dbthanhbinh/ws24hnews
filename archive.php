@@ -1,14 +1,16 @@
 <?php get_header();?>
+
   <?php require_once ('helpers/layout-configs.php'); ?>
+
   <!-- Breadcrumb -->
   <?php get_template_part('template-parts/breadcrumb/breadcrumb', '') ?>
   <!-- End breadcrumb -->
   
   <div class="container">
-    <div class="row <?= mainLayoutKey() ?>">
-      <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
-            <?php get_sidebar();?>
-      <?php } ?>
+    <div class="row <?= $mainLayout ?>">
+
+      <!-- Sidebar left -->
+      <?php if($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
 
       <div class="<?= mainLayoutClass() ?>">
         <header class="entry-page-header entry-header">
@@ -16,13 +18,15 @@
         </header>
         
         <?php
-          if ( have_posts() ) :
+          if (have_posts()) :
               $pos = 1;
-              $archive_display = tie_get_option('archive_display');
-              $archive_cols = tie_get_option('archive_cols');
+              $archive_display = tie_get_option('archive_display', ARCHIVE_DISPLAY_AS);
+              $archive_cols = tie_get_option('archive_cols', ARCHIVE_DISPLAY_COLS);
+
               $args = [
-                'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,
-                'cols' => $archive_cols ? $archive_cols : 3
+                'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,
+                'cols' => $archive_cols,
+                'layout' => $mainLayout
               ];
               echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
                 while ( have_posts() ) : the_post();
@@ -41,13 +45,13 @@
         <?php require_once('helpers/pagination.php'); ?>
       </div>
 
-      <!-- Sidebar area: we defined sidebar's 2 area -->
+      <!-- We defined sidebar's 2 area -->
       <?php get_sidebar('second');?>
 
-      <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-          <?php get_sidebar();?>
-      <?php } ?>
+      <!-- Sidebar right -->
+      <?php if($mainLayout == LAYOUT_RIGHT_SIDEBAR) { get_sidebar(); } ?>
       
     </div>
   </div>
+
 <?php get_footer();?>

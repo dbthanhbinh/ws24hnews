@@ -1,7 +1,7 @@
-<?php if(get_theme_mod('show_top_header') || get_theme_mod('show_header')):?>
+<?php if(get_theme_mod('show_top_header', LAYOUT_SHOW_TOP_HEADER) || get_theme_mod('show_header')):?>
 <div class="top-side-header">
     <div id="top-header" class="top-header">
-        <?php if(get_theme_mod('show_top_header')):?>
+        <?php if(get_theme_mod('show_top_header', LAYOUT_SHOW_TOP_HEADER)):?>
         <div class="container top-header-menu">
             <ul class="navigation top-bar-menu right">
                 <li class="menu-item "><a href="tel:<?= get_theme_mod('contact_hotline')?>"><i class="fa fa-phone"></i> Hotline: <?= get_theme_mod('contact_hotline')?></a></li>

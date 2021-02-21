@@ -34,9 +34,9 @@
             padding: 7px 10px 7px 0px;
             margin: 0;
             display: inline-block;
-            border-top: 2px solid #ddd;
+            border-top: 2px solid $main_color;
             border-bottom: none;
-            border-color: $color2;
+            border-color: $main_color;
             margin-top: -2px;
             margin-left: 10px;
             &::before{
@@ -48,6 +48,7 @@
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 margin-right: 5px;
+                color: $main_color;
             }
         }
     }

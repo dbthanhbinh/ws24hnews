@@ -171,7 +171,7 @@ function tie_demo_installer() { ?>
 			}
 			
 		if ( !class_exists( 'WP_Import' ) ) {
-			$class_wp_import = get_template_directory() . '/panel/importer/wordpress-importer.php';
+			$class_wp_import = get_template_directory() . '/admin/panel/importer/wordpress-importer.php';
 			if ( file_exists( $class_wp_import ) )
 				require_once($class_wp_import);
 			else
@@ -180,13 +180,13 @@ function tie_demo_installer() { ?>
 		if($importer_error){
 			die("Error in import :(");
 		}else{
-			if(!is_file( get_template_directory() . '/panel/importer/sample.xml')){
+			if(!is_file( get_template_directory() . '/admin/panel/importer/sample.xml')){
 				echo "The XML file containing the dummy content is not available or could not be read .. You might want to try to set the file permission to chmod 755.<br/>If this doesn't work please use the wordpress importer and import the XML file (should be located in your download .zip: Sample Content folder) manually ";
 			}
 			else{
 				$wp_import = new WP_Import();
 				$wp_import->fetch_attachments = true;
-				$wp_import->import( get_template_directory() . '/panel/importer/sample.xml');
+				$wp_import->import( get_template_directory() . '/admin/panel/importer/sample.xml');
 		  }
 	  }
 		tie_set_demo_data();

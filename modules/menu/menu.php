@@ -35,7 +35,7 @@
 
 <div id="top-header" class="top-header">
     <?php
-    if(get_theme_mod('show_top_header')):?>
+    if(get_theme_mod('show_top_header', LAYOUT_SHOW_TOP_HEADER)):?>
         <div class="container">
             <ul>
                 <li><span><b><?= get_theme_mod('company_name') ?></b></span></li>

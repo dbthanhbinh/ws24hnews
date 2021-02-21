@@ -3,6 +3,7 @@
  * Create new section Customizer
  **/
 function your_theme_new_customizer_settings($wp_customize) {
+    global $Customize;
     $choicesLayout =  [
         'full' => __('Full width'),
         'left-sidebar' => __('Left sidebar'),
@@ -61,7 +62,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_section(
         "section_layout", 
         array(
-            'title' => __("Layout Options", "ws24h"),
+            'title' => __("Layout Options", THEMENAME),
             'priority' => 120,
             'description' => __( 'Description Custom layout Options here' ),
         )
@@ -210,7 +211,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Enable footer copyright
-    $wp_customize->add_setting('show_footer_copyright', ['default' => 0]);
+    $wp_customize->add_setting('show_footer_copyright', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_copyright',
     array(
         'label' => 'Show footer copyright',
@@ -249,14 +250,14 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_section(
         "section_contact", 
         array(
-            'title' => __("Contact Options", "ws24h"),
+            'title' => __("Contact Options", THEMENAME),
             'priority' => 135,
             'description' => __( 'Description Custom Theme Options here' ),
         )
     );
 
     // Contact name
-    $wp_customize->add_setting('company_name');
+    $wp_customize->add_setting('company_name', ['default' => $Customize['company_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_name',
     array(
         'label' => 'Company name',
@@ -266,7 +267,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Contact name
-    $wp_customize->add_setting('company_footer_name');
+    $wp_customize->add_setting('company_footer_name', ['default' => $Customize['company_footer_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_footer_name',
     array(
         'label' => 'Company footer name',
@@ -276,7 +277,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
      // Contact address
-     $wp_customize->add_setting('contact_address');
+     $wp_customize->add_setting('contact_address', ['default' => $Customize['contact_address']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_address',
      array(
          'label' => 'Contact address',
@@ -286,7 +287,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
      // Contact email
-     $wp_customize->add_setting('contact_email');
+     $wp_customize->add_setting('contact_email', ['default' => $Customize['contact_email']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_email',
      array(
          'label' => 'Contact email',
@@ -296,7 +297,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
      // Contact Phone
-     $wp_customize->add_setting('contact_phone');
+     $wp_customize->add_setting('contact_phone', ['default' => $Customize['contact_phone']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_phone',
      array(
          'label' => 'Contact phone',
@@ -306,7 +307,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
      // Contact Hotline
-     $wp_customize->add_setting('contact_hotline');
+     $wp_customize->add_setting('contact_hotline', ['default' => $Customize['contact_hotline']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_hotline',
      array(
          'label' => 'Contact hotline',
@@ -316,7 +317,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
      // Contact copyright
-     $wp_customize->add_setting('setting_copyright');
+     $wp_customize->add_setting('setting_copyright', ['default' => $Customize['setting_copyright']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_copyright',
      array(
          'label' => 'Setting copyright',
@@ -326,7 +327,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
      // Contact copyright
-     $wp_customize->add_setting('setting_open_time');
+     $wp_customize->add_setting('setting_open_time', ['default' => $Customize['setting_open_time']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_open_time',
      array(
          'label' => 'Open time',
@@ -336,7 +337,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
      
-     $wp_customize->add_setting('google_analytics_code');
+     $wp_customize->add_setting('google_analytics_code', ['default' => $Customize['google_analytics_code']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_analytics_code',
      array(
          'label' => 'Google Analytics Code',
@@ -351,14 +352,14 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_section(
         "section_socials", 
         array(
-            'title' => __("Socials Options", "ws24h"),
+            'title' => __("Socials Options", THEMENAME),
             'priority' => 131,
             'description' => __( 'Description Custom Socials Options here' ),
         )
     );
 
     // Facebook fanpage
-    $wp_customize->add_setting('facebook_name');
+    $wp_customize->add_setting('facebook_name', ['default' => $Customize['facebook_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_name',
     array(
         'label' => 'Facebook name Fanpage',
@@ -367,7 +368,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         'type' => 'text'
     ) ) );
 
-    $wp_customize->add_setting('facebook_link');
+    $wp_customize->add_setting('facebook_link', ['default' => $Customize['facebook_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_link',
     array(
         'label' => 'Facebook link Fanpage',
@@ -377,7 +378,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Youtube link channel
-    $wp_customize->add_setting('youtube_link');
+    $wp_customize->add_setting('youtube_link', ['default' => $Customize['youtube_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'youtube_link',
     array(
         'label' => 'Youtube link channel',
@@ -387,7 +388,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Zalo link channel
-    $wp_customize->add_setting('zalo_link');
+    $wp_customize->add_setting('zalo_link', ['default' => $Customize['zalo_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'zalo_link',
     array(
         'label' => 'Zalo link page',
@@ -397,7 +398,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Google plus channel
-    $wp_customize->add_setting('google_plus_link');
+    $wp_customize->add_setting('google_plus_link', ['default' => $Customize['google_plus_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_plus_link',
     array(
         'label' => 'Google plus link page',
@@ -407,7 +408,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Twitter link channel
-    $wp_customize->add_setting('twitter_link');
+    $wp_customize->add_setting('twitter_link', ['default' => $Customize['twitter_link']]);
     $wp_customize->add_control( new WP_Customize_Control(
         $wp_customize,
         'twitter_link',
@@ -419,7 +420,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         ) 
     ) );
 
-    $wp_customize->add_setting('show_face_fanpage_plugin', ['default' => 0]);
+    $wp_customize->add_setting('show_face_fanpage_plugin', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_face_fanpage_plugin',
     array(
         'label' => 'Show Facebook Fanpage',
@@ -472,7 +473,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_section(
         "section_header_settings", 
         array(
-            'title' => __("Header settings", "ws24h"),
+            'title' => __("Header settings", THEMENAME),
             'priority' => 122,
             'description' => __( 'Description Custom header setting' ),
         )
