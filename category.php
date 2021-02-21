@@ -2,7 +2,7 @@
   <?php require_once ('helpers/layout-configs.php'); ?>
 
   <!-- Breadcrumb -->
-  <?php  if(get_theme_mod('show_breadcrumb')){
+  <?php  if(get_theme_mod('show_breadcrumb', IS_SHOW_BREADCRUMB)){
     $category = get_queried_object();
     $cat_option = get_option('tie_cat_'.$category->term_id);
     $breadcrumb_banner = get_template_directory_uri().'/assets/images/breadcrumb_bg.jpg';

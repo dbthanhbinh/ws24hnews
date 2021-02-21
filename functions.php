@@ -54,10 +54,10 @@ if(is_admin()){
 if(!is_admin()){
     // Translate for Front-end
     require_once ('helpers/translates.php');
-    require_once ('lib/modifys/index.php');
 
     // Front-end Commons
     require_once ('helpers/commons.php');
+    require_once ('lib/modifys/index.php');
     
     // Favicon
     add_action( 'wp_head', 'render_favicon' );
@@ -86,7 +86,6 @@ if(!is_admin()){
 		add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
 		add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
 	}
-
 }
 
 // For theme setup
@@ -175,16 +174,16 @@ function ws24h_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
 
-add_filter( 'get_the_archive_title', function ($title) {
-    if ( is_category() ) {
-            $title = single_cat_title( '', false );
-        } elseif ( is_tag() ) {
-            $title = single_tag_title( '', false );
-        } elseif ( is_author() ) {
-            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
-        }
-    return $title;
-});
+// add_filter( 'get_the_archive_title', function ($title) {
+//     if ( is_category() ) {
+//             $title = single_cat_title( '', false );
+//         } elseif ( is_tag() ) {
+//             $title = single_tag_title( '', false );
+//         } elseif ( is_author() ) {
+//             $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+//         }
+//     return $title;
+// });
 
 // Remove width, height from the_post_thumb
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
@@ -203,6 +202,7 @@ function change_tag_cloud_font_sizes( array $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
 
+
 add_filter( 'get_the_archive_title', function ( $title ) {
     if ( is_category() ) {
         /* translators: Category archive title. 1: Category name */
@@ -215,7 +215,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
         $title = sprintf( __( 'Thẻ: %s' ), single_tag_title( '', false ) );
     } elseif ( is_author() ) {
         /* translators: Author archive title. 1: Author name */
-        $title = sprintf( __( 'Author: %s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+        $title = sprintf( __( 'Author: %s' ), get_the_author() );
     } elseif ( is_year() ) {
         /* translators: Yearly archive title. 1: Year */
         $title = sprintf( __( 'Năm: %s' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
