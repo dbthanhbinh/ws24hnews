@@ -8,6 +8,9 @@ const DISPLAY_AS_GRID = 'grid';
 const DISPLAY_AS_LIST = 'list';
 const DISPLAY_COLS_NUMBER = 3;
 
+// Header version
+const LAYOUT_HEADER_VERSION = 'v1';
+
 // Default layout
 const LAYOUT_HOME_DEFAULT = LAYOUT_FULL;
 const LAYOUT_ARCHIVE_DEFAULT = LAYOUT_RIGHT_SIDEBAR;

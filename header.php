@@ -11,5 +11,6 @@
   </head>
   <body <?php body_class(); ?>>
   <?php
-    require_once ('modules/header/header' . getConfigVersion() . '.php');
+    // require_once ('modules/header/header-' . get_theme_mod('header_version', LAYOUT_HEADER_VERSION) . '.php');
+    require_once ('modules/header/header-v2.php');
   ?>

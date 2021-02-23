@@ -102,14 +102,10 @@ endif;
 if ( ! function_exists( 'render_logo' ) ) :
     function render_logo () {        
         // check to see if the logo exists and add it to the page
-        if ( get_theme_mod( 'your_theme_logo' ) ) : 
+        if (get_theme_mod('your_theme_logo')) : 
         ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
-                <?php 
-                $yourTheme = wp_get_attachment_image(get_theme_mod( 'your_theme_logo' ));
-                $yourTheme = preg_replace(array('/width="[^"]*"/', '/height="[^"]*"/'), '', $yourTheme);
-                echo $yourTheme;
-                ?>
+                <img src="<?= get_theme_mod('your_theme_logo') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
             </a>
         <?php // add a fallback if the logo doesn't exist
         else : ?>

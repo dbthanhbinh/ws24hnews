@@ -5,7 +5,7 @@
     }
     ?>
     <?php
-      if(get_theme_mod('show_footer_layout')){
+      if(get_theme_mod('show_footer_layout', false)){
         require_once ('modules/footer/footer.php');
       }
     ?>
@@ -44,11 +44,6 @@
     <?php }?>
     <?php wp_footer()?>
     <div id="site-over" class=""></div>
-
-    <div class="scrollup">
-        <a href="#">
-            <i class="fa fa-eject" aria-hidden="true"></i>
-        </a>
-    </div>
+    <div class="scrollup"><a href="#"><i class="fa fa-eject" aria-hidden="true"></i></a></div>
   </body>
 </html>

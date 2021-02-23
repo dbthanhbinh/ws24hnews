@@ -1,3 +1,13 @@
+.home-slide-wrapper {
+    text-align: center;
+    p {
+        margin: 20px 0;
+        a {
+            color: $main_color;
+        }
+    }
+}
+
 .home-section {
     .home-box-title {
         clear: both;
@@ -65,7 +75,7 @@
 .home-intro-readmore {
     a {
         font-style: italic;
-        background: #ff99b8;
+        background: $main_color;
         color: #222222;
         padding: 8px 20px;
     }

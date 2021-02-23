@@ -10,6 +10,11 @@ function your_theme_new_customizer_settings($wp_customize) {
         'right-sidebar' => __('Right sidebar')
     ];
 
+    $headerVertion =  [
+        'v1' => __('Header version 1'),
+        'v2' => __('Header version 2')
+    ];
+
     $pages = get_all_page_ids();
     $allPage = [];
     if(count($pages) > 0) {
@@ -22,15 +27,13 @@ function your_theme_new_customizer_settings($wp_customize) {
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
     // Add a control to upload the logo
-    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'your_theme_logo',
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'your_theme_logo',
     array(
-        'label' => 'Upload Logo (200 x 200)',
+        'label' => 'Upload your Logo',
         'section' => 'title_tagline',
         'settings' => 'your_theme_logo',
-        'height' => 200,
-        'width' => 200,
-        'flex_width ' => false,
-        'flex_height ' => false,
+        'flex_width ' => true,
+        'flex_height ' => true,
     ) ) );
 
     $wp_customize->add_setting('top_banner');
@@ -45,11 +48,29 @@ function your_theme_new_customizer_settings($wp_customize) {
         'flex_height ' => false,
     ) ) );
 
+    $wp_customize->add_setting('top_banner_url');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_banner_url',
+    array(
+        'label' => 'Top banner url Ex:(https://..)',
+        'section' => 'title_tagline',
+        'settings' => 'top_banner_url',
+        'type' => 'text'
+    )));
+
+    $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
+    array(
+        'label' => 'Select header version',
+        'section' => 'title_tagline',
+        'settings' => 'header_version',
+        'type' => 'select',
+        'choices' => $headerVertion
+    )));
 
     $wp_customize->add_setting('custom_background');
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_background',
     array(
-        'label' => 'Upload Custom Background',
+        'label' => 'Upload Custom body Background',
         'section' => 'title_tagline',
         'settings' => 'custom_background',
         'flex_width ' => false,

@@ -10,6 +10,13 @@ require_once ('lib/siteCommons.php');
 require_once ('widgets/widgets.php');
 require_once ('admin/modifys/modify-adminlogo.php');
 
+// Is Scope Customizer Live Preview
+if (is_customize_preview()) {
+    require_once ('admin/customizer.php');
+    add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
+	add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
+}
+
 # Is Admin Scope (only admin)
 if(is_admin()){
     // Check update plugins
@@ -27,7 +34,6 @@ if(is_admin()){
     }
     require_once ('admin/defined.php');
     require_once ('admin/panel/setting.php');
-    require_once ('admin/customizer.php');
     require_once ('admin/modifys/index.php');
     
     add_filter('manage_posts_columns', 'add_img_column');
@@ -84,7 +90,7 @@ if(!is_admin()){
     $customSlider = true;
     $customClient = false;
 
-    if(($customSlider || $customClient) && !is_customize_preview()){
+    if(($customSlider || $customClient)){
 		add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
 		add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
 	}
