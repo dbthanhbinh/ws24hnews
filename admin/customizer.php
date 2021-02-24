@@ -57,16 +57,6 @@ function your_theme_new_customizer_settings($wp_customize) {
         'type' => 'text'
     )));
 
-    $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
-    array(
-        'label' => 'Select header version',
-        'section' => 'title_tagline',
-        'settings' => 'header_version',
-        'type' => 'select',
-        'choices' => $headerVertion
-    )));
-
     $wp_customize->add_setting('custom_background');
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_background',
     array(
@@ -89,6 +79,16 @@ function your_theme_new_customizer_settings($wp_customize) {
         )
     );
 
+    $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
+    array(
+        'label' => 'Header version (V2=>show banner)',
+        'section' => 'section_layout',
+        'settings' => 'header_version',
+        'type' => 'select',
+        'choices' => $headerVertion
+    )));
+
     $wp_customize->add_setting('show_top_header', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_top_header',
     array(
@@ -102,12 +102,12 @@ function your_theme_new_customizer_settings($wp_customize) {
         ),
     ) ) );
 
-    $wp_customize->add_setting('show_header', ['default' => 1]);
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_header',
+    $wp_customize->add_setting('show_header_banner', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_header_banner',
     array(
-        'label' => 'Show header',
+        'label' => 'Show header banner',
         'section' => 'section_layout',
-        'settings' => 'show_header',
+        'settings' => 'show_header_banner',
         'type' => 'select',
         'choices' => array(
             '1' => __('Enable'),
@@ -458,13 +458,19 @@ function your_theme_new_customizer_settings($wp_customize) {
     $listColors[] = array(
         'slug'=>'header_background_color', 
         'default' => '#fff',
-        'label' => 'Background'
+        'label' => 'Nav Background'
     );
 
     $listColors[] = array(
         'slug'=>'header_background_color_fixed', 
         'default' => '#fff',
-        'label' => 'Background fixed'
+        'label' => 'Nav Background fixed'
+    );
+
+    $listColors[] = array(
+        'slug'=>'header_home_icon_color', 
+        'default' => '#fff',
+        'label' => 'Home icon color'
     );
 
     $listColors[] = array(
@@ -494,7 +500,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_section(
         "section_header_settings", 
         array(
-            'title' => __("Header settings", THEMENAME),
+            'title' => __("Header colors", THEMENAME),
             'priority' => 122,
             'description' => __( 'Description Custom header setting' ),
         )
