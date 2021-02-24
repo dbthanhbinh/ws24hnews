@@ -94,6 +94,83 @@ if(!is_admin()){
 		add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
 		add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
 	}
+
+    add_action( 'wp_head', 'header_code_callback' );
+    add_action( 'wp_footer', 'footer_code_callback' );
+}
+
+if (is_customize_preview() || !is_admin()) {
+    add_action( 'wp_head', 'custom_menu_colors_callback' );
+    add_action( 'wp_head', 'ws24h_custom_body_background' );
+}
+
+// header_code_callback
+function header_code_callback(){
+    $headerCode = tie_get_option('header_code');
+    if($headerCode){
+        echo html_entity_decode($headerCode);
+    }   
+}
+
+// footer_code_callback
+function footer_code_callback() {
+    $footerCode = tie_get_option('footer_code');
+    if($footerCode){
+        echo html_entity_decode($footerCode);
+    } 
+}
+
+// custom_menu_callback
+function custom_menu_colors_callback() {
+    $customBg = get_theme_mod('header_background_color');
+    $customBgFixed = get_theme_mod('header_background_color_fixed');
+    $customLinkColor = get_theme_mod('header_link_color');
+    $customBgSub = get_theme_mod('header_background_submenu');
+    $customLinkColorSub = get_theme_mod('header_link_color_sub');
+    $customHomeIconColor = get_theme_mod('header_home_icon_color');
+
+    $html = '<style>';
+    $hasStyle = false;
+    if(isset($customBg) && $customBg){
+        $hasStyle = true;
+        $html.= '
+            .navbar-expand-lg .navbar-nav .nav-item >.nav-link {
+                color: '.$customLinkColor.';
+            }
+        ';
+    }
+
+    if(isset($customBgSub) && $customBgSub){
+        $hasStyle = true;
+        $html.= '
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                background: '.$customBgSub.';
+            }
+        ';
+    }
+
+    if(isset($customLinkColorSub) && $customLinkColorSub){
+        $hasStyle = true;
+        $html.= '
+            .navbar-expand-lg .navbar-nav .dropdown-menu .nav-item .nav-link {
+                color: '.$customLinkColorSub.';
+            }
+        ';
+    }
+
+    if(isset($customHomeIconColor) && $customHomeIconColor){
+        $hasStyle = true;
+        $html.= '
+            .navbar .navbar-brand .fa-home {
+                color: '.$customHomeIconColor.';
+            }
+        ';
+    }
+    $html.= '</style>';
+
+    if($hasStyle){
+        echo html_entity_decode($html);
+    }
 }
 
 // For theme setup
@@ -122,12 +199,13 @@ add_action( 'after_setup_theme', 'ws24h_setup' );
 // For custom theme background
 function ws24h_custom_body_background() {
     $html = '';
-    if(get_theme_mod("custom_background")){
+    $customBackground = get_theme_mod("custom_background", false);
+    if($customBackground){
         $html .= '
         <style>
             body{
                 background-color: unset;
-                background-image: linear-gradient(to right,rgba(237,189,189,0.28),rgba(237,189,189,0.28)),url(' . get_theme_mod("custom_background") . ');
+                background-image: linear-gradient(to right,rgba(237,189,189,0.28),rgba(237,189,189,0.28)),url(' . $customBackground . ');
                 background-repeat: repeat;
                 background-position: center center;
                 background-size: contain;
@@ -136,9 +214,8 @@ function ws24h_custom_body_background() {
         </style>
         ';
     }
-    print_r($html);
+    echo html_entity_decode($html);
 }
-// add_action( 'wp_footer', 'ws24h_custom_body_background' );
 
 function ws24h_custom_excerpt_length( $length ) {
     return 20;

@@ -1,72 +1,40 @@
-<?php
-    $customBg = get_theme_mod('header_background_color');
-    $customBgFixed = get_theme_mod('header_background_color_fixed');
-    $customLinkColor = get_theme_mod('header_link_color');
-    $customBgSub = get_theme_mod('header_background_submenu');
-    $customLinkColorSub = get_theme_mod('header_link_color_sub');
-    
-    echo '<style>';
-    if(isset($customBg) && $customBg){
-        echo '
-            .navbar-expand-lg .navbar-nav .nav-item >.nav-link {
-                color: '.$customLinkColor.';
-            }
-        ';
-    }
-
-    if(isset($customBgSub) && $customBgSub){
-        echo '
-            .navbar-expand-lg .navbar-nav .dropdown-menu {
-                background: '.$customBgSub.';
-            }
-        ';
-    }
-
-    if(isset($customLinkColorSub) && $customLinkColorSub){
-        echo '
-            .navbar-expand-lg .navbar-nav .dropdown-menu .nav-item .nav-link {
-                color: '.$customLinkColorSub.';
-            }
-        ';
-    }
-
-    echo '</style>';
-?>
-
-<?php if(get_theme_mod('show_top_header', LAYOUT_SHOW_TOP_HEADER)):?>
-    <div id="top-header" class="top-header">
-        <div class="container">
-            <ul>
-                <li><span><b><?= get_theme_mod('company_name') ?></b></span></li>
-                <li><span><b><a href="tel:<?=get_theme_mod('contact_hotline')?>"><?= get_theme_mod('contact_hotline') ?></a></b></span></li>
-                <li><span><b><?= getTranslateByKey('open_time') ?></b> <?= get_theme_mod('setting_open_time') ?></span></li>
-            </ul>
-        </div>
-    </div>
-<?php endif; ?>
-
-
-
 <nav id="main-navbar" data-ref="<?= getHeaderClassConfigVersion() ?>" <?php echo (isset($customBg) && $customBg) ? 'style="background: ' . $customBg . '"' : ''; ?> class="navbar navbar-expand-lg <?= getHeaderClassConfigVersion() ?>">
     <div class="container">
         <?php
-        if(get_theme_mod('header_version', LAYOUT_HEADER_VERSION) != 'v1'){
+        if(get_theme_mod('header_version', LAYOUT_HEADER_VERSION) == LAYOUT_HEADER_VERSION){
             ?>
             <div class="render-logo">
                 <?= render_logo() ?>
             </div>
             <?php
         } else {
+            if(!get_theme_mod('show_header_banner')){
+                ?>
+                <div class="render-logo">
+                    <?= render_logo() ?>
+                </div>
+                <?php
+            }
+            else {
             ?>
             <a class="navbar-brand" href="<?= site_url() ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
             <?php
+            }
         }
         ?>
-        <div class="small-render-logo">
-              <?= render_logo() ?>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+
+        <div class="small-render-logo"> <?= render_logo() ?></div>
+        
+        <button class="navbar-toggler" type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </span>
         </button>
 
         <?php if ( has_nav_menu ( 'primary' ) ) : ?>
