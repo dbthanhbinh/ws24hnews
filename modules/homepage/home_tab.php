@@ -75,7 +75,7 @@ function buildListItems($listItems){
 if($homeTabBox){
     $homeTabBox = tie_get_option('home_tabs_box');
     $homeTabBigImage = tie_get_option('home_tabs_big_image');
-    $homeTabOrder = tie_get_option('home_tabs_order');
+    // $homeTabOrder = tie_get_option('home_tabs_order');
     $homeTabBoxTitle = tie_get_option('home_tabs_box_title');
     $homeTabBoxSubtitle = tie_get_option('home_tabs_box_subtitle');
     $homeTabDescription = tie_get_option('home_tabs_description');

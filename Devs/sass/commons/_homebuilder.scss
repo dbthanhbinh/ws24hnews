@@ -1,3 +1,9 @@
+.section {
+    display: inline-block;
+    width: 100%;
+    margin: 50px 0;
+}
+
 .home-slide-wrapper {
     text-align: center;
     p {
@@ -37,7 +43,6 @@
     }
 
     &.section-group-top {
-        margin-top: 0;
         position: relative;
         z-index: 10;
 
@@ -285,10 +290,6 @@
 
         
     }
-}
-
-.section {
-    margin: 70px 0;
 }
 
 .truncate-title{

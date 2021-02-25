@@ -22,10 +22,27 @@
                 {
                     $cats = get_option( 'tie_home_cats' );
                     if($cats){
+                        if(tie_get_option('home_tabs_order')){
+                            $cats[] = [
+                                'order' => tie_get_option('home_tabs_order'),
+                                'type' => 'hometab'
+                            ];
+                        }
+                        if(count($cats) > 2) {
+                            usort($cats, function ($item1, $item2) {
+                                return $item1['order'] <=> $item2['order'];
+                            });
+                        }
                         ?>
                         <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
                         <?php
-                            // foreach ($cats as $cat) { tie_get_home_cats($cat); }
+                            $loopSection = 1;
+                            foreach ($cats as $cat) {
+                                $cat['loop'] = $loopSection;
+                                tie_get_home_cats($cat);
+
+                                $loopSection++;
+                            }
                         ?>
                         <?php
                     }
@@ -44,10 +61,6 @@
                     endwhile;
                     echo '</div>';
                 }
-            ?>
-            <?php
-            // Home tabs
-            // require('modules/homepage/home_tab.php');
             ?>
         </div>
         <!-- Sidebar area: we defined sidebar's 2 area -->

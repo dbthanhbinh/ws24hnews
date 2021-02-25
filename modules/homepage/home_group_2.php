@@ -1,4 +1,24 @@
-<div class="section home-section section-group-top">
+<?php
+$firstSectionStyle = 'style="margin-top: 100px;"';
+if($cat_data['loop'] == 1 && $show_title != 'y'){
+    $firstSectionStyle = 'style="margin-top: 0;"';
+}
+
+if($show_title == 'y'){
+?>
+<div class="home-section" style="margin-top: 30px;">
+    <div class="container">
+        <div class="header-section">
+            <?php if($boxTitle){?>
+                <h3><?= $boxTitle ?> <?php if($subTitle){?><span class="header-cb-1"><?= $subTitle ?></span><?php }?></h3>
+            <?php }?>
+            <?php if($description){?> <p><?= $description ?></p> <?php }?>
+        </div>
+    </div>
+</div>
+<?php }?>
+
+<div class="section home-section section-group-top" <?= $firstSectionStyle ?>>
     <div class="container">
         <div class="first-section">
             <div class="row">
@@ -35,7 +55,8 @@
                         }
                         ?>
                     </div>
-                </div> <!-- col-md-8 offset-md-2 -->
+                </div>
+                <!-- col-md-8 offset-md-2 -->
 
                 <div class="col-12 col-sm-12 col-md-10 offset-md-1 animated fadeInUp group-2">
                     <div class="row">
