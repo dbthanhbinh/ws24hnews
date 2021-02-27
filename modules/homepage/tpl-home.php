@@ -5,9 +5,6 @@ require ('home-cats.php');
 /*-----------------------------------------------------------------------------------*/
 function tie_get_home_cats($cat_data) {
 	switch( $cat_data['type'] ){
-		case 'hometab':
-			require(TEMPLATEPATH.'/modules/homepage/home_tab.php');
-			break;
 		case 'recent':
 			get_home_recent( $cat_data );
 			break;
@@ -18,7 +15,7 @@ function tie_get_home_cats($cat_data) {
 			get_home_videos( $cat_data );
 			break;
 		case 'categories':
-			require('home_tab.php');
+			require(TEMPLATEPATH.'/modules/homepage/home_tab.php');
 			break;
 		case 's':
 			get_home_scroll( $cat_data );

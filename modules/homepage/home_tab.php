@@ -84,6 +84,7 @@ if($homeTabBox){
     $tieHomePostByCat = [];
 ?>
 <div class="section home-section animated secondary-section section-best-packages">
+  <div class="container">
     <div class="row">
       <div class="<?= getDefaultFullLayout() ?> header-section">
           <div class=" title">
@@ -184,5 +185,6 @@ if($homeTabBox){
         </div>
       </div>
     </div>
+  </div>
 </div>
 <?php }?>

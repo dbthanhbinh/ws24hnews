@@ -274,7 +274,11 @@
     .group-2 {
         margin: 50px auto;
 
-        .group-right {}
+        .group-right {
+            .bt-lemon-container {
+                text-align: right;
+            }
+        }
     }
 
     .item_thumb {
@@ -462,4 +466,55 @@ a.btn-lemon {
             margin-left: unset;
         }
     }
+}
+
+.home-custom-box {
+    color: #ffffff;
+
+    .left-custom-box {}
+    .right-custom-box {
+        .custom-box-des {
+            margin-bottom: 20px;
+        }
+        .custom-box-des-spirit {
+            ul, ol {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    display: inline-flex;
+                    width: 48%;
+                    margin: 3px 0;
+                    
+                    &::before {
+                        font: normal normal normal 14px/1 FontAwesome;
+                        content: "\f2da";
+                        width: 32px;
+                        font-size: 14px;
+                        display: inline-block;
+                        text-align: right;
+                        margin-right: 10px;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        color: $main_color;
+                    }
+                }
+            }
+        }
+
+        .custom-box-navigator {
+            margin-top: 30px;
+        }
+    }
+}
+
+.vc_custom_1583484295953 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url('https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/wp-content/uploads/2020/03/bg-da.jpg?id=3325');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

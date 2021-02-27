@@ -4,6 +4,14 @@
         <a class="toggle-close">-</a>
     </div>
     <div class="widget-content">
+        <label for="tie_home_cats[<?php echo $i ?>][show_box]">
+            <span>Show/Hiden Box :</span>
+            <select id="tie_home_cats[<?php echo $i ?>][show_box]" name="tie_home_cats[<?php echo $i ?>][show_box]">
+                <option value="y" <?php if (!isset($cat['show_box']) || ($cat['show_box'] == 'y')) { echo ' selected="selected"' ; } ?>>Show</option>
+                <option value="n" <?php if(isset($cat['show_box']) && $cat['show_box'] == 'n') { echo ' selected="selected"'; } ?>>Hidden</option>
+            </select>
+        </label>
+
         <label for="tie_home_cats[<?php echo $i ?>][title]">
             <span>Box Title :</span>
             <input id="tie_home_cats[<?php echo $i ?>][title]"
