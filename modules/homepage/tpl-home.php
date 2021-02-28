@@ -17,6 +17,9 @@ function tie_get_home_cats($cat_data) {
 		case 'categories':
 			require(TEMPLATEPATH.'/modules/homepage/home_tab.php');
 			break;
+		case 'custom':
+			require(TEMPLATEPATH.'/modules/homepage/home_custom_box.php');
+			break;
 		case 's':
 			get_home_scroll( $cat_data );
 			break;

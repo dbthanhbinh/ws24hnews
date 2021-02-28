@@ -14,9 +14,6 @@
     <!-- <div class="<?= mainLayoutClass() ?>"> -->
     <div>
         <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
-
-        <?php require_once(TEMPLATEPATH . '/modules/homepage/home_custom_box.php'); ?>
-
         <?php
             if(function_exists('tie_get_option')
                 && tie_get_option('on_home')

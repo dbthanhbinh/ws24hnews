@@ -35,7 +35,8 @@
                     <a id="add-group" >Group template</a>
                     <a id="add-videos" >Video list</a>
                     <a id="add-categories" >Categories Tabs Box</a>
-                    
+                    <a id="add-custom" >Custom box</a>
+
                     <!-- <a id="add-cat" >News Box</a>
                     <a id="add-slider" >Scrolling Box</a>
                     <a id="add-ads" >Ads / Custom Content</a>
@@ -48,9 +49,9 @@
                         $cats = get_option( 'tie_home_cats' ) ;
                         $i=0;
                         if($cats){
+                            // print_r($cats);
                             foreach ($cats as $cat) { 
                                 $i++;
-
                                 if( $cat['type'] == 'recent' ) :
                                     require('recent.php');
                                 ?>
@@ -62,6 +63,9 @@
                                 ?>
                                 <?php elseif( $cat['type'] == 'videos' ) :
                                     require('videos.php');
+                                ?>
+                                <?php elseif( $cat['type'] == 'custom' ) :
+                                    require('custom.php');
                                 ?>
                                 <?php elseif( $cat['type'] == 'divider' ) : ?>
                                     <div class="widget-head news-pic-box">  Divider

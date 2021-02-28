@@ -1,4 +1,6 @@
 function builderHeader (boxTitle, nextCell) {
+	var boxDesDf = 'Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci lobortis…';
+
 	var html = '';
 	html += '<li id="listItem_'+ nextCell +'" class="ui-state-default">';
 		html += '<div class="widget-head">' + boxTitle + '<a style="display:none" class="toggle-open">+</a>';
@@ -6,7 +8,7 @@ function builderHeader (boxTitle, nextCell) {
 		html += '</div>';
 		html += '<div style="display:block" class="widget-content">';
 		html += '<label for="tie_home_cats['+ nextCell +'][title]">';
-		html += '<span>' + boxTitle + ':</span>';
+		html += '<span> Box Title' + boxTitle + ':</span>';
 		html += '<input id="tie_home_cats['+ nextCell +'][title]"';
 		html += 'name="tie_home_cats['+ nextCell +'][title]"';
 		html += 'value="' + boxTitle + '"';
@@ -23,7 +25,7 @@ function builderHeader (boxTitle, nextCell) {
 		html += '<textarea style="direction:ltr; text-align:left"';
 		html += 'id="tie_home_cats['+ nextCell +'][description]"';
 		html += 'name="tie_home_cats['+ nextCell +'][description]"';
-		html += 'type="textarea" cols="100%" rows="3" tabindex="4"></textarea>';
+		html += 'type="textarea" cols="100%" rows="3" tabindex="4">'+boxDesDf+'</textarea>';
 		html += '</label>';
 		html += '<label for="tie_home_cats['+ nextCell +'][show_description]">';
 		html += '<span>Show Box description :</span>';
@@ -37,6 +39,8 @@ function builderHeader (boxTitle, nextCell) {
 }
 
 function builderHeaderGroupTemplate(boxTitle, nextCell) {
+	var boxDesDf = 'Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci lobortis…';
+
 	var html = '';
 		html += '<li id="listItem_'+ nextCell +'" class="ui-state-default">';
 		html += '<div class="widget-head">' + boxTitle;
@@ -80,7 +84,7 @@ function builderHeaderGroupTemplate(boxTitle, nextCell) {
 		html += '<textarea style="direction:ltr; text-align:left"';
 		html += 'id="tie_home_cats['+ nextCell +'][description]"';
 		html += 'name="tie_home_cats['+ nextCell +'][description]"';
-		html += 'type="textarea" cols="100%" rows="3" tabindex="4"></textarea>';
+		html += 'type="textarea" cols="100%" rows="3" tabindex="4">'+boxDesDf+'</textarea>';
 		html += '</label>';
 		html += '<label for="tie_home_cats['+ nextCell +'][show_description]">';
 		html += '<span>Show Box description :</span>';
@@ -175,6 +179,73 @@ function builderCategoriesTabBox (boxTitle, nextCell) {
 	html += builderHeader (boxTitle, nextCell);
 
 	html += builderFooter (nextCell, 'categories');
+	return html;
+}
+
+// For Custom box
+function builderCustomBox (boxTitle, nextCell) {
+	var boxContentDf = '';
+	boxContentDf += '<ul>';
+	boxContentDf += '<li>Acupressure Massage</li>';
+	boxContentDf += '<li>Abdominal Massage</li>';
+	boxContentDf += '<li>Thai Massage</li>';
+	boxContentDf += '<li>Deep Tissue Massage Therapy</li>';
+	boxContentDf += '<li>Aromatherapy</li>';
+	boxContentDf += '<li>Ayurvedic Massage</li>';
+	boxContentDf += '<li>ndian Head Massage.</li>';
+	boxContentDf += '<li>Lomi Lomi Massage.</li>';
+	boxContentDf += '</ul>';
+
+
+	var html = '';
+	html += builderHeaderGroupTemplate (boxTitle, nextCell);
+	
+	html += '<label for="tie_home_cats['+ nextCell +'][box_content]">';
+	html += '<span>Box content/Html content :</span>';
+	html += '<textarea style="direction:ltr; text-align:left"';
+	html += 'id="tie_home_cats['+ nextCell +'][box_content]"';
+	html += 'name="tie_home_cats['+ nextCell +'][box_content]"';
+	html += 'type="textarea" cols="100%" rows="10" tabindex="4">'+boxContentDf+'</textarea>';
+    html += '</label>';
+
+    html += '<label for="tie_home_cats['+ nextCell +'][show_navigate_btn]">';
+	html += '<span>Show Box Button Navigator:</span>';
+	html += '<select id="tie_home_cats['+ nextCell +'][show_navigate_btn]" name="tie_home_cats['+ nextCell +'][show_navigate_btn]">';
+	html += '<option value="y" selected="selected">Show</option>';
+	html += '<option value="n">Hidden</option>';
+	html += '</select>';
+    html += '</label>';
+
+	var moreFeature = 'More features';
+    html += '<label for="tie_home_cats['+ nextCell +'][box_navigate_text]">';
+	html += '<span>Box Button Navigator text:</span>';
+	html += '<input id="tie_home_cats['+ nextCell +'][box_navigate_text]"';
+	html += 'name="tie_home_cats['+ nextCell +'][box_navigate_text]"';
+	html += 'placeholder="More features"';
+	html += 'value="'+moreFeature+'"';
+	html += 'type="text" />';
+    html += '</label>';
+
+    html += '<label for="tie_home_cats['+ nextCell +'][box_navigate_url]">';
+	html += '<span>Box Button Navigator Url:</span>';
+	html += '<input id="tie_home_cats['+ nextCell +'][box_navigate_url]"';
+	html += 'name="tie_home_cats['+ nextCell +'][box_navigate_url]"';
+	html += 'placeholder="http://abc.com"';
+	html += 'value=""';
+	html += 'type="text" />';
+    html += '</label>';
+
+    html += '<label for="tie_home_cats['+ nextCell +'][box_background_url]">';
+	html += '<span>Box custom background Url:</span>';
+	html += '<input id="tie_home_cats['+ nextCell +'][box_background_url]"';
+	html += 'name="tie_home_cats['+ nextCell +'][box_background_url]"';
+	html += 'placeholder="http://abc.com/images/a.png"';
+	html += 'value=""';
+	html += 'type="text" />';
+	html += '<p class="tie_message_hint">Get Url by access <a target="_blank" href="/wp-admin/media-new.php">Media</a> and upload image(1920x600)px</p>';
+    html += '</label>';
+
+	html += builderFooter(nextCell, 'custom');
 	return html;
 }
 
@@ -424,6 +495,12 @@ jQuery(document).ready(function() {
 		nextCell ++ ;
 	});
 
+	// For Custom box
+	jQuery("#add-custom").click(function() {
+		jQuery('#cat_sortable').append(builderCustomBox (boxTitle = 'Custom box', nextCell) );
+		jQuery('#listItem_'+ nextCell).hide().fadeIn();
+		nextCell ++ ;
+	});
 
 	// Toggle open/Close
 	jQuery(document).on("click", ".toggle-open" , function(){
