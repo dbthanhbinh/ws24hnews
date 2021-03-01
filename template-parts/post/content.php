@@ -4,7 +4,7 @@
 	$isGrid = (isset($args['isGrid']) && $args['isGrid']) ? $args['isGrid'] : false;
 	$cols = (isset($args['cols']) && $args['cols']) ? $args['cols'] : DISPLAY_COLS_NUMBER;
 	$layout = (isset($args['layout']) && $args['layout']) ? $args['layout'] : LAYOUT_RIGHT_SIDEBAR;
-	
+	$content_type = (isset($args['content_type']) && $args['content_type']) ? $args['content_type'] : null;
 	$tagHeader = 'h2';
 	$cardColClass = getColsLayout($isGrid, $cols);
 ?>
@@ -20,9 +20,9 @@
 	<div class="entry-content">
 		<header class="entry-header">
 			<?php
-				if ((isset($content_type) && $content_type == 'related')) $tagHeader = 'h4';
-				elseif(is_single()) $tagHeader = 'h1';
+				if(is_single()) $tagHeader = 'h1';
 				elseif (is_front_page() && is_home()) $tagHeader = 'h4';
+				if ((isset($content_type) && $content_type == 'related')) $tagHeader = 'h6';
 				the_title('<'.$tagHeader.' class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></'.$tagHeader.'>');
 			?>
 		</header>

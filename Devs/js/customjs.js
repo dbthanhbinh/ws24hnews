@@ -80,4 +80,33 @@ jQuery(document).ready(function ($) {
         }
     });
 
+
+    // Home animated
+    //Animate fade in left
+    jQuery('.animate-fadeInLeft, .fadeInLeft').bind('inview', function (event, visible) {
+        if (visible == true) {
+            jQuery(this).addClass("animated fadeInLeft");
+        } else {
+            jQuery(this).removeClass("animated fadeInLeft");
+        }
+    });
+
+    //Animate fade in right
+    jQuery('.animate-fadeInRight, .fadeInRight').bind('inview', function (event, visible) {
+        if (visible == true) {
+            jQuery(this).addClass("animated fadeInRight");
+        } else {
+            jQuery(this).removeClass("animated fadeInRight");
+        }
+    });
+
+    //Animate fade in right
+    jQuery('.animate-fadeInUp').bind('inview', function (event, visible) {
+        if (visible == true) {
+            jQuery(this).addClass("animated fadeInUp");
+        } else {
+            jQuery(this).removeClass("animated fadeInUp");
+        }
+    });
+
 });

@@ -32,7 +32,7 @@ if($showBox == 'y') {
         <div class="container">
             <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 offset-md-1">
                 <div class="row">
-                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 left-custom-box">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 left-custom-box animate-fadeInLeft">
                         <?php if($showTitle == 'y'){?>
                         <div class="header-section">
                             <h3> <?= $boxTitle ?>
@@ -41,7 +41,7 @@ if($showBox == 'y') {
                         </div>
                         <?php }?>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 right-custom-box">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 right-custom-box animate-fadeInRight">
                         <?php if($showDescription == 'y'){?>
                             <div class="custom-box-des"> <?= $description ?> </div>
                         <?php } ?>

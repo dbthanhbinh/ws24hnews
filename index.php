@@ -12,7 +12,7 @@
     <?php } ?>
 
     <!-- <div class="<?= mainLayoutClass() ?>"> -->
-    <div>
+    <div class="home-main-content">
         <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
         <?php
             if(function_exists('tie_get_option')

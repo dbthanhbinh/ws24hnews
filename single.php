@@ -93,7 +93,7 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <header class="entry-header">
-                                    <h3 class="header-title"><?= getTranslateByKey('other_posts') ?></h3>
+                                    <h5 class="header-title"><?= getTranslateByKey('other_posts') ?></h5>
                                 </header>
                             </div>
                         </div>
@@ -127,6 +127,7 @@
                                 while( $my_query->have_posts() ) {
                                     $my_query->the_post();
                                     $content_type = 'related';
+                                    $argGrid['content_type'] = $content_type;
                                     get_template_part('template-parts/post/content'.$contentFormat, get_post_format(), $argGrid);
                                 }
                             }
