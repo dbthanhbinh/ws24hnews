@@ -6,6 +6,7 @@
                 array( 	"name" => "Home page displays",
                         "id" => "on_home",
                         "type" => "radio",
+                        "std" => "latest",
                         "options" => array( "latest"=>"Latest posts - Blog Layout" ,
                                             "boxes"=>" News Boxes - use Home Builder" )));
         ?>

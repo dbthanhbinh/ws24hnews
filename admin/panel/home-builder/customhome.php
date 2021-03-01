@@ -1,6 +1,6 @@
 <h2>Custom Home Tempate</h2> <?php echo $save ?>
-
 <?php
+require('defaultVal.php');
 for($g = 1; $g<=2; $g++){
     ?>
     <div class="tiepanel-item">
@@ -14,7 +14,8 @@ for($g = 1; $g<=2; $g++){
                             "id" => $group . "_upload_big",
                             "help" => "Upload a big image, or enter URL to an image if it is already uploaded. the theme default big image gets applied if the input field is left blank.",
                             "type" => "upload",
-                            "extra_text" => 'size (MAX) : 190px x 60px'));
+                            "std" => $defaultBigImg,
+                            "extra_text" => 'size (MAX) : 800px x 830px'));
             }
             
             $max = 6;
@@ -25,11 +26,14 @@ for($g = 1; $g<=2; $g++){
                     array(	"name" => "Group slogan ",
                             "id" => $group . "_groupslogan",
                             "help" => "e.g. sub slogan title",
-                            "type" => "text"));
+                            "type" => "text",
+                            "std" => $_groupslogan
+                        ));
                 tie_options(
                     array(	"name" => "Group text view all ",
                             "id" => $group . "_groupviewall",
                             "help" => "e.g. All services",
+                            "std" => $_groupviewall,
                             "type" => "text"));
                 tie_options(
                     array(	"name" => "Group URL view all",
@@ -39,17 +43,23 @@ for($g = 1; $g<=2; $g++){
             }
 
             for ($i=1; $i<=$max; $i++){
+                $imgUrl = isset($defaultGroup2Img['_itemImg_'.$i]) ? $defaultGroup2Img['_itemImg_'.$i] : '';
+                if($g == 2) {
+                    $imgUrl = isset($defaultGroup1Img['_itemImg_'.$i]) ? $defaultGroup1Img['_itemImg_'.$i] : '';
+                } 
                 echo '<br/>';
                 tie_options(
                     array(	"name" => "Item Image " .$i,
                             "id" => $group . "_upload_item_".$i,
                             "help" => "Upload a item image",
                             "type" => "upload",
-                            "extra_text" => 'size (MAX) : 190px x 60px'));
+                            "std" => $imgUrl,
+                            "extra_text" => 'size (MAX) : 350px x 350px'));
                 tie_options(
                     array(	"name" => "Item title " . $i,
                             "id" => $group . "_title_item_".$i,
                             "help" => "e.g. Item title",
+                            "std" => isset($defaultItemVal['_itemTitle_'.$i]) ? $defaultItemVal['_itemTitle_'.$i] : '',
                             "type" => "text"));
                 tie_options(
                     array(	"name" => "Item URL " . $i,
@@ -59,6 +69,7 @@ for($g = 1; $g<=2; $g++){
                 tie_options(
                     array(	"name" => "Item description " . $i,
                             "id" => $group . "_description_item_".$i,
+                            "std" => isset($defaultItemVal['_itemDes_'.$i]) ? trim($defaultItemVal['_itemDes_'.$i]) : '',
                             "type" => "textarea"));
             }		
         ?>

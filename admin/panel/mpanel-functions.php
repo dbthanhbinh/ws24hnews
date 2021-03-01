@@ -377,18 +377,22 @@ function tie_options($value){
 		
 		case 'textarea':
 		?>
-			<textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3" tabindex="4"><?php echo tie_get_option( $value['id'] );  ?></textarea>
+			<textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3"><?php echo tie_get_option($value['id'], $value['std']);  ?></textarea>
 		<?php
 		break;
 
 		case 'upload':
+			$dfImg = tie_get_option($value['id']) ? tie_get_option($value['id']) : $value['std'];
 		?>
-				<input id="<?php echo $value['id']; ?>" class="img-path" type="text" size="56" style="direction:ltr; text-laign:left" name="tie_options[<?php echo $value['id']; ?>]" value="<?php echo tie_get_option($value['id']); ?>" />
+				<input id="<?php echo $value['id']; ?>" class="img-path" type="text" size="56" style="direction:ltr; text-laign:left"
+					name="tie_options[<?php echo $value['id']; ?>]"
+					value="<?php echo $dfImg; ?>" />
+
 				<input id="upload_<?php echo $value['id']; ?>_button" type="button" class="small_button" value="Upload" />
 				<?php if( isset( $value['extra_text'] ) ) : ?><span class="extra-text"><?php echo $value['extra_text'] ?></span><?php endif; ?>
 
-				<div id="<?php echo $value['id']; ?>-preview" class="img-preview" <?php if(!tie_get_option( $value['id'] )) echo 'style="display:none;"' ?>>
-					<img src="<?php if(tie_get_option( $value['id'] )) echo tie_get_option( $value['id'] ); else echo get_template_directory_uri().'/admin/panel/images/spacer.png'; ?>" alt="" />
+				<div id="<?php echo $value['id']; ?>-preview" class="img-preview" <?php if(!$dfImg) echo 'style="display:none;"' ?>>
+					<img src="<?php echo $dfImg; ?>" alt="" />
 					<a class="del-img" title="Delete"></a>
 				</div>
 		<?php

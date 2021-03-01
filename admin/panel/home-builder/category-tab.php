@@ -1,12 +1,14 @@
 <div class="tiepanel-item">
     <h3>Categories Tabs Box</h3>            
     <?php
+    require('defaultVal.php');
     tie_options(
         array(	"name" => "Category Tab Big Image",
                 "id" => "home_tabs_big_image",
                 "help" => "Upload a big image, or enter URL to an image if it is already uploaded. the theme default big image gets applied if the input field is left blank.",
                 "type" => "upload",
-                "extra_text" => 'size (MAX) : 190px x 60px'));
+                "std" => $tabTg,
+                "extra_text" => 'size (MAX) : 500px x 500px'));
     tie_options(
         array(	"name" => "Category Tab order ",
                 "id" => "home_tabs_order",
@@ -21,16 +23,19 @@
         array(	"name" => "Category tab title",
                 "id" => "home_tabs_box_title",
                 "help" => "e.g. Category tab title",
+                "std" => $tabTitle,
                 "type" => "text"));
     tie_options(
         array(	"name" => "Category tab subtitle",
                 "id" => "home_tabs_box_subtitle",
                 "help" => "e.g. Category tab subtitle",
+                "std" => $tabSubTitle,
                 "type" => "text"));
     tie_options(
         array(	"name" => "Category tab description",
                 "id" => "home_tabs_description",
                 "help" => "e.g. Category tab description",
+                "std" => $tabDes,
                 "type" => "textarea"));
                 
         if( tie_get_option('home_tabs') )

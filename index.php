@@ -39,11 +39,13 @@
                     'layout' => 'full'
                 ];
                 echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
+                echo '<div class="container">';
                 while ( have_posts() ) :
                     the_post();
                     get_template_part('template-parts/post/content', '', $args);
                     $p++;
                 endwhile;
+                echo '</div>';
                 echo '</div>';
             }
         ?>
