@@ -20,8 +20,8 @@
         <?php
           if (have_posts()) :
               $pos = 1;
-              $archive_display = tie_get_option('archive_display', ARCHIVE_DISPLAY_AS);
-              $archive_cols = tie_get_option('archive_cols', ARCHIVE_DISPLAY_COLS);
+              $archive_display = tie_get_option('archive_display');
+              $archive_cols = tie_get_option('archive_cols');
 
               $args = [
                 'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,

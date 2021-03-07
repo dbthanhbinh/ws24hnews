@@ -15,7 +15,7 @@ if($customClient)
 require_once ('category-options-feature.php');
 require_once ('post-options.php');	
 // require_once ('notifier/update-notifier.php');
-// require_once ('importer/tie-importer.php');
+require_once ('importer/tie-importer.php');
 
 // Custom Admin Bar Menus
 function tie_admin_bar() {

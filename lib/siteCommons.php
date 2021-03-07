@@ -3,10 +3,21 @@
 // Get Theme Options
 /*-----------------------------------------------------------------------------------*/
 function tie_get_option($name, $default = null) {
-	$get_options = get_option( 'tie_options' );
+	$get_options = get_option('tie_options');
 	if( !empty( $get_options[$name] ))
 		return $get_options[$name];
 	return $default ? $default : NULL;
+}
+
+// for some field has init data when  get_option('tie_options') = null in the first setup
+function tie_get_option_init($name, $default = null) {
+	$get_options = get_option('tie_options');
+    if(empty($get_options))
+        return $default ? $default : NULL;
+
+	if(!empty( $get_options[$name]))
+		return $get_options[$name];
+	return false;
 }
 
 class menu_walker extends Walker_Nav_Menu {

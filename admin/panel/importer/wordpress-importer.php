@@ -103,7 +103,7 @@ class WP_Import extends WP_Importer {
 	 */
 	function import( $file ) {
 		add_filter( 'import_post_meta_key', array( $this, 'is_valid_meta_key' ) );
-		add_filter( 'http_request_timeout', array( &$this, 'bump_request_timeout' ) );
+		add_filter( 'http_request_timeout', array( $this, 'bump_request_timeout' ) );
 
 		$this->import_start( $file );
 
@@ -1073,8 +1073,8 @@ class WP_Import extends WP_Importer {
 	 * Added to http_request_timeout filter to force timeout at 60 seconds during import
 	 * @return int 60
 	 */
-	function bump_request_timeout() {
-		return 60;
+	public function bump_request_timeout( $val ) {
+		return 180;
 	}
 
 	// return the difference in length between two strings

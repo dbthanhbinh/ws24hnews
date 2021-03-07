@@ -129,7 +129,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Enable Slideshow
-    $wp_customize->add_setting('show_main_slideshow', ['default' => 0]);
+    $wp_customize->add_setting('show_main_slideshow', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_main_slideshow',
     array(
         'label' => 'Show Slide show',

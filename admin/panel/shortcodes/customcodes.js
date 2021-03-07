@@ -194,15 +194,16 @@
 			});
   			
 		},
-		getInfo : function() {
-			return {
-				longname : "TieLabs Shortcodes",
-				author : 'TieLabs',
-				authorurl : 'http://www.tielabs.com/',
-				infourl : 'http://www.tielabs.com/',
-				version : "1.0"
-			};
-		}
+		///// will remove
+		// getInfo : function() {
+		// 	return {
+		// 		longname : "TieLabs Shortcodes",
+		// 		author : 'TieLabs',
+		// 		authorurl : 'http://www.tielabs.com/',
+		// 		infourl : 'http://www.tielabs.com/',
+		// 		version : "1.0"
+		// 	};
+		// }
 	});
 	tinymce.PluginManager.add('tieShortCodes', tinymce.plugins.Addshortcodes);	
 	

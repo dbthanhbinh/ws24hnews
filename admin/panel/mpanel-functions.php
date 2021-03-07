@@ -9,8 +9,8 @@ function tie_admin_notices (){
 	if ( get_option('tie_active') == 4.1 && isset( $_GET['page'] ) && $_GET['page'] == 'panel' && !get_user_meta( $userid, 'ignore_sample_error_notice2' ) ) {
 		echo '<br />
 			<div class="updated" style="width:790px; margin:0 auto; padding:0 10px; overflow:hidden;">
-				<p style="float:left;"><strong>If You Have Any Issues with Sahifa v4.0 .. </strong>
-				<a target="_blank" href="http://themes.tielabs.com/docs/sahifa/sahifa4.htm">Please Check Sahifa v4.0 FAQ .</a></p>
+				<p style="float:left;"><strong>If You Have Any Issues with ws24h v1.0 .. </strong>
+				<a target="_blank" href="http://webseo24h.com/docs/ws24h/sahifa4.htm">Please Check Sahifa v4.0 FAQ .</a></p>
 				<div class="tie-pointer-buttons"><a class="close" href="admin.php?page=panel&dismiss_me=yes">Dismiss</a></div>
 			</div>';
 	}
@@ -121,31 +121,6 @@ function tie_replace_thickbox_text($translated_text, $text, $domain) {
     }  
     return $translated_text;  
 }  
-	
-
-/*-----------------------------------------------------------------------------------*/
-# get Google Fonts
-/*-----------------------------------------------------------------------------------*/
-// require ('google-fonts.php');
-// $google_font_array = json_decode ($google_api_output,true) ;
-		
-// $options_fonts=array();
-// $options_fonts[''] = "Default Font" ;
-// $fontID = 0;
-// foreach ($google_font_array as $item) {
-// 	$fontID++;
-// 	$variants='';
-// 	$variantCount=0;
-// 	foreach ($item['variants'] as $variant) {
-// 		$variantCount++;
-// 		if ($variantCount>1) { $variants .= '|'; }
-// 		$variants .= $variant;
-// 	}
-// 	$variantText = ' (' . $variantCount . ' Varaints' . ')';
-// 	if ($variantCount <= 1) $variantText = '';
-// 	$options_fonts[ $item['family'] . ':' . $variants ] = $item['family']. $variantText;
-// }
-
 
 /*-----------------------------------------------------------------------------------*/
 # Clean options before store it in DB
@@ -153,7 +128,6 @@ function tie_replace_thickbox_text($translated_text, $text, $domain) {
 function tie_clean_options(&$value) {
   $value = htmlspecialchars(stripslashes($value));
 }
-
 	
 /*-----------------------------------------------------------------------------------*/
 # Options Array
@@ -197,8 +171,7 @@ function tie_save_settings ( $data , $refresh = 0 ) {
 	if( $refresh == 2 )  die('2');
 	elseif( $refresh == 1 )	die('1');
 }
-	
-	
+		
 /*-----------------------------------------------------------------------------------*/
 # Save Options
 /*-----------------------------------------------------------------------------------*/
@@ -208,7 +181,7 @@ function tie_save_ajax() {
 	$data = $_POST;
 	$refresh = 1;
 
-	if( !empty( $data['tie_import'] ) ){
+	if( !empty($data['tie_import']) ){
 		$refresh = 2;
 		$data = unserialize(base64_decode( $data['tie_import'] ));
 	}
@@ -226,17 +199,17 @@ function tie_add_admin() {
 	$icon = get_template_directory_uri().'/admin/panel/images/general.png';
 	add_menu_page(THEME_NAME.' Settings', THEME_NAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
 	$theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
-	// add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
-	// add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
-	//add_submenu_page('panel','Support', 'Support','switch_themes', 'support' , 'tie_get_support');
+	add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
+	add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
+	add_submenu_page('panel','Support', 'Support','switch_themes', 'support' , 'tie_get_support');
 
 
 	function tie_get_support(){
-		echo "<script type='text/javascript'>window.location='http://support.tielabs.com/';</script>";
+		echo "<script type='text/javascript'>window.location='http://webseo24h.com/helps';</script>";
 	}
 	
 	function redirect_docs(){
-		global $docs_url;
+		$docs_url = 'http://webseo24h.com/docs';
 		echo "<script type='text/javascript'>window.location='".$docs_url."';</script>";
 	}
 
@@ -322,7 +295,11 @@ function tie_options($value){
 	switch ( $value['type'] ) {
 	
 		case 'text': ?>
-			<input  name="tie_options[<?php echo $value['id']; ?>]" id="<?php  echo $value['id']; ?>" type="text" value="<?php echo tie_get_option($value['id']) ? tie_get_option($value['id']) : (isset($value['std']) ? $value['std'] : ''); ?>" />
+			<input  name="tie_options[<?php echo $value['id']; ?>]"
+				id="<?php  echo $value['id']; ?>"
+				type="text"
+				value="<?php echo tie_get_option_init($value['id'], $value['std']); ?>" />
+
 			<?php
 				if( $value['id']=="slider_tag" || $value['id']=="breaking_tag"){
 				$tags = get_tags('orderby=count&order=desc&number=50'); ?>
@@ -336,13 +313,22 @@ function tie_options($value){
 		<?php 
 		break;
 
-		case 'arrayText':  $currentValue = tie_get_option( $value['id'] );?>
-			<input  name="tie_options[<?php echo $value['id']; ?>][<?php echo $value['key']; ?>]" id="<?php  echo $value['id']; ?>[<?php echo $value['key']; ?>]" type="text" value="<?php echo $currentValue[$value['key']] ?>" />	
+		case 'arrayText': 
+			$currentValue = tie_get_option_init($value['id'], $value['std']);
+			?>
+			<input  name="tie_options[<?php echo $value['id']; ?>][<?php echo $value['key']; ?>]"
+				id="<?php  echo $value['id']; ?>[<?php echo $value['key']; ?>]"
+				type="text"
+				value="<?php echo $currentValue[$value['key']] ?>" />	
 		<?php 
 		break;
 
 		case 'short-text': ?>
-			<input style="width:50px" name="tie_options[<?php echo $value['id']; ?>]" id="<?php  echo $value['id']; ?>" type="text" value="<?php echo tie_get_option( $value['id']) ? tie_get_option( $value['id']) : (isset($value['std']) ? $value['std'] : ''); ?>" />
+			<input style="width:50px"
+				name="tie_options[<?php echo $value['id']; ?>]"
+				id="<?php  echo $value['id']; ?>"
+				type="text"
+				value="<?php echo tie_get_option_init($value['id'], $value['std']); ?>" />
 		<?php 
 		break;
 		
@@ -354,22 +340,24 @@ function tie_options($value){
 
 
 		case 'radio':
+			$radioVal = tie_get_option_init($value['id'], $value['std']);
 		?>
 			<div style="float:left; width: 295px;">
 				<?php foreach ($value['options'] as $key => $option) { ?>
 				<label style="display:block; margin-bottom:8px;">
 					<input name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="radio" value="<?php echo $key ?>" 
-						<?php if ((tie_get_option($value['id']) && tie_get_option($value['id']) == $key) || (isset($value['std']) && $value['std'] == $key)) { echo ' checked="checked"' ; } ?>> <?php echo $option; ?></label>
+						<?php if ($radioVal == $key) { echo ' checked="checked"' ; } ?>> <?php echo $option; ?></label>
 				<?php } ?>
 			</div>
 		<?php
 		break;
 		
 		case 'select':
+			$selectedVal = tie_get_option_init($value['id'], $value['std']);
 		?>
 			<select name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>">
 				<?php foreach ($value['options'] as $key => $option) { ?>
-				<option value="<?php echo $key ?>" <?php if ( tie_get_option( $value['id'] ) == $key) { echo ' selected="selected"' ; } ?>><?php echo $option; ?></option>
+				<option value="<?php echo $key ?>" <?php if ( $selectedVal == $key) { echo ' selected="selected"' ; } ?>><?php echo $option; ?></option>
 				<?php } ?>
 			</select>
 		<?php
@@ -377,12 +365,12 @@ function tie_options($value){
 		
 		case 'textarea':
 		?>
-			<textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3"><?php echo tie_get_option($value['id'], $value['std']);  ?></textarea>
+			<textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3"><?php echo tie_get_option_init($value['id'], $value['std']);  ?></textarea>
 		<?php
 		break;
 
 		case 'upload':
-			$dfImg = tie_get_option($value['id']) ? tie_get_option($value['id']) : $value['std'];
+			$dfImg = tie_get_option_init($value['id'], $value['std']);
 		?>
 				<input id="<?php echo $value['id']; ?>" class="img-path" type="text" size="56" style="direction:ltr; text-laign:left"
 					name="tie_options[<?php echo $value['id']; ?>]"

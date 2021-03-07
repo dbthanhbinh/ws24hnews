@@ -1,119 +1,147 @@
 <?php
+function tie_clean_options_htmlspecialchars_decode(&$value){
+	$value = htmlspecialchars_decode($value);
+}
+
 function tie_set_demo_data(){
 	$theme_options = get_option( 'tie_options' );
+	
+	$localUrl = 'http://localhost/ws24h';
+	$currentUrl = site_url();
+	$unserializeData = '';
+	require('advanced.php');
+
+	if($advanced){
+		$importData = base64_decode($advanced);
+		if($importData){
+			$myImportData = str_replace($localUrl, $currentUrl, $importData);
+			if($myImportData){
+				$unserializeData = unserialize($myImportData);
+			}
+		}
+	}
+	
+	$default_data = null;
+	if( !empty($unserializeData) ){
+		array_walk_recursive( $unserializeData , 'tie_clean_options_htmlspecialchars_decode');
+		$default_data = $unserializeData;
+	}
+
+	tie_save_settings($default_data);
+	// update_option( 'tie_options' , $unserializeData);
 		
 	$cat1 = $cat2 = $cat3 = $cat4 = $cat5 =1;
-	$cat1 = get_cat_ID( 'Business' );
-	$cat2 =  get_cat_ID( 'Sports' );
-	$cat3 =  get_cat_ID( 'Technology' );
-	$cat4 =  get_cat_ID( 'Videos' );
-	$cat5 =  get_cat_ID( 'World' );
+	// $cat1 = get_cat_ID( 'Business' );
+	// $cat2 =  get_cat_ID( 'Sports' );
+	// $cat3 =  get_cat_ID( 'Technology' );
+	// $cat4 =  get_cat_ID( 'Videos' );
+	// $cat5 =  get_cat_ID( 'World' );
 	
-	$home_cats = array(
-		array(
-            'title' => 'Recent Posts',
-            'number' => 3,
-            'display' => 'default',
-            'pagi' => 'n',
-            'boxid' => 'recent_1777',
-            'type' => 'recent'
-		),
-		array(
-            'id' => $cat4,
-            'order' => 'latest',
-            'number' => 5,
-            'style' => '2c',
-            'type' => 'n'
-        ),
-		array(
-            'id' => $cat3,
-            'order' => 'latest',
-            'number' => 5,
-            'style' => '2c',
-            'type' => 'n'
-        ),
-		array(
-            'id' => $cat5,
-            'title' => 'Scrolling Box',
-            'number' => 8,
-            'boxid' => 's_11140',
-            'type' => 's'
-        ),
-		array(
-            'text' => '<a href="#" title="">
-				<img src="http://themes.tielabs.com/data/banners/tf_468x60_v1.gif" alt="">
-			</a>',
-            'type' => 'ads'
-        ),
-		array(
-            'id' => $cat1,
-            'title' => 'News In Picture',
-            'boxid' => 'news-pic_1775',
-            'type' => 'news-pic',
-            'style' => 'default'
-        ),
-		array(
-            'id' => $cat2,
-            'order' => 'latest',
-            'number' => 5,
-            'style' => '1c',
-            'type' => 'n'
-        ),
-		array(
-            'id' => $cat5,
-            'order' => 'latest',
-            'number' => 5,
-            'style' => 'li',
-            'type' => 'n'
-        ),
-		array(
-            'id' => $cat1,
-            'title' => 'Grid',
-            'boxid' => 'news-pic_11099',
-            'type' => 'news-pic',
-            'style' => 'row'
-        )
-	);
+	// $home_cats = array(
+	// 	array(
+    //         'title' => 'Recent Posts',
+    //         'number' => 3,
+    //         'display' => 'default',
+    //         'pagi' => 'n',
+    //         'boxid' => 'recent_1777',
+    //         'type' => 'recent'
+	// 	),
+	// 	array(
+    //         'id' => $cat4,
+    //         'order' => 'latest',
+    //         'number' => 5,
+    //         'style' => '2c',
+    //         'type' => 'n'
+    //     ),
+	// 	array(
+    //         'id' => $cat3,
+    //         'order' => 'latest',
+    //         'number' => 5,
+    //         'style' => '2c',
+    //         'type' => 'n'
+    //     ),
+	// 	array(
+    //         'id' => $cat5,
+    //         'title' => 'Scrolling Box',
+    //         'number' => 8,
+    //         'boxid' => 's_11140',
+    //         'type' => 's'
+    //     ),
+	// 	array(
+    //         'text' => '<a href="#" title="">
+	// 			<img src="http://themes.tielabs.com/data/banners/tf_468x60_v1.gif" alt="">
+	// 		</a>',
+    //         'type' => 'ads'
+    //     ),
+	// 	array(
+    //         'id' => $cat1,
+    //         'title' => 'News In Picture',
+    //         'boxid' => 'news-pic_1775',
+    //         'type' => 'news-pic',
+    //         'style' => 'default'
+    //     ),
+	// 	array(
+    //         'id' => $cat2,
+    //         'order' => 'latest',
+    //         'number' => 5,
+    //         'style' => '1c',
+    //         'type' => 'n'
+    //     ),
+	// 	array(
+    //         'id' => $cat5,
+    //         'order' => 'latest',
+    //         'number' => 5,
+    //         'style' => 'li',
+    //         'type' => 'n'
+    //     ),
+	// 	array(
+    //         'id' => $cat1,
+    //         'title' => 'Grid',
+    //         'boxid' => 'news-pic_11099',
+    //         'type' => 'news-pic',
+    //         'style' => 'row'
+    //     )
+	// );
 
-	$theme_options['social']['facebook'] = 'https://www.facebook.com/TieLabs';
-	$theme_options['social']['twitter'] = 'https://twitter.com/mo3aser';
-	$theme_options['social']['dribbble'] = 'http://dribbble.com/mo3aser';
-	$theme_options['social']['foursquare'] = 'https://foursquare.com/mo3aser';
-	$theme_options['social']['Pinterest'] = 'http://www.pinterest.com/mo3aser/';
-	$theme_options['social']['instagram'] = 'http://instagram.com/imo3aser';
+	// $theme_options['social']['facebook'] = 'https://www.facebook.com/TieLabs';
+	// $theme_options['social']['twitter'] = 'https://twitter.com/mo3aser';
+	// $theme_options['social']['dribbble'] = 'http://dribbble.com/mo3aser';
+	// $theme_options['social']['foursquare'] = 'https://foursquare.com/mo3aser';
+	// $theme_options['social']['Pinterest'] = 'http://www.pinterest.com/mo3aser/';
+	// $theme_options['social']['instagram'] = 'http://instagram.com/imo3aser';
 	
-	$theme_options['on_home'] = 'boxes';
-	$theme_options['footer_widgets'] = 'footer-4c';
-	$theme_options['slider_type'] = 'flexi';
-	$theme_options['slider_cat'] = array($cat1, $cat2, $cat3, $cat4, $cat5 );
-	$theme_options['banner_top'] = $theme_options['banner_bottom'] = true;
-	$theme_options['banner_top_img'] = $theme_options['banner_bottom_img'] = 'http://themes.tielabs.com/data/banners/sahifa-728.jpg';
-	$theme_options['banner_top_url'] = $theme_options['banner_bottom_url'] = 'http://themeforest.net/item/sahifa-responsive-wordpress-newsmagazineblog/2819356?ref=mo3aser';
+	// $theme_options['on_home'] = 'boxes';
+	// $theme_options['footer_widgets'] = 'footer-4c';
+	// $theme_options['slider_type'] = 'flexi';
+	// $theme_options['slider_cat'] = array($cat1, $cat2, $cat3, $cat4, $cat5 );
+	// $theme_options['banner_top'] = $theme_options['banner_bottom'] = true;
+	// $theme_options['banner_top_img'] = $theme_options['banner_bottom_img'] = 'http://themes.tielabs.com/data/banners/sahifa-728.jpg';
+	// $theme_options['banner_top_url'] = $theme_options['banner_bottom_url'] = 'http://themeforest.net/item/sahifa-responsive-wordpress-newsmagazineblog/2819356?ref=mo3aser';
 	
-	update_option( 'tie_home_cats' , $home_cats );
-	update_option( 'tie_options' , $theme_options );
+	// update_option( 'tie_home_cats' , $home_cats );
+	// update_option( 'tie_options' , $theme_options );
 
 	//Import Menus
-	$top_menu = get_term_by('name', 'top', 'nav_menu');
-	$main_menu = get_term_by('name', 'main', 'nav_menu');
+	$top_menu = get_term_by('name', 'footer', 'nav_menu');
+	$main_menu = get_term_by('name', 'primary', 'nav_menu');
 	set_theme_mod( 'nav_menu_locations' , array('top-menu' => $top_menu->term_id , 'primary' => $main_menu->term_id ) );
 	
 	
 	//Import Widgets
-	update_option('sidebars_widgets', '');
+	// update_option('sidebars_widgets', '');
 	
-	tie_addWidgetToSidebar( 'primary-widget-area' , 'counter-widget', 0, array('facebook' => 'https://www.facebook.com/TieLabs','youtube' => 'http://www.youtube.com/user/TEAMMESAI','vimeo' => 'http://vimeo.com/channels/kidproof'));
-	tie_addWidgetToSidebar( 'primary-widget-area', 'widget_tabs', 0);
-	tie_addWidgetToSidebar( 'primary-widget-area' , 'facebook-widget', 0, array('title' => 'Find us on Facebook', 'page_url' => 'https://www.facebook.com/TieLabs'));
-	tie_addWidgetToSidebar( 'primary-widget-area' , 'social', 0, array('title' => 'Social', 'tran_bg' => true, 'icons_size' => 32 ));
-	tie_addWidgetToSidebar( 'primary-widget-area' , 'youtube-widget', 0, array('title' => 'Subscribe to our Channel', 'page_url' => 'TEAMMESAI'));
-	tie_addWidgetToSidebar( 'primary-widget-area' , 'video-widget', 0, array('title' => ' Featured Video', 'youtube_video' => 'UjXi6X-moxE'));
-	tie_addWidgetToSidebar( 'primary-widget-area' , 'login-widget', 0, array('title' => ' Login'));
+	// tie_addWidgetToSidebar( 'primary-widget-area' , 'counter-widget', 0, array('facebook' => 'https://www.facebook.com/TieLabs','youtube' => 'http://www.youtube.com/user/TEAMMESAI','vimeo' => 'http://vimeo.com/channels/kidproof'));
+	// tie_addWidgetToSidebar( 'primary-widget-area', 'widget_tabs', 0);
+	// tie_addWidgetToSidebar( 'primary-widget-area' , 'facebook-widget', 0, array('title' => 'Find us on Facebook', 'page_url' => 'https://www.facebook.com/TieLabs'));
+	// tie_addWidgetToSidebar( 'primary-widget-area' , 'social', 0, array('title' => 'Social', 'tran_bg' => true, 'icons_size' => 32 ));
+	// tie_addWidgetToSidebar( 'primary-widget-area' , 'youtube-widget', 0, array('title' => 'Subscribe to our Channel', 'page_url' => 'TEAMMESAI'));
+	// tie_addWidgetToSidebar( 'primary-widget-area' , 'video-widget', 0, array('title' => ' Featured Video', 'youtube_video' => 'UjXi6X-moxE'));
+	// tie_addWidgetToSidebar( 'primary-widget-area' , 'login-widget', 0, array('title' => ' Login'));
 	
-	tie_addWidgetToSidebar( 'first-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Popular Posts', 'no_of_posts' => 5, 'thumb' => true , 'posts_order' => 'popular'));
-	tie_addWidgetToSidebar( 'second-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Random Posts', 'no_of_posts' => 5, 'thumb' => true , 'posts_order' => 'random'));
-	tie_addWidgetToSidebar( 'third-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Latest Posts', 'no_of_posts' => 5, 'thumb' => true ,  'posts_order' => 'latest'));
-	tie_addWidgetToSidebar( 'fourth-footer-widget-area' , 'comments_avatar-widget', 0, array('title' => 'Recent Comments', 'thumb' => true , 'no_of_comments' => 5, 'avatar_size' => 50));
+	// tie_addWidgetToSidebar( 'first-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Popular Posts', 'no_of_posts' => 5, 'thumb' => true , 'posts_order' => 'popular'));
+	// tie_addWidgetToSidebar( 'second-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Random Posts', 'no_of_posts' => 5, 'thumb' => true , 'posts_order' => 'random'));
+	// tie_addWidgetToSidebar( 'third-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Latest Posts', 'no_of_posts' => 5, 'thumb' => true ,  'posts_order' => 'latest'));
+	// tie_addWidgetToSidebar( 'fourth-footer-widget-area' , 'comments_avatar-widget', 0, array('title' => 'Recent Comments', 'thumb' => true , 'no_of_comments' => 5, 'avatar_size' => 50));
 
 }
 
