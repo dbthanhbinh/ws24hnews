@@ -178,11 +178,26 @@ function compressCustomThemeJs(cb) {
 }
 
 // ------------ For dev features -----------------------
-gulp.task('dev', gulp.series(buildSass, buildAdminSass, buildPanelSass, buildBootstrapSass, compressCustomThemeJs, watchTask));
+gulp.task('dev', gulp.series(
+        buildSass,
+        buildAdminSass,
+        buildPanelSass,
+        buildBootstrapSass,
+        compressCustomThemeJs,
+        watchTask
+    )
+);
 // End Dev
 
 // ------------ For build product -----------------------
-gulp.task('build', gulp.series(buildSassBuild, buildAdminSassBuild, buildPanelSassBuild, buildBootstrapSassBuild, compressCustomThemeJs));
+gulp.task('build', gulp.series(
+        buildSassBuild,
+        buildAdminSassBuild,
+        buildPanelSassBuild,
+        buildBootstrapSassBuild,
+        compressCustomThemeJs
+    )
+);
 
 
 // -------------------------------------------
@@ -209,8 +224,7 @@ function makeCleanDevelop() {
     del(targetDir+'/README.md', {force:true});
     del(targetDir+'/package.json', {force:true});
     del(targetDir+'/package-lock.json', {force:true});
-    del(targetDir+'/gulpfile.js', {force:true});
-    return;
+    return del(targetDir+'/gulpfile.js', {force:true});
 }
 
 // Test product
