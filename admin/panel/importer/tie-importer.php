@@ -28,104 +28,24 @@ function tie_set_demo_data(){
 	}
 
 	tie_save_settings($default_data);
-	// update_option( 'tie_options' , $unserializeData);
-		
-	$cat1 = $cat2 = $cat3 = $cat4 = $cat5 =1;
-	// $cat1 = get_cat_ID( 'Business' );
-	// $cat2 =  get_cat_ID( 'Sports' );
-	// $cat3 =  get_cat_ID( 'Technology' );
-	// $cat4 =  get_cat_ID( 'Videos' );
-	// $cat5 =  get_cat_ID( 'World' );
-	
-	// $home_cats = array(
-	// 	array(
-    //         'title' => 'Recent Posts',
-    //         'number' => 3,
-    //         'display' => 'default',
-    //         'pagi' => 'n',
-    //         'boxid' => 'recent_1777',
-    //         'type' => 'recent'
-	// 	),
-	// 	array(
-    //         'id' => $cat4,
-    //         'order' => 'latest',
-    //         'number' => 5,
-    //         'style' => '2c',
-    //         'type' => 'n'
-    //     ),
-	// 	array(
-    //         'id' => $cat3,
-    //         'order' => 'latest',
-    //         'number' => 5,
-    //         'style' => '2c',
-    //         'type' => 'n'
-    //     ),
-	// 	array(
-    //         'id' => $cat5,
-    //         'title' => 'Scrolling Box',
-    //         'number' => 8,
-    //         'boxid' => 's_11140',
-    //         'type' => 's'
-    //     ),
-	// 	array(
-    //         'text' => '<a href="#" title="">
-	// 			<img src="http://themes.tielabs.com/data/banners/tf_468x60_v1.gif" alt="">
-	// 		</a>',
-    //         'type' => 'ads'
-    //     ),
-	// 	array(
-    //         'id' => $cat1,
-    //         'title' => 'News In Picture',
-    //         'boxid' => 'news-pic_1775',
-    //         'type' => 'news-pic',
-    //         'style' => 'default'
-    //     ),
-	// 	array(
-    //         'id' => $cat2,
-    //         'order' => 'latest',
-    //         'number' => 5,
-    //         'style' => '1c',
-    //         'type' => 'n'
-    //     ),
-	// 	array(
-    //         'id' => $cat5,
-    //         'order' => 'latest',
-    //         'number' => 5,
-    //         'style' => 'li',
-    //         'type' => 'n'
-    //     ),
-	// 	array(
-    //         'id' => $cat1,
-    //         'title' => 'Grid',
-    //         'boxid' => 'news-pic_11099',
-    //         'type' => 'news-pic',
-    //         'style' => 'row'
-    //     )
-	// );
-
-	// $theme_options['social']['facebook'] = 'https://www.facebook.com/TieLabs';
-	// $theme_options['social']['twitter'] = 'https://twitter.com/mo3aser';
-	// $theme_options['social']['dribbble'] = 'http://dribbble.com/mo3aser';
-	// $theme_options['social']['foursquare'] = 'https://foursquare.com/mo3aser';
-	// $theme_options['social']['Pinterest'] = 'http://www.pinterest.com/mo3aser/';
-	// $theme_options['social']['instagram'] = 'http://instagram.com/imo3aser';
-	
-	// $theme_options['on_home'] = 'boxes';
-	// $theme_options['footer_widgets'] = 'footer-4c';
-	// $theme_options['slider_type'] = 'flexi';
-	// $theme_options['slider_cat'] = array($cat1, $cat2, $cat3, $cat4, $cat5 );
-	// $theme_options['banner_top'] = $theme_options['banner_bottom'] = true;
-	// $theme_options['banner_top_img'] = $theme_options['banner_bottom_img'] = 'http://themes.tielabs.com/data/banners/sahifa-728.jpg';
-	// $theme_options['banner_top_url'] = $theme_options['banner_bottom_url'] = 'http://themeforest.net/item/sahifa-responsive-wordpress-newsmagazineblog/2819356?ref=mo3aser';
-	
-	// update_option( 'tie_home_cats' , $home_cats );
-	// update_option( 'tie_options' , $theme_options );
 
 	//Import Menus
 	$top_menu = get_term_by('name', 'footer', 'nav_menu');
 	$main_menu = get_term_by('name', 'primary', 'nav_menu');
 	set_theme_mod( 'nav_menu_locations' , array('top-menu' => $top_menu->term_id , 'primary' => $main_menu->term_id ) );
 	
+	// Import theme mod section_contact
+	global $Customize;
+	$themeModInit = [];
+	if(count($Customize) > 0){
+		foreach ($Customize as $key => $val){
+			$themeModInit[$key] = $val;
+		}
+	}
+	
+	foreach($themeModInit as $k=>$v){
+		set_theme_mod($k, $v);
+	}
 	
 	//Import Widgets
 	// update_option('sidebars_widgets', '');
@@ -161,7 +81,7 @@ function tie_addWidgetToSidebar($sidebarSlug, $widgetSlug, $countMod, $widgetSet
 	update_option('widget_'.$widgetSlug, $newWidget);
 }
 
-function tie_demo_installer() { ?>  
+function tie_demo_installer() {?>  
 	<div id="icon-tools" class="icon32"><br></div>
 	<h2>Import Demo Data</h2>
 	<div style="background-color: #F5FAFD; margin:10px 0;padding: 10px;color: #0C518F;border: 3px solid #CAE0F3; claer:both; width:90%; line-height:18px;">
