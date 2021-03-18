@@ -48,8 +48,13 @@ function tie_set_demo_data(){
 	}
 	
 	//Import Widgets
-	// update_option('sidebars_widgets', '');
+	update_option('sidebars_widgets', '');
 	
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_socials', 0, array('title' => 'Liên kết mạng xã hội'));
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
+	tie_addWidgetToSidebar( 'footer-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
+	tie_addWidgetToSidebar( 'footer-3' , 'ws24h_socials', 0, array('title' => 'Liên kết mạng xã hội'));
+
 	// tie_addWidgetToSidebar( 'primary-widget-area' , 'counter-widget', 0, array('facebook' => 'https://www.facebook.com/TieLabs','youtube' => 'http://www.youtube.com/user/TEAMMESAI','vimeo' => 'http://vimeo.com/channels/kidproof'));
 	// tie_addWidgetToSidebar( 'primary-widget-area', 'widget_tabs', 0);
 	// tie_addWidgetToSidebar( 'primary-widget-area' , 'facebook-widget', 0, array('title' => 'Find us on Facebook', 'page_url' => 'https://www.facebook.com/TieLabs'));
@@ -65,10 +70,29 @@ function tie_set_demo_data(){
 
 }
 
+// function tie_addWidgetToSidebar($sidebarSlug, $widgetSlug, $countMod, $widgetSettings = array()){
+// 	$sidebarOptions = get_option('sidebars_widgets');
+// 	if(!isset($sidebarOptions[$sidebarSlug])){
+// 	$sidebarOptions[$sidebarSlug] = array('_multiwidget' => 1);
+// 	}
+// 	$newWidget = get_option('widget_'.$widgetSlug);
+// 	if(!is_array($newWidget))$newWidget = array();
+// 	$count = count($newWidget)+1+$countMod;
+// 	$sidebarOptions[$sidebarSlug][] = $widgetSlug.'-'.$count;
+
+// 	$newWidget[$count] = $widgetSettings;
+
+// 	update_option('sidebars_widgets', $sidebarOptions);
+// 	update_option('widget_'.$widgetSlug, $newWidget);
+// }
+
 function tie_addWidgetToSidebar($sidebarSlug, $widgetSlug, $countMod, $widgetSettings = array()){
 	$sidebarOptions = get_option('sidebars_widgets');
+	if(!$sidebarOptions)
+		$sidebarOptions = [];
+
 	if(!isset($sidebarOptions[$sidebarSlug])){
-	$sidebarOptions[$sidebarSlug] = array('_multiwidget' => 1);
+		$sidebarOptions[$sidebarSlug] = array('_multiwidget' => 1);
 	}
 	$newWidget = get_option('widget_'.$widgetSlug);
 	if(!is_array($newWidget))$newWidget = array();
