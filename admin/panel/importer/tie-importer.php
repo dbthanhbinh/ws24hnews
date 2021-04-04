@@ -30,9 +30,9 @@ function tie_set_demo_data(){
 	tie_save_settings($default_data);
 
 	//Import Menus
-	// $top_menu = get_term_by('name', 'footer', 'nav_menu');
-	// $main_menu = get_term_by('name', 'primary', 'nav_menu');
-	// set_theme_mod( 'nav_menu_locations' , array('top-menu' => $top_menu->term_id , 'primary' => $main_menu->term_id ) );
+	$footer = get_term_by('slug', 'footer-menu', 'nav_menu');
+	$primary = get_term_by('slug', 'primary-menu', 'nav_menu');
+	set_theme_mod( 'nav_menu_locations' , array('footer' => $footer->term_id , 'primary' => $primary->term_id ) );
 	
 	// Import theme mod section_contact
 	global $Customize;
@@ -54,12 +54,6 @@ function tie_set_demo_data(){
 	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
 	tie_addWidgetToSidebar( 'footer-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
 	tie_addWidgetToSidebar( 'footer-3' , 'ws24h_socials', 0, array('title' => 'Liên kết mạng xã hội'));
-
-
-
-
-
-
 
 	// tie_addWidgetToSidebar( 'primary-widget-area' , 'counter-widget', 0, array('facebook' => 'https://www.facebook.com/TieLabs','youtube' => 'http://www.youtube.com/user/TEAMMESAI','vimeo' => 'http://vimeo.com/channels/kidproof'));
 	// tie_addWidgetToSidebar( 'primary-widget-area', 'widget_tabs', 0);
@@ -133,7 +127,7 @@ function tie_demo_installer() {?>
 	</form>
 	<br />
 	<br />	
-<?php
+	<?php
 	if(  'demo-data' == $_REQUEST['action'] && check_admin_referer('tie-demo-code' , 'demononce')){
 		if ( !defined('WP_LOAD_IMPORTERS') ) define('WP_LOAD_IMPORTERS', true);
 			require_once ABSPATH . 'wp-admin/includes/import.php';
