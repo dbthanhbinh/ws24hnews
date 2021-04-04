@@ -27,6 +27,7 @@
                 <option value="y" <?php if ( (isset($cat['show_title']) && $cat['show_title']) == 'y') { echo ' selected="selected"' ; } ?>>Show</option>
             </select>
         </label>
+        <?= showLayoutDropdown($i, $cat, $defaultLayout) ?>
         <label for="tie_home_cats[<?php echo $i ?>][description]">
             <span>Box description :</span>
             <textarea style="direction:ltr; text-align:left"

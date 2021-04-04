@@ -1,3 +1,6 @@
+<?php
+require_once ('commons.php')
+?>
 <h2>Homepage</h2> <?php echo $save ?>				
     <div class="tiepanel-item">
         <h3>Home page displays</h3>
@@ -50,22 +53,27 @@
                         $cats = get_option( 'tie_home_cats' ) ;
                         $i=0;
                         if($cats){
-                            // print_r($cats);
+                            $defaultLayout = 'n';
                             foreach ($cats as $cat) { 
                                 $i++;
                                 if( $cat['type'] == 'recent' ) :
+                                    $defaultLayout = 'n';
                                     require('recent.php');
                                 ?>
                                 <?php elseif($cat['type'] == 'group-template') :
+                                    $defaultLayout = 'n';
                                     require('grouptemplate.php');
                                 ?>
                                 <?php elseif($cat['type'] == 'categories') :
+                                    $defaultLayout = 'n';
                                     require('categories.php');
                                 ?>
                                 <?php elseif( $cat['type'] == 'videos' ) :
+                                    $defaultLayout = 'n';
                                     require('videos.php');
                                 ?>
                                 <?php elseif( $cat['type'] == 'custom' ) :
+                                    $defaultLayout = 'y';
                                     require('custom.php');
                                 ?>
                                 <?php elseif( $cat['type'] == 'divider' ) : ?>

@@ -35,6 +35,9 @@
                 <option value="n" <?php if(isset($cat['show_title']) && $cat['show_title'] == 'n') { echo ' selected="selected"'; } ?>>Hidden</option>
             </select>
         </label>
+        
+        <?= showLayoutDropdown($i, $cat, $defaultLayout) ?>
+
         <label for="tie_home_cats[<?php echo $i ?>][description]">
             <span>Box description :</span>
             <textarea style="direction:ltr; text-align:left"

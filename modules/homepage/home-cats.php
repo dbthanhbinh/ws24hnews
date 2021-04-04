@@ -73,6 +73,7 @@ function get_home_videos($cat_data){
 	];
 
 	echo '<div class="section home-section animated video-list '.mainLayoutTemplate($args['isGrid']).'">';
+	echo '<div class="container"> <div class="row">';
 	showBoxTitle($boxTitle, $showTitle, $description, $showDescription);
 	
 	$postQuery = new WP_Query(['post_type' => 'custom-video', 'posts_per_page' => $numberPost]);
@@ -107,6 +108,7 @@ function get_home_videos($cat_data){
 	</div>
 	<?php
 	endif;
+	echo '</div></div>';
 	echo '</div>';
 }
 

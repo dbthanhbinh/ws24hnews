@@ -67,7 +67,7 @@ function panel_options() {
 				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
 				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
-				<!-- <li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li> -->
+				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
