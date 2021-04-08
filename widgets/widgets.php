@@ -20,9 +20,9 @@ unregister_widget('WP_Nav_Menu_Widget');
  */
 function ws24h_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Sidebar', 'ws24h' ),
+		'name'          => __( 'Main Sidebar', THEME_NAME ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'ws24h' ),
+		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', THEME_NAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -30,9 +30,9 @@ function ws24h_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Second Sidebar', 'ws24h' ),
+		'name'          => __( 'Second Sidebar', THEME_NAME ),
 		'id'            => 'sidebar-second',
-		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'ws24h' ),
+		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', THEME_NAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -40,9 +40,9 @@ function ws24h_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'ws24h' ),
+		'name'          => __( 'Footer 1', THEME_NAME ),
 		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -50,9 +50,9 @@ function ws24h_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'ws24h' ),
+		'name'          => __( 'Footer 2', THEME_NAME ),
 		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -60,9 +60,9 @@ function ws24h_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'ws24h' ),
+		'name'          => __( 'Footer 3', THEME_NAME ),
 		'id'            => 'footer-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -70,9 +70,9 @@ function ws24h_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'ws24h' ),
+		'name'          => __( 'Footer 4', THEME_NAME ),
 		'id'            => 'footer-4',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'ws24h' ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -84,6 +84,7 @@ add_action( 'widgets_init', 'ws24h_widgets_init' );
 //  We are include widgets here
 require_once 'widget-popular.php';
 require_once 'widget-video.php';
+require_once 'widget-fanpage.php';
 
 add_filter('get_search_form', 'new_search_button');
 function new_search_button($text) {
