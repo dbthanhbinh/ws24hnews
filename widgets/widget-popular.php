@@ -39,7 +39,6 @@ class ws24h_popular_widget extends WP_Widget
 		if($background_color) $args['before_title'] = str_replace( '<h2', '<h2 style="background:'.$background_color.'"', $args['before_title'] );
 		if($title_color) $args['before_title'] = str_replace( '<label>', '<label style="color:'.$title_color.'; border-color:'.$title_color.'">', $args['before_title'] );
 
-        $color_full = '';            
 		$before_widget = $args['before_widget'];
 		
         echo $before_widget; //$args['before_widget'];
@@ -64,14 +63,13 @@ class ws24h_popular_widget extends WP_Widget
 		  $excerpt_hidden = $instance['excerpt_hidden'];
         $thumb = $instance['thumb'];
         $thumb_full = $instance['thumb_full'];
-        $comment = $instance['comment']; 
         
         /*------- Code display front-end ------*/
         $exclude_post = get_the_ID();
         if(isset($instance['latest']) && $instance['latest'])
             $lastPosts = get_posts('category='.$cats_id.'&exclude='.$exclude_post.'&no_found_rows=1&suppress_filters=0&numberposts='.$no_of_posts);
         else    
-            $lastPosts = get_posts('category='.$cats_id.'&meta_key='.$wpdb->prefix.'showpostview&exclude='.$exclude_post.'&orderby=meta_value_num&order=DESC&no_found_rows=1&suppress_filters=0&numberposts='.$no_of_posts);
+            $lastPosts = get_posts('category='.$cats_id.'&exclude='.$exclude_post.'&orderby=meta_value_num&order=DESC&no_found_rows=1&suppress_filters=0&numberposts='.$no_of_posts);
     	        
         if(!empty($lastPosts)) {
             echo '<ul class="widget-box-list">';
@@ -87,19 +85,19 @@ class ws24h_popular_widget extends WP_Widget
 					<?php 
 					if($thumb=='true' && has_post_thumbnail()):
 					?>
-					<div class="<?= $thumb_full=='true' ? 'item-thumb-full' : 'item-thumb' ?>">
-						<a href="<?php the_permalink();?>" title="<?php the_title();?>">
-							<?php the_post_thumbnail('thumbnail');?>
-						</a>
-					</div>
+						<div class="<?= $thumb_full=='true' ? 'item-thumb-full' : 'item-thumb' ?>">
+							<a href="<?php the_permalink();?>" title="<?php the_title();?>">
+								<?php the_post_thumbnail($thumb_full=='true' ? 'medium' : 'thumbnail');?>
+							</a>
+						</div>
 					<?php endif;?>
 					<?php if($excerpt_hidden=='true'){}else{?>
-					<div class="item-lead">
-					    <h5 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
-    						<?php the_title();?> </a>
-    					</h5>
-						<?php echo get_excerpt($excerpt_len);?>
-					</div>
+						<div class="item-lead">
+							<h5 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
+								<?php the_title();?> </a>
+							</h5>
+							<?php echo get_excerpt($excerpt_len);?>
+						</div>
 					<?php }?>
 				</li>
 				<?php
@@ -128,68 +126,106 @@ class ws24h_popular_widget extends WP_Widget
 			$categories[$pn_cat->cat_ID] = $pn_cat->cat_name;
 		}
 		
-		$defaults = array(
-			'background_color' => '#f1f1f1',
-			'title_color' => '#000000'
-        );
+		// include init values
+		require ('defined.php');
+
         // Merge the user-selected arguments with the defaults
-        $instance = wp_parse_args( (array) $instance, $defaults );
+        $instance = wp_parse_args( (array) $instance, $defaultsColors );
 		?>
         <script type='text/javascript'>
             jQuery(document).ready(function($) {
-                $('.set_background_color').wpColorPicker();
-				$('.set_title_color').wpColorPicker();
+				<?php
+				foreach($defaultItems as $k=>$item){
+					?>
+					$('.<?= $item['class'] ?>').wpColorPicker();	
+					<?php
+				}	
+				?>
             });
 		</script>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Header background color', THEME_NAME ); ?></label>
-            <input class="set_background_color" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />
-		</p>
-		<p>
-            <label for="<?php echo $this->get_field_id( 'title_color' ); ?>"><?php _e( 'Title color', THEME_NAME ); ?></label>
-            <input class="set_title_color" type="text" id="<?php echo $this->get_field_id( 'title_color' ); ?>" name="<?php echo $this->get_field_name( 'title_color' ); ?>" value="<?php echo esc_attr( $instance['title_color'] ); ?>" />
-		</p>
-		
+		<p><label><strong>For header style</strong></label></p>
+		<?php
+		foreach($defaultItems as $k=>$item){
+			$style = 'width:110px; float: left;';
+			?>
+			<p>
+				<label style="<?= $style ?>" for="<?= $this->get_field_id($k) ?>"><?= $item['title'] ?></label>
+				<input class="<?= $item['class'] ?>"
+					type="text"
+					id="<?= $this->get_field_id($k) ?>"
+					name="<?= $this->get_field_name($k) ?>"
+					value="<?= esc_attr($instance[$k]) ?>" />
+			</p>
+			<?php
+		}
+		?>
+				
 		<p>
     		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEME_NAME ); ?></label> 
-    		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+    		<input class="widefat"
+				id="<?php echo $this->get_field_id( 'title' ); ?>"
+				name="<?php echo $this->get_field_name( 'title' ); ?>"
+				type="text"
+				value="<?php echo esc_attr( $title ); ?>">
 		</p>
         <p>
 			<?php if(isset($instance['cats_id'])) $cats_id = explode ( ',' , $instance['cats_id'] ) ; ?>
-			<label for="<?php echo $this->get_field_id( 'cats_id' ); ?>"><?php echo  __('Category : (keep Ctrl and choosen multiple)',THEME_NAME); ?></label>
+			<label for="<?php echo $this->get_field_id( 'cats_id' ); ?>"><?php echo  __('From category : (keep Ctrl and choosen multiple)',THEME_NAME); ?></label>
 			<select class="widefat" multiple="multiple" id="<?php echo $this->get_field_id( 'cats_id' ); ?>[]" name="<?php echo $this->get_field_name( 'cats_id' ); ?>[]">
-				<?php foreach ($categories as $key => $option) { ?>
-				<option value="<?php echo $key ?>" <?php if (isset($cats_id) && in_array( $key , $cats_id ) ) { echo ' selected="selected"' ; } ?>><?php echo $option; ?></option>
-				<?php } ?>
+				<?php
+				$pos = 1;
+				foreach ($categories as $key => $option) {
+					if(!$cats_id && $pos==1){
+						$cats_id = [$key];
+					}
+					?>
+					<option value="<?php echo $key ?>" <?php if (isset($cats_id) && in_array( $key , $cats_id ) ) { echo ' selected="selected"' ; } ?>><?php echo $option; ?></option>
+				<?php
+				$pos++;
+				} ?>
 			</select>
 		</p>
         <p>
 			<label for="<?php echo $this->get_field_id( 'latest' ); ?>"><?php echo __('Latest news:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'latest' ); ?>" name="<?php echo $this->get_field_name( 'latest' ); ?>" value="true" <?php if(!empty($instance['latest']) && $instance['latest'] ) echo 'checked="checked"'; ?> type="checkbox" />
+			<input id="<?php echo $this->get_field_id( 'latest' ); ?>"
+				name="<?php echo $this->get_field_name( 'latest' ); ?>"
+				value="true" <?php if(!$instance['latest'] || (!empty($instance['latest']) && $instance['latest'])) echo 'checked="checked"'; ?>
+				type="checkbox" />
 		</p>
         <p>
 			<label for="<?php echo $this->get_field_id( 'excerpt_len' ); ?>"> <?php echo __('Excerpt Len to show:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'excerpt_len' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_len' ); ?>" value="<?php if(!empty($instance['excerpt_len'])) echo $instance['excerpt_len']; ?>" type="text" size="3" />
+			<input id="<?php echo $this->get_field_id( 'excerpt_len' ); ?>"
+				name="<?php echo $this->get_field_name( 'excerpt_len' ); ?>"
+				value="<?= !empty($instance['excerpt_len']) ? $instance['excerpt_len'] : 150 ?>"
+				type="text" size="3" />
 		</p>
         <p>
 			<label for="<?php echo $this->get_field_id( 'excerpt_hidden' ); ?>"><?php echo __('Hidden excerpt:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'excerpt_hidden' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_hidden' ); ?>" value="true" <?php if(!empty($instance['excerpt_hidden']) && $instance['excerpt_hidden'] ) echo 'checked="checked"'; ?> type="checkbox" />
+			<input id="<?php echo $this->get_field_id( 'excerpt_hidden' ); ?>"
+				name="<?php echo $this->get_field_name( 'excerpt_hidden' ); ?>"
+				value="true" <?php if(!empty($instance['excerpt_hidden']) && $instance['excerpt_hidden'] ) echo 'checked="checked"'; ?>
+				type="checkbox" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"> <?php echo __('Number of posts to show:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>" name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>" value="<?php if(!empty($instance['no_of_posts'])) echo $instance['no_of_posts']; ?>" type="text" size="3" />
+			<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"> <?php echo __('Number to show:',THEME_NAME);?> </label>
+			<input id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"
+				name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>"
+				value="<?= !empty($instance['no_of_posts']) ? $instance['no_of_posts'] : 5 ?>"
+				type="text" size="3" />
 		</p>
         <p>
 			<label for="<?php echo $this->get_field_id( 'thumb' ); ?>"><?php echo __('Show Thumbnail:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'thumb' ); ?>" name="<?php echo $this->get_field_name( 'thumb' ); ?>" value="true" <?php if( !empty($instance['thumb']) ) echo 'checked="checked"'; ?> type="checkbox" />
+			<input id="<?php echo $this->get_field_id( 'thumb' ); ?>"
+				name="<?php echo $this->get_field_name( 'thumb' ); ?>"
+				value="true" <?php if(!$instance['thumb'] || !empty($instance['thumb']) ) echo 'checked="checked"'; ?>
+				type="checkbox" />
 		</p>
         <p>
 			<label for="<?php echo $this->get_field_id( 'thumb_full' ); ?>"><?php echo __('Thumbnail Full:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'thumb_full' ); ?>" name="<?php echo $this->get_field_name( 'thumb_full' ); ?>" value="true" <?php if( !empty($instance['thumb_full']) ) echo 'checked="checked"'; ?> type="checkbox" />
-		</p>
-        <p>
-			<label for="<?php echo $this->get_field_id( 'comment' ); ?>"><?php echo __('Show comment count:',THEME_NAME);?> </label>
-			<input id="<?php echo $this->get_field_id( 'comment' ); ?>" name="<?php echo $this->get_field_name( 'comment' ); ?>" value="true" <?php if( !empty($instance['comment']) ) echo 'checked="checked"'; ?> type="checkbox" />
+			<input id="<?php echo $this->get_field_id( 'thumb_full' ); ?>"
+				name="<?php echo $this->get_field_name( 'thumb_full' ); ?>"
+				value="true" <?php if( !empty($instance['thumb_full']) ) echo 'checked="checked"'; ?>
+				type="checkbox" />
 		</p>
 		<?php 	}
 
@@ -208,6 +244,9 @@ class ws24h_popular_widget extends WP_Widget
 		$instance = array();
 		$instance['background_color'] = strip_tags( $new_instance['background_color'] );
 		$instance['title_color'] = strip_tags( $new_instance['title_color'] );
+		$instance['border_top_color'] = strip_tags( $new_instance['border_top_color'] );
+		$instance['span_color'] = strip_tags( $new_instance['span_color'] );
+		$instance['icon_color'] = strip_tags( $new_instance['icon_color'] );
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
         $instance['cats_id'] = implode(',' , $new_instance['cats_id']  );
         $instance['latest'] = strip_tags( $new_instance['latest'] );			
@@ -216,8 +255,6 @@ class ws24h_popular_widget extends WP_Widget
         $instance['no_of_posts'] = strip_tags( $new_instance['no_of_posts'] );
         $instance['thumb'] = strip_tags( $new_instance['thumb'] );
         $instance['thumb_full'] = strip_tags( $new_instance['thumb_full'] );
-        $instance['comment'] = strip_tags( $new_instance['comment'] );
-        $instance['color_full'] = strip_tags( $new_instance['color_full'] );
 		return $instance;
 	}	
 
