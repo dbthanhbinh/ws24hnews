@@ -4,6 +4,7 @@ function tie_clean_options_htmlspecialchars_decode(&$value){
 }
 
 function tie_set_demo_data(){
+	include TEMPLATEPATH . '/widgets/defined.php';
 	$theme_options = get_option( 'tie_options' );
 	
 	$localUrl = 'http://localhost/ws24h';
@@ -50,8 +51,24 @@ function tie_set_demo_data(){
 	//Import Widgets
 	update_option('sidebars_widgets', '');
 	
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_socials', 0, array('title' => 'Liên kết mạng xã hội'));
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_socials', 0, ['title' => 'Liên kết mạng xã hội']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_fanpage', 0, ['fanpage_url' => 'https://www.facebook.com/webseo24h']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_popular', 0, [
+		'title' => $defaultsValues['title'],
+		'background_color' => $defaultsValues['background_color'],
+		'title_color' => $defaultsValues['title_color'],
+		'border_top_color' => $defaultsValues['border_top_color'],
+		'span_color' => $defaultsValues['span_color'],
+		'icon_color' => $defaultsValues['icon_color'],
+		'cats_id' => $defaultsValues['cats_id'],
+		'latest' => $defaultsValues['latest'],
+		'excerpt_len' => $defaultsValues['excerpt_len'],
+		'excerpt_hidden' => $defaultsValues['excerpt_hidden'],
+		'no_of_posts' => $defaultsValues['no_of_posts'],
+		'thumb' => $defaultsValues['thumb'],
+		'thumb_full' => $defaultsValues['thumb_full']
+	]); // ws24h_contact
+	tie_addWidgetToSidebar( 'sidebar-1' , 'tag_cloud', 0, ['title' => 'Tags']);
 	tie_addWidgetToSidebar( 'footer-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
 	tie_addWidgetToSidebar( 'footer-3' , 'ws24h_socials', 0, array('title' => 'Liên kết mạng xã hội'));
 

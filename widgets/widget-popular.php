@@ -130,7 +130,7 @@ class ws24h_popular_widget extends WP_Widget
 		require ('defined.php');
 
         // Merge the user-selected arguments with the defaults
-        $instance = wp_parse_args( (array) $instance, $defaultsColors );
+        $instance = wp_parse_args( (array) $instance, $defaultsValues );
 		?>
         <script type='text/javascript'>
             jQuery(document).ready(function($) {
@@ -161,17 +161,19 @@ class ws24h_popular_widget extends WP_Widget
 		?>
 				
 		<p>
-    		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEME_NAME ); ?></label> 
+    		<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('Title:', THEME_NAME); ?></label> 
     		<input class="widefat"
-				id="<?php echo $this->get_field_id( 'title' ); ?>"
-				name="<?php echo $this->get_field_name( 'title' ); ?>"
+				id="<?php echo $this->get_field_id('title'); ?>"
+				name="<?php echo $this->get_field_name('title'); ?>"
 				type="text"
-				value="<?php echo esc_attr( $title ); ?>">
+				value="<?php echo esc_attr($title); ?>">
 		</p>
         <p>
 			<?php if(isset($instance['cats_id'])) $cats_id = explode ( ',' , $instance['cats_id'] ) ; ?>
-			<label for="<?php echo $this->get_field_id( 'cats_id' ); ?>"><?php echo  __('From category : (keep Ctrl and choosen multiple)',THEME_NAME); ?></label>
-			<select class="widefat" multiple="multiple" id="<?php echo $this->get_field_id( 'cats_id' ); ?>[]" name="<?php echo $this->get_field_name( 'cats_id' ); ?>[]">
+			<label for="<?php echo $this->get_field_id('cats_id'); ?>"><?php echo  __('From category : (keep Ctrl and choosen multiple)',THEME_NAME); ?></label>
+			<select class="widefat" multiple="multiple"
+				id="<?php echo $this->get_field_id('cats_id'); ?>[]"
+				name="<?php echo $this->get_field_name('cats_id'); ?>[]">
 				<?php
 				$pos = 1;
 				foreach ($categories as $key => $option) {
