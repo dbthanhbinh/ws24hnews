@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.5.3" created="2021-04-02 04:27" -->
+	<!-- generator="WordPress/5.5.3" created="2021-04-08 15:43" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>WS24h Spa &#38; Beauty</title>
 	<link>http://demo05.webseo24h.com</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Fri, 02 Apr 2021 04:27:56 +0000</pubDate>
+	<pubDate>Thu, 08 Apr 2021 15:43:19 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://demo05.webseo24h.com</wp:base_site_url>
@@ -49,7 +49,59 @@
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
 		<wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
 	</wp:category>
-				<wp:term>
+			<wp:tag>
+		<wp:term_id>11</wp:term_id>
+		<wp:tag_slug><![CDATA[exchange]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[exchange]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>9</wp:term_id>
+		<wp:tag_slug><![CDATA[news]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[news]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>6</wp:term_id>
+		<wp:tag_slug><![CDATA[news-exchange]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[news exchange]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>8</wp:term_id>
+		<wp:tag_slug><![CDATA[signed]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[signed]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>7</wp:term_id>
+		<wp:tag_slug><![CDATA[spa]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[SPA]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>10</wp:term_id>
+		<wp:tag_slug><![CDATA[spa-signed]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[SPA signed]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>12</wp:term_id>
+		<wp:tag_slug><![CDATA[spa-signed-a-news-exchange]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[SPA signed a news exchange]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>5</wp:term_id>
+		<wp:tag_slug><![CDATA[spa-signed-a-newsexchange]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[SPA signed a newsexchange]]></wp:tag_name>
+	</wp:tag>
+		<wp:tag>
+		<wp:term_id>4</wp:term_id>
+		<wp:tag_slug><![CDATA[spasigned-a-news-exchange]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[SPAsigned a news exchange]]></wp:tag_name>
+	</wp:tag>
+			<wp:term>
+		<wp:term_id>11</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[exchange]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[exchange]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>2</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[my-category-demo]]></wp:term_slug>
@@ -57,11 +109,67 @@
 		<wp:term_name><![CDATA[My category demo]]></wp:term_name>
 	</wp:term>
 		<wp:term>
+		<wp:term_id>9</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[news]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[news]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>6</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[news-exchange]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[news exchange]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>3</wp:term_id>
 		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[primary-menu]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Primary Menu]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>8</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[signed]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[signed]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>7</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[spa]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[SPA]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>10</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[spa-signed]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[SPA signed]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>12</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[spa-signed-a-news-exchange]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[SPA signed a news exchange]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>5</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[spa-signed-a-newsexchange]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[SPA signed a newsexchange]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>4</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[spasigned-a-news-exchange]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[SPAsigned a news exchange]]></wp:term_name>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>1</wp:term_id>
@@ -1320,6 +1428,9 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="category" nicename="my-category-demo"><![CDATA[My category demo]]></category>
+		<category domain="post_tag" nicename="news-exchange"><![CDATA[news exchange]]></category>
+		<category domain="post_tag" nicename="spa-signed"><![CDATA[SPA signed]]></category>
+		<category domain="post_tag" nicename="spa-signed-a-news-exchange"><![CDATA[SPA signed a news exchange]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_cd0812e2594d9ab2d4c8a768f82ecc77]]></wp:meta_key>
 		<wp:meta_value><![CDATA[<iframe title="Medical Beauty Spa" width="500" height="281" src="https://www.youtube.com/embed/dbKgJ0DG4T0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></wp:meta_value>
@@ -1688,7 +1799,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="my-category-demo"><![CDATA[My category demo]]></category>
+										<category domain="post_tag" nicename="exchange"><![CDATA[exchange]]></category>
+		<category domain="category" nicename="my-category-demo"><![CDATA[My category demo]]></category>
+		<category domain="post_tag" nicename="news"><![CDATA[news]]></category>
+		<category domain="post_tag" nicename="spa-signed"><![CDATA[SPA signed]]></category>
+		<category domain="post_tag" nicename="spa-signed-a-news-exchange"><![CDATA[SPA signed a news exchange]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_cd0812e2594d9ab2d4c8a768f82ecc77]]></wp:meta_key>
 		<wp:meta_value><![CDATA[<iframe title="Medical Beauty Spa" width="500" height="281" src="https://www.youtube.com/embed/dbKgJ0DG4T0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></wp:meta_value>
@@ -1930,14 +2045,21 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="my-category-demo"><![CDATA[My category demo]]></category>
+										<category domain="post_tag" nicename="exchange"><![CDATA[exchange]]></category>
+		<category domain="category" nicename="my-category-demo"><![CDATA[My category demo]]></category>
+		<category domain="post_tag" nicename="news"><![CDATA[news]]></category>
+		<category domain="post_tag" nicename="news-exchange"><![CDATA[news exchange]]></category>
+		<category domain="post_tag" nicename="signed"><![CDATA[signed]]></category>
+		<category domain="post_tag" nicename="spa"><![CDATA[SPA]]></category>
+		<category domain="post_tag" nicename="spa-signed"><![CDATA[SPA signed]]></category>
+		<category domain="post_tag" nicename="spa-signed-a-news-exchange"><![CDATA[SPA signed a news exchange]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_cd0812e2594d9ab2d4c8a768f82ecc77]]></wp:meta_key>
 		<wp:meta_value><![CDATA[<iframe title="Medical Beauty Spa" width="500" height="281" src="https://www.youtube.com/embed/dbKgJ0DG4T0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_cd0812e2594d9ab2d4c8a768f82ecc77]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1616647736]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1617896456]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -2838,4 +2960,3 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 							</item>
 				</channel>
 </rss>
-	
