@@ -87,7 +87,7 @@ class ws24h_popular_widget extends WP_Widget
 					?>
 						<div class="<?= $thumb_full=='true' ? 'item-thumb-full' : 'item-thumb' ?>">
 							<a href="<?php the_permalink();?>" title="<?php the_title();?>">
-								<?php the_post_thumbnail($thumb_full=='true' ? 'medium' : 'thumbnail');?>
+								<?php the_post_thumbnail($thumb_full=='true' ? 'medium' : 'thumbnail', ['alt' => esc_html(get_the_title()), 'title' => esc_html(get_the_title())]);?>
 							</a>
 						</div>
 					<?php endif;?>

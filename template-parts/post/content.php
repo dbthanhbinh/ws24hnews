@@ -12,7 +12,7 @@
 	<?php if(has_post_thumbnail()){ ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail(getThumbSize($layout, $cols)); ?>
+				<?php the_post_thumbnail(getThumbSize($layout, $cols), ['alt' => esc_html(get_the_title()), 'title' => esc_html(get_the_title())]); ?>
 			</a>
 		</div>
 	<?php } ?>

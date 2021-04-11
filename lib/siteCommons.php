@@ -121,7 +121,7 @@ if ( ! function_exists( 'render_logo' ) ) :
         <?php // add a fallback if the logo doesn't exist
         else : ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/logo.png" loading="lazy" alt="<?= esc_attr(get_bloginfo('name', 'display')) ?>" title="<?= esc_attr(get_bloginfo('name', 'display')) ?>" >
             </a>
         <?php endif;
     }

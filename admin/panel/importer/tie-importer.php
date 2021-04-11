@@ -70,7 +70,10 @@ function tie_set_demo_data(){
 	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_popular', 0, $widgetPopular);
 	tie_addWidgetToSidebar( 'sidebar-1' , 'tag_cloud', 0, ['title' => 'Tags']);
 	tie_addWidgetToSidebar( 'sidebar-1' , 'media_image', 0, [
-		'title' => '',
+		'title' => 'Image',
+		'image_title' => 'Image',
+		'loading' => "lazy",
+		'alt' => 'Image',
 		'url' => get_template_directory_uri().'/assets/images/widgets/blog-t1.jpg'
 	]);
 	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
