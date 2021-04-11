@@ -37,7 +37,7 @@
     <div id="top-header" class="top-header">
         <div class="container">
             <ul>
-                <li><span><b><?= get_theme_mod('company_name') ?></b></span></li>
+                <li><span><b><?= get_theme_mod('company_top_name') ?></b></span></li>
                 <li><span><b><a href="tel:<?=get_theme_mod('contact_hotline')?>"><?= get_theme_mod('contact_hotline') ?></a></b></span></li>
                 <li><span><b><?= getTranslateByKey('open_time') ?></b> <?= get_theme_mod('setting_open_time') ?></span></li>
             </ul>

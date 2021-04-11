@@ -50,10 +50,7 @@ function tie_set_demo_data(){
 	
 	//Import Widgets
 	update_option('sidebars_widgets', '');
-	
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_socials', 0, ['title' => 'Liên kết mạng xã hội']);
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_fanpage', 0, ['fanpage_url' => 'https://www.facebook.com/webseo24h']);
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_popular', 0, [
+	$widgetPopular = [
 		'title' => $defaultsValues['title'],
 		'background_color' => $defaultsValues['background_color'],
 		'title_color' => $defaultsValues['title_color'],
@@ -67,41 +64,23 @@ function tie_set_demo_data(){
 		'no_of_posts' => $defaultsValues['no_of_posts'],
 		'thumb' => $defaultsValues['thumb'],
 		'thumb_full' => $defaultsValues['thumb_full']
-	]); // ws24h_contact
+	];
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_socials', 0, ['title' => 'Liên kết mạng xã hội']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_fanpage', 0, ['fanpage_url' => 'https://www.facebook.com/webseo24h']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_popular', 0, $widgetPopular);
 	tie_addWidgetToSidebar( 'sidebar-1' , 'tag_cloud', 0, ['title' => 'Tags']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'media_image', 0, [
+		'title' => '',
+		'url' => get_template_directory_uri().'/assets/images/widgets/blog-t1.jpg'
+	]);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
+
 	tie_addWidgetToSidebar( 'footer-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
-	tie_addWidgetToSidebar( 'footer-3' , 'ws24h_socials', 0, array('title' => 'Liên kết mạng xã hội'));
-
-	// tie_addWidgetToSidebar( 'primary-widget-area' , 'counter-widget', 0, array('facebook' => 'https://www.facebook.com/TieLabs','youtube' => 'http://www.youtube.com/user/TEAMMESAI','vimeo' => 'http://vimeo.com/channels/kidproof'));
-	// tie_addWidgetToSidebar( 'primary-widget-area', 'widget_tabs', 0);
-	// tie_addWidgetToSidebar( 'primary-widget-area' , 'facebook-widget', 0, array('title' => 'Find us on Facebook', 'page_url' => 'https://www.facebook.com/TieLabs'));
-	// tie_addWidgetToSidebar( 'primary-widget-area' , 'social', 0, array('title' => 'Social', 'tran_bg' => true, 'icons_size' => 32 ));
-	// tie_addWidgetToSidebar( 'primary-widget-area' , 'youtube-widget', 0, array('title' => 'Subscribe to our Channel', 'page_url' => 'TEAMMESAI'));
-	// tie_addWidgetToSidebar( 'primary-widget-area' , 'video-widget', 0, array('title' => ' Featured Video', 'youtube_video' => 'UjXi6X-moxE'));
-	// tie_addWidgetToSidebar( 'primary-widget-area' , 'login-widget', 0, array('title' => ' Login'));
-	
-	// tie_addWidgetToSidebar( 'first-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Popular Posts', 'no_of_posts' => 5, 'thumb' => true , 'posts_order' => 'popular'));
-	// tie_addWidgetToSidebar( 'second-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Random Posts', 'no_of_posts' => 5, 'thumb' => true , 'posts_order' => 'random'));
-	// tie_addWidgetToSidebar( 'third-footer-widget-area' , 'posts-list-widget', 0, array('title' => 'Latest Posts', 'no_of_posts' => 5, 'thumb' => true ,  'posts_order' => 'latest'));
-	// tie_addWidgetToSidebar( 'fourth-footer-widget-area' , 'comments_avatar-widget', 0, array('title' => 'Recent Comments', 'thumb' => true , 'no_of_comments' => 5, 'avatar_size' => 50));
-
+	tie_addWidgetToSidebar( 'footer-2' , 'pages', 0, [
+		'title' => 'Về chúng tôi?'
+	]);
+	tie_addWidgetToSidebar( 'footer-3' , 'tag_cloud', 0, ['title' => 'Tags']);
 }
-
-// function tie_addWidgetToSidebar($sidebarSlug, $widgetSlug, $countMod, $widgetSettings = array()){
-// 	$sidebarOptions = get_option('sidebars_widgets');
-// 	if(!isset($sidebarOptions[$sidebarSlug])){
-// 	$sidebarOptions[$sidebarSlug] = array('_multiwidget' => 1);
-// 	}
-// 	$newWidget = get_option('widget_'.$widgetSlug);
-// 	if(!is_array($newWidget))$newWidget = array();
-// 	$count = count($newWidget)+1+$countMod;
-// 	$sidebarOptions[$sidebarSlug][] = $widgetSlug.'-'.$count;
-
-// 	$newWidget[$count] = $widgetSettings;
-
-// 	update_option('sidebars_widgets', $sidebarOptions);
-// 	update_option('widget_'.$widgetSlug, $newWidget);
-// }
 
 function tie_addWidgetToSidebar($sidebarSlug, $widgetSlug, $countMod, $widgetSettings = array()){
 	$sidebarOptions = get_option('sidebars_widgets');

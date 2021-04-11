@@ -85,6 +85,8 @@ add_action( 'widgets_init', 'ws24h_widgets_init' );
 require_once 'widget-popular.php';
 require_once 'widget-video.php';
 require_once 'widget-fanpage.php';
+require_once 'widget-socials-button.php';
+require_once 'widget-contact.php';
 
 add_filter('get_search_form', 'new_search_button');
 function new_search_button($text) {

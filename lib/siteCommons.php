@@ -136,8 +136,8 @@ if(!function_exists('render_favicon')){
             <?php
         } else {
             ?>
-            <link rel="shortcut icon" href="<?php echo get_template_directory_uri()?>/assets/images/favicon.ico" type="image/x-icon">
-		    <link rel="icon" href="<?php echo get_template_directory_uri()?>/assets/images/favicon.ico" type="image/x-icon">
+            <link rel="shortcut icon" href="<?php echo get_template_directory_uri()?>/favicon.ico" type="image/x-icon">
+		    <link rel="icon" href="<?php echo get_template_directory_uri()?>/favicon.ico" type="image/x-icon">
             <?php
         }
     }

@@ -14,13 +14,6 @@ function my_plugin_activation() {
             // 'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // Nếu bạn cài plugin ở bên ngoài, không phải từ WordPress.Org thì thêm URL của trang plugin vào.
         ),
         array(
-            'name'               => 'ws24h contact', // Tên của plugin
-            'slug'               => 'ws24h-contact', // Tên thư mục plugin
-            'source'             => dirname( __FILE__ ).'\plugins\ws24h-contact.zip', // Link tải plugin - direct link
-            'required'           => true, // Nếu đặt là true thì plugin này sẽ không bắt buộc phải cài mà chỉ ở dạng Recommend.
-            // 'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // Nếu bạn cài plugin ở bên ngoài, không phải từ WordPress.Org thì thêm URL của trang plugin vào.
-        ),
-        array(
             'name'               => 'WWP Gmail SMTP', // Tên của plugin
             'slug'               => 'wp-gmail-smtp', // Tên thư mục plugin
             'source'             => dirname( __FILE__ ).'\plugins\wp-gmail-smtp.zip', // Link tải plugin - direct link

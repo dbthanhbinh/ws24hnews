@@ -98,7 +98,6 @@ if($homeTabBox){
           $isFirst = false;
           $postsPerPage = 6;
           $maxCount = $postsPerPage/2; // 3left/3right
-
           $showOnLoad = '';
           foreach ($tieHomeTabs as $key => $option) {
               $catData = get_category($option);
@@ -108,8 +107,7 @@ if($homeTabBox){
                   if(!$isFirst){
                       $showOnLoad = $catData->slug;
                   }
-
-                  $postQuery = new WP_Query(['category' => $catData->cat_ID, 'posts_per_page' => $postsPerPage]);
+                  $postQuery = new WP_Query(['category__in' => [$catData->cat_ID], 'posts_per_page' => $postsPerPage]);
                   if($postQuery->have_posts()){
                       $p = 0;
                       while ($postQuery->have_posts()):
@@ -128,6 +126,7 @@ if($homeTabBox){
                           ];
                       $p++;
                     endwhile;
+                    wp_reset_query();
                   }
                   $myposts = null;
               }

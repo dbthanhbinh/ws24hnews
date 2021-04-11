@@ -281,8 +281,8 @@ function remove_thumbnail_dimensions( $html ) {
 
 // Change the Tag Cloud's Font Sizes.
 function change_tag_cloud_font_sizes( array $args ) {
-    $args['smallest'] = '11';
-    $args['largest'] = '16';
+    $args['smallest'] = '10';
+    $args['largest'] = '14';
     return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');

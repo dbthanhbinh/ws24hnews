@@ -1,5 +1,5 @@
 <?php if(get_theme_mod('show_top_header', LAYOUT_SHOW_TOP_HEADER)):
-    $companyName = get_theme_mod('company_name', false);
+    $companyName = get_theme_mod('company_top_name', false);
     $contactHotline = get_theme_mod('contact_hotline', false);
     $openTime = get_theme_mod('setting_open_time', false);
     ?>

@@ -47,31 +47,34 @@
     }
 
     .widget {
-        &.widget_tag_cloud {
-            .widget-title {
+        .widget-title {
+            border: none;
+            background: none;
+            label{
                 border: none;
-                background: none;
-                label{
-                    border: none;
-                    margin: 0;
-                    padding: 0;
+                margin: 0;
+                padding: 0;
+                border-bottom: 2px solid $main_color;
+                padding-bottom: 2px;
 
-                    &:before{
-                        content: "";
-                        display: none;
-                    }
+                &:before{
+                    content: "";
+                    display: none;
                 }
             }
+        }
 
-            .tagcloud{
-                max-height: 100px;
-                overflow: auto;
-                a {
-                    background: #f1f1f1;
-                    padding: 3px 5px;
-                    margin: 1px 0px;
-                    display: inline-block;
-                }
+        .tagcloud{
+            max-height: 100px;
+            overflow: auto;
+            a {
+                background: #f1f1f1;
+                padding: 0px 5px;
+                margin: 2px 2px;
+                display: inline-block;
+                height: 28px;
+                line-height: 28px;
+                float: left;
             }
         }
     }

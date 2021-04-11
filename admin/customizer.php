@@ -287,6 +287,15 @@ function your_theme_new_customizer_settings($wp_customize) {
         'type' => 'text'
     ) ) );
 
+    $wp_customize->add_setting('company_top_name', ['default' => $Customize['company_name']]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_top_name',
+    array(
+        'label' => 'Company top name',
+        'section' => 'section_contact',
+        'settings' => 'company_top_name',
+        'type' => 'text'
+    ) ) );
+
     // Contact name
     $wp_customize->add_setting('company_footer_name', ['default' => $Customize['company_footer_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_footer_name',
