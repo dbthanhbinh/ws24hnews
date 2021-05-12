@@ -246,7 +246,6 @@ function your_theme_new_customizer_settings($wp_customize) {
     ) ) );
 
     // Enable Client
-
     $customClientArgs = array( 'post_type' => 'tie_clients', 'no_found_rows' => 1  );
     $customClientSql = new WP_Query( $customClientArgs );
     $customClients = [];
@@ -264,7 +263,20 @@ function your_theme_new_customizer_settings($wp_customize) {
         'settings' => 'show_client',
         'type' => 'select',
         'choices' => $customClients
-    ) ) );    
+    ) ) );
+
+    $wp_customize->add_setting('is_sticky_sidebar', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'is_sticky_sidebar',
+    array(
+        'label' => 'Sticky sidebar',
+        'section' => 'section_layout',
+        'settings' => 'is_sticky_sidebar',
+        'type' => 'select',
+        'choices' => array(
+            '1' => __('Enable'),
+            '0' => __('Disable')
+        ),
+    ) ) );
 
     // ===============================================================================
     // Theme options

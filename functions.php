@@ -78,9 +78,6 @@ if(!is_admin()){
     // Google Analytics
     add_action( 'wp_head', 'ws24h_header_analytics' );
 
-    // Footer StickySidebar_scripts
-    // add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
-
     // Footer script
     add_action( 'wp_footer', 'ws24h_footer_scripts' );
 
@@ -97,6 +94,9 @@ if(!is_admin()){
 
     add_action( 'wp_head', 'header_code_callback' );
     add_action( 'wp_footer', 'footer_code_callback' );
+
+    // Footer StickySidebar_scripts
+    add_action( 'wp_footer', 'ws24h_StickySidebar_scripts' );
 }
 
 if (is_customize_preview() || !is_admin()) {
@@ -236,19 +236,8 @@ function excerpt_content ($excerpt, $limit) {
 function get_excerpt($limit, $readMore=false, $source = null){
     if($source == "content" ? ($excerpt = get_the_content()) : ($excerpt = get_the_excerpt()));	
     $excerpt = excerpt_content ($excerpt, $limit);
-    // if ($readMore)
-    // 	return $excerpt = $excerpt . '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
     return $excerpt;
 }
-
-function ws24h_custom_the_excerpt () {
-    $limit = 150;
-    $excerpt = get_the_excerpt();
-    $excerpt = excerpt_content ($excerpt, $limit);
-    // $excerpt = $excerpt.' ... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Đọc thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
-    return $excerpt;
-}
-// add_filter( 'the_excerpt', 'ws24h_custom_the_excerpt', 999 );
 
 function ws24h_excerpt_more( $more ) {
     // return ' ...';
@@ -258,17 +247,6 @@ function ws24h_excerpt_more( $more ) {
     );
 }
 add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
-
-// add_filter( 'get_the_archive_title', function ($title) {
-//     if ( is_category() ) {
-//             $title = single_cat_title( '', false );
-//         } elseif ( is_tag() ) {
-//             $title = single_tag_title( '', false );
-//         } elseif ( is_author() ) {
-//             $title = '<span class="vcard">' . get_the_author() . '</span>' ;
-//         }
-//     return $title;
-// });
 
 // Remove width, height from the_post_thumb
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
@@ -405,25 +383,35 @@ function ws24h_header_analytics() {
 }
 
 // Footer
-function ws24h_footer_scripts () {
-    wp_enqueue_script(
-        'jquery-bootstrap-customjs',
-        get_theme_file_uri('/assets/js/themejs.min.js'));
+function ws24h_footer_scripts() {
+    ?>
+    <script src="<?php echo get_template_directory_uri();?>/assets/js/themejs.min.js"></script>
+    <?php
 }
 
 function ws24h_StickySidebar_scripts () {
 	if (is_single()) {
-        $show_sticky_sidebar = 1; // get_theme_mod('show_sticky_sidebar');
-        if($show_sticky_sidebar &&  $show_sticky_sidebar == 1){
+        $is_sticky_sidebar = get_theme_mod('is_sticky_sidebar');
+        if($is_sticky_sidebar &&  $is_sticky_sidebar == 1){
             ?>
              <!-- For sticky sidebar -->
             <script type="text/javascript">
-            if( $('#sidebar').length ) {
-                var sidebar = new StickySidebar('#sidebar', {
-                    topSpacing: 50,
-                    bottomSpacing: 50
-                });
-            }
+                if( $('#sidebar').length ) {
+                    var bottomSpacing = 15;
+                    var footerSectionElm = $('#footer-section');
+                    var copyRightBoxElm = $('#copy-right-box');
+                    
+                    if(copyRightBoxElm.length > 0)
+                        bottomSpacing = (bottomSpacing + copyRightBoxElm.height());
+                    
+                    if(footerSectionElm.length > 0)
+                        bottomSpacing = bottomSpacing + footerSectionElm.height();
+
+                    var sidebar = new StickySidebar('#sidebar', {
+                        topSpacing: 50,
+                        bottomSpacing: bottomSpacing
+                    });
+                }
             </script>
             <?php
         }
