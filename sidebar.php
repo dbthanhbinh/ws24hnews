@@ -11,7 +11,7 @@ if (isMainSidebar()) : ?>
 <div id="sidebar" class="<?= isMainSidebar() ?> sidebar-mobile">
     <?php dynamic_sidebar('sidebar-1'); ?>
 
-    <a id="sidebar-mobile-close" class="sidebar-mobile-close" href="#">X</a>      
-    <a id="sidebar-mobile-open" class="sidebar-mobile-open" href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+    <span id="sidebar-mobile-close" class="sidebar-mobile-close">X</span>
+    <span id="sidebar-mobile-open" class="sidebar-mobile-open"><i class="fa fa-sliders" aria-hidden="true"></i></span>
 </div>
 <?php endif; ?>

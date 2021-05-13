@@ -16,7 +16,7 @@ function ws24h_call_support_online(){
             <span>Facebook</span>
         </a>
         <a class="zalo" href="http://zalo.me/<?= get_theme_mod('contact_hotline')?>">
-            <img alt="Zalo" src="<?= get_template_directory_uri()?>/assets/images/zalo.png">
+            <img alt="Zalo" loading="lazy" title="zalo" src="<?= get_template_directory_uri()?>/assets/images/zalo.png">
             <span>Zalo: <?= get_theme_mod('contact_hotline')?></span>
         </a>
         <a class="sms" href="sms:<?= get_theme_mod('contact_hotline')?>?body=<?= get_the_title()?>">

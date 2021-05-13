@@ -86,11 +86,10 @@ if(!is_admin()){
 
     $customSlider = true;
     $customClient = false;
-
     if(($customSlider || $customClient)){
-		add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
-		add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
-	}
+        add_action( 'wp_enqueue_scripts', 'ws24h_slideshow_style' );
+        add_action( 'wp_footer', 'ws24h_slideshow_owl_carousel_script' );
+    }
 
     add_action( 'wp_head', 'header_code_callback' );
     add_action( 'wp_footer', 'footer_code_callback' );
@@ -432,15 +431,19 @@ function ws24h_facebook_lib_scripts () {
 }
 
 function ws24h_slideshow_style () {
-	// Theme stylesheet.
-	wp_enqueue_style( 'ws24h_slideshow_owl-carousel', get_theme_file_uri( '/modules/owl-carousel/owl.carousel.css' ));
-	wp_enqueue_style( 'ws24h_slideshow_owl-carousel-theme', get_theme_file_uri( '/modules/owl-carousel/owl.theme.css' ));
+    if(is_customize_preview() || is_front_page() || is_home()){
+        // Theme stylesheet.
+        wp_enqueue_style( 'ws24h_slideshow_owl-carousel', get_theme_file_uri( '/modules/owl-carousel/owl.carousel.css' ));
+        wp_enqueue_style( 'ws24h_slideshow_owl-carousel-theme', get_theme_file_uri( '/modules/owl-carousel/owl.theme.css' ));
+    }
 }
 
 function ws24h_slideshow_owl_carousel_script(){
+    if(is_customize_preview() || is_front_page() || is_home()){
 	?>
 	<!-- Owl Carousel Assets -->
 	<script src="<?php echo get_template_directory_uri();?>/modules/owl-carousel/jquery-1.9.1.min.js"></script>
 	<script src="<?php echo get_template_directory_uri();?>/modules/owl-carousel/owl.carousel.js"></script>
 	<?php
+    }
 }

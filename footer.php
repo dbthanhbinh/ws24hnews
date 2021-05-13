@@ -43,7 +43,7 @@
       </div>
     <?php }?>
     <div id="site-over" class=""></div>
-    <div class="scrollup"><a href="#"><i class="fa fa-eject" aria-hidden="true"></i></a></div>
+    <div class="scrollup"><span><i class="fa fa-eject" aria-hidden="true"></i></span></div>
     <?php wp_footer()?>
   </body>
 </html>

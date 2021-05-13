@@ -14,7 +14,7 @@
 
       <div class="<?= mainLayoutClass() ?>">
         <header class="entry-page-header entry-header">
-          <h1  class="entry-title"><?php single_cat_title(); ?></h1>
+          <h1  class="entry-title"><?= get_the_archive_title(); ?></h1>
         </header>
         
         <?php

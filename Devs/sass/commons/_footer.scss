@@ -203,12 +203,12 @@
     &:hover {
         background: $scrollup-hover;
         border-color: $scrollup-color;
-        a {
+        span {
             color: $scrollup-color;
         }
     }
 
-    > a {
+    > span {
         position: relative;
         top: 0px;
         color: $scrollup-color;

@@ -298,7 +298,7 @@ function tie_options($value){
 			<input  name="tie_options[<?php echo $value['id']; ?>]"
 				id="<?php  echo $value['id']; ?>"
 				type="text"
-				value="<?php echo tie_get_option_init($value['id'], $value['std']); ?>" />
+				value="<?php echo tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null); ?>" />
 
 			<?php
 				if( $value['id']=="slider_tag" || $value['id']=="breaking_tag"){
@@ -314,7 +314,7 @@ function tie_options($value){
 		break;
 
 		case 'arrayText': 
-			$currentValue = tie_get_option_init($value['id'], $value['std']);
+			$currentValue = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
 			?>
 			<input  name="tie_options[<?php echo $value['id']; ?>][<?php echo $value['key']; ?>]"
 				id="<?php  echo $value['id']; ?>[<?php echo $value['key']; ?>]"
@@ -328,7 +328,7 @@ function tie_options($value){
 				name="tie_options[<?php echo $value['id']; ?>]"
 				id="<?php  echo $value['id']; ?>"
 				type="text"
-				value="<?php echo tie_get_option_init($value['id'], $value['std']); ?>" />
+				value="<?php echo tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null); ?>" />
 		<?php 
 		break;
 		
@@ -340,7 +340,7 @@ function tie_options($value){
 
 
 		case 'radio':
-			$radioVal = tie_get_option_init($value['id'], $value['std']);
+			$radioVal = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
 		?>
 			<div style="float:left; width: 295px;">
 				<?php foreach ($value['options'] as $key => $option) { ?>
@@ -353,7 +353,7 @@ function tie_options($value){
 		break;
 		
 		case 'select':
-			$selectedVal = tie_get_option_init($value['id'], $value['std']);
+			$selectedVal = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
 		?>
 			<select name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>">
 				<?php foreach ($value['options'] as $key => $option) { ?>
@@ -370,7 +370,7 @@ function tie_options($value){
 		break;
 
 		case 'upload':
-			$dfImg = tie_get_option_init($value['id'], $value['std']);
+			$dfImg = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
 		?>
 				<input id="<?php echo $value['id']; ?>" class="img-path" type="text" size="56" style="direction:ltr; text-laign:left"
 					name="tie_options[<?php echo $value['id']; ?>]"
