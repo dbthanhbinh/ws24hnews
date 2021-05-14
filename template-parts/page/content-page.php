@@ -15,7 +15,7 @@
 		<?php
 			the_content();
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'ws24h' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'FreeTheme' ),
 				'after'  => '</div>',
 			) );
 		?>

@@ -65,9 +65,9 @@ function tie_set_demo_data(){
 		'thumb' => $defaultsValues['thumb'],
 		'thumb_full' => $defaultsValues['thumb_full']
 	];
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_socials', 0, ['title' => 'Liên kết mạng xã hội']);
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_fanpage', 0, ['fanpage_url' => 'https://www.facebook.com/webseo24h']);
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_popular', 0, $widgetPopular);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'FreeTheme_socials', 0, ['title' => 'Liên kết mạng xã hội']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'FreeTheme_fanpage', 0, ['fanpage_url' => 'https://www.facebook.com/webseo24h']);
+	tie_addWidgetToSidebar( 'sidebar-1' , 'FreeTheme_popular', 0, $widgetPopular);
 	tie_addWidgetToSidebar( 'sidebar-1' , 'tag_cloud', 0, ['title' => 'Tags']);
 	tie_addWidgetToSidebar( 'sidebar-1' , 'media_image', 0, [
 		'title' => 'Image',
@@ -76,9 +76,9 @@ function tie_set_demo_data(){
 		'alt' => 'Image',
 		'url' => get_template_directory_uri().'/assets/images/widgets/blog-t1.jpg'
 	]);
-	tie_addWidgetToSidebar( 'sidebar-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
+	tie_addWidgetToSidebar( 'sidebar-1' , 'FreeTheme_contact', 0, array('title' => '')); // FreeTheme_contact
 
-	tie_addWidgetToSidebar( 'footer-1' , 'ws24h_contact', 0, array('title' => '')); // ws24h_contact
+	tie_addWidgetToSidebar( 'footer-1' , 'FreeTheme_contact', 0, array('title' => '')); // FreeTheme_contact
 	tie_addWidgetToSidebar( 'footer-2' , 'pages', 0, [
 		'title' => 'Về chúng tôi?'
 	]);

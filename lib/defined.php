@@ -1,5 +1,5 @@
 <?php
-const THEMENAME = 'ws24h';
+const THEMENAME = 'FreeTheme';
 
 const LAYOUT_FULL = 'full';
 const LAYOUT_LEFT_SIDEBAR = 'left-sidebar';

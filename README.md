@@ -1,2 +1,2 @@
-# ws24h
+# FreeTheme
 This WP theme Webseo24h

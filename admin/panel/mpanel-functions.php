@@ -9,8 +9,8 @@ function tie_admin_notices (){
 	if ( get_option('tie_active') == 4.1 && isset( $_GET['page'] ) && $_GET['page'] == 'panel' && !get_user_meta( $userid, 'ignore_sample_error_notice2' ) ) {
 		echo '<br />
 			<div class="updated" style="width:790px; margin:0 auto; padding:0 10px; overflow:hidden;">
-				<p style="float:left;"><strong>If You Have Any Issues with ws24h v1.0 .. </strong>
-				<a target="_blank" href="http://webseo24h.com/docs/ws24h/sahifa4.htm">Please Check Sahifa v4.0 FAQ .</a></p>
+				<p style="float:left;"><strong>If You Have Any Issues with FreeTheme v1.0 .. </strong>
+				<a target="_blank" href="http://webseo24h.com/docs">Please Check FreeTheme .</a></p>
 				<div class="tie-pointer-buttons"><a class="close" href="admin.php?page=panel&dismiss_me=yes">Dismiss</a></div>
 			</div>';
 	}

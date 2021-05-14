@@ -1,21 +1,5 @@
 <?php
-function ws24h_widgets_init() {
-    /*
-    unregister_widget('WP_Widget_Calendar');
-    unregister_widget('WP_Widget_Pages');
-    unregister_widget('WP_Widget_Archives');    
-    unregister_widget('WP_Widget_Links');
-    unregister_widget('WP_Widget_Meta');
-    unregister_widget('WP_Widget_Search');    
-    //unregister_widget('WP_Widget_Text');
-    unregister_widget('WP_Widget_Categories');
-    unregister_widget('WP_Widget_Recent_Posts');    
-    unregister_widget('WP_Widget_Recent_Comments');
-    unregister_widget('WP_Widget_RSS');
-    unregister_widget('WP_Widget_Tag_Cloud');    
-    unregister_widget('WP_Nav_Menu_Widget');
-    */
-    
+function FreeTheme_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Widget Area', THEME_NAME),
 		'id'            => 'primary-sidebar',
@@ -93,7 +77,7 @@ function ws24h_widgets_init() {
 		}
 	}	
 }
-add_action( 'widgets_init', 'ws24h_widgets_init' );
+add_action( 'widgets_init', 'FreeTheme_widgets_init' );
 
 function tcr_tag_cloud_filter($args = array()) {
     $args['smallest'] = 10;

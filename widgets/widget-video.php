@@ -1,7 +1,7 @@
 <?php
 ## WIDGET POPULAR ------------------------------------------ #
-register_widget( 'ws24h_video_widget' );
-class ws24h_video_widget extends WP_Widget
+register_widget( 'FreeTheme_video_widget' );
+class FreeTheme_video_widget extends WP_Widget
 {
     /**
 	 * Register widget with
@@ -10,9 +10,9 @@ class ws24h_video_widget extends WP_Widget
 		// This is where we add the style and script
 		add_action( 'load-widgets.php', array(&$this, 'my_custom_load') );
 		parent::__construct(
-			'ws24h_video', // Base ID
-			__( 'Ws24h video', THEME_NAME ), // Name
-			array( 'description' => __( 'A Ws24h youtobe video Widget', THEME_NAME ), ) // Args
+			'FreeTheme_video', // Base ID
+			__( 'FreeTheme video', THEME_NAME ), // Name
+			array( 'description' => __( 'A FreeTheme youtobe video Widget', THEME_NAME ), ) // Args
 		);
 	}
 

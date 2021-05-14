@@ -1,7 +1,7 @@
 <?php
 ## WIDGET POPULAR ------------------------------------------ #
-register_widget( 'ws24h_popular_widget' );
-class ws24h_popular_widget extends WP_Widget
+register_widget( 'FreeTheme_popular_widget' );
+class FreeTheme_popular_widget extends WP_Widget
 {
     /**
 	 * Register widget with
@@ -9,9 +9,9 @@ class ws24h_popular_widget extends WP_Widget
 	function __construct() {
 		add_action( 'load-widgets.php', array( &$this ,'my_custom_load') );
 		parent::__construct(
-			'ws24h_popular', // Base ID
-			__( 'Ws24h Post popular', THEME_NAME ), // Name
-			array( 'description' => __( 'Ws24h Post popular', THEME_NAME ), ) // Args
+			'FreeTheme_popular', // Base ID
+			__( 'FreeTheme Post popular', THEME_NAME ), // Name
+			array( 'description' => __( 'FreeTheme Post popular', THEME_NAME ), ) // Args
 		);
 	}
 

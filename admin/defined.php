@@ -23,9 +23,9 @@ $Customize = [
 	'header_background_submenu' => '#fff',
 	'header_link_color_sub' => '#333',
 	'header_hover_link_color' => '#333',
-	'ws24h_hotline_number' => '0909874825',
-	'ws24h_zalo_number' => '0909874825',
-	'ws24h_sms_number' => '0909874825',
+	'FreeTheme_hotline_number' => '0909874825',
+	'FreeTheme_zalo_number' => '0909874825',
+	'FreeTheme_sms_number' => '0909874825',
  
     'company_name' => __('Company name', THEMENAME),
     'company_footer_name' => __('Company footer name', THEMENAME),

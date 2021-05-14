@@ -7,9 +7,9 @@ function my_plugin_activation() {
     $plugins = array(
         // Gọi một plugin nào đó ở bên ngoài
         array(
-            'name'               => 'ws24h support', // Tên của plugin
-            'slug'               => 'ws24h-support', // Tên thư mục plugin
-            'source'             => dirname( __FILE__ ).'\plugins\ws24h-support.zip', // Link tải plugin - direct link
+            'name'               => 'FreeTheme support', // Tên của plugin
+            'slug'               => 'FreeTheme-support', // Tên thư mục plugin
+            'source'             => dirname( __FILE__ ).'\plugins\FreeTheme-support.zip', // Link tải plugin - direct link
             'required'           => true, // Nếu đặt là true thì plugin này sẽ không bắt buộc phải cài mà chỉ ở dạng Recommend.
             // 'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // Nếu bạn cài plugin ở bên ngoài, không phải từ WordPress.Org thì thêm URL của trang plugin vào.
         ),

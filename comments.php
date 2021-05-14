@@ -21,21 +21,21 @@ if ( post_password_required() ) {
 					'avatar_size' => 100,
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'reply_text'  => __( 'Trả lời', 'ws24h' ),
+					'reply_text'  => __( 'Trả lời', 'FreeTheme' ),
 				) );
 			?>
 		</ul>
 
 		<?php the_comments_pagination( array(
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Trước:', 'ws24h' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'ws24h' ) . '</span>',
+			'prev_text' => '<span class="screen-reader-text">' . __( 'Trước:', 'FreeTheme' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'FreeTheme' ) . '</span>',
 		) );
 
 	endif;
 	// Check for have_comments().
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'ws24h' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'FreeTheme' ); ?></p>
 	<?php
 	endif;
 
