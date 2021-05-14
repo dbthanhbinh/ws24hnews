@@ -7,7 +7,7 @@ function tie_set_demo_data(){
 	include TEMPLATEPATH . '/widgets/defined.php';
 	$theme_options = get_option( 'tie_options' );
 	
-	$localUrl = 'http://localhost/ws24h';
+	$localUrl = 'http://demo05.webseo24h.com';
 	$currentUrl = site_url();
 	$unserializeData = '';
 	require('advanced.php');

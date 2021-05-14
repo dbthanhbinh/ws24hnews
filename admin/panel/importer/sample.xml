@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.5.3" created="2021-04-11 02:28" -->
+	<!-- generator="WordPress/5.7.2" created="2021-05-14 15:46" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -28,8 +28,8 @@
 <channel>
 	<title>WS24h Spa &#38; Beauty</title>
 	<link>http://demo05.webseo24h.com</link>
-	<description>Just another WordPress site</description>
-	<pubDate>Sun, 11 Apr 2021 02:28:28 +0000</pubDate>
+	<description>WS24h Spa &#38; Beauty</description>
+	<pubDate>Fri, 14 May 2021 15:46:06 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://demo05.webseo24h.com</wp:base_site_url>
@@ -339,10 +339,10 @@
 			<wp:term><wp:term_id>3</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[primary-menu]]></wp:term_slug><wp:term_name><![CDATA[Primary Menu]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=5.5.3</generator>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
 
 		<item>
-		<title>blog-t1</title>
+		<title><![CDATA[blog-t1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-7/blog-t1/</link>
 		<pubDate>Thu, 25 Mar 2021 04:49:06 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -353,6 +353,8 @@
 		<wp:post_id>71</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:49:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:49:06]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:49:06]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:49:06]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t1]]></wp:post_name>
@@ -373,7 +375,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t2-1</title>
+		<title><![CDATA[blog-t2-1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-8/blog-t2-1/</link>
 		<pubDate>Thu, 25 Mar 2021 04:52:00 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -384,6 +386,8 @@
 		<wp:post_id>73</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:52:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:52:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:52:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:52:00]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t2-1]]></wp:post_name>
@@ -404,7 +408,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t3-1</title>
+		<title><![CDATA[blog-t3-1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-2/blog-t3-1/</link>
 		<pubDate>Thu, 25 Mar 2021 04:52:20 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -415,6 +419,8 @@
 		<wp:post_id>75</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:52:20]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:52:20]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:52:20]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:52:20]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t3-1]]></wp:post_name>
@@ -435,7 +441,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t1</title>
+		<title><![CDATA[blog-t1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-3/blog-t1-2/</link>
 		<pubDate>Thu, 25 Mar 2021 04:53:21 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -446,6 +452,8 @@
 		<wp:post_id>77</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:53:21]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:53:21]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:53:21]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:53:21]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t1-2]]></wp:post_name>
@@ -466,7 +474,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t2-1</title>
+		<title><![CDATA[blog-t2-1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-4/blog-t2-1-2/</link>
 		<pubDate>Thu, 25 Mar 2021 04:53:38 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -477,6 +485,8 @@
 		<wp:post_id>79</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:53:38]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:53:38]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:53:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:53:38]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t2-1-2]]></wp:post_name>
@@ -497,7 +507,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t3-1</title>
+		<title><![CDATA[blog-t3-1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-5/blog-t3-1-2/</link>
 		<pubDate>Thu, 25 Mar 2021 04:53:54 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -508,6 +518,8 @@
 		<wp:post_id>81</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:53:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:53:54]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:53:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:53:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t3-1-2]]></wp:post_name>
@@ -528,7 +540,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t1</title>
+		<title><![CDATA[blog-t1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-6/blog-t1-3/</link>
 		<pubDate>Thu, 25 Mar 2021 04:54:12 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -539,6 +551,8 @@
 		<wp:post_id>85</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:54:12]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:54:12]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:54:12]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:54:12]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t1-3]]></wp:post_name>
@@ -559,7 +573,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>blog-t3-1</title>
+		<title><![CDATA[blog-t3-1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange/blog-t3-1-3/</link>
 		<pubDate>Thu, 25 Mar 2021 04:54:29 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -570,6 +584,8 @@
 		<wp:post_id>87</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 04:54:29]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 04:54:29]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 04:54:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 04:54:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-t3-1-3]]></wp:post_name>
@@ -590,7 +606,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>bg-slider</title>
+		<title><![CDATA[bg-slider]]></title>
 		<link>http://demo05.webseo24h.com/bg-slider/</link>
 		<pubDate>Thu, 25 Mar 2021 09:24:05 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -601,6 +617,8 @@
 		<wp:post_id>89</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 09:24:05]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 09:24:05]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 09:24:05]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 09:24:05]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[bg-slider]]></wp:post_name>
@@ -621,7 +639,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>slider</title>
+		<title><![CDATA[slider]]></title>
 		<link>http://demo05.webseo24h.com/slider/</link>
 		<pubDate>Thu, 25 Mar 2021 09:24:27 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -632,6 +650,8 @@
 		<wp:post_id>90</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 09:24:27]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 09:24:27]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 09:24:27]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 09:24:27]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[slider]]></wp:post_name>
@@ -652,7 +672,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>slider1</title>
+		<title><![CDATA[slider1]]></title>
 		<link>http://demo05.webseo24h.com/slider1/</link>
 		<pubDate>Thu, 25 Mar 2021 09:28:17 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -663,6 +683,8 @@
 		<wp:post_id>91</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 09:28:17]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 09:28:17]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 09:28:17]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 09:28:17]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[slider1]]></wp:post_name>
@@ -683,7 +705,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>slider1</title>
+		<title><![CDATA[slider1]]></title>
 		<link>http://demo05.webseo24h.com/slider1-2/</link>
 		<pubDate>Thu, 25 Mar 2021 09:29:10 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -694,6 +716,8 @@
 		<wp:post_id>92</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-25 09:29:10]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-25 09:29:10]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 09:29:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 09:29:10]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[slider1-2]]></wp:post_name>
@@ -714,7 +738,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Video 1</title>
+		<title><![CDATA[Video 1]]></title>
 		<link>http://demo05.webseo24h.com/custom-video/video-1/</link>
 		<pubDate>Fri, 26 Mar 2021 06:00:25 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -725,6 +749,8 @@
 		<wp:post_id>93</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-26 06:00:25]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-26 06:00:25]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-26 06:00:25]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-26 06:00:25]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[video-1]]></wp:post_name>
@@ -744,7 +770,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Video 2</title>
+		<title><![CDATA[Video 2]]></title>
 		<link>http://demo05.webseo24h.com/custom-video/video-2/</link>
 		<pubDate>Fri, 26 Mar 2021 06:01:00 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -755,6 +781,8 @@
 		<wp:post_id>94</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-26 06:01:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-26 06:01:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-26 06:01:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-26 06:01:00]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[video-2]]></wp:post_name>
@@ -774,7 +802,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Video 3</title>
+		<title><![CDATA[Video 3]]></title>
 		<link>http://demo05.webseo24h.com/custom-video/video-3/</link>
 		<pubDate>Fri, 26 Mar 2021 06:02:29 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -785,6 +813,8 @@
 		<wp:post_id>95</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-26 06:02:29]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-26 06:02:29]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-26 06:02:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-26 06:02:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[video-3]]></wp:post_name>
@@ -804,7 +834,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>za</title>
+		<title><![CDATA[za]]></title>
 		<link>http://demo05.webseo24h.com/za/</link>
 		<pubDate>Fri, 26 Mar 2021 06:11:31 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -815,6 +845,8 @@
 		<wp:post_id>96</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-26 06:11:31]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-26 06:11:31]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-26 06:11:31]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-26 06:11:31]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[za]]></wp:post_name>
@@ -835,7 +867,7 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Trang chủ</title>
+		<title><![CDATA[Trang chủ]]></title>
 		<link>http://demo05.webseo24h.com/trang-chu/</link>
 		<pubDate>Mon, 29 Mar 2021 08:39:54 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -844,8 +876,10 @@
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>97</wp:post_id>
-		<wp:post_date><![CDATA[2021-03-29 08:39:54]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-29 08:39:54]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[trang-chu]]></wp:post_name>
@@ -888,67 +922,13 @@
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[http://demo05.webseo24h.com/]]></wp:meta_value>
 		</wp:postmeta>
-							</item>
-					<item>
-		<title></title>
-		<link>http://demo05.webseo24h.com/?p=98</link>
-		<pubDate></pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=98</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>98</wp:post_id>
-		<wp:post_date><![CDATA[2021-03-29 08:38:28]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[0000-00-00 00:00:00]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[]]></wp:post_name>
-		<wp:status><![CDATA[draft]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>1</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
 							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_orphaned]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1617007108]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-03-29]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Tin Tức</title>
+		<title><![CDATA[Tin Tức]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/</link>
 		<pubDate>Mon, 29 Mar 2021 08:39:54 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -957,14 +937,16 @@
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>99</wp:post_id>
-		<wp:post_date><![CDATA[2021-03-29 08:39:54]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-29 08:39:54]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[tin-tuc]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>2</wp:menu_order>
+		<wp:menu_order>7</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -1001,9 +983,13 @@
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[http://demo05.webseo24h.com/tin-tuc]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-03-29]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
-		<title>Chúng tôi</title>
+		<title><![CDATA[Chúng tôi]]></title>
 		<link>http://demo05.webseo24h.com/chung-toi/</link>
 		<pubDate>Mon, 29 Mar 2021 08:39:54 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -1012,14 +998,16 @@
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>100</wp:post_id>
-		<wp:post_date><![CDATA[2021-03-29 08:39:54]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-29 08:39:54]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[chung-toi]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>3</wp:menu_order>
+		<wp:menu_order>2</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -1054,11 +1042,76 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[#]]></wp:meta_value>
+		<wp:meta_value><![CDATA[http://demo05.webseo24h.com]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-03-29]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Liên hệ</title>
+		<title><![CDATA[Dịch vụ]]></title>
+		<link>http://demo05.webseo24h.com/dich-vu/</link>
+		<pubDate>Mon, 29 Mar 2021 08:39:54 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=102</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>102</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-03-29 08:39:54]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[dich-vu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>8</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[102]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[http://demo05.webseo24h.com/dich-vu]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-03-29]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Liên hệ]]></title>
 		<link>http://demo05.webseo24h.com/lien-he/</link>
 		<pubDate>Wed, 24 Mar 2021 15:37:57 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -1093,6 +1146,8 @@
 		<wp:post_id>2</wp:post_id>
 		<wp:post_date><![CDATA[2021-03-24 15:37:57]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-03-24 15:37:57]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 02:58:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 02:58:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[lien-he]]></wp:post_name>
@@ -1116,55 +1171,19 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Privacy Policy</title>
-		<link>http://demo05.webseo24h.com/privacy-policy__trashed/</link>
-		<pubDate>Wed, 24 Mar 2021 15:37:57 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=3</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: http://demo05.webseo24h.com.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3</wp:post_id>
-		<wp:post_date><![CDATA[2021-03-24 15:37:57]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-03-24 15:37:57]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[privacy-policy__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[draft]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1618021599]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[privacy-policy]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Chính sách</title>
+		<title><![CDATA[Chính sách]]></title>
 		<link>http://demo05.webseo24h.com/chinh-sach/</link>
 		<pubDate>Wed, 17 Feb 2021 15:47:15 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?page_id=3</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=3</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: http://localhost/ws24h.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you request a password reset, your IP address will be included in the reset email.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: http://demo05.webseo24h.com.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you request a password reset, your IP address will be included in the reset email.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>6</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-17 15:47:15]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-17 15:47:15]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 02:27:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 02:27:01]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[chinh-sach]]></wp:post_name>
@@ -1184,11 +1203,11 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>SPA signed a news exchange</title>
+		<title><![CDATA[SPA signed a news exchange]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange/</link>
 		<pubDate>Sat, 20 Feb 2021 08:32:09 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=6</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=6</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -1279,6 +1298,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>7</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:32:09]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:32:09]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:19:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:19:02]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange]]></wp:post_name>
@@ -1316,11 +1337,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>SPA signed a news exchange 5</title>
+		<title><![CDATA[SPA signed a news exchange 5]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-6/</link>
 		<pubDate>Sat, 20 Feb 2021 08:32:19 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=10</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=10</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -1411,6 +1432,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>10</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:32:19]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:32:19]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:56]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:56]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-6]]></wp:post_name>
@@ -1513,11 +1536,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 							</wp:comment>
 					</item>
 					<item>
-		<title>SPA signed a news exchange 4</title>
+		<title><![CDATA[SPA signed a news exchange 4]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-5/</link>
 		<pubDate>Sat, 20 Feb 2021 08:32:25 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=11</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=11</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -1608,6 +1631,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>11</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:32:25]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:32:25]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-5]]></wp:post_name>
@@ -1643,11 +1668,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>SPA signed a news exchange 3</title>
+		<title><![CDATA[SPA signed a news exchange 3]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-4/</link>
 		<pubDate>Sat, 20 Feb 2021 08:32:29 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=12</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=12</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -1738,6 +1763,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>12</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:32:29]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:32:29]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-4]]></wp:post_name>
@@ -1770,11 +1797,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>SPA signed a news exchange 2</title>
+		<title><![CDATA[SPA signed a news exchange 2]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-3/</link>
 		<pubDate>Sat, 20 Feb 2021 08:32:32 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=13</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=13</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -1865,6 +1892,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>13</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:32:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:32:32]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:36]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:36]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-3]]></wp:post_name>
@@ -1897,11 +1926,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>SPA signed a news exchange 1</title>
+		<title><![CDATA[SPA signed a news exchange 1]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-2/</link>
 		<pubDate>Sat, 20 Feb 2021 08:32:35 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=14</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=14</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -1992,6 +2021,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>14</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:32:35]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:32:35]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-2]]></wp:post_name>
@@ -2024,11 +2055,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>SPA signed a news exchange 8</title>
+		<title><![CDATA[SPA signed a news exchange 8]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-8/</link>
 		<pubDate>Sat, 20 Feb 2021 08:33:47 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=20</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=20</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -2119,6 +2150,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>20</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:33:47]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:33:47]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:21]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:21]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-8]]></wp:post_name>
@@ -2151,468 +2184,11 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Dịch vụ</title>
-		<link>http://demo05.webseo24h.com/dich-vu/</link>
-		<pubDate>Mon, 29 Mar 2021 08:39:54 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=102</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>102</wp:post_id>
-		<wp:post_date><![CDATA[2021-03-29 08:39:54]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-03-29 08:39:54]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[dich-vu]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>7</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[102]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[#]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Sứ mệnh</title>
-		<link>http://demo05.webseo24h.com/su-menh/</link>
-		<pubDate>Fri, 02 Apr 2021 02:29:42 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=104</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>104</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-02 02:29:42]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-02 02:29:42]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[su-menh]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>4</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[104]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[100]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[#]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Chiến lược phát triển</title>
-		<link>http://demo05.webseo24h.com/chien-luoc-phat-trien/</link>
-		<pubDate>Fri, 02 Apr 2021 02:29:42 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=105</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>105</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-02 02:29:42]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-02 02:29:42]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[chien-luoc-phat-trien]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>5</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[100]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[105]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[#]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Cung cấp dịch vụ</title>
-		<link>http://demo05.webseo24h.com/cung-cap-dich-vu/</link>
-		<pubDate>Fri, 02 Apr 2021 02:30:49 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=106</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>106</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-02 02:30:49]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-02 02:30:49]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[cung-cap-dich-vu]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>6</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[100]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[106]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[#]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title></title>
-		<link>http://demo05.webseo24h.com/107/</link>
-		<pubDate>Fri, 02 Apr 2021 02:33:37 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=107</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>107</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-02 02:33:37]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-02 02:33:37]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[107]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>8</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[102]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[category]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title></title>
-		<link>http://demo05.webseo24h.com/108/</link>
-		<pubDate>Fri, 02 Apr 2021 02:33:37 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=108</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>108</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-02 02:33:37]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-02 02:33:37]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[108]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>9</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[102]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[category]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title></title>
-		<link>http://demo05.webseo24h.com/111/</link>
-		<pubDate>Fri, 02 Apr 2021 02:47:06 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=111</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>111</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-02 02:47:06]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-02 02:47:06]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[111]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>10</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>Cung cấp dịch vụ</title>
-		<link>http://demo05.webseo24h.com/cung-cap-dich-vu/</link>
-		<pubDate>Sat, 10 Apr 2021 02:27:36 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=133</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Cung cấp dịch vụ</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>133</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-10 02:27:36]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-10 02:27:36]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[cung-cap-dich-vu]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title>Sứ mệnh</title>
-		<link>http://demo05.webseo24h.com/su-menh/</link>
-		<pubDate>Sat, 10 Apr 2021 02:27:57 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=135</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Sứ mệnh</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>135</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-10 02:27:57]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-10 02:27:57]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[su-menh]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title>Chiến lược phát triển</title>
-		<link>http://demo05.webseo24h.com/chien-luoc-phat-trien/</link>
-		<pubDate>Sat, 10 Apr 2021 02:28:19 +0000</pubDate>
-		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=137</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Chiến lược phát triển</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>137</wp:post_id>
-		<wp:post_date><![CDATA[2021-04-10 02:28:19]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-04-10 02:28:19]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[chien-luoc-phat-trien]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title>SPA signed a news exchange 7</title>
+		<title><![CDATA[SPA signed a news exchange 7]]></title>
 		<link>http://demo05.webseo24h.com/spa-signed-a-news-exchange-7/</link>
 		<pubDate>Sat, 20 Feb 2021 08:33:51 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?p=21</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=21</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Share<a href="http://www.facebook.com/sharer.php?u=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="https://twitter.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/&amp;text=SPA%20signed%20a%20news%20exchange%20%20agreement%20with%20Anadolu" target="_blank" rel="noreferrer noopener"></a><a href="https://plus.google.com/share?url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/" target="_blank" rel="noreferrer noopener"></a></p>
@@ -2703,6 +2279,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>21</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-20 08:33:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-20 08:33:51]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:14]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[spa-signed-a-news-exchange-7]]></wp:post_name>
@@ -2744,7 +2322,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 			<wp:comment_id>2</wp:comment_id>
 			<wp:comment_author><![CDATA[dbthanhbinh]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[dbthanhbinh@gmail.com]]></wp:comment_author_email>
-			<wp:comment_author_url>http://localhost/ws24h</wp:comment_author_url>
+			<wp:comment_author_url>http://demo05.webseo24h.com</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[::1]]></wp:comment_author_IP>
 			<wp:comment_date><![CDATA[2021-02-21 04:01:04]]></wp:comment_date>
 			<wp:comment_date_gmt><![CDATA[2021-02-21 04:01:04]]></wp:comment_date_gmt>
@@ -2756,17 +2334,696 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 							</wp:comment>
 					</item>
 					<item>
-		<title>Home slider</title>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/107/</link>
+		<pubDate>Fri, 02 Apr 2021 02:33:37 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=107</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>107</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-04-02 02:33:37]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[107]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>9</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[102]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[category]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-04-02]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/108/</link>
+		<pubDate>Fri, 02 Apr 2021 02:33:37 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=108</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>108</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-04-02 02:33:37]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[108]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>10</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[102]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[category]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-04-02]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/111/</link>
+		<pubDate>Fri, 02 Apr 2021 02:47:06 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=111</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>111</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-04-02 02:47:06]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[111]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>11</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-04-02]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Cung cấp dịch vụ]]></title>
+		<link>http://demo05.webseo24h.com/cung-cap-dich-vu/</link>
+		<pubDate>Sat, 10 Apr 2021 02:27:36 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=133</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Cung cấp dịch vụ</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Things to know before going to the Spa Beauty</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Lorem ipsum dolor sit amet</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">Suspendisse potenti.</a>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Hover over me! Stet clita kasd gubergren. At vero eos et accusam et justo duo dolores et earebum. Stet clita kasd gubergren, no sea takimata. At vero eos et accusam et justo duo dolores et earebum.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">At vero eos et</a>&nbsp;accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Sadipscing elitr</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam Demo Label. At vero eos et accusam et justo duo dolores. At vero eos et accusam et justo duodolores et ea rebum. Lorem ipsum dolor sit amet consectuere colorado. Secrets Resorts &amp; Spas offer adults an escape to romance and sensuality in spectacular oceanfront settings.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>Dark, loose clothing that’s comfortable and will accommodate any&nbsp;post-op&nbsp;swelling;</li><li>Slip-on shoes for added ease;</li><li>Consider purchasing an additional compression garment to the one supplied by your cosmetic surgeon;</li><li>A BBL pillow for added support when seated.</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Etiam vulputate pellentesque ante, justo commodo massa semper nullam. Cras sed nullam enim,&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">volutpat suspendisse</a>&nbsp;sit dolor. Et a laoreet pede nam, quisque voluptas lectus quam wisi. Ac nam ut arcu, elit porttitor laoreet amet, velit aenean facilisis facilisis, turpis eros justo dictum dictum.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>“Listen and follow the post and&nbsp;pre-op&nbsp;instructions of your cosmetic surgeon! Remember, they are the professionals, Arcu nec amet integer quis, morbi vestibulum pede duis erat, turpis placerat tempus mauris vestibulum, mauris enim aenean ullamcorper dictum. !”</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Semper orci eget lorem, mauris bibendum et mus nam, lorem curae etiam amet eget, vestibulum aliquam mauris scelerisque.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":5} -->
+<h5>In addition to the information shared below, we also share via youtobe channel. You can see it here:</h5>
+<!-- /wp:heading -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>133</wp:post_id>
+		<wp:post_date><![CDATA[2021-04-10 02:27:36]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-04-10 02:27:36]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:12:52]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:12:52]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[cung-cap-dich-vu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Sứ mệnh và phát triển]]></title>
+		<link>http://demo05.webseo24h.com/su-menh/</link>
+		<pubDate>Sat, 10 Apr 2021 02:27:57 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=135</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:heading -->
+<h2>Things to know before going to the Spa Beauty</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">Suspendisse potenti.</a>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Lorem ipsum dolor sit amet</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">Suspendisse potenti.</a>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Hover over me! Stet clita kasd gubergren. At vero eos et accusam et justo duo dolores et earebum. Stet clita kasd gubergren, no sea takimata. At vero eos et accusam et justo duo dolores et earebum.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">At vero eos et</a>&nbsp;accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Sadipscing elitr</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam Demo Label. At vero eos et accusam et justo duo dolores. At vero eos et accusam et justo duodolores et ea rebum. Lorem ipsum dolor sit amet consectuere colorado. Secrets Resorts &amp; Spas offer adults an escape to romance and sensuality in spectacular oceanfront settings.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>Dark, loose clothing that’s comfortable and will accommodate any&nbsp;post-op&nbsp;swelling;</li><li>Slip-on shoes for added ease;</li><li>Consider purchasing an additional compression garment to the one supplied by your cosmetic surgeon;</li><li>A BBL pillow for added support when seated.</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Etiam vulputate pellentesque ante, justo commodo massa semper nullam. Cras sed nullam enim,&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">volutpat suspendisse</a>&nbsp;sit dolor. Et a laoreet pede nam, quisque voluptas lectus quam wisi. Ac nam ut arcu, elit porttitor laoreet amet, velit aenean facilisis facilisis, turpis eros justo dictum dictum.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>“Listen and follow the post and&nbsp;pre-op&nbsp;instructions of your cosmetic surgeon! Remember, they are the professionals, Arcu nec amet integer quis, morbi vestibulum pede duis erat, turpis placerat tempus mauris vestibulum, mauris enim aenean ullamcorper dictum. !”</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Semper orci eget lorem, mauris bibendum et mus nam, lorem curae etiam amet eget, vestibulum aliquam mauris scelerisque.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":5} -->
+<h5>In addition to the information shared below, we also share via youtobe channel. You can see it here:</h5>
+<!-- /wp:heading -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>135</wp:post_id>
+		<wp:post_date><![CDATA[2021-04-10 02:27:57]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-04-10 02:27:57]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:55:04]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:55:04]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[su-menh]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_opengraph-image-id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[96]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_opengraph-image]]></wp:meta_key>
+		<wp:meta_value><![CDATA[http://demo05.webseo24h.com/wp-content/uploads/2021/03/za.png]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Chiến lược phát triển]]></title>
+		<link>http://demo05.webseo24h.com/chien-luoc-phat-trien/</link>
+		<pubDate>Sat, 10 Apr 2021 02:28:19 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?page_id=137</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Chiến lược phát triển</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Things to know before going to the Spa Beauty</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Lorem ipsum dolor sit amet</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">Suspendisse potenti.</a>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Hover over me! Stet clita kasd gubergren. At vero eos et accusam et justo duo dolores et earebum. Stet clita kasd gubergren, no sea takimata. At vero eos et accusam et justo duo dolores et earebum.&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">At vero eos et</a>&nbsp;accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Sadipscing elitr</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam Demo Label. At vero eos et accusam et justo duo dolores. At vero eos et accusam et justo duodolores et ea rebum. Lorem ipsum dolor sit amet consectuere colorado. Secrets Resorts &amp; Spas offer adults an escape to romance and sensuality in spectacular oceanfront settings.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><li>Dark, loose clothing that’s comfortable and will accommodate any&nbsp;post-op&nbsp;swelling;</li><li>Slip-on shoes for added ease;</li><li>Consider purchasing an additional compression garment to the one supplied by your cosmetic surgeon;</li><li>A BBL pillow for added support when seated.</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non dui eu turpis venenatis facilisis non vulputate nibh.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Etiam vulputate pellentesque ante, justo commodo massa semper nullam. Cras sed nullam enim,&nbsp;<a href="https://www.lemonspa.beplusthemes.com/lemon-spa-beauty/spa-signed-a-news-exchange-agreement-with-anadolu/#!">volutpat suspendisse</a>&nbsp;sit dolor. Et a laoreet pede nam, quisque voluptas lectus quam wisi. Ac nam ut arcu, elit porttitor laoreet amet, velit aenean facilisis facilisis, turpis eros justo dictum dictum.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>“Listen and follow the post and&nbsp;pre-op&nbsp;instructions of your cosmetic surgeon! Remember, they are the professionals, Arcu nec amet integer quis, morbi vestibulum pede duis erat, turpis placerat tempus mauris vestibulum, mauris enim aenean ullamcorper dictum. !”</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Semper orci eget lorem, mauris bibendum et mus nam, lorem curae etiam amet eget, vestibulum aliquam mauris scelerisque.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":5} -->
+<h5>In addition to the information shared below, we also share via youtobe channel. You can see it here:</h5>
+<!-- /wp:heading -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>137</wp:post_id>
+		<wp:post_date><![CDATA[2021-04-10 02:28:19]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-04-10 02:28:19]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:12:24]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:12:24]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[chien-luoc-phat-trien]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/156/</link>
+		<pubDate>Wed, 12 May 2021 15:11:17 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=156</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>156</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-12 15:11:17]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[156]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[137]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[100]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/157/</link>
+		<pubDate>Wed, 12 May 2021 15:11:17 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=157</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>157</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-12 15:11:17]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[157]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[135]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[100]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/158/</link>
+		<pubDate>Wed, 12 May 2021 15:11:17 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=158</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>158</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-12 15:11:17]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[158]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>5</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[100]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[133]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>http://demo05.webseo24h.com/159/</link>
+		<pubDate>Wed, 12 May 2021 15:11:17 +0000</pubDate>
+		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?p=159</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>159</wp:post_id>
+		<wp:post_date><![CDATA[2021-05-12 15:57:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-05-12 15:11:17]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-05-12 15:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-05-12 15:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[159]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>6</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[100]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Home slider]]></title>
 		<link>http://demo05.webseo24h.com/slider/home-slider/</link>
 		<pubDate>Tue, 23 Feb 2021 12:04:20 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/ws24h/?post_type=tie_slider&#038;p=66</guid>
+		<guid isPermaLink="false">http://demo05.webseo24h.com/?post_type=tie_slider&#038;p=66</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>66</wp:post_id>
 		<wp:post_date><![CDATA[2021-02-23 12:04:20]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-02-23 12:04:20]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-03-25 09:29:24]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-03-25 09:29:24]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[home-slider]]></wp:post_name>
@@ -2786,7 +3043,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Spas will be celebrating the seventh-annual Global</title>
+		<title><![CDATA[Spas will be celebrating the seventh-annual Global]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/spas-will-be-celebrating-the-seventh-annual-global/</link>
 		<pubDate>Fri, 02 Apr 2021 03:01:07 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -2832,6 +3089,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>121</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:01:07]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:01:07]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:05:11]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:05:11]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[spas-will-be-celebrating-the-seventh-annual-global]]></wp:post_name>
@@ -2855,7 +3114,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Things to know before going to the Spa Beauty</title>
+		<title><![CDATA[Things to know before going to the Spa Beauty]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/things-to-know-before-going-to-the-spa-beauty/</link>
 		<pubDate>Fri, 02 Apr 2021 03:06:20 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -2901,6 +3160,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>122</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:06:20]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:06:20]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:06:20]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:06:20]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[things-to-know-before-going-to-the-spa-beauty]]></wp:post_name>
@@ -2920,7 +3181,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Duis nec duis quis, augue sem tortor vestibulum</title>
+		<title><![CDATA[Duis nec duis quis, augue sem tortor vestibulum]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/duis-nec-duis-quis-augue-sem-tortor-vestibulum/</link>
 		<pubDate>Fri, 02 Apr 2021 03:07:26 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -2966,6 +3227,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>123</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:07:26]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:07:26]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:07:26]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:07:26]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[duis-nec-duis-quis-augue-sem-tortor-vestibulum]]></wp:post_name>
@@ -2985,7 +3248,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Lorem ipsum dolor sit amet</title>
+		<title><![CDATA[Lorem ipsum dolor sit amet]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/lorem-ipsum-dolor-sit-amet/</link>
 		<pubDate>Fri, 02 Apr 2021 03:08:53 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3031,6 +3294,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>124</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:08:53]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:08:53]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:08:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:08:53]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[lorem-ipsum-dolor-sit-amet]]></wp:post_name>
@@ -3050,7 +3315,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Final Advice Lorem ipsum dolor sit amet</title>
+		<title><![CDATA[Final Advice Lorem ipsum dolor sit amet]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/final-advice-lorem-ipsum-dolor-sit-amet/</link>
 		<pubDate>Fri, 02 Apr 2021 03:09:34 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3096,6 +3361,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>125</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:09:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:09:34]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:09:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:09:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[final-advice-lorem-ipsum-dolor-sit-amet]]></wp:post_name>
@@ -3115,7 +3382,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>To discuss and questions about tattoos</title>
+		<title><![CDATA[To discuss and questions about tattoos]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/to-discuss-and-questions-about-tattoos/</link>
 		<pubDate>Fri, 02 Apr 2021 03:10:50 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3161,6 +3428,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>126</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:10:50]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:10:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:10:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:10:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[to-discuss-and-questions-about-tattoos]]></wp:post_name>
@@ -3180,7 +3449,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>know before going to the Spa Beauty</title>
+		<title><![CDATA[know before going to the Spa Beauty]]></title>
 		<link>http://demo05.webseo24h.com/tin-tuc/know-before-going-to-the-spa-beauty/</link>
 		<pubDate>Fri, 02 Apr 2021 03:11:21 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3226,6 +3495,8 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		<wp:post_id>127</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-02 03:11:21]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-02 03:11:21]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-02 03:11:21]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-02 03:11:21]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[know-before-going-to-the-spa-beauty]]></wp:post_name>
@@ -3245,7 +3516,7 @@ To discuss and questions about tattoos please contact here]]></content:encoded>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>News exchange agreement with Anadolu</title>
+		<title><![CDATA[News exchange agreement with Anadolu]]></title>
 		<link>http://demo05.webseo24h.com/news-exchange-agreement-with-anadolu/</link>
 		<pubDate>Sat, 10 Apr 2021 03:38:51 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3328,6 +3599,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>139</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:38:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:38:51]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:18:07]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:18:07]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[news-exchange-agreement-with-anadolu]]></wp:post_name>
@@ -3356,7 +3629,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Things to know before going to the Spa Beauty</title>
+		<title><![CDATA[Things to know before going to the Spa Beauty]]></title>
 		<link>http://demo05.webseo24h.com/things-to-know-before-going-to-the-spa-beauty/</link>
 		<pubDate>Sat, 10 Apr 2021 03:40:13 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3439,6 +3712,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>141</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:40:13]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:40:13]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:17:57]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:17:57]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[things-to-know-before-going-to-the-spa-beauty]]></wp:post_name>
@@ -3467,7 +3742,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Duis nec duis quis, augue sem tortor vestibulum</title>
+		<title><![CDATA[Duis nec duis quis, augue sem tortor vestibulum]]></title>
 		<link>http://demo05.webseo24h.com/duis-nec-duis-quis-augue-sem-tortor-vestibulum/</link>
 		<pubDate>Sat, 10 Apr 2021 03:41:14 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3550,6 +3825,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>143</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:41:14]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:41:14]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:17:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:17:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[duis-nec-duis-quis-augue-sem-tortor-vestibulum]]></wp:post_name>
@@ -3580,7 +3857,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>In addition to the information shared below</title>
+		<title><![CDATA[In addition to the information shared below]]></title>
 		<link>http://demo05.webseo24h.com/in-addition-to-the-information-shared-below/</link>
 		<pubDate>Sat, 10 Apr 2021 03:42:01 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3663,6 +3940,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>145</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:42:01]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:42:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:17:44]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:17:44]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[in-addition-to-the-information-shared-below]]></wp:post_name>
@@ -3691,7 +3970,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>Lorem ipsum dolor sit amet</title>
+		<title><![CDATA[Lorem ipsum dolor sit amet]]></title>
 		<link>http://demo05.webseo24h.com/lorem-ipsum-dolor-sit-amet/</link>
 		<pubDate>Sat, 10 Apr 2021 03:42:55 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3774,6 +4053,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>147</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:42:55]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:42:55]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:17:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:17:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[lorem-ipsum-dolor-sit-amet]]></wp:post_name>
@@ -3802,7 +4083,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>We also share via youtobe channel. You can see it here:</title>
+		<title><![CDATA[We also share via youtobe channel. You can see it here:]]></title>
 		<link>http://demo05.webseo24h.com/we-also-share-via-youtobe-channel-you-can-see-it-here/</link>
 		<pubDate>Sat, 10 Apr 2021 03:43:30 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3885,6 +4166,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>149</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:43:30]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:43:30]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:17:31]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:17:31]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[we-also-share-via-youtobe-channel-you-can-see-it-here]]></wp:post_name>
@@ -3913,7 +4196,7 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		</wp:postmeta>
 							</item>
 					<item>
-		<title>A BBL pillow for added support when seated.</title>
+		<title><![CDATA[A BBL pillow for added support when seated.]]></title>
 		<link>http://demo05.webseo24h.com/a-bbl-pillow-for-added-support-when-seated/</link>
 		<pubDate>Sat, 10 Apr 2021 03:44:08 +0000</pubDate>
 		<dc:creator><![CDATA[dbthanhbinh]]></dc:creator>
@@ -3996,6 +4279,8 @@ https://www.youtube.com/embed/dbKgJ0DG4T0
 		<wp:post_id>151</wp:post_id>
 		<wp:post_date><![CDATA[2021-04-10 03:44:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-04-10 03:44:08]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-04-10 04:17:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-04-10 04:17:13]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[a-bbl-pillow-for-added-support-when-seated]]></wp:post_name>
