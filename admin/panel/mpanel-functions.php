@@ -201,12 +201,6 @@ function tie_add_admin() {
 	$theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
 	add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
 	add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
-	add_submenu_page('panel','Support', 'Support','switch_themes', 'support' , 'tie_get_support');
-
-
-	function tie_get_support(){
-		echo "<script type='text/javascript'>window.location='http://webseo24h.com/helps';</script>";
-	}
 	
 	function redirect_docs(){
 		$docs_url = 'http://webseo24h.com/docs';
