@@ -15,7 +15,7 @@
 		<?php
 			the_content();
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'FreeTheme' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'FastSpa' ),
 				'after'  => '</div>',
 			) );
 		?>

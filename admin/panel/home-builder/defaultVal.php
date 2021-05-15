@@ -1,7 +1,6 @@
 <?php
 $_groupslogan = 'Day-to-Day tasks in a Healthy Way';
 $_groupviewall = 'All services';
-
 $defaultBigImg = get_template_directory_uri().'/assets/images/home/bg-dap.jpg';
 $defaultGroup1Img = [
     '_itemImg_1' => get_template_directory_uri().'/assets/images/home/circle1.jpg',

@@ -1,6 +1,6 @@
 <?php
-// add_action( 'wp_footer', 'FreeTheme_call_support_online' );
-function FreeTheme_call_support_online(){
+// add_action( 'wp_footer', 'FastSpa_call_support_online' );
+function FastSpa_call_support_online(){
 ?>
     <!--Call Support-->
     <div class="support-online">

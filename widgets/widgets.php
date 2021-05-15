@@ -18,7 +18,7 @@ unregister_widget('WP_Nav_Menu_Widget');
 /**
  * We are register widget area.
  */
-function FreeTheme_widgets_init() {
+function FastSpa_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Main Sidebar', THEME_NAME ),
 		'id'            => 'sidebar-1',
@@ -79,7 +79,7 @@ function FreeTheme_widgets_init() {
 		'after_title'   => '</label></h2>',
 	) );
 }
-add_action( 'widgets_init', 'FreeTheme_widgets_init' );
+add_action( 'widgets_init', 'FastSpa_widgets_init' );
 
 //  We are include widgets here
 require_once 'widget-popular.php';

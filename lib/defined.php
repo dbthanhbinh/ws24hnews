@@ -1,5 +1,5 @@
 <?php
-const THEMENAME = 'FreeTheme';
+const THEMENAME = 'FastSpa';
 
 const LAYOUT_FULL = 'full';
 const LAYOUT_LEFT_SIDEBAR = 'left-sidebar';

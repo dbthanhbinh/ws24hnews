@@ -1,16 +1,16 @@
 <?php
-register_widget( 'FreeTheme_contact' );
-class FreeTheme_contact extends WP_Widget {
+register_widget( 'ws24h_contact' );
+class ws24h_contact extends WP_Widget {
 
 	/**
 	 * Sets up the widgets name etc
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname' => 'FreeTheme_contact',
-			'description' => 'FreeTheme contact is awesome',
+			'classname' => 'ws24h_contact',
+			'description' => 'Ws24h_ contact is awesome',
 		);
-		parent::__construct( 'FreeTheme_contact', 'FreeTheme contact', $widget_ops );
+		parent::__construct( 'ws24h_contact', 'Ws24h_ contact', $widget_ops );
 	}
 
 	/**
@@ -37,7 +37,7 @@ class FreeTheme_contact extends WP_Widget {
 			?>
 			<div class="row">
 				<div class="col-lg-12 col-md-12">
-					<div class="FreeTheme-support-group support-contact" rel="nofollow">
+					<div class="ws24h-support-group support-contact" rel="nofollow">
 						<!-- <?php if($companyName){?><h5><?= $companyName ?></h5><?php }?> -->
 						<?php
 						if (!empty($companyName)){

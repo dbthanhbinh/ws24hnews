@@ -557,7 +557,7 @@ add_action( 'customize_register', 'your_theme_new_customizer_settings' );
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function FreeTheme_customize_preview_js() {
-	wp_enqueue_script( 'FreeTheme-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+function FastSpa_customize_preview_js() {
+	wp_enqueue_script( 'FastSpa-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'FreeTheme_customize_preview_js' );
+add_action( 'customize_preview_init', 'FastSpa_customize_preview_js' );

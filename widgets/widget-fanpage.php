@@ -1,7 +1,7 @@
 <?php
 ## WIDGET POPULAR ------------------------------------------ #
-register_widget( 'FreeTheme_fanpage_widget' );
-class FreeTheme_fanpage_widget extends WP_Widget
+register_widget( 'ws24h_fanpage_widget' );
+class ws24h_fanpage_widget extends WP_Widget
 {
     /**
 	 * Register widget with
@@ -10,9 +10,9 @@ class FreeTheme_fanpage_widget extends WP_Widget
 		// This is where we add the style and script
 		add_action( 'load-widgets.php', array(&$this, 'my_custom_load') );
 		parent::__construct(
-			'FreeTheme_fanpage', // Base ID
-			__( 'FreeTheme fanpage', THEME_NAME ), // Name
-			array( 'description' => __( 'A FreeTheme Fanpage Widget', THEME_NAME ), ) // Args
+			'ws24h_fanpage', // Base ID
+			__( 'Ws24h fanpage', THEME_NAME ), // Name
+			array( 'description' => __( 'A Ws24h Fanpage Widget', THEME_NAME ), ) // Args
 		);
 	}
 

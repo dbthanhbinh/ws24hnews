@@ -1,16 +1,16 @@
 <?php
-register_widget( 'FreeTheme_social_buttons' );
-class FreeTheme_social_buttons extends WP_Widget {
+register_widget( 'ws24h_social_buttons' );
+class ws24h_social_buttons extends WP_Widget {
 
 	/**
 	 * Sets up the widgets name etc
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname' => 'FreeTheme_social_buttons',
-			'description' => 'FreeTheme social buttons',
+			'classname' => 'ws24h_social_buttons',
+			'description' => 'Ws24h social buttons',
 		);
-		parent::__construct( 'FreeTheme_social_buttons', 'FreeTheme social buttons', $widget_ops );
+		parent::__construct( 'ws24h_social_buttons', 'Ws24h social buttons', $widget_ops );
 	}
 
 	/**
@@ -33,7 +33,7 @@ class FreeTheme_social_buttons extends WP_Widget {
 		echo $before_widget; //$args['before_widget'];
 		/*------- Code display front-end ------*/
 		?>
-		<div class="FreeTheme-support-group support-socials-list" rel="nofollow">
+		<div class="ws24h-support-group support-socials-list" rel="nofollow">
 			<?php
 			if ( ! empty( $instance['title'] ) ) {
 				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];

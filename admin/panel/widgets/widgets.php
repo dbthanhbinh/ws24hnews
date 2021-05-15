@@ -1,5 +1,5 @@
 <?php
-function FreeTheme_widgets_init() {
+function FastSpa_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Widget Area', THEME_NAME),
 		'id'            => 'primary-sidebar',
@@ -77,7 +77,7 @@ function FreeTheme_widgets_init() {
 		}
 	}	
 }
-add_action( 'widgets_init', 'FreeTheme_widgets_init' );
+add_action( 'widgets_init', 'FastSpa_widgets_init' );
 
 function tcr_tag_cloud_filter($args = array()) {
     $args['smallest'] = 10;
