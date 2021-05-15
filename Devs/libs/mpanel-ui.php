@@ -67,6 +67,7 @@ function panel_options() {
 				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
 				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
+				<li class="tie-tabs advanced"><a href="#tab10"><span></span>Advanced</a></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -235,6 +236,125 @@ function panel_options() {
 				<div id="tab22" class="tabs-wrap">
 					<?php require_once ('home-builder/customhome.php'); ?>
 				</div> <!-- Custom Homepage Settings -->
+
+				<div id="tab10" class="tab_content tabs-wrap">
+					<h2>Advanced Settings</h2>	<?php echo $save ?>	
+
+					<div class="tiepanel-item">
+						<h3>Disable the Responsiveness</h3>
+						<?php
+							tie_options(
+								array(	"name" => "Disable Responsive",
+										"id" => "disable_responsive",
+										"type" => "checkbox"));
+						?>
+						<p class="tie_message_hint">This option works only on Tablets and Phones .. to disable the responsiveness action on the desktop .. edit style.css file and remove all Media Quries from the end of the file .</p>
+					</div>	
+					
+					<div class="tiepanel-item">
+						<h3>Disable Theme [Gallery] Shortcode</h3>
+						<?php
+							tie_options(
+								array(	"name" => "Disable Theme [Gallery]",
+										"id" => "disable_gallery_shortcode",
+										"type" => "checkbox"));
+						?>
+						<p class="tie_message_hint">Set it to <strong>ON</strong> if you want to use the Jetpack Tiled Galleries or if you use a custom lightbox plugin for [Gallery] shortcode .</p>
+					</div>	
+					
+					<div class="tiepanel-item">
+						<h3>Twitter API OAuth settings</h3>
+						<p class="tie_message_hint">This information will uses in Social counter and Twitter Widget .. You need to create <a href="https://dev.twitter.com/apps" target="_blank">Twitter APP</a> to get this info .. check this <a href="https://vimeo.com/59573397" target="_blank">Video</a> .</p>
+
+						<?php
+							tie_options(
+								array(	"name" => "Twitter Username",
+										"id" => "twitter_username",
+										"type" => "text"));
+
+							tie_options(
+								array(	"name" => "Consumer key",
+										"id" => "twitter_consumer_key",
+										"type" => "text"));
+										
+							tie_options(
+								array(	"name" => "Consumer secret",
+										"id" => "twitter_consumer_secret",
+										"type" => "text"));	
+										
+							tie_options(
+								array(	"name" => "Access token",
+										"id" => "twitter_access_token",
+										"type" => "text"));	
+										
+							tie_options(
+								array(	"name" => "Access token secret",
+										"id" => "twitter_access_token_secret",
+										"type" => "text"));
+						?>
+					</div>	
+					
+					<div class="tiepanel-item">
+						<h3>Image Resizing</h3>
+						
+						<?php
+							tie_options(
+								array(	"name" => "TimThumb <small style='font-weight:bold;'>(Not Recommended)</small>",
+										"id" => "timthumb",
+										"type" => "checkbox"));
+						?>
+					</div>	
+						
+					<div class="tiepanel-item">
+						<h3>Theme Updates</h3>
+						<?php
+							tie_options(
+								array(	"name" => "Notify On Theme Updates",
+										"id" => "notify_theme",
+										"type" => "checkbox"));
+						?>
+					</div>
+
+					<div class="tiepanel-item">
+						<h3>Wordpress Login page Logo</h3>
+						<?php
+							tie_options(
+								array(	"name" => "Worpress Login page Logo",
+										"id" => "dashboard_logo",
+										"type" => "upload"));
+
+							tie_options(
+								array(	"name" => "Worpress Login page Logo URL",
+										"id" => "dashboard_logo_url",
+										"type" => "text"));
+						?>
+					
+					</div>
+					<?php
+						global $array_options ;
+						
+						$current_options = array();
+						foreach( $array_options as $option ){
+							if( get_option( $option ) )
+								$current_options[$option] =  get_option( $option ) ;
+						}
+					?>
+					
+					<div class="tiepanel-item">
+						<h3>Export</h3>
+						<div class="option-item">
+							<textarea style="width:100%" rows="7"><?php echo $currentsettings = base64_encode( serialize( $current_options )); ?></textarea>
+						</div>
+					</div>
+					<div class="tiepanel-item">
+						<h3>Import</h3>
+						<div class="option-item">
+							<textarea id="tie_import" name="tie_import" style="width:100%" rows="7"></textarea>
+						</div>
+					</div>
+
+
+				</div> <!-- Advanced -->
 
 				<div class="mo-footer">
 					<?php echo $save; ?>

@@ -166,6 +166,9 @@ function watchTask(){
 function makeCleanJsFile() {
     del('./assets/js/themejs.min.js', {force:true});
 }
+function makeCleanTickyJsFile() {
+    del('./assets/js/sticky_sidebar.min.js', {force:true});
+}
 function compressCustomThemeJs(cb) {
     makeCleanJsFile();
     return (
@@ -177,28 +180,40 @@ function compressCustomThemeJs(cb) {
     );
 }
 
-// ------------ For dev features -----------------------
+function compressTickySidebarJs(cb) {
+    makeCleanTickyJsFile();
+    return (
+        gulp.src('./Devs/tickyjs/*.js')
+            .pipe(babel())
+            .pipe(concat('sticky_sidebar.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./assets/js'))
+    );
+}
+
+////// ------------ For dev features -----------------------
 gulp.task('dev', gulp.series(
         buildSass,
         buildAdminSass,
         buildPanelSass,
         buildBootstrapSass,
         compressCustomThemeJs,
+        compressTickySidebarJs,
         watchTask
     )
 );
 // End Dev
 
-// ------------ For build product -----------------------
+////// ------------ For build product Demo -----------------------
 gulp.task('build', gulp.series(
         buildSassBuild,
         buildAdminSassBuild,
         buildPanelSassBuild,
         buildBootstrapSassBuild,
-        compressCustomThemeJs
+        compressCustomThemeJs,
+        compressTickySidebarJs
     )
 );
-
 
 // -------------------------------------------
 function getCurrentDirFolderName(){
@@ -237,6 +252,8 @@ function makeCopyAllFromSource() {
             .pipe(gulp.dest('./'+targetDir))
     );
 }
+
+////// ------------ For build product Download FastSpa -----------------------
 gulp.task('product', gulp.series(
     makeTargetFolder,
     makeCleanTarget,

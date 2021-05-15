@@ -5,7 +5,6 @@ if (isMainSidebar()) : ?>
         return;
     }
 
-    require_once ('modules/ads/services.php');
     require_once ('modules/ads/widget_ads.php');
 ?>
 <div id="sidebar" class="<?= isMainSidebar() ?> sidebar-mobile">

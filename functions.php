@@ -28,7 +28,7 @@ if(is_admin()){
         if(class_exists('ThemeUpdateChecker'))
             $update_checker = new ThemeUpdateChecker(
                 THEMENAME,
-                'https://w-shadow.com/files/example-theme-updates/info.json'
+                '' // https://mydomain.com/theme-updates/info.json
             );
     }
     require_once ('admin/defined.php');
@@ -73,6 +73,8 @@ if(!is_admin()){
 		require_once ('modules/homepage/tpl-home.php');
 	}
     add_action( 'wp_enqueue_scripts', 'FastSpa_scripts' );
+
+    add_action( 'wp_enqueue_scripts', 'FastSpa_sticky_sidebar_scripts' );
     
     // Google Analytics
     add_action( 'wp_head', 'FastSpa_header_analytics' );
@@ -357,12 +359,21 @@ add_filter('pre_get_posts','SearchFilter');
 function FastSpa_scripts () {
 	wp_enqueue_script('jquery-main-script', get_theme_file_uri('/assets/vendor/jquery/jquery.min.js'));
     wp_enqueue_script('jquery-bootstrap-bundle', get_theme_file_uri('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'));
-    wp_enqueue_script('jquery-sticky-sidebar', get_theme_file_uri('/modules/sticksidebar/jquery.sticky-sidebar-scroll.js'));
 	wp_enqueue_style('FastSpa-style', get_stylesheet_uri());
 	wp_enqueue_style('FastSpa-main-bootstrap', get_theme_file_uri('/assets/vendor/bootstrap/css/bootstrap.min.css'), array('FastSpa-style'), '4.1');
 	wp_enqueue_style('FastSpa-main-style', get_theme_file_uri('/assets/css/style.min.css' ), array( 'FastSpa-style'), '1.0' );
     wp_enqueue_style('FastSpa-main-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array('FastSpa-style'), '4.70');
 }
+
+function FastSpa_sticky_sidebar_scripts () {
+    if (!is_front_page() && !is_home()) {
+        $is_sticky_sidebar = get_theme_mod('is_sticky_sidebar');
+        if($is_sticky_sidebar &&  $is_sticky_sidebar == 1){
+            wp_enqueue_script('jquery-sticky-sidebar', get_theme_file_uri('/assets/js/sticky_sidebar.min.js'));
+        }
+    }
+}
+
 
 // Header
 function FastSpa_header_analytics() {
@@ -388,7 +399,7 @@ function FastSpa_footer_scripts() {
 }
 
 function FastSpa_StickySidebar_scripts () {
-	if (is_single()) {
+	if (!is_front_page() && !is_home()) {
         $is_sticky_sidebar = get_theme_mod('is_sticky_sidebar');
         if($is_sticky_sidebar &&  $is_sticky_sidebar == 1){
             ?>
