@@ -29,40 +29,7 @@
         }
 
         .box-search-form {
-            clear: both;
             float: right;
-            margin-left: 10px;
-            form { position: relative; 
-                border: 1px solid #dddddd;
-            }
-            input { height: 25px; }
-            input[type='submit'] {
-                border: none;
-                background: transparent;
-                text-indent: -99999px;
-                width: 36px;
-                height: 25px;
-                position: relative;
-                z-index: 10;
-            }
-
-            input[type='text'] { border: none; }
-
-            span { 
-                display: inline-block;
-                width: 36px;
-                height: 25px;
-                text-align: center;
-                line-height: 25px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 0;
-
-                .fa {
-                    font-size: 17px;
-                }
-             }
         }
     }
 }

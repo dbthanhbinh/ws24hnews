@@ -10,7 +10,9 @@
         return $posttypeName;
     }
 ?>
-<?php  if(get_theme_mod('show_breadcrumb')){ ?>
+<?php
+$isShowBreadcrumb = get_theme_mod('show_breadcrumb', IS_SHOW_BREADCRUMB);
+if($isShowBreadcrumb){?>
 <div class="box-breadcrumb">
     <div class="container">
         <div class="row">

@@ -1,7 +1,8 @@
 <?php get_header();?>
   <?php require_once ('helpers/layout-configs.php'); ?>
+
   <!-- Breadcrumb -->
-  <?php  if(get_theme_mod('show_breadcrumb')){
+  <?php  if(get_theme_mod('show_breadcrumb', IS_SHOW_BREADCRUMB)){
     $category = get_queried_object();
     $cat_option = get_option('tie_cat_'.$category->term_id);
     $breadcrumb_banner = get_template_directory_uri().'/assets/images/breadcrumb_bg.jpg';
@@ -34,10 +35,9 @@
   <!-- End breadcrumb -->
   
   <div class="container">
-    <div class="row <?= mainLayoutKey() ?>">
-      <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
-            <?php get_sidebar();?>
-      <?php } ?>
+    <div class="row <?= $mainLayout ?>">
+      <!-- Sidebar left -->
+      <?php if($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
 
       <div class="<?= mainLayoutClass() ?>">        
         <?php
@@ -45,10 +45,13 @@
               $pos = 1;
               $archive_display = tie_get_option('archive_display');
               $archive_cols = tie_get_option('archive_cols');
+
               $args = [
-                'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,
-                'cols' => $archive_cols ? $archive_cols : 3
+                'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,
+                'cols' => $archive_cols,
+                'layout' => $mainLayout
               ];
+
               echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
                 while ( have_posts() ) : the_post();
                     get_template_part('template-parts/post/content', get_post_format(), $args);
@@ -62,16 +65,15 @@
           endif;
         ?>
 
-        <!-- For Nav -->
+        <!-- For Navigation -->
         <?php require_once('helpers/pagination.php'); ?>
       </div>
 
-      <!-- Sidebar area: we defined sidebar's 2 area -->
+      <!-- We defined sidebar's 2 area -->
       <?php get_sidebar('second');?>
 
-      <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-          <?php get_sidebar();?>
-      <?php } ?>
+      <!-- Sidebar right -->
+      <?php if($mainLayout == LAYOUT_RIGHT_SIDEBAR) { get_sidebar(); } ?>
       
     </div>
   </div>

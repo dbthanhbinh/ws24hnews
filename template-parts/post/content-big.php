@@ -2,7 +2,7 @@
 	<?php if ( (isset($content_type) && $content_type == 'related') || ('' !== get_the_post_thumbnail() && ! is_single()) ) : ?>
 		<div class="post-big-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'large' ); ?>
+				<?php the_post_thumbnail('large', ['alt' => esc_html(get_the_title()), 'title' => esc_html(get_the_title())]); ?>
 			</a>
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>

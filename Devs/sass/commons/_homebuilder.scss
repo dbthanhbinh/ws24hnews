@@ -1,3 +1,23 @@
+.home-main-content {
+    overflow: hidden;
+}
+
+.section {
+    display: inline-block;
+    width: 100%;
+    margin: 50px 0;
+}
+
+.home-slide-wrapper {
+    text-align: center;
+    p {
+        margin: 20px 0;
+        a {
+            color: $main_color;
+        }
+    }
+}
+
 .home-section {
     .home-box-title {
         clear: both;
@@ -27,7 +47,6 @@
     }
 
     &.section-group-top {
-        margin-top: 0;
         position: relative;
         z-index: 10;
 
@@ -65,7 +84,7 @@
 .home-intro-readmore {
     a {
         font-style: italic;
-        background: #ff99b8;
+        background: $main_color;
         color: #222222;
         padding: 8px 20px;
     }
@@ -259,7 +278,11 @@
     .group-2 {
         margin: 50px auto;
 
-        .group-right {}
+        .group-right {
+            .bt-lemon-container {
+                text-align: right;
+            }
+        }
     }
 
     .item_thumb {
@@ -275,10 +298,6 @@
 
         
     }
-}
-
-.section {
-    margin: 70px 0;
 }
 
 .truncate-title{
@@ -451,4 +470,55 @@ a.btn-lemon {
             margin-left: unset;
         }
     }
+}
+
+.home-custom-box {
+    color: #ffffff;
+
+    .left-custom-box {}
+    .right-custom-box {
+        .custom-box-des {
+            margin-bottom: 20px;
+        }
+        .custom-box-des-spirit {
+            ul, ol {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    display: inline-flex;
+                    width: 48%;
+                    margin: 3px 0;
+                    
+                    &::before {
+                        font: normal normal normal 14px/1 FontAwesome;
+                        content: "\f2da";
+                        width: 32px;
+                        font-size: 14px;
+                        display: inline-block;
+                        text-align: right;
+                        margin-right: 10px;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        color: $main_color;
+                    }
+                }
+            }
+        }
+
+        .custom-box-navigator {
+            margin-top: 30px;
+        }
+    }
+}
+
+.vc_custom_1583484295953 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url('../images/bg-da.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -5,10 +5,9 @@
 
   <div class="container">
     <?php require_once ('helpers/layout-configs.php'); ?>
-    <div class="row <?= mainLayoutKey() ?>">
-      <?php if(mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
-            <?php get_sidebar();?>
-      <?php } ?>
+    <div class="row <?= $mainLayout ?>">
+      <!-- Sidebar left -->
+      <?php if($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
 
       <div class="<?= mainLayoutClass() ?>">
         <div class="article-content">
@@ -22,11 +21,10 @@
         </div>
       </div>
 
-      <!-- Sidebar area: we defined sidebar's 2 area -->
+      <!-- We defined sidebar's 2 area -->
       <?php get_sidebar('second');?>
-      <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-          <?php get_sidebar();?>
-      <?php } ?>
+      <!-- Sidebar right -->
+      <?php if($mainLayout == LAYOUT_RIGHT_SIDEBAR) { get_sidebar(); } ?>
 
     </div>
   </div>

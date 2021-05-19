@@ -11,38 +11,49 @@ function showBoxTitle($boxTitle, $showTitle, $description, $showDescription){
 }
 
 function get_home_recent( $cat_data ) {
-	$cat_include 	= (isset($cat_data['include']) && $cat_data['include']) ? $cat_data['include'] : null;
-	$numberPost 	= $cat_data['number'] ? $cat_data['number'] : 5;
-	$boxTitle 		= $cat_data['title'] ? $cat_data['title'] : null;
-	$showTitle 	= (isset($cat_data['show_title']) && $cat_data['show_title']) ? $cat_data['show_title'] : null;
-	$description 	= $cat_data['description'] ? $cat_data['description'] : null;
-	$showDescription 	= (isset($cat_data['show_description']) && $cat_data['show_description']) ? $cat_data['show_description'] : null;
+	$showBox = (isset($cat_data['show_box']) && $cat_data['show_box']) ? $cat_data['show_box'] : 'y';
+	if($showBox == 'y') {
+		$cat_include 	= (isset($cat_data['include']) && $cat_data['include']) ? $cat_data['include'] : null;
+		$numberPost 	= $cat_data['number'] ? $cat_data['number'] : 5;
+		$boxTitle 		= $cat_data['title'] ? $cat_data['title'] : null;
+		$showTitle 	= (isset($cat_data['show_title']) && $cat_data['show_title']) ? $cat_data['show_title'] : null;
+		$description 	= $cat_data['description'] ? $cat_data['description'] : null;
+		$showDescription 	= (isset($cat_data['show_description']) && $cat_data['show_description']) ? $cat_data['show_description'] : null;
 
-	echo '<div class="section home-section animated recent-posts">';
-	
-	if($cat_data['posttype'] == 'posts')
-		$postQuery = new WP_Query(['category__in' => $cat_include, 'posts_per_page' => $numberPost]);
-	else
-		$postQuery = new WP_Query(['category__in' => $cat_include, 'post_type' => $cat_data['posttype'], 'posts_per_page' => $numberPost]);
+		echo '<div class="section home-section animated recent-posts">';
+		?>
+		<div class="container">
+        	<div class="row">
+			<?php
+			if($cat_data['posttype'] == 'posts')
+				$postQuery = new WP_Query(['category__in' => $cat_include, 'posts_per_page' => $numberPost]);
+			else
+				$postQuery = new WP_Query(['category__in' => $cat_include, 'post_type' => $cat_data['posttype'], 'posts_per_page' => $numberPost]);
 
-	if($postQuery->have_posts()):
-		$pos = 1;
-		$args = [
-			'isGrid' => isset($cat_data['display']) && $cat_data['display'] == 'grid' ? true : false,
-			'cols' => $cat_data['grid_cols']
-		];
-		echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
-		while ($postQuery->have_posts()): $postQuery->the_post();
-			if($pos == 1){
-				showBoxTitle($boxTitle, $showTitle, $description, $showDescription);
-			}
-			get_template_part('template-parts/post/content', '', $args);
-			
-			$pos++;
-		endwhile;
+			if($postQuery->have_posts()):
+				$pos = 1;
+				$args = [
+					'isGrid' => isset($cat_data['display']) && $cat_data['display'] == 'grid' ? true : false,
+					'cols' => $cat_data['grid_cols'],
+					'layout' => 'full'
+				];
+				echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
+				while ($postQuery->have_posts()): $postQuery->the_post();
+					if($pos == 1){
+						showBoxTitle($boxTitle, $showTitle, $description, $showDescription);
+					}
+					get_template_part('template-parts/post/content', '', $args);
+					
+					$pos++;
+				endwhile;
+				echo '</div>';
+			endif;
+			?>
+			</div>
+		</div>
+		<?php
 		echo '</div>';
-	endif;
-	echo '</div>';
+	}
 }
 
 function get_home_videos($cat_data){
@@ -57,10 +68,12 @@ function get_home_videos($cat_data){
 	$cols = (isset($cat_data['grid_cols']) && $cat_data['grid_cols']) ? $cat_data['grid_cols'] : 3;
 	$args = [
 		'isGrid' => $isGrid,
-		'cols' => $cols
+		'cols' => $cols,
+		'layout' => 'full'
 	];
 
 	echo '<div class="section home-section animated video-list '.mainLayoutTemplate($args['isGrid']).'">';
+	echo '<div class="container"> <div class="row">';
 	showBoxTitle($boxTitle, $showTitle, $description, $showDescription);
 	
 	$postQuery = new WP_Query(['post_type' => 'custom-video', 'posts_per_page' => $numberPost]);
@@ -95,6 +108,7 @@ function get_home_videos($cat_data){
 	</div>
 	<?php
 	endif;
+	echo '</div></div>';
 	echo '</div>';
 }
 

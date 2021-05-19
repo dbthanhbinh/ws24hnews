@@ -3,6 +3,24 @@
     display: flow-root;
 }
 
+.top-header-banner {
+    margin-top: 5px;
+}
+
+
+.theme-logo {
+    max-width: 200px;
+    height: auto;
+    &.navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        img{
+            max-height: 85px;
+        }
+    }
+}
+
 .top-header {
     clear: both;
     padding: 0;

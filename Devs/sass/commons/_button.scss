@@ -1,6 +1,5 @@
 // btn-lemon
 .bt-lemon-container {
-    text-align: right;
     overflow: hidden;
     position: relative;
 
@@ -23,6 +22,7 @@
         animation-play-state: paused;
 
         svg {
+            padding: 5px;
             position: absolute;
             z-index: 2;
             left: 0px;
@@ -38,10 +38,10 @@
             fill: none;
             transition: all 0.4s ease 0s;
             stroke: rgb(255, 255, 255);
-
+            overflow: unset;
             rect {
                 height: 35px;
-                width: calc(100% - 10px);
+                width: calc(100% - 0px);
                 x: 5px;
                 y: 5px;
             }

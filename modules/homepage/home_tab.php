@@ -75,7 +75,7 @@ function buildListItems($listItems){
 if($homeTabBox){
     $homeTabBox = tie_get_option('home_tabs_box');
     $homeTabBigImage = tie_get_option('home_tabs_big_image');
-    $homeTabOrder = tie_get_option('home_tabs_order');
+    // $homeTabOrder = tie_get_option('home_tabs_order');
     $homeTabBoxTitle = tie_get_option('home_tabs_box_title');
     $homeTabBoxSubtitle = tie_get_option('home_tabs_box_subtitle');
     $homeTabDescription = tie_get_option('home_tabs_description');
@@ -84,6 +84,7 @@ if($homeTabBox){
     $tieHomePostByCat = [];
 ?>
 <div class="section home-section animated secondary-section section-best-packages">
+  <div class="container">
     <div class="row">
       <div class="<?= getDefaultFullLayout() ?> header-section">
           <div class=" title">
@@ -97,7 +98,6 @@ if($homeTabBox){
           $isFirst = false;
           $postsPerPage = 6;
           $maxCount = $postsPerPage/2; // 3left/3right
-
           $showOnLoad = '';
           foreach ($tieHomeTabs as $key => $option) {
               $catData = get_category($option);
@@ -107,8 +107,7 @@ if($homeTabBox){
                   if(!$isFirst){
                       $showOnLoad = $catData->slug;
                   }
-
-                  $postQuery = new WP_Query(['category' => $catData->cat_ID, 'posts_per_page' => $postsPerPage]);
+                  $postQuery = new WP_Query(['category__in' => [$catData->cat_ID], 'posts_per_page' => $postsPerPage]);
                   if($postQuery->have_posts()){
                       $p = 0;
                       while ($postQuery->have_posts()):
@@ -127,6 +126,7 @@ if($homeTabBox){
                           ];
                       $p++;
                     endwhile;
+                    wp_reset_query();
                   }
                   $myposts = null;
               }
@@ -184,5 +184,6 @@ if($homeTabBox){
         </div>
       </div>
     </div>
+  </div>
 </div>
 <?php }?>

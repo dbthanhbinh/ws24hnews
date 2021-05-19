@@ -47,31 +47,34 @@
     }
 
     .widget {
-        &.widget_tag_cloud {
-            .widget-title {
+        .widget-title {
+            border: none;
+            background: none;
+            label{
                 border: none;
-                background: none;
-                label{
-                    border: none;
-                    margin: 0;
-                    padding: 0;
+                margin: 0;
+                padding: 0;
+                border-bottom: 2px solid $main_color;
+                padding-bottom: 2px;
 
-                    &:before{
-                        content: "";
-                        display: none;
-                    }
+                &:before{
+                    content: "";
+                    display: none;
                 }
             }
+        }
 
-            .tagcloud{
-                max-height: 100px;
-                overflow: auto;
-                a {
-                    background: #f1f1f1;
-                    padding: 3px 5px;
-                    margin: 1px 0px;
-                    display: inline-block;
-                }
+        .tagcloud{
+            max-height: 100px;
+            overflow: auto;
+            a {
+                background: #f1f1f1;
+                padding: 0px 5px;
+                margin: 2px 2px;
+                display: inline-block;
+                height: 28px;
+                line-height: 28px;
+                float: left;
             }
         }
     }
@@ -108,7 +111,7 @@
     }    
 }
 
-.support-online { position: fixed; z-index: 999; left: 0; bottom: 0px; }
+.support-online { position: fixed; z-index: 999; left: 0; bottom: 20px; }
 .support-online a {
     position: relative; margin: 10px; text-align: left; width: 40px; height: 40px;
 
@@ -123,21 +126,36 @@
         }
     }
 }
-.support-online i.fa { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+.support-online i.fa {
+    width: 40px; height: 40px; 
+    background: $main_color;
+    color: $main_text_color;
+    border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999;
+}
+
 .support-online a span {
-    border-radius: 2px; text-align: center; background: $main_color; 
+    border-radius: 2px;
+    border: 1px solid #fff;
+    text-align: center; background: $main_color; 
     padding: 5px; display: none; width: 140px; 
-    margin: 0px; position: absolute; color: #ffffff; z-index: 999; top: 5px; left: 38px; transition: all 0.2s ease-in-out 0s; -moz-animation: headerAnimation 0.7s 1; -webkit-animation: headerAnimation 0.7s 1; -o-animation: headerAnimation 0.7s 1; animation: headerAnimation 0.7s 1; 
+    margin: 0px; position: absolute;
+    color: #ffffff; z-index: 999; top: 5px; left: 38px;
+    transition: all 0.2s ease-in-out 0s;
+    -moz-animation: headerAnimation 0.7s 1;
+    -webkit-animation: headerAnimation 0.7s 1; -o-animation: headerAnimation 0.7s 1; animation: headerAnimation 0.7s 1; 
 }
 .support-online a:hover span { display: block; }
 .support-online a { display: block; }
 .support-online a span:before { content: “”; width: 0; height: 0; border-style: solid; border-width: 10px 10px 10px 0; border-color: transparent rgb(103, 182, 52) transparent transparent; position: absolute; left: -10px; top: 10px; }
-.kenit-alo-circle-fill { width: 40px; height: 40px; top: 0; position: absolute; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid transparent; -webkit-transition: all .5s; -moz-transition: all .5s; -o-transition: all .5s; transition: all .5s; background-color: rgba(0, 175, 242, 0.5); opacity: .75; right: 0; }
+.kenit-alo-circle-fill { width: 40px; height: 40px; top: 0; position: absolute;
+    -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid transparent; -webkit-transition: all .5s; -moz-transition: all .5s; -o-transition: all .5s; transition: all .5s;
+    background-color: $support_online_ping_color;
+    opacity: .75; right: 0; }
 .kenit-alo-circle { 
     width: 40px; height: 40px; top: 0px; right: 0px; position: absolute; background-color: transparent; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid rgba(30, 30, 30, 0.4); opacity: .1; border-color: #0089B9; opacity: .5;
 }
 .support-online .btn-support { cursor: pointer; }
-.support-online img { width: 40px; height: 40px; background: #43a1f3; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+.support-online img { width: 40px; height: 40px; background: $main_color; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
 
 @media (max-width : 640px) {
     .support-online a, .support-online a:hover span {
@@ -159,5 +177,43 @@
         left: 0;
         transition: all .2s ease-in-out 0s;
         animation: headerAnimation .7s 1;
+    }
+}
+
+// scrollup
+.scrollup {
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    width: 39px;
+    height: 39px;
+    border-radius: 5px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    border: 1px solid $scrollup-color;
+    display: none;
+    background: $scrollup-bg;
+
+    .icon-up-open:before {
+        content: '\e805';
+    }
+
+    &:hover {
+        background: $scrollup-hover;
+        border-color: $scrollup-color;
+        span {
+            color: $scrollup-color;
+        }
+    }
+
+    > span {
+        position: relative;
+        top: 0px;
+        color: $scrollup-color;
+        i.fa-eject {
+            color: $scrollup-color;
+        }
     }
 }

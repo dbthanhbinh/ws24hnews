@@ -8,59 +8,212 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 var minifyCss = require('gulp-cssnano');
-var cleanCss = require('gulp-clean-css');
+var cleanCSS = require('gulp-clean-css');
 var rev = require('gulp-rev');
 var sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 
 var fs = require('fs');
 var del = require('del') ;
 
-function buildSass(cb) {
-    return (
-        gulp.src('./Devs/sass/**/*.scss')
-            .pipe(sourcemaps.init())
-            .pipe(sass())
-            .pipe(minifyCss())
-            .pipe(rename('style.min.css'))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('./assets/css'))
-            .pipe(livereload())
-    );
+function makeCleanCssFile() {
+    del('./assets/css/style.min.css', {force:true});
+    del('./assets/css/style.min.css.map', {force:true});
+}
+function buildSassDf(env) {
+    if(env === 'build'){
+        makeCleanCssFile();
+        return (
+            gulp.src('./Devs/sass/**/*.scss')
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('style.min.css'))
+                .pipe(gulp.dest('./assets/css'))
+        ); 
+    } else {
+        return (
+            gulp.src('./Devs/sass/**/*.scss')
+                .pipe(sourcemaps.init())
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('style.min.css'))
+                .pipe(sourcemaps.write('.'))
+                .pipe(gulp.dest('./assets/css'))
+                .pipe(livereload())
+        );
+    }
 }
 
-function buildAdminSass(cb) {
-    return (
-        gulp.src('./Devs/admins/**/*.scss')
-            .pipe(sourcemaps.init())
-            .pipe(sass())
-            .pipe(minifyCss())
-            .pipe(rename('admin.min.css'))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('./assets/admin'))
-            .pipe(livereload())
-    );
+function buildSass() { return buildSassDf('env');}
+function buildSassBuild() { return buildSassDf('build'); }
+
+
+function makeCleanAdminFile() {
+    del('./admin/assets/admin.min.css', {force:true});
+    del('./admin/assets/admin.min.css.map', {force:true});
+}
+function buildAdminSassDf(env) {
+    if(env === 'build'){
+        makeCleanAdminFile();
+        return (
+            gulp.src('./Devs/admins/**/*.scss')
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('admin.min.css'))
+                .pipe(gulp.dest('./admin/assets'))
+        );
+    } else {
+        return (
+            gulp.src('./Devs/admins/**/*.scss')
+                .pipe(sourcemaps.init())
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('admin.min.css'))
+                .pipe(sourcemaps.write('.'))
+                .pipe(gulp.dest('./admin/assets'))
+                .pipe(livereload())
+        );
+    }
 }
 
-function buildPanelSass(cb) {
-    return (
-        gulp.src('./Devs/panels/**/*.scss')
-            .pipe(sourcemaps.init())
-            .pipe(sass())
-            .pipe(minifyCss())
-            .pipe(rename('panel.min.css'))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('./panel'))
-            .pipe(livereload())
-    );
-}
+function buildAdminSass() { return buildAdminSassDf('dev') }
+function buildAdminSassBuild() { return buildAdminSassDf('build') }
 
+
+function makeCleanPanelFile() {
+    del('./admin/panel/panel.min.css', {force:true});
+    del('./admin/panel/panel.min.css.map', {force:true});
+}
+function buildPanelSassDf(env) {
+    if(env === 'build'){
+        makeCleanPanelFile();
+        return (
+            gulp.src('./Devs/panels/scss/**/*.scss')
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('panel.min.css'))
+                .pipe(gulp.dest('./admin/panel'))
+        );
+    } else {
+        return (
+            gulp.src('./Devs/panels/scss/**/*.scss')
+                .pipe(sourcemaps.init())
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('panel.min.css'))
+                .pipe(sourcemaps.write('.'))
+                .pipe(gulp.dest('./admin/panel'))
+                .pipe(livereload())
+        );
+    }
+}
+function buildPanelSass() { return buildPanelSassDf('dev') }
+function buildPanelSassBuild() { return buildPanelSassDf('build') }
+
+// Bootstrap
+function makeCleanBoostrapFile() {
+    del('./assets/vendor/bootstrap/css/bootstrap.min.css', {force:true});
+    del('./assets/vendor/bootstrap/css/bootstrap.min.css.map', {force:true});
+}
+function buildBootstrapSassDf(env) {
+    if(env === 'build'){
+        makeCleanBoostrapFile();
+        return (
+            gulp.src('./Devs/bootstrap/css/**/*.css')
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('bootstrap.min.css'))
+                .pipe(gulp.dest('./assets/vendor/bootstrap/css'))
+        );
+    } else {
+        return (
+            gulp.src('./Devs/bootstrap/css/**/*.css')
+                .pipe(sourcemaps.init())
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('bootstrap.min.css'))
+                .pipe(sourcemaps.write('.'))
+                .pipe(gulp.dest('./assets/vendor/bootstrap/css'))
+                .pipe(livereload())
+        );
+    }
+}
+function buildBootstrapSass() { return buildBootstrapSassDf('dev') }
+function buildBootstrapSassBuild() { return buildBootstrapSassDf('build') }
+
+// ===================================================================
 function watchTask(){
     gulp.watch(
-        ['./Devs/sass/**/*', './Devs/admins/**/*'],
+        [
+            './Devs/sass/**/*',
+            './Devs/admins/**/*',
+            './Devs/panels/**/*',
+        ],
         gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
     );
 }
-gulp.task('dev', gulp.series(buildSass, buildAdminSass, buildPanelSass, watchTask));
+
+// ============ Build for javascript =============================
+function makeCleanJsFile() {
+    del('./assets/js/themejs.min.js', {force:true});
+}
+function makeCleanTickyJsFile() {
+    del('./assets/js/sticky_sidebar.min.js', {force:true});
+}
+function compressCustomThemeJs(cb) {
+    makeCleanJsFile();
+    return (
+        gulp.src('./Devs/js/*.js')
+            .pipe(babel())
+            .pipe(concat('themejs.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./assets/js'))
+    );
+}
+
+function compressTickySidebarJs(cb) {
+    makeCleanTickyJsFile();
+    return (
+        gulp.src('./Devs/tickyjs/*.js')
+            .pipe(babel())
+            .pipe(concat('sticky_sidebar.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./assets/js'))
+    );
+}
+
+////// ------------ For dev features -----------------------
+gulp.task('dev', gulp.series(
+        buildSass,
+        buildAdminSass,
+        buildPanelSass,
+        buildBootstrapSass,
+        compressCustomThemeJs,
+        compressTickySidebarJs,
+        watchTask
+    )
+);
+// End Dev
+
+////// ------------ For build product Demo -----------------------
+gulp.task('build', gulp.series(
+        buildSassBuild,
+        buildAdminSassBuild,
+        buildPanelSassBuild,
+        buildBootstrapSassBuild,
+        compressCustomThemeJs,
+        compressTickySidebarJs
+    )
+);
 
 // -------------------------------------------
 function getCurrentDirFolderName(){
@@ -86,10 +239,10 @@ function makeCleanDevelop() {
     del(targetDir+'/README.md', {force:true});
     del(targetDir+'/package.json', {force:true});
     del(targetDir+'/package-lock.json', {force:true});
-    del(targetDir+'/gulpfile.js', {force:true});
+    return del(targetDir+'/gulpfile.js', {force:true});
 }
 
-// Test build
+// Test product
 var sourceDir = getCurrentDirFolderName(); //'../product';
 var targetDir = '../'+getCurrentDirFolderName()+'_product'; //'../product';
 
@@ -100,8 +253,8 @@ function makeCopyAllFromSource() {
     );
 }
 
-
-gulp.task('build', gulp.series(
+////// ------------ For build product Download FastSpa -----------------------
+gulp.task('product', gulp.series(
     makeTargetFolder,
     makeCleanTarget,
     makeCopyAllFromSource,

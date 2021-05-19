@@ -1,0 +1,35 @@
+.box-search-form {
+    clear: both;
+    margin-left: 10px;
+    form { position: relative; 
+        border: 1px solid #dddddd;
+    }
+    input { height: 30px; }
+    input[type='submit'] {
+        border: none;
+        background: transparent;
+        text-indent: -99999px;
+        width: 36px;
+        height: 30px;
+        position: relative;
+        z-index: 10;
+    }
+
+    input[type='text'] { border: none; }
+
+    span { 
+        display: inline-block;
+        width: 36px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        z-index: 0;
+
+        .fa {
+            font-size: 17px;
+        }
+     }
+}

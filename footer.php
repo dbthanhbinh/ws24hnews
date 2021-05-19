@@ -5,12 +5,13 @@
     }
     ?>
     <?php
-      if(get_theme_mod('show_footer_layout')){
+      if(get_theme_mod('show_footer_layout', false)){
         require_once ('modules/footer/footer.php');
       }
     ?>
-    <?php if(get_theme_mod('show_footer_copyright')) {?>
-      <div class="copy-right-box">
+    <?php
+    if(get_theme_mod('show_footer_copyright', LAYOUT_SHOW_FOOTER_COPYRIGHT)) {?>
+      <div id="copy-right-box" class="copy-right-box">
         <div class="container">  
           <div class="row">      
             <div class="<?= getDefaultFullLayout() ?>">
@@ -41,7 +42,8 @@
         </div>
       </div>
     <?php }?>
-    <?php wp_footer()?>
     <div id="site-over" class=""></div>
+    <div class="scrollup"><span><i class="fa fa-eject" aria-hidden="true"></i></span></div>
+    <?php wp_footer()?>
   </body>
 </html>
