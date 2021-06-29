@@ -19,7 +19,7 @@ $colors-pink: #e83e8c;
 $colors-red: #dc3545;
 $colors-orange: #fd7e14;
 $colors-yellow: #ffc107;
-$colors-green: #28a745;
+$colors-green: #24ca24; //#28a745;
 $colors-teal: #20c997;
 $colors-cyan: #17a2b8;
 $colors-white: #fff;
@@ -46,11 +46,11 @@ $properties-bg: #f74a27;
 $color2: #0061c2;
 
 // Spa color
-$main_color: $colors-pink;
+$main_color: $colors-green;
 $main_text_color: $colors-white;
-$btn_lemon_bg_color: $colors-pink;
+$btn_lemon_bg_color: $colors-green;
 $btn_lemon_text_color: $colors-white;
-$support_online_ping_color: #f43e8c;
+$support_online_ping_color: $colors-green;
 
 /*MENU navbar*/
 $menu_bar_height: 35px;
