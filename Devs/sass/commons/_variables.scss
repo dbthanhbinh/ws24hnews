@@ -34,6 +34,7 @@ $colors-danger: #dc3545;
 $colors-light: #f8f9fa;
 $colors-dark: #343a40;
 $color-black: #161616;
+$color-nail: #8c1236;
 
 /* Colors */
 $color: #212529;
@@ -46,11 +47,11 @@ $properties-bg: #f74a27;
 $color2: #0061c2;
 
 // Spa color
-$main_color: $colors-green;
+$main_color: $color-nail;
 $main_text_color: $colors-white;
-$btn_lemon_bg_color: $colors-green;
+$btn_lemon_bg_color: $color-nail;
 $btn_lemon_text_color: $colors-white;
-$support_online_ping_color: $colors-green;
+$support_online_ping_color: $color-nail;
 
 /*MENU navbar*/
 $menu_bar_height: 35px;
