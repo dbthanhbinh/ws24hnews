@@ -14,6 +14,9 @@
     <!-- <div class="<?= mainLayoutClass() ?>"> -->
     <div class="home-main-content">
         <h1 style="display:none;"><?php echo get_bloginfo('name')?></h1>
+
+        <?php include TEMPLATEPATH . ('/modules/fast-appointment/index.php')?>
+
         <?php
             if(function_exists('tie_get_option')
                 && tie_get_option('on_home')
