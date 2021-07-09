@@ -34,15 +34,21 @@
             left: 15px;
             padding-bottom: 15px;
 
-            #menu-primary {
+            #menu-primary-menu {
                 clear: both;
                 > .nav-item a{
                     color: $main_text_color;
                 }
 
                 .dropdown-menu{
-                    .nav-item .nav-link{
+                    .nav-item {
                         padding: 3px 0!important;
+                        .nav-link {
+                            color: $responsive_menu_level2_color;
+                            &:hover{
+                                color: $menu_link_color_hover;
+                            }
+                        }                
                     }
                 }
             }

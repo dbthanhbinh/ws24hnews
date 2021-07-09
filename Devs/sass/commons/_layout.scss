@@ -60,3 +60,14 @@
         transform: translateX(-50%);
     }
 }
+
+.page-search-notfound {
+    .box-search-form {
+        width: 230px;
+        form {
+            #s{
+                width: 185px;
+            }
+        }
+    }
+}

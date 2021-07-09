@@ -47,24 +47,34 @@ $properties-bg: #f74a27;
 $color2: #0061c2;
 
 // Spa color
-$main_color: $color-nail;
-$main_text_color: $colors-white;
-$btn_lemon_bg_color: $color-nail;
-$btn_lemon_text_color: $colors-white;
-$support_online_ping_color: $color-nail;
+$main_color: $themeColor;  //$color-nail;
+$main_text_color: $colorThemeText;
+$btn_lemon_bg_color: $themeColor;
+$btn_lemon_text_color: $colorThemeText;
+$support_online_ping_color: $themeColor;
+$support_online_color: #ffffff;
+$scrollup_color: #ffffff;
 
 /*MENU navbar*/
 $menu_bar_height: 35px;
 $menu_link_color: #fff;
-$menu_bg: #055699;
+$menu_link_color_hover: $main_color;
 $menu_border_color: $menu_link_color;
 $menu_margin_bottom: ($margin + 5);
-$menu_mobile_hover: $colors-white;
+$menu_mobile_hover: $colorThemeText;
+$support_online_icon_a_fa_border_color: $support_online_color;
+$support_online_call_now_color: $support_online_color;
+$widget_tag_cloud_bar_color: $main_color;
+$widget_tag_cloud_bar_color_hover: $main_color;
 
 $margin_right: 15px;
 $margin_top: $margin_right;
 $margin_left: $margin_right;
 $margin_bottom: $margin_right;
+
+// Responsive
+$responsive_menu_level2_color: #333;
+
 
 /*Widgets*/
 /* box-list-item > item-title*/
@@ -75,18 +85,15 @@ $widget_item_title_weight: bold;
 $widget_item_thumb_mg_bt: 5px;
 
 /*Comments*/
-$comment_page_current_color: $colors-red;
+$comment_page_current_color: $main_color;
 
 /*Paging*/
 $pagi_current_bg: $main_color;
-$pagi_current_color: $colors-gray;
-
 
 /* footer */
-$footer_bg: $menu_bg;
 $footer_link_color: $menu_link_color;
 
 // scrollup
 $scrollup-bg: $main_color;
-$scrollup-color: $colors-white;
+$scrollup-color: $scrollup_color;
 $scrollup-hover: $main_color;
