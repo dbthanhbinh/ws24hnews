@@ -13,6 +13,7 @@ var rev = require('gulp-rev');
 var sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+var header = require('gulp-header');
 
 var fs = require('fs');
 var del = require('del') ;
@@ -21,20 +22,72 @@ function makeCleanCssFile() {
     del('./assets/css/style.min.css', {force:true});
     del('./assets/css/style.min.css.map', {force:true});
 }
-function buildSassDf(env) {
+
+// passed color to _variable.scss
+var colorthemes = [];
+    colorthemes.push({
+        themeName: 'pink', // main theme
+        mainColor: '#e83e8c',
+        mainTextColor: '#ffffff'
+    });
+
+    colorthemes.push({
+        themeName: 'green', // main theme
+        mainColor: '#24ca24',
+        mainTextColor: '#ffffff'
+    });
+    colorthemes.push({
+        themeName: 'nail', // main theme
+        mainColor: '#8c1236',
+        mainTextColor: '#ffffff'
+    });
+    colorthemes.push({
+        themeName: 'red', // main theme
+        mainColor: '#f74a27',
+        mainTextColor: '#ffffff'
+    });
+
+    var themecolor = '#e83e8c';
+    var colorthemetext = '#ffffff';
+
+function buildSassDf(env, themeProperties) {
     if(env === 'build'){
         makeCleanCssFile();
-        return (
-            gulp.src('./Devs/sass/**/*.scss')
-                .pipe(sass())
-                .pipe(cleanCSS())
-                .pipe(minifyCss())
-                .pipe(rename('style.min.css'))
-                .pipe(gulp.dest('./assets/css'))
-        ); 
+        if(themeProperties && themeProperties !== 'undefined'){
+            let childPath = '';
+            if(themeProperties.themeName !== 'pink') // default color
+            {
+                childPath = '/' + themeProperties.themeName;
+                gulp.src('*.*', {read: false})
+                    .pipe(gulp.dest('./assets/css'+childPath))
+            }
+            return (
+                gulp.src('./Devs/sass/**/*.scss')
+                    .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
+                        '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename('style.min.css'))
+                    .pipe(gulp.dest('./assets/css'+childPath))
+            );
+        } else {
+            return (
+                gulp.src('./Devs/sass/**/*.scss')
+                    .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                        '$colorThemeText: ' + colorthemetext + ';\n'))
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename('style.min.css'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
+        }
     } else {
         return (
             gulp.src('./Devs/sass/**/*.scss')
+                .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                    '$colorThemeText: ' + colorthemetext + ';\n'))
                 .pipe(sourcemaps.init())
                 .pipe(sass())
                 .pipe(cleanCSS())
@@ -48,8 +101,14 @@ function buildSassDf(env) {
 }
 
 function buildSass() { return buildSassDf('env');}
-function buildSassBuild() { return buildSassDf('build'); }
 
+function buildSassBuild() {
+    for (let index = 0; index < colorthemes.length; index++) {
+        let themeProperties = colorthemes[index];
+        buildSassDf('build', themeProperties);
+    }
+    // buildSassDf('build');
+}
 
 function makeCleanAdminFile() {
     del('./admin/assets/admin.min.css', {force:true});
@@ -89,6 +148,7 @@ function makeCleanPanelFile() {
     del('./admin/panel/panel.min.css', {force:true});
     del('./admin/panel/panel.min.css.map', {force:true});
 }
+
 function buildPanelSassDf(env) {
     if(env === 'build'){
         makeCleanPanelFile();
