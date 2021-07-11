@@ -9,7 +9,7 @@
       <!-- Sidebar left -->
       <?php if($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
 
-      <div class="<?= mainLayoutClass() ?>">
+      <div class="<?= mainLayoutClass(true) ?>">
         <div class="article-content">
           <?php
             /* Start the Loop */
