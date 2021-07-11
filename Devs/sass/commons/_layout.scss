@@ -2,19 +2,11 @@
 .item_thumb,
 .item-thumb,
 .post-thumbnail {
-    overflow: hidden;
     img {
         -webkit-transform: rotate(0) scale(1);
         transform: rotate(0) scale(1);
         -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
-    }
-
-    &:hover {
-        img {
-            -webkit-transform: rotate(10deg) scale(1.2);
-            transform: rotate(10deg) scale(1.2);
-        }
     }
 }
 
@@ -24,10 +16,6 @@
             max-width: 35%;
         }
     }
-
-    .second-sidebar {}
-
-    .second {}
 }
 .fw-content-align-center {
     text-align: center;
