@@ -43,7 +43,7 @@ var colorthemes = [];
     });
     colorthemes.push({
         themeName: 'red', // main theme
-        mainColor: '#f74a27',
+        mainColor: '#dc3545',
         mainTextColor: '#ffffff'
     });
 
