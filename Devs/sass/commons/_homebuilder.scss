@@ -318,8 +318,6 @@
 
 .section-best-features {
     overflow: hidden;
-    .header-section {}
-
     .content-section {
         margin-top: 40px;
         .featured-item {
@@ -372,7 +370,7 @@
     text-align: center;
     span {
         color: $main_color;
-        font-weight: 400;
+        font-weight: 600;
     }
 
     .nav-fill {
