@@ -10,7 +10,7 @@
 ?>
 <article class="<?= $cardColClass ?>">
 	<?php if(has_post_thumbnail()){ ?>
-		<div class="post-thumbnail">
+		<div class="shine-effect post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail(getThumbSize($layout, $cols), ['alt' => esc_html(get_the_title()), 'title' => esc_html(get_the_title())]); ?>
 			</a>

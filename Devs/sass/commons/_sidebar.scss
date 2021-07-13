@@ -66,9 +66,13 @@
     .calendar_wrap {
         table {
             width: 100%;
-
+            th,td {
+                text-align: center;
+            }
             td#today{
-                background-color: #dddddd;
+                background-color: $main_color;
+                color: $main_text_color;
+                font-weight: bold;
             }
         }
     }
@@ -80,7 +84,8 @@
     }
     
     .tagcloud {
-        a {}
+        max-height: 300px;
+        overflow: auto;
     }
 
     &.widget_nav_menu {
