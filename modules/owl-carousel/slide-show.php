@@ -65,7 +65,7 @@ if(get_theme_mod('show_main_slideshow', false)) { ?>
         ?>
         <div id="wrapper-slider">
             <div class="home-slide-wrapper">
-                <p>Area to show home slide show: go to <a target="_blank" href="<?= site_url() ?>/wp-admin/admin.php?page=panel">Config</a> => Slider Settings </p>
+                <p>Area to show home slide show: go to <a rel="noopener" target="_blank" href="<?= site_url() ?>/wp-admin/admin.php?page=panel">Config</a> => Slider Settings </p>
             </div>
         </div>
     <?php

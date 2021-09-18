@@ -12,14 +12,11 @@
         height: 45px;
         position: relative;
         z-index: 1;
-        transition: all 0.3s ease 0s;
         font-size: 15px !important;
         padding: 0px 35px !important;
         line-height: 45px !important;
         background-image: none !important;
         border-radius: 30px 30px;
-        transition: all 0.3s ease 0s;
-        animation-play-state: paused;
 
         svg {
             padding: 5px;
@@ -30,15 +27,15 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            animation: 20s linear 0s infinite normal both paused dashed_border_running;
             stroke-width: 2;
             stroke-dasharray: 9, 5;
             stroke-dashoffset: 0;
             stroke-linecap: round;
             fill: none;
-            transition: all 0.4s ease 0s;
-            stroke: rgb(255, 255, 255);
+            transition: all 0.5s ease 0.5s;
+            stroke: #ffffff;
             overflow: unset;
+            animation: dashed_border_running 20s alternate infinite none paused;
             rect {
                 height: 35px;
                 width: calc(100% - 0px);
@@ -52,12 +49,6 @@
         svg {
             animation-play-state: running;
             stroke: #fff;
-
-            rect {
-                transition: transform 1.2s linear;
-                animation-play-state: running;
-                background-position: 0 100%;
-            }
         }
     }
 }
@@ -66,4 +57,10 @@
     background-color: $main_color;
     color: $colors-white;
     border: 1px solid $main_color;
+}
+
+@keyframes dashed_border_running {
+    100% {
+        stroke-dashoffset: -1000;
+    }
 }

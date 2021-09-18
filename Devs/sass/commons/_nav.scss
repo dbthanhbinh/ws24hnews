@@ -33,8 +33,23 @@
                 padding: 0 10px;
                 text-transform: uppercase;
                 // color: $menu_link_color;
+
+                &:hover{
+                    color: $menu_link_color_hover;
+                }
             }
         }
+
+        .nav-item{
+            &.dropdown{
+                &.show{
+                    >.nav-link{
+                        color: $menu_link_color_hover;
+                    }
+                }
+            }
+        }
+
         .dropdown-menu {
             min-width: 180px;
             border-radius: 0;
@@ -44,6 +59,10 @@
                 .nav-link {
                     border: none;
                     text-transform: none;
+
+                    &:hover{
+                        color: $menu_link_color_hover;
+                    }
                 }                
             }
         }

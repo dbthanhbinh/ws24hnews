@@ -20,9 +20,11 @@ $Customize = [
 	'header_background_color_fixed' => '#fff',
 	'header_home_icon_color' => '#fff',
 	'header_link_color' => '#333',
+	'header_hover_link_color' => '#333',
 	'header_background_submenu' => '#fff',
 	'header_link_color_sub' => '#333',
-	'header_hover_link_color' => '#333',
+	'header_link_color_sub_hover' => '#333',
+
 	'FastSpa_hotline_number' => '0909874825',
 	'FastSpa_zalo_number' => '0909874825',
 	'FastSpa_sms_number' => '0909874825',

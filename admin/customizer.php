@@ -479,13 +479,13 @@ function your_theme_new_customizer_settings($wp_customize) {
     $listColors[] = array(
         'slug'=>'header_background_color', 
         'default' => '#fff',
-        'label' => 'Nav Background'
+        'label' => 'Menu Background'
     );
 
     $listColors[] = array(
         'slug'=>'header_background_color_fixed', 
         'default' => '#fff',
-        'label' => 'Nav Background fixed'
+        'label' => 'Menu Background fixed'
     );
 
     $listColors[] = array(
@@ -497,26 +497,31 @@ function your_theme_new_customizer_settings($wp_customize) {
     $listColors[] = array(
         'slug'=>'header_link_color', 
         'default' => '#333',
-        'label' => 'Link color'
+        'label' => 'Menu Link color'
+    );
+    $listColors[] = array(
+        'slug'=>'header_hover_link_color', 
+        'default' => '#333',
+        'label' => 'Menu Color-on hover'
     );
 
     $listColors[] = array(
         'slug'=>'header_background_submenu', 
         'default' => '#fff',
-        'label' => 'Background sub menu'
+        'label' => 'Sub-menu Background'
     );
 
     $listColors[] = array(
         'slug'=>'header_link_color_sub', 
         'default' => '#333',
-        'label' => 'Link color sub menu'
+        'label' => 'Sub-menu Link color'
     );
 
     $listColors[] = array(
-        'slug'=>'header_hover_link_color', 
+        'slug'=>'header_link_color_sub_hover', 
         'default' => '#333',
-        'label' => 'Link Color (on hover)'
-    );
+        'label' => 'Sub-menu Link on Hover'
+    );    
 
     $wp_customize->add_section(
         "section_header_settings", 
@@ -549,8 +554,6 @@ function your_theme_new_customizer_settings($wp_customize) {
             )
         );
     }
-
-
 }
 add_action( 'customize_register', 'your_theme_new_customizer_settings' );
 

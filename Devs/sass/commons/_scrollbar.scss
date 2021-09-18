@@ -44,3 +44,28 @@
 .thin::-webkit-scrollbar {
     width: 10px; 
 }
+
+// For re style scroll bar
+.widget_tag_cloud {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px #f1f1f1; 
+        border-radius: 1px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $widget_tag_cloud_bar_color; 
+        border-radius: 1px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $widget_tag_cloud_bar_color_hover; 
+    }
+}

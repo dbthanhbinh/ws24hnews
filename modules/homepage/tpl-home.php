@@ -47,7 +47,7 @@ function tie_get_home_cats($cat_data) {
 			            
                 <div class="clear-10"></div>            
                 <div class="fbox-ads">
-                    <?php if($cat_data['ads_link']):?><a <?php if($cat_data['target']=='y') echo 'target="_blank"';?> href="<?php echo $cat_data['ads_link'];?>"><?php endif;?>
+                    <?php if($cat_data['ads_link']):?><a <?php if($cat_data['target']=='y') echo 'rel="noopener" target="_blank"';?> href="<?php echo $cat_data['ads_link'];?>"><?php endif;?>
                         <?php if($cat_data['ads_path']):?>
                         <img alt="<?php bloginfo('name');?>" src="<?php echo $cat_data['ads_path'];?>"/>
                         <?php endif;?>

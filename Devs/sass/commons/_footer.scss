@@ -65,7 +65,7 @@
         }
 
         .tagcloud{
-            max-height: 100px;
+            max-height: 125px;
             overflow: auto;
             a {
                 background: #f1f1f1;
@@ -122,7 +122,7 @@
             font-size: 16px;
             top: 4px;
             left: 4px;
-            color: $colors-white;
+            color: $support_online_call_now_color;
         }
     }
 }
@@ -130,16 +130,23 @@
     width: 40px; height: 40px; 
     background: $main_color;
     color: $main_text_color;
-    border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999;
+    border-radius: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.9;
+    position: relative;
+    z-index: 999;
+    border: 1px solid $support_online_icon_a_fa_border_color;
 }
 
 .support-online a span {
     border-radius: 2px;
-    border: 1px solid #fff;
+    border: 1px solid $support_online_icon_a_fa_border_color;
     text-align: center; background: $main_color; 
     padding: 5px; display: none; width: 140px; 
     margin: 0px; position: absolute;
-    color: #ffffff; z-index: 999; top: 5px; left: 38px;
+    color: $support_online_call_now_color;
+    z-index: 999; top: 5px; left: 38px;
     transition: all 0.2s ease-in-out 0s;
     -moz-animation: headerAnimation 0.7s 1;
     -webkit-animation: headerAnimation 0.7s 1; -o-animation: headerAnimation 0.7s 1; animation: headerAnimation 0.7s 1; 
@@ -152,10 +159,11 @@
     background-color: $support_online_ping_color;
     opacity: .75; right: 0; }
 .kenit-alo-circle { 
-    width: 40px; height: 40px; top: 0px; right: 0px; position: absolute; background-color: transparent; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid rgba(30, 30, 30, 0.4); opacity: .1; border-color: #0089B9; opacity: .5;
+    width: 40px; height: 40px; top: 0px; right: 0px; position: absolute; background-color: transparent; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border: 2px solid rgba(30, 30, 30, 0.4); opacity: .1;
+    border-color: #0089B9; opacity: .5;
 }
 .support-online .btn-support { cursor: pointer; }
-.support-online img { width: 40px; height: 40px; background: $main_color; color: #fff; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
+.support-online img { width: 40px; height: 40px; background: $main_color; color: $support_online_call_now_color; border-radius: 100%; font-size: 20px; text-align: center; line-height: 1.9; position: relative; z-index: 999; }
 
 @media (max-width : 640px) {
     .support-online a, .support-online a:hover span {
@@ -165,13 +173,13 @@
     .support-online a span {
         border-radius: 2px;
         text-align: center;
-        background: #67b634;
+        background: $main_color;
         padding: 5px;
         display: none;
         width: 159px;
         margin-left: 0;
         position: absolute;
-        color: #fff;
+        color: $support_online_call_now_color;
         z-index: 999;
         top: -40px;
         left: 0;

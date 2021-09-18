@@ -1,5 +1,5 @@
 <?php
-// BE/FE defines
+// Defines
 require_once ('lib/defined.php');
 define ('THEME_NAME', THEMENAME);
 # Admin and Front-end Scope (both of Admin & Front-end)
@@ -56,7 +56,6 @@ if(is_admin()){
     }
     add_action( 'admin_enqueue_scripts', 'wp_admin_custom_style' );
 }
-
 # Is Front-end Scope (only front-end)
 if(!is_admin()){
     // Translate for Front-end
@@ -122,16 +121,30 @@ function footer_code_callback() {
 
 // custom_menu_callback
 function custom_menu_colors_callback() {
-    $customBg = get_theme_mod('header_background_color');
-    $customBgFixed = get_theme_mod('header_background_color_fixed');
-    $customLinkColor = get_theme_mod('header_link_color');
-    $customBgSub = get_theme_mod('header_background_submenu');
-    $customLinkColorSub = get_theme_mod('header_link_color_sub');
-    $customHomeIconColor = get_theme_mod('header_home_icon_color');
+    $customBg = get_theme_mod('header_background_color'); // nav
+    $customBgFixed = get_theme_mod('header_background_color_fixed'); // nav when fixed
+
+    $customLinkColor = get_theme_mod('header_link_color'); // Main menu link color
+    $customLinkColorOver = get_theme_mod('header_hover_link_color'); // Main menu link color
+
+    $customBgSub = get_theme_mod('header_background_submenu'); // Main submenu backgroud
+    $customLinkColorSub = get_theme_mod('header_link_color_sub');  // link color sub
+    $customLinkColorSubHover = get_theme_mod('header_link_color_sub_hover');  // link color sub
+
+    $customHomeIconColor = get_theme_mod('header_home_icon_color'); // Home icon color
 
     $html = '<style>';
     $hasStyle = false;
     if(isset($customBg) && $customBg){
+        $hasStyle = true;
+        $html.= '
+            .navbar {
+                background: '.$customBg.';
+            }
+        ';
+    }
+
+    if(isset($customLinkColor) && $customLinkColor){
         $hasStyle = true;
         $html.= '
             .navbar-expand-lg .navbar-nav .nav-item >.nav-link {
@@ -139,6 +152,15 @@ function custom_menu_colors_callback() {
             }
         ';
     }
+    if(isset($customLinkColorOver) && $customLinkColorOver){
+        $hasStyle = true;
+        $html.= '
+            .navbar-expand-lg .navbar-nav .nav-item >.nav-link:hover {
+                color: '.$customLinkColorOver.';
+            }
+        ';
+    }
+
 
     if(isset($customBgSub) && $customBgSub){
         $hasStyle = true;
@@ -157,6 +179,14 @@ function custom_menu_colors_callback() {
             }
         ';
     }
+    if(isset($customLinkColorSubHover) && $customLinkColorSubHover){
+        $hasStyle = true;
+        $html.= '
+            .navbar-expand-lg .navbar-nav .dropdown-menu .nav-item .nav-link:hover {
+                color: '.$customLinkColorSubHover.';
+            }
+        ';
+    }
 
     if(isset($customHomeIconColor) && $customHomeIconColor){
         $hasStyle = true;
@@ -167,10 +197,7 @@ function custom_menu_colors_callback() {
         ';
     }
     $html.= '</style>';
-
-    if($hasStyle){
-        echo html_entity_decode($html);
-    }
+    echo html_entity_decode($html);
 }
 
 // For theme setup

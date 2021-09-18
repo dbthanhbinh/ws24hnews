@@ -39,7 +39,9 @@ if($show_title == 'y'){
                             <div class="<?= getColsLayout(true, 3) ?>">
                                 <?php if($uploadedItem){?>
                                 <div class="item_thumb">
-                                    <img class="rounded-corner" src="<?= $uploadedItem ?>" alt="<?= $titleItem ?>" title="<?= $titleItem ?>"/>
+                                    <div class="icon-wrapper">
+                                        <img class="rounded-corner" src="<?= $uploadedItem ?>" alt="<?= $titleItem ?>" title="<?= $titleItem ?>"/>
+                                    </div>
                                 </div>
                                 <?php }?>
 

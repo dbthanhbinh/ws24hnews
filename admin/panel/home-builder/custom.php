@@ -40,7 +40,7 @@
         placeholder="http://abc.com/images/a.png"
         value="<?php   if( !empty($cat['box_background_url']) ) echo $cat['box_background_url']  ?>"
         type="text" />
-        <p class="tie_message_hint">Get Url by access <a target="_blank" href="<?= site_url() ?>/wp-admin/media-new.php">Media</a> and upload image(1920x600)px</p>
+        <p class="tie_message_hint">Get Url by access <a target="_blank" rel="noopener" href="<?= site_url() ?>/wp-admin/media-new.php">Media</a> and upload image(1920x600)px</p>
     </label>
     <?php
     tie_options(

@@ -10,7 +10,7 @@ function tie_admin_notices (){
 		echo '<br />
 			<div class="updated" style="width:790px; margin:0 auto; padding:0 10px; overflow:hidden;">
 				<p style="float:left;"><strong>If You Have Any Issues with FastSpa v1.0 .. </strong>
-				<a target="_blank" href="http://webseo24h.com/docs">Please Check FastSpa .</a></p>
+				<a target="_blank" rel="noopener" href="http://webseo24h.com/docs">Please Check FastSpa .</a></p>
 				<div class="tie-pointer-buttons"><a class="close" href="admin.php?page=panel&dismiss_me=yes">Dismiss</a></div>
 			</div>';
 	}

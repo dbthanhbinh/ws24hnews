@@ -316,14 +316,8 @@
     overflow: hidden;
 }
 
-
-
-
-
 .section-best-features {
     overflow: hidden;
-    .header-section {}
-
     .content-section {
         margin-top: 40px;
         .featured-item {
@@ -343,10 +337,10 @@
                     text-align: center;
                 }
                 .icon-wrap:before {
-                    -webkit-transition: all 0.7s;
-                    -moz-transition: all 0.7s;
-                    -o-transition: all 0.7s;
-                    transition: all 0.7s;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
                     content: "";
                     position: absolute;
                     left: 0;
@@ -376,7 +370,7 @@
     text-align: center;
     span {
         color: $main_color;
-        font-weight: 400;
+        font-weight: 600;
     }
 
     .nav-fill {
@@ -474,8 +468,6 @@ a.btn-lemon {
 
 .home-custom-box {
     color: #ffffff;
-
-    .left-custom-box {}
     .right-custom-box {
         .custom-box-des {
             margin-bottom: 20px;
@@ -521,4 +513,44 @@ a.btn-lemon {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+.first-section {
+    .item_thumb {
+        .icon-wrapper {
+            display: inline-flex;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .icon-wrapper:before {
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: $main_text_color dashed 1px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: $main_color;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        
+        &:hover {
+            .icon-wrapper:before {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+    }   
 }
