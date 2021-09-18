@@ -1,16 +1,15 @@
 <?php
-if ( post_password_required() ) {
-	return;
+if (post_password_required()) {
+	return false;
 }
 ?>
 
 <div id="comments" class="comments-area">
 	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
+	if (have_comments()) : ?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();			
+				$comments_number = get_comments_number();			
 			?>
 			Danh sách bình luận :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
 		</h2>
@@ -30,8 +29,8 @@ if ( post_password_required() ) {
 			'prev_text' => '<span class="screen-reader-text">' . __( 'Trước:', 'FastSpa' ) . '</span>',
 			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'FastSpa' ) . '</span>',
 		) );
-
 	endif;
+	
 	// Check for have_comments().
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>

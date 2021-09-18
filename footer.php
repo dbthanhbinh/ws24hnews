@@ -1,16 +1,16 @@
     <?php
     $customClient = false;
-    if($customClient){
+    if ($customClient) {
       require_once ('modules/owl-carousel/slide-client.php');
     }
+
+    if (get_theme_mod('show_footer_layout', false)) {
+      require_once ('modules/footer/footer.php');
+    }
     ?>
+
     <?php
-      if(get_theme_mod('show_footer_layout', false)){
-        require_once ('modules/footer/footer.php');
-      }
-    ?>
-    <?php
-    if(get_theme_mod('show_footer_copyright', LAYOUT_SHOW_FOOTER_COPYRIGHT)) {?>
+    if (get_theme_mod('show_footer_copyright', LAYOUT_SHOW_FOOTER_COPYRIGHT)) {?>
       <div id="copy-right-box" class="copy-right-box">
         <div class="container">  
           <div class="row">      
@@ -19,6 +19,7 @@
                 <span>
                   <?= get_theme_mod('setting_copyright') ?>
                 </span>
+
                 <?php if ( has_nav_menu ( 'footer-menu' ) ) : ?>
                 <?php 
                     $defaults = array(
@@ -43,7 +44,9 @@
       </div>
     <?php }?>
     <div id="site-over" class=""></div>
+
     <div class="scrollup"><span><i class="fa fa-eject" aria-hidden="true"></i></span></div>
+    
     <?php wp_footer()?>
   </body>
 </html>

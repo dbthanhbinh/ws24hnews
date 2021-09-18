@@ -49,7 +49,7 @@ class ws24h_contact extends WP_Widget {
 							<?php if($contactAddress){?><li><b>ĐC:</b> <?= $contactAddress ?></li><?php }?>
 							<?php if($contactPhone){?><li><b>ĐT:</b> <a href="tel:<?= $contactPhone ?>"> <?= $contactPhone ?></a></li><?php }?>
 							<?php if($contactEmail){?><li><b>Email:</b> <a href="mailto:<?= $contactEmail ?>"> <?= $contactEmail ?></a></li><?php }?>
-							<?php if($facebookLink){?><li><b>FB:</b> <a target="_blank" href="<?= $facebookLink ?>"> <?= $facebookName ? $facebookName : $facebookLink ?></a></li><?php }?>
+							<?php if($facebookLink){?><li><b>FB:</b> <a rel="noopener" target="_blank" href="<?= $facebookLink ?>"> <?= $facebookName ? $facebookName : $facebookLink ?></a></li><?php }?>
 						</ul>
 						<?php }?>
 					</div>

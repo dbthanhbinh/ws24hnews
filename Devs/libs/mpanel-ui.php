@@ -264,7 +264,7 @@ function panel_options() {
 					
 					<div class="tiepanel-item">
 						<h3>Twitter API OAuth settings</h3>
-						<p class="tie_message_hint">This information will uses in Social counter and Twitter Widget .. You need to create <a href="https://dev.twitter.com/apps" target="_blank">Twitter APP</a> to get this info .. check this <a href="https://vimeo.com/59573397" target="_blank">Video</a> .</p>
+						<p class="tie_message_hint">This information will uses in Social counter and Twitter Widget .. You need to create <a href="https://dev.twitter.com/apps" rel="noopener" target="_blank">Twitter APP</a> to get this info .. check this <a href="https://vimeo.com/59573397" rel="noopener" target="_blank">Video</a> .</p>
 
 						<?php
 							tie_options(

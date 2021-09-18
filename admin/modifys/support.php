@@ -36,13 +36,13 @@
 		    $rss_items = $rss->get_items(0, $maxitems);
 		}
 		
-		if($maxitems == 0) echo '<li>View news<a target="_blank" style="font-weight:normal;" href="'.str_replace('feed', '', $url_feed).'">webseo24h.com</a>.</li>';
+		if($maxitems == 0) echo '<li>View news<a target="_blank" rel="noopener" style="font-weight:normal;" href="'.str_replace('feed', '', $url_feed).'">webseo24h.com</a>.</li>';
 		else 
 		{
 			foreach($rss_items as $item) 
 			{
 				
-				echo '<li><h3><a target="_blank" style="font-weight:normal;" href="'.esc_url($item->get_permalink()) .'">' . esc_html($item->get_title()).'</a> - <a href="'.esc_url($item->get_permalink()) .'"> Chi tiết</a></h3> ' ;
+				echo '<li><h3><a target="_blank" rel="noopener" style="font-weight:normal;" href="'.esc_url($item->get_permalink()) .'">' . esc_html($item->get_title()).'</a> - <a href="'.esc_url($item->get_permalink()) .'"> Chi tiết</a></h3> ' ;
 			}
 		}
 		echo '</ul>';

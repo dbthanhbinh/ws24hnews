@@ -409,7 +409,7 @@ function tie_shortcode_button( $atts, $content = null ) {
 	$size  = ($size)  ? ' '.$size  :' small' ;
 	$color = ($color) ? ' '.$color : ' gray';
 	$link  = ($link) ? ' '.$link : '';
-	$target = ($target) ? ' target="_blank"' : '';
+	$target = ($target) ? ' rel="noopener" target="_blank"' : '';
 
 	$out = '<a href="'.$link.'"'.$target.' class="shortc-button'.$size.$color.$align.'">' .do_shortcode($content). '</a>';
     return $out;
@@ -575,7 +575,7 @@ $out= '
 
 	<div class="jp-no-solution">
 		<span>Update Required</span>
-		To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" rel="noopener" target="_blank">Flash plugin</a>.
 	</div>
   </div>
   </div>';?>

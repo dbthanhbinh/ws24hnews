@@ -1,5 +1,5 @@
 <?php
-// BE/FE defines
+// Defines
 require_once ('lib/defined.php');
 define ('THEME_NAME', THEMENAME);
 # Admin and Front-end Scope (both of Admin & Front-end)
