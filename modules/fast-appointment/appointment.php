@@ -33,9 +33,7 @@
 </div>
 
 
-<button type="button" id="btn-primary-123" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+<button type="button" id="btn-primary-123" style="display:none" data-toggle="modal" data-target="#exampleModal">L</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -51,23 +49,26 @@
             <div class="booking-appointment">
                 <form>
                     <div class="form-group">
-                        <label for="email">Time:</label>
+                        <label for="timeset">Time:</label>
                         July 14, 2021 at 6:00 am – 8:00 am
+                        <input type="hidden" name="ap_setdate" id="ap_setdate" value="" />
+                        <input type="hidden" name="ap_timeset" id="ap_timeset" value="" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Phone:</label>
-                        
+                        <label for="phone">Phone:</label>
+                        <input type="text" name="ap_phone" id="ap_phone" value="0909" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Name:</label>
+                        <label for="name">Name:</label>
+                        <input type="text" name="ap_name" id="ap_name" value="Dinh Binh" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Message:</label>
-                        July 14, 2021 at 6:00 am – 8:00 am
+                        <label for="message">Message:</label>
+                        <textarea name="ap_message" id="ap_message">My message</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="email">Service:</label>
-                        <select class="custom-select">
+                        <label for="service">Service:</label>
+                        <select name="ap_service" class="custom-select" id="ap_service">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -79,7 +80,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary js-btn-book-appointment">Save changes</button>
       </div>
     </div>
   </div>

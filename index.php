@@ -12,8 +12,10 @@
 
     <div class="home-main-content">
         <h1 style="display:none;"><?php echo get_bloginfo('name') ?></h1>
-
-        <?php include TEMPLATEPATH . ('/modules/fast-appointment/index.php')?>
+        <?php
+            // Add form appointment
+            do_action('act_appointment_form');
+        ?>
 
         <?php
             $onHome = tie_get_option('on_home');
