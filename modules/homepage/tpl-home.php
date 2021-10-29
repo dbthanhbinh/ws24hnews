@@ -36,7 +36,16 @@ function tie_get_home_cats($cat_data) {
         case 'ads12':
 			get_home_ads12( $cat_data );
 			break;   
-                    
+		case 'appointment':
+			?>
+			<div class="section">
+				<?php
+					// Add form appointment
+					do_action('act_appointment_form');
+				?>
+			</div>
+			<?php
+			break;
 		case 'divider': ?>
 			<div class="divider" style="height:<?php if( !empty($cat_data['height']) ) echo $cat_data['height'] ?>px"></div>
 			<div class="clear"></div>

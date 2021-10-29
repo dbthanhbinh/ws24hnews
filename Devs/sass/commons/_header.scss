@@ -72,6 +72,12 @@
     }
 }
 
+.top-divider.full-width {
+    margin-bottom: -1px;
+    border-top: 1px solid currentColor;
+    opacity: 0.1;
+}
+
 @media (max-width: 991px) {
     .top-header {
         .render-logo{display: none}

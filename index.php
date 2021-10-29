@@ -13,11 +13,6 @@
     <div class="home-main-content">
         <h1 style="display:none;"><?php echo get_bloginfo('name') ?></h1>
         <?php
-            // Add form appointment
-            do_action('act_appointment_form');
-        ?>
-
-        <?php
             $onHome = tie_get_option('on_home');
             if (function_exists('tie_get_option') && $onHome && $onHome == 'boxes') {
                 $cats = get_option('tie_home_cats');
