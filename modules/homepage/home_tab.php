@@ -87,11 +87,11 @@ if($homeTabBox){
   <div class="container">
     <div class="row">
       <div class="<?= getDefaultFullLayout() ?> header-section">
-          <div class=" title">
-              <?php if($homeTabBoxSubtitle){?><h5 class="header-cb-1"><?= $homeTabBoxSubtitle ?></h5><?php }?>
-              <?php if($homeTabBoxTitle){?><h4 class="entry-title"><?= $homeTabBoxTitle ?></h4><?php }?>
-              <?php if($homeTabDescription){?><p><?= $homeTabDescription ?></p><?php }?>
-          </div>
+        <div class=" title">
+            <?php if($homeTabBoxSubtitle){?><h5 class="header-cb-1"><?= $homeTabBoxSubtitle ?></h5><?php }?>
+            <?php if($homeTabBoxTitle){?><h4 class="entry-title"><?= $homeTabBoxTitle ?></h4><?php }?>
+            <?php if($homeTabDescription){?><p><?= $homeTabDescription ?></p><?php }?>
+        </div>
         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
           <?php
           $pos = 1;

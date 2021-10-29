@@ -40,12 +40,14 @@ require_once ('commons.php')
                     <a id="add-videos" >Video list</a>
                     <a id="add-categories" >Categories Tabs Box</a>
                     <a id="add-custom" >Custom box</a>
-
-                    <!-- <a id="add-cat" >News Box</a>
-                    <a id="add-slider" >Scrolling Box</a>
-                    <a id="add-ads" >Ads / Custom Content</a>
-                    <a id="add-news-picture" >News in picture</a>
-                    <a id="add-divider" >Divider</a> -->
+                    <?php
+                    // Add appointment
+                    if(function_exists('appointment_admin_menu')){
+                        ?>
+                        <a id="add-appointment" >Appointment</a>
+                        <?php
+                    }
+                    ?>
                 </div>
                                     
                 <ul id="cat_sortable">
@@ -54,6 +56,7 @@ require_once ('commons.php')
                         $i=0;
                         if($cats){
                             $defaultLayout = 'n';
+                            $isShowLayoutDropdown = true;
                             foreach ($cats as $cat) { 
                                 $i++;
                                 if( $cat['type'] == 'recent' ) :
@@ -71,6 +74,11 @@ require_once ('commons.php')
                                 <?php elseif( $cat['type'] == 'videos' ) :
                                     $defaultLayout = 'n';
                                     require('videos.php');
+                                ?>
+                                <?php elseif( $cat['type'] == 'appointment' ) :
+                                    $defaultLayout = 'n';
+                                    $isShowLayoutDropdown = true;
+                                    require('appointment.php');
                                 ?>
                                 <?php elseif( $cat['type'] == 'custom' ) :
                                     $defaultLayout = 'y';

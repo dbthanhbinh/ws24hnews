@@ -12,3 +12,6 @@
   <?php
     require_once ('modules/header/header-' . get_theme_mod('header_version', LAYOUT_HEADER_VERSION) . '.php');
   ?>
+  <div class="container">
+    <div class="top-divider full-width"></div>
+  </div>

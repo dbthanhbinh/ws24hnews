@@ -1,0 +1,105 @@
+.appointment-left-right {
+    #demo1-1 {
+        form {
+            float: right;
+        }
+    }
+}
+
+#demo1-1 {
+    form {
+        width: 400px;
+    }
+
+    .perfect-datetimepicker {
+        tbody {
+            td.selected {
+                color: white;
+                border: 1px solid $btn_lemon_text_color;
+                background-color: $main_color;
+            }
+            td.oday,
+            td.day {
+                &:hover {
+                    color: white;
+                    background-color: $main_color;
+                    border: 1px solid $main_color;
+                }
+            }
+
+            td.time-entry{
+                i {
+                    font-weight: normal;
+                }
+
+                &:hover{
+                    color: white;
+                    background-color: $main_color;
+                    border: 1px solid $main_color;
+
+                    i {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        thead {
+            td {
+                &:hover {
+                    color: white;
+                    background-color: $main_color;
+                    border: 1px solid $main_color;
+                }
+            }
+        }
+    }
+}
+
+// Modal
+.appointmentModal {
+    .modal-header {
+        background: $main_color;
+        color: $main_text_color;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        .modal-title {
+            text-transform: uppercase;
+        }
+
+        .modal-content{
+            border-radius: 0;
+            border: none;
+        }
+
+        button {
+            span {
+                font-size: 30px;
+                color: $main_text_color;
+            }
+        }
+    }
+
+    .modal-footer {
+        button {
+            border: 1px solid $btn_lemon_bg_color;
+            background: $btn_lemon_bg_color;
+            color: $main_text_color;
+        }
+    }
+
+    .booking-appointment {
+        .form-group {
+            textarea.error,
+            select.error,
+            input.error {
+                border: 1px solid $btn_lemon_bg_color;
+                color: $main_color;
+            }
+            .required.error {
+                color: $main_color;
+            }
+        }
+    }
+}

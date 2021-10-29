@@ -300,6 +300,15 @@ function builderGroupTemplate(boxTitle, nextCell, content) {
 	return html;
 }
 
+// For appointment tab box
+function builderAppointmentTabBox (boxTitle, nextCell) {	
+	var html = '';
+	html += builderHeader (boxTitle, nextCell);
+
+	html += builderFooter (nextCell, 'appointment');
+	return html;
+}
+
 // image Uploader Functions
 function tie_styling_uploader(field) {
 	var button = "#upload_"+field+"_button";
@@ -501,6 +510,14 @@ jQuery(document).ready(function() {
 		jQuery('#listItem_'+ nextCell).hide().fadeIn();
 		nextCell ++ ;
 	});
+
+	// For Appointment tab box
+	jQuery("#add-appointment").click(function() {
+		jQuery('#cat_sortable').append(builderAppointmentTabBox(boxTitle='Appointment tab box', nextCell));
+		jQuery('#listItem_'+ nextCell).hide().fadeIn();
+		nextCell ++ ;
+	});	
+
 
 	// Toggle open/Close
 	jQuery(document).on("click", ".toggle-open" , function(){
