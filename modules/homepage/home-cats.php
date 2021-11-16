@@ -23,7 +23,6 @@ function get_home_recent( $cat_data ) {
 		echo '<div class="section home-section animated recent-posts">';
 		?>
 		<div class="container">
-        	<div class="row">
 			<?php
 			if($cat_data['posttype'] == 'posts')
 				$postQuery = new WP_Query(['category__in' => $cat_include, 'posts_per_page' => $numberPost]);
@@ -49,7 +48,6 @@ function get_home_recent( $cat_data ) {
 				echo '</div>';
 			endif;
 			?>
-			</div>
 		</div>
 		<?php
 		echo '</div>';
