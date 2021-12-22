@@ -317,7 +317,8 @@ function tie_options($value){
 		<?php 
 		break;
 
-		case 'short-text': ?>
+		case 'short-text':
+			?>
 			<input style="width:50px"
 				name="tie_options[<?php echo $value['id']; ?>]"
 				id="<?php  echo $value['id']; ?>"

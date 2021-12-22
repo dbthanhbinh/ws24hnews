@@ -16,10 +16,15 @@
       </header>
       
       <?php
+        $archiveId = 'archive_tag';
         if (have_posts()) :
             $pos = 1;
-            $archive_display = tie_get_option('archive_display');
-            $archive_cols = tie_get_option('archive_cols');
+            $archivePosttype = get_query_var('post_type');
+            if(isset($archivePosttype) && $archivePosttype)
+              $archiveId = 'archive_'.get_query_var('post_type');
+
+            $archive_display = tie_get_option($archiveId.'_display');
+            $archive_cols = tie_get_option($archiveId.'_cols');
 
             $args = [
               'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,

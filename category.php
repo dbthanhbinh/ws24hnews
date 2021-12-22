@@ -40,10 +40,11 @@
 
     <div class="<?= mainLayoutClass() ?>">        
       <?php
+        $archiveId = 'archive_category';
         if ( have_posts() ) :
             $pos = 1;
-            $archive_display = tie_get_option('archive_display');
-            $archive_cols = tie_get_option('archive_cols');
+            $archive_display = tie_get_option($archiveId.'_display');
+            $archive_cols = tie_get_option($archiveId.'_cols');
 
             $args = [
               'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,

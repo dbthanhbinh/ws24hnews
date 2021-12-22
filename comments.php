@@ -11,7 +11,8 @@ if (post_password_required()) {
 			<?php
 				$comments_number = get_comments_number();			
 			?>
-			Danh sách bình luận :  <span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
+			<?=  getTranslateByKey('list_of_comments') ?>
+			<span><i class="fa fa-comments-o" aria-hidden="true"></i> (<?= $comments_number ?>) </span>
 		</h2>
 
 		<ul class="comment-list">
@@ -20,44 +21,48 @@ if (post_password_required()) {
 					'avatar_size' => 100,
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'reply_text'  => __( 'Trả lời', 'FastSpa' ),
+					'reply_text'  => getTranslateByKey('reply_text'),
 				) );
 			?>
 		</ul>
 
 		<?php the_comments_pagination( array(
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Trước:', 'FastSpa' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Sau', 'FastSpa' ) . '</span>',
+			'prev_text' => '<span class="screen-reader-text">' . getTranslateByKey('prev_text') . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . getTranslateByKey('next_text') . '</span>',
 		) );
 	endif;
 	
 	// Check for have_comments().
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'FastSpa' ); ?></p>
+		<p class="no-comments"><?= getTranslateByKey('comments_are_closed') ?></p>
 	<?php
 	endif;
 
-	add_filter( 'comment_form_defaults', 'so16856397_comment_form_defaults', 10, 1 );
-	function so16856397_comment_form_defaults( $defaults ) {
+	add_filter( 'comment_form_defaults', 'wc_comment_form_defaults', 10, 1 );
+	function wc_comment_form_defaults( $defaults ) {
+		$defaults['comment_notes_before'] = '<p class="comment-notes">'. getTranslateByKey('comment_notes_before') .'</p>';
 		$defaults['comment_field'] = '<p class="comment-form-comment"> <textarea id="comment" name="comment" placeholder="' . getTranslateByKey('write_your_comments') . '" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea></p>';
 		return $defaults;
 	}
+
 	$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
-	$fields =  array(
-		//'comment_field' => '<p class="comment-form-comment"> <textarea id="comment" name="comment" placeholder="' . __( 'Comment' ) . ( $req ? ' (*)' : '' ) .'" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea></p>',
+	
+	$fields =  array (
 		'author' => '<p class="comment-form-author">' .
 			'<input id="author" name="author" type="text" placeholder="' . getTranslateByKey('comment_author') . ( $req ? ' (*)' : '' ) .'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
 		'email'  => '<p class="comment-form-email">' .
 			'<input id="email" name="email" type="text" placeholder="' . getTranslateByKey('comment_author_email') . ( $req ? ' (*)' : '' ) .'" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
 	);
-	$comments_args = array(
+
+	$comments_args = array (
 		'fields' =>  $fields,
 		'title_reply'=> '<i class="fa fa-comments fa-custom-size" aria-hidden="true"></i> '.getTranslateByKey('your_comments'),
 		'label_submit' => getTranslateByKey('send_comment')
 	);
+
 	comment_form($comments_args);
 	?>
 </div>

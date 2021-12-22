@@ -16,8 +16,10 @@
 			</a>
 		</div>
 	<?php } ?>
-
-	<div class="entry-content">
+	<?php
+		$hasBadge = true;
+	?>
+	<div class="entry-content <?= $hasBadge ? HAS_BADGE_CLASS : '' ?>">
 		<header class="entry-header">
 			<?php
 				if(is_single()) $tagHeader = 'h1';
@@ -26,6 +28,21 @@
 				the_title('<'.$tagHeader.' class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></'.$tagHeader.'>');
 			?>
 		</header>
-		<?php the_excerpt(); ?>
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div>
+
+		<?php
+			if ($hasBadge) {
+				?>
+					<div class="badge absolute top post-date badge-square">
+						<div class="badge-inner">
+							<span class="post-date-day">21</span>
+							<span class="post-date-month is-xsmall">Th7</span>
+						</div>
+					</div>
+				<?php
+			}
+		?>
 	</div>
 </article>

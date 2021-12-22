@@ -244,10 +244,10 @@ function FastSpa_custom_body_background() {
     echo html_entity_decode($html);
 }
 
-function FastSpa_custom_excerpt_length( $length ) {
+function FastSpa_custom_excerpt_length($length) {
     return 20;
 }
-add_filter( 'excerpt_length', 'FastSpa_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'FastSpa_custom_excerpt_length', 999 );
 
 function excerpt_content ($excerpt, $limit) {
     $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
@@ -266,12 +266,10 @@ function get_excerpt($limit, $readMore=false, $source = null){
     return $excerpt;
 }
 
-function FastSpa_excerpt_more( $more ) {
+function FastSpa_excerpt_more($more) {
     // return ' ...';
     return sprintf('<br/><br/><a class="read-more" href="%1$s">%2$s</a>',
-        get_permalink( get_the_ID() ),
-        __( ' <i class="fa fa-long-arrow-right"></i> Xem thêm', THEME_NAME )
-    );
+        get_permalink( get_the_ID() ), '<i class="fa fa-long-arrow-right"></i> '. getTranslateByKey('excerpt_read_more'));
 }
 add_filter( 'excerpt_more', 'FastSpa_excerpt_more' );
 
@@ -454,7 +452,7 @@ function FastSpa_StickySidebar_scripts () {
 	}
 }
 
-// facebook_lib_scripts
+// Facebook_lib_scripts
 function FastSpa_facebook_lib_scripts () {
 	$showFacebookFanpage = get_theme_mod('show_face_fanpage_plugin', IS_ENABLE_FACEBOOK_LIB);
     if($showFacebookFanpage &&  $showFacebookFanpage == 1){

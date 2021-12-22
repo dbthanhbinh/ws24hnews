@@ -58,34 +58,36 @@
             <!-- Related post-->
             <?php
             // Set defaults
+            global $post;
             $isRelatedPost = IS_RELATED_POST;
             $archiveDisplay = RELATED_DISPLAY_AS;
             $archiveCols = RELATED_DISPLAY_COLS;
             $relatedPostsPerPage = RELATED_POSTS_PER_PAGE;
-
-            $related_post = tie_get_option('related_post');
-            if (isset($related_post)) {
-                $isRelatedPost = $related_post;
-            }
+            $relatedId = 'related_'.$post->post_type;
+            $related_post = tie_get_option($relatedId);
             
+            $relatedDisplay = tie_get_option($relatedId.'_display');
+            if(isset($relatedDisplay) && $relatedDisplay) {
+                $isRelatedPost = (isset($related_post) && $related_post) ? $related_post : false;
+            }
+
             if ($isRelatedPost) {
-                $relatedDisplay = tie_get_option('related_display');
                 if (isset($relatedDisplay)) {
                     $archiveDisplay = $relatedDisplay;
                 }
 
-                $relatedCols = tie_get_option('related_cols');
+                $relatedCols = tie_get_option($relatedId.'_cols');
                 if (isset($relatedCols)) {
                     $archiveCols = $relatedCols;
                 }
                 
-                $relatedNumber = tie_get_option('related_number');
+                $relatedNumber = tie_get_option($relatedId.'_number');
                 if (isset($relatedNumber)) {
                     $relatedPostsPerPage = $relatedNumber;
                 }
 
                 $argGrid = [
-                    'isGrid' => $archiveDisplay,
+                    'isGrid' => $archiveDisplay == 'grid' ? true : false,
                     'cols' => $archiveCols
                 ];
                 ?>
@@ -101,7 +103,6 @@
 
                     <div class="<?= mainLayoutTemplate($argGrid['isGrid']) ?>">
                     <?php
-                        global $post;
                         $orig_post = $post;
                         $contentFormat = '';
                         if ($post->post_type == 'post') {

@@ -19,8 +19,9 @@
       <?php
       if (have_posts()) :
           $pos = 1;
-          $archive_display = tie_get_option('archive_display');
-          $archive_cols = tie_get_option('archive_cols');
+          $archiveId = 'archive_search';
+          $archive_display = tie_get_option($archiveId.'_display');
+          $archive_cols = tie_get_option($archiveId.'_cols');
 
           $args = [
             'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,

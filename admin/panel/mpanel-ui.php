@@ -25,7 +25,7 @@ function panel_options() {
 	global $rg_posttypes;
 	$excludePosttypes = ['custom-video'];
 	$posttypes = [
-		'posts' => 'Default post'
+		'post' => 'Default post'
 	];
 	if($rg_posttypes && count($rg_posttypes) > 0){
 		foreach($rg_posttypes as $k=>$posttype) {
@@ -137,97 +137,129 @@ function panel_options() {
 				<div id="tab6" class="tab_content tabs-wrap">
 					<h2>Article Settings</h2> <?php echo $save ?>
 
-					<div class="tiepanel-item">
-
-						<h3>Related Posts Settings</h3>
-						<?php
-							tie_options(
-								array(	"name" => "Related Posts",
-										"id" => "related_post",
-										"std" => true,
-										"type" => "checkbox"));
-							tie_options(
-								array(	"name" => "Related Posts Box Title",
-										"id" => "related_title",
-										"std" => "Related Posts",
-										"type" => "text")); 
-							tie_options(
-								array(	"name" => "Display",
-										"id" => "related_display",
-										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
-										"type" => "select",
-										"std" => "grid",
-										"options" => array( "grid"=>"As Grid",
-															"list"=>"As List"
-														)));
-							tie_options(
-								array( 	"name" => "Show cols",
-										"id" => "related_cols",
-										"std" => 3,
-										"type" => "short-text"));
-										
-							tie_options(
-								array(	"name" => "Number of posts to show",
-										"id" => "related_number",
-										"std" => 3,
-										"type" => "short-text"));
-										
-							tie_options(
-								array(	"name" => "Query Type",
-										"id" => "related_query",
-										"std" => "category",
-										"options" => array( "category"=>"Category" ,
-															"tag"=>"Tag",
-															"author"=>"Author" ),
-										"type" => "radio")); 
+					<?php
+					foreach ($posttypes as $k => $item) {
+						$relatedId = 'related_'.$k;
+						$relatedName = $item;
 						?>
-					</div>
+						<div class="tiepanel-item">
+							<h3>Related <?= $item ?> Settings</h3>
+							<?php
+								tie_options(
+									array(	"name" => "Related ".$relatedName,
+											"id" => $relatedId,
+											"type" => "checkbox"));
+								tie_options(
+									array(	"name" => "Related ".$relatedName." Box Title",
+											"id" => $relatedId."_title",
+											"std" => "Related ".$relatedName,
+											"type" => "text")); 
+								tie_options(
+									array(	"name" => "Display",
+											"id" => $relatedId."_display",
+											"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
+											"type" => "select",
+											"std" => "grid",
+											"options" => array( "grid"=>"As Grid",
+																"list"=>"As List"
+															)));
+								tie_options(
+									array( 	"name" => "Show cols",
+											"id" => $relatedId."_cols",
+											"std" => 3,
+											"type" => "short-text"));
+											
+								tie_options(
+									array(	"name" => "Number of posts to show",
+											"id" => $relatedId."_number",
+											"std" => 3,
+											"type" => "short-text"));
+											
+								tie_options(
+									array(	"name" => "Query Type",
+											"id" => $relatedId."_query",
+											"std" => "category",
+											"options" => array( "category"=>"Category" ,
+																"tag"=>"Tag",
+																"author"=>"Author" ),
+											"type" => "radio")); 
+							?>
+						</div>
+						<?php
+					}
+					?>
 
 				</div>
 				<!-- Article Settings -->
 
+				<?php
+				$listArchives = $posttypes;
+				unset($listArchives['post']);
+				$listArchives['category'] = 'Danh mục';
+				$listArchives['search'] = 'Tìm kiếm';
+				$listArchives['tag'] = 'Thẻ';
+				?>
 				<div id="tab12" class="tab_content tabs-wrap">
 					<h2>Archives Settings</h2>	<?php echo $save ?>	
 					
-					<div class="tiepanel-item">
-						<h3>General Settings</h3>
-						<p class="tie_message_hint">Following settings will applies on the blog List template .</p>
-						<?php
-							tie_options(
-								array(	"name" => "Display",
-										"id" => "archive_display",
-										"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
-										"type" => "select",
-										"std" => ARCHIVE_DISPLAY_AS,
-										"options" => array( "grid"=>"As Grid",
-															"list"=>"As List"
-														)));
-							tie_options(
-								array( 	"name" => "Show cols",
-										"id" => "archive_cols",
-										"std" => ARCHIVE_DISPLAY_COLS,
-										"type" => "short-text"));
+					<?php
+					foreach ($listArchives as $k => $item) {
+						$archiveId = 'archive_'.$k;
 						?>
-					</div>
+						<div class="tiepanel-item">
+							<h3>Settings <?= $item ?></h3>
+							<!-- <p class="tie_message_hint">Following settings will applies on the archive List template .</p> -->
+							<?php
+								tie_options(
+									array(	"name" => "Display",
+											"id" => $archiveId."_display",
+											"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
+											"type" => "select",
+											"std" => ARCHIVE_DISPLAY_AS,
+											"options" => array( "grid"=>"As Grid",
+																"list"=>"As List"
+															)));
+								tie_options(
+									array( 	"name" => "Show cols",
+											"id" => $archiveId."_cols",
+											"std" => ARCHIVE_DISPLAY_COLS,
+											"type" => "short-text"));
+								tie_options(
+									array(	"name" => "Author Meta",
+											"id" => $archiveId."_meta_author",
+											"type" => "checkbox")); 			
+								tie_options(
+									array(	"name" => "Date Meta",
+											"id" => $archiveId."_meta_date",
+											"type" => "checkbox"));
+								tie_options(
+									array(	"name" => "Readmore Meta",
+											"id" => $archiveId."_meta_readmore",
+											"type" => "checkbox"));
+							?>
+						</div>
+						<?php
+					}
+					?>
 
-					<div class="tiepanel-item">
+					<!-- <div class="tiepanel-item">
 						<h3>Archives Posts Meta</h3>
 						<p class="tie_message_hint">Following settings will applies on blog List template .</p>
 						<?php	
-							tie_options(
-								array(	"name" => "Author Meta",
-										"id" => "arc_meta_author",
-										"type" => "checkbox")); 			
-							tie_options(
-								array(	"name" => "Date Meta",
-										"id" => "arc_meta_date",
-										"type" => "checkbox"));
-							tie_options(
-								array(	"name" => "Readmore Meta",
-										"id" => "arc_meta_readmore",
-										"type" => "checkbox"));
+							// tie_options(
+							// 	array(	"name" => "Author Meta",
+							// 			"id" => "arc_meta_author",
+							// 			"type" => "checkbox")); 			
+							// tie_options(
+							// 	array(	"name" => "Date Meta",
+							// 			"id" => "arc_meta_date",
+							// 			"type" => "checkbox"));
+							// tie_options(
+							// 	array(	"name" => "Readmore Meta",
+							// 			"id" => "arc_meta_readmore",
+							// 			"type" => "checkbox"));
 						?>
-					</div>
+					</div> -->
 
 				</div>
 				<!-- Archives -->

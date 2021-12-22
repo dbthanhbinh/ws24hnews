@@ -15,7 +15,10 @@ function tie_get_option_init($name, $default = null) {
     if(empty($get_options))
         return $default ? $default : NULL;
 
-	if(!empty( $get_options[$name]))
+    if (!isset($get_options[$name]))
+        return $default;
+        
+	if(!empty($get_options[$name]))
 		return $get_options[$name];
 	return false;
 }
