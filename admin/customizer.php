@@ -389,6 +389,26 @@ function your_theme_new_customizer_settings($wp_customize) {
      ) ) );
 
 
+    // ================================Verification======================================
+    $wp_customize->add_section(
+        "site_verification", 
+        array(
+            'title' => __("Site Verification", THEMENAME),
+            'priority' => 137,
+            'description' => __( 'Description Site verification here' ),
+        )
+    );
+
+    // Google site verification
+    $wp_customize->add_setting('google_site_verification', ['default' => $Customize['google_site_verification']]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_site_verification',
+    array(
+        'label' => 'Google site verification code',
+        'section' => 'site_verification',
+        'settings' => 'google_site_verification',
+        'type' => 'text'
+    ) ) );
+
     // ================================== SOCIALS =================================
     // Theme Socials link
     $wp_customize->add_section(

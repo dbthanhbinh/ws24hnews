@@ -63,6 +63,13 @@
         }
     }
 
+    .wp-block-video {
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
     .calendar_wrap {
         table {
             width: 100%;

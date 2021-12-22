@@ -20,7 +20,7 @@
                   <?= get_theme_mod('setting_copyright') ?>
                 </span>
 
-                <?php if ( has_nav_menu ( 'footer-menu' ) ) : ?>
+                <?php if (has_nav_menu( 'footer-menu')) : ?>
                 <?php 
                     $defaults = array(
                         'theme_location'  => 'footer',
@@ -43,10 +43,9 @@
         </div>
       </div>
     <?php }?>
-    <div id="site-over" class=""></div>
 
+    <div id="site-over" class=""></div>
     <div class="scrollup"><span><i class="fa fa-eject" aria-hidden="true"></i></span></div>
-    
     <?php wp_footer()?>
   </body>
 </html>

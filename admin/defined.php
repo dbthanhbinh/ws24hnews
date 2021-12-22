@@ -38,6 +38,7 @@ $Customize = [
     'setting_copyright' => __('© WEBSEO24H. All Rights Reserved', THEMENAME),
     'setting_open_time' => __('Từ 8:00 - 19:00 tất cả các ngày trong tuần, kể cả ngày lễ', THEMENAME),
     'google_analytics_code' => __('UA-xxxxxxxxx', THEMENAME),
+	'google_site_verification' => '',
 
     'facebook_name' => __('webseo24h', THEMENAME),
     'facebook_link' => __('https://www.facebook.com/webseo24h', THEMENAME),

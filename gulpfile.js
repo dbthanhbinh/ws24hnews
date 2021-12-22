@@ -47,7 +47,7 @@ var colorthemes = [];
         mainTextColor: '#ffffff'
     });
 
-    var themecolor = '#e83e8c';
+    var themecolor = '#0065b3';
     var colorthemetext = '#ffffff';
 
 function buildSassDf(env, themeProperties) {

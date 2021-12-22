@@ -456,15 +456,13 @@ function FastSpa_StickySidebar_scripts () {
 
 // facebook_lib_scripts
 function FastSpa_facebook_lib_scripts () {
-	if (is_single()) {
-        $showFacebookFanpage = get_theme_mod('show_face_fanpage_plugin', IS_ENABLE_FACEBOOK_LIB);
-        if($showFacebookFanpage &&  $showFacebookFanpage == 1){
-            ?>
-            <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
-            <?php
-        }
-	}
+	$showFacebookFanpage = get_theme_mod('show_face_fanpage_plugin', IS_ENABLE_FACEBOOK_LIB);
+    if($showFacebookFanpage &&  $showFacebookFanpage == 1){
+        ?>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
+        <?php
+    }
 }
 
 function FastSpa_slideshow_style () {

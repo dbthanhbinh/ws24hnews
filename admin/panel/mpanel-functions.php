@@ -361,9 +361,12 @@ function tie_options($value){
 			?>
 			<!-- <textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3"><?php echo tie_get_option_init($value['id'], $value['std']);  ?></textarea> -->
 			<?php
-				$content   = html_entity_decode(tie_get_option_init($value['id'], $value['std']));
+				$content = html_entity_decode(tie_get_option_init($value['id'], $value['std']));
 				$editor_id = $value['id'];
 				$args = array(
+					'tinymce' => array( 
+                        'content_css' => get_template_directory_uri().'/admin/assets/tinymce-editor.css',
+                    ),
 					'media_buttons' => false,
 					'textarea_rows' => 5,
 					'textarea_name' => 'tie_options['.$value['id'].']'

@@ -4,7 +4,7 @@ function showBoxTitle($boxTitle, $showTitle, $description, $showDescription){
 	<div class="<?= getDefaultFullLayout() ?>">
 		<div class="home-box-title">
 			<?php if($showTitle){?><h3 class="section-title"><?= $boxTitle ?></h3><?php }?>
-			<?php if($showDescription){?><p><?= $description ?></p><?php }?>
+			<?php if($showDescription){?><p><?= html_entity_decode($description) ?></p><?php }?>
 		</div>
 	</div>
 	<?php
