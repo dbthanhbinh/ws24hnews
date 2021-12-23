@@ -52,7 +52,7 @@ function panel_options() {
 		<div class="mpanel-submit">
 			<input type="hidden" name="action" value="test_theme_data_save" />
 			<input type="hidden" name="security" value="'. wp_create_nonce("test-theme-data").'" />
-			<input name="save" class="mpanel-save" type="submit" value="Save Changes" />    
+			<input name="save" class="mpanel-save" type="submit" value="'.__('Save Changes', THEMENAME).'" />    
 		</div>'; 
 	?>
 	<div id="save-alert"></div>
@@ -61,12 +61,12 @@ function panel_options() {
 		<div class="mo-panel-tabs">
 			<div class="logo"></div>
 			<ul>
-				<li class="tie-tabs general"><a href="#tab1"><span></span>General Settings</a></li>
-				<li class="tie-tabs homepage"><a href="#tab2"><span></span>Homepage</a></li>
-				<li class="tie-tabs homepage2"><a href="#tab22"><span></span>Custom Homepage</a></li>
-				<li class="tie-tabs archives"><a href="#tab12"><span></span>Archives Settings</a></li>
-				<li class="tie-tabs article"><a href="#tab6"><span></span>Article Settings</a></li>
-				<li class="tie-tabs slideshow"><a href="#tab5"><span></span>Slider Settings</a></li>
+				<li class="tie-tabs general"><a href="#tab1"><span></span><?= __('General Settings', THEMENAME) ?></a></li>
+				<li class="tie-tabs homepage"><a href="#tab2"><span></span><?= __('Home page', THEMENAME)?></a></li>
+				<li class="tie-tabs homepage2"><a href="#tab22"><span></span><?= __('Custom Home page', THEMENAME) ?></a></li>
+				<li class="tie-tabs archives"><a href="#tab12"><span></span><?= __('Archives Settings', THEMENAME) ?></a></li>
+				<li class="tie-tabs article"><a href="#tab6"><span></span><?= __('Article Settings', THEMENAME) ?></a></li>
+				<li class="tie-tabs slideshow"><a href="#tab5"><span></span><?= __('Slider Settings', THEMENAME) ?></a></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -74,19 +74,18 @@ function panel_options() {
 		<div class="mo-panel-content">
 			<form action="/" name="tie_form" id="tie_form">
 				<div id="tab1" class="tabs-wrap">
-					<h2>General Settings</h2> <?php echo $save ?>
+					<h2><?= __('General Settings', THEMENAME) ?></h2> <?php echo $save ?>
 					<div class="tiepanel-item">
-						<h3>Header Code</h3>
+						<h3><?= __('Header Code', THEMENAME) ?></h3>
 						<div class="option-item">
-							<small>The following code will add to the &lt;head&gt; tag. Useful if you need to add additional scripts such as CSS or JS.</small>
-							<textarea id="header_code" name="tie_options[header_code]" style="width:100%" rows="7"><?php echo htmlspecialchars_decode(tie_get_option('header_code'));  ?></textarea>				
+							<small><?= __('The following code will add to the &lt;head&gt; tag. Useful if you need to add additional scripts such as CSS or JS.', THEMENAME) ?></small>
+							<textarea id="header_code" name="tie_options[header_code]" style="width:100%" rows="7"><?php echo htmlspecialchars_decode(tie_get_option('header_code'));  ?></textarea>
 						</div>
 					</div>					
 					<div class="tiepanel-item">
-						<h3>Footer Code</h3>
+						<h3><?= __('Footer Code', THEMENAME) ?></h3>
 						<div class="option-item">
-							<small>The following code will add to the footer before the closing  &lt;/body&gt; tag. Useful if you need to Javascript or tracking code.</small>
-
+							<small><?= __('The following code will add to the footer before the closing  &lt;/body&gt; tag. Useful if you need to Javascript or tracking code.', THEMENAME) ?></small>
 							<textarea id="footer_code" name="tie_options[footer_code]" style="width:100%" rows="7"><?php echo htmlspecialchars_decode(tie_get_option('footer_code'));  ?></textarea>				
 						</div>
 					</div>					
@@ -97,33 +96,33 @@ function panel_options() {
 				</div> <!-- Homepage Settings -->
 
 				<div id="tab5" class="tab_content tabs-wrap">
-					<h2>Slider Settings</h2> <?php echo $save; ?>
+					<h2><?= __('Slider Settings', THEMENAME) ?></h2> <?php echo $save; ?>
 					<div class="tiepanel-item">
-						<h3>Slider Settings</h3>
+						<h3><?= __('Slider Settings', THEMENAME) ?></h3>
 						<?php
 							tie_options(
-								array(	"name" => "Enable",
+								array(	"name" => __('Enable', THEMENAME),
 										"id" => "slider",
 										"type" => "checkbox"));
 						?>
 					</div>
 										
 					<div class="tiepanel-item">
-						<h3>Query Settings</h3>
+						<h3><?= __('Query Settings', THEMENAME) ?></h3>
 						<?php
 							tie_options(
-								array(	"name" => "Number Of Posts To Show",
+								array(	"name" => __("Number Of Posts To Show", THEMENAME),
 										"id" => "slider_number",
 										"std" => 5,
 										"type" => "short-text"));
 										
 							tie_options(
-								array(	"name" => "Query Type",
+								array(	"name" => __("Query Type", THEMENAME),
 										"id" => "slider_query",
 										"options" => array("custom"=>"Custom Slider"),
 										"type" => "radio"));
 							tie_options(
-								array(	"name" => "Custom Slider",
+								array(	"name" => __("Custom Slider", THEMENAME),
 										"help" => "Choose your custom slider",
 										"id" => "slider_custom",
 										"type" => "select",
@@ -135,7 +134,7 @@ function panel_options() {
 				<!-- Slideshow -->					
 				
 				<div id="tab6" class="tab_content tabs-wrap">
-					<h2>Article Settings</h2> <?php echo $save ?>
+					<h2><?= __('Article Settings', THEMENAME) ?></h2> <?php echo $save ?>
 
 					<?php
 					foreach ($posttypes as $k => $item) {
@@ -143,46 +142,49 @@ function panel_options() {
 						$relatedName = $item;
 						?>
 						<div class="tiepanel-item">
-							<h3>Related <?= $item ?> Settings</h3>
+							<h3><?= __('Related Settings:', THEMENAME) ?> <?= $item ?></h3>
 							<?php
 								tie_options(
-									array(	"name" => "Related ".$relatedName,
+									array(	"name" => __("Related: ", THEMENAME).$relatedName,
 											"id" => $relatedId,
 											"type" => "checkbox"));
 								tie_options(
-									array(	"name" => "Related ".$relatedName." Box Title",
+									array(	"name" => __("Related title: ", THEMENAME).$relatedName,
 											"id" => $relatedId."_title",
 											"std" => "Related ".$relatedName,
 											"type" => "text")); 
 								tie_options(
-									array(	"name" => "Display",
+									array(	"name" => __("Display", THEMENAME),
 											"id" => $relatedId."_display",
-											"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
+											"help" => __("will appears in all archives pages like categories / tags / search and in homepage blog style .", THEMENAME),
 											"type" => "select",
 											"std" => "grid",
 											"options" => array( "grid"=>"As Grid",
 																"list"=>"As List"
 															)));
 								tie_options(
-									array( 	"name" => "Show cols",
+									array( 	"name" => __("Show cols", THEMENAME),
 											"id" => $relatedId."_cols",
 											"std" => 3,
 											"type" => "short-text"));
 											
 								tie_options(
-									array(	"name" => "Number of posts to show",
+									array(	"name" => __("Number of posts to show", THEMENAME),
 											"id" => $relatedId."_number",
 											"std" => 3,
 											"type" => "short-text"));
 											
-								tie_options(
-									array(	"name" => "Query Type",
-											"id" => $relatedId."_query",
-											"std" => "category",
-											"options" => array( "category"=>"Category" ,
-																"tag"=>"Tag",
-																"author"=>"Author" ),
-											"type" => "radio")); 
+								tie_options([
+									"name" => __("Query Type", THEMENAME),
+									"id" => $relatedId."_query",
+									"std" => "category",
+									"options" => [
+										"category" => __("Category", THEMENAME),
+										"tag" => __("Tag", THEMENAME),
+										"author" => __("Author", THEMENAME)
+									],
+									"type" => "radio"
+								]); 
 							?>
 						</div>
 						<?php
@@ -195,45 +197,44 @@ function panel_options() {
 				<?php
 				$listArchives = $posttypes;
 				unset($listArchives['post']);
-				$listArchives['category'] = 'Danh mục';
-				$listArchives['search'] = 'Tìm kiếm';
-				$listArchives['tag'] = 'Thẻ';
+				$listArchives['category'] = __("Category", THEMENAME);
+				$listArchives['search'] = __("Search", THEMENAME);
+				$listArchives['tag'] = __("Tag", THEMENAME);
 				?>
 				<div id="tab12" class="tab_content tabs-wrap">
-					<h2>Archives Settings</h2>	<?php echo $save ?>	
-					
+					<h2><?= __('Archives Settings', THEMENAME) ?></h2>	<?php echo $save ?>
 					<?php
 					foreach ($listArchives as $k => $item) {
 						$archiveId = 'archive_'.$k;
 						?>
 						<div class="tiepanel-item">
-							<h3>Settings <?= $item ?></h3>
+							<h3><?= __('Settings', THEMENAME) ?> <?= $item ?></h3>
 							<!-- <p class="tie_message_hint">Following settings will applies on the archive List template .</p> -->
 							<?php
 								tie_options(
-									array(	"name" => "Display",
+									array(	"name" => __("Display", THEMENAME),
 											"id" => $archiveId."_display",
-											"help" => "will appears in all archives pages like categories / tags / search and in homepage blog style .",
+											"help" => __("will appears in all archives pages like categories / tags / search and in homepage blog style .", THEMENAME),
 											"type" => "select",
 											"std" => ARCHIVE_DISPLAY_AS,
 											"options" => array( "grid"=>"As Grid",
 																"list"=>"As List"
 															)));
 								tie_options(
-									array( 	"name" => "Show cols",
+									array( 	"name" => __("Show cols", THEMENAME),
 											"id" => $archiveId."_cols",
 											"std" => ARCHIVE_DISPLAY_COLS,
 											"type" => "short-text"));
 								tie_options(
-									array(	"name" => "Author Meta",
+									array(	"name" => __("Author Meta", THEMENAME),
 											"id" => $archiveId."_meta_author",
 											"type" => "checkbox")); 			
 								tie_options(
-									array(	"name" => "Date Meta",
+									array(	"name" => __("Date Meta", THEMENAME),
 											"id" => $archiveId."_meta_date",
 											"type" => "checkbox"));
 								tie_options(
-									array(	"name" => "Readmore Meta",
+									array(	"name" => __("Readmore Meta", THEMENAME),
 											"id" => $archiveId."_meta_readmore",
 											"type" => "checkbox"));
 							?>
@@ -241,26 +242,6 @@ function panel_options() {
 						<?php
 					}
 					?>
-
-					<!-- <div class="tiepanel-item">
-						<h3>Archives Posts Meta</h3>
-						<p class="tie_message_hint">Following settings will applies on blog List template .</p>
-						<?php	
-							// tie_options(
-							// 	array(	"name" => "Author Meta",
-							// 			"id" => "arc_meta_author",
-							// 			"type" => "checkbox")); 			
-							// tie_options(
-							// 	array(	"name" => "Date Meta",
-							// 			"id" => "arc_meta_date",
-							// 			"type" => "checkbox"));
-							// tie_options(
-							// 	array(	"name" => "Readmore Meta",
-							// 			"id" => "arc_meta_readmore",
-							// 			"type" => "checkbox"));
-						?>
-					</div> -->
-
 				</div>
 				<!-- Archives -->
 
@@ -275,7 +256,7 @@ function panel_options() {
 			<form method="post">
 				<div class="mpanel-reset">
 					<input type="hidden" name="resetnonce" value="<?php echo wp_create_nonce('reset-action-code'); ?>" />
-					<input name="reset" class="mpanel-reset-button" type="submit" onClick="if(confirm('All settings will be rest .. Are you sure ?')) return true ; else return false; " value="Reset All Settings" />
+					<input name="reset" class="mpanel-reset-button" type="submit" onClick="if(confirm('All settings will be rest .. Are you sure ?')) return true ; else return false; " value="<?= __('Reset All Settings', THEMENAME) ?>" />
 					<input type="hidden" name="action" value="reset" />
 				</div>
 			</form>

@@ -25,9 +25,9 @@ $Customize = [
 	'header_link_color_sub' => '#333',
 	'header_link_color_sub_hover' => '#333',
 
-	'FastSpa_hotline_number' => '0909874825',
-	'FastSpa_zalo_number' => '0909874825',
-	'FastSpa_sms_number' => '0909874825',
+	'ws24h_hotline_number' => '0909874825',
+	'ws24h_zalo_number' => '0909874825',
+	'ws24h_sms_number' => '0909874825',
  
     'company_name' => __('Company name', THEMENAME),
     'company_footer_name' => __('Company footer name', THEMENAME),

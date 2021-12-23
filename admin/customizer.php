@@ -4,15 +4,21 @@
  **/
 function your_theme_new_customizer_settings($wp_customize) {
     global $Customize;
+
+    $choices => [
+        '1' => __('Enable', THEMENAME),
+        '0' => __('Disable', THEMENAME)
+    ];
+
     $choicesLayout =  [
-        'full' => __('Full width'),
-        'left-sidebar' => __('Left sidebar'),
-        'right-sidebar' => __('Right sidebar')
+        'full' => __('Full width', THEMENAME),
+        'left-sidebar' => __('Left sidebar', THEMENAME),
+        'right-sidebar' => __('Right sidebar', THEMENAME)
     ];
 
     $headerVertion =  [
-        'v1' => __('Header version 1'),
-        'v2' => __('Header version 2')
+        'v1' => __('Header version 1', THEMENAME),
+        'v2' => __('Header version 2', THEMENAME)
     ];
 
     $pages = get_all_page_ids();
@@ -29,7 +35,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     // Add a control to upload the logo
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'your_theme_logo',
     array(
-        'label' => 'Upload your Logo',
+        'label' => __('Upload your Logo', THEMENAME),
         'section' => 'title_tagline',
         'settings' => 'your_theme_logo',
         'flex_width ' => true,
@@ -39,7 +45,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('top_banner');
     $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'top_banner',
     array(
-        'label' => 'Upload top banner (720 x 90)',
+        'label' => __('Upload top banner (720 x 90)', THEMENAME),
         'section' => 'title_tagline',
         'settings' => 'top_banner',
         'height' => 80,
@@ -51,7 +57,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('top_banner_url');
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_banner_url',
     array(
-        'label' => 'Top banner url Ex:(https://..)',
+        'label' => __('Top banner url Ex:(https://..)', THEMENAME),
         'section' => 'title_tagline',
         'settings' => 'top_banner_url',
         'type' => 'text'
@@ -60,7 +66,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('custom_background');
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_background',
     array(
-        'label' => 'Upload Custom body Background',
+        'label' => __('Upload Custom body Background', THEMENAME),
         'section' => 'title_tagline',
         'settings' => 'custom_background',
         'flex_width ' => false,
@@ -75,14 +81,14 @@ function your_theme_new_customizer_settings($wp_customize) {
         array(
             'title' => __("Layout Options", THEMENAME),
             'priority' => 120,
-            'description' => __( 'Description Custom layout Options here' ),
+            'description' => __('Description Custom layout Options here', THEMENAME),
         )
     );
 
     $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
     array(
-        'label' => 'Header version (V2=>show banner)',
+        'label' => __('Header version (V2=>show banner)', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'header_version',
         'type' => 'select',
@@ -92,54 +98,42 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('show_top_header', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_top_header',
     array(
-        'label' => 'Show top header',
+        'label' => __('Show top header', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_top_header',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     $wp_customize->add_setting('show_header_banner', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_header_banner',
     array(
-        'label' => 'Show header banner',
+        'label' => __('Show header banner', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_header_banner',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     $wp_customize->add_setting('show_breadcrumb', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_breadcrumb',
     array(
-        'label' => 'Show breadcrumb',
+        'label' => __('Show breadcrumb', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_breadcrumb',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     // Enable Slideshow
     $wp_customize->add_setting('show_main_slideshow', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_main_slideshow',
     array(
-        'label' => 'Show Slide show',
+        'label' => __('Show Slide show', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_main_slideshow',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
 
@@ -147,7 +141,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('home_layout', ['default' => 'full']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
     array(
-        'label' => 'Home Layout',
+        'label' => __('Home Layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'home_layout',
         'type' => 'select',
@@ -158,7 +152,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('home_page_intro', ['default' => '']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_page_intro',
     array(
-        'label' => 'Home page intro',
+        'label' => __('Home page intro', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'home_page_intro',
         'type' => 'select',
@@ -169,7 +163,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('page_layout', ['default' => 'right-sidebar']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'page_layout',
     array(
-        'label' => 'Pages Layout',
+        'label' => __('Pages Layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'page_layout',
         'type' => 'select',
@@ -180,7 +174,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('single_layout', ['default' => 'right-sidebar']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'single_layout',
     array(
-        'label' => 'Single Layout',
+        'label' => __('Single Layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'single_layout',
         'type' => 'select',
@@ -191,7 +185,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('archive_layout', ['default' => 'right-sidebar']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archive_layout',
     array(
-        'label' => 'Archives Layout',
+        'label' => __('Archives Layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'archive_layout',
         'type' => 'select',
@@ -202,32 +196,29 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('show_footer_layout', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_layout',
     array(
-        'label' => 'Show footer layout',
+        'label' => __('Show footer layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_footer_layout',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     $wp_customize->add_setting('footer_layout', ['default' => '3c']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_layout',
     array(
-        'label' => 'Footer Layout',
+        'label' => __('Footer Layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'footer_layout',
         'type' => 'select',
         'choices' => array(
-            '1c' => __('1 Col'),
-            '2c' => __('2 cols'),
-            '3c' => __('3 cols'),
-            '4c' => __('4 cols'),
-            'wide-2' => __('Wide - 2 cols'),
-            'wide1' => __('Wide - 1 col'),
-            '2-wide' => __('2 cols - Wide'),
-            'col-wide-col' => __('col - Wide - col')
+            '1c' => __('1 Col', THEMENAME),
+            '2c' => __('2 cols', THEMENAME),
+            '3c' => __('3 cols', THEMENAME),
+            '4c' => __('4 cols', THEMENAME),
+            'wide-2' => __('Wide - 2 cols', THEMENAME),
+            'wide1' => __('Wide - 1 col', THEMENAME),
+            '2-wide' => __('2 cols - Wide', THEMENAME),
+            'col-wide-col' => __('col - Wide - col', THEMENAME)
         ),
     ) ) );
 
@@ -235,14 +226,11 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('show_footer_copyright', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_footer_copyright',
     array(
-        'label' => 'Show footer copyright',
+        'label' => __('Show footer copyright', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_footer_copyright',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     // Enable Client
@@ -258,7 +246,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('show_client', ['default' => -1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_client',
     array(
-        'label' => 'Show client group',
+        'label' => __('Show client group', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'show_client',
         'type' => 'select',
@@ -268,14 +256,11 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('is_sticky_sidebar', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'is_sticky_sidebar',
     array(
-        'label' => 'Sticky sidebar',
+        'label' => __('Sticky sidebar', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'is_sticky_sidebar',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     // ===============================================================================
@@ -285,7 +270,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         array(
             'title' => __("Contact Options", THEMENAME),
             'priority' => 135,
-            'description' => __( 'Description Custom Theme Options here' ),
+            'description' => __('Description Custom Theme Options here', THEMENAME),
         )
     );
 
@@ -293,7 +278,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('company_name', ['default' => $Customize['company_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_name',
     array(
-        'label' => 'Company name',
+        'label' => __('Company name', THEMENAME),
         'section' => 'section_contact',
         'settings' => 'company_name',
         'type' => 'text'
@@ -302,7 +287,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('company_top_name', ['default' => $Customize['company_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_top_name',
     array(
-        'label' => 'Company top name',
+        'label' => __('Company top name', THEMENAME),
         'section' => 'section_contact',
         'settings' => 'company_top_name',
         'type' => 'text'
@@ -312,7 +297,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('company_footer_name', ['default' => $Customize['company_footer_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'company_footer_name',
     array(
-        'label' => 'Company footer name',
+        'label' => __('Company footer name', THEMENAME),
         'section' => 'section_contact',
         'settings' => 'company_footer_name',
         'type' => 'text'
@@ -322,7 +307,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('contact_address', ['default' => $Customize['contact_address']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_address',
      array(
-         'label' => 'Contact address',
+         'label' => __('Contact address', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'contact_address',
          'type' => 'text'
@@ -332,7 +317,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('contact_email', ['default' => $Customize['contact_email']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_email',
      array(
-         'label' => 'Contact email',
+         'label' => __('Contact email', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'contact_email',
          'type' => 'text'
@@ -342,7 +327,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('contact_phone', ['default' => $Customize['contact_phone']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_phone',
      array(
-         'label' => 'Contact phone',
+         'label' => __('Contact phone', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'contact_phone',
          'type' => 'text'
@@ -352,7 +337,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('contact_hotline', ['default' => $Customize['contact_hotline']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_hotline',
      array(
-         'label' => 'Contact hotline',
+         'label' => __('Contact hotline', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'contact_hotline',
          'type' => 'text'
@@ -362,7 +347,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('setting_copyright', ['default' => $Customize['setting_copyright']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_copyright',
      array(
-         'label' => 'Setting copyright',
+         'label' => __('Setting copyright', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'setting_copyright',
          'type' => 'text'
@@ -372,7 +357,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('setting_open_time', ['default' => $Customize['setting_open_time']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'setting_open_time',
      array(
-         'label' => 'Open time',
+         'label' => __('Open time', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'setting_open_time',
          'type' => 'text'
@@ -382,7 +367,7 @@ function your_theme_new_customizer_settings($wp_customize) {
      $wp_customize->add_setting('google_analytics_code', ['default' => $Customize['google_analytics_code']]);
      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_analytics_code',
      array(
-         'label' => 'Google Analytics Code',
+         'label' => __('Google Analytics Code', THEMENAME),
          'section' => 'section_contact',
          'settings' => 'google_analytics_code',
          'type' => 'text'
@@ -395,7 +380,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         array(
             'title' => __("Site Verification", THEMENAME),
             'priority' => 137,
-            'description' => __( 'Description Site verification here' ),
+            'description' => __('Description Site verification here', THEMENAME),
         )
     );
 
@@ -403,7 +388,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('google_site_verification', ['default' => $Customize['google_site_verification']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_site_verification',
     array(
-        'label' => 'Google site verification code',
+        'label' => __('Google site verification code', THEMENAME),
         'section' => 'site_verification',
         'settings' => 'google_site_verification',
         'type' => 'text'
@@ -416,7 +401,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         array(
             'title' => __("Socials Options", THEMENAME),
             'priority' => 131,
-            'description' => __( 'Description Custom Socials Options here' ),
+            'description' => __('Description Custom Socials Options here', THEMENAME),
         )
     );
 
@@ -424,7 +409,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('facebook_name', ['default' => $Customize['facebook_name']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_name',
     array(
-        'label' => 'Facebook name Fanpage',
+        'label' => __('Facebook name Fanpage', THEMENAME),
         'section' => 'section_socials',
         'settings' => 'facebook_name',
         'type' => 'text'
@@ -433,7 +418,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('facebook_link', ['default' => $Customize['facebook_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_link',
     array(
-        'label' => 'Facebook link Fanpage',
+        'label' => __('Facebook link Fanpage', THEMENAME),
         'section' => 'section_socials',
         'settings' => 'facebook_link',
         'type' => 'text'
@@ -443,7 +428,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('youtube_link', ['default' => $Customize['youtube_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'youtube_link',
     array(
-        'label' => 'Youtube link channel',
+        'label' => __('Youtube link channel', THEMENAME),
         'section' => 'section_socials',
         'settings' => 'youtube_link',
         'type' => 'text'
@@ -453,7 +438,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('zalo_link', ['default' => $Customize['zalo_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'zalo_link',
     array(
-        'label' => 'Zalo link page',
+        'label' => __('Zalo link page', THEMENAME),
         'section' => 'section_socials',
         'settings' => 'zalo_link',
         'type' => 'text'
@@ -463,7 +448,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('google_plus_link', ['default' => $Customize['google_plus_link']]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_plus_link',
     array(
-        'label' => 'Google plus link page',
+        'label' => __('Google plus link page', THEMENAME),
         'section' => 'section_socials',
         'settings' => 'google_plus_link',
         'type' => 'text'
@@ -475,7 +460,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         $wp_customize,
         'twitter_link',
         array(
-            'label' => 'Twitter link page',
+            'label' => __('Twitter link page', THEMENAME),
             'section' => 'section_socials',
             'settings' => 'twitter_link',
             'type' => 'text'
@@ -485,62 +470,59 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('show_face_fanpage_plugin', ['default' => 1]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_face_fanpage_plugin',
     array(
-        'label' => 'Show Facebook Fanpage',
+        'label' => __('Show Facebook Fanpage', THEMENAME),
         'section' => 'section_socials',
         'settings' => 'show_face_fanpage_plugin',
         'type' => 'select',
-        'choices' => array(
-            '1' => __('Enable'),
-            '0' => __('Disable')
-        ),
+        'choices' => $choices
     ) ) );
 
     // ================================== HEADER SETTINGS =================================
     $listColors[] = array(
-        'slug'=>'header_background_color', 
+        'slug' => 'header_background_color', 
         'default' => '#fff',
-        'label' => 'Menu Background'
+        'label' => __('Menu Background', THEMENAME)
     );
 
     $listColors[] = array(
         'slug'=>'header_background_color_fixed', 
         'default' => '#fff',
-        'label' => 'Menu Background fixed'
+        'label' => __('Menu Background fixed', THEMENAME)
     );
 
     $listColors[] = array(
         'slug'=>'header_home_icon_color', 
         'default' => '#fff',
-        'label' => 'Home icon color'
+        'label' => __('Home icon color', THEMENAME)
     );
 
     $listColors[] = array(
         'slug'=>'header_link_color', 
         'default' => '#333',
-        'label' => 'Menu Link color'
+        'label' => __('Menu Link color', THEMENAME)
     );
     $listColors[] = array(
         'slug'=>'header_hover_link_color', 
         'default' => '#333',
-        'label' => 'Menu Color-on hover'
+        'label' => __('Menu Color-on hover', THEMENAME)
     );
 
     $listColors[] = array(
         'slug'=>'header_background_submenu', 
         'default' => '#fff',
-        'label' => 'Sub-menu Background'
+        'label' => __('Sub-menu Background', THEMENAME)
     );
 
     $listColors[] = array(
         'slug'=>'header_link_color_sub', 
         'default' => '#333',
-        'label' => 'Sub-menu Link color'
+        'label' => __('Sub-menu Link color', THEMENAME)
     );
 
     $listColors[] = array(
         'slug'=>'header_link_color_sub_hover', 
         'default' => '#333',
-        'label' => 'Sub-menu Link on Hover'
+        'label' => __('Sub-menu Link on Hover', THEMENAME)
     );    
 
     $wp_customize->add_section(
@@ -548,7 +530,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         array(
             'title' => __("Header colors", THEMENAME),
             'priority' => 122,
-            'description' => __( 'Description Custom header setting' ),
+            'description' => __('Description Custom header setting', THEMENAME),
         )
     );
 
@@ -580,7 +562,7 @@ add_action( 'customize_register', 'your_theme_new_customizer_settings' );
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function FastSpa_customize_preview_js() {
-	wp_enqueue_script( 'FastSpa-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+function ws24h_customize_preview_js() {
+	wp_enqueue_script( 'ws24h-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'FastSpa_customize_preview_js' );
+add_action( 'customize_preview_init', 'ws24h_customize_preview_js' );

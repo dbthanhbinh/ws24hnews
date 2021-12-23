@@ -13,7 +13,7 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 	$new_sidebars = array(''=> 'Default');
 	
 	if (class_exists('Woocommerce'))
-		$new_sidebars ['shop-widget-area'] = __( 'Shop - For WooCommerce Pages', 'tie' ) ;
+		$new_sidebars ['shop-widget-area'] = __( 'Shop - For WooCommerce Pages', THEMENAME ) ;
 		
 	if($sidebars){
 		foreach ($sidebars as $sidebar) {

@@ -60,7 +60,7 @@ class ws24h_social_buttons extends WP_Widget {
 		$title = (isset($instance['title']) && !empty($instance['title'])) ?  $instance['title'] : __('Liên kết mạng xã hội');
 		?>
 		<p>
-    		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Heading:',THEME_NAME ); ?></label> 
+    		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Heading:',THEMENAME ); ?></label> 
     		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php

@@ -33,19 +33,19 @@ function register_custom_posttype()
 		foreach ($rg_posttypes as $key => $value)
 		{
 			$labels = array(
-				'name' 					=> __($value['postname'], THEME_NAME),
-				'singular_name' 		=> __($value['postname'], THEME_NAME),
-				'add_new' 				=> __("Add new", THEME_NAME),
-				'add_new_item' 			=> __("Add new ".$value['postname'],THEME_NAME),
-				'edit_item' 			=> __('Edit'.$value['postname'],THEME_NAME),
-				'new_item' 				=> __($value['postname'].' new',THEME_NAME),
-				'all_items' 			=> __('All '.$value['postname'],THEME_NAME),
-				'view_item'				=> __('View '.$value['postname'],THEME_NAME),
-				'search_items'			=> __('Search '.$value['postname'],THEME_NAME),
-				'not_found' 			=> __('Not found '.$value['postname'],THEME_NAME),
-				'not_found_in_trash' 	=> __('Not found '.$value['postname'],THEME_NAME),
+				'name' 					=> __($value['postname'], THEMENAME),
+				'singular_name' 		=> __($value['postname'], THEMENAME),
+				'add_new' 				=> __("Add new", THEMENAME),
+				'add_new_item' 			=> __("Add new ".$value['postname'],THEMENAME),
+				'edit_item' 			=> __('Edit'.$value['postname'],THEMENAME),
+				'new_item' 				=> __($value['postname'].' new',THEMENAME),
+				'all_items' 			=> __('All '.$value['postname'],THEMENAME),
+				'view_item'				=> __('View '.$value['postname'],THEMENAME),
+				'search_items'			=> __('Search '.$value['postname'],THEMENAME),
+				'not_found' 			=> __('Not found '.$value['postname'],THEMENAME),
+				'not_found_in_trash' 	=> __('Not found '.$value['postname'],THEMENAME),
 				'parent_item_colon' 	=> '',
-				'menu_name' 			=> __($value['postname'],THEME_NAME)
+				'menu_name' 			=> __($value['postname'],THEMENAME)
 			);
 			$args = array(
 				'labels' 				=> $labels,

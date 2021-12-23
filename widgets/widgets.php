@@ -18,11 +18,11 @@ unregister_widget('WP_Nav_Menu_Widget');
 /**
  * We are register widget area.
  */
-function FastSpa_widgets_init() {
+function ws24h_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Sidebar', THEME_NAME ),
+		'name'          => __( 'Main Sidebar', THEMENAME ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', THEME_NAME ),
+		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', THEMENAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -30,9 +30,9 @@ function FastSpa_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Second Sidebar', THEME_NAME ),
+		'name'          => __( 'Second Sidebar', THEMENAME ),
 		'id'            => 'sidebar-second',
-		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', THEME_NAME ),
+		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', THEMENAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -40,9 +40,9 @@ function FastSpa_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', THEME_NAME ),
+		'name'          => __( 'Footer 1', THEMENAME ),
 		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEMENAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -50,9 +50,9 @@ function FastSpa_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', THEME_NAME ),
+		'name'          => __( 'Footer 2', THEMENAME ),
 		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEMENAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -60,9 +60,9 @@ function FastSpa_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 3', THEME_NAME ),
+		'name'          => __( 'Footer 3', THEMENAME ),
 		'id'            => 'footer-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEMENAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
@@ -70,16 +70,16 @@ function FastSpa_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 4', THEME_NAME ),
+		'name'          => __( 'Footer 4', THEMENAME ),
 		'id'            => 'footer-4',
-		'description'   => __( 'Add widgets here to appear in your footer.', THEME_NAME ),
+		'description'   => __( 'Add widgets here to appear in your footer.', THEMENAME ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><label>',
 		'after_title'   => '</label></h2>',
 	) );
 }
-add_action( 'widgets_init', 'FastSpa_widgets_init' );
+add_action( 'widgets_init', 'ws24h_widgets_init' );
 
 //  We are include widgets here
 require_once 'widget-popular.php';

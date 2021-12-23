@@ -313,7 +313,7 @@ function makeCopyAllFromSource() {
     );
 }
 
-////// ------------ For build product Download FastSpa -----------------------
+////// ------------ For build product Download ws24h -----------------------
 gulp.task('product', gulp.series(
     makeTargetFolder,
     makeCleanTarget,
