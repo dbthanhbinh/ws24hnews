@@ -40,15 +40,22 @@
 
     <div class="<?= mainLayoutClass() ?>">        
       <?php
+        $archiveId = 'archive_category';
         if ( have_posts() ) :
             $pos = 1;
-            $archive_display = tie_get_option('archive_display');
-            $archive_cols = tie_get_option('archive_cols');
+            $archiveDisplay = tie_get_option($archiveId.'_display');
+            $archiveCols = tie_get_option($archiveId.'_cols');
+            $archiveAuthor = tie_get_option($archiveId.'_meta_author');
+            $archiveDate = tie_get_option($archiveId.'_meta_date');
+            $archiveReadMore = tie_get_option($archiveId.'_meta_readmore');
 
             $args = [
-              'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,
-              'cols' => $archive_cols,
-              'layout' => $mainLayout
+              'isGrid' => ($archiveDisplay && $archiveDisplay == DISPLAY_AS_GRID) ? true : false,
+              'layout' => $mainLayout,
+              'cols' => $archiveCols,
+              'author' => $archiveAuthor,
+              'date' => $archiveDate,
+              'readMore' => $archiveReadMore
             ];
 
             echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';

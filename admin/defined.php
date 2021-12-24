@@ -25,9 +25,9 @@ $Customize = [
 	'header_link_color_sub' => '#333',
 	'header_link_color_sub_hover' => '#333',
 
-	'FastSpa_hotline_number' => '0909874825',
-	'FastSpa_zalo_number' => '0909874825',
-	'FastSpa_sms_number' => '0909874825',
+	'ws24h_hotline_number' => '0909874825',
+	'ws24h_zalo_number' => '0909874825',
+	'ws24h_sms_number' => '0909874825',
  
     'company_name' => __('Company name', THEMENAME),
     'company_footer_name' => __('Company footer name', THEMENAME),
@@ -38,6 +38,7 @@ $Customize = [
     'setting_copyright' => __('© WEBSEO24H. All Rights Reserved', THEMENAME),
     'setting_open_time' => __('Từ 8:00 - 19:00 tất cả các ngày trong tuần, kể cả ngày lễ', THEMENAME),
     'google_analytics_code' => __('UA-xxxxxxxxx', THEMENAME),
+	'google_site_verification' => '',
 
     'facebook_name' => __('webseo24h', THEMENAME),
     'facebook_link' => __('https://www.facebook.com/webseo24h', THEMENAME),

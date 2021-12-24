@@ -90,7 +90,7 @@ if($homeTabBox){
         <div class=" title">
             <?php if($homeTabBoxSubtitle){?><h5 class="header-cb-1"><?= $homeTabBoxSubtitle ?></h5><?php }?>
             <?php if($homeTabBoxTitle){?><h4 class="entry-title"><?= $homeTabBoxTitle ?></h4><?php }?>
-            <?php if($homeTabDescription){?><p><?= $homeTabDescription ?></p><?php }?>
+            <?php if($homeTabDescription){?><div class="title-description"><?= html_entity_decode($homeTabDescription) ?></div><?php }?>
         </div>
         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
           <?php

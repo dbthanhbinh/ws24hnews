@@ -23,7 +23,12 @@ $entry_page_header_title_weight: 500;
     }
 }
 
+.article-list,
 .article-grid {
+    article {
+        margin-bottom: 20px;
+    }
+    
     .post-thumbnail {}
     .entry-content {
         header {
@@ -41,4 +46,24 @@ $entry_page_header_title_weight: 500;
         }
     }
 }
-.article-list {}
+.article-list {
+    article {
+        .post-thumbnail {
+            float: left;
+            margin-right: 20px;
+            max-width: 25%;
+        }
+
+        .entry-content {
+            &.has-badge {
+                padding-right: 55px;
+
+                .badge {
+                    &.top {
+                        right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

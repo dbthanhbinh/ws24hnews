@@ -393,7 +393,7 @@ function tie_shortcode_Author_info( $atts, $content = null ) {
 
 	$title = ($title) ? ' '.$title : '';
 
-	$out = '<div class="clear"></div><div class="author-info"><img class="author-img" src="'.$image.'" alt="" /><div class="author-info-content"><h3>'. __('About The Author' , 'tie').'</h3>
+	$out = '<div class="clear"></div><div class="author-info"><img class="author-img" src="'.$image.'" alt="" /><div class="author-info-content"><h3>'. __('About The Author' , THEMENAME).'</h3>
 			' .do_shortcode($content). '
 			</div></div>';
     return $out;

@@ -17,27 +17,27 @@ $defaultsValues = array(
 
 $defaultItems = [
     'background_color' => [
-        'title' => __('Background color', THEME_NAME),
+        'title' => __('Background color', THEMENAME),
         'color' => $defaultsValues['background_color'],
         'class' => 'set_background_color'
     ],
     'title_color' => [
-        'title' => __('Title color', THEME_NAME),
+        'title' => __('Title color', THEMENAME),
         'color' => $defaultsValues['title_color'],
         'class' => 'set_title_color'
     ],
     'icon_color' => [
-        'title' => __('Icon color', THEME_NAME),
+        'title' => __('Icon color', THEMENAME),
         'color' => $defaultsValues['icon_color'],
         'class' => 'set_icon_color'
     ],
     'span_color' => [
-        'title' => __('Span color', THEME_NAME),
+        'title' => __('Span color', THEMENAME),
         'color' => $defaultsValues['span_color'],
         'class' => 'set_span_color'
     ],
     'border_top_color' => [
-        'title' => __('Border top color', THEME_NAME),
+        'title' => __('Border top color', THEMENAME),
         'color' => $defaultsValues['border_top_color'],
         'class' => 'set_border_top_color'
     ]

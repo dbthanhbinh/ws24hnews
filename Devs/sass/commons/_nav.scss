@@ -24,6 +24,18 @@
         z-index: 999;
         opacity: 0.95;
         box-shadow: 1px 1px 10px $colors-box-shadow;
+        background: $main_color!important;
+        color: $menu_link_color;   
+    }
+
+    .main-navbar-fixed.navbar-expand-lg .navbar-nav .nav-item.dropdown.show>.nav-link,
+    .main-navbar-fixed.navbar-expand-lg .navbar-nav .nav-item >.nav-link{
+        color: $menu_link_color;
+        border-bottom: 1px solid transparent;
+        &:hover {
+            color: $menu_link_color;
+            border-bottom: 1px solid #fff;
+        }
     }
 
     .navbar-expand-lg .navbar-nav {

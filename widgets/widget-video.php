@@ -11,8 +11,8 @@ class ws24h_video_widget extends WP_Widget
 		add_action( 'load-widgets.php', array(&$this, 'my_custom_load') );
 		parent::__construct(
 			'ws24h_video', // Base ID
-			__( 'Ws24h video', THEME_NAME ), // Name
-			array( 'description' => __( 'A Ws24h youtobe video Widget', THEME_NAME ), ) // Args
+			__( 'Ws24h video', THEMENAME ), // Name
+			array( 'description' => __( 'A Ws24h youtobe video Widget', THEMENAME ), ) // Args
 		);
 	}
 
@@ -86,7 +86,7 @@ class ws24h_video_widget extends WP_Widget
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Widget video title', THEME_NAME );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Widget video title', THEMENAME );
 		$defaults = array(
 			'background_color' => '#f1f1f1',
 			'title_color' => '#000000'
@@ -101,27 +101,27 @@ class ws24h_video_widget extends WP_Widget
             });
 		</script> 
 		<p>
-            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Header background color', THEME_NAME ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Header background color', THEMENAME ); ?></label>
             <input class="set_background_color" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />
 		</p>
 		<p>
-            <label for="<?php echo $this->get_field_id( 'title_color' ); ?>"><?php _e( 'Title color', THEME_NAME ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title_color' ); ?>"><?php _e( 'Title color', THEMENAME ); ?></label>
             <input class="set_title_color" type="text" id="<?php echo $this->get_field_id( 'title_color' ); ?>" name="<?php echo $this->get_field_name( 'title_color' ); ?>" value="<?php echo esc_attr( $instance['title_color'] ); ?>" />
         </p>
 		<p>
-    		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEME_NAME ); ?></label> 
+    		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo __( 'Title:',THEMENAME ); ?></label> 
     		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
         <p>
-    		<label for="<?php echo $this->get_field_id( 'source' ); ?>"><?php echo __( 'Source video:',THEME_NAME ); ?></label> 
+    		<label for="<?php echo $this->get_field_id( 'source' ); ?>"><?php echo __( 'Source video:',THEMENAME ); ?></label> 
     		<input class="widefat" id="<?php echo $this->get_field_id( 'source' ); ?>" name="<?php echo $this->get_field_name( 'source' ); ?>" type="text" value="<?php echo $instance['source']; ?>">
 		</p>        
         <p>
-			<label for="<?php echo $this->get_field_id( 'video_width' ); ?>"> <?php echo __('Video width:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'video_width' ); ?>"> <?php echo __('Video width:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'video_width' ); ?>" name="<?php echo $this->get_field_name( 'video_width' ); ?>" value="<?php echo $instance['video_width']; ?>" type="text" size="3" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'video_height' ); ?>"> <?php echo __('Video Height:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'video_height' ); ?>"> <?php echo __('Video Height:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'video_height' ); ?>" name="<?php echo $this->get_field_name( 'video_height' ); ?>" value="<?php echo $instance['video_height']; ?>" type="text" size="3" />
 		</p>
 		<?php

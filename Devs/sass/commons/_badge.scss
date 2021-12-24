@@ -1,0 +1,35 @@
+.badge {
+    background: $main_color;
+    color: $menu_link_color;
+    padding: 5px 10px;
+    border-radius: 0;
+
+    &.absolute {
+        position: absolute;
+    }
+
+    &.top {
+        top: 7%;
+    }
+
+    &.post-date {
+
+    }
+
+    &.badge-square {
+
+    }
+
+    .badge-inner {
+        .post-date-day {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .post-date-month {
+            &.is-xsmall {
+
+            }
+        }
+    }
+}

@@ -13,7 +13,7 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 	$new_sidebars = array(''=> 'Default');
 	
 	if (class_exists('Woocommerce'))
-		$new_sidebars ['shop-widget-area'] = __( 'Shop - For WooCommerce Pages', 'tie' ) ;
+		$new_sidebars ['shop-widget-area'] = __( 'Shop - For WooCommerce Pages', THEMENAME ) ;
 		
 	if($sidebars){
 		foreach ($sidebars as $sidebar) {
@@ -51,12 +51,12 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 				<h3>Category images</h3>
 					<?php
 					tie_cat_options(
-						array(	"name" => "Category thumbnail",
+						array(	"name" => "Category thumbnail(300x300px)",
 								"id" => "logo",
 								"cat" => $t_id ,
 								"type" => "upload"));
 					tie_cat_options(
-						array(	"name" => "Breadcrumb banner",
+						array(	"name" => "Breadcrumb banner(1920x300px)",
 								"id" => "breadcrumb_banner",
 								"cat" => $t_id ,
 								"type" => "upload"));

@@ -3,7 +3,7 @@ add_action("admin_init", "posts_init");
 function posts_init()
 {
     add_meta_box("tie_post_options", "Post Options", "tie_post_options_module", "custom-video", "normal", "high");
-    ////add_meta_box("tie_page_options", THEME_NAME ." - Page Options", "tie_page_options_module", "page", "normal", "high");
+    ////add_meta_box("tie_page_options", THEMENAME ." - Page Options", "tie_page_options_module", "page", "normal", "high");
 }
 
 function tie_post_options_module()
@@ -289,7 +289,7 @@ function tie_page_options_module()
             ]);
         ?>
         <p id="taq_custom_position_hint" class="tie_message_hint">
-            Use <strong>[review]</strong> shortcode to place the review box in any place within post content or use <strong><?php echo THEME_NAME ?> - Review Box </strong> Widget .
+            Use <strong>[review]</strong> shortcode to place the review box in any place within post content or use <strong><?php echo THEMENAME ?> - Review Box </strong> Widget .
         </p>
         <div id="reviews-options">
             <?php
@@ -407,7 +407,7 @@ function tie_page_options_module()
         $new_sidebars = ['' => 'Default'];
 
         if (class_exists('Woocommerce')) {
-            $new_sidebars ['shop-widget-area'] = __('Shop - For WooCommerce Pages', 'tie');
+            $new_sidebars ['shop-widget-area'] = __('Shop - For WooCommerce Pages', THEMENAME);
         }
 
         if ($sidebars) {

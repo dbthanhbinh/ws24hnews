@@ -1,9 +1,9 @@
 <?php
-function FastSpa_widgets_init() {
+function ws24h_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Primary Widget Area', THEME_NAME),
+		'name'          => __( 'Primary Widget Area', THEMENAME),
 		'id'            => 'primary-sidebar',
-		'description'   => __( 'Drag widgets here to appear in your sidebar.',THEME_NAME),
+		'description'   => __( 'Drag widgets here to appear in your sidebar.',THEMENAME),
 		'before_widget' => '<div id="%1$s" class="widget sidebar-widgets">',
 		'after_widget'  => '</div></div></div>',
 		'before_title'  => '<div class="widgets-title"> <h3>',
@@ -23,35 +23,35 @@ function FastSpa_widgets_init() {
     {
 	
 		register_sidebar( array(
-			'name' =>  __( 'First Footer Widget Area', THEME_NAME ),
+			'name' =>  __( 'First Footer Widget Area', THEMENAME ),
 			'id' => 'first-footer-widget-area',
-			'description' => __( 'The first footer widget area', THEME_NAME ),
+			'description' => __( 'The first footer widget area', THEMENAME ),
 			'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 		) );
 
 		if( $footer_widgets == 'footer-2c' || $footer_widgets == 'narrow-wide-2c' || $footer_widgets == 'wide-narrow-2c' || $footer_widgets == 'footer-3c' || $footer_widgets == 'wide-left-3c' || $footer_widgets == 'wide-right-3c' || $footer_widgets == 'footer-4c' ){
 			register_sidebar( array(
-				'name' =>  __( 'Second Footer Widget Area', THEME_NAME ),
+				'name' =>  __( 'Second Footer Widget Area', THEMENAME ),
 				'id' => 'second-footer-widget-area',
-				'description' => __( 'The Second footer widget area', THEME_NAME ),
+				'description' => __( 'The Second footer widget area', THEMENAME ),
 				'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 			) );
 		}
 	
 		if( $footer_widgets == 'footer-3c' || $footer_widgets == 'wide-left-3c' || $footer_widgets == 'wide-right-3c' || $footer_widgets == 'footer-4c' ){
 			register_sidebar( array(
-				'name' =>  __( 'Third Footer Widget Area', THEME_NAME ),
+				'name' =>  __( 'Third Footer Widget Area', THEMENAME ),
 				'id' => 'third-footer-widget-area',
-				'description' => __( 'The Third footer widget area', THEME_NAME ),
+				'description' => __( 'The Third footer widget area', THEMENAME ),
 				'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 			) );
 		}
 		
 		if( $footer_widgets == 'footer-4c' ){
 			register_sidebar( array(
-				'name' => __( 'Fourth Footer Widget Area', THEME_NAME ),
+				'name' => __( 'Fourth Footer Widget Area', THEMENAME ),
 				'id' => 'fourth-footer-widget-area',
-				'description' => __( 'The Fourth footer widget area', THEME_NAME ),
+				'description' => __( 'The Fourth footer widget area', THEMENAME ),
 				'before_widget' => $footer_before_widget , 'after_widget' => $footer_after_widget , 'before_title' => $footer_before_title , 'after_title' => $footer_after_title ,
 			) );
 		}
@@ -77,7 +77,7 @@ function FastSpa_widgets_init() {
 		}
 	}	
 }
-add_action( 'widgets_init', 'FastSpa_widgets_init' );
+add_action( 'widgets_init', 'ws24h_widgets_init' );
 
 function tcr_tag_cloud_filter($args = array()) {
     $args['smallest'] = 10;

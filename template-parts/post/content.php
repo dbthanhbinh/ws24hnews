@@ -4,6 +4,9 @@
 	$isGrid = (isset($args['isGrid']) && $args['isGrid']) ? $args['isGrid'] : false;
 	$cols = (isset($args['cols']) && $args['cols']) ? $args['cols'] : DISPLAY_COLS_NUMBER;
 	$layout = (isset($args['layout']) && $args['layout']) ? $args['layout'] : LAYOUT_RIGHT_SIDEBAR;
+	$archiveAuthor = (isset($args['author']) && $args['author']) ? $args['author'] : false;
+	$archiveDate = (isset($args['date']) && $args['date']) ? $args['date'] : false;
+	$archiveReadMore = (isset($args['readMore']) && $args['readMore']) ? $args['readMore'] : false;
 	$content_type = (isset($args['content_type']) && $args['content_type']) ? $args['content_type'] : null;
 	$tagHeader = 'h2';
 	$cardColClass = getColsLayout($isGrid, $cols);
@@ -17,7 +20,7 @@
 		</div>
 	<?php } ?>
 
-	<div class="entry-content">
+	<div class="entry-content <?= $archiveDate ? HAS_BADGE_CLASS : '' ?>">
 		<header class="entry-header">
 			<?php
 				if(is_single()) $tagHeader = 'h1';
@@ -26,6 +29,15 @@
 				the_title('<'.$tagHeader.' class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></'.$tagHeader.'>');
 			?>
 		</header>
-		<?php the_excerpt(); ?>
+		<div class="entry-summary">
+			<?= get_excerpt(150, $archiveReadMore); ?>
+		</div>
+
+		<?php
+			if ($archiveDate) {
+				// Format date = '20-11'
+				echo displayBadgeDayMonth(get_the_date('d-m'));
+			}
+		?>
 	</div>
 </article>

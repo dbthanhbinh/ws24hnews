@@ -40,10 +40,23 @@
 
         <label for="tie_home_cats[<?php echo $i ?>][description]">
             <span>Box description :</span>
-            <textarea style="direction:ltr; text-align:left"
+            <!-- <textarea style="direction:ltr; text-align:left"
             id="tie_home_cats[<?php echo $i ?>][description]"
             name="tie_home_cats[<?php echo $i ?>][description]"
-            type="textarea" cols="100%" rows="3" tabindex="4"><?php if( !empty($cat['description']) ) echo $cat['description'] ?></textarea>
+            type="textarea" cols="100%" rows="3" tabindex="4"><?php if( !empty($cat['description']) ) echo $cat['description'] ?></textarea> -->
+            <?php
+                $content = html_entity_decode(!empty($cat['description']) ? $cat['description'] : '');
+                $editor_id = "tie_home_cats_".$i."_description";
+				$args = array(
+                    'tinymce' => array( 
+                        'content_css' => get_template_directory_uri().'/admin/assets/tinymce-editor.css',
+                    ),
+					'media_buttons' => false,
+					'textarea_rows' => 5,
+					'textarea_name' => "tie_home_cats[".$i."][description]"
+				);
+				wp_editor($content, $editor_id, $args);
+            ?>
         </label>
         <label for="tie_home_cats[<?php echo $i ?>][show_description]">
             <span>Show Box description :</span>
