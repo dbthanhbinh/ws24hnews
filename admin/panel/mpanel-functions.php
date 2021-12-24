@@ -9,8 +9,8 @@ function tie_admin_notices (){
 	if ( get_option('tie_active') == 4.1 && isset( $_GET['page'] ) && $_GET['page'] == 'panel' && !get_user_meta( $userid, 'ignore_sample_error_notice2' ) ) {
 		echo '<br />
 			<div class="updated" style="width:790px; margin:0 auto; padding:0 10px; overflow:hidden;">
-				<p style="float:left;"><strong>If You Have Any Issues with FastSpa v1.0 .. </strong>
-				<a target="_blank" rel="noopener" href="http://webseo24h.com/docs">Please Check FastSpa .</a></p>
+				<p style="float:left;"><strong>If You Have Any Issues with ws24h v1.0 .. </strong>
+				<a target="_blank" rel="noopener" href="http://webseo24h.com/docs">Please Check ws24h .</a></p>
 				<div class="tie-pointer-buttons"><a class="close" href="admin.php?page=panel&dismiss_me=yes">Dismiss</a></div>
 			</div>';
 	}
@@ -49,8 +49,8 @@ if ( isset( $_GET['page'] ) && $_GET['page'] == 'panel' ) {
 	 
 	function tie_pointer_print_scripts() {
 		//<img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><img src=\'".get_template_directory_uri()."/images/bullet_star.png\' alt=\'\' /><br />
-		// $pointer_content  = "<h3>Did you like ".THEME_NAME." ?</h3>";
-		// $pointer_content .= "<p> If you like ".THEME_NAME." theme, please don\'t forget to <a href=\'http://themeforest.net/downloads?ref=tielabs\' target=\'_blank\'><strong>rate it</strong></a> :)</p>";
+		// $pointer_content  = "<h3>Did you like ".THEMENAME." ?</h3>";
+		// $pointer_content .= "<p> If you like ".THEMENAME." theme, please don\'t forget to <a href=\'http://themeforest.net/downloads?ref=tielabs\' target=\'_blank\'><strong>rate it</strong></a> :)</p>";
 	?>
 	 
 		<script type="text/javascript">
@@ -117,7 +117,7 @@ function tie_replace_thickbox_text($translated_text, $text, $domain) {
     if ('Insert into Post' == $text) {
         $referer = strpos( wp_get_referer(), 'tie-settings' );
         if ( $referer != '' )
-            return __('Use this image', 'tie' ); 
+            return __('Use this image', THEMENAME ); 
     }  
     return $translated_text;  
 }  
@@ -153,10 +153,10 @@ function tie_save_settings ( $data , $refresh = 0 ) {
 			if(  function_exists('icl_register_string') && $option == 'tie_home_cats'){
 				foreach( $data[$option] as $item ){
 					if( !empty($item['boxid']) )
-						icl_register_string( THEME_NAME , $item['boxid'], $item['title'] );
+						icl_register_string( THEMENAME , $item['boxid'], $item['title'] );
 
 					if( !empty($item['type']) && $item['type'] == 'ads' && !empty($item['boxid']) )
-						icl_register_string( THEME_NAME , $item['boxid'], $item['text'] );
+						icl_register_string( THEMENAME , $item['boxid'], $item['text'] );
 				}
 			}
 		}
@@ -197,10 +197,10 @@ function tie_add_admin() {
 
 	$current_page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
 	$icon = get_template_directory_uri().'/admin/panel/images/general.png';
-	add_menu_page(THEME_NAME.' Settings', THEME_NAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
-	$theme_page = add_submenu_page('panel',THEME_NAME.' Settings', THEME_NAME.' Settings','switch_themes', 'panel' , 'panel_options');
+	add_menu_page(THEMENAME.' Settings', THEMENAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
+	$theme_page = add_submenu_page('panel',THEMENAME.' Settings', THEMENAME.' Settings','switch_themes', 'panel' , 'panel_options');
 	add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
-	add_submenu_page('panel',THEME_NAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
+	add_submenu_page('panel',THEMENAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
 	
 	function redirect_docs(){
 		$docs_url = 'http://webseo24h.com/docs';
@@ -317,7 +317,8 @@ function tie_options($value){
 		<?php 
 		break;
 
-		case 'short-text': ?>
+		case 'short-text':
+			?>
 			<input style="width:50px"
 				name="tie_options[<?php echo $value['id']; ?>]"
 				id="<?php  echo $value['id']; ?>"
@@ -361,9 +362,12 @@ function tie_options($value){
 			?>
 			<!-- <textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3"><?php echo tie_get_option_init($value['id'], $value['std']);  ?></textarea> -->
 			<?php
-				$content   = html_entity_decode(tie_get_option_init($value['id'], $value['std']));
+				$content = html_entity_decode(tie_get_option_init($value['id'], $value['std']));
 				$editor_id = $value['id'];
 				$args = array(
+					'tinymce' => array( 
+                        'content_css' => get_template_directory_uri().'/admin/assets/tinymce-editor.css',
+                    ),
 					'media_buttons' => false,
 					'textarea_rows' => 5,
 					'textarea_name' => 'tie_options['.$value['id'].']'

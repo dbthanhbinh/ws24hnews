@@ -1,10 +1,25 @@
 <?php require('layouts/build-header-group.php'); ?>
     <label for="tie_home_cats[<?php echo $i ?>][box_content]">
         <span>Box content/Html content :</span>
-        <textarea style="direction:ltr; text-align:left"
+        <!-- <textarea style="direction:ltr; text-align:left"
         id="tie_home_cats[<?php echo $i ?>][box_content]"
         name="tie_home_cats[<?php echo $i ?>][box_content]"
-        type="textarea" cols="100%" rows="10" tabindex="4"><?php if( !empty($cat['box_content']) ) echo $cat['box_content'] ?></textarea>
+        type="textarea" cols="100%" rows="10" tabindex="4"><?php if( !empty($cat['box_content']) ) echo $cat['box_content'] ?></textarea> -->
+
+        <?php
+            $content = html_entity_decode(!empty($cat['box_content']) ? $cat['box_content'] : '');
+            $editor_id = "tie_home_cats_".$i."_box_content";
+            $args = array(
+                'tinymce' => array( 
+                    'content_css' => get_template_directory_uri().'/admin/assets/tinymce-editor.css',
+                ),
+                'media_buttons' => false,
+                'textarea_rows' => 5,
+                'textarea_name' => "tie_home_cats[".$i."][box_content]"
+            );
+            wp_editor( $content, $editor_id, $args);
+        ?>
+
     </label>
 
     <label for="tie_home_cats[<?php echo $i ?>][show_navigate_btn]">

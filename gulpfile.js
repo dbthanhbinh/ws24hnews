@@ -47,7 +47,7 @@ var colorthemes = [];
         mainTextColor: '#ffffff'
     });
 
-    var themecolor = '#e83e8c';
+    var themecolor = '#0065b3';
     var colorthemetext = '#ffffff';
 
 function buildSassDf(env, themeProperties) {
@@ -313,7 +313,7 @@ function makeCopyAllFromSource() {
     );
 }
 
-////// ------------ For build product Download FastSpa -----------------------
+////// ------------ For build product Download ws24h -----------------------
 gulp.task('product', gulp.series(
     makeTargetFolder,
     makeCleanTarget,

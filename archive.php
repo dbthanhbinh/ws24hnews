@@ -16,15 +16,26 @@
       </header>
       
       <?php
+        $archiveId = 'archive_tag';
         if (have_posts()) :
             $pos = 1;
-            $archive_display = tie_get_option('archive_display');
-            $archive_cols = tie_get_option('archive_cols');
+            $archivePosttype = get_query_var('post_type');
+            if(isset($archivePosttype) && $archivePosttype)
+              $archiveId = 'archive_'.get_query_var('post_type');
+
+            $archive_display = tie_get_option($archiveId.'_display');
+            $archive_cols = tie_get_option($archiveId.'_cols');
+            $archiveAuthor = tie_get_option($archiveId.'_meta_author');
+            $archiveDate = tie_get_option($archiveId.'_meta_date');
+            $archiveReadMore = tie_get_option($archiveId.'_meta_readmore');
 
             $args = [
               'isGrid' => ($archive_display && $archive_display == DISPLAY_AS_GRID) ? true : false,
               'cols' => $archive_cols,
-              'layout' => $mainLayout
+              'layout' => $mainLayout,
+              'author' => $archiveAuthor,
+              'date' => $archiveDate,
+              'readMore' => $archiveReadMore
             ];
             echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
               while ( have_posts() ) :

@@ -13,7 +13,7 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 	$new_sidebars = array(''=> 'Default');
 	
 	if (class_exists('Woocommerce'))
-		$new_sidebars ['shop-widget-area'] = __( 'Shop - For WooCommerce Pages', 'tie' ) ;
+		$new_sidebars ['shop-widget-area'] = __( 'Shop - For WooCommerce Pages', THEMENAME ) ;
 		
 	if($sidebars){
 		foreach ($sidebars as $sidebar) {
@@ -48,7 +48,7 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 		 });
 		</script>
 		<div class="tiepanel-item">
-			<h3><?php echo THEME_NAME ?> - Category Settings</h3>
+			<h3><?php echo THEMENAME ?> - Category Settings</h3>
 			<?php
 				tie_cat_options(
 					array(	"name" => "Mega Menu",
@@ -74,7 +74,7 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 		</div>	
 		
 		<div class="tiepanel-item">
-			<h3><?php echo THEME_NAME ?> - Category Logo</h3>
+			<h3><?php echo THEMENAME ?> - Category Logo</h3>
 			<?php
 				tie_cat_options(
 					array(	"name" => "Custom Logo",
@@ -132,7 +132,7 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 		</div>
 		
 		<div class="tiepanel-item">
-			<h3><?php echo THEME_NAME ?> - Category Style </h3>
+			<h3><?php echo THEMENAME ?> - Category Style </h3>
 			<?php
 				tie_cat_options(				
 					array(	"name" => "Main color",

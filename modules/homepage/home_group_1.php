@@ -9,7 +9,7 @@
                     <?php if($boxTitle){?>
                         <h3><?= $boxTitle ?> <?php if($subTitle){?><span class="header-cb-1"><?= $subTitle ?></span><?php }?></h3>
                     <?php }?>
-                    <?php if($description){?> <p><?= $description ?></p> <?php }?>
+                    <?php if($description){?> <p><?= html_entity_decode($description) ?></p> <?php }?>
                 </div>
                 <div class="row content-section">
                     <?php
@@ -32,7 +32,7 @@
 
                             <div class="featured-content">
                                 <h4 class="featured-box-title"><a href="<?=$urlItem ? $urlItem : '#'?>" title="<?= $titleItem ?>"><?= $titleItem ?></a></h4>
-                                <?php if($descriptionItem){?><div class="featured-box-text" ><?=$descriptionItem?></div><?php }?>
+                                <?php if($descriptionItem){?><div class="featured-box-text" ><?= html_entity_decode($descriptionItem) ?></div><?php }?>
                             </div>
                         </div>
                         <?php

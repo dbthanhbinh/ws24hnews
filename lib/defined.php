@@ -1,5 +1,5 @@
 <?php
-const THEMENAME = 'FastSpa';
+const THEMENAME = 'fastspa';
 
 const LAYOUT_FULL = 'full';
 const LAYOUT_LEFT_SIDEBAR = 'left-sidebar';
@@ -37,3 +37,6 @@ const IS_SHOW_BREADCRUMB = true;
 
 // Socials
 const IS_ENABLE_FACEBOOK_LIB = true;
+
+// badge
+const HAS_BADGE_CLASS = 'has-badge';

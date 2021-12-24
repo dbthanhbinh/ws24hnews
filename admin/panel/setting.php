@@ -24,7 +24,7 @@ function tie_admin_bar() {
 		$wp_admin_bar->add_menu( array(
 			'parent' => 0,
 			'id' => 'mpanel_page',
-			'title' => THEME_NAME ,
+			'title' => THEMENAME ,
 			'href' => admin_url( 'admin.php?page=panel')
 		) );
 	}
@@ -35,7 +35,7 @@ add_action( 'wp_before_admin_bar_render', 'tie_admin_bar' );
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	if( !get_option('tie_active') ){
 		tie_save_settings( $default_data );
-		update_option( 'tie_active' , THEME_NAME );
+		update_option( 'tie_active' , THEMENAME );
 	}
    //header("Location: admin.php?page=panel");
 }

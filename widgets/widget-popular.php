@@ -10,8 +10,8 @@ class ws24h_popular_widget extends WP_Widget
 		add_action( 'load-widgets.php', array( &$this ,'my_custom_load') );
 		parent::__construct(
 			'ws24h_popular', // Base ID
-			__( 'Ws24h Post popular', THEME_NAME ), // Name
-			array( 'description' => __( 'Ws24h Post popular', THEME_NAME ), ) // Args
+			__( 'Ws24h Post popular', THEMENAME ), // Name
+			array( 'description' => __( 'Ws24h Post popular', THEMENAME ), ) // Args
 		);
 	}
 
@@ -161,7 +161,7 @@ class ws24h_popular_widget extends WP_Widget
 		?>
 				
 		<p>
-    		<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('Title:', THEME_NAME); ?></label> 
+    		<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('Title:', THEMENAME); ?></label> 
     		<input class="widefat"
 				id="<?php echo $this->get_field_id('title'); ?>"
 				name="<?php echo $this->get_field_name('title'); ?>"
@@ -170,7 +170,7 @@ class ws24h_popular_widget extends WP_Widget
 		</p>
         <p>
 			<?php if(isset($instance['cats_id'])) $cats_id = explode ( ',' , $instance['cats_id'] ) ; ?>
-			<label for="<?php echo $this->get_field_id('cats_id'); ?>"><?php echo  __('From category : (keep Ctrl and choosen multiple)',THEME_NAME); ?></label>
+			<label for="<?php echo $this->get_field_id('cats_id'); ?>"><?php echo  __('From category : (keep Ctrl and choosen multiple)',THEMENAME); ?></label>
 			<select class="widefat" multiple="multiple"
 				id="<?php echo $this->get_field_id('cats_id'); ?>[]"
 				name="<?php echo $this->get_field_name('cats_id'); ?>[]">
@@ -188,42 +188,42 @@ class ws24h_popular_widget extends WP_Widget
 			</select>
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'latest' ); ?>"><?php echo __('Latest news:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'latest' ); ?>"><?php echo __('Latest news:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'latest' ); ?>"
 				name="<?php echo $this->get_field_name( 'latest' ); ?>"
 				value="true" <?php if(!$instance['latest'] || (!empty($instance['latest']) && $instance['latest'])) echo 'checked="checked"'; ?>
 				type="checkbox" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'excerpt_len' ); ?>"> <?php echo __('Excerpt Len to show:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'excerpt_len' ); ?>"> <?php echo __('Excerpt Len to show:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'excerpt_len' ); ?>"
 				name="<?php echo $this->get_field_name( 'excerpt_len' ); ?>"
 				value="<?= !empty($instance['excerpt_len']) ? $instance['excerpt_len'] : 150 ?>"
 				type="text" size="3" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'excerpt_hidden' ); ?>"><?php echo __('Hidden excerpt:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'excerpt_hidden' ); ?>"><?php echo __('Hidden excerpt:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'excerpt_hidden' ); ?>"
 				name="<?php echo $this->get_field_name( 'excerpt_hidden' ); ?>"
 				value="true" <?php if(!empty($instance['excerpt_hidden']) && $instance['excerpt_hidden'] ) echo 'checked="checked"'; ?>
 				type="checkbox" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"> <?php echo __('Number to show:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"> <?php echo __('Number to show:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"
 				name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>"
 				value="<?= !empty($instance['no_of_posts']) ? $instance['no_of_posts'] : 5 ?>"
 				type="text" size="3" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'thumb' ); ?>"><?php echo __('Show Thumbnail:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'thumb' ); ?>"><?php echo __('Show Thumbnail:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'thumb' ); ?>"
 				name="<?php echo $this->get_field_name( 'thumb' ); ?>"
 				value="true" <?php if(!$instance['thumb'] || !empty($instance['thumb']) ) echo 'checked="checked"'; ?>
 				type="checkbox" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id( 'thumb_full' ); ?>"><?php echo __('Thumbnail Full:',THEME_NAME);?> </label>
+			<label for="<?php echo $this->get_field_id( 'thumb_full' ); ?>"><?php echo __('Thumbnail Full:',THEMENAME);?> </label>
 			<input id="<?php echo $this->get_field_id( 'thumb_full' ); ?>"
 				name="<?php echo $this->get_field_name( 'thumb_full' ); ?>"
 				value="true" <?php if( !empty($instance['thumb_full']) ) echo 'checked="checked"'; ?>

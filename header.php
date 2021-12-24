@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="p:domain_verify" content="<?= get_theme_mod('domain_verify_code') ?>"/>
+    <meta name="google-site-verification" content="<?= get_theme_mod('google_site_verification') ?>" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <title><?= wp_title() ?></title>
     <?php wp_head()?>

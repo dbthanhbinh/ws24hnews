@@ -11,8 +11,8 @@ class ws24h_fanpage_widget extends WP_Widget
 		add_action( 'load-widgets.php', array(&$this, 'my_custom_load') );
 		parent::__construct(
 			'ws24h_fanpage', // Base ID
-			__( 'Ws24h fanpage', THEME_NAME ), // Name
-			array( 'description' => __( 'A Ws24h Fanpage Widget', THEME_NAME ), ) // Args
+			__( 'Ws24h fanpage', THEMENAME ), // Name
+			array( 'description' => __( 'A Ws24h Fanpage Widget', THEMENAME ), ) // Args
 		);
 	}
 
@@ -63,7 +63,7 @@ class ws24h_fanpage_widget extends WP_Widget
         $instance = wp_parse_args( (array) $instance, $defaults );
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id('fanpage_url'); ?>"><?php _e( 'Fanpage url', THEME_NAME ); ?></label>
+				<label for="<?php echo $this->get_field_id('fanpage_url'); ?>"><?php _e( 'Fanpage url', THEMENAME ); ?></label>
 				<input class="set_fanpage_url"
 					type="text"
 					id="<?php echo $this->get_field_id('fanpage_url'); ?>"
