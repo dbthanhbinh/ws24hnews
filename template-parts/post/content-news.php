@@ -1,12 +1,15 @@
 <?php
 	// process args
-	$cols = 4;
+	$cols = DISPLAY_COLS_NUMBER;
 	if(isset($args)){
 		$isGrid = (isset($args['isGrid']) && $args['isGrid']) ? $args['isGrid'] : false;
-		$cols = (isset($args['cols']) && $args['cols']) ? $args['cols'] : 4;
+		$cols = (isset($args['cols']) && $args['cols']) ? $args['cols'] : DISPLAY_COLS_NUMBER;
 	}
 	$layout = (isset($args['layout']) && $args['layout']) ? $args['layout'] : LAYOUT_RIGHT_SIDEBAR;
 	$content_type = (isset($args['content_type']) && $args['content_type']) ? $args['content_type'] : '';
+	$archiveAuthor = (isset($args['author']) && $args['author']) ? $args['author'] : false;
+	$archiveDate = (isset($args['date']) && $args['date']) ? $args['date'] : false;
+	$archiveReadMore = (isset($args['readMore']) && $args['readMore']) ? $args['readMore'] : false;
 	$tagHeader = 'h2';
 	$cardColClass = getColsLayout($isGrid, $cols)
 ?>
@@ -19,10 +22,7 @@
 		</div>
 	<?php } ?>
 
-	<?php
-		$hasBadge = true;
-	?>
-	<div class="entry-content <?= $hasBadge ? HAS_BADGE_CLASS : '' ?>">
+	<div class="entry-content <?= $archiveDate ? HAS_BADGE_CLASS : '' ?>">
 		<header class="entry-header">
 			<?php
 				if ((isset($content_type) && $content_type == 'related')) $tagHeader = 'h4';
@@ -32,19 +32,13 @@
 			?>
 		</header>
 		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+			<?= get_excerpt(150, $archiveReadMore); ?>
 		</div>
 
 		<?php
-			if ($hasBadge) {
-				?>
-					<div class="badge absolute top post-date badge-square">
-						<div class="badge-inner">
-							<span class="post-date-day">21</span>
-							<span class="post-date-month is-xsmall">Th7</span>
-						</div>
-					</div>
-				<?php
+			if ($archiveDate) {
+				// Format date = '20-11'
+				echo displayBadgeDayMonth(get_the_date('d-m'));
 			}
 		?>
 	</div>

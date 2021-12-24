@@ -5,7 +5,7 @@
 function your_theme_new_customizer_settings($wp_customize) {
     global $Customize;
 
-    $choices => [
+    $choices = [
         '1' => __('Enable', THEMENAME),
         '0' => __('Disable', THEMENAME)
     ];

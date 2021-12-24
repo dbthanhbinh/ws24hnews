@@ -14,10 +14,10 @@
             <div class="row">
                 <div class="col-lg-12 article-content">
                     <?php
-                    while (have_posts()):
+                    if(have_posts()):
                         the_post();
-                        get_template_part( 'template-parts/post/content', 'single' );
-                    endwhile;
+                        get_template_part('template-parts/post/content', 'single');
+                    endif;
                     ?>
                 </div>
             </div>

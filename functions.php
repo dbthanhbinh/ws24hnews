@@ -250,7 +250,7 @@ function ws24h_custom_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'ws24h_custom_excerpt_length', 999 );
 
-function excerpt_content ($excerpt, $limit) {
+function excerpt_content ($excerpt, $limit, $readMore) {
     $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
     $excerpt = str_ireplace("Read", '', $excerpt);
     $excerpt = strip_shortcodes($excerpt);
@@ -258,12 +258,16 @@ function excerpt_content ($excerpt, $limit) {
     $excerpt = substr($excerpt, 0, $limit);
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    return $excerpt;
+    if($readMore)
+        return $excerpt . ws24h_excerpt_more('...');
+    return $excerpt.'...';
 }
 
-function get_excerpt($limit, $readMore=false, $source = null){
+function get_excerpt($limit = null, $readMore=false, $source = null){
+    if(!$limit)
+        $limit = 150;
     if($source == "content" ? ($excerpt = get_the_content()) : ($excerpt = get_the_excerpt()));	
-    $excerpt = excerpt_content ($excerpt, $limit);
+    $excerpt = excerpt_content ($excerpt, $limit, $readMore);
     return $excerpt;
 }
 
@@ -272,7 +276,7 @@ function ws24h_excerpt_more($more) {
     return sprintf('<br/><br/><a class="read-more" href="%1$s">%2$s</a>',
         get_permalink( get_the_ID() ), '<i class="fa fa-long-arrow-right"></i> '. getTranslateByKey('excerpt_read_more'));
 }
-add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
+// add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
 
 // Remove width, height from the_post_thumb
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );

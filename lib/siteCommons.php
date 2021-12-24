@@ -152,4 +152,21 @@ if ( ! function_exists( 'render_mode_attachment_image' ) ) :
             return '';
         return wp_get_attachment_image( get_theme_mod( $key ), $size );
     }    
-endif;    
+endif;
+
+if ( ! function_exists( 'displayBadgeDayMonth' ) ) :
+    // Format date = '20-11'
+    function displayBadgeDayMonth ($date = null) {
+        if (!$date)
+            return '';
+        $date = explode('-', $date);
+
+        return '
+            <div class="badge absolute top post-date badge-square">
+                <div class="badge-inner">
+                    <span class="post-date-day">'.$date[0].'</span>
+                    <span class="post-date-month is-xsmall">T.'.$date[1].'</span>  
+                </div>
+            </div>';
+    }    
+endif;  
