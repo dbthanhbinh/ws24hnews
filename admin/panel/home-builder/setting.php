@@ -75,7 +75,7 @@ require_once ('commons.php')
                                     $defaultLayout = 'n';
                                     require('videos.php');
                                 ?>
-                                <?php elseif( $cat['type'] == 'appointment' ) :
+                                <?php elseif(function_exists('appointment_admin_menu') && $cat['type'] == 'appointment' ) :
                                     $defaultLayout = 'n';
                                     $isShowLayoutDropdown = true;
                                     require('appointment.php');

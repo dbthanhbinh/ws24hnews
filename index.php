@@ -5,12 +5,13 @@
 <!-- Slideshow -->
 <?php include TEMPLATEPATH . ('/modules/owl-carousel/slide-show.php') ?>
 
-<div class="<?= mainLayoutKey() ?>">
+<?php if(mainLayoutKey() == 'left-sidebar' || mainLayoutKey() == 'right-sidebar') echo '<div class="container">'; ?>
+<div class="row <?= $mainLayout ?>">
     <?php if (mainLayoutKey() == LAYOUT_LEFT_SIDEBAR) { ?>
         <?php get_sidebar(); ?>
     <?php } ?>
 
-    <div class="home-main-content">
+    <div class="home-main-content <?= mainLayoutClass() ?>">
         <h1 style="display:none;"><?php echo get_bloginfo('name') ?></h1>
         <?php
             $onHome = tie_get_option('on_home');
@@ -47,12 +48,13 @@
         ?>
     </div>
 
-    <!-- Sidebar area: we defined sidebar's 2 area -->
-    <?php get_sidebar('second'); ?>
-    <?php if(mainLayoutKey() == LAYOUT_RIGHT_SIDEBAR) { ?>
-        <?php get_sidebar('second'); ?>
-    <?php } ?>
-</div>
+    <!-- Sidebar's 2 area -->
+    <?php get_sidebar('second');?>
 
+    <!-- Sidebar right -->
+    <?php if ($mainLayout == LAYOUT_RIGHT_SIDEBAR) { get_sidebar(); } ?>
+
+</div>
+<?php if(mainLayoutKey() == 'left-sidebar' || mainLayoutKey() == 'right-sidebar') echo '</div>'; ?>
 <!-- Footer here-->
 <?php get_footer(); ?>

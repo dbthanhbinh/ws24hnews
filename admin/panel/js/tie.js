@@ -513,7 +513,7 @@ jQuery(document).ready(function() {
 
 	// For Appointment tab box
 	jQuery("#add-appointment").click(function() {
-		jQuery('#cat_sortable').append(builderAppointmentTabBox(boxTitle='Appointment tab box', nextCell));
+		jQuery('#cat_sortable').append(builderAppointmentTabBox(boxTitle='Appointment tab', nextCell));
 		jQuery('#listItem_'+ nextCell).hide().fadeIn();
 		nextCell ++ ;
 	});	

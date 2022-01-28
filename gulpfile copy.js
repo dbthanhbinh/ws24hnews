@@ -358,91 +358,60 @@ gulp.task('plugin', gulp.series(
 );
 
 
-//// ===================================================
-var pluginPath = '../../plugins/';
 
-// ------------ For dev Plugin ws24hAppointment-----------------------
-var pluginName = 'ws24h-appointment-fast';
-var pluginCompressName = 'ws24h.plugin.min';
-var pluginCompressNameAdmin = 'admin.ws24h.plugin.min';
 
-var delFiles = [
-    pluginPath + pluginName + '/assets/js/' + pluginCompressName + '.js',
-    pluginPath + pluginName + '/assets/js/' + pluginCompressName + '.css'
-];
 
-function makeCleanWs24hPluginJsFiles(){
-    if(delFiles && delFiles.length > 0) {
-        delFiles.forEach(elm => {
-            del(pluginPath + elm, {force:true});
-        })
-    }
+
+////// ------------ For dev Plugin ws24hAppointment-----------------------
+var ws24hAppointmentName = 'ws24h-appointment-fast';
+function makeCleanWs24hAppointmentJsFile() {
+    del('../../plugins/'+ws24hAppointmentName+'/assets/js/ws24h.plugin.min.js', {force:true});
 }
 
-function makeCompressWs24hPluginJsFiles(){return makeCompressWs24hPluginJsFilesDf();}
-function makeCompressWs24hPluginJsFilesAdmin(){return makeCompressWs24hPluginJsFilesDf('admin');}
-
-function makeCompressWs24hPluginJsFilesDf(mode = null){
-    var _mode = '';
-    if(mode && mode == 'admin')
-    {
-        _mode = 'admin/';
-        pluginCompressName = pluginCompressNameAdmin;
-    }
-    makeCleanWs24hPluginJsFiles();
+function compressWs24hAppointmentJs() {
+    makeCleanWs24hAppointmentJsFile();
     return (
-        gulp.src(pluginPath + pluginName + '/dev/' + _mode + 'js/*.js')
+        gulp.src('../../plugins/'+ws24hAppointmentName+'/dev/js/*.js')
             .pipe(babel())
-            .pipe(concat(pluginCompressName + '.js'))
+            .pipe(concat('ws24h.plugin.min.js'))
             .pipe(uglify())
-            .pipe(gulp.dest(pluginPath + pluginName+'/assets/js'))
+            .pipe(gulp.dest('../../plugins/'+ws24hAppointmentName+'/assets/js'))
     );
 }
 
-function makeCompressWs24hPluginSassFilesDf(mode = null) {
-    var _mode = '';
-    if(mode && mode == 'admin')
-    {
-        _mode = 'admin/';
-        pluginCompressName = pluginCompressNameAdmin;
-    }
+// ==================
+function watchTaskPluginAppointment(){
+    gulp.watch(
+        [
+            '../../plugins/'+ws24hAppointmentName+'/dev/sass/**/*',
+            '../../plugins/'+ws24hAppointmentName+'/dev/js/**/*'
+        ],
+        gulp.parallel(buildWs24hAppointmentSass, compressWs24hAppointmentJs)
+    );
+}
+
+function buildWs24hAppointmentSass() { return buildWs24hAppointmentSassDf('env');}
+
+function buildWs24hAppointmentSassDf(env, themeProperties) {
     return (
-        gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/**/*.scss')
+        gulp.src('../../plugins/'+ws24hAppointmentName+'/dev/sass/**/*.scss')
             .pipe(header('$themeColor: ' + themecolor + ';\n' +
                 '$colorThemeText: ' + colorthemetext + ';\n'))
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(cleanCSS())
             .pipe(minifyCss())
-            .pipe(rename(pluginCompressName + '.css'))
+            .pipe(rename('style.min.css'))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
+            .pipe(gulp.dest('../../plugins/'+ws24hAppointmentName+'/assets/css'))
             .pipe(livereload())
     );
 }
 
-function makeWatchTaskPluginFilesDf(){
-    gulp.watch(
-        [
-            pluginPath + pluginName+'/dev/sass/**/*',
-            pluginPath + pluginName+'/dev/js/**/*',
-            pluginPath + pluginName+'/dev/admin/sass/**/*',
-            pluginPath + pluginName+'/dev/admin/js/**/*'
-        ],
-        gulp.parallel(makeCompressWs24hPluginSassFiles, makeCompressWs24hPluginSassFilesAdmin, makeCompressWs24hPluginJsFiles, makeCompressWs24hPluginJsFilesAdmin)
-    );
-}
-
-function makeCompressWs24hPluginSassFiles() { return makeCompressWs24hPluginSassFilesDf();}
-function makeCompressWs24hPluginSassFilesAdmin() { return makeCompressWs24hPluginSassFilesDf('admin');}
-
-function makeWatchTaskPluginFiles(){return makeWatchTaskPluginFilesDf();}
-
-gulp.task('plugins', gulp.series(
-        makeCompressWs24hPluginSassFiles,
-        makeCompressWs24hPluginSassFilesAdmin,
-        makeCompressWs24hPluginJsFiles,
-        makeCompressWs24hPluginJsFilesAdmin,
-        makeWatchTaskPluginFiles
+gulp.task('appointment', gulp.series(
+        buildWs24hAppointmentSass,
+        compressWs24hAppointmentJs,
+        watchTaskPluginAppointment
     )
 );
+// End Dev
