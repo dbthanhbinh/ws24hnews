@@ -8,10 +8,11 @@ class ws24h_popular_widget extends WP_Widget
 	 */
 	function __construct() {
 		add_action( 'load-widgets.php', array( &$this ,'my_custom_load') );
+
 		parent::__construct(
 			'ws24h_popular', // Base ID
 			__( 'Ws24h Post popular', THEMENAME ), // Name
-			array( 'description' => __( 'Ws24h Post popular', THEMENAME ), ) // Args
+			['description' => __( 'Ws24h Post popular', THEMENAME )] // Args
 		);
 	}
 
@@ -29,6 +30,9 @@ class ws24h_popular_widget extends WP_Widget
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+		print_r('ffffff:');
+		print_r($args);
+		
 	    wp_reset_query();
 		extract( $args );
 		global $post,$exclude_post, $wpdb;
@@ -43,7 +47,7 @@ class ws24h_popular_widget extends WP_Widget
 		
         echo $before_widget; //$args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
             
         if(!empty($instance['no_of_posts']))
