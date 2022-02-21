@@ -32,7 +32,8 @@
     "gulp-rev": "^9.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^3.0.0"
   },
   "dependencies": {
     "gulp-header": "^2.0.9"
