@@ -1,13 +1,14 @@
 <?php
 if (isMainSidebar()) : ?>
     <?php 
-        if (!is_active_sidebar('sidebar-1')) {
+        $sidebarName = 'sidebar-1';
+        if (!is_active_sidebar($sidebarName)) {
             return false;
         }
-        require_once ('modules/ads/widget_ads.php');
+        // require_once ('modules/ads/widget_ads.php');
     ?>
     <div id="sidebar" class="<?= isMainSidebar() ?> sidebar-mobile">
-        <?php dynamic_sidebar('sidebar-1'); ?>
+        <?php dynamic_sidebar($sidebarName); ?>
 
         <span id="sidebar-mobile-close" class="sidebar-mobile-close">X</span>
         <span id="sidebar-mobile-open" class="sidebar-mobile-open">

@@ -61,7 +61,9 @@ function getColsLayout($isGrid, $cols) {
    $cardColClass = getDefaultFullLayout();
    if($isGrid){
       $cardColClass = 'col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3';
-      if($cols == 3)
+      if($cols == 1)
+         $cardColClass = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
+      else if($cols == 3)
          $cardColClass = 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4';
       else if($cols == 6)
          $cardColClass = 'col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2';

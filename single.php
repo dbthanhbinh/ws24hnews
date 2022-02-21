@@ -1,35 +1,57 @@
 <?php get_header(); ?>
 
-<!-- Breadcrumb -->
-<?php get_template_part('template-parts/breadcrumb/breadcrumb', '') ?>
+<?php
+    /**
+     * Breadcrumb
+     */
+    get_template_part('template-parts/breadcrumb/breadcrumb', '');
+
+    /**
+     * Layout config
+     */
+    require_once ('helpers/layout-configs.php');
+?>
 
 <div class="container">
-    <?php require_once ('helpers/layout-configs.php'); ?>
-
     <div class="row <?= $mainLayout ?>">
-        <!-- Sidebar left -->
-        <?php if ($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
+        <?php
+            /**
+             * Sidebar left
+             */
+            if ($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); }
+        ?>
 
         <div class="<?= mainLayoutClass(true) ?>">
             <div class="row">
                 <div class="col-lg-12 article-content">
                     <?php
-                    if(have_posts()):
-                        the_post();
-                        get_template_part('template-parts/post/content', 'single');
-                    endif;
+                        /**
+                         * Content of article
+                         */
+                        if(have_posts()):
+                            the_post();
+                            get_template_part('template-parts/post/content', 'single');
+                        endif;
                     ?>
                 </div>
             </div>
 
-            <?php  if (has_tag()): ?>
+            <?php 
+            /**
+             * Tags area
+             */
+            if (has_tag()): ?>
                 <div class="tags-box">
                     <i class="fa fa-tags" aria-hidden="true"></i>    
                     <?php the_tags(''); ?>
                 </div>
             <?php endif; ?>
 
-            <!-- Socials -->
+            <?php
+            /**
+             * Socials
+             */
+            ?>
             <div class="social-button-show">
                 <div class="my-share-box">
                     <i class="fa fa-share-alt-square" aria-hidden="true"></i>
@@ -45,7 +67,9 @@
             </div>
 
             <?php
-            // If comments are open
+            /**
+             * If comments are open and display comment form
+             */
             if (ALLOW_POST_COMMENT && comments_open()) :
             ?>
                 <div class="comments-box">
@@ -55,9 +79,10 @@
             endif;
             ?>
 
-            <!-- Related post-->
             <?php
-            // Set defaults
+            /**
+             * Related post
+             */
             global $post;
             $isRelatedPost = IS_RELATED_POST;
             $archiveDisplay = RELATED_DISPLAY_AS;
@@ -94,9 +119,9 @@
 
                 <div class="related-box">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="<?= getColsLayout(true, 1); ?>">
                             <header class="entry-header">
-                                <h5 class="header-title"><?= getTranslateByKey('other_posts') ?></h5>
+                                <h5 class="header-title"><span><?= getTranslateByKey('other_posts') ?></span></h5>
                             </header>
                         </div>
                     </div>

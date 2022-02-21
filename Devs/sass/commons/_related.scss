@@ -6,9 +6,18 @@ $related_box_mt: 30px;
         .header-title {
             font-size: 20px;
             font-weight: 500;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid $main_color;
             text-transform: uppercase;
             margin-bottom: 20px;
+            line-height: 35px;
+
+            span {
+                background: $main_color;
+                color: #fff;
+                font-size: 15px;
+                padding: 6px 8px;
+                font-weight: bold;
+            }
         }
     }
 }
