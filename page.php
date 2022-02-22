@@ -18,6 +18,20 @@
           endwhile;
         ?>
       </div>
+
+      <?php
+        /**
+         * If comments are open and display comment form
+         */
+        if (ALLOW_POST_COMMENT && comments_open()) :
+        ?>
+            <div class="comments-box">
+                <?php comments_template(); ?>
+            </div>
+        <?php
+        endif;
+        ?>
+
     </div>
 
     <!-- Sidebar's 2 area -->

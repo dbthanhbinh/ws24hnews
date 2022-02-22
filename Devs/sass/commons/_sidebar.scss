@@ -34,7 +34,7 @@
     display: inline-block;
     width: 100%;
 
-    .widgettitle {
+    .widget-title {
         text-transform: uppercase;
         font-size: $widget_title_size - 2;
         border-top: 2px solid #ccc;
@@ -246,4 +246,44 @@
 @media(min-width:992px) {
     span.sidebar-mobile-close, span.sidebar-mobile-open{display: none;}
     .site-over{display: none;}
+}
+
+// widget
+// widget_calendar
+.widget_calendar {
+    .wp-block-calendar {
+        position: relative;
+        padding-top: 30px;
+
+        table.wp-calendar-table {
+            width: 100%;
+        
+            caption {
+                position: absolute;
+                top: 0;
+                padding: 5px 0;
+                text-align: center;
+                width: 100%;
+                font-weight: bold;
+            }
+
+            thead {
+                background: $main_color;
+                color: $main_text_color;
+            }
+        
+            tr, td {
+                text-align: center;
+            }
+        
+            td#today {
+                background: $main_color;
+                color: $main_text_color;
+            }
+        }
+
+        .wp-calendar-nav {
+
+        }
+    }
 }

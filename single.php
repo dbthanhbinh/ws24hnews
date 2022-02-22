@@ -23,7 +23,7 @@
 
         <div class="<?= mainLayoutClass(true) ?>">
             <div class="row">
-                <div class="col-lg-12 article-content">
+                <div class="<?= getSingleArticleContentLayout(); ?>">
                     <?php
                         /**
                          * Content of article

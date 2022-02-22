@@ -14,16 +14,34 @@ if(is_front_page() || is_home()){
     $layout = LAYOUT_ARCHIVE_DEFAULT;
 }
 
-$layoutOptions = (isset($enum_layout) && isset($enum_layout[$layout])) ? $enum_layout[$layout] : $enum_layout[LAYOUT_ARCHIVE_DEFAULT];
-function isGridLayout() { return false; }
-function isMainSidebar() { global $layoutOptions; return $layoutOptions['sidebar'] ? $layoutOptions['sidebar'] : false; }
-function isSecondSidebar() { global $layoutOptions; return $layoutOptions['second'] ? $layoutOptions['second'] : false; }
-function mainLayoutClass($mdFull = false) { global $layoutOptions; if($mdFull) return $layoutOptions['mainfull']; else return $layoutOptions['main']; }
+$layoutOptions = (isset($enum_layout) && isset($enum_layout[$layout]))
+                  ? $enum_layout[$layout]
+                  : $enum_layout[LAYOUT_ARCHIVE_DEFAULT];
+
+function isMainSidebar(){
+   global $layoutOptions;
+   return $layoutOptions['sidebar'] ? $layoutOptions['sidebar'] : false;
+}
+
+function isSecondSidebar(){
+   global $layoutOptions;
+   return $layoutOptions['second'] ? $layoutOptions['second'] : false;
+}
+
+function mainLayoutClass($mdFull = false){
+   global $layoutOptions;
+   if($mdFull)
+      return $layoutOptions['mainfull']; else return $layoutOptions['main']; 
+}
+
 function mainLayoutKey() { 
    global $layoutOptions;
    return $layoutOptions['key'];
 }
-function mainLayoutTemplate($isGrid = false) { return  $isGrid ? 'row article-grid' : 'row article-list'; }
+
+function mainLayoutTemplate($isGrid = false){
+   return  $isGrid ? 'row article-grid' : 'row article-list';
+}
 
 function getThumbSize($layout, $cols){
    $thumb = 'thumbnail';
@@ -95,6 +113,36 @@ function getColsLayout($isGrid, $cols) {
    }
 
    return $cardColClass;
+}
+
+/**
+ * Get properties to display on layout like number of cols, author ...
+ */
+function getLayoutArgs($archiveId) {
+   if(!$archiveId) return [];
+
+   $archive_display = tie_get_option($archiveId.'_display');
+   $archive_cols = tie_get_option($archiveId.'_cols');
+   $archiveAuthor = tie_get_option($archiveId.'_meta_author');
+   $archiveDate = tie_get_option($archiveId.'_meta_date');
+   $archiveReadMore = tie_get_option($archiveId.'_meta_readmore');
+
+   return [
+      'isGrid' => ($archive_display && $archive_display == 'grid') ? true : false,
+      'cols' => $archive_cols,
+      'layout' => $mainLayout,
+      'author' => $archiveAuthor,
+      'date' => $archiveDate,
+      'readMore' => $archiveReadMore
+   ];
+}
+
+function getSingleArticleContentLayout() {
+   return 'col-lg-12 article-content';
+}
+
+function getOneColumnContentLayout() {
+   return 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
 }
 
 $mainLayout = mainLayoutKey();
