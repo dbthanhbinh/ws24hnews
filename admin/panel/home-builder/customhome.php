@@ -1,16 +1,16 @@
-<h2>Custom Home Tempate</h2> <?php echo $save ?>
+<h2><?= __('Build group template', THEMENAME) ?></h2> <?php echo $save ?>
 <?php
 require('defaultVal.php');
 for($g = 1; $g<=2; $g++){
     ?>
     <div class="tiepanel-item">
-        <h3>Group template <?=$g?></h3>
+        <h3><?= __('Group template', THEMENAME) ?> <?=$g?></h3>
         <?php
             $groupPos = $g;
             $group = 'home_group_'.$groupPos;
             if($g == 1){
                 tie_options(
-                    array(	"name" => "Group Big Image",
+                    array(	"name" => __('Big image',THEMENAME),
                             "id" => $group . "_upload_big",
                             "help" => "Upload a big image, or enter URL to an image if it is already uploaded. the theme default big image gets applied if the input field is left blank.",
                             "type" => "upload",
@@ -23,7 +23,7 @@ for($g = 1; $g<=2; $g++){
                 $max = 3;
 
                 tie_options(
-                    array(	"name" => "Group slogan ",
+                    array(	"name" => __('Slogan',THEMENAME),
                             "id" => $group . "_groupslogan",
                             "help" => "e.g. sub slogan title",
                             "type" => "text",

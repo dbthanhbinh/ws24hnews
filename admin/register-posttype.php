@@ -9,7 +9,7 @@ $rg_posttypes = [
 	[
 		'posttype' => 'tin-tuc',
 		'taxonomy' => [],
-		'postname' => 'Tin tức',
+		'postname' => __('News'),
 		'support' => ['title','excerpt','editor','thumbnail']
 	]
 ];

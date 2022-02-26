@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-12-22 17:30+0700\n"
-"PO-Revision-Date: 2021-12-23 14:07+0700\n"
+"PO-Revision-Date: 2022-02-26 10:07+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -17,6 +17,42 @@ msgstr ""
 msgid "This site is no longer available."
 msgstr "Trang web này là không còn nữa."
 
+msgid "Slogan"
+msgstr "Slogan"
+
+msgid "Author"
+msgstr "Tác giả"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Readmore"
+msgstr "Chi tiết"
+
+msgid "Settings"
+msgstr "Cài đặt"
+
+msgid "Display"
+msgstr "Hiển thị"
+
+msgid "Show cols"
+msgstr "Số cột"
+
+msgid "Number of posts to show"
+msgstr "Số bài hiển thị"
+
+msgid "Order"
+msgstr "Sắp xếp"
+
+msgid "Heading"
+msgstr "Header tiêu đề"
+
+msgid "Sub heading"
+msgstr "Header tiêu đề phụ"
+
+msgid "Description"
+msgstr "Mô tả ngắn"
+
 #: panel setting
 msgid "Search media"
 msgstr "Tìm media"
@@ -24,23 +60,76 @@ msgstr "Tìm media"
 msgid "General Settings"
 msgstr "Cài đặt chung"
 
+#: Admin panel Home page setting
 msgid "Home page"
 msgstr "Trang chủ"
 
-msgid "Custom Homepage"
-msgstr "Cài trang chủ"
+msgid "Home page settings"
+msgstr "Cài đặt trang chủ"
 
+msgid "Latest posts"
+msgstr "Bài mới nhất"
+
+msgid "Home Builder"
+msgstr "Builder trang chủ"
+
+msgid "Recent posts"
+msgstr "Bài gần đây"
+
+msgid "Group template"
+msgstr "Mẫu trình bày"
+
+msgid "Video list"
+msgstr "Danh sách video"
+
+msgid "Category tabs box"
+msgstr "Khung Category"
+
+msgid "Custom box"
+msgstr "Tùy biến"
+
+msgid "Appointment"
+msgstr "Đặt lịch hẹn"
+
+msgid "Choose Categories"
+msgstr "Chọn danh mục"
+
+#: Admin panel Build group template
+msgid "Build group template"
+msgstr "Build mẫu trang chủ"
+
+msgid "Big image"
+msgstr "Banner lớn"
+
+#: Admin panel Archives Settings
 msgid "Archives Settings"
 msgstr "Trang lưu trữ"
 
+#: Admin panel Article settings
 msgid "Article Settings"
-msgstr "Bài viết"
+msgstr "Cài đặt bài viết"
 
+msgid "Related Settings"
+msgstr "Bài liên quan"
+
+msgid "Related box header"
+msgstr "Tiêu đề bài liên quan"
+
+#: Admin panel Slider settings
 msgid "Slider Settings"
-msgstr "Slide show"
+msgstr "Slide trang chủ"
 
-msgid "General Settings"
-msgstr "Cài đặt chung"
+msgid "Enable"
+msgstr "Hiển thị/ẩn"
+
+msgid "Query Settings"
+msgstr "Truy vấn"
+
+msgid "Query Type"
+msgstr "Kiểu truy vấn"
+
+msgid "Custom Slider"
+msgstr "Tùy biến"
 
 msgid "Save Changes"
 msgstr "Lưu thay đổi"
@@ -60,8 +149,6 @@ msgstr "The following code will add to the <head> tag. Useful if you need to add
 msgid "The following code will add to the footer before the closing </body> tag. Useful if you need to Javascript or tracking code."
 msgstr "The following code will add to the footer before the closing </body> tag. Useful if you need to Javascript or tracking code."
 
-msgid "Home page displays"
-msgstr "Hiển thị trang chủ"
-
-msgid "Home Builder"
-msgstr "Build trang chủ"
+#: News post Type
+msgid "News"
+msgstr "Tin tức"

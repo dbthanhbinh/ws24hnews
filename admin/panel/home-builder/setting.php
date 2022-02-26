@@ -1,22 +1,22 @@
 <?php
 require_once ('commons.php')
 ?>
-<h2>Homepage</h2> <?php echo $save ?>				
+<h2><?= __('Home page', THEMENAME) ?></h2> <?php echo $save ?>				
     <div class="tiepanel-item">
-        <h3>Home page displays</h3>
+        <h3><?= __('Home page settings', THEMENAME) ?></h3>
         <?php
             tie_options(
-                array( 	"name" => "Home page displays",
+                array( 	"name" => __('Home page settings', THEMENAME),
                         "id" => "on_home",
                         "type" => "radio",
                         "std" => "latest",
-                        "options" => array( "latest"=>"Latest posts - Blog Layout" ,
-                                            "boxes"=>" News Boxes - use Home Builder" )));
+                        "options" => array( "latest"=> __('Latest posts', THEMENAME) . " - Blog Layout" ,
+                                            "boxes"=> "Use Home Builder" )));
         ?>
     </div>					
     <div id="Home_Builder" style="width:100%;">
         <div class="tiepanel-item"  style=" overflow: visible; ">
-            <h3>Home Builder <a id="collapse-all">[-] Collapse All</a>
+            <h3><?= __('Home Builder', THEMENAME) ?><a id="collapse-all">[-] Collapse All</a>
                 <a id="expand-all">[+] Expand All</a></h3>
             <div class="option-item">
 
@@ -35,16 +35,16 @@ require_once ('commons.php')
                 
                 <div style="clear:both"></div>
                 <div class="home-builder-buttons">
-                    <a id="add-recent" >Recent Posts</a>
-                    <a id="add-group" >Group template</a>
-                    <a id="add-videos" >Video list</a>
-                    <a id="add-categories" >Categories Tabs Box</a>
-                    <a id="add-custom" >Custom box</a>
+                    <a id="add-recent" ><?= __('Recent posts', THEMENAME) ?></a>
+                    <a id="add-group" ><?= __('Group template', THEMENAME) ?></a>
+                    <a id="add-videos" ><?= __('Video list', THEMENAME) ?></a>
+                    <a id="add-categories" ><?= __('Category tabs box', THEMENAME) ?></a>
+                    <a id="add-custom" ><?= __('Custom box', THEMENAME) ?></a>
                     <?php
                     // Add appointment
                     if(function_exists('appointment_admin_menu')){
                         ?>
-                        <a id="add-appointment" >Appointment</a>
+                        <a id="add-appointment" ><?= __('Appointment', THEMENAME) ?></a>
                         <?php
                     }
                     ?>

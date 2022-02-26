@@ -63,7 +63,7 @@ function panel_options() {
 			<ul>
 				<li class="tie-tabs general"><a href="#tab1"><span></span><?= __('General Settings', THEMENAME) ?></a></li>
 				<li class="tie-tabs homepage"><a href="#tab2"><span></span><?= __('Home page', THEMENAME)?></a></li>
-				<li class="tie-tabs homepage2"><a href="#tab22"><span></span><?= __('Custom Home page', THEMENAME) ?></a></li>
+				<li class="tie-tabs homepage2"><a href="#tab22"><span></span><?= __('Build group template', THEMENAME) ?></a></li>
 				<li class="tie-tabs archives"><a href="#tab12"><span></span><?= __('Archives Settings', THEMENAME) ?></a></li>
 				<li class="tie-tabs article"><a href="#tab6"><span></span><?= __('Article Settings', THEMENAME) ?></a></li>
 				<li class="tie-tabs slideshow"><a href="#tab5"><span></span><?= __('Slider Settings', THEMENAME) ?></a></li>
@@ -111,7 +111,7 @@ function panel_options() {
 						<h3><?= __('Query Settings', THEMENAME) ?></h3>
 						<?php
 							tie_options(
-								array(	"name" => __("Number Of Posts To Show", THEMENAME),
+								array(	"name" => __("Number of posts to show", THEMENAME),
 										"id" => "slider_number",
 										"std" => 5,
 										"type" => "short-text"));
@@ -142,14 +142,14 @@ function panel_options() {
 						$relatedName = $item;
 						?>
 						<div class="tiepanel-item">
-							<h3><?= __('Related Settings:', THEMENAME) ?> <?= $item ?></h3>
+							<h3><?= __('Related Settings', THEMENAME) ?> <?= $item ?></h3>
 							<?php
 								tie_options(
-									array(	"name" => __("Related: ", THEMENAME).$relatedName,
+									array(	"name" => __("Enable", THEMENAME).$relatedName,
 											"id" => $relatedId,
 											"type" => "checkbox"));
 								tie_options(
-									array(	"name" => __("Related title: ", THEMENAME).$relatedName,
+									array(	"name" => __("Related box header: ", THEMENAME).$relatedName,
 											"id" => $relatedId."_title",
 											"std" => "Related ".$relatedName,
 											"type" => "text")); 
@@ -226,15 +226,15 @@ function panel_options() {
 											"std" => ARCHIVE_DISPLAY_COLS,
 											"type" => "short-text"));
 								tie_options(
-									array(	"name" => __("Author Meta", THEMENAME),
+									array(	"name" => __("Author", THEMENAME),
 											"id" => $archiveId."_meta_author",
 											"type" => "checkbox")); 			
 								tie_options(
-									array(	"name" => __("Date Meta", THEMENAME),
+									array(	"name" => __("Date", THEMENAME),
 											"id" => $archiveId."_meta_date",
 											"type" => "checkbox"));
 								tie_options(
-									array(	"name" => __("Readmore Meta", THEMENAME),
+									array(	"name" => __("Readmore", THEMENAME),
 											"id" => $archiveId."_meta_readmore",
 											"type" => "checkbox"));
 							?>
