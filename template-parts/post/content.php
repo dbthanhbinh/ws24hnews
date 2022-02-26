@@ -27,6 +27,7 @@
 				elseif (is_front_page() && is_home()) $tagHeader = 'h4';
 				if ((isset($content_type) && $content_type == 'related')) $tagHeader = 'h6';
 				the_title('<'.$tagHeader.' class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></'.$tagHeader.'>');
+
 			?>
 		</header>
 		<div class="entry-summary">

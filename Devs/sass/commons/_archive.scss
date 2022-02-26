@@ -28,8 +28,6 @@ $entry_page_header_title_weight: 500;
     article {
         margin-bottom: 20px;
     }
-    
-    .post-thumbnail {}
     .entry-content {
         header {
             &.entry-header {
@@ -40,9 +38,12 @@ $entry_page_header_title_weight: 500;
                 }
             }
         }
-        
-        p{
-            a.read-more {}
+        .article-metas {
+            margin-top: 5px;
+            margin-bottom: 5p;
+            padding-bottom: 5px;
+            font-style: italic;
+            font-size: 13px;
         }
     }
 }
@@ -53,7 +54,6 @@ $entry_page_header_title_weight: 500;
             margin-right: 20px;
             max-width: 25%;
         }
-
         .entry-content {
             &.has-badge {
                 padding-right: 55px;

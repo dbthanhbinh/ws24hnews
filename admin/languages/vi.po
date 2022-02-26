@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-12-22 17:30+0700\n"
-"PO-Revision-Date: 2022-02-26 10:07+0700\n"
+"PO-Revision-Date: 2022-02-26 10:38+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -52,6 +52,9 @@ msgstr "Header tiêu đề phụ"
 
 msgid "Description"
 msgstr "Mô tả ngắn"
+
+msgid "By:"
+msgstr "Bởi:"
 
 #: panel setting
 msgid "Search media"
@@ -152,3 +155,67 @@ msgstr "The following code will add to the footer before the closing </body> tag
 #: News post Type
 msgid "News"
 msgstr "Tin tức"
+
+#: Customizer setting
+msgid "Full width"
+msgstr "Full"
+
+msgid "Left sidebar"
+msgstr "Sidebar trái"
+
+msgid "Right sidebar"
+msgstr "Sidebar phải"
+
+msgid "Header ver"
+msgstr "Header mẫu"
+
+msgid "Header ver 1"
+msgstr "Header mẫu 1"
+
+msgid "Header ver 2"
+msgstr "Header mẫu 2"
+
+msgid "Upload your Logo"
+msgstr "Tải lên Logo"
+
+msgid "Upload top banner"
+msgstr "Tải lên top banner"
+
+msgid "Top banner url"
+msgstr "Nhập Url top banner"
+
+msgid "Upload custom body background image"
+msgstr "Tải lên hình background của bạn"
+
+msgid "Layout Options"
+msgstr "Tùy giao diện"
+
+msgid "Show top header"
+msgstr "Hiển thị top header"
+
+msgid "Show header banner"
+msgstr "Hiển thị head banner"
+
+msgid "Show breadcrumb"
+msgstr "Hiển thị breadcrumb"
+
+msgid "Show Slide show"
+msgstr "Hiển thị slide show"
+
+msgid "Home layout"
+msgstr "Giao diện trang chủ"
+
+msgid "Pages Layout"
+msgstr "Giao diện Pages"
+
+msgid "Single Layout"
+msgstr "Giao diện Single"
+
+msgid "Archives Layout"
+msgstr "Giao diện Archives"
+
+msgid "Show footer layout"
+msgstr "Hiển thị giao diện footer"
+
+msgid "Footer Layout"
+msgstr "Giao diện footer"

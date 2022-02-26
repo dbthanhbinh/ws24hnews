@@ -17,8 +17,8 @@ function your_theme_new_customizer_settings($wp_customize) {
     ];
 
     $headerVertion =  [
-        'v1' => __('Header version 1', THEMENAME),
-        'v2' => __('Header version 2', THEMENAME)
+        'v1' => __('Header ver 1', THEMENAME),
+        'v2' => __('Header ver 2', THEMENAME)
     ];
 
     $pages = get_all_page_ids();
@@ -45,7 +45,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('top_banner');
     $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'top_banner',
     array(
-        'label' => __('Upload top banner (720 x 90)', THEMENAME),
+        'label' => __('Upload top banner', THEMENAME) . " (720 x 90)",
         'section' => 'title_tagline',
         'settings' => 'top_banner',
         'height' => 80,
@@ -57,7 +57,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('top_banner_url');
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_banner_url',
     array(
-        'label' => __('Top banner url Ex:(https://..)', THEMENAME),
+        'label' => __('Top banner url', THEMENAME) . " Ex:(https://..)",
         'section' => 'title_tagline',
         'settings' => 'top_banner_url',
         'type' => 'text'
@@ -66,7 +66,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('custom_background');
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_background',
     array(
-        'label' => __('Upload Custom body Background', THEMENAME),
+        'label' => __('Upload custom body background image', THEMENAME),
         'section' => 'title_tagline',
         'settings' => 'custom_background',
         'flex_width ' => false,
@@ -81,14 +81,14 @@ function your_theme_new_customizer_settings($wp_customize) {
         array(
             'title' => __("Layout Options", THEMENAME),
             'priority' => 120,
-            'description' => __('Description Custom layout Options here', THEMENAME),
+            'description' => __('???', THEMENAME),
         )
     );
 
     $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
     array(
-        'label' => __('Header version (V2=>show banner)', THEMENAME),
+        'label' => __('Header ver', THEMENAME) . "(V2=>show banner)",
         'section' => 'section_layout',
         'settings' => 'header_version',
         'type' => 'select',
@@ -141,7 +141,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $wp_customize->add_setting('home_layout', ['default' => 'full']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
     array(
-        'label' => __('Home Layout', THEMENAME),
+        'label' => __('Home layout', THEMENAME),
         'section' => 'section_layout',
         'settings' => 'home_layout',
         'type' => 'select',

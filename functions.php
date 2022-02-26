@@ -259,7 +259,7 @@ function excerpt_content ($excerpt, $limit, $readMore) {
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
     if($readMore)
-        return $excerpt . ws24h_excerpt_more('...');
+        return $excerpt . '<p class="article-metas"><span><strong>' .__('By:', THEMENAME). '</strong> ' . get_the_author() . ' | 456 lượt</p>' . ws24h_excerpt_more('...');
     return $excerpt.'...';
 }
 
@@ -273,7 +273,7 @@ function get_excerpt($limit = null, $readMore=false, $source = null){
 
 function ws24h_excerpt_more($more) {
     // return ' ...';
-    return sprintf('<br/><br/><a class="read-more" href="%1$s">%2$s</a>',
+    return sprintf('<a class="read-more" href="%1$s">%2$s</a>',
         get_permalink( get_the_ID() ), '<i class="fa fa-long-arrow-right"></i> '. getTranslateByKey('excerpt_read_more'));
 }
 // add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
