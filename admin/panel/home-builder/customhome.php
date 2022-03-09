@@ -4,7 +4,7 @@ require('defaultVal.php');
 for($g = 1; $g<=2; $g++){
     ?>
     <div class="tiepanel-item">
-        <h3><?= __('Group template', THEMENAME) ?> <?=$g?></h3>
+        <h3 style="background: darkgray;"><strong><?= __('Group template', THEMENAME) ?> <?=$g?></strong></h3>
         <?php
             $groupPos = $g;
             $group = 'home_group_'.$groupPos;
@@ -22,6 +22,20 @@ for($g = 1; $g<=2; $g++){
             if($g == 2){
                 $max = 3;
 
+                tie_options(
+                    array(	"name" => __('Left title',THEMENAME),
+                            "id" => $group . "_left_title",
+                            "help" => "e.g. Left title",
+                            "type" => "text",
+                            "std" => ''
+                        ));
+                tie_options(
+                    array(	"name" => __('Right title',THEMENAME),
+                            "id" => $group . "_right_title",
+                            "help" => "e.g. Right title",
+                            "type" => "text",
+                            "std" => ''
+                        ));
                 tie_options(
                     array(	"name" => __('Slogan',THEMENAME),
                             "id" => $group . "_groupslogan",
@@ -49,7 +63,7 @@ for($g = 1; $g<=2; $g++){
                 } 
                 echo '<br/>';
                 tie_options(
-                    array(	"name" => "Item Image " .$i,
+                    array(	"name" => "<b>Item Image</b> " .$i,
                             "id" => $group . "_upload_item_".$i,
                             "help" => "Upload a item image",
                             "type" => "upload",

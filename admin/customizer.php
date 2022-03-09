@@ -11,7 +11,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ];
 
     $choicesLayout =  [
-        'full' => __('Full width', THEMENAME),
+        'full-width' => __('Full width', THEMENAME),
         'left-sidebar' => __('Left sidebar', THEMENAME),
         'right-sidebar' => __('Right sidebar', THEMENAME)
     ];
@@ -138,7 +138,7 @@ function your_theme_new_customizer_settings($wp_customize) {
 
 
     // Home layout
-    $wp_customize->add_setting('home_layout', ['default' => 'full']);
+    $wp_customize->add_setting('home_layout', ['default' => 'full-width']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_layout',
     array(
         'label' => __('Home layout', THEMENAME),
@@ -237,6 +237,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     $customClientArgs = array( 'post_type' => 'tie_clients', 'no_found_rows' => 1  );
     $customClientSql = new WP_Query( $customClientArgs );
     $customClients = [];
+    $customClients[-1] = __('Disable', THEMENAME);
 
     while ( $customClientSql->have_posts() ) {
         $customClientSql->the_post();

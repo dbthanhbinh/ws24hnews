@@ -123,10 +123,10 @@ $districts = [
 ];
 
 $enum_layout = [
-    'full'  => [
+    'full-width'  => [
         'sidebar'   => false,
         'second'    => false,
-        'main'      => 'main-content col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12',
+        'main'      => 'main-content',
         'key'       => 'full-width'
     ],
     'left-sidebar'  => [

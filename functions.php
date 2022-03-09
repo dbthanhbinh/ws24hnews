@@ -1,6 +1,11 @@
 <?php
 // Defines
 require_once ('lib/defined.php');
+// load_theme_textdomain
+if(!is_admin()) {
+    load_textdomain(THEMENAME, get_template_directory() . '/languages/vi.mo' );
+}
+
 # Admin and Front-end Scope (both of Admin & Front-end)
 require_once ('helpers/districts.php');
 require_once ('admin/register-posttype.php');
@@ -302,7 +307,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
         $title = sprintf( __( '%s' ), single_cat_title( '', false ) );
     } elseif ( is_search() ) {
         /* translators: Tag archive title. 1: Tag name */
-        $title = sprintf( __( 'Tìm kiếm: %s' ), get_query_var('s') );
+        $title = sprintf( __( 'Tìm: %s' ), get_query_var('s') );
     } elseif ( is_tag() ) {
         /* translators: Tag archive title. 1: Tag name */
         $title = sprintf( __( 'Thẻ: %s' ), single_tag_title( '', false ) );

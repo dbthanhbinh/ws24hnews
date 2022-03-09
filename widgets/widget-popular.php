@@ -30,9 +30,6 @@ class ws24h_popular_widget extends WP_Widget
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		print_r('ffffff:');
-		print_r($args);
-		
 	    wp_reset_query();
 		extract( $args );
 		global $post,$exclude_post, $wpdb;
@@ -41,7 +38,7 @@ class ws24h_popular_widget extends WP_Widget
 		$title_color = (isset($instance['title_color']) && $instance['title_color']) ? $instance['title_color'] : null;
 
 		if($background_color) $args['before_title'] = str_replace( '<h2', '<h2 style="background:'.$background_color.'"', $args['before_title'] );
-		if($title_color) $args['before_title'] = str_replace( '<label>', '<label style="color:'.$title_color.'; border-color:'.$title_color.'">', $args['before_title'] );
+		// if($title_color) $args['before_title'] = str_replace( '<label>', '<label style="color:'.$title_color.'; border-color:'.$title_color.'">', $args['before_title'] );
 
 		$before_widget = $args['before_widget'];
 		

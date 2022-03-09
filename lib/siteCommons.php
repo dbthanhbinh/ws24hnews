@@ -10,13 +10,16 @@ function tie_get_option($name, $default = null) {
 }
 
 // for some field has init data when  get_option('tie_options') = null in the first setup
-function tie_get_option_init($name, $default = null) {
+function tie_get_option_init($name, $default = '') {
 	$get_options = get_option('tie_options');
-    if(empty($get_options))
-        return $default ? $default : NULL;
 
-    if (!isset($get_options[$name]))
-        return $default;
+    //print_r($get_options);
+
+    if(empty($get_options))
+        return $default ? $default : '';
+
+    // if (!isset($get_options[$name]))
+    //     return $default;
         
 	if(!empty($get_options[$name]))
 		return $get_options[$name];

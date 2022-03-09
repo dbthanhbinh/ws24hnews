@@ -2,7 +2,7 @@
 // tie-Panel
 // require_once ('shortcodes/shortcode.php');
 $customSlider = true;
-$customClient = false;
+$customClient = true;
 
 require_once ('mpanel-ui.php');
 require_once ('mpanel-functions.php');

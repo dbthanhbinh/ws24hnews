@@ -51,7 +51,13 @@ function tie_category_fields( $tag ) {    //check for existing featured ID
 				<h3>Category images</h3>
 					<?php
 					tie_cat_options(
-						array(	"name" => "Category thumbnail(300x300px)",
+						array(	"name" => "Use this breadcrumb bannder",
+								"id" => "use_this_breadcrumb_banner",
+								"cat" => $t_id ,
+								"type" => "checkbox"));
+
+					tie_cat_options(
+						array(	"name" => "Category thumbnail(300x225px)",
 								"id" => "logo",
 								"cat" => $t_id ,
 								"type" => "upload"));

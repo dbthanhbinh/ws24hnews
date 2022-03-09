@@ -30,6 +30,7 @@ if($showBox == 'y') {
     ?>
     <div class="vc_custom_1583484295953 home-custom-box" <?= html_entity_decode($customStyle) ?>>
         <div class="container">
+            <div class="row">
             <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 offset-md-1">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 left-custom-box animate-fadeInLeft">
@@ -58,6 +59,7 @@ if($showBox == 'y') {
                         <?php }?>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

@@ -247,7 +247,8 @@ function panel_options() {
 
 				<div id="tab22" class="tabs-wrap">
 					<?php require_once ('home-builder/customhome.php'); ?>
-				</div> <!-- Custom Homepage Settings -->
+				</div> 
+				<!-- Custom Homepage Settings -->
 
 				<div class="mo-footer">
 					<?php echo $save; ?>

@@ -9,7 +9,7 @@ $rg_posttypes = [
 	[
 		'posttype' => 'tin-tuc',
 		'taxonomy' => [],
-		'postname' => __('News'),
+		'postname' => __('News', THEMENAME),
 		'support' => ['title','excerpt','editor','thumbnail']
 	]
 ];
@@ -66,6 +66,20 @@ function register_custom_posttype()
 		}
 	}
 }
+
+/**
+ * Register a private 'Genre' taxonomy for post type 'book'.
+ *
+ * @see register_post_type() for registering post types.
+ */
+function wpdocs_register_private_taxonomy() {
+    $args = array(
+        'label'        => __('News tag', THEMENAME)
+    );
+     
+    register_taxonomy( 'news_tag', 'tin-tuc', $args );
+}
+// add_action( 'init', 'wpdocs_register_private_taxonomy', 0 );
 
 function my_feed_request($qv) {	
 	    if (isset($qv['feed']) && !isset($qv['post_type']))

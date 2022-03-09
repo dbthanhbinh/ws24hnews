@@ -1,5 +1,6 @@
 <?php
 $homeTabBox = tie_get_option('home_tabs_box');
+$showBox = (isset($cat_data['show_box']) && $cat_data['show_box']) ? $cat_data['show_box'] : 'y';
 // To add first/last to list item
 function reBuildListItem($listItems){
   $count = count($listItems);
@@ -72,7 +73,7 @@ function buildListItems($listItems){
   }
 }
 
-if($homeTabBox){
+if($homeTabBox && $showBox == 'y'){
     $homeTabBox = tie_get_option('home_tabs_box');
     $homeTabBigImage = tie_get_option('home_tabs_big_image');
     // $homeTabOrder = tie_get_option('home_tabs_order');

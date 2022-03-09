@@ -19,7 +19,7 @@ if(get_theme_mod('show_main_slideshow', false)) { ?>
 					$owlCarousel = '';
 				}
 				?>
-				<div id="owl-demo" class="<?= $owlCarousel ?> owl-theme">
+				<div id="owl-demo" class="<?= $owlCarousel ?> owl-carousel-slider owl-theme">
 					<?php
 					$tamp=1;
 					foreach( $slider as $slide ){
@@ -38,7 +38,7 @@ if(get_theme_mod('show_main_slideshow', false)) { ?>
 				<?php if($number > 1){?>
 					<script type="text/javascript">
 						$(document).ready(function() {
-							$("#owl-demo").owlCarousel({
+							$(".owl-carousel-slider").owlCarousel({
 								autoplay:true,
 								loop:true,		
 								navigation : true, // Show next and prev buttons
@@ -46,12 +46,6 @@ if(get_theme_mod('show_main_slideshow', false)) { ?>
 								paginationSpeed : 400,
 								items : 1,
 								singleItem:true
-								// "singleItem:true" is a shortcut for:
-								// items : 1, 
-								// itemsDesktop : false,
-								// itemsDesktopSmall : false,
-								// itemsTablet: false,
-								// itemsMobile : false
 							});
 							
 						});

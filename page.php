@@ -10,16 +10,17 @@
     <?php if ($mainLayout == LAYOUT_LEFT_SIDEBAR) { get_sidebar(); } ?>
 
     <div class="<?= mainLayoutClass(true) ?>">
-      <div class="article-content">
-        <?php
-          while (have_posts()) :
-            the_post();
-            get_template_part( 'template-parts/page/content', 'page' );
-          endwhile;
-        ?>
+      <div class="row">
+        <div class="<?= getSingleArticleContentLayout() ?>">
+          <?php
+            while (have_posts()) :
+              the_post();
+              get_template_part( 'template-parts/page/content', 'page' );
+            endwhile;
+          ?>
+        </div>
       </div>
-
-      <?php
+        <?php
         /**
          * If comments are open and display comment form
          */
@@ -31,7 +32,6 @@
         <?php
         endif;
         ?>
-
     </div>
 
     <!-- Sidebar's 2 area -->

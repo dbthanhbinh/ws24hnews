@@ -40,7 +40,7 @@ function mainLayoutKey() {
 }
 
 function mainLayoutTemplate($isGrid = false){
-   return  $isGrid ? 'row article-grid' : 'row article-list';
+   return  $isGrid ? 'article-grid' : 'article-list';
 }
 
 function getThumbSize($layout, $cols){
@@ -50,10 +50,14 @@ function getThumbSize($layout, $cols){
    
    if($layout == LAYOUT_FULL){
       if($cols == 4)
-         return 'medium';
+         return 'thumbnail';
       elseif($cols == 3)
          return 'medium';
       elseif($cols == 2)
+         return 'large';
+      elseif($cols == 7)
+         return 'large';
+      elseif($cols == 712)
          return 'large';
       else
          return $thumb;
@@ -62,8 +66,12 @@ function getThumbSize($layout, $cols){
       if($cols == 4)
          return 'thumbnail';
       elseif($cols == 3)
-         return 'medium';
+         return 'thumbnail';
       elseif($cols == 2)
+         return 'large';
+      elseif($cols == 7)
+         return 'large';
+      elseif($cols == 712)
          return 'large';
       else
          return $thumb;
@@ -109,6 +117,10 @@ function getColsLayout($isGrid, $cols) {
          $cardColClass = 'col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3';
       else if($cols == 1444)
          $cardColClass = 'col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4';
+      else if($cols == 512)
+         $cardColClass = 'col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5';
+      else if($cols == 712)
+         $cardColClass = 'col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7';
       
    }
 

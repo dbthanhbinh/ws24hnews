@@ -1,5 +1,4 @@
 .sidebar {
-    figure,
     img {
         max-width: 100%;
         height: auto;
@@ -26,6 +25,10 @@
     .ws24h_contact .support-contact h5{
         text-transform: uppercase;
     }
+
+    .widget-title {
+        color: $colors-white;
+    }
 }
 
 .widget{
@@ -34,32 +37,70 @@
     display: inline-block;
     width: 100%;
 
-    .widget-title {
-        text-transform: uppercase;
-        font-size: $widget_title_size - 2;
-        border-top: 2px solid #ccc;
-        font-weight: bold;
-        background: $sidebar_second_bg;
-        label{
-            padding: 7px 10px 7px 0px;
-            margin: 0;
-            display: inline-block;
-            border-top: 2px solid $main_color;
-            border-bottom: none;
-            border-color: $main_color;
-            margin-top: -2px;
-            margin-left: 10px;
-            &::before{
-                content: "\f0c9";
-                display: inline-block;
-                font: normal normal normal 12px/1 FontAwesome;
-                font-size: inherit;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                margin-right: 5px;
-                color: $main_color;
+
+    &.widget_block {
+        .wp-block-group {
+            h2 {
+                font-weight: 600;
+                border-bottom: 1px solid #0065b3;
+                background: #0065b3;
+                padding: 5px 0 0px 0;
+                color: #fff;
+
+                &::before {
+                    font: normal normal normal 14px/1 FontAwesome;
+                    content: "";
+                    padding-left: 5px;
+                }
+
+                &::after {
+                    font: normal normal normal 14px/1 FontAwesome;
+                    content: "";
+                    display: block;
+                    width: -webkit-fill-available;
+                    border-bottom: 2px solid #fff;
+                    margin-top: 5px;
+                }
             }
+
+            ul {
+
+            }
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        .wp-block-search {
+            button.wp-block-search__button {
+                padding: 5px;
+                border: 1px solid $main_color;
+            }
+        }
+    }
+
+    .widget-title {
+        font-weight: 600;
+        border-bottom: 1px solid #0065b3;
+        background: #0065b3;
+        padding: 5px 0 0px 0;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        &::before {
+            font: normal normal normal 14px/1 FontAwesome;
+            content: "";
+            padding-left: 5px;
+        }
+
+        &::after {
+            font: normal normal normal 14px/1 FontAwesome;
+            content: "";
+            display: block;
+            width: -webkit-fill-available;
+            border-bottom: 2px solid #fff;
+            margin-top: 5px;
         }
     }
 
@@ -145,13 +186,73 @@
         li{
             display: inline;
             margin-right: 5px;
-            a{
+            a {
                 padding: 0px;
                 font-size: 25px;
                 padding: 3px;
+
+                span {
+                    display: none;
+                }
             }
         }
     }
+}
+
+// Widget_media_gallery
+.widget_media_gallery {
+    .columns-2 {
+        display: flex;
+        flex-wrap:wrap;
+        box-sizing: border-box;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        .wp-block-image {
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin: 0;
+            padding: 5px;
+        }
+    }
+
+    .columns-3 {
+        display: flex;
+        flex-wrap:wrap;
+        box-sizing: border-box;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        .wp-block-image {
+            &:nth-of-type(1n),
+            &:nth-of-type(2n) {
+                flex: 0 0 33.33333%;
+                max-width: 33.33333%;
+                margin-bottom: 5px;
+                padding: 0 2px;
+            }
+            &:nth-of-type(4n) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .columns-4 {
+        display: flex;
+        flex-wrap:wrap;
+        box-sizing: border-box;
+        margin-left: -2px;
+        margin-right: -2px;
+
+        .wp-block-image {
+            flex: 0 0 25%;
+            max-width: 25%;
+            margin: 0;
+            padding: 2px;
+        }
+    }
+
 }
 
 .second-sidebar {

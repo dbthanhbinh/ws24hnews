@@ -18,7 +18,7 @@ if($isShowBreadcrumb){?>
         <div class="row">
             <div class="col-lg-7 col-md-7 box-breadcrumb-part">
                 <ul class="breadcrumb">
-                    <li><a href="<?= site_url() ?>">Home</a></li>
+                    <li><a href="<?= site_url() ?>"><?= __('Home', THEMENAME) ?></a></li>
                     <?php
                     global $post;
                     if(is_single()){

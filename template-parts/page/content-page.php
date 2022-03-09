@@ -1,16 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry-content'); ?>>
-	<?php
-	$slug = get_queried_object()->post_name;
-	$contactClass = null;
-	if ($slug == 'lien-he' || $slug == 'contact') {
-		$contactClass = 'contact-page-content';
-	}
-	if (!$contactClass) {
-	?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-	<?php }?>
+	</header>
 	<div class="entry-content <?= $contactClass ?>">
 		<?php
 			the_content();
@@ -19,5 +10,5 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+	</div>
+</article>

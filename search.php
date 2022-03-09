@@ -22,13 +22,13 @@
           $archiveId = 'archive_search';
           $args = getLayoutArgs($archiveId);
 
-          echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
+          echo '<div class="'.mainLayoutTemplate($args['isGrid']).'"><div class="row">';
             while (have_posts()) :
               the_post();
               get_template_part('template-parts/post/content', get_post_format(), $args);
               $pos++;
             endwhile;
-          echo '</div>';
+          echo '</div></div>';
       else :
         echo '<div class="col-lg-12">';
           get_template_part( 'template-parts/post/content', 'none' );

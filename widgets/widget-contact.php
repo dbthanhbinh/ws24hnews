@@ -1,26 +1,28 @@
 <?php
-register_widget( 'ws24h_contact' );
-class ws24h_contact extends WP_Widget {
-
-	/**
-	 * Sets up the widgets name etc
+## WIDGET POPULAR ------------------------------------------ #
+register_widget( 'ws24h_contact_widget' );
+class ws24h_contact_widget extends WP_Widget
+{
+    /**
+	 * Register widget with
 	 */
-	public function __construct() {
-		$widget_ops = array(
-			'classname' => 'ws24h_contact',
-			'description' => 'Ws24h_ contact is awesome',
+	function __construct() {
+		parent::__construct(
+			'ws24h_contact_info', // Base ID
+			__( 'Ws24h contact info', THEMENAME ), // Name
+			array( 'description' => __('Ws24h contact infomation', THEMENAME ), ) // Args
 		);
-		parent::__construct( 'ws24h_contact', 'Ws24h_ contact', $widget_ops );
 	}
 
 	/**
-	 * Outputs the content of the widget
+	 * Front-end display of widget.
 	 *
-	 * @param array $args
-	 * @param array $instance
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		// outputs the content of the widget
 		extract( $args );
 
 		$companyName = get_theme_mod('company_footer_name');
@@ -38,7 +40,6 @@ class ws24h_contact extends WP_Widget {
 			<div class="row">
 				<div class="col-lg-12 col-md-12">
 					<div class="ws24h-support-group support-contact" rel="nofollow">
-						<!-- <?php if($companyName){?><h5><?= $companyName ?></h5><?php }?> -->
 						<?php
 						if (!empty($companyName)){
 							echo $args['before_title'] . apply_filters( 'widget_title', $companyName ). $args['after_title'];
@@ -62,21 +63,30 @@ class ws24h_contact extends WP_Widget {
 	}
 
 	/**
-	 * Outputs the options form on admin
+	 * Back-end widget form.
 	 *
-	 * @param array $instance The widget options
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		// outputs the options form on admin
+		
 	}
 
 	/**
-	 * Processing widget options on save
+	 * Sanitize widget form values as they are saved.
 	 *
-	 * @param array $new_instance The new options
-	 * @param array $old_instance The previous options
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $new_instance, $old_instance ) {
-		// processes widget options to be saved
-	}
+	public function update( $new_instance, $old_instance )
+    {
+		return $old_instance;
+	}	
+
 }
+// End Support contact_widget

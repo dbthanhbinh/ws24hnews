@@ -1,9 +1,12 @@
 <?php
 $firstSectionStyle = 'style="margin-top: 100px;"';
-if($cat_data['loop'] == 1 && $show_title != 'y'){
-    $firstSectionStyle = 'style="margin-top: 0;"';
+if($cat_data['loop'] == 1){
+    if($show_title == 'y') {
+        $firstSectionStyle = 'style="margin-top: 50px;"';
+    } else {
+        $firstSectionStyle = 'style="margin-top: 0;"';
+    }
 }
-
 if($show_title == 'y'){
 ?>
 <div class="home-section" style="margin-top: 30px;">
@@ -47,7 +50,7 @@ if($show_title == 'y'){
 
                                 <div class="item_content">
                                     <?php if($titleItem){?><h3 class="entry-title"><?= $titleItem ?></h3><?php }?>
-                                    <?php if($descriptionItem){?><p><?=$descriptionItem?></p><?php }?>
+                                    <?php if($descriptionItem){?><p><?= html_entity_decode($descriptionItem) ?></p><?php }?>
                                     <a class="read-more" href="<?= $urlItem ? $urlItem : '#'?>" title="<?= $titleItem ?>">
                                         <i class="fa fa-long-arrow-right"></i> Xem thêm
                                     </a>
@@ -59,11 +62,15 @@ if($show_title == 'y'){
                     </div>
                 </div>
                 <!-- col-md-8 offset-md-2 -->
+                <?php
+                    $leftTitle = tie_get_option($homeGroupTemplate.'_left_title');
+                    $rightTitle = tie_get_option($homeGroupTemplate.'_right_title');
 
+                ?>
                 <div class="col-12 col-sm-12 col-md-10 offset-md-1 animate-fadeInUp group-2">
                     <div class="row">
                         <div class="<?= getColsLayout(true, 84) ?> group-left">
-                            <h4 > <strong><?= $boxTitle ?></strong> <?php if($subTitle){?><i class="raleway-font"><?= $subTitle ?></i><?php }?></h4>
+                            <h4 > <strong><?= $leftTitle ?></strong> <?php if($rightTitle){?><i class="raleway-font"><?= $rightTitle ?></i><?php }?></h4>
                             <?php if($groupSlogan){?> <h5 class="header-cb-1"><?= $groupSlogan ?></h5><?php }?>
                         </div>
 

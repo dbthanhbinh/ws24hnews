@@ -1,6 +1,5 @@
 <?php
-add_action('init', 'tie_slider_register');
- 
+add_action('init', 'tie_slider_register'); 
 function tie_slider_register() {
  
 	$labels = array(
@@ -26,13 +25,10 @@ function tie_slider_register() {
 	register_post_type( 'tie_slider' , $args );
 }
 
-
-add_action("admin_init", "tie_slider_init");
- 
+add_action("admin_init", "tie_slider_init"); 
 function tie_slider_init(){
   add_meta_box("tie_slider_slides", "Slides", "tie_slider_slides", "tie_slider", "normal", "high");
-}
- 
+} 
 
 function tie_slider_slides(){
 	global $post;
@@ -46,7 +42,7 @@ function tie_slider_slides(){
 		
   ?>
   <script>
-  jQuery(document).ready(function() {
+  	jQuery(document).ready(function() {
   
 	jQuery(function() {
 		jQuery( "#tie-slider-items" ).sortable({placeholder: "ui-state-highlight"});
@@ -89,12 +85,11 @@ function tie_slider_slides(){
 	
 	custom_slider_uploader("add_slide");
 	
-});
+	});
 
   </script>
   
  <input id="upload_add_slide" type="button" class="mpanel-save" value="Add New Slider (1920x600)">
-
 	<ul id="tie-slider-items">
 	<?php
 	if( $slider ){
@@ -124,10 +119,11 @@ function tie_slider_slides(){
 
   <?php
 }
- 
 
+if (!is_customize_preview()) {
+	add_action('save_post', 'save_slide');
+}
 
-add_action('save_post', 'save_slide');
 function save_slide(){
   global $post;
   
@@ -140,7 +136,6 @@ function save_slide(){
 	}
 }
 
-
 add_filter("manage_edit-tie_slider_columns", "tie_slider_edit_columns");
 function tie_slider_edit_columns($columns){
   $columns = array(
@@ -152,7 +147,6 @@ function tie_slider_edit_columns($columns){
  
   return $columns;
 }
-
 
 add_action("manage_tie_slider_posts_custom_column",  "tie_slider_custom_columns");
 function tie_slider_custom_columns($column){

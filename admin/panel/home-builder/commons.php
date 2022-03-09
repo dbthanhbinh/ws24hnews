@@ -1,5 +1,40 @@
 <?php
-function showLayoutDropdown($i, $cat, $defaultValue = 'n'){
+function showLayoutDropdown($i, $cat, $defaultValue = 'temp-1'){
+    if(isset($cat['show_layout']) && $cat['show_layout'])
+        $defaultValue = $cat['show_layout'];
+        
+    $temp1Checked = '';
+    $temp2Checked = '';
+
+    if($defaultValue == 'temp-2'){
+        $temp2Checked = 'checked="checked"';
+        $temp1Checked = '';
+    }
+    else {
+        $temp1Checked = 'checked="checked"';
+        $temp2Checked = '';
+    }
+
+    $html = '
+        <label for="tie_home_cats['.$i.'][show_layout]">
+            <span>Show layout :</span><span class="group-item-new-layout">';
+            
+            $html .= '
+            <span class="item-new-layout">
+                <input name="tie_home_cats['.$i.'][show_layout]" id="tie_home_cats['.$i.'][show_layout]" type="radio" value="temp-1" '.$temp1Checked.'>
+                <img src="'.get_template_directory_uri().'/admin/panel/images/news-temp-1.png" />
+            </span>
+            <span class="item-new-layout">
+                <input name="tie_home_cats['.$i.'][show_layout]" id="tie_home_cats['.$i.'][show_layout]" type="radio" value="temp-2" '.$temp2Checked.'>
+                <img src="'.get_template_directory_uri().'/admin/panel/images/news-temp-2.png" />
+            </span>
+            ';
+            
+    $html .= '</span></label>';
+    return $html;
+}
+
+function showLayoutDropdownBk($i, $cat, $defaultValue = 'n'){
     if(isset($cat['show_layout']) && $cat['show_layout'])
         $defaultValue = $cat['show_layout'];
         

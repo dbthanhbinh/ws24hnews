@@ -50,31 +50,30 @@
         .widget-title {
             border: none;
             background: none;
+            
+            &::before {
+                padding-left: 0;
+            }
+
             label{
                 border: none;
                 margin: 0;
                 padding: 0;
                 border-bottom: 2px solid $main_color;
                 padding-bottom: 2px;
+                font-weight:  bold;
 
-                &:before{
+                &::before{
                     content: "";
                     display: none;
                 }
             }
         }
 
-        .tagcloud{
-            max-height: 125px;
-            overflow: auto;
-            a {
-                background: #f1f1f1;
-                padding: 0px 5px;
-                margin: 2px 2px;
-                display: inline-block;
-                height: 28px;
-                line-height: 28px;
-                float: left;
+        &.widget_block {
+            margin: 0;
+            h2 {
+                font-weight: bold;
             }
         }
     }

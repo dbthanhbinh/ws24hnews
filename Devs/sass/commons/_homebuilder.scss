@@ -30,7 +30,7 @@
             text-transform: uppercase;
             font-weight: 600;
             color: $main_color;
-            font-size: 25px;
+            font-size: 22px;
         }
     }
 
@@ -38,7 +38,7 @@
         .article-grid {
             .entry-content {
                 .entry-header {
-                    padding-top: 10px;
+                    // padding-top: 10px;
                     .entry-title {
                         font-size: 15px;
                         font-weight: 600;
@@ -225,7 +225,7 @@
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 50%;
+            // border-radius: 50%;
         }
     }
 
@@ -386,6 +386,10 @@
 
 .header-section {
     text-align: center;
+    h3 {
+        font-size: 35px;
+        font-weight: bold;
+    }
     span {
         color: $main_color;
         font-weight: 600;

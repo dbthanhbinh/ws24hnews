@@ -2,9 +2,9 @@
 	add_action('init', 'tie_slider_client_register');
 	function tie_slider_client_register() {
 		$labels = array(
-			'name' => 'Custom Clients',
+			'name' => __('Clients', THEMENAME),
 			'singular_name' => 'clients',
-			'add_new_item' => 'Add New Client',
+			'add_new_item' => __('Add Client', THEMENAME),
 		);
 	
 		$args = array(
@@ -22,7 +22,6 @@
 		); 
 		register_post_type( 'tie_clients' , $args );
 	}
-
 
 	add_action("admin_init", "tie_slider_client_init");
 	function tie_slider_client_init(){
@@ -86,7 +85,7 @@
 			});
 		</script>
 
-		<input id="upload_add_slide" type="button" class="mpanel-save" value="Add New client">
+		<input id="upload_add_slide" type="button" class="mpanel-save" value="<?= __('Add Client', THEMENAME)." Banner: 190x90px" ?>">
 		<ul id="tie-slider-items">
 			<?php
 				if( $slider ){
@@ -96,9 +95,9 @@
 						<li id="listItem_<?php echo $i ?>"  class="ui-state-default">
 							<div class="widget-content option-item">
 								<div class="slider-img"><?php echo wp_get_attachment_image( $slide['id'] , 'thumbnail' );  ?></div>
-								<label for="custom_clients[<?php echo $i ?>][title]"><span>Slide Title :</span><input id="custom_clients[<?php echo $i ?>][title]" name="custom_clients[<?php echo $i ?>][title]" value="<?php  echo stripslashes( $slide['title'] )  ?>" type="text" /></label>
-								<label for="custom_clients[<?php echo $i ?>][link]"><span>Slide Link :</span><input id="custom_clients[<?php echo $i ?>][link]" name="custom_clients[<?php echo $i ?>][link]" value="<?php  echo stripslashes( $slide['link'] )  ?>" type="text" /></label>
-								<label for="custom_clients[<?php echo $i ?>][caption]"><span style="float:left" >Slide Caption :</span><textarea name="custom_clients[<?php echo $i ?>][caption]" id="custom_clients[<?php echo $i ?>][caption]"><?php echo stripslashes($slide['caption']) ; ?></textarea></label>
+								<label for="custom_clients[<?php echo $i ?>][title]"><span><?= __('Client title', THEMENAME) ?> :</span><input id="custom_clients[<?php echo $i ?>][title]" name="custom_clients[<?php echo $i ?>][title]" value="<?php  echo stripslashes( $slide['title'] )  ?>" type="text" /></label>
+								<label for="custom_clients[<?php echo $i ?>][link]"><span><?= __('Client link', THEMENAME) ?> :</span><input id="custom_clients[<?php echo $i ?>][link]" name="custom_clients[<?php echo $i ?>][link]" value="<?php  echo stripslashes( $slide['link'] )  ?>" type="text" /></label>
+								<label for="custom_clients[<?php echo $i ?>][caption]"><span style="float:left" ><?= __('Client caption', THEMENAME) ?> :</span><textarea name="custom_clients[<?php echo $i ?>][caption]" id="custom_clients[<?php echo $i ?>][caption]"><?php echo stripslashes($slide['caption']) ; ?></textarea></label>
 								<input id="custom_clients[<?php echo $i ?>][id]" name="custom_clients[<?php echo $i ?>][id]" value="<?php  echo $slide['id']  ?>" type="hidden" />
 								<a class="del-cat"></a>
 							</div>
@@ -112,26 +111,29 @@
 		<script> var nextCell = <?php echo $i+1 ?> ;</script>
 	<?php
 	}
-
-	add_action('save_post', 'save_slide_client');
+	if (!is_customize_preview()) {
+		add_action('save_post', 'save_slide_client');
+	}
+	
 	function save_slide_client(){
 		global $post;
 		if( isset($_POST['custom_clients']) && !empty( $_POST['custom_clients'] ) && $_POST['custom_clients'] != "" ){
 			update_post_meta($post->ID, 'custom_clients' , $_POST['custom_clients']);		
 		} else {
-			if( isset($post->ID) ) delete_post_meta($post->ID, 'custom_clients' );
+			if(isset($post->ID))
+				delete_post_meta($post->ID, 'custom_clients');
 		}
 	}
 
 	add_filter("manage_edit-tie_client_columns", "tie_client_edit_columns");
 	function tie_client_edit_columns($columns){
-	$columns = array(
-		"cb" => "<input type=\"checkbox\" />",
-		"title" => "Title",
-		"slides" => "Number of client",
-		"date" => "Date",
-	);
-	return $columns;
+		$columns = array(
+			"cb" => "<input type=\"checkbox\" />",
+			"title" => "Title",
+			"slides" => "Number of client",
+			"date" => "Date",
+		);
+		return $columns;
 	}
 
 	add_action("manage_tie_client_posts_custom_column",  "tie_client_custom_columns");

@@ -10,6 +10,7 @@
      * Layout config
      */
     require_once ('helpers/layout-configs.php');
+    global $post;
 ?>
 
 <div class="container">
@@ -36,7 +37,7 @@
                 </div>
             </div>
 
-            <?php 
+            <?php
             /**
              * Tags area
              */
@@ -83,7 +84,6 @@
             /**
              * Related post
              */
-            global $post;
             $isRelatedPost = IS_RELATED_POST;
             $archiveDisplay = RELATED_DISPLAY_AS;
             $archiveCols = RELATED_DISPLAY_COLS;
@@ -115,6 +115,7 @@
                     'isGrid' => $archiveDisplay == 'grid' ? true : false,
                     'cols' => $archiveCols
                 ];
+                
                 ?>
 
                 <div class="related-box">
@@ -127,44 +128,47 @@
                     </div>
 
                     <div class="<?= mainLayoutTemplate($argGrid['isGrid']) ?>">
-                    <?php
-                        $orig_post = $post;
-                        $contentFormat = '';
-                        if ($post->post_type == 'post') {
-                            $categories = get_the_category($post->ID);
-                            if ($categories) {
-                                $category_ids = array();
-                                foreach ($categories as $individual_category)
-                                    $category_ids[] = $individual_category->term_id;
+                        <div class="row">
+                        <?php
+                            $orig_post = $post;
+                            $contentFormat = '';
+                            if ($post->post_type == 'post') {
+                                $categories = get_the_category($post->ID);
+                                if ($categories) {
+                                    $category_ids = array();
+                                    foreach ($categories as $individual_category)
+                                        $category_ids[] = $individual_category->term_id;
 
-                                $args = array(
-                                    'category__in' => $category_ids,
-                                    'post_type' => $post->post_type,
+                                    $args = array(
+                                        'category__in' => $category_ids,
+                                        'post_type' => $post->post_type,
+                                        'post__not_in' => array($post->ID),
+                                        'posts_per_page'=> $relatedPostsPerPage // Number of related posts that will be shown.
+                                    );
+                                }
+                            } else {
+                                $contentFormat = '-news';
+                                $args=array(
                                     'post__not_in' => array($post->ID),
+                                    'post_type' => $post->post_type,
                                     'posts_per_page'=> $relatedPostsPerPage // Number of related posts that will be shown.
                                 );
                             }
-                        } else {
-                            $contentFormat = '-news';
-                            $args=array(
-                                'post__not_in' => array($post->ID),
-                                'post_type' => $post->post_type,
-                                'posts_per_page'=> $relatedPostsPerPage // Number of related posts that will be shown.
-                            );
-                        }
-                        $my_query = new wp_query( $args );
-                        if ($my_query->have_posts()) {
-                            while ($my_query->have_posts()) {
-                                $my_query->the_post();
-                                $content_type = 'related';
-                                $argGrid['content_type'] = $content_type;
-                                get_template_part('template-parts/post/content'.$contentFormat, get_post_format(), $argGrid);
+                            $my_query = new wp_query( $args );
+                            
+                            if ($my_query->have_posts()) {
+                                while ($my_query->have_posts()) {
+                                    $my_query->the_post();
+                                    $content_type = 'related';
+                                    $argGrid['content_type'] = $content_type;
+                                    get_template_part('template-parts/post/content'.$contentFormat, get_post_format(), $argGrid);
+                                }
                             }
-                        }
 
-                        $post = $orig_post;
-                        wp_reset_query(); 
-                    ?>
+                            $post = $orig_post;
+                            wp_reset_query(); 
+                        ?>
+                        </div>
                     </div>
                 </div>
             <?php } ?>

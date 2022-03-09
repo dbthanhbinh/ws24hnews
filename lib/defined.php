@@ -1,7 +1,7 @@
 <?php
 const THEMENAME = 'fastspa';
 
-const LAYOUT_FULL = 'full';
+const LAYOUT_FULL = 'full-width';
 const LAYOUT_LEFT_SIDEBAR = 'left-sidebar';
 const LAYOUT_RIGHT_SIDEBAR = 'right-sidebar';
 const DISPLAY_AS_GRID = 'grid';

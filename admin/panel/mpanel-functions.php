@@ -144,7 +144,6 @@ $array_options =
 /*-----------------------------------------------------------------------------------*/	
 function tie_save_settings ( $data , $refresh = 0 ) {
 	global $array_options ;
-		
 	foreach( $array_options as $option ){
 		if( isset( $data[$option] )){
 			array_walk_recursive( $data[$option] , 'tie_clean_options');
@@ -292,7 +291,7 @@ function tie_options($value){
 			<input  name="tie_options[<?php echo $value['id']; ?>]"
 				id="<?php  echo $value['id']; ?>"
 				type="text"
-				value="<?php echo tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null); ?>" />
+				value="<?php echo tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : ''); ?>" />
 
 			<?php
 				if( $value['id']=="slider_tag" || $value['id']=="breaking_tag"){
@@ -308,7 +307,7 @@ function tie_options($value){
 		break;
 
 		case 'arrayText': 
-			$currentValue = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
+			$currentValue = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : '');
 			?>
 			<input  name="tie_options[<?php echo $value['id']; ?>][<?php echo $value['key']; ?>]"
 				id="<?php  echo $value['id']; ?>[<?php echo $value['key']; ?>]"
@@ -323,7 +322,7 @@ function tie_options($value){
 				name="tie_options[<?php echo $value['id']; ?>]"
 				id="<?php  echo $value['id']; ?>"
 				type="text"
-				value="<?php echo tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null); ?>" />
+				value="<?php echo tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : ''); ?>" />
 		<?php 
 		break;
 		
@@ -335,7 +334,7 @@ function tie_options($value){
 
 
 		case 'radio':
-			$radioVal = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
+			$radioVal = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : '');
 		?>
 			<div style="float:left; width: 295px;">
 				<?php foreach ($value['options'] as $key => $option) { ?>
@@ -348,7 +347,7 @@ function tie_options($value){
 		break;
 		
 		case 'select':
-			$selectedVal = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : null);
+			$selectedVal = tie_get_option_init($value['id'], isset($value['std']) ? $value['std'] : '');
 		?>
 			<select name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>">
 				<?php foreach ($value['options'] as $key => $option) { ?>

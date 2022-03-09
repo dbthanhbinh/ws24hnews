@@ -70,11 +70,13 @@
             .nav-item {
                 padding: 5px 0;
                 .nav-link {
-                    border: none;
+                    // border: none;
                     text-transform: none;
+                    color: #222;
 
                     &:hover{
                         color: $menu_link_color_hover;
+                        border-bottom: 1px solid transparent;
                     }
                 }                
             }

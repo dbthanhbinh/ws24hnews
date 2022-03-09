@@ -5,7 +5,7 @@ var width = window.width;
 var mainNavbarId = 'main-navbar';
 var mainNavbarStickyClass = 'main-navbar-fixed';
 var mainNavbar = document.getElementById(mainNavbarId);
-var mainNavbarSticky = mainNavbar.offsetTop;
+var mainNavbarSticky = mainNavbar?.offsetTop;
 var dataRef = mainNavbar.getAttribute('data-ref');
 // if default header (header has banner in top) will be render fixed header 
 // if(dataRef == 'default'){
