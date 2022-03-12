@@ -197,9 +197,8 @@ function tie_add_admin() {
 	$current_page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
 	$icon = get_template_directory_uri().'/admin/panel/images/general.png';
 	add_menu_page(THEMENAME.' Settings', THEMENAME ,'switch_themes', 'panel' , 'panel_options', $icon  );
-	$theme_page = add_submenu_page('panel',THEMENAME.' Settings', THEMENAME.' Settings','switch_themes', 'panel' , 'panel_options');
-	add_submenu_page('panel', "Import Demo Data" , "Import Demo Data" ,'switch_themes', 'tie_demo_installer' , 'tie_demo_installer');
-	add_submenu_page('panel',THEMENAME.' Documentation', 'Documentation','switch_themes', 'docs' , 'redirect_docs');
+	$theme_page = add_submenu_page('panel', ' Settings', ' Settings','switch_themes', 'panel' , 'panel_options');
+	add_submenu_page('panel',THEMENAME.' Help', 'Help','switch_themes', 'docs' , 'redirect_docs');
 	
 	function redirect_docs(){
 		$docs_url = 'http://webseo24h.com/docs';
@@ -359,7 +358,6 @@ function tie_options($value){
 		
 		case 'textarea':
 			?>
-			<!-- <textarea style="direction:ltr; text-align:left" name="tie_options[<?php echo $value['id']; ?>]" id="<?php echo $value['id']; ?>" type="textarea" cols="100%" rows="3"><?php echo tie_get_option_init($value['id'], $value['std']);  ?></textarea> -->
 			<?php
 				$content = html_entity_decode(tie_get_option_init($value['id'], $value['std']));
 				$editor_id = $value['id'];

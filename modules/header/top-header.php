@@ -8,7 +8,7 @@
             <ul>
                 <?php if($companyName){ ?> <li><span><b><?= $companyName ?></b></span></li><?php }?>
                 <?php if($contactHotline){ ?> <li><span><b><a href="tel:<?= $contactHotline ?>"><?= $contactHotline ?></a></b></span></li><?php }?>
-                <?php if($openTime) {?><li><span><b><?= getTranslateByKey('open_time') ?></b> <?= $openTime ?></span></li> <?php }?>
+                <?php if($openTime) {?><li><span><b><?= __('Open_time', THEMENAME) ?></b> <?= $openTime ?></span></li> <?php }?>
             </ul>
         </div>
     </div>

@@ -36,7 +36,7 @@
             </select>
         </label>
         
-        <?= showLayoutDropdown($i, $cat, $defaultLayout) ?>
+        <?= (isset($isShowLayoutDropdown) && $isShowLayoutDropdown) ? showLayoutDropdown($i, $cat, $defaultLayout) : ''?>
 
         <label for="tie_home_cats[<?php echo $i ?>][description]">
             <span>Box description :</span>

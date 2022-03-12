@@ -92,6 +92,8 @@
             $related_post = tie_get_option($relatedId);
             
             $relatedDisplay = tie_get_option($relatedId.'_display');
+            $relatedTitle = tie_get_option($relatedId.'_title');
+
             if(isset($relatedDisplay) && $relatedDisplay) {
                 $isRelatedPost = (isset($related_post) && $related_post) ? $related_post : false;
             }
@@ -122,7 +124,7 @@
                     <div class="row">
                         <div class="<?= getColsLayout(true, 1); ?>">
                             <header class="entry-header">
-                                <h5 class="header-title"><span><?= getTranslateByKey('other_posts') ?></span></h5>
+                                <h5 class="header-title"><span><?= $relatedTitle ? $relatedTitle : __('Other_posts', THEMENAME) ?></span></h5>
                             </header>
                         </div>
                     </div>
@@ -180,6 +182,16 @@
         <!-- Sidebar right -->
         <?php if ($mainLayout == LAYOUT_RIGHT_SIDEBAR) { get_sidebar(); } ?>
 
+        <?php
+        // Update showposts_views
+        $postViews = get_post_meta(get_the_ID(), 'showposts_views', true);
+        if(!$postViews) {
+            $postViews = 1;
+        } else {
+            $postViews += 1;
+        }
+        update_post_meta(get_the_ID(), 'showposts_views', $postViews);
+        ?>
     </div>
 </div>
 <?php get_footer();?>

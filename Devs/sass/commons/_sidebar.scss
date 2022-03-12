@@ -37,15 +37,32 @@
     display: inline-block;
     width: 100%;
 
+    // Resize Widget Tag clouds
+    a.tag-cloud-link[style*="font-size: 8"], a.tag-cloud-link[style*="font-size: 11"] {
+        font-size: 10pt !important;
+    }
+    a.tag-cloud-link[style*="font-size: 12"], a.tag-cloud-link[style*="font-size: 13"] {
+        font-size: 12pt !important;
+    }
+    a.tag-cloud-link[style*="font-size: 14"], a.tag-cloud-link[style*="font-size: 15"] {
+        font-size: 14pt !important;
+    }
+    a.tag-cloud-link[style*="font-size: 16"], a.tag-cloud-link[style*="font-size: 17"] {
+        font-size: 16pt !important;
+    }
+    a.tag-cloud-link[style*="font-size: 18"], a.tag-cloud-link[style*="font-size: 19"], 
+    a.tag-cloud-link[style*="font-size: 2"] {
+        font-size: 18pt !important;
+    }
 
     &.widget_block {
         .wp-block-group {
             h2 {
                 font-weight: 600;
-                border-bottom: 1px solid #0065b3;
-                background: #0065b3;
+                border-bottom: 1px solid $main_color;
+                background: $main_color;
                 padding: 5px 0 0px 0;
-                color: #fff;
+                color: $main_text_color;
 
                 &::before {
                     font: normal normal normal 14px/1 FontAwesome;
@@ -58,7 +75,7 @@
                     content: "";
                     display: block;
                     width: -webkit-fill-available;
-                    border-bottom: 2px solid #fff;
+                    border-bottom: 2px solid $main_text_color;
                     margin-top: 5px;
                 }
             }
@@ -82,8 +99,8 @@
 
     .widget-title {
         font-weight: 600;
-        border-bottom: 1px solid #0065b3;
-        background: #0065b3;
+        border-bottom: 1px solid $main_color;
+        background: $main_color;
         padding: 5px 0 0px 0;
         font-size: 14px;
         text-transform: uppercase;
@@ -99,7 +116,7 @@
             content: "";
             display: block;
             width: -webkit-fill-available;
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid $main_text_color;
             margin-top: 5px;
         }
     }
@@ -301,12 +318,12 @@
         top: 30%;
         padding: 3px 15px;
         background-color: $main_color;
-        color: #fff;
+        color: $main_text_color;
         font-size: 25px;
         display: block;
         z-index: 10;
         i.fa{
-            color: #fff;
+            color: $main_text_color;
         }
     }
     span.sidebar-mobile-close{
@@ -316,7 +333,7 @@
         background-color: $main_color;
         /* color: #fff; */
         font-size: 20px;
-        color: #fff;
+        color: $main_text_color;
         font-weight: bold;
         /* text-decoration: none; */
         padding: 3px 12px;
@@ -339,7 +356,7 @@
     span.sidebar-mobile-close:hover,
     span.sidebar-mobile-open:hover{
         i.fa {
-            color: #fff;
+            color: $main_text_color;
         }
     }
 }

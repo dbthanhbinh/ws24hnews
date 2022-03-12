@@ -7,8 +7,15 @@ function builderHeader (boxTitle, nextCell) {
 		html += '<a style="display:block" class="toggle-close">-</a>';
 		html += '</div>';
 		html += '<div style="display:block" class="widget-content">';
+		html += '<label for="tie_home_cats[' + nextCell + '][show_box]">';
+		html += '<span>Show/Hiden Box :</span>';
+		html += '<select id="tie_home_cats[' + nextCell + '][show_box]" name="tie_home_cats[' + nextCell + '][show_box]">';
+		html += '<option value="y" selected="selected">Show</option>';
+		html += '<option value="n">Hidden</option>';
+		html += '</select>';
+        html += '</label>';
 		html += '<label for="tie_home_cats['+ nextCell +'][title]">';
-		html += '<span> Box Title' + boxTitle + ':</span>';
+		html += '<span> Box Title:</span>';
 		html += '<input id="tie_home_cats['+ nextCell +'][title]"';
 		html += 'name="tie_home_cats['+ nextCell +'][title]"';
 		html += 'value="' + boxTitle + '"';
@@ -281,20 +288,22 @@ function builderVideoList (boxTitle, nextCell) {
 }
 
 // For Group template
-function builderGroupTemplate(boxTitle, nextCell, content) {	
+function builderGroupTemplateDropdown(boxTitle, nextCell, content, panelAdminResourcePath) {	
 	var html = '';
 	html += builderHeaderGroupTemplate(boxTitle, nextCell);
-	html += '<label for="tie_home_cats['+nextCell+'][home_group]"><span>Display Group template:</span>';
-	html += '<select id="tie_home_cats['+nextCell+'][home_group]" name="tie_home_cats['+nextCell+'][home_group]">';
-		for(var g=1 ; g<=2; g++){
-			var selected = '';
-			if(g ==1)
-				selected = 'selected="selected"';
-			html += '<option value="home_group_'+g+'" '+selected+'>Group template '+g+'</option>';
-		}
-	html += '</select>';
-	html += '</label>';
 
+	html += '<label for="tie_home_cats[' + nextCell + '][home_group]">';
+	html += '<span>Show layout :</span><span class="group-item-new-layout">';
+            
+	html += '<span class="item-new-layout">';
+	html += '<input name="tie_home_cats[' + nextCell + '][home_group]" id="tie_home_cats[' + nextCell + '][home_group]" type="radio" value="home_group_1" checked="checked">';
+	html += '<img src="' + panelAdminResourcePath + '/images/group_temp_1_thumb.JPG" />';
+	html += '</span>';
+	html += '<span class="item-new-layout">';
+	html += '<input name="tie_home_cats[' + nextCell + '][home_group]" id="tie_home_cats[' + nextCell + '][home_group]" type="radio" value="home_group_2">';
+	html += '<img src="' + panelAdminResourcePath + '/images/group_temp_2_thumb.JPG" />';
+	html += '</span>';            
+    html += '</span></label>';
 
 	html += builderFooterGroupTemplate(nextCell);
 	return html;
@@ -475,7 +484,8 @@ jQuery(document).ready(function() {
 	// HomeBuilder
 	var categoryDf = jQuery('#cats_defult').html();
 	var posttypesDf = jQuery('#posttype_defult').html();
-	
+	var panelAdminResourcePath = jQuery('#panel_admin_resource_path').val();
+
 	// For recent post
 	jQuery("#add-recent").click(function() {
 		jQuery('#cat_sortable').append(builderRecentPost(boxTitle='Recent post', nextCell, posttypesDf, content=categoryDf));
@@ -485,7 +495,7 @@ jQuery(document).ready(function() {
 
 	// For group template
 	jQuery("#add-group").click(function() {
-		jQuery('#cat_sortable').append(builderGroupTemplate(boxTitle='Group template', nextCell, content=categoryDf));
+		jQuery('#cat_sortable').append(builderGroupTemplateDropdown(boxTitle='Group template', nextCell, content=categoryDf, panelAdminResourcePath));
 		jQuery('#listItem_'+ nextCell).hide().fadeIn();
 		nextCell ++ ;
 	});

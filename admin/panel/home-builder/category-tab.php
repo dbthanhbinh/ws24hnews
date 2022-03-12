@@ -1,5 +1,8 @@
 <div class="tiepanel-item">
-    <h3><?= __('Category tabs box', THEMENAME) ?></h3>            
+    <h3><?= __('Category tabs box', THEMENAME) ?></h3>
+    <p class="panel-group-template-img-review">
+        <img src="<?= get_template_directory_uri() ?>/admin/panel/images/category_temp.JPG" alt="temp" />
+    </p>
     <?php
     require('defaultVal.php');
     tie_options(

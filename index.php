@@ -47,7 +47,7 @@
             }
         ?>
 
-        <?php // include TEMPLATEPATH . ('/modules/owl-carousel/slide-client.php') ?>
+        <?php include TEMPLATEPATH . ('/modules/owl-carousel/slide-client.php') ?>
     </div>
 
     <!-- Sidebar's 2 area -->

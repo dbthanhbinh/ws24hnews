@@ -5,6 +5,9 @@ for($g = 1; $g<=2; $g++){
     ?>
     <div class="tiepanel-item">
         <h3 style="background: darkgray;"><strong><?= __('Group template', THEMENAME) ?> <?=$g?></strong></h3>
+        <p class="panel-group-template-img-review">
+            <img src="<?= get_template_directory_uri() ?>/admin/panel/images/group_temp_<?=$g?>.JPG" alt="temp" />
+        </p>
         <?php
             $groupPos = $g;
             $group = 'home_group_'.$groupPos;

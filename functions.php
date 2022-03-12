@@ -64,9 +64,6 @@ if(is_admin()){
 }
 # Is Front-end Scope (only front-end)
 if(!is_admin()){
-    // Translate for Front-end
-    require_once ('helpers/translates.php');
-
     // Front-end Commons
     require_once ('helpers/commons.php');
     require_once ('lib/modifys/index.php');
@@ -263,8 +260,12 @@ function excerpt_content ($excerpt, $limit, $readMore) {
     $excerpt = substr($excerpt, 0, $limit);
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    if($readMore)
-        return $excerpt . '<p class="article-metas"><span><strong>' .__('By:', THEMENAME). '</strong> ' . get_the_author() . ' | 456 lượt</p>' . ws24h_excerpt_more('...');
+    if($readMore) {
+        $postViews = get_post_meta(get_the_ID(), 'showposts_views', true);
+        $postViews = $postViews ? $postViews : 10;
+        return $excerpt . '<p class="article-metas"><span><strong>' .__('By:', THEMENAME). '</strong> ' . get_the_author() . ' | '.$postViews.' lượt</p>' . ws24h_excerpt_more('...');
+    }
+
     return $excerpt.'...';
 }
 
@@ -279,7 +280,7 @@ function get_excerpt($limit = null, $readMore=false, $source = null){
 function ws24h_excerpt_more($more) {
     // return ' ...';
     return sprintf('<a class="read-more" href="%1$s">%2$s</a>',
-        get_permalink( get_the_ID() ), '<i class="fa fa-long-arrow-right"></i> '. getTranslateByKey('excerpt_read_more'));
+        get_permalink( get_the_ID() ), '<i class="fa fa-long-arrow-right"></i> '. __('Excerpt_read_more', THEMENAME));
 }
 // add_filter( 'excerpt_more', 'ws24h_excerpt_more' );
 
@@ -292,14 +293,11 @@ function remove_thumbnail_dimensions( $html ) {
     return $html;
 }
 
-// Change the Tag Cloud's Font Sizes.
-function change_tag_cloud_font_sizes( array $args ) {
-    $args['smallest'] = '10';
-    $args['largest'] = '14';
-    return $args;
+function custom_admin_post_thumbnail_html( $content ) {
+    $content = str_replace( __( 'Set featured image' ), __( 'Tải hình 640x480px' ), $content);
+    return $content = str_replace( __( 'Đặt ảnh đại diện' ), __( 'Tải hình 640x480px' ), $content);
 }
-add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
-
+add_filter( 'admin_post_thumbnail_html', 'custom_admin_post_thumbnail_html' );
 
 add_filter( 'get_the_archive_title', function ( $title ) {
     if ( is_category() ) {
@@ -489,4 +487,16 @@ function ws24h_slideshow_owl_carousel_script(){
 	<script src="<?php echo get_template_directory_uri();?>/modules/owl-carousel/owl.carousel.js"></script>
 	<?php
     }
+}
+
+add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
+/**
+ * Change the Tag Cloud's Font Sizes.
+ *
+ * @return array
+ */
+function change_tag_cloud_font_sizes( array $args ) {
+    $args['smallest'] = '10';
+    $args['largest'] = '20';
+    return $args;
 }

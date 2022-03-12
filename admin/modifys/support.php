@@ -27,7 +27,7 @@
 
 	function custom_dashboard_feed()
 	{
-		$url_feed = 'http://webseo24h.com/feed';
+		$url_feed = 'http://webseo24h.com/feeds';
 		echo '<ul>';
 		$rss = fetch_feed($url_feed);
 		if(!is_wp_error($rss))

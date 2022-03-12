@@ -30,10 +30,6 @@
         <?php if(isset($isShowLayoutDropdown) && $isShowLayoutDropdown) echo showLayoutDropdown($i, $cat, $defaultLayout) ?>
         <label for="tie_home_cats[<?php echo $i ?>][description]">
             <span>Box description :</span>
-            <!-- <textarea style="direction:ltr; text-align:left"
-            id="tie_home_cats[<?php echo $i ?>][description]"
-            name="tie_home_cats[<?php echo $i ?>][description]"
-            type="textarea" cols="100%" rows="3" tabindex="4"><?php if( !empty($cat['description']) ) echo $cat['description'] ?></textarea> -->
 
             <?php
                 $content = html_entity_decode(!empty($cat['description']) ? $cat['description'] : '');

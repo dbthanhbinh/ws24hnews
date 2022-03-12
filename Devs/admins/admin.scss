@@ -24,3 +24,9 @@
         height: auto;
     }
 }
+
+.mo-panel-content p {
+    &.panel-group-template-img-review {
+        text-align: center;
+    }
+}

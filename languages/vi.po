@@ -17,3 +17,54 @@ msgstr "Tin tức"
 
 msgid "Home"
 msgstr "Trang chủ"
+
+msgid "Search_btn"
+msgstr "Tìm"
+
+msgid "Search_placeholder"
+msgstr "Tìm"
+
+msgid "Services"
+msgstr "Dịch vụ"
+
+msgid "Open_time"
+msgstr "Mở cửa"
+
+msgid "Comment_author"
+msgstr "Tên"
+
+msgid "Comment_author_email"
+msgstr "Email"
+
+msgid "Your_comments"
+msgstr "Bình luận của bạn"
+
+msgid "Send_comment"
+msgstr "Gửi bình luận"
+
+msgid "Write_your_comments"
+msgstr "Viết bình luận (*)"
+
+msgid "List_of_comments"
+msgstr "Danh sách bình luận"
+
+msgid "Reply_text"
+msgstr "Trả lời"
+
+msgid "Prev_text"
+msgstr "Trước"
+
+msgid "Next_text"
+msgstr "Sau"
+
+msgid "Comments_are_closed"
+msgstr "Bình luận đã được đóng"
+
+msgid "Comment_notes_before"
+msgstr "Email không được công khai. Các trường được yêu cầu *"
+
+msgid "Excerpt_read_more"
+msgstr "Xem thêm"
+
+msgid "Other_posts"
+msgstr "Bài viết khác"

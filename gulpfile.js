@@ -47,7 +47,7 @@ var colorthemes = [];
         mainTextColor: '#ffffff'
     });
 
-    var themecolor = '#0065b3';
+    var themecolor = '#e83e8c';
     var colorthemetext = '#ffffff';
 
 function buildSassDf(env, themeProperties) {
@@ -321,48 +321,16 @@ gulp.task('product', gulp.series(
     makeCleanDevelop
 ));
 
-
-////// ------------ For dev Plugin ws24hSupport-----------------------
-
-function buildWs24hSupportSass() { return buildWs24hSupportSassDf('env');}
-
-function buildWs24hSupportSassDf(env, themeProperties) {
-    return (
-        gulp.src('./Devs/pluginSASS/ws24hSupport/**/*.scss')
-            .pipe(header('$themeColor: ' + themecolor + ';\n' +
-                '$colorThemeText: ' + colorthemetext + ';\n'))
-            .pipe(sourcemaps.init())
-            .pipe(sass())
-            .pipe(cleanCSS())
-            .pipe(minifyCss())
-            .pipe(rename('style.min.css'))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('../../plugins/ws24h-support/assets/css'))
-            .pipe(livereload())
-    );
-}
-
-function watchTaskPlugin(){
-    gulp.watch(
-        [
-            './Devs/pluginSASS/ws24hSupport/**/*'
-        ],
-        gulp.parallel(buildWs24hSupportSass)
-    );
-}
-
-gulp.task('plugin', gulp.series(
-        buildWs24hSupportSass,
-        watchTaskPlugin
-    )
-);
-
-
 //// ===================================================
 var pluginPath = '../../plugins/';
 
 // ------------ For dev Plugin ws24hAppointment-----------------------
-var pluginName = 'ws24h-appointment-fast';
+// var pluginName = 'ws24h-appointment-fast';
+// var pluginCompressName = 'ws24h.plugin.min';
+// var pluginCompressNameAdmin = 'admin.ws24h.plugin.min';
+
+// For support
+var pluginName = 'ws24h-support';
 var pluginCompressName = 'ws24h.plugin.min';
 var pluginCompressNameAdmin = 'admin.ws24h.plugin.min';
 

@@ -19,7 +19,9 @@ require_once ('commons.php')
             <h3><?= __('Home Builder', THEMENAME) ?><a id="collapse-all">[-] Collapse All</a>
                 <a id="expand-all">[+] Expand All</a></h3>
             <div class="option-item">
-
+                <!-- Hidden variables -->
+                <input type="hidden" id="panel_admin_resource_path" name="panel_admin_resource_path" value="<?= get_template_directory_uri() ?>/admin/panel"/>
+                
                 <select style="display:none" id="cats_defult">
                     <?php foreach ($categories as $key => $option) { ?>
                     <option value="<?php echo $key ?>"><?php echo $option; ?></option>
@@ -56,11 +58,12 @@ require_once ('commons.php')
                         $i=0;
                         if($cats){
                             $defaultLayout = 'n';
-                            $isShowLayoutDropdown = true;
+                            $isShowLayoutDropdown = false;
                             foreach ($cats as $cat) { 
                                 $i++;
                                 if( $cat['type'] == 'recent' ) :
                                     $defaultLayout = 'n';
+                                    $isShowLayoutDropdown = true;
                                     require('recent.php');
                                 ?>
                                 <?php elseif($cat['type'] == 'group-template') :
@@ -73,6 +76,7 @@ require_once ('commons.php')
                                 ?>
                                 <?php elseif( $cat['type'] == 'videos' ) :
                                     $defaultLayout = 'n';
+                                    $isShowLayoutDropdown = false;
                                     require('videos.php');
                                 ?>
                                 <?php elseif(function_exists('appointment_admin_menu') && $cat['type'] == 'appointment' ) :

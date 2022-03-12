@@ -15,7 +15,7 @@ if ($categories) {
     $my_query = new wp_query( $args );
 
     if( $my_query->have_posts() ) {
-        echo '<h3 class="header-title">'.getTranslateByKey('other_posts').'</h3>';
+        echo '<h3 class="header-title">'.__('Other_posts', THEMENAME).'</h3>';
         while( $my_query->have_posts() ) {
             $my_query->the_post();
             $content_type = 'related';

@@ -1,6 +1,6 @@
 <?php
-    $search_placeholder = getTranslateByKey('search_placeholder');
-    $search_btn = getTranslateByKey('search_btn');
+    $search_placeholder = __('Search_placeholder', THEMENAME);
+    $search_btn = __('Search_btn', THEMENAME);
 ?>
 
 <div class="box-search-form">

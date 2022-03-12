@@ -34,13 +34,13 @@
               $archiveId = 'archive_'.get_query_var('post_type');
 
             $args = getLayoutArgs($archiveId);
-            echo '<div class="'.mainLayoutTemplate($args['isGrid']).'">';
+            echo '<div class="'.mainLayoutTemplate($args['isGrid']).'"><div class="row">';
               while ($querys->have_posts() ) :
                 $querys->the_post();
                 get_template_part('template-parts/post/content', get_post_format(), $args);
                 $pos++;
               endwhile;
-            echo '</div>';
+            echo '</div></div>';
         else :
           echo '<div class="'.getDefaultFullLayout().'">';
             get_template_part( 'template-parts/post/content', 'none' );

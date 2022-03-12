@@ -1,4 +1,40 @@
 <?php
+function showLayoutDropdownGroupTemplate($i, $cat, $defaultValue = 'home_group_1'){
+    
+    if(isset($cat['home_group']) && $cat['home_group'])
+        $defaultValue = $cat['home_group'];
+        
+    $temp1Checked = '';
+    $temp2Checked = '';
+
+    if($defaultValue == 'home_group_1'){
+        $temp1Checked = 'checked="checked"';
+        $temp2Checked = '';
+    }
+    else {
+        $temp2Checked = 'checked="checked"';
+        $temp1Checked = '';
+    }
+
+    $html = '
+        <label for="tie_home_cats['.$i.'][home_group]">
+            <span>Show layout :</span><span class="group-item-new-layout">';
+            
+            $html .= '
+            <span class="item-new-layout">
+                <input name="tie_home_cats['.$i.'][home_group]" id="tie_home_cats['.$i.'][home_group]" type="radio" value="home_group_1" '.$temp1Checked.'>
+                <img src="'.get_template_directory_uri().'/admin/panel/images/group_temp_1_thumb.JPG" />
+            </span>
+            <span class="item-new-layout">
+                <input name="tie_home_cats['.$i.'][home_group]" id="tie_home_cats['.$i.'][home_group]" type="radio" value="home_group_2" '.$temp2Checked.'>
+                <img src="'.get_template_directory_uri().'/admin/panel/images/group_temp_2_thumb.JPG" />
+            </span>
+            ';
+            
+    $html .= '</span></label>';
+    return $html;
+}
+
 function showLayoutDropdown($i, $cat, $defaultValue = 'temp-1'){
     if(isset($cat['show_layout']) && $cat['show_layout'])
         $defaultValue = $cat['show_layout'];
