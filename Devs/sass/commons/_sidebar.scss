@@ -1,3 +1,14 @@
+$font_size: 14px;
+$title_font_size: 14px;
+$title_line_height: 18px;
+$widget_title_size: 16px;
+
+$widget_item_title_size: $font_size;
+$widget_item_title_weight: bold;
+
+/* box-list-item > item-thumb*/
+$widget_item_thumb_mg_bt: 5px;
+
 .sidebar {
     img {
         max-width: 100%;

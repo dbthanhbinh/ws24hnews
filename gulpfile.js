@@ -51,39 +51,19 @@ var colorthemes = [];
     var themecolor = '#e83e8c';
     var colorthemetext = '#ffffff';
 
-function buildSassDf(env, themeProperties) {
+function buildSassDf(env) {
+    let childPath = '';
     if(env === 'build'){
         makeCleanCssFile();
-        if(themeProperties && themeProperties !== 'undefined'){
-            let childPath = '';
-            if(themeProperties.themeName !== 'pink') // default color
-            {
-                childPath = '/' + themeProperties.themeName;
-                gulp.src('*.*', {read: false})
-                    .pipe(gulp.dest('./assets/css'+childPath))
-            }
-            return (
-                gulp.src('./Devs/sass/**/*.scss')
-                    .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
-                        '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
-                    .pipe(sass())
-                    .pipe(cleanCSS())
-                    .pipe(minifyCss())
-                    .pipe(rename('style.min.css'))
-                    .pipe(gulp.dest('./assets/css'+childPath))
-            );
-        } else {
-            return (
-                gulp.src('./Devs/sass/**/*.scss')
-                    .pipe(header('$themeColor: ' + themecolor + ';\n' +
-                        '$colorThemeText: ' + colorthemetext + ';\n'))
-                    .pipe(sass())
-                    .pipe(cleanCSS())
-                    .pipe(minifyCss())
-                    .pipe(rename('style.min.css'))
-                    .pipe(gulp.dest('./assets/css'))
-            );
-        }
+        return (
+            gulp.src('./Devs/sass/commons/**/*.scss')
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('style.min.css'))
+                .pipe(gulp.dest('./assets/css'))
+        );
+
     } else {
         return (
             gulp.src('./Devs/sass/commons/**/*.scss')
@@ -126,18 +106,20 @@ function buildThemeStyleSassDf(env, themeProperties) {
                     .pipe(sass())
                     .pipe(cleanCSS())
                     .pipe(minifyCss())
-                    .pipe(rename(childPath+'.min.css'))
+                    .pipe(rename('themestyle.min.css'))
                     .pipe(gulp.dest('./assets/css'))
             );
         }
     } else {
         return (
             gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                    '$colorThemeText: ' + colorthemetext + ';\n'))
                 .pipe(sourcemaps.init())
                 .pipe(sass())
                 .pipe(cleanCSS())
                 .pipe(minifyCss())
-                .pipe(rename(childPath+'.min.css'))
+                .pipe(rename('themestyle.min.css'))
                 .pipe(sourcemaps.write('.'))
                 .pipe(gulp.dest('./assets/css'))
         );
@@ -149,10 +131,7 @@ function buildSass() { return buildSassDf('env');}
 function buildThemeStyleSass() { return buildThemeStyleSassDf('env');}
 
 function buildSassBuild() {
-    for (let index = 0; index < colorthemes.length; index++) {
-        let themeProperties = colorthemes[index];
-        buildSassDf('build', themeProperties);
-    }
+    buildSassDf('build');
 }
 
 function buildThemeStyleSassBuild() {
@@ -160,6 +139,7 @@ function buildThemeStyleSassBuild() {
         let themeProperties = colorthemes[index];
         buildThemeStyleSassDf('build', themeProperties);
     }
+    return buildThemeStyleSassDf('build');
 }
 
 function makeCleanAdminFile() {
@@ -197,8 +177,8 @@ function buildAdminSassBuild() { return buildAdminSassDf('build') }
 
 
 function makeCleanPanelFile() {
-    del('./admin/panel/panel.min.css', {force:true});
-    del('./admin/panel/panel.min.css.map', {force:true});
+    //del('./admin/panel/panel.min.css', {force:true});
+    //del('./admin/panel/panel.min.css.map', {force:true});
 }
 
 function buildPanelSassDf(env) {
@@ -271,7 +251,7 @@ function watchTask(){
             './Devs/admins/**/*',
             './Devs/panels/**/*',
         ],
-        gulp.parallel(buildThemeStyleSass, buildSass, buildAdminSass, buildPanelSass)
+        gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
     );
 }
 
@@ -306,26 +286,27 @@ function compressTickySidebarJs(cb) {
 
 ////// ------------ For dev features -----------------------
 gulp.task('dev', gulp.series(
-        buildThemeStyleSassBuild,
-        // buildSass,
-        // buildAdminSass,
-        // buildPanelSass,
-        // buildBootstrapSass,
-        // compressCustomThemeJs,
-        // compressTickySidebarJs,
-        // watchTask
+        buildThemeStyleSass,
+        buildSass,
+        buildAdminSass,
+        buildPanelSass,
+        buildBootstrapSass,
+        compressCustomThemeJs,
+        compressTickySidebarJs,
+        watchTask
     )
 );
 // End Dev
 
 ////// ------------ For build product Demo -----------------------
 gulp.task('build', gulp.series(
-        buildSassBuild,
-        buildAdminSassBuild,
-        buildPanelSassBuild,
-        buildBootstrapSassBuild,
-        compressCustomThemeJs,
-        compressTickySidebarJs
+        buildThemeStyleSassBuild,
+        // buildSassBuild,
+        // buildAdminSassBuild,
+        // buildPanelSassBuild,
+        // buildBootstrapSassBuild,
+        // compressCustomThemeJs,
+        // compressTickySidebarJs
     )
 );
 
