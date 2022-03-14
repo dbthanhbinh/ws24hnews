@@ -5,8 +5,6 @@
 
     a {
         display: inline-table;
-        background-color: $btn_lemon_bg_color;
-        color: $btn_lemon_text_color;
         font-weight: 600;
         text-transform: uppercase;
         height: 45px;
@@ -51,12 +49,6 @@
             stroke: #fff;
         }
     }
-}
-
-.btn-custom {
-    background-color: $main_color;
-    color: $colors-white;
-    border: 1px solid $main_color;
 }
 
 @keyframes dashed_border_running {

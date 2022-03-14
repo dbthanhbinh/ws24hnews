@@ -60,12 +60,6 @@
     
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: $widget_tag_cloud_bar_color; 
         border-radius: 1px;
-    }
-    
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: $widget_tag_cloud_bar_color_hover; 
     }
 }

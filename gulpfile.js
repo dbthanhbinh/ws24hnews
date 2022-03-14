@@ -20,6 +20,7 @@ var del = require('del') ;
 
 function makeCleanCssFile() {
     del('./assets/css/style.min.css', {force:true});
+    del('./assets/css/themestyle.min.css', {force:true});
     del('./assets/css/style.min.css.map', {force:true});
 }
 
@@ -85,9 +86,7 @@ function buildSassDf(env, themeProperties) {
         }
     } else {
         return (
-            gulp.src('./Devs/sass/**/*.scss')
-                .pipe(header('$themeColor: ' + themecolor + ';\n' +
-                    '$colorThemeText: ' + colorthemetext + ';\n'))
+            gulp.src('./Devs/sass/commons/**/*.scss')
                 .pipe(sourcemaps.init())
                 .pipe(sass())
                 .pipe(cleanCSS())
@@ -100,12 +99,66 @@ function buildSassDf(env, themeProperties) {
     }
 }
 
+function buildThemeStyleSassDf(env, themeProperties) {
+    let childPath = 'pink';
+    if(env === 'build'){
+        makeCleanCssFile();
+        if(themeProperties && themeProperties !== 'undefined'){
+            if(themeProperties.themeName !== 'pink') // default color
+            {
+                childPath = themeProperties.themeName;
+            }
+            return (
+                gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                    .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
+                        '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename(childPath +'.min.css'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
+        } else {
+            return (
+                gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                    .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                        '$colorThemeText: ' + colorthemetext + ';\n'))
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename(childPath+'.min.css'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
+        }
+    } else {
+        return (
+            gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                .pipe(sourcemaps.init())
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename(childPath+'.min.css'))
+                .pipe(sourcemaps.write('.'))
+                .pipe(gulp.dest('./assets/css'))
+        );
+    }
+}
+
 function buildSass() { return buildSassDf('env');}
+
+function buildThemeStyleSass() { return buildThemeStyleSassDf('env');}
 
 function buildSassBuild() {
     for (let index = 0; index < colorthemes.length; index++) {
         let themeProperties = colorthemes[index];
         buildSassDf('build', themeProperties);
+    }
+}
+
+function buildThemeStyleSassBuild() {
+    for (let index = 0; index < colorthemes.length; index++) {
+        let themeProperties = colorthemes[index];
+        buildThemeStyleSassDf('build', themeProperties);
     }
 }
 
@@ -213,11 +266,12 @@ function buildBootstrapSassBuild() { return buildBootstrapSassDf('build') }
 function watchTask(){
     gulp.watch(
         [
-            './Devs/sass/**/*',
+            './Devs/sass/themeStyles/**/*',
+            './Devs/sass/commons/**/*',
             './Devs/admins/**/*',
             './Devs/panels/**/*',
         ],
-        gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
+        gulp.parallel(buildThemeStyleSass, buildSass, buildAdminSass, buildPanelSass)
     );
 }
 
@@ -252,13 +306,14 @@ function compressTickySidebarJs(cb) {
 
 ////// ------------ For dev features -----------------------
 gulp.task('dev', gulp.series(
-        buildSass,
-        buildAdminSass,
-        buildPanelSass,
-        buildBootstrapSass,
-        compressCustomThemeJs,
-        compressTickySidebarJs,
-        watchTask
+        buildThemeStyleSassBuild,
+        // buildSass,
+        // buildAdminSass,
+        // buildPanelSass,
+        // buildBootstrapSass,
+        // compressCustomThemeJs,
+        // compressTickySidebarJs,
+        // watchTask
     )
 );
 // End Dev

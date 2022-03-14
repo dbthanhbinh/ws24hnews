@@ -2,7 +2,6 @@
     margin-bottom: 30px;
 }
 
-
 .box-breadcrumb {
     margin-bottom: 15px;
     background: url("../images/bg_feature.jpg") center repeat-x;
@@ -93,24 +92,17 @@
 }
 
 .breadcrumb li:first-child {
-    border-left: 5px solid $main_color;
-
     a {
         padding-left: 10px;
     }
 } 
-  .breadcrumb li:nth-child(2) a       {
-      background: $main_color;
+  .breadcrumb li:nth-child(2) a {
       color: #fff;
       &:hover {
-        background: $main_color;
-        text-decoration: underline;
-        &:after {
-            border-left-color: $main_color;
-        }
+        text-decoration: underline;      
       }
     }
-  .breadcrumb li:nth-child(2) a:after { border-left-color: $main_color; }
+
   .breadcrumb li:nth-child(3) a       { background:        hsla(34,85%,55%,1); }
   .breadcrumb li:nth-child(3) a:after { border-left-color: hsla(34,85%,55%,1); }
   .breadcrumb li:nth-child(4) a       { background:        hsla(34,85%,65%,1); }

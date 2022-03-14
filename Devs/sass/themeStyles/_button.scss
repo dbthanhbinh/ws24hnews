@@ -1,0 +1,13 @@
+// btn-lemon
+.bt-lemon-container {
+    a {
+        background-color: $btn_lemon_bg_color;
+        color: $btn_lemon_text_color;
+    }
+}
+
+.btn-custom {
+    background-color: $main_color;
+    color: $colors-white;
+    border: 1px solid $main_color;
+}

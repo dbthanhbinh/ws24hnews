@@ -1,0 +1,40 @@
+@media (max-width: 991px) {
+    #main-navbar{
+        #navbarResponsive{
+            #menu-primary-menu {
+                > .nav-item a{
+                    color: $main_text_color;
+                }
+
+                .dropdown-menu{
+                    .nav-item {
+                        .nav-link {
+                            color: $responsive_menu_level2_color;
+                            &:hover{
+                                color: $menu_link_color_hover;
+                            }
+                        }                
+                    }
+                }
+            }
+        }
+    }
+
+
+    .navbar {
+        .navbar-toggler {
+            .navbar-toggler-icon {
+                .fa {
+                    color: $main_color;
+                }
+    
+            }
+        }
+        
+    }
+
+    #navbarResponsive {
+        background: $main_color;
+        border-top: 1px solid $main_text_color;
+    }
+}

@@ -1,0 +1,14 @@
+.breadcrumb li:first-child {
+    border-left: 5px solid $main_color;
+} 
+.breadcrumb li:nth-child(2) a {
+    background: $main_color;
+    &:hover {
+        background: $main_color;
+        &:after {
+            border-left-color: $main_color;
+        }
+    }
+}
+.breadcrumb li:nth-child(2) a:after { border-left-color: $main_color; }
+  

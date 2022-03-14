@@ -1,0 +1,13 @@
+$related_box_mt: 30px;
+.related-box {
+    margin-top: $related_box_mt;
+    
+    .entry-header {
+        .header-title {
+            border-bottom: 1px solid $main_color;
+            span {
+                background: $main_color;
+            }
+        }
+    }
+}

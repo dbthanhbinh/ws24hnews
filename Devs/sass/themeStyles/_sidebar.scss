@@ -1,0 +1,108 @@
+.sidebar {
+    ul {
+        li {
+            a {
+                color: $entry_title_color;
+            }
+        }
+    }
+
+    .widget-title {
+        color: $colors-white;
+    }
+}
+
+.widget{
+    &.widget_block {
+        .wp-block-group {
+            h2 {
+                border-bottom: 1px solid $main_color;
+                background: $main_color;
+                color: $main_text_color;
+
+                &::after {
+                    border-bottom: 2px solid $main_text_color;
+                }
+            }
+        }
+
+        .wp-block-search {
+            button.wp-block-search__button {
+                border: 1px solid $main_color;
+            }
+        }
+    }
+
+    .widget-title {
+        border-bottom: 1px solid $main_color;
+        background: $main_color;
+
+        &::after {
+            border-bottom: 2px solid $main_text_color;
+        }
+    }
+
+    .calendar_wrap {
+        table {
+            td#today{
+                background-color: $main_color;
+                color: $main_text_color;
+            }
+        }
+    }
+
+    .widget-box-list {
+        .box-list-item {
+            h5.item-title {
+                font-size: $title_font_size;
+                font-weight: $widget_item_title_weight;
+                line-height: $title_line_height;
+            }
+
+            .item-thumb-full {                
+                margin-bottom: $widget_item_thumb_mg_bt;
+            }
+        }
+    }
+}
+
+/*sidebar*/
+
+@media (max-width: 991px) {
+    span.sidebar-mobile-open{
+        background-color: $main_color;
+        color: $main_text_color;
+        i.fa{
+            color: $main_text_color;
+        }
+    }
+    span.sidebar-mobile-close{
+        background-color: $main_color;
+        color: $main_text_color;
+    }
+
+    span.sidebar-mobile-close:hover,
+    span.sidebar-mobile-open:hover{
+        i.fa {
+            color: $main_text_color;
+        }
+    }
+}
+
+// widget
+// widget_calendar
+.widget_calendar {
+    .wp-block-calendar {
+        table.wp-calendar-table {            
+            thead {
+                background: $main_color;
+                color: $main_text_color;
+            }
+        
+            td#today {
+                background: $main_color;
+                color: $main_text_color;
+            }
+        }
+    }
+}

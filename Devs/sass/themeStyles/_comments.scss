@@ -1,0 +1,35 @@
+#comments {
+    margin-top: $margin_top;
+    .comments-title {
+        border-top: 2px solid $main_color;
+        background: $main_color;
+        color: $main_text_color;
+        span {
+            i.fa {
+                color: $main_text_color;
+            }
+        }
+    }
+
+    .comments-pagination {
+        .nav-links {
+            .current {
+                color: $comment_page_current_color;
+            }
+        }
+    }
+
+    .comment-respond {
+        margin-top: $margin_top;
+
+        form {
+            .form-submit {
+                #submit{
+                    background-color: $main_color;
+                    color: $colors-white;
+                    border: 1px solid $main_color;
+                }
+            }
+        }
+    }
+}

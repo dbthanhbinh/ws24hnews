@@ -1,0 +1,101 @@
+/* Font size */
+$font_size: 14px;
+$title_font_size: 14px;
+$title_line_height: 18px;
+$widget_title_size: 16px;
+
+$margin: 15px;
+$h1: 22px;
+$h2: 18px;
+$h3: 16px;
+$h4: 15px;
+$h5: 14px;
+$h6: 12px;
+
+$colors-blue: #007bff;
+$colors-indigo: #6610f2;
+$colors-purple: #6f42c1;
+$colors-pink: #e83e8c;
+$colors-red: #dc3545;
+$colors-orange: #fd7e14;
+$colors-yellow: #ffc107;
+$colors-green: #24ca24; //#28a745;
+$colors-teal: #20c997;
+$colors-cyan: #17a2b8;
+$colors-white: #fff;
+$colors-gray: #6c757d;
+$colors-gray-dark: #343a40;
+$colors-primary: #007bff;
+$colors-secondary: #6c757d;
+$colors-success: #28a745;
+$colors-info: #17a2b8;
+$colors-warning: #ffc107;
+$colors-danger: #dc3545;
+$colors-light: #f8f9fa;
+$colors-dark: #343a40;
+$color-black: #161616;
+$color-nail: #8c1236;
+
+/* Colors */
+$color: #212529;
+$aHover: #212529;
+$entry_title_color: $color;
+$boder_color: #cccccc;
+$boder_top_color: #cccccc;
+$sidebar_second_bg: #eeeeee;
+$properties-bg: #f74a27;
+$color2: #0061c2;
+
+// Spa color
+$main_color: $themeColor;  //$color-nail;
+$main_text_color: $colorThemeText;
+$btn_lemon_bg_color: $themeColor;
+$btn_lemon_text_color: $colorThemeText;
+$support_online_ping_color: $themeColor;
+$support_online_color: #ffffff;
+$scrollup_color: #ffffff;
+
+/*MENU navbar*/
+$menu_bar_height: 35px;
+$menu_link_color: #fff;
+$menu_link_color_hover: $main_color;
+$menu_border_color: $menu_link_color;
+$menu_margin_bottom: ($margin + 5);
+$menu_mobile_hover: $colorThemeText;
+$support_online_icon_a_fa_border_color: $support_online_color;
+$support_online_call_now_color: $support_online_color;
+$widget_tag_cloud_bar_color: $main_color;
+$widget_tag_cloud_bar_color_hover: $main_color;
+
+$margin_right: 15px;
+$margin_top: $margin_right;
+$margin_left: $margin_right;
+$margin_bottom: $margin_right;
+
+// Responsive
+$responsive_menu_level2_color: #333;
+
+
+/*Widgets*/
+/* box-list-item > item-title*/
+$widget_item_title_size: $font_size;
+$widget_item_title_weight: bold;
+
+/* box-list-item > item-thumb*/
+$widget_item_thumb_mg_bt: 5px;
+
+/*Comments*/
+$comment_page_current_color: $main_color;
+
+/*Paging*/
+$pagi_current_bg: $main_color;
+
+/* footer */
+$footer_link_color: $menu_link_color;
+
+// scrollup
+$scrollup-bg: $main_color;
+$scrollup-color: $scrollup_color;
+$scrollup-hover: $main_color;
+
+$colors-box-shadow: #eee;

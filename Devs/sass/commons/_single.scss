@@ -10,7 +10,6 @@
 
         p {
             a {
-                color: $main_color;
                 &:hover {
                     color: #ff0000;
                 }
@@ -18,9 +17,6 @@
         }
         .posted-on-box{
             margin-bottom: $margin_bottom;
-        }
-        img {
-            
         }
     }
 }
@@ -40,10 +36,6 @@
     
     .group-price-list {
         margin-bottom: 10px;
-    }
-
-    .properties-group {
-    
     }
 }
 
