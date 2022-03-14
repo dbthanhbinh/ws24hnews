@@ -117,7 +117,8 @@ if ( ! function_exists( 'ws24h_posted_on' ) ) :
 endif;
 
 if ( ! function_exists( 'render_logo' ) ) :
-    function render_logo () {        
+    function render_logo () {
+        $logo = 'logo';
         // check to see if the logo exists and add it to the page
         if (get_theme_mod('your_theme_logo')) : 
         ?>
@@ -125,9 +126,14 @@ if ( ! function_exists( 'render_logo' ) ) :
                 <img src="<?= get_theme_mod('your_theme_logo') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
             </a>
         <?php // add a fallback if the logo doesn't exist
-        else : ?>
+        else : 
+            $templateVersion = get_theme_mod('template_version');
+            if(isset($templateVersion) && $templateVersion) {
+                $logo = $logo.'_'.$templateVersion;
+            }
+        ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/logo.png" loading="lazy" alt="<?= esc_attr(get_bloginfo('name', 'display')) ?>" title="<?= esc_attr(get_bloginfo('name', 'display')) ?>" >
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/<?=$logo?>.png" loading="lazy" alt="<?= esc_attr(get_bloginfo('name', 'display')) ?>" title="<?= esc_attr(get_bloginfo('name', 'display')) ?>" >
             </a>
         <?php endif;
     }

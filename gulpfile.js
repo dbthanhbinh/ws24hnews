@@ -107,7 +107,6 @@ function buildSassBuild() {
         let themeProperties = colorthemes[index];
         buildSassDf('build', themeProperties);
     }
-    // buildSassDf('build');
 }
 
 function makeCleanAdminFile() {

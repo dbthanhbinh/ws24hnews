@@ -21,6 +21,13 @@ function your_theme_new_customizer_settings($wp_customize) {
         'v2' => __('Header ver 2', THEMENAME)
     ];
 
+    $templateVertions =  [
+        'pink' => __('Pink', THEMENAME),
+        'red' => __('Red', THEMENAME),
+        'nail' => __('Nail', THEMENAME),
+        'green' => __('Green', THEMENAME)
+    ];
+
     $pages = get_all_page_ids();
     $allPage = [];
     if(count($pages) > 0) {
@@ -84,6 +91,16 @@ function your_theme_new_customizer_settings($wp_customize) {
             'description' => __('???', THEMENAME),
         )
     );
+
+    $wp_customize->add_setting('template_version', ['default' => 'pink']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_version',
+    array(
+        'label' => __('Theme template', THEMENAME),
+        'section' => 'section_layout',
+        'settings' => 'template_version',
+        'type' => 'select',
+        'choices' => $templateVertions
+    )));
 
     $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
