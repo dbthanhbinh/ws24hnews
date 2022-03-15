@@ -67,9 +67,17 @@ function ws24h_support_new_customizer_settings($wp_customize){
 }
 
 function ws24h_supportload_scripts($hook) {
+    $default = 'default';
     $templateVersion = get_theme_mod('template_version');
-    wp_register_style('ws24h_supportload_style', plugins_url('assets/css/ws24h.plugin.min.css',__FILE__ ));
+    if(isset($templateVersion) && $templateVersion && $templateVersion != 'default') {
+        $default = 'ws24h.plugin.' . $templateVersion;
+    }
+
+    wp_register_style('ws24h_supportload_style', plugins_url('assets/css/' . $default . '.min.css',__FILE__ ));
+    wp_register_style('ws24h_supportload_style_default', plugins_url('assets/css/style.min.css',__FILE__ ));
+
     wp_enqueue_style('ws24h_supportload_style');
+    wp_enqueue_style('ws24h_supportload_style_default');
 }
 add_action('wp_enqueue_scripts', 'ws24h_supportload_scripts');
 

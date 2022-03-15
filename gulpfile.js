@@ -433,8 +433,8 @@ var pluginPath = '../../plugins/';
 
 // For support
 var pluginName = 'ws24h-support';
-var pluginCompressName = 'ws24h.plugin.min';
-var pluginCompressNameAdmin = 'admin.ws24h.plugin.min';
+var pluginCompressName = 'ws24h.plugin';
+var pluginCompressNameAdmin = 'admin.ws24h.plugin';
 
 var delFiles = [
     pluginPath + pluginName + '/assets/js/' + pluginCompressName + '.js',
@@ -469,26 +469,64 @@ function makeCompressWs24hPluginJsFilesDf(mode = null){
     );
 }
 
-function makeCompressWs24hPluginSassFilesDf(mode = null) {
+function makeCompressWs24hPluginSassFilesDf(mode = null, env, themeProperties, defaultStyle = false) {
     var _mode = '';
+    let childPath = 'style';
+    if(mode && mode == 'admin')
+    {
+        _mode = 'admin/';
+        childPath = 'admin.' + childPath;
+    }
+    return (
+        gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/commons/**/*.scss')
+            .pipe(sass())
+            .pipe(cleanCSS())
+            .pipe(minifyCss())
+            .pipe(rename(childPath + '.min.css'))
+            .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
+    );
+}
+
+function makeCompressWs24hPluginSassStylesFilesDf(mode = null, env, themeProperties, defaultStyle = false) {
+    var _mode = '';
+    let childPath = pluginCompressName;
     if(mode && mode == 'admin')
     {
         _mode = 'admin/';
         pluginCompressName = pluginCompressNameAdmin;
     }
-    return (
-        gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/**/*.scss')
-            .pipe(header('$themeColor: ' + themecolor + ';\n' +
-                '$colorThemeText: ' + colorthemetext + ';\n'))
-            .pipe(sourcemaps.init())
-            .pipe(sass())
-            .pipe(cleanCSS())
-            .pipe(minifyCss())
-            .pipe(rename(pluginCompressName + '.css'))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
-            .pipe(livereload())
-    );
+
+    if(defaultStyle) {
+        childPath = pluginCompressName;
+        return (
+            gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/templates/**/*.scss')
+                .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
+                    '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename('default.min.css'))
+                .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
+        );
+
+    } else if(themeProperties && themeProperties !== 'undefined'){
+        if(themeProperties.themeName !== 'default') // !default color
+        {
+            childPath = pluginCompressName + '.' + themeProperties.themeName;
+        }
+        themecolor = themeProperties.mainColor;
+        colorthemetext = themeProperties.mainTextColor;
+        return (
+            gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/templates/**/*.scss')
+                .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                    '$colorThemeText: ' + colorthemetext + ';\n'))
+                .pipe(sass())
+                .pipe(cleanCSS())
+                .pipe(minifyCss())
+                .pipe(rename(childPath + '.min.css'))
+                .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
+        );
+    }
 }
 
 function makeWatchTaskPluginFilesDf(){
@@ -499,16 +537,28 @@ function makeWatchTaskPluginFilesDf(){
             pluginPath + pluginName+'/dev/admin/sass/**/*',
             pluginPath + pluginName+'/dev/admin/js/**/*'
         ],
-        gulp.parallel(makeCompressWs24hPluginSassFiles, makeCompressWs24hPluginSassFilesAdmin, makeCompressWs24hPluginJsFiles, makeCompressWs24hPluginJsFilesAdmin)
+        gulp.parallel(makeCompressWs24hPluginSassStyleFiles, makeCompressWs24hPluginSassFiles, makeCompressWs24hPluginSassFilesAdmin, makeCompressWs24hPluginJsFiles, makeCompressWs24hPluginJsFilesAdmin)
     );
 }
 
-function makeCompressWs24hPluginSassFiles() { return makeCompressWs24hPluginSassFilesDf();}
+function makeCompressWs24hPluginSassFiles() {
+    return makeCompressWs24hPluginSassFilesDf(null, 'dev', themePropertiesDefault, true);
+}
+
+function makeCompressWs24hPluginSassStyleFiles() {
+    for (let index = 0; index < colorthemes.length; index++) {
+        let themeProperties = colorthemes[index];
+        makeCompressWs24hPluginSassStylesFilesDf(null, 'dev', themeProperties);
+    }
+    return makeCompressWs24hPluginSassStylesFilesDf(null, 'dev', themePropertiesDefault, true);
+}
+
 function makeCompressWs24hPluginSassFilesAdmin() { return makeCompressWs24hPluginSassFilesDf('admin');}
 
 function makeWatchTaskPluginFiles(){return makeWatchTaskPluginFilesDf();}
 
 gulp.task('plugins', gulp.series(
+        makeCompressWs24hPluginSassStyleFiles,
         makeCompressWs24hPluginSassFiles,
         makeCompressWs24hPluginSassFilesAdmin,
         makeCompressWs24hPluginJsFiles,
