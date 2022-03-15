@@ -46,6 +46,11 @@ colorthemes.push({
 // Default
 var themecolor = '#e83e8c';
 var colorthemetext = '#ffffff';
+var themePropertiesDefault = {
+    themeName: 'pink', // main theme
+    mainColor: '#e83e8c',
+    mainTextColor: '#ffffff'
+};
 
 
 function makeCleanCssAssetsFilesThemeStyleDevDf(reset = false) {
@@ -144,35 +149,52 @@ function buildThemeStyleSassDf(env, themeProperties, defaultStyle = false) {
         makeCleanCssAssetsFilesThemeStyleDev(false);
         makeCleanCssAssetsFilesThemeStyleDevDf(true);
 
-        return (
-            gulp.src('./Devs/sass/themeStyles/**/*.scss')
-                .pipe(header('$themeColor: ' + themecolor + ';\n' +
-                    '$colorThemeText: ' + colorthemetext + ';\n'))
-                .pipe(sourcemaps.init())
-                .pipe(sass())
-                .pipe(cleanCSS())
-                .pipe(minifyCss())
-                .pipe(rename(childPath + '.min.css'))
-                .pipe(sourcemaps.write('.'))
-                .pipe(gulp.dest('./assets/css'))
-        );
+        if(defaultStyle) {
+            childPath = 'default';
+            return (
+                gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                    .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
+                        '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
+                    .pipe(sourcemaps.init())
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename(childPath + '.min.css'))
+                    .pipe(sourcemaps.write('.'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
+        } else if(themeProperties && themeProperties !== 'undefined'){
+            if(themeProperties.themeName !== 'default') // !default color
+            {
+                childPath = themeProperties.themeName;
+            }
+            themecolor = themeProperties.mainColor;
+            colorthemetext = themeProperties.mainTextColor;
+
+            return (
+                gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                    .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                        '$colorThemeText: ' + colorthemetext + ';\n'))
+                    .pipe(sourcemaps.init())
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename(childPath + '.min.css'))
+                    .pipe(sourcemaps.write('.'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
+        }
     }
 }
 
 function buildSass() { return buildSassDf('dev');}
 
 function buildThemeStyleSass() {
-    //return buildThemeStyleSassDf('dev');
-
     for (let index = 0; index < colorthemes.length; index++) {
         let themeProperties = colorthemes[index];
         buildThemeStyleSassDf('dev', themeProperties);
     }
-    return buildThemeStyleSassDf('dev', {
-        themeName: 'pink', // main theme
-        mainColor: '#e83e8c',
-        mainTextColor: '#ffffff'
-    });
+    return buildThemeStyleSassDf('dev', themePropertiesDefault, true);
 }
 
 function buildSassBuild() {
@@ -184,11 +206,7 @@ function buildThemeStyleSassBuild() {
         let themeProperties = colorthemes[index];
         buildThemeStyleSassDf('build', themeProperties);
     }
-    return buildThemeStyleSassDf('build', {
-        themeName: 'pink', // main theme
-        mainColor: '#e83e8c',
-        mainTextColor: '#ffffff'
-    }, true);
+    return buildThemeStyleSassDf('build', themePropertiesDefault, true);
 }
 
 function makeCleanAdminFile() {
