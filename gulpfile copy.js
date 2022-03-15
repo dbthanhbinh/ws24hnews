@@ -18,11 +18,6 @@ var header = require('gulp-header');
 var fs = require('fs');
 var del = require('del') ;
 
-function makeCleanCssAssetsFiles() {
-    del('./assets/css/**/*.css', {force:true});
-    del('./assets/css/**/*.css.map', {force:true});
-}
-
 function makeCleanCssFile() {
     // del('./assets/css/style.min.css', {force:true});
     // del('./assets/css/style.min.css.map', {force:true});
@@ -64,13 +59,6 @@ var colorthemes = [];
     var themecolor = '#e83e8c';
     var colorthemetext = '#ffffff';
 
-
-
-/**
- * Build common theme style
- * @param {*} env ['dev', 'build', 'production']
- * @returns 
- */
 function buildSassDf(env) {
     let childPath = '';
     if(env === 'build'){
@@ -123,6 +111,8 @@ function buildThemeStyleSassDf(env, themeProperties) {
                 .pipe(rename(childPath + '.min.css'))
                 .pipe(gulp.dest('./assets/css'))
         );
+
+
 
     } else {
         return (
