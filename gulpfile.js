@@ -18,53 +18,57 @@ var header = require('gulp-header');
 var fs = require('fs');
 var del = require('del') ;
 
-function makeCleanCssAssetsFiles() {
-    del('./assets/css/**/*.css', {force:true});
-    del('./assets/css/**/*.css.map', {force:true});
-}
-
-function makeCleanCssFile() {
-    // del('./assets/css/style.min.css', {force:true});
-    // del('./assets/css/style.min.css.map', {force:true});
-    // del('./assets/css/themestyle.min.css', {force:true});
-    // del('./assets/css/themestyle.min.css.map', {force:true});
-
-    // del('./assets/css/default.min.css', {force:true});
-    // del('./assets/css/green.min.css', {force:true});
-    // del('./assets/css/nail.min.css', {force:true});
-    // del('./assets/css/pink.min.css', {force:true});
-    // del('./assets/css/red.min.css', {force:true});
-}
 
 // Passed color to _variable.scss
 var colorthemes = [];
-    colorthemes.push({
-        themeName: 'pink', // main theme
-        mainColor: '#e83e8c',
-        mainTextColor: '#ffffff'
-    });
+colorthemes.push({
+    themeName: 'pink', // main theme
+    mainColor: '#e83e8c',
+    mainTextColor: '#ffffff'
+});
 
-    colorthemes.push({
-        themeName: 'green', // main theme
-        mainColor: '#24ca24',
-        mainTextColor: '#ffffff'
-    });
-    colorthemes.push({
-        themeName: 'nail', // main theme
-        mainColor: '#8c1236',
-        mainTextColor: '#ffffff'
-    });
-    colorthemes.push({
-        themeName: 'red', // main theme
-        mainColor: '#dc3545',
-        mainTextColor: '#ffffff'
-    });
+colorthemes.push({
+    themeName: 'green', // main theme
+    mainColor: '#24ca24',
+    mainTextColor: '#ffffff'
+});
+colorthemes.push({
+    themeName: 'nail', // main theme
+    mainColor: '#8c1236',
+    mainTextColor: '#ffffff'
+});
+colorthemes.push({
+    themeName: 'red', // main theme
+    mainColor: '#dc3545',
+    mainTextColor: '#ffffff'
+});
 
-    // Default
-    var themecolor = '#e83e8c';
-    var colorthemetext = '#ffffff';
+// Default
+var themecolor = '#e83e8c';
+var colorthemetext = '#ffffff';
 
 
+function makeCleanCssAssetsFilesThemeStyleDevDf(reset = false) {
+    if(reset) {
+        del('./assets/css/default.min.css', {force:true});
+        del('./assets/css/default.min.css.map', {force:true});
+    }
+}
+
+function makeCleanCssAssetsFilesThemeStyleDev(reset = false) {
+    if(reset) {
+        del('./assets/css/style.min.css', {force:true});
+        del('./assets/css/style.min.css.map', {force:true});
+        del('./assets/css/default.min.css', {force:true});
+        del('./assets/css/default.min.css.map', {force:true});
+        
+        for (let index = 0; index < colorthemes.length; index++) {
+            let themeProperties = colorthemes[index];
+            del('./assets/css/'+themeProperties.themeName+'.min.css', {force:true});
+            del('./assets/css/'+themeProperties.themeName+'.min.css.map', {force:true});
+        }
+    }
+}
 
 /**
  * Build common theme style
@@ -74,7 +78,6 @@ var colorthemes = [];
 function buildSassDf(env) {
     let childPath = '';
     if(env === 'build'){
-        makeCleanCssFile();
         return (
             gulp.src('./Devs/sass/commons/**/*.scss')
                 .pipe(sass())
@@ -84,7 +87,7 @@ function buildSassDf(env) {
                 .pipe(gulp.dest('./assets/css'))
         );
 
-    } else {
+    } else if(env === 'dev'){
         return (
             gulp.src('./Devs/sass/commons/**/*.scss')
                 .pipe(sourcemaps.init())
@@ -99,32 +102,48 @@ function buildSassDf(env) {
     }
 }
 
-function buildThemeStyleSassDf(env, themeProperties) {
-    let childPath = 'themestyle';
+function buildThemeStyleSassDf(env, themeProperties, defaultStyle = false) {
+    let childPath = 'default';
     if(env === 'build'){
-        makeCleanCssFile();
+        makeCleanCssAssetsFilesThemeStyleDev(true);
 
-        if(themeProperties && themeProperties !== 'undefined'){
+        if(defaultStyle) {
+            childPath = 'default';
+            return (
+                gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                    .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
+                        '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename(childPath + '.min.css'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
+        } else if(themeProperties && themeProperties !== 'undefined'){
             if(themeProperties.themeName !== 'default') // !default color
             {
                 childPath = themeProperties.themeName;
             }
             themecolor = themeProperties.mainColor;
             colorthemetext = themeProperties.mainTextColor;
+
+            return (
+                gulp.src('./Devs/sass/themeStyles/**/*.scss')
+                    .pipe(header('$themeColor: ' + themecolor + ';\n' +
+                        '$colorThemeText: ' + colorthemetext + ';\n'))
+                    .pipe(sass())
+                    .pipe(cleanCSS())
+                    .pipe(minifyCss())
+                    .pipe(rename(childPath + '.min.css'))
+                    .pipe(gulp.dest('./assets/css'))
+            );
         }
 
-        return (
-            gulp.src('./Devs/sass/themeStyles/**/*.scss')
-                .pipe(header('$themeColor: ' + themecolor + ';\n' +
-                    '$colorThemeText: ' + colorthemetext + ';\n'))
-                .pipe(sass())
-                .pipe(cleanCSS())
-                .pipe(minifyCss())
-                .pipe(rename(childPath + '.min.css'))
-                .pipe(gulp.dest('./assets/css'))
-        );
+    } else if(env === 'dev') {
+        childPath = 'default';
+        makeCleanCssAssetsFilesThemeStyleDev(false);
+        makeCleanCssAssetsFilesThemeStyleDevDf(true);
 
-    } else {
         return (
             gulp.src('./Devs/sass/themeStyles/**/*.scss')
                 .pipe(header('$themeColor: ' + themecolor + ';\n' +
@@ -140,9 +159,21 @@ function buildThemeStyleSassDf(env, themeProperties) {
     }
 }
 
-function buildSass() { return buildSassDf('env');}
+function buildSass() { return buildSassDf('dev');}
 
-function buildThemeStyleSass() { return buildThemeStyleSassDf('env');}
+function buildThemeStyleSass() {
+    //return buildThemeStyleSassDf('dev');
+
+    for (let index = 0; index < colorthemes.length; index++) {
+        let themeProperties = colorthemes[index];
+        buildThemeStyleSassDf('dev', themeProperties);
+    }
+    return buildThemeStyleSassDf('dev', {
+        themeName: 'pink', // main theme
+        mainColor: '#e83e8c',
+        mainTextColor: '#ffffff'
+    });
+}
 
 function buildSassBuild() {
     return buildSassDf('build');
@@ -153,7 +184,11 @@ function buildThemeStyleSassBuild() {
         let themeProperties = colorthemes[index];
         buildThemeStyleSassDf('build', themeProperties);
     }
-    return buildThemeStyleSassDf('build');
+    return buildThemeStyleSassDf('build', {
+        themeName: 'pink', // main theme
+        mainColor: '#e83e8c',
+        mainTextColor: '#ffffff'
+    }, true);
 }
 
 function makeCleanAdminFile() {
@@ -265,7 +300,7 @@ function watchTask(){
             './Devs/admins/**/*',
             './Devs/panels/**/*',
         ],
-        gulp.parallel(buildSass, buildAdminSass, buildPanelSass)
+        gulp.parallel(buildThemeStyleSass, buildSass, buildAdminSass, buildPanelSass)
     );
 }
 

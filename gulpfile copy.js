@@ -21,8 +21,8 @@ var del = require('del') ;
 function makeCleanCssFile() {
     // del('./assets/css/style.min.css', {force:true});
     // del('./assets/css/style.min.css.map', {force:true});
-    // del('./assets/css/themestyle.min.css', {force:true});
-    // del('./assets/css/themestyle.min.css.map', {force:true});
+    // del('./assets/css/default.min.css', {force:true});
+    // del('./assets/css/default.min.css.map', {force:true});
 
     // del('./assets/css/default.min.css', {force:true});
     // del('./assets/css/green.min.css', {force:true});
@@ -88,7 +88,7 @@ function buildSassDf(env) {
 }
 
 function buildThemeStyleSassDf(env, themeProperties) {
-    let childPath = 'themestyle';
+    let childPath = 'default';
     if(env === 'build'){
         makeCleanCssFile();
 

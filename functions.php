@@ -390,16 +390,16 @@ add_filter('pre_get_posts','SearchFilter');
 # Functions to help
 // Theme stylesheet
 function ws24h_scripts () {
-    $themeStyle = 'themestyle';
+    $default = 'default';
     $templateVersion = get_theme_mod('template_version');
     if(isset($templateVersion) && $templateVersion) {
-        $themeStyle = $templateVersion;
+        $default = $templateVersion;
     }
 	wp_enqueue_script('jquery-main-script', get_theme_file_uri('/assets/vendor/jquery/jquery.min.js'));
     wp_enqueue_script('jquery-bootstrap-bundle', get_theme_file_uri('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'));
 	wp_enqueue_style('ws24h-style', get_stylesheet_uri());
 	wp_enqueue_style('ws24h-main-bootstrap', get_theme_file_uri('/assets/vendor/bootstrap/css/bootstrap.min.css'), array('ws24h-style'), '4.1');
-	wp_enqueue_style('ws24h-main-themestyle', get_theme_file_uri('/assets/css/'.$themeStyle.'.min.css' ), array( 'ws24h-style'), '1.0' );
+	wp_enqueue_style('ws24h-main-default', get_theme_file_uri('/assets/css/'.$default.'.min.css' ), array( 'ws24h-style'), '1.0' );
     wp_enqueue_style('ws24h-main-style', get_theme_file_uri('/assets/css/style.min.css' ), array( 'ws24h-style'), '1.0' );
     wp_enqueue_style('ws24h-main-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', array('ws24h-style'), '4.70');
 }

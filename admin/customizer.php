@@ -22,6 +22,7 @@ function your_theme_new_customizer_settings($wp_customize) {
     ];
 
     $templateVertions =  [
+        'default' => __('Style', THEMENAME),
         'pink' => __('Pink', THEMENAME),
         'red' => __('Red', THEMENAME),
         'nail' => __('Nail', THEMENAME),
@@ -92,7 +93,7 @@ function your_theme_new_customizer_settings($wp_customize) {
         )
     );
 
-    $wp_customize->add_setting('template_version', ['default' => 'pink']);
+    $wp_customize->add_setting('template_version', ['default' => 'style']);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_version',
     array(
         'label' => __('Theme template', THEMENAME),
