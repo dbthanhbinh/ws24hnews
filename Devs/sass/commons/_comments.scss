@@ -1,19 +1,12 @@
 #comments {
-    margin-top: $margin_top;
     .comments-title {
         font-size: 15px;
         text-transform: uppercase;
         font-weight: bold;
-        border-top: 2px solid $main_color;
         padding: 10px;
-        background: $main_color;
-        color: $main_text_color;
 
         span {
             font-weight: normal;
-            i.fa {
-                color: $main_text_color;
-            }
         }
     }
 
@@ -60,14 +53,12 @@
 
         .nav-links {
             .current {
-                color: $comment_page_current_color;
                 font-weight: bold;
             }
         }
     }
 
     .comment-respond {
-        margin-top: $margin_top;
         font-size: 12px;
 
         .comment-reply-title {
@@ -90,29 +81,6 @@
             
             textarea {
                 min-height: 60px;
-            }
-
-            .comment-form-comment {
-            
-            }
-            .comment-form-author {
-                
-            }
-            .comment-form-email {
-
-            }
-            .comment-form-url {
-
-            }
-            .comment-form-cookies-consent {
-
-            }
-            .form-submit {
-                #submit{
-                    background-color: $main_color;
-                    color: $colors-white;
-                    border: 1px solid $main_color;
-                }
             }
 
             #wp-comment-cookies-consent {

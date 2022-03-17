@@ -1,0 +1,38 @@
+@import '../variables';
+.support-online {
+    a {    
+        &.call-now {
+            i {
+                color: $support_online_call_now_color;
+            }
+        }
+
+        span {
+            border: 1px solid $support_online_icon_a_fa_border_color;
+            background: $main_color; 
+            color: $support_online_call_now_color;
+        }
+    }
+
+    i.fa {
+        background: $main_color;
+        color: $main_text_color;
+        border: 1px solid $support_online_icon_a_fa_border_color;
+    }
+
+    img {
+        background: $main_color; 
+        color: $support_online_call_now_color;
+    }
+}
+
+.kenit-alo-circle-fill { 
+    background-color: $support_online_ping_color;
+}
+
+@media (max-width : 640px) {
+    .support-online a span {
+        background: $main_color;
+        color: $support_online_call_now_color;
+    }
+}

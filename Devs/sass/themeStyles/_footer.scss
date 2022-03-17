@@ -1,0 +1,52 @@
+.footer-section {
+    border-top: 1px solid $boder_color;
+
+    .box-footer {
+        border-top: 2px solid $boder_top_color;
+    }
+
+    .widget {
+        .widget-title {
+            label{
+                border-bottom: 2px solid $main_color;
+            }
+        }
+    }
+}
+
+.copy-right-box {
+    background: $main_color;
+    color: $footer_link_color;
+
+    .footer-copyright {
+        .footer-navbar {
+            li {
+                a {
+                    border-left: 1px solid $footer_link_color;
+                    color: $footer_link_color;
+                }
+            }
+        }
+    }    
+}
+
+// scrollup
+.scrollup {
+    border: 1px solid $scrollup-color;
+    background: $scrollup-bg;
+
+    &:hover {
+        background: $scrollup-hover;
+        border-color: $scrollup-color;
+        span {
+            color: $scrollup-color;
+        }
+    }
+
+    > span {
+        color: $scrollup-color;
+        i.fa-eject {
+            color: $scrollup-color;
+        }
+    }
+}

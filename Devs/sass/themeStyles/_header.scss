@@ -1,0 +1,14 @@
+.top-header {
+    &.top-side-header {
+        border-bottom: 1px solid $main_color;
+        background-color: $main_color;
+        color: $main_text_color;                
+        ul {
+            li {
+                a {
+                    color: $main_text_color;
+                }
+            }
+        }
+    }
+}

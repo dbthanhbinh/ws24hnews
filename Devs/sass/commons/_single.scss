@@ -1,3 +1,11 @@
+$margin: 15px;
+$h1: 22px;
+$h2: 18px;
+$h3: 16px;
+$h4: 15px;
+$h5: 14px;
+$h6: 12px;
+
 .article-content {    
     .entry-content {
         h1, h2, h3, h4, h5, h6 { font-weight: 500; }
@@ -10,17 +18,13 @@
 
         p {
             a {
-                color: $main_color;
                 &:hover {
                     color: #ff0000;
                 }
             }
         }
         .posted-on-box{
-            margin-bottom: $margin_bottom;
-        }
-        img {
-            
+            margin-bottom: 15px;
         }
     }
 }
@@ -40,10 +44,6 @@
     
     .group-price-list {
         margin-bottom: 10px;
-    }
-
-    .properties-group {
-    
     }
 }
 

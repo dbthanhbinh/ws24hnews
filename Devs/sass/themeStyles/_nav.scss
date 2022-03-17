@@ -1,0 +1,52 @@
+.navbar{
+    .fa-home {
+        color: $main_color;
+    }
+}
+
+@media (min-width: 992px) {
+    // Fix main-nabbar
+    .main-navbar-fixed{
+        box-shadow: 1px 1px 10px $colors-box-shadow;
+        background: $main_color!important;
+        color: $menu_link_color;   
+    }
+
+    .main-navbar-fixed.navbar-expand-lg .navbar-nav .nav-item.dropdown.show>.nav-link,
+    .main-navbar-fixed.navbar-expand-lg .navbar-nav .nav-item >.nav-link{
+        color: $menu_link_color;
+        &:hover {
+            color: $menu_link_color;
+        }
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        .nav-item {
+            >.nav-link {
+                &:hover{
+                    color: $menu_link_color_hover;
+                }
+            }
+        }
+
+        .nav-item{
+            &.dropdown{
+                &.show{
+                    >.nav-link{
+                        color: $menu_link_color_hover;
+                    }
+                }
+            }
+        }
+
+        .dropdown-menu {
+            .nav-item {
+                .nav-link {
+                    &:hover{
+                        color: $menu_link_color_hover;
+                    }
+                }                
+            }
+        }
+    }
+}

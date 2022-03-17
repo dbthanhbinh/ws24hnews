@@ -1,0 +1,90 @@
+.home-slide-wrapper {
+    p {
+        margin: 20px 0;
+        a {
+            color: $main_color;
+        }
+    }
+}
+
+.home-section {
+    .home-box-title {
+        .section-title {
+            color: $main_color;
+        }
+    }
+}
+
+.home-intro-readmore {
+    a {
+        background: $main_color;
+    }
+}
+
+.home-intro-section {
+    h4 {
+        color: $color2;
+    }
+}
+
+.custom-home-tabs-section {
+    .service-name-section {
+        span{
+            color: $color2;
+        }
+    }
+}
+
+.section-best-features {
+    .content-section {
+        .featured-item {
+            .featured-thumb {
+                .icon-wrap:before {
+                    border: $main_text_color dashed 1px;
+                    background: $main_color;
+                }
+            }
+        }
+    }
+}
+
+.header-section {
+    span {
+        color: $main_color;
+    }
+}
+
+
+a.btn-lemon {
+    &:hover,
+    &.active,
+    &.active > :focus {
+        border: 1px solid $btn_lemon_bg_color;
+        background: $btn_lemon_bg_color;
+        color: $btn_lemon_text_color;
+    }
+}
+
+.home-custom-box {
+    color: #ffffff;
+    .right-custom-box {
+        .custom-box-des-spirit {
+            ul, ol {
+                li {                    
+                    &::before {
+                        color: $main_color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.first-section {
+    .item_thumb {        
+        .icon-wrapper:before {
+            border: $main_text_color dashed 1px;
+            background: $main_color;
+        }
+    }   
+}

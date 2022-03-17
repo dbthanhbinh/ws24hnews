@@ -128,7 +128,7 @@ if ( ! function_exists( 'render_logo' ) ) :
         <?php // add a fallback if the logo doesn't exist
         else : 
             $templateVersion = get_theme_mod('template_version');
-            if(isset($templateVersion) && $templateVersion) {
+            if(isset($templateVersion) && $templateVersion && $templateVersion != 'default') {
                 $logo = $logo.'_'.$templateVersion;
             }
         ?>

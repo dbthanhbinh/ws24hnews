@@ -1,0 +1,19 @@
+.article-content {    
+    .entry-content {
+        h1 { font-size: $h1;}
+        h2 { font-size: $h2; }
+        h3 { font-size: $h3 - 1; }
+        h4 { font-size: $h3 - 2; }
+        h5 { font-size: $h3 - 2; }
+        h6 { font-size: $h3 - 2; }
+
+        p {
+            a {
+                color: $main_color;
+            }
+        }
+        .posted-on-box{
+            margin-bottom: $margin_bottom;
+        }
+    }
+}

@@ -1,9 +1,7 @@
 html,
 body {
     font-family: "Arial", Helvetica, sans-serif;
-    font-size: $font_size;
-    color: $color;
-    // scroll-behavior: smooth;
+    font-size: 14px;
 }
 
 img
@@ -16,27 +14,14 @@ iframe {
     width: 100%;
 }
 
-a {
-    color: $color;
-    &:hover {
-        color: $aHover;
-    }
-}
-
 a.read-more {
     i {
-        background: $btn_lemon_bg_color;
-        color: $btn_lemon_text_color;
         width: 40px;
         height: 40px;
         line-height: 40px;
         text-align: center;
         border-radius: 50%;
     }
-}
-
-i.fa {
-    color: $main_color;
 }
 
 i.fa-custom-size {
@@ -49,7 +34,6 @@ input,
 input[type='text'],
 input[type='email'],
 input[type='url'] {
-    border: 1px solid $boder_color;
     padding: 5px;
 }
 
@@ -60,9 +44,6 @@ input[type='submit'] {
 }
 
 table {
-    border-color: $boder_color;
-    th {}
-
     tr {
         td {
             padding: 5px;
@@ -86,15 +67,13 @@ table {
         {
             padding: 3px 8px
         }
-        .page-numbers {}
+
         a {
             &:hover {
-                background: $pagi_current_bg;
                 color: #ffffff;    
             }
         }
         .current {
-            background: $pagi_current_bg;
             color: #ffffff;
         }
     }

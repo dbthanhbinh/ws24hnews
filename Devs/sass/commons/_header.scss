@@ -24,10 +24,7 @@
 .top-header {
     clear: both;
     padding: 0;
-    border-bottom: 1px solid $main_color;
     font-size: 13px;
-    background-color: $main_color;
-    color: $main_text_color;
 
     .container {
         .row{
@@ -47,10 +44,6 @@
             &:first-child {
                 border-left  : none;
                 padding-left : 0;
-            }
-
-            a {
-                color: $main_text_color;
             }
         }
     }
