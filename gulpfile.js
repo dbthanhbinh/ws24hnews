@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 // Include Our Plugins
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
