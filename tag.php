@@ -21,7 +21,7 @@
         $relatedPostsPerPage = RELATED_POSTS_PER_PAGE;
         $archiveId = 'archive_tag';
         $args=array(
-          'post_type' => 'tin-tuc',
+          // 'post_type' => 'tin-tuc',
           'tag_slug__in' => $tag->slug,
           'posts_per_page'=> $relatedPostsPerPage // Number of related posts that will be shown.
         );

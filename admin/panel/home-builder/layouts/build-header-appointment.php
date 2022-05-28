@@ -20,13 +20,30 @@
                 type="text"
             />
         </label>
+        <?php
+        $nSelected = '';
+        $ySelected = '';
+        if (!isset($cat['show_title'])) {
+            $nSelected = 'selected="selected"';
+            $ySelected = '';
+        } else {
+            if ($cat['show_title'] == 'n') {
+                $nSelected = 'selected="selected"';
+                $ySelected = '';
+            } else if ($cat['show_title'] == 'y') {
+                $nSelected = '';
+                $ySelected = 'selected="selected"';
+            }
+        }
+        ?>
         <label for="tie_home_cats[<?php echo $i ?>][show_title]">
             <span><?= __('Show Box Title :', THEMENAME) ?></span>
             <select id="tie_home_cats[<?php echo $i ?>][show_title]" name="tie_home_cats[<?php echo $i ?>][show_title]">
-                <option value="n" <?php if ( !isset($cat['show_title']) || ($cat['show_title'] == 'n')) { echo ' selected="selected"' ; } ?>>Hidden</option>
-                <option value="y" <?php if ( (isset($cat['show_title']) && $cat['show_title']) == 'y') { echo ' selected="selected"' ; } ?>>Show</option>
+                <option value="n" <?= $nSelected ?>>Hidden</option>
+                <option value="y" <?= $ySelected ?>>Show</option>
             </select>
         </label>
+
         <?php if(isset($isShowLayoutDropdown) && $isShowLayoutDropdown) echo showLayoutDropdownAppointment($i, $cat, $defaultLayout) ?>
 
         <label for="tie_home_cats[<?php echo $i ?>][description]">
@@ -51,30 +68,4 @@
                 value="<?php if( !empty($cat['header']) ) echo $cat['header'] ?>"
                 type="text"
             />
-        </label>
-        <label for="tie_home_cats[<?php echo $i ?>][summaries]">
-            <span><?=  __('Box summaries :', THEMENAME) ?></span>
-            <?php
-                $content = !empty($cat['summaries']) ? html_entity_decode($cat['summaries']) : '';
-                $editor_id = "tie_home_cats_".$i."_summaries";
-				$args = array(
-					'media_buttons' => false,
-					'textarea_rows' => 5,
-					'textarea_name' => "tie_home_cats[".$i."][summaries]"
-				);
-				wp_editor( $content, $editor_id, $args);
-            ?>
-        </label>
-        <label for="tie_home_cats[<?php echo $i ?>][workinghours]">
-            <span><?=  __('Working hours :', THEMENAME) ?></span>
-            <?php
-                $content = !empty($cat['workinghours']) ? html_entity_decode($cat['workinghours']) : '';
-                $editor_id = "tie_home_cats_".$i."_workinghours";
-				$args = array(
-					'media_buttons' => false,
-					'textarea_rows' => 5,
-					'textarea_name' => "tie_home_cats[".$i."][workinghours]"
-				);
-				wp_editor( $content, $editor_id, $args);
-            ?>
         </label>
