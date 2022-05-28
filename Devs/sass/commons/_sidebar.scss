@@ -214,6 +214,7 @@ $widget_item_thumb_mg_bt: 5px;
         box-sizing: border-box;
         margin-left: -5px;
         margin-right: -5px;
+        gap: 0;
 
         .wp-block-image {
             flex: 0 0 50%;
@@ -229,6 +230,7 @@ $widget_item_thumb_mg_bt: 5px;
         box-sizing: border-box;
         margin-left: -5px;
         margin-right: -5px;
+        gap: 0;
 
         .wp-block-image {
             &:nth-of-type(1n),
@@ -251,6 +253,7 @@ $widget_item_thumb_mg_bt: 5px;
         box-sizing: border-box;
         margin-left: -2px;
         margin-right: -2px;
+        gap: 0;
 
         .wp-block-image {
             flex: 0 0 25%;

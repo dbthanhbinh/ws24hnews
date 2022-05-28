@@ -184,7 +184,21 @@ function panel_options() {
 										"author" => __("Author", THEMENAME)
 									],
 									"type" => "radio"
-								]); 
+								]);
+
+								tie_options(
+									array(	"name" => __("Author", THEMENAME),
+											"id" => $relatedId."_meta_author",
+											"type" => "checkbox")); 			
+								tie_options(
+									array(	"name" => __("Date", THEMENAME),
+											"id" => $relatedId."_meta_date",
+											"type" => "checkbox"));
+								tie_options(
+									array(	"name" => __("Readmore", THEMENAME),
+											"id" => $relatedId."_meta_readmore",
+											"type" => "checkbox"));
+								
 							?>
 						</div>
 						<?php

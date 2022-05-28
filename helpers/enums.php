@@ -138,7 +138,7 @@ $enum_layout = [
     'right-sidebar' => [
         'sidebar'   => 'sidebar col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3',
         'second'    => false,
-        'main'      => 'main-content col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9',
+        'main'      => 'main-content col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9',
         'mainfull'  => 'main-content col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9',
         'key'       => 'right-sidebar'
     ],

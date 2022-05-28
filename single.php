@@ -162,8 +162,10 @@
                                 while ($my_query->have_posts()) {
                                     $my_query->the_post();
                                     $content_type = 'related';
-                                    $argGrid['content_type'] = $content_type;
-                                    get_template_part('template-parts/post/content'.$contentFormat, get_post_format(), $argGrid);
+                                    
+                                    $args = getLayoutArgs($relatedId);
+                                    $args['content_type'] = $content_type;
+                                    get_template_part('template-parts/post/content'.$contentFormat, get_post_format(), $args);
                                 }
                             }
 

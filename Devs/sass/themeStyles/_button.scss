@@ -3,6 +3,10 @@
     a {
         background-color: $btn_lemon_bg_color;
         color: $btn_lemon_text_color;
+
+        &:hover {
+            color: $btn_lemon_text_color;
+        }
     }
 }
 

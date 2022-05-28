@@ -20,7 +20,7 @@
                   <?= get_theme_mod('setting_copyright') ?>
                 </span>
 
-                <?php if (has_nav_menu( 'footer-menu')) : ?>
+                <?php if (has_nav_menu( 'footer')) : ?>
                 <?php 
                     $defaults = array(
                         'theme_location'  => 'footer',
@@ -31,8 +31,8 @@
                         'echo'            => true,
                         'fallback_cb'     => 'wp_page_menu',
                         'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'depth'           => 2,
-                        'walker'          => false // new menu_walker()
+                        'depth'           => 1,
+                        'walker'          => new menu_walker()
                     );
                     wp_nav_menu ($defaults); 
                     ?>

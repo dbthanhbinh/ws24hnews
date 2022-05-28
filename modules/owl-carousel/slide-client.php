@@ -50,7 +50,7 @@ if($custom && isset($custom["custom_clients"]) && isset($custom["custom_clients"
 						itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
 						responsive: {
 							0:{
-								items:1,
+								items:3,
 								nav:true
 							},
 							600:{

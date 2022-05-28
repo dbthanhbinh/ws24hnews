@@ -4,7 +4,7 @@
 */
 
 .owl-theme .owl-controls{
-	margin-top: 10px;
+	/* margin-top: 10px; */
 	text-align: center;
 }
 
@@ -21,7 +21,7 @@
     
 }
 
-.owl-theme .owl-controls .owl-nav div{
+.owl-theme .owl-controls .owl-nav div {
 	color: #FFF;
 	display: inline-block;
 	zoom: 1;
@@ -39,30 +39,31 @@
     top: 35%;
 }
 
+.group-clients .owl-theme .owl-controls .owl-nav div {
+	top: 22%;
+}
+
 .owl-theme .owl-controls .owl-nav div.owl-prev
 {
-    background-image: url("a11.png");
-    background-position: -10px -41px;
-    background-repeat: no-repeat;
-    left: 5px;
+    left: 0px;
     display: block;
     width: 40px;
-    height: 40px;
-    text-indent: -9999px;
+    height: 50px;
     background-color: transparent;
 }
 
 .owl-theme .owl-controls .owl-nav div.owl-next
 {
-    right: 5px;
-    background-image: url("a11.png");
-    background-position: -70px -41px;
-    background-repeat: no-repeat;
+	right: 0px;
     display: block;
     width: 40px;
-    height: 40px;
-    text-indent: -9999px;
+    height: 50px;
     background-color: transparent;
+}
+
+.owl-theme .owl-controls .owl-nav div.owl-next i,
+.owl-theme .owl-controls .owl-nav div.owl-prev i {
+	font-size: 40px;
 }
     
 

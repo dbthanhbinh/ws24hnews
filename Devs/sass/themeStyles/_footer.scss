@@ -25,6 +25,9 @@
                     border-left: 1px solid $footer_link_color;
                     color: $footer_link_color;
                 }
+                &:first-child a {
+                    border-left: none;
+                }
             }
         }
     }    
