@@ -433,9 +433,14 @@ var pluginNames = [
 
 
 // ------------ For dev Plugin ws24hAppointment-----------------------
-var pluginName = 'ws24h-appointment-fast';
-var pluginCompressName = 'ws24h.plugin.min';
-var pluginCompressNameAdmin = 'admin.ws24h.plugin.min';
+// var pluginName = 'ws24h-appointment-fast';
+// var pluginCompressName = 'ws24h.plugin.min';
+// var pluginCompressNameAdmin = 'admin.ws24h.plugin.min';
+
+// For support
+var pluginName = 'ws24h-support';
+var pluginCompressName = 'ws24h.plugin';
+var pluginCompressNameAdmin = 'admin.ws24h.plugin';
 
 var delFiles = [
     pluginPath + pluginName + '/assets/js/' + pluginCompressName + '.js',
@@ -460,7 +465,7 @@ function makeCompressWs24hPluginJsFilesDf(mode = null){
         _mode = 'admin/';
         pluginCompressName = pluginCompressNameAdmin;
     }
-    // makeCleanWs24hPluginJsFiles();
+    makeCleanWs24hPluginJsFiles();
     return (
         gulp.src(pluginPath + pluginName + '/dev/' + _mode + 'js/*.js')
             .pipe(babel())
@@ -472,7 +477,7 @@ function makeCompressWs24hPluginJsFilesDf(mode = null){
 
 function makeCompressWs24hPluginSassFilesDf(mode = null, env, themeProperties, defaultStyle = false) {
     var _mode = '';
-    let childPath = pluginCompressName;
+    let childPath = 'style';
     if(mode && mode == 'admin')
     {
         _mode = 'admin/';
@@ -483,7 +488,7 @@ function makeCompressWs24hPluginSassFilesDf(mode = null, env, themeProperties, d
             .pipe(sass())
             .pipe(cleanCSS())
             .pipe(minifyCss())
-            .pipe(rename(childPath + '.css'))
+            .pipe(rename(childPath + '.min.css'))
             .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
     );
 }
@@ -500,13 +505,13 @@ function makeCompressWs24hPluginSassStylesFilesDf(mode = null, env, themePropert
     if(defaultStyle) {
         childPath = pluginCompressName;
         return (
-            gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/**/*.scss')
+            gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/templates/**/*.scss')
                 .pipe(header('$themeColor: ' + themeProperties.mainColor + ';\n' +
                     '$colorThemeText: ' + themeProperties.mainTextColor + ';\n'))
                 .pipe(sass())
                 .pipe(cleanCSS())
                 .pipe(minifyCss())
-                .pipe(rename(childPath + '.css'))
+                .pipe(rename('default.min.css'))
                 .pipe(gulp.dest(pluginPath + pluginName+'/assets/css'))
         );
 
@@ -518,7 +523,7 @@ function makeCompressWs24hPluginSassStylesFilesDf(mode = null, env, themePropert
         themecolor = themeProperties.mainColor;
         colorthemetext = themeProperties.mainTextColor;
         return (
-            gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/**/*.scss')
+            gulp.src(pluginPath + pluginName+'/dev/' + _mode + 'sass/templates/**/*.scss')
                 .pipe(header('$themeColor: ' + themecolor + ';\n' +
                     '$colorThemeText: ' + colorthemetext + ';\n'))
                 .pipe(sass())

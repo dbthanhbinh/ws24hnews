@@ -23,7 +23,7 @@
         }
 
         span {
-            border-radius: 2px;
+            border-radius: 40px;
             text-align: center;
             padding: 5px;
             display: none;
@@ -110,8 +110,6 @@
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    border: 2px solid rgba(30, 30, 30, 0.4);
-    border-color: #0089B9;
     opacity: .5;
 }
 

@@ -104,6 +104,9 @@ if(!is_admin()){
 if (is_customize_preview() || !is_admin()) {
     add_action( 'wp_head', 'custom_menu_colors_callback' );
     add_action( 'wp_head', 'ws24h_custom_body_background' );
+
+    // Support online
+    require_once ('modules/ws24hSupport/index.php');
 }
 
 // header_code_callback
@@ -390,7 +393,7 @@ add_filter('pre_get_posts','SearchFilter');
 # Functions to help
 // Theme stylesheet
 function ws24h_scripts () {
-    $default = 'default';
+    $default = 'green';
     $templateVersion = get_theme_mod('template_version');
     if(isset($templateVersion) && $templateVersion) {
         $default = $templateVersion;

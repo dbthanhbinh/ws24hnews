@@ -282,6 +282,16 @@ function your_theme_new_customizer_settings($wp_customize) {
         'choices' => $choices
     ) ) );
 
+    $wp_customize->add_setting('is_support_online', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'is_support_online',
+    array(
+        'label' => __('Support online', THEMENAME),
+        'section' => 'section_layout',
+        'settings' => 'is_support_online',
+        'type' => 'select',
+        'choices' => $choices
+    ) ) );
+
     // ===============================================================================
     // Theme options
     $wp_customize->add_section(
@@ -392,6 +402,50 @@ function your_theme_new_customizer_settings($wp_customize) {
          'type' => 'text'
      ) ) );
 
+
+    // support_section
+    $supportSection = 'support_section';
+    $wp_customize->add_section (
+        $supportSection,
+        array(
+            'title' => 'Ws24h Support',
+            'priority' => 131,
+            'description' => '',
+        )
+    );
+
+    // Hotline number
+    $hotlineNumber = 'hotline_number';
+    $wp_customize->add_setting($hotlineNumber, ['default' => '0909874825']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, $hotlineNumber,
+    array(
+        'label' => 'Hotline: ex: 0909874825',
+        'section' => $supportSection,
+        'settings' => $hotlineNumber,
+        'type' => 'text'
+    ) ) );
+
+    // Zalo number
+    $zaloNumber = 'zalo_number';
+    $wp_customize->add_setting($zaloNumber, ['default' => '0909874825']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, $zaloNumber,
+    array(
+        'label' => 'Zalo number: ex: 0909874825',
+        'section' => $supportSection,
+        'settings' => $zaloNumber,
+        'type' => 'text'
+    ) ) );
+
+    // SMS number
+    $smsNumber = 'sms_number';
+    $wp_customize->add_setting($smsNumber, ['default' => '0909874825']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, $smsNumber,
+    array(
+        'label' => 'SMS number: ex: 0909874825',
+        'section' => $supportSection,
+        'settings' => $smsNumber,
+        'type' => 'text'
+    ) ) );
 
     // ================================Verification======================================
     $wp_customize->add_section(
