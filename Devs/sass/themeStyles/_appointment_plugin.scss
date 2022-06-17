@@ -1,0 +1,23 @@
+.appointment-section .working-hours {
+    background-color: $main_color;
+    color: $main_text_color;
+}
+
+#demo1-1 .perfect-datetimepicker tbody td:hover,
+#demo1-1 .perfect-datetimepicker tbody td.selected {
+    color: #fff;
+    background-color: $main_color !important;
+    border: 1px solid $main_color !important;
+}
+
+#demo1-1 .perfect-datetimepicker tbody td.time-entry.available:hover {
+    color: #fff !important;
+    background-color: $main_color !important;
+    border: 1px solid $main_color !important;
+}
+
+#demo1-1 .perfect-datetimepicker thead td:hover {
+    color: #fff !important;
+    background-color: $main_color !important;
+    border: 1px solid $main_color !important;
+}

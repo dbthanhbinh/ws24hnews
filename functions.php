@@ -509,3 +509,9 @@ function change_tag_cloud_font_sizes( array $args ) {
     $args['largest'] = '20';
     return $args;
 }
+
+$cssString = file_get_contents(get_theme_file_path( '/assets/css/green.min.css' ));
+$cssString = str_replace('#24ca24', '#ff0000', $cssString);
+
+//file_put_contents(get_theme_file_path( '/assets/css/green.min.css' ), $cssString);
+// print_r($cssString);

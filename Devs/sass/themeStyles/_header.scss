@@ -12,3 +12,11 @@
         }
     }
 }
+
+.theme-logo .logo-item {
+    color: $main_color;
+}
+
+.main-navbar-fixed .theme-logo .logo-item {
+    color: $main_text_color;
+}
