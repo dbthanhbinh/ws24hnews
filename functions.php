@@ -1,4 +1,11 @@
 <?php
+function start_session() {
+    if( !session_id() ) {
+        session_start();
+    }
+}
+add_action('init', 'start_session', 1);
+
 // Defines
 require_once ('lib/defined.php');
 // load_theme_textdomain
@@ -393,10 +400,9 @@ add_filter('pre_get_posts','SearchFilter');
 # Functions to help
 // Theme stylesheet
 function ws24h_scripts () {
-    $default = 'green';
-    $templateVersion = get_theme_mod('template_version');
-    if(isset($templateVersion) && $templateVersion) {
-        $default = $templateVersion;
+    $default = 'default';
+    if(isset($_SESSION) && $_SESSION['background'] && $_SESSION['background'] != '#e83e8c') {
+        $default = 'default.temp';
     }
 	wp_enqueue_script('jquery-main-script', get_theme_file_uri('/assets/vendor/jquery/jquery.min.js'));
     wp_enqueue_script('jquery-bootstrap-bundle', get_theme_file_uri('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'));
@@ -510,8 +516,8 @@ function change_tag_cloud_font_sizes( array $args ) {
     return $args;
 }
 
-$cssString = file_get_contents(get_theme_file_path( '/assets/css/green.min.css' ));
-$cssString = str_replace('#24ca24', '#ff0000', $cssString);
+// $cssString = file_get_contents(get_theme_file_path( '/assets/css/green.min.css' ));
+// $cssString = str_replace('#24ca24', '#ff0000', $cssString);
 
 //file_put_contents(get_theme_file_path( '/assets/css/green.min.css' ), $cssString);
 // print_r($cssString);

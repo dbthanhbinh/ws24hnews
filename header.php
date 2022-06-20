@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <title><?= wp_title() ?></title>
     <?php wp_head()?>
+    <script type="text/javascript">
+        var adminAjax = '<?php echo admin_url('admin-ajax.php');?>';
+    </script>
   </head>
   <body <?php body_class(); ?>>
   <?php

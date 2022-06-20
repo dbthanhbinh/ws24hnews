@@ -190,10 +190,10 @@ function buildThemeStyleSassDf(env, themeProperties, defaultStyle = false) {
 function buildSass() { return buildSassDf('dev');}
 
 function buildThemeStyleSass() {
-    for (let index = 0; index < colorthemes.length; index++) {
-        let themeProperties = colorthemes[index];
-        buildThemeStyleSassDf('dev', themeProperties);
-    }
+    // for (let index = 0; index < colorthemes.length; index++) {
+    //     let themeProperties = colorthemes[index];
+    //     buildThemeStyleSassDf('dev', themeProperties);
+    // }
     return buildThemeStyleSassDf('dev', themePropertiesDefault, true);
 }
 
@@ -202,10 +202,10 @@ function buildSassBuild() {
 }
 
 function buildThemeStyleSassBuild() {
-    for (let index = 0; index < colorthemes.length; index++) {
-        let themeProperties = colorthemes[index];
-        buildThemeStyleSassDf('build', themeProperties);
-    }
+    // for (let index = 0; index < colorthemes.length; index++) {
+    //     let themeProperties = colorthemes[index];
+    //     buildThemeStyleSassDf('build', themeProperties);
+    // }
     return buildThemeStyleSassDf('build', themePropertiesDefault, true);
 }
 
