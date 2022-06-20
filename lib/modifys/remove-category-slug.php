@@ -22,8 +22,6 @@ function no_category_base_permastruct() {
 // Add our custom category rewrite rules
 add_filter('category_rewrite_rules', 'no_category_base_rewrite_rules');
 function no_category_base_rewrite_rules($category_rewrite) {
-	//var_dump($category_rewrite); // For Debugging
-	
 	$category_rewrite=array();
 	$categories=get_categories(array('hide_empty'=>false));
 	foreach($categories as $category) {
@@ -41,8 +39,6 @@ function no_category_base_rewrite_rules($category_rewrite) {
 	$old_category_base = get_option('category_base') ? get_option('category_base') : 'category';
 	$old_category_base = trim($old_category_base, '/');
 	$category_rewrite[$old_category_base.'/(.*)$'] = 'index.php?category_redirect=$matches[1]';
-	
-	//var_dump($category_rewrite); // For Debugging
 	return $category_rewrite;
 }
 
@@ -55,7 +51,6 @@ function no_category_base_query_vars($public_query_vars) {
 // Redirect if 'category_redirect' is set
 add_filter('request', 'no_category_base_request');
 function no_category_base_request($query_vars) {
-	//print_r($query_vars); // For Debugging
 	if(isset($query_vars['category_redirect'])) {
 		$catlink = trailingslashit(get_option( 'home' )) . user_trailingslashit( $query_vars['category_redirect'], 'category' );
 		status_header(301);
