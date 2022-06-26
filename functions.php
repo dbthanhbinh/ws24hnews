@@ -19,7 +19,6 @@ require_once ('admin/register-posttype.php');
 require_once ('lib/siteCommons.php');
 require_once ('widgets/widgets.php');
 require_once ('admin/modifys/modify-adminlogo.php');
-require_once ('lib/modifys/index.php');
 
 // Is Scope Customizer Live Preview
 if (is_customize_preview()) {
@@ -74,6 +73,8 @@ if(is_admin()){
 if(!is_admin()){
     // Front-end Commons
     require_once ('helpers/commons.php');
+    require_once ('lib/modifys/index.php');
+    
     // Favicon
     add_action( 'wp_head', 'render_favicon' );
 
@@ -421,6 +422,7 @@ function ws24h_sticky_sidebar_scripts () {
     }
 }
 
+
 // Header
 function ws24h_header_analytics() {
     if(get_theme_mod('google_analytics_code')){
@@ -513,3 +515,9 @@ function change_tag_cloud_font_sizes( array $args ) {
     $args['largest'] = '20';
     return $args;
 }
+
+// $cssString = file_get_contents(get_theme_file_path( '/assets/css/green.min.css' ));
+// $cssString = str_replace('#24ca24', '#ff0000', $cssString);
+
+//file_put_contents(get_theme_file_path( '/assets/css/green.min.css' ), $cssString);
+// print_r($cssString);
