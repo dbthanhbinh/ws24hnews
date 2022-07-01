@@ -65,7 +65,7 @@
             text-align: center;
             .title {
                 .title-description {
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
                 }
             }
             .entry-title {
@@ -205,7 +205,7 @@
         img {
             max-width: 100%;
             height: auto;
-            // border-radius: 50%;
+            border-radius: 30% 5% 30% 5%;
         }
     }
 
@@ -376,6 +376,34 @@
         display: inline-flex;
         margin-bottom: 30px;
         border: none;
+    }
+}
+
+.header-section-icon-container {
+    position: relative;
+
+    .header-section-fa-icon {
+        .fa {
+            font-size: 25px;
+        }
+
+        &::before,
+        &::after {
+            content: " ";
+            width: 50px;
+            position: absolute;
+            border-width: 2px;
+            top: 10px;
+            border-top-style: solid;
+        }
+
+        &::before {
+            left: calc((100%/2) + 20px);
+        }
+
+        &::after {
+            right: calc((100%/2) + 20px);
+        }
     }
 }
 

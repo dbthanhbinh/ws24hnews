@@ -317,8 +317,9 @@ function watchTask(){
             './Devs/sass/commons/**/*',
             './Devs/admins/**/*',
             './Devs/panels/**/*',
+            './Devs/js/*.js'
         ],
-        gulp.parallel(buildThemeStyleSass, buildSass, buildAdminSass, buildPanelSass)
+        gulp.parallel(buildThemeStyleSass, buildSass, buildAdminSass, buildPanelSass, compressCustomThemeJs)
     );
 }
 

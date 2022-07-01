@@ -28,3 +28,13 @@
 .appointmentModal .modal-footer button {
     background-color: $main_color !important;
 }
+
+.appointment-left-right {
+    #demo1-1 {
+        form {
+            &.perfect-datetimepicker {
+                border-color: $main_color;
+            }
+        }
+    }
+}
