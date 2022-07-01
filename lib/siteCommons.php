@@ -123,19 +123,12 @@ if ( ! function_exists( 'render_logo' ) ) :
         if (get_theme_mod('your_theme_logo')) : 
         ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
-                <!-- <img src="<?= get_theme_mod('your_theme_logo') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" > -->
-                <span class="first-logo-item logo-item">FASTSPA</span>
-                <span class="sub-logo-item logo-item">Spa & Beauty</span>
+                <img src="<?= get_theme_mod('your_theme_logo') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
             </a>
         <?php // add a fallback if the logo doesn't exist
-        else : 
-            $templateVersion = get_theme_mod('template_version');
-            if(isset($templateVersion) && $templateVersion && $templateVersion != 'default') {
-                $logo = $logo.'_'.$templateVersion;
-            }
+        else :
         ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
-                <!-- <img src="<?php echo get_template_directory_uri()?>/assets/images/<?=$logo?>.png" loading="lazy" alt="<?= esc_attr(get_bloginfo('name', 'display')) ?>" title="<?= esc_attr(get_bloginfo('name', 'display')) ?>" > -->
                 <span class="first-logo-item logo-item">FASTSPA</span>
                 <span class="sub-logo-item logo-item">Spa & Beauty</span>
             </a>
