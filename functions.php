@@ -68,6 +68,8 @@ if(is_admin()){
         wp_enqueue_style( 'wp-custom-style-admins' );
     }
     add_action( 'admin_enqueue_scripts', 'wp_admin_custom_style' );
+
+    add_action('admin_head', 'ws24h_plugin_adminAjax_init');
 }
 # Is Front-end Scope (only front-end)
 if(!is_admin()){
@@ -516,8 +518,11 @@ function change_tag_cloud_font_sizes( array $args ) {
     return $args;
 }
 
-// $cssString = file_get_contents(get_theme_file_path( '/assets/css/green.min.css' ));
-// $cssString = str_replace('#24ca24', '#ff0000', $cssString);
-
-//file_put_contents(get_theme_file_path( '/assets/css/green.min.css' ), $cssString);
-// print_r($cssString);
+// add_action('admin_head', 'ws24h_plugin_adminAjax_init');
+function ws24h_plugin_adminAjax_init(){
+    ?>
+    <script type="text/javascript">
+        var adminAjax = '<?php echo admin_url('admin-ajax.php');?>';
+    </script>
+    <?php
+}
