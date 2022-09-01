@@ -38,6 +38,24 @@ function your_theme_new_customizer_settings($wp_customize) {
         }
     }
 
+    $wp_customize->add_setting('your_theme_logo_text', ['default' => 'FASTSPA']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'your_theme_logo_text',
+    array(
+        'label' => __('Logo text', THEMENAME),
+        'section' => 'title_tagline',
+        'settings' => 'your_theme_logo_text',
+        'type' => 'text'
+    )));
+
+    $wp_customize->add_setting('your_theme_logo_sub_text', ['default' => 'Spa & Beauty']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'your_theme_logo_sub_text',
+    array(
+        'label' => __('Logo sub text', THEMENAME),
+        'section' => 'title_tagline',
+        'settings' => 'your_theme_logo_sub_text',
+        'type' => 'text'
+    )));
+
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
     // Add a control to upload the logo

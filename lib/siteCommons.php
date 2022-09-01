@@ -129,8 +129,8 @@ if ( ! function_exists( 'render_logo' ) ) :
         else :
         ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
-                <span class="first-logo-item logo-item">FASTSPA</span>
-                <span class="sub-logo-item logo-item">Spa & Beauty</span>
+                <span class="first-logo-item logo-item"><?= get_theme_mod('your_theme_logo_text'); ?></span>
+                <span class="sub-logo-item logo-item"><?= get_theme_mod('your_theme_logo_sub_text'); ?></span>
             </a>
         <?php endif;
     }
