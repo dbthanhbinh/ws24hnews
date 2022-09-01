@@ -11,12 +11,7 @@ if($show_title == 'y'){
 ?>
 <div class="home-section" style="margin-top: 30px;">
     <div class="container">
-        <div class="header-section">
-            <?php if($boxTitle){?>
-                <h3><?= $boxTitle ?> <?php if($subTitle){?><span class="header-cb-1"><?= $subTitle ?></span><?php }?></h3>
-            <?php }?>
-            <?php if($description){?> <p><?= html_entity_decode($description) ?></p> <?php }?>
-        </div>
+        <?php require('view_header_section.php'); ?>
     </div>
 </div>
 <?php }?>
@@ -41,10 +36,14 @@ if($show_title == 'y'){
                             ?>
                             <div class="<?= getColsLayout(true, 3) ?>">
                                 <?php if($uploadedItem){?>
-                                <div class="item_thumb">
-                                    <div class="icon-wrapper">
+                                <div class="item_thumb item-rounded-corner">
+                                    <!-- <div class="icon-wrapper">
                                         <img class="rounded-corner" src="<?= $uploadedItem ?>" alt="<?= $titleItem ?>" title="<?= $titleItem ?>"/>
-                                    </div>
+                                    </div> -->
+                                    <a href="<?= $boxNavigateUrl ?>" title="<?= $boxNavigateText ?>">
+                                        <svg> <rect rx="50%" ry="50%"></rect> </svg>
+                                        <img class="rounded-corner" src="<?= $uploadedItem ?>" alt="<?= $titleItem ?>" title="<?= $titleItem ?>"/>
+                                    </a>
                                 </div>
                                 <?php }?>
 

@@ -92,6 +92,7 @@ if($homeTabBox && $showBox == 'y'){
             <?php if($homeTabBoxSubtitle){?><h5 class="header-cb-1"><?= $homeTabBoxSubtitle ?></h5><?php }?>
             <?php if($homeTabBoxTitle){?><h4 class="entry-title"><?= $homeTabBoxTitle ?></h4><?php }?>
             <?php if($homeTabDescription){?><div class="title-description"><?= html_entity_decode($homeTabDescription) ?></div><?php }?>
+            <div class="header-section-icon-container"> <span class='header-section-fa-icon'><i class="fa fa-leaf" aria-hidden="true"></i></span></div>
         </div>
         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
           <?php

@@ -45,14 +45,13 @@ $(document).ready(function() {
             if(tabs && tabs.length > 0) {
                 var active = tabs.filter('.active');
                 var next = active.next('a');
-                var toClick;
+                var toClick = tabs.eq(0)
                 if(next && next.length > 0){
-                    toClick = next;
+                    toClick = next[0];
+                } else {
+                    toClick = tabs[0]
                 }
-                else
-                    toClick = tabs.eq(0);
-    
-                toClick.trigger('click');
+                toClick.click();
             }
         }, 10000);
     }

@@ -39,6 +39,7 @@ if($showBox == 'y') {
                             <h3> <?= $boxTitle ?>
                                 <span class="header-cb-1"><?= $subTitle ?></span>
                             </h3>
+                            <div class="header-section-icon-container"> <span class='header-section-fa-icon'><i class="fa fa-leaf" aria-hidden="true"></i></span></div>
                         </div>
                         <?php }?>
                     </div>

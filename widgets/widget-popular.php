@@ -94,9 +94,9 @@ class ws24h_popular_widget extends WP_Widget
 					<?php endif;?>
 					<?php if($excerpt_hidden=='true'){}else{?>
 						<div class="item-lead">
-							<h5 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
+							<h3 class="item-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"> 
 								<?php the_title();?> </a>
-							</h5>
+							</h3>
 							<?php echo get_excerpt($excerpt_len);?>
 						</div>
 					<?php }?>

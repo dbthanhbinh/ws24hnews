@@ -93,16 +93,6 @@ function your_theme_new_customizer_settings($wp_customize) {
         )
     );
 
-    $wp_customize->add_setting('template_version', ['default' => 'style']);
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_version',
-    array(
-        'label' => __('Theme template', THEMENAME),
-        'section' => 'section_layout',
-        'settings' => 'template_version',
-        'type' => 'select',
-        'choices' => $templateVertions
-    )));
-
     $wp_customize->add_setting('header_version', ['default' => LAYOUT_HEADER_VERSION]);
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_version',
     array(

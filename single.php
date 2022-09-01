@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="<?= getColsLayout(true, 1); ?>">
                             <header class="entry-header">
-                                <h5 class="header-title"><span><?= $relatedTitle ? $relatedTitle : __('Other_posts', THEMENAME) ?></span></h5>
+                                <h4 class="header-title"><span><?= $relatedTitle ? $relatedTitle : __('Other_posts', THEMENAME) ?></span></h4>
                             </header>
                         </div>
                     </div>

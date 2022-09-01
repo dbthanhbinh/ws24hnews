@@ -1,4 +1,19 @@
 // btn-lemon
+.item-rounded-corner {
+    a {
+        svg {
+            stroke: $btn_lemon_bg_color;
+        }
+
+        &:hover {
+            svg {
+                animation-play-state: running;
+                stroke: $btn_lemon_bg_color;
+            }
+        }
+    }
+}
+
 .bt-lemon-container {
     a {
         background-color: $btn_lemon_bg_color;
