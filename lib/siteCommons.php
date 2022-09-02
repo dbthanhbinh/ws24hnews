@@ -175,4 +175,11 @@ if ( ! function_exists( 'displayBadgeDayMonth' ) ) :
                 </div>
             </div>';
     }    
-endif;  
+endif;
+
+if (!function_exists('getBreakSectionClassIconFromConfig')) {
+    function getBreakSectionClassIconFromConfig() {
+        $iconClass = get_theme_mod('font_awesome_break_section_icon', true);
+        return $iconClass ? '<i class="fa ' . $iconClass . '" aria-hidden="true"></i>' : '';
+    }
+}
