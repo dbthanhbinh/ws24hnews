@@ -29,6 +29,7 @@ if($showBox == 'y') {
     }
     ?>
     <div class="vc_custom_1583484295953 home-custom-box" <?= html_entity_decode($customStyle) ?>>
+        <div class="mark-opacity"></div>
         <div class="container">
             <div class="row">
             <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 offset-md-1">
@@ -39,7 +40,7 @@ if($showBox == 'y') {
                             <h3> <?= $boxTitle ?>
                                 <span class="header-cb-1"><?= $subTitle ?></span>
                             </h3>
-                            <div class="header-section-icon-container"> <span class='header-section-fa-icon'><i class="fa fa-leaf" aria-hidden="true"></i></span></div>
+                            <div class="header-section-icon-container"> <span class='header-section-fa-icon'><?= getBreakSectionClassIconFromConfig() ?></span></div>
                         </div>
                         <?php }?>
                     </div>

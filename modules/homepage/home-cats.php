@@ -5,8 +5,8 @@ function showBoxTitle($boxTitle, $showTitle, $description, $showDescription){
 		<div class="<?= getDefaultFullLayout() ?>">
 			<div class="home-box-title">
 				<?php if($showTitle){?><h3 class="section-title"><?= $boxTitle ?></h3><?php }?>
-				<?php if($showDescription){?><p><?= html_entity_decode($description) ?></p><?php }?>
-				<div class="header-section-icon-container"> <span class='header-section-fa-icon'><i class="fa fa-leaf" aria-hidden="true"></i></span></div>
+				<?php if(isset($showDescription) && $showDescription == 'y'){?><p><?= html_entity_decode($description) ?></p><?php }?>
+				<div class="header-section-icon-container"> <span class='header-section-fa-icon'><?= getBreakSectionClassIconFromConfig() ?></span></div>
 			</div>
 		</div>
 	</div>

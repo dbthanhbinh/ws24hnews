@@ -56,6 +56,15 @@ function your_theme_new_customizer_settings($wp_customize) {
         'type' => 'text'
     )));
 
+    $wp_customize->add_setting('your_theme_logo_sub_text_enable', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'your_theme_logo_sub_text_enable',
+    array(
+        'label' => __('Logo sub text', THEMENAME),
+        'section' => 'title_tagline',
+        'settings' => 'your_theme_logo_sub_text_enable',
+        'type' => 'checkbox'
+    )));
+
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
     // Add a control to upload the logo
@@ -481,6 +490,26 @@ function your_theme_new_customizer_settings($wp_customize) {
         'label' => __('Google site verification code', THEMENAME),
         'section' => 'site_verification',
         'settings' => 'google_site_verification',
+        'type' => 'text'
+    ) ) );
+
+    // ================================Font awesome Icons======================================
+    $wp_customize->add_section(
+        "font_awesome_icons", 
+        array(
+            'title' => __("FontAwesome Icons", THEMENAME),
+            'priority' => 138,
+            'description' => __('Description FontAwesome icons here', THEMENAME),
+        )
+    );
+
+    // FontAwesome custom here
+    $wp_customize->add_setting('font_awesome_break_section_icon', ['default' => 'fa-leaf']);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'font_awesome_break_section_icon',
+    array(
+        'label' => __('Class to break section icon', THEMENAME),
+        'section' => 'font_awesome_icons',
+        'settings' => 'font_awesome_break_section_icon',
         'type' => 'text'
     ) ) );
 
