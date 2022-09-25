@@ -56,6 +56,15 @@ function your_theme_new_customizer_settings($wp_customize) {
         'type' => 'text'
     )));
 
+    $wp_customize->add_setting('your_theme_logo_sub_text_enable', ['default' => 1]);
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'your_theme_logo_sub_text_enable',
+    array(
+        'label' => __('Logo sub text', THEMENAME),
+        'section' => 'title_tagline',
+        'settings' => 'your_theme_logo_sub_text_enable',
+        'type' => 'checkbox'
+    )));
+
     // add a setting for the site logo
     $wp_customize->add_setting('your_theme_logo');
     // Add a control to upload the logo

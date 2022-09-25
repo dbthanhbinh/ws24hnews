@@ -124,13 +124,22 @@ if ( ! function_exists( 'render_logo' ) ) :
         ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
                 <img src="<?= get_theme_mod('your_theme_logo') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+                <?php
+                if (get_theme_mod('your_theme_logo_sub_text') && get_theme_mod('your_theme_logo_sub_text_enable') == 1) {
+                ?>
+                <span class="sub-logo-item logo-item"><?= get_theme_mod('your_theme_logo_sub_text'); ?></span>
+                <?php } ?>
             </a>
         <?php // add a fallback if the logo doesn't exist
         else :
         ?>
             <a class="navbar-brand theme-logo" href="<?= site_url() ?>">
                 <span class="first-logo-item logo-item"><?= get_theme_mod('your_theme_logo_text'); ?></span>
+                <?php
+                if (get_theme_mod('your_theme_logo_sub_text') && get_theme_mod('your_theme_logo_sub_text_enable') == 1) {
+                ?>
                 <span class="sub-logo-item logo-item"><?= get_theme_mod('your_theme_logo_sub_text'); ?></span>
+                <?php } ?>
             </a>
         <?php endif;
     }

@@ -44,11 +44,11 @@ colorthemes.push({
 });
 
 // Default
-var themecolor = '#e83e8c';
+var themecolor = '#0065b3';
 var colorthemetext = '#ffffff';
 var themePropertiesDefault = {
     themeName: 'pink', // main theme
-    mainColor: '#e83e8c',
+    mainColor: '#0065b3',
     mainTextColor: '#ffffff'
 };
 
