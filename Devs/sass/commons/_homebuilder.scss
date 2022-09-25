@@ -6,7 +6,7 @@
     display: inline-block;
     width: 100%;
     // margin: 30px 0;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .home-slide-wrapper {
@@ -393,7 +393,7 @@
             width: 50px;
             position: absolute;
             border-width: 2px;
-            top: 10px;
+            top: 15px;
             border-top-style: solid;
         }
 
@@ -536,6 +536,17 @@ a.btn-lemon {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+
+    .mark-opacity {
+        position: absolute;
+        background: #000;
+        opacity: 0.7;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;        
+    }
 }
 
 
